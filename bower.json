@@ -1,0 +1,24 @@
+{
+  "name": "ed-grid",
+  "version": "1.0",
+  "homepage": "https://github.com/escueladigital/ed-grid",
+  "authors": [
+    "Alvaro Felipe <informes@escueladigital.pe>",
+    "Franco Correa <franco@atom.life>"
+  ],
+  "description": "Framework solo CSS para Responsive Web Design totalmente en español",
+  "main": "ed-grid.css",
+  "keywords": [
+    "css",
+    "español",
+    "framework",
+    "responsive",
+    "css3",
+    "html5",
+    "production",
+    "produccion",
+    "desarrollo",
+    "modo"
+  ],
+  "license": "MIT"
+}
