@@ -182,7 +182,8 @@ body.desarrollo:before{
 .solo-tablet,  		/*entre 768px y 1024px*/
 .desde-tablet,  	/*desde 768px en adelante*/
 .hasta-web,  		/*por debajo de 1024px*/
-.solo-web { 		/*desde 1024px en adelante*/
+.solo-web,          /*desde 1024px en adelante*/
+.solo-impresora {    /* solo se ve al imprimir el documento */ 		
 	display: none;
 }
 
@@ -409,4 +410,55 @@ body.desarrollo:before{
 	.grupo .web-85	{ width: 85% }
 	.grupo .web-90	{ width: 90% }
 	.grupo .web-95	{ width: 95% }
+}
+
+/*
+	IMPRESORA (Solo se ve al imprimir el documento)
+	============================
+*/
+@media print {
+
+	/*Mensaje en modo desarrollo*/
+	body.desarrollo:before{
+		background:  #2A4E6C; /*darkblue de paleta ED*/
+		content: "IMPRESIÓN: Solo se ve en la impresion del documento";
+	}
+
+	.solo-impresora{
+		display: block;
+	}
+
+	/* Tercios */
+	.grupo .impresora-1-3	{ width: 33.3333% }
+	.grupo .impresora-2-3	{ width: 66.3337% }
+	.grupo .impresora-3-3	{ width: 100% }
+
+	/* Sextos */
+	.grupo .impresora-1-6	{ width: 16.6666% }
+	.grupo .impresora-2-6	{ width: 33.3333% }
+	.grupo .impresora-3-6	{ width: 50% }
+	.grupo .impresora-4-6	{ width: 66.3337% }
+	.grupo .impresora-5-6	{ width: 83.3333% }
+	.grupo .impresora-6-6	{ width: 100% }
+
+	/* Anchos por porcentaje */
+	.grupo .impresora-5	{ width: 5% }
+	.grupo .impresora-10	{ width: 10% }
+	.grupo .impresora-15	{ width: 15% }
+	.grupo .impresora-20	{ width: 20% }
+	.grupo .impresora-25	{ width: 25% }
+	.grupo .impresora-30	{ width: 30% }
+	.grupo .impresora-35	{ width: 35% }
+	.grupo .impresora-40	{ width: 40% }
+	.grupo .impresora-45	{ width: 45% }
+	.grupo .impresora-50	{ width: 50% }
+	.grupo .impresora-55	{ width: 55% }
+	.grupo .impresora-60	{ width: 60% }
+	.grupo .impresora-65	{ width: 65% }
+	.grupo .impresora-70	{ width: 70% }
+	.grupo .impresora-75	{ width: 75% }
+	.grupo .impresora-80	{ width: 80% }
+	.grupo .impresora-85	{ width: 85% }
+	.grupo .impresora-90	{ width: 90% }
+	.grupo .impresora-95	{ width: 95% }
 }
