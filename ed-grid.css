@@ -413,7 +413,7 @@ body.desarrollo:before{
 }
 
 /*
-	WEB (de 1024px en adelante)
+	IMPRESORA (Solo se ve al imprimir el documento)
 	============================
 */
 @media print {
