@@ -1,0 +1,77 @@
+/*
+	* Este archivo le ayuda a sobreescribir algunos valores 
+	* de ED GRID para adecuarlos a su proyecto
+	* Asegure de llamar primero a ed-grid.css y luego a 
+	* ed-grid-custom.css en su html, sino este archivo no
+	* tendrá efecto alguno.
+*/
+
+/*  SEPARACION ENTRE CAJAS 
+	El padding horizontal (left y right) es el que genera 
+	la separacion de las cajas. Use el mismo valor para 
+	ambas propiedades. Si el padding es 15px la separacion
+	será de 30px (el doble). Puede indicar valores en px o em.
+*/
+
+.grupo > div,
+.grupo > section{
+	padding-right: 	15px;
+	padding-left: 	15px;
+}
+
+
+/*  ANCHO MÁXIMO DE LOS GRUPOS
+	=========================== 
+	Por defecto es de 1100px pero puede poner el valor que desee
+	tanto en px como en em 
+*/
+.grupo {
+	max-width: 1100px;
+}
+
+/* 
+	MEDIA QUERIES
+	==============
+	Recuerde que ED GRID es mobile first por lo tanto, los estilos
+	declarados en los tamaños pequeños se heredan hacia los
+	tamaños más grandes
+*/
+
+
+/*
+	ESTILOS GENERALES
+	===================
+	Se aplican a todos los tamaños, no llevan media queries
+*/
+body {
+	font-family: sans-serif;
+}
+
+
+/*
+	TAMAÑO MOVIL (a partir de 480px)
+	================================
+*/
+@media (min-width: 480px) {
+	/*Aqui tus estilos (se heredaran en tablet y web)*/
+	
+}
+
+
+/*
+	TAMAÑO TABLET (a partir de 768px)
+	==================================
+*/
+@media (min-width: 768px) {
+	/*Aqui tus estilos (se heredaran en web)*/
+	
+}
+
+/*
+	TAMAÑO WEB (a partir de 1025px)
+	================================
+*/
+@media (min-width: 1025px) {
+	/*Aqui tus estilos*/
+	
+}
