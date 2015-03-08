@@ -245,6 +245,16 @@ body.desarrollo:before{
 	.grupo .movil-5-6	{ width: 83.3333% }
 	.grupo .movil-6-6	{ width: 100% }
 
+	/* Octavos */
+	.grupo .movil-1-8	{ width: 12.5% }
+	.grupo .movil-2-8	{ width: 25% }
+	.grupo .movil-3-8	{ width: 37.5% }
+	.grupo .movil-4-8	{ width: 50% }
+	.grupo .movil-5-8	{ width: 62.5% }
+	.grupo .movil-6-8	{ width: 75% }
+	.grupo .movil-7-8	{ width: 87.5% }
+	.grupo .movil-8-8	{ width: 100% }
+
 	/* Anchos por porcentaje */
 	.grupo .movil-5		{ width: 5% }
 	.grupo .movil-10	{ width: 10% }
@@ -265,6 +275,7 @@ body.desarrollo:before{
 	.grupo .movil-85	{ width: 85% }
 	.grupo .movil-90	{ width: 90% }
 	.grupo .movil-95	{ width: 95% }
+	.grupo .movil-100	{ width: 100% }
 
 }
 
@@ -319,6 +330,16 @@ body.desarrollo:before{
 	.grupo .tablet-5-6	{ width: 83.3333% }
 	.grupo .tablet-6-6	{ width: 100% }
 
+	/* Octavos */
+	.grupo .tablet-1-8	{ width: 12.5% }
+	.grupo .tablet-2-8	{ width: 25% }
+	.grupo .tablet-3-8	{ width: 37.5% }
+	.grupo .tablet-4-8	{ width: 50% }
+	.grupo .tablet-5-8	{ width: 62.5% }
+	.grupo .tablet-6-8	{ width: 75% }
+	.grupo .tablet-7-8	{ width: 87.5% }
+	.grupo .tablet-8-8	{ width: 100% }
+
 	/* Anchos por porcentaje */
 	.grupo .tablet-5	{ width: 5% }
 	.grupo .tablet-10	{ width: 10% }
@@ -339,6 +360,7 @@ body.desarrollo:before{
 	.grupo .tablet-85	{ width: 85% }
 	.grupo .tablet-90	{ width: 90% }
 	.grupo .tablet-95	{ width: 95% }
+	.grupo .tablet-100	{ width: 100% }
 }
 
 
@@ -398,6 +420,16 @@ body.desarrollo:before{
 	.grupo .web-5-6	{ width: 83.3333% }
 	.grupo .web-6-6	{ width: 100% }
 
+	/* Octavos */
+	.grupo .web-1-8	{ width: 12.5% }
+	.grupo .web-2-8	{ width: 25% }
+	.grupo .web-3-8	{ width: 37.5% }
+	.grupo .web-4-8	{ width: 50% }
+	.grupo .web-5-8	{ width: 62.5% }
+	.grupo .web-6-8	{ width: 75% }
+	.grupo .web-7-8	{ width: 87.5% }
+	.grupo .web-8-8	{ width: 100% }
+
 	/* Anchos por porcentaje */
 	.grupo .web-5	{ width: 5% }
 	.grupo .web-10	{ width: 10% }
@@ -418,4 +450,5 @@ body.desarrollo:before{
 	.grupo .web-85	{ width: 85% }
 	.grupo .web-90	{ width: 90% }
 	.grupo .web-95	{ width: 95% }
+	.grupo .web-100	{ width: 100% }
 }
