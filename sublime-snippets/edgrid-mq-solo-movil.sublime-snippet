@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+/* Solo movil */
+@media (min-width:480px) and (max-width:767px) {
+	$1
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>solo movil</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

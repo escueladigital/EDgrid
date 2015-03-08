@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+/* Hasta tablet */
+@media (max-width:767px){
+	$1
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>hasta tablet</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

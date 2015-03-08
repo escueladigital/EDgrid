@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[
+<section class="grupo">
+	<div class="$1-25">
+
+	</div>
+	<div class="$1-25">
+
+	</div>
+	<div class="$1-25">
+
+	</div>
+	<div class="$1-25">
+
+	</div>
+</section>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ed-4col</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

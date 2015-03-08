@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+/* Solo tablet */
+@media (min-width:768px) and (max-width:1024px) {
+	$1
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>solo tablet</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
