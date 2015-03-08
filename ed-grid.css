@@ -128,6 +128,13 @@ body.desarrollo:before{
 	width: 100%;
 }
 
+/*Si se quiere igualar alturas se le da al grupo la clase tabla*/
+.grupo.tabla > div,
+.grupo.tabla > section {
+	display: table-cell;
+	float: none;
+}
+
 /*
 	ESTILOS DE LAYOUT
 	==================
