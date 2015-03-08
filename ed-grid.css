@@ -147,11 +147,13 @@ body.desarrollo:before{
 	text-align: right;
 }
 
-.left {
+.left,
+.izquierda {
 	float: left;
 }
 
-.right {
+.right,
+.derecha {
 	float: right;
 }
 
