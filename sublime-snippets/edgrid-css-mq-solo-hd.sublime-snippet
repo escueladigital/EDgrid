@@ -1,12 +1,12 @@
 <snippet>
 	<content><![CDATA[
-/* Hasta movil */
-@media (max-width:479px) {
+/* Solo HD */
+@media all and (min-width:1400px){
 	$1
 }
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>hasta movil</tabTrigger>
+	<tabTrigger>solo-hd</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<!-- <scope>source.python</scope> -->
+	<scope>source.css</scope>
 </snippet>

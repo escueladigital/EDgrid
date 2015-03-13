@@ -1,13 +1,12 @@
 <snippet>
 	<content><![CDATA[
-<section class="grupo">
-	<div>
-		$1
-	</div>
-</section>
+/* Hasta movil */
+@media all and (max-width:479px) {
+	$1
+}
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>ed-1col</tabTrigger>
+	<tabTrigger>hasta-movil</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<!-- <scope>source.python</scope> -->
+	<scope>source.css</scope>
 </snippet>

@@ -1,12 +1,19 @@
 <snippet>
 	<content><![CDATA[
-/* Solo web */
-@media (min-width:1025px) {
-	$1
-}
+.grupo
+	.caja.$1-20
+
+	.caja.$1-20
+
+	.caja.$1-20
+
+	.caja.$1-20
+
+	.caja.$1-20
+
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>solo web</tabTrigger>
+	<tabTrigger>ed-5col</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<!-- <scope>source.python</scope> -->
+	<scope>source.jade</scope>
 </snippet>

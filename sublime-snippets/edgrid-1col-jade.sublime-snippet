@@ -1,12 +1,11 @@
 <snippet>
 	<content><![CDATA[
-/* Desde movil */
-@media (min-width:480px){
-	$1
-}
+.grupo
+	.caja
+		$1
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>desde movil</tabTrigger>
+	<tabTrigger>ed-1col</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<!-- <scope>source.python</scope> -->
+	<scope>source.jade</scope>
 </snippet>
