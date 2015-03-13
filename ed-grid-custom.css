@@ -13,8 +13,7 @@
 	será de 30px (el doble). Puede indicar valores en px o em.
 */
 
-.grupo > div,
-.grupo > section{
+.grupo .caja{
 	padding-right: 	15px;
 	padding-left: 	15px;
 }
@@ -52,7 +51,7 @@ body {
 	TAMAÑO MOVIL (a partir de 480px)
 	================================
 */
-@media (min-width: 480px) {
+@media all and (min-width: 480px) {
 	/*Aqui tus estilos (se heredaran en tablet y web)*/
 	
 }
@@ -62,7 +61,7 @@ body {
 	TAMAÑO TABLET (a partir de 768px)
 	==================================
 */
-@media (min-width: 768px) {
+@media all and (min-width: 768px) {
 	/*Aqui tus estilos (se heredaran en web)*/
 	
 }
@@ -71,7 +70,16 @@ body {
 	TAMAÑO WEB (a partir de 1025px)
 	================================
 */
-@media (min-width: 1025px) {
+@media all and (min-width: 1025px) {
+	/*Aqui tus estilos*/
+	
+}
+
+/*
+	TAMAÑO HD (a partir de 1400px)
+	================================
+*/
+@media all and (min-width: 1400px) {
 	/*Aqui tus estilos*/
 	
 }
