@@ -1,0 +1,84 @@
+//Mixins para media queries
+@mixin hasta($size){
+	@media screen and (max-width: map-get($breakpoints,$size) - 1){
+		@content;
+	}
+}
+
+@mixin desde($size){
+	@media screen and (min-width: map-get($breakpoints,$size)){
+		@content;
+	}
+}
+
+@mixin desde-hasta($desde,$hasta){
+	@media screen and (min-width: map-get($breakpoints,$desde)) and (max-width: map-get($breakpoints,$hasta) - 1){
+		@content;
+	}
+}
+/*
+	GRUPOS Y CAJAS
+	==============
+	Los grupos son contenedores para las cajas.
+	Las cajas crean las divisiones verticales en el grupo (columnas)
+*/
+.grupo {
+	position: relative;
+	display: table;
+	width: 100%;
+	max-width: $grupo--max-width;
+	margin: 0 auto;
+
+	.caja {
+		float: left;
+		margin: 0;
+		padding: 0 $caja-separacion;
+		width: 100%;
+		
+		&:last-child{
+			float: right;
+		}
+	}
+
+	&.tabla > .caja {
+		float: none;
+		display: table-cell;
+	}
+}
+
+
+//Tamaño base en porcentajes
+@for $i from 1 through 20 {
+	.grupo .base-#{$i*5}{
+		width: unquote($i*5 + "%");
+	}
+}
+
+// Tamaño base en fracciones
+@each $fraccion-nombre, $fraccion in $fracciones{
+	@for $i from 1 through $fraccion{
+		.grupo .base-#{$i}-#{$fraccion}{
+			width: (100% / $fraccion) * $i; 
+		}
+	}
+}
+
+// Breakpoints
+@each $size, $screen-size in $breakpoints{
+	/*#{$size}: A partir de #{$screen-size}*/
+	@media screen and (min-width: $screen-size){
+		/*Porcentajes*/
+		@for $i from 1 through 20 {
+			.grupo .caja.#{$size}-#{$i*5}{
+				width: unquote($i*5 + "%");
+			}
+		}
+		@each $fraccion-nombre, $fraccion in $fracciones{
+			@for $i from 1 through $fraccion{
+				.grupo .#{$size}-#{$i}-#{$fraccion}{
+					width: (100% / $fraccion) * $i; 
+				}
+			}
+		}
+	}
+}

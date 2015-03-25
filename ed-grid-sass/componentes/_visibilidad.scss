@@ -1,0 +1,31 @@
+// Visibilidad
+// solo-$size ya no se usa porque se puede conseguir
+// combinando clases desde y hasta
+
+// Visibilidad desde $size
+@each $size, $screen-size in $breakpoints{
+	@media screen and (max-width: $screen-size - 1){
+		.desde-#{$size}{
+			display: none;
+		}
+	}
+	@media screen and (min-width: $screen-size){
+		.desde-#{$size}{
+			display: block;
+		}
+	}
+}
+
+// Visibilidad hasta $size
+@each $size, $screen-size in $breakpoints{
+	@media screen and (max-width: $screen-size - 1){
+		.hasta-#{$size}{
+			display: block;
+		}
+	}
+	@media screen and (min-width: $screen-size){
+		.hasta-#{$size}{
+			display: none;
+		}
+	}
+}

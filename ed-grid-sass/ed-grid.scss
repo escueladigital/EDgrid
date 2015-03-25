@@ -1,0 +1,26 @@
+// Variables
+// Ancho máximo de cada grupo
+	$grupo--max-width: 1100px;
+// Separación entre cajas
+	$caja-separacion: 30px;
+// Tamaños. Puede editar los nombres y las
+// medidas. Añadir más o quitar.
+	$breakpoints: (
+		movil: 480px,
+		tablet: 768px,
+		web: 1024px,
+		hd: 1400px	
+		);
+// Fracciones para los anchos de las cajas.
+// También puede editarlos si desea
+	$fracciones: (
+		tercios: 3,
+		sextos: 6,
+		octavos: 8
+		);
+
+@import "componentes/base";
+@import "componentes/grid";
+@import "componentes/desarrollo";
+@import "componentes/visibilidad";
+@import "componentes/utilidades";

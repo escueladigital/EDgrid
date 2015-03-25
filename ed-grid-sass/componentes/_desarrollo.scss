@@ -1,0 +1,79 @@
+/* 	ESTILOS PARA DESARROLLO
+	========================
+	Añada la clase "desarrollo"
+   	a body para tener ayudas al trabajar con ED GRID 
+*/
+body.desarrollo {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+body.desarrollo:before{
+	background:  steelblue; /*Azul Escuela Digital*/	
+	display: block;
+	padding: 0;
+	text-align: center;
+	color: #fff;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 36px;
+	margin-bottom: 30px;
+}
+
+.desarrollo .grupo {
+	padding-top: 22px;
+	background: #fff;
+	margin-bottom: 10px;
+}
+.desarrollo .grupo .grupo {
+	margin-bottom: 0;
+	padding-bottom: 22px;
+}
+.desarrollo .grupo .caja{
+	background: #eee;
+	box-shadow: 0 0 0 1px steelblue inset;
+	position: relative;
+	padding-bottom: 22px;
+}
+
+.desarrollo .grupo .caja:after,
+.desarrollo .grupo:after{
+	background: rgba(70, 130, 180,.3);
+	content: attr(class);
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: 1;
+	display: table;
+	padding: 3px 5px;
+	font-style: italic;
+	font-size: 12px;
+	width: 100%;
+	color: #2A4E6C;
+	height: 16px;
+	line-height: 16px;
+	/*border: 1px solid seagreen;*/
+}
+.desarrollo .grupo:after{
+	top: 0;
+	left: 0;
+	width: 100%;
+	border: 1px solid steelblue;
+	border-bottom: none;
+}
+.desarrollo .grupo .caja {
+	background: #ccc;
+}
+
+// Mensajes de desarrollo
+body.desarrollo:before {
+	content: "Tamaño base";
+}
+
+@each $size, $screen-size in $breakpoints {
+	@include hasta($size){
+	body.desarrollo:before{
+		content: "Tamaño #{$size}, a partir de #{$screen-size}";
+		}
+	}
+}
