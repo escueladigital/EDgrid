@@ -32,7 +32,7 @@
 	.caja {
 		float: left;
 		margin: 0;
-		padding: 0 $caja-separacion;
+		padding: 0 ($caja-separacion / 2);
 		width: 100%;
 		
 		&:last-child{
