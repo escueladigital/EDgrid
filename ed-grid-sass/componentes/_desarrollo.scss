@@ -71,7 +71,7 @@ body.desarrollo:before {
 }
 
 @each $size, $screen-size in $breakpoints {
-	@include hasta($size){
+	@include desde($size){
 	body.desarrollo:before{
 		content: "Tamaño #{$size}, a partir de #{$screen-size}";
 		}
