@@ -1,21 +1,3 @@
-//Mixins para media queries
-@mixin hasta($size){
-	@media screen and (max-width: map-get($breakpoints,$size) - 1){
-		@content;
-	}
-}
-
-@mixin desde($size){
-	@media screen and (min-width: map-get($breakpoints,$size)){
-		@content;
-	}
-}
-
-@mixin desde-hasta($desde,$hasta){
-	@media screen and (min-width: map-get($breakpoints,$desde)) and (max-width: map-get($breakpoints,$hasta) - 1){
-		@content;
-	}
-}
 /*
 	GRUPOS Y CAJAS
 	==============
@@ -68,16 +50,6 @@
 		float: none;
 		display: table-cell;
 	}
-}
-	
-// Modo cuadricula, se usa cuando se quiere hacer una rejilla
-.grupo.cuadricula {
-	font-size: 0;
-}
-
-.grupo.cuadricula > .caja {
-	display: inline-block;
-	font-size: 1rem;
 }
 
 //Tamaño base en porcentajes
