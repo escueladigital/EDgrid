@@ -4,76 +4,100 @@
    	a body para tener ayudas al trabajar con ED GRID 
 */
 body.desarrollo {
-	padding: 0 !important;
-	margin: 0 !important;
-}
+	padding : 0 !important;
+	margin  : 0 !important;
 
-body.desarrollo:before{
-	background:  steelblue; /*Azul Escuela Digital*/	
-	display: block;
-	padding: 0;
-	text-align: center;
-	color: #fff;
-	font-size: 18px;
-	font-weight: bold;
-	line-height: 36px;
-	margin-bottom: 30px;
-}
+	&:before {
+		// Estilos para el mensaje en el top del body
+			background    : steelblue; /*Azul Escuela Digital*/	
+			color         : #fff;
+		// Estilos de fuente
+			font-size     : 18px;
+			font-weight   : bold;
+			line-height   : 36px;
+			text-align    : center;
+		// Layout y caja	
+			display       : block;
+			height        : 36px;
+			margin-bottom : 30px;
+	}
 
-.desarrollo .grupo {
-	padding-top: 22px;
-	background: #fff;
-	margin-bottom: 10px;
-}
-.desarrollo .grupo .grupo {
-	margin-bottom: 0;
-	padding-bottom: 22px;
-}
-.desarrollo .grupo .caja{
-	background: #eee;
-	box-shadow: 0 0 0 1px steelblue inset;
-	position: relative;
-	padding-bottom: 22px;
-}
+	.grupo {
+		// El padding deja espacio para imprimir la clase
+			padding-top   : 22px;
+		// Se separan los grupos para ver mejor el layout
+			margin-bottom : 10px;
+		// Identificar al grupo
+			outline: 1px solid tomato;
 
-.desarrollo .grupo .caja:after,
-.desarrollo .grupo:after{
-	background: rgba(70, 130, 180,.3);
-	content: attr(class);
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	z-index: 1;
-	display: table;
-	padding: 3px 5px;
-	font-style: italic;
-	font-size: 12px;
-	width: 100%;
-	color: #2A4E6C;
-	height: 16px;
-	line-height: 16px;
-	/*border: 1px solid seagreen;*/
-}
-.desarrollo .grupo:after{
-	top: 0;
-	left: 0;
-	width: 100%;
-	border: 1px solid steelblue;
-	border-bottom: none;
-}
-.desarrollo .grupo .caja {
-	background: #ccc;
-}
+		.caja{
+			// Color de fondo que identifica el modo desarrollo
+				// background     : #eee;
+			// Para dar position absolute a las clases que se imprimen
+				position       : relative;
+			// Espacio inferior para imprimir las clases
+				padding-bottom : 22px;
+			// Colorear los pares de otro color para diferenciar las cajas
+				&:nth-child(even){
+					background: rgba(steelblue,.2);
+				}
+		}
 
-// Mensajes de desarrollo
-body.desarrollo:before {
-	content: "Tamaño base";
-}
-
-@each $size, $screen-size in $breakpoints {
-	@include desde($size){
-	body.desarrollo:before{
-		content: "Tamaño #{$size}, a partir de #{$screen-size}";
+		.grupo {
+			// Grupos dentro de grupos
+				margin-bottom  : 0;
 		}
 	}
 }
+
+.desarrollo .grupo .caja:after,
+.desarrollo .grupo:before{
+	// Imprimir las clases
+		content     : attr(class);
+	
+	// Diseño
+		font-style  : italic;
+		font-size   : 12px;
+		font-weight : normal;
+	
+	// Layout
+		padding     : 0 5px;
+		z-index     : 1;
+		bottom      : 0;
+		right       : 0;
+		position    : absolute;
+		display     : table;
+		width       : 100%;
+		height      : 22px;
+		line-height : 22px;
+}
+
+.desarrollo .grupo:before{
+	background    : rgba(tomato,.3);
+	color         : tomato;
+	top           : 0;
+	left          : 0;
+	width         : 100%;
+}
+
+.desarrollo .caja:after {
+	background: rgba(steelblue,.2);
+	color: steelblue;
+}
+
+.desarrollo .caja.total:after{
+	background: rgba(darken(steelblue,30%),.3);
+}
+
+// Mensajes de desarrollo
+	body.desarrollo:before {
+	content: "ED-GRID: Tamaño base";
+}
+// Loop para imprimir el mensaje de desarrollo basado en los breakpoints
+	@each $size, $screen-size in $breakpoints {
+		@include desde($size){
+		body.desarrollo:before{
+			content: "ED-GRID: Tamaño #{$size}, a partir de #{$screen-size}";
+			}
+		}
+	}
