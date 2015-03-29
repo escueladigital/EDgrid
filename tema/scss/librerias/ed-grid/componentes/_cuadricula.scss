@@ -1,0 +1,13 @@
+// Modo cuadricula, se usa cuando se quiere hacer una rejilla
+.grupo.cuadricula {
+	font-size: 0;
+}
+
+.grupo.cuadricula > .caja {
+	float: none;
+	display: inline-block;
+	font-size: 1rem;
+}
+
+// Mixin para crear cuadriculas
+// Buscarlo en el archivo _mixins.scss
