@@ -30,7 +30,7 @@
 	class="no-padding" al grupo, le da padding cero a todas sus cajas.
 	class="no-padding" a la caja le da padding cero solo a ella
 */
-.no-padding.grupo .caja,
+.no-padding.grupo > .caja,
 .grupo > .no-padding {
 	padding: 0 !important;
 }
