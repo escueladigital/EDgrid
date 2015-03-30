@@ -54,6 +54,18 @@
 		float   : none;
 		display : table-cell;
 	}
+
+	&.middle > .caja{
+		vertical-align: middle;
+	}
+
+	&.top > .caja {
+		vertical-align: top;
+	}
+
+	&.bottom > .caja {
+		vertical-align: bottom;
+	}
 }
 
 //Tamaño base en porcentajes

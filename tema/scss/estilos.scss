@@ -1,21 +1,24 @@
-// Mixins y Variables
-	@import "variables";
-	@import "mixins";
-
-// Librerias
-	@import "librerias/ed-grid";
+// Librerias y variables
+	@import "base/variables";
+	@import "librerias/normalize";
+	@import "librerias/ed-grid/ed-grid";
 	@import "librerias/ed-menu";
 
 // Base
+	@import "base/mixins";
 	@import "base/base";
-
-// Layout
-	@import "layout/layout";
 
 // Tema. Los componentes básicos de todo proyecto
 	@import "tema/botones";
 	@import "tema/formularios";
 	@import "tema/imagenes";
 	@import "tema/menus";
+	@import "tema/header";
+	@import "tema/footer";
+	@import "tema/content";
+	@import "tema/icons";
 
 // Modulos. Los estilos propios construidos para el proyecto
+	@import "modulos/logo";
+	@import "modulos/blog";
+	@import "modulos/modulos";
