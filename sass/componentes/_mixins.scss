@@ -41,7 +41,7 @@
 
 // Mixin para controlar el padding
 // El parámetro es por cuanto se va a multiplicar el padding base.
-	@include padding($numero){
+	@mixin padding($numero){
 		padding-left: ($caja--separacion / 2) * $numero;
 		padding-right: ($caja--separacion / 2) * $numero;
 	}
