@@ -97,7 +97,7 @@
 		/*Tamaño en fracciones*/
 		@each $fraccion-nombre, $fraccion in $fracciones{
 			@for $i from 1 through $fraccion{
-				.grupo .#{$size}-#{$i}-#{$fraccion}{
+				.grupo .caja.#{$size}-#{$i}-#{$fraccion}{
 					width: (100% / $fraccion) * $i; 
 				}
 			}
