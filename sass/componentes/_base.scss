@@ -18,13 +18,3 @@ body {
 		max-width: 100%;
 		height: auto;
 	}
-
-// Le da coherencia a los márgenes de los párrafos
-	p {
-		margin-top: 0;
-
-		&:last-child,
-		&:only-child {
-			margin-bottom: 0;
-		}
-	}

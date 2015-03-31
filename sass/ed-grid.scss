@@ -1,0 +1,33 @@
+// VARIABLES DE ED GRID
+
+	// Ancho máximo de cada grupo
+		$grupo--max-width : 1100px;
+		
+	// Separación entre cajas
+		$caja--separacion : 30px;
+
+	// Tamaños. Puede editar los nombres y las
+	// medidas, añadir más o quitar.
+		$breakpoints: (
+			movil  : 480px,
+			tablet : 768px,
+			web    : 1025px,
+			hd     : 1400px
+			);
+
+	// Fracciones para los anchos de las cajas.
+	// También puede editarlos si desea
+		$fracciones: (
+			tercios : 3,
+			sextos  : 6,
+			octavos : 8
+			);
+
+// Componentes ED GRID
+	@import "componentes/base";        // Estilos básicos para RWD
+	@import "componentes/nucleo";      // Núcleo de ED GRID, grupos y cajas
+	@import "componentes/mixins";      // Mixins ED GRID
+	@import "componentes/cuadricula";  // Realizar cuadriculas
+	@import "componentes/desarrollo";  // Modo desarrollo
+	@import "componentes/visibilidad"; // Controlar la visibilidad
+	@import "componentes/utilidades";  // Utilidades adicionales

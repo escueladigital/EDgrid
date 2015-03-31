@@ -2,7 +2,7 @@
 	GRUPOS Y CAJAS
 	==============
 	Los grupos son contenedores para las cajas.
-	Las cajas crean las divisiones verticales en el grupo (columnas)
+	Las cajas crean las divisiones en el grupo (columnas)
 */
 .grupo {
 	position   : relative;
@@ -46,7 +46,7 @@
 	}
 }
 
-// Modo tabla (alturas iguales para cada caja)
+// Modo tabla (alturas iguales para cada caja) **experimental, no es RWD**
 .grupo.tabla {
 	display : table;
 
@@ -88,12 +88,13 @@
 @each $size, $screen-size in $breakpoints{
 	/*#{$size}: A partir de #{$screen-size}*/
 	@media all and (min-width: $screen-size){
-		/*Porcentajes*/
+		/*Tamaños en porcentajes*/
 		@for $i from 1 through 20 {
 			.grupo .caja.#{$size}-#{$i*5}{
 				width: unquote($i*5 + "%");
 			}
 		}
+		/*Tamaño en fracciones*/
 		@each $fraccion-nombre, $fraccion in $fracciones{
 			@for $i from 1 through $fraccion{
 				.grupo .#{$size}-#{$i}-#{$fraccion}{
