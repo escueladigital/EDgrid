@@ -1,28 +1,22 @@
 <snippet>
 	<content><![CDATA[
-<section class="grupo">
-	<div class="caja $1-1-6">
+<div class="grupo">
+	<div class="caja $1-25">
 
 	</div>
-	<div class="caja $1-1-6">
+	<div class="caja $1-25">
 
 	</div>
-	<div class="caja $1-1-6">
+	<div class="caja $1-25">
 
 	</div>
-	<div class="caja $1-1-6">
+	<div class="caja $1-25">
 
 	</div>
-	<div class="caja $1-1-6">
-
-	</div>
-	<div class="caja $1-1-6">
-		
-	</div>
-</section>
+</div>
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>ed-6col</tabTrigger>
+	<tabTrigger>ed-4col</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.html</scope>
 </snippet>

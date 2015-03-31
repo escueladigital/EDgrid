@@ -1,13 +1,13 @@
 <snippet>
 	<content><![CDATA[
-<section class="grupo">
+<div class="grupo">
 	<div class="caja $1-50">
 
 	</div>
 	<div class="caja $1-50">
 
 	</div>
-</section>
+</div>
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>ed-2col</tabTrigger>

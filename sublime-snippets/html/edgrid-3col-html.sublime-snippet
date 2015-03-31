@@ -1,12 +1,19 @@
 <snippet>
 	<content><![CDATA[
-/* Hasta tablet */
-@media all and (max-width:767px){
-	$1
-}
+<div class="grupo">
+	<div class="caja $1-1-3">
+
+	</div>
+	<div class="caja $1-1-3">
+
+	</div>
+	<div class="caja $1-1-3">
+		
+	</div>
+</div>
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>hasta-tablet</tabTrigger>
+	<tabTrigger>ed-3col</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<scope>source.css</scope>
+	<scope>source.html</scope>
 </snippet>

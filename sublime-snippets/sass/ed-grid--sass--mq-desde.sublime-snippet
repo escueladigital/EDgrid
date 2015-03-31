@@ -1,12 +1,11 @@
 <snippet>
 	<content><![CDATA[
-/* Hasta movil */
-@media all and (max-width:479px) {
-	$1
+@include desde(${1:tamaño}){
+	$2
 }
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>hasta-movil</tabTrigger>
+	<tabTrigger>dd</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<scope>source.css</scope>
+	<scope>source.sass</scope>
 </snippet>
