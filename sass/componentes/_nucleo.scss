@@ -46,28 +46,6 @@
 	}
 }
 
-// Modo tabla (alturas iguales para cada caja) **experimental, no es RWD**
-.grupo.tabla {
-	display : table;
-
-	& > .caja {
-		float   : none;
-		display : table-cell;
-	}
-
-	&.middle > .caja{
-		vertical-align: middle;
-	}
-
-	&.top > .caja {
-		vertical-align: top;
-	}
-
-	&.bottom > .caja {
-		vertical-align: bottom;
-	}
-}
-
 //Tamaño base en porcentajes
 @for $i from 1 through 20 {
 	.grupo .base-#{$i*5}{

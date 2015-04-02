@@ -1,0 +1,25 @@
+// Modo tabla (alturas iguales para cada caja) **experimental, no es RWD**
+@each $size, $screen-size in $breakpoints{
+	@media all and (min-width: $screen-size){
+		.grupo.#{$size}-tabla{
+			display: table;
+
+			& > .caja {
+				float   : none;
+				display : table-cell;
+			}
+
+			&.middle > .caja{
+				vertical-align: middle;
+			}
+
+			&.top > .caja {
+				vertical-align: top;
+			}
+
+			&.bottom > .caja {
+				vertical-align: bottom;
+			}
+		}
+	}
+}
