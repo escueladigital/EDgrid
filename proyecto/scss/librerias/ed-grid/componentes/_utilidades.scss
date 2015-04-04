@@ -34,3 +34,14 @@
 .grupo > .no-padding {
 	padding: 0 !important;
 }
+
+/* Controlar el padding*/
+.padding {
+	padding-left: ($caja--separacion / 2);
+	padding-right: ($caja--separacion / 2);
+}
+
+.doble-padding {
+	padding-left: $caja--separacion;
+	padding-right: $caja--separacion;
+}

@@ -1,4 +1,5 @@
 //Mixins para media queries
+// El parámetro es el nombre del breakpoint
 @mixin hasta($size){
 	@media screen and (max-width: map-get($breakpoints,$size) - 1){
 		@content;
@@ -18,6 +19,9 @@
 }
 
 // Mixins para cuadriculas
+// Se aplica contendor de la cuadricula. 
+// Los parámetros son el selector de cada item y el número de columnas
+
 	@mixin cuadricula($items,$columnas){
 		font-size  : 0;
 		margin     : 0;
@@ -33,4 +37,11 @@
 			padding-right  : ($caja--separacion / 2);		
 			vertical-align : top;
 		}
+	}
+
+// Mixin para controlar el padding
+// El parámetro es por cuanto se va a multiplicar el padding base.
+	@mixin padding($numero){
+		padding-left: ($caja--separacion / 2) * $numero;
+		padding-right: ($caja--separacion / 2) * $numero;
 	}

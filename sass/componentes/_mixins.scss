@@ -28,7 +28,7 @@
 		padding    : 0;
 		list-style : none; // por si el contenedor es un ul
 
-		#{$items}, .#{$items}{
+		& > #{$items}, & > .#{$items}{
 			display        : inline-block;		
 			font-size      : 1rem;		
 			width          : (100% / $columnas);
