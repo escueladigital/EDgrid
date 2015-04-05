@@ -19,7 +19,7 @@
 		$header--font-family    : sans-serif; // fuente para los headers (h1,h2,h3...)
 		$header--font-weight    : bold; // grosor de fuente para los headers
 		$header--text-transform : normal; // normal, uppercase, lowercase, capitalize
-		$header--color          : $color4;
+		$header--color          : #222;
 
 		$h1--font-size : 2em;
 		$h2--font-size : 1.6em;
@@ -29,7 +29,7 @@
 		$h6--font-size : .8em;
 
 	// ESTIILOS DE ENLACES
-		$link--color : $color3;  // color para los enlaces
+		$link--color : blue;  // color para los enlaces
 
 	// ESTILOS DE PÁRRAFOS
 		$p--font-size   : 1em; // Tamaño de fuente
