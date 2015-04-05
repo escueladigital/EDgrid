@@ -20,6 +20,9 @@ body.desarrollo {
 			display       : block;
 			height        : 36px;
 			margin-bottom : 30px;
+		// Poner el mensaje por sobre cualquier elemento
+			position      : relative;
+			z-index       : 900;
 	}
 
 	.grupo {
