@@ -1,4 +1,4 @@
-//Mixins para media queries
+// Mixins para media queries
 // El parámetro es el nombre del breakpoint
 @mixin hasta($size){
 	@media screen and (max-width: map-get($breakpoints,$size) - 1){
@@ -21,30 +21,41 @@
 // Mixins para cuadriculas
 // Se aplica contendor de la cuadricula. 
 // Los parámetros son el selector de cada item y el número de columnas
+// El tercer parámetro (opcional) es la separacion entre columnas (en porcentaje)
+@mixin cuadricula($items,$columnas,$separacion:2%){
+	font-size  : 0;
+	margin     : 0;
+	padding    : 0;
+	list-style : none; // por si el contenedor es un ul
 
-	@mixin cuadricula($items,$columnas,$separacion){
-		font-size  : 0;
-		margin     : 0;
-		padding    : 0;
-		list-style : none; // por si el contenedor es un ul
+	& > #{$items}, & > .#{$items}{
+		display        : inline-block;	
+		float          : none;	
+		font-size      : 1rem;		
+		width          : (100% - $separacion * ($columnas - 1)) / $columnas;
+		margin-right   : $separacion;
+		margin-bottom  : $separacion;
+		vertical-align : top;
 
-		& > #{$items}, & > .#{$items}{
-			display        : inline-block;	
-			float          : none;	
-			font-size      : 1rem;		
-			width          : (100% - $separacion * ($columnas - 1)) / $columnas;
-			margin-right   : unquote($separacion + "%");
-			vertical-align : top;
-
-			&:nth-child(#{$columnas}n){
-				margin-right: 0;
-			}
+		&:nth-child(#{$columnas}n){
+			margin-right: 0;
 		}
 	}
+}
 
 // Mixin para controlar el padding
 // El parámetro es por cuanto se va a multiplicar el padding base.
-	@mixin padding($numero){
-		padding-left: ($caja--separacion / 2) * $numero;
-		padding-right: ($caja--separacion / 2) * $numero;
-	}
+@mixin padding($numero){
+	padding-left: ($caja--separacion / 2) * $numero;
+	padding-right: ($caja--separacion / 2) * $numero;
+}
+
+// Mixin para roporcion de aspecto, se le pasan tres parámetros
+// Horizontal, Vertical y Ancho. Este ultimo es opcional, si no 
+// se pasa, se tomará el 100% de ancho por defecto.
+@mixin proporcion($h,$v,$width:100){
+	width          : unquote($width+"%");
+	height         : 0;
+	overflow       : hidden;
+	padding-bottom : unquote($width * ($v/$h) + "%");
+}
