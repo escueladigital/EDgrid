@@ -1,21 +1,54 @@
 // Mixins para media queries
 // El parámetro es el nombre del breakpoint
+$breakpoints: (
+			movil  : 480px,
+			tablet : 768px,
+			web    : 1025px,
+			hd     : 1400px
+			);
+
 @mixin hasta($size){
-	@media screen and (max-width: map-get($breakpoints,$size) - 1){
-		@content;
-	}
+  @if map-has-key($breakpoints,$size){
+    @media screen and (max-width: map-get($breakpoints,$size) - 1){
+      @content;
+    }
+  } @else {
+     @media screen and (max-width: $size){
+      @content;
+    }
+  }
 }
 
 @mixin desde($size){
-	@media screen and (min-width: map-get($breakpoints,$size)){
-		@content;
-	}
+  @if map-has-key($breakpoints,$size){
+    @media screen and (min-width: map-get($breakpoints,$size)){
+      @content;
+    }
+  } @else {
+     @media screen and (min-width: $size){
+      @content;
+    }
+  }
 }
 
 @mixin desde-hasta($desde,$hasta){
-	@media screen and (min-width: map-get($breakpoints,$desde)) and (max-width: map-get($breakpoints,$hasta) - 1){
-		@content;
-	}
+  @if map-has-key($breakpoints,$desde) and map-has-key($breakpoints,$hasta){
+    @media screen and (min-width: map-get($breakpoints,$desde)) and (max-width: map-get($breakpoints,$hasta) - 1){
+      @content;
+    }
+  } @else if map-has-key($breakpoints,$desde) and not map-has-key($breakpoints,$hasta){
+    @media screen and (min-width: map-get($breakpoints,$desde)) and (max-width: $hasta) {
+      @content;
+    }
+  } @else if not map-has-key($breakpoints,$desde) and map-has-key($breakpoints,$hasta) {
+    @media screen and (min-width: $desde) and (max-width: map-get($breakpoints,$hasta) - 1){
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: $desde) and (max-width: $hasta){
+      @content;
+    }
+  }
 }
 
 // Mixins para cuadriculas
@@ -24,9 +57,12 @@
 // El tercer parámetro (opcional) es la separacion entre columnas (en porcentaje)
 @mixin cuadricula($items,$columnas,$separacion:2%){
 	font-size  : 0;
-	margin     : 0;
-	padding    : 0;
-	list-style : none; // por si el contenedor es un ul
+	// por si el contenedor es un ul
+	@if $items == li {
+		margin     : 0;
+		padding    : 0;
+		list-style : none; 
+	}
 
 	& > #{$items}, & > .#{$items}{
 		display        : inline-block;	
@@ -53,9 +89,9 @@
 // Mixin para roporcion de aspecto, se le pasan tres parámetros
 // Horizontal, Vertical y Ancho. Este ultimo es opcional, si no 
 // se pasa, se tomará el 100% de ancho por defecto.
-@mixin proporcion($h,$v,$width:100){
-	width          : unquote($width+"%");
+@mixin proporcion($h,$v,$width:100%){
+	width          : $width;
 	height         : 0;
 	overflow       : hidden;
-	padding-bottom : unquote($width * ($v/$h) + "%");
+	padding-bottom : $width * ($v/$h);
 }
