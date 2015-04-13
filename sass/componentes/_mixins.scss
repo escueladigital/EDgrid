@@ -1,54 +1,48 @@
 // Mixins para media queries
 // El parámetro es el nombre del breakpoint
-$breakpoints: (
-			movil  : 480px,
-			tablet : 768px,
-			web    : 1025px,
-			hd     : 1400px
-			);
 
 @mixin hasta($size){
-  @if map-has-key($breakpoints,$size){
-    @media screen and (max-width: map-get($breakpoints,$size) - 1){
-      @content;
-    }
-  } @else {
-     @media screen and (max-width: $size){
-      @content;
-    }
-  }
+	@if map-has-key($breakpoints,$size){
+		@media screen and (max-width: map-get($breakpoints,$size) - 1){
+			@content;
+		}
+	} @else {
+		 @media screen and (max-width: $size){
+			@content;
+		}
+	}
 }
 
 @mixin desde($size){
-  @if map-has-key($breakpoints,$size){
-    @media screen and (min-width: map-get($breakpoints,$size)){
-      @content;
-    }
-  } @else {
-     @media screen and (min-width: $size){
-      @content;
-    }
-  }
+	@if map-has-key($breakpoints,$size){
+		@media screen and (min-width: map-get($breakpoints,$size)){
+			@content;
+		}
+	} @else {
+		 @media screen and (min-width: $size){
+			@content;
+		}
+	}
 }
 
 @mixin desde-hasta($desde,$hasta){
-  @if map-has-key($breakpoints,$desde) and map-has-key($breakpoints,$hasta){
-    @media screen and (min-width: map-get($breakpoints,$desde)) and (max-width: map-get($breakpoints,$hasta) - 1){
-      @content;
-    }
-  } @else if map-has-key($breakpoints,$desde) and not map-has-key($breakpoints,$hasta){
-    @media screen and (min-width: map-get($breakpoints,$desde)) and (max-width: $hasta) {
-      @content;
-    }
-  } @else if not map-has-key($breakpoints,$desde) and map-has-key($breakpoints,$hasta) {
-    @media screen and (min-width: $desde) and (max-width: map-get($breakpoints,$hasta) - 1){
-      @content;
-    }
-  } @else {
-    @media screen and (min-width: $desde) and (max-width: $hasta){
-      @content;
-    }
-  }
+	@if map-has-key($breakpoints,$desde) and map-has-key($breakpoints,$hasta){
+		@media screen and (min-width: map-get($breakpoints,$desde)) and (max-width: map-get($breakpoints,$hasta) - 1){
+			@content;
+		}
+	} @else if map-has-key($breakpoints,$desde) and not map-has-key($breakpoints,$hasta){
+		@media screen and (min-width: map-get($breakpoints,$desde)) and (max-width: $hasta) {
+			@content;
+		}
+	} @else if not map-has-key($breakpoints,$desde) and map-has-key($breakpoints,$hasta) {
+		@media screen and (min-width: $desde) and (max-width: map-get($breakpoints,$hasta) - 1){
+			@content;
+		}
+	} @else {
+		@media screen and (min-width: $desde) and (max-width: $hasta){
+			@content;
+		}
+	}
 }
 
 // Mixins para cuadriculas
@@ -56,25 +50,38 @@ $breakpoints: (
 // Los parámetros son el selector de cada item y el número de columnas
 // El tercer parámetro (opcional) es la separacion entre columnas (en porcentaje)
 @mixin cuadricula($items,$columnas,$separacion:2%){
-	font-size  : 0;
 	// por si el contenedor es un ul
 	@if $items == li {
 		margin     : 0;
 		padding    : 0;
 		list-style : none; 
+
+		li {
+			margin-left: 0;
+		}
+	}
+
+	&:before, &:after {
+		clear   : both;
+		content : " ";
+		display : table;
+		width   : 100%;
 	}
 
 	& > #{$items}, & > .#{$items}{
-		display        : inline-block;	
-		float          : none;	
-		font-size      : 1rem;		
+		float          : left;
 		width          : (100% - $separacion * ($columnas - 1)) / $columnas;
 		margin-right   : $separacion;
 		margin-bottom  : $separacion;
 		vertical-align : top;
 
 		&:nth-child(#{$columnas}n){
-			margin-right: 0;
+			margin-right : 0;
+			clear        : right;
+		}
+
+		&:nth-child(#{$columnas}n+1){
+			clear        : left;
 		}
 	}
 }
