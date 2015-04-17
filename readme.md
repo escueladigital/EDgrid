@@ -6,6 +6,6 @@ Esta es una primera versión (prototipo) que será mejorada permanentemente. Use
 
 Sus consejos y sugerencias serán bienvenidos. Escribanos en http://facebook.com/escueladigitalperu o a http://twitter.com/edigitalperu para reportar errores, sugerencias o pedir soporte. Prometo responder
 
-En su html inserte primero ed-grid y luego ed-grid-custom para que sus estilos personalizados se apliquen en el orden correcto. 
+Página web de ED GRID y documentación oficial:
 
-Pronto crearé una página web solamente para ed-grid con documentación detallada, casos de uso y comentarios. Lo prometo
+http://escueladigital.pe/ed-grid
