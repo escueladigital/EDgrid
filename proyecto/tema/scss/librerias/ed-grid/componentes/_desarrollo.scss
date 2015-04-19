@@ -12,6 +12,7 @@ body.desarrollo {
 			background    : steelblue; /*Azul Escuela Digital*/	
 			color         : #fff;
 		// Estilos de fuente
+			font-family   : sans-serif;
 			font-size     : 18px;
 			font-weight   : bold;
 			line-height   : 36px;
@@ -104,3 +105,27 @@ body.desarrollo {
 			}
 		}
 	}
+
+.grupo.demostrar {
+	outline: 1px solid tomato;
+	margin: 1em auto;
+
+	& > .caja{
+	background: #eee;
+	box-shadow: 0 0 0 1px steelblue;
+	padding-top: 1em;
+	padding-bottom: 1em;
+
+		p {
+			margin-bottom: 0;
+		}
+
+		&:nth-child(odd) {
+			background: #ddd;
+		}
+
+		&.total {
+			background: #fff;
+		}
+	}
+}
