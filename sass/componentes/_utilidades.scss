@@ -38,7 +38,7 @@
 	class="no-padding" a la caja le da padding cero solo a ella
 */
 .no-padding.grupo > .caja,
-.grupo > .no-padding {
+.caja.no-padding {
 	padding: 0 !important;
 }
 
@@ -48,7 +48,11 @@
 	padding-right: ($caja--separacion / 2);
 }
 
-.doble-padding {
+.padding-2 {
 	padding-left: $caja--separacion;
 	padding-right: $caja--separacion;
+}
+.padding-3 {
+	padding-left: $caja--separacion * 1.5;
+	padding-right: $caja--separacion * 1.5;
 }

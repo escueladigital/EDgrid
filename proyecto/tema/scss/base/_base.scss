@@ -1,20 +1,15 @@
-// Font face. Incluya el import de Google Fonts o su regla font-face
-// Lo usual es una fuente para los textos y otra para los títulos
-	@import url(http://fonts.googleapis.com/css?family=Lora:400,400italic,700);
-
 //Modifique los estilos base desde las variables
 	body {
 		background  : $body--background;
-		font-family : $body--font-family !important;
+		font-family : $body--font-family;
 		color       : $body--color;
 	}
 
 	a {
 		color           : $link--color;
-		text-decoration : none;
 
 		&:hover {
-			color : darken($link--color,10%);
+			
 		}
 	}
 
@@ -25,6 +20,11 @@
 
 	p {
 		margin : 0 0 $p--margin 0;
+
+		&:last-child,
+		&:only-child {
+			margin: 0;
+		}
 	}
 
 	blockquote {
@@ -43,7 +43,6 @@
 	h1 { 
 		font-size : $h1--font-size; 
 		line-height: 1.2;
-		margin: 1em 0;
 	}
 
 	h2 { 

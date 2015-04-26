@@ -1,4 +1,4 @@
-// Modo tabla (alturas iguales para cada caja) **experimental, no es RWD**
+// Modo tabla (alturas iguales para cada caja) **experimental, no es 100% RWD**
 .grupo.base-tabla{
 	display: table;
 
@@ -20,6 +20,7 @@
 	}
 }
 
+// movil-tabla, tablet-tabla, web-tabla, hd-tabla
 @each $size, $screen-size in $breakpoints{
 	@media all and (min-width: $screen-size){
 		.grupo.#{$size}-tabla{

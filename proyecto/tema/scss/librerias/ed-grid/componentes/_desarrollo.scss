@@ -97,6 +97,7 @@ body.desarrollo {
 	body.desarrollo:before {
 	content: "ED-GRID: Tamaño base";
 }
+
 // Loop para imprimir el mensaje de desarrollo basado en los breakpoints
 	@each $size, $screen-size in $breakpoints {
 		@include desde($size){
@@ -106,6 +107,7 @@ body.desarrollo {
 		}
 	}
 
+// Demostrar los grupos y cajas en tutoriales y documentación
 .grupo.demostrar {
 	outline: 1px solid tomato;
 	margin: 1em auto;
