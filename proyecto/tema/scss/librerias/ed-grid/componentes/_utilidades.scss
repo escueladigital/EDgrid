@@ -10,7 +10,7 @@
 }
 
 .centrar-texto,
-.centrar-contenido {
+.centrar-contenido{
 	text-align: center;
 }
 
@@ -30,6 +30,15 @@
 
 .right, .derecha {
 	float: right;
+}
+
+.limpiar {
+    &:before, &:after {
+        content: "";
+        display: table;
+        width: 100%;
+        clear: both;
+    }
 }
 
 /* 	NO PADDING

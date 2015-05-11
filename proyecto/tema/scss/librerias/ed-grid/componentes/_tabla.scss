@@ -7,15 +7,24 @@
 		display : table-cell;
 	}
 
-	&.middle > .caja{
+	&.middle > .caja,
+    &.medio > .caja,
+    .caja.middle,
+    .caja.medio {
 		vertical-align: middle;
 	}
 
-	&.top > .caja {
+	&.top > .caja,
+    &.arriba > .caja,
+    .caja.top,
+    .caja.arriba {
 		vertical-align: top;
 	}
 
-	&.bottom > .caja {
+	&.bottom > .caja,
+    &.abajo > .caja,
+    .caja.abajo,
+    .caja.bottom {
 		vertical-align: bottom;
 	}
 }
@@ -31,17 +40,26 @@
 				display : table-cell;
 			}
 
-			&.middle > .caja{
-				vertical-align: middle;
-			}
+			&.middle > .caja,
+            &.medio > .caja,
+            .caja.middle,
+            .caja.medio {
+                vertical-align: middle;
+            }
 
-			&.top > .caja {
-				vertical-align: top;
-			}
+            &.top > .caja,
+            &.arriba > .caja,
+            .caja.top,
+            .caja.arriba {
+                vertical-align: top;
+            }
 
-			&.bottom > .caja {
-				vertical-align: bottom;
-			}
+            &.bottom > .caja,
+            &.abajo > .caja,
+            .caja.abajo,
+            .caja.bottom {
+                vertical-align: bottom;
+            }
 		}
 	}
 }
