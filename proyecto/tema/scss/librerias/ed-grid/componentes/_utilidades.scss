@@ -2,11 +2,25 @@
 	ESTILOS DE LAYOUT
 	==================
 */
-.centrar-caja{
+.centro {
 	display: block;
 	clear: both;
 	float: none !important;
-	margin: 0 auto !important;
+	margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+.left, .izquierda {
+	float: left;
+}
+
+.right, .derecha {
+	float: right;
+}
+
+.total {
+    width: 100%;
+    clear: both;
 }
 
 .centrar-texto,
@@ -24,12 +38,8 @@
 	text-align: right;
 }
 
-.left, .izquierda {
-	float: left;
-}
-
-.right, .derecha {
-	float: right;
+.circulo {
+    border-radius: 50%;
 }
 
 .limpiar {

@@ -9,11 +9,12 @@
 	// Tamaños. Puede editar los nombres y las
 	// medidas, añadir más o quitar.
 		$breakpoints: (
+            base   : 320px,
 			movil  : 480px,
 			tablet : 768px,
 			web    : 1025px,
 			hd     : 1400px
-			);
+        );
 
 	// Fracciones para los anchos de las cajas.
 	// También puede editarlos si desea
@@ -21,7 +22,7 @@
 			tercios : 3,
 			sextos  : 6,
 			octavos : 8
-			);
+        );
 
 // Componentes ED GRID
 	@import "componentes/base";        // Estilos básicos para RWD
@@ -31,3 +32,6 @@
 	@import "componentes/desarrollo";  // Modo desarrollo
 	@import "componentes/visibilidad"; // Controlar la visibilidad
 	@import "componentes/utilidades";  // Utilidades adicionales
+    @import "componentes/video";       // Videos responsive
+    @import "componentes/menu";        // Ed menu
+    @import "componentes/icon-fonts";  // Icon fonts

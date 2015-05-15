@@ -1,34 +1,3 @@
-// Modo tabla (alturas iguales para cada caja) **experimental, no es 100% RWD**
-.grupo.base-tabla{
-	display: table;
-
-	& > .caja {
-		float   : none;
-		display : table-cell;
-	}
-
-	&.middle > .caja,
-    &.medio > .caja,
-    .caja.middle,
-    .caja.medio {
-		vertical-align: middle;
-	}
-
-	&.top > .caja,
-    &.arriba > .caja,
-    .caja.top,
-    .caja.arriba {
-		vertical-align: top;
-	}
-
-	&.bottom > .caja,
-    &.abajo > .caja,
-    .caja.abajo,
-    .caja.bottom {
-		vertical-align: bottom;
-	}
-}
-
 // movil-tabla, tablet-tabla, web-tabla, hd-tabla
 @each $size, $screen-size in $breakpoints{
 	@media all and (min-width: $screen-size){
@@ -40,26 +9,29 @@
 				display : table-cell;
 			}
 
-			&.middle > .caja,
-            &.medio > .caja,
-            .caja.middle,
-            .caja.medio {
+            &.medio > .caja {
                 vertical-align: middle;
             }
 
-            &.top > .caja,
-            &.arriba > .caja,
-            .caja.top,
-            .caja.arriba {
+            &.arriba > .caja {
                 vertical-align: top;
             }
 
-            &.bottom > .caja,
-            &.abajo > .caja,
-            .caja.abajo,
-            .caja.bottom {
+            &.abajo > .caja {
                 vertical-align: bottom;
             }
 		}
 	}
+}
+
+.caja.medio {
+    vertical-align: middle;
+}
+
+.caja.arriba {
+    vertical-align: top;
+}
+
+.caja.abajo {
+    vertical-align: bottom;
 }

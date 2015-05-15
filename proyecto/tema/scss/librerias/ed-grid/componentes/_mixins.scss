@@ -3,10 +3,12 @@
 
 @mixin hasta($size){
 	@if map-has-key($breakpoints,$size){
+    // Si el parámetro es el nombre de un tamaño, se extrae desde el map
 		@media screen and (max-width: map-get($breakpoints,$size) - 1){
 			@content;
 		}
 	} @else {
+    // Si el parámetro no existe en el map, se toma su valor para construir la media query
 		 @media screen and (max-width: $size){
 			@content;
 		}
@@ -15,10 +17,12 @@
 
 @mixin desde($size){
 	@if map-has-key($breakpoints,$size){
+    // Si el parámetro es el nombre de un tamaño, se extrae desde el map
 		@media screen and (min-width: map-get($breakpoints,$size)){
 			@content;
 		}
 	} @else {
+    // Si el parámetro no existe en el map, se toma su valor para construir la media query
 		 @media screen and (min-width: $size){
 			@content;
 		}
@@ -46,7 +50,7 @@
 }
 
 // Mixins para cuadriculas
-// Se aplica contendor de la cuadricula. 
+// Se aplica al contendor de la cuadricula. 
 // Los parámetros son el selector de cada item y el número de columnas
 // El tercer parámetro (opcional) es la separacion entre columnas (en porcentaje)
 @mixin cuadricula($items,$columnas,$separacion:2%){
@@ -60,7 +64,8 @@
 			margin-left: 0;
 		}
 	}
-
+    
+    // Limpiar los floats para el contenedor
 	&:before, &:after {
 		clear   : both;
 		content : " ";
@@ -73,13 +78,14 @@
 		width          : (100% - $separacion * ($columnas - 1)) / $columnas;
 		margin-right   : $separacion;
 		margin-bottom  : $separacion;
-		vertical-align : top;
-
+        
+        //Limpiar el float para el último elemento de cada fila
 		&:nth-child(#{$columnas}n){
 			margin-right : 0;
 			clear        : right;
 		}
-
+    
+        //Limpiar el float para el primer elemento de cada fila
 		&:nth-child(#{$columnas}n+1){
 			clear        : left;
 		}
@@ -93,7 +99,7 @@
 	padding-right: ($caja--separacion / 2) * $numero;
 }
 
-// Mixin para roporcion de aspecto, se le pasan tres parámetros
+// Mixin para proporcion de aspecto, se le pasan tres parámetros
 // Horizontal, Vertical y Ancho. Este ultimo es opcional, si no 
 // se pasa, se tomará el 100% de ancho por defecto.
 @mixin proporcion($h,$v,$width:100%){
@@ -103,173 +109,3 @@
 	padding-bottom : $width * ($v/$h);
 }
 
-// ED MENU
-
-// Mixin menu horizontal básico
-@mixin menu-horizontal($fondo,$color,$altura,$separacion,$ancho-submenu){
-	display    : table;
-	background : $fondo;
-
-	&, ul, li {
-		list-style : none;
-		margin     : 0;
-		padding    : 0;
-	}
-
-	li {
-		position: relative;
-
-		&:hover {
-			background: rgba(#000,.1);
-		}
-	}
-
-	// Items del menu
-	> li {	
-		float    : left;
-
-		// Submenu de segundo nivel
-		> ul {
-			background : darken($fondo,4%);
-			top        : 100%;
-			left       : 0;
-
-			// Submenu de tercer nivel en adelante
-			ul {
-				background : darken($fondo,8%);
-				top        : 0;
-				left       : 100%;
-			}
-		}
-
-		// Preparar animación de submenus
-		li {
-			max-height : 0;
-			overflow   : hidden;
-			transition : all .3s;
-		}
-	}
-
-	//Mostrar el submenu
-	li:hover > ul > li {
-		max-height : $altura;
-		overflow   : visible;
-	}
-
-	// Links del menu
-	a {
-		color       : $color;
-		line-height : $altura;
-		display     : block;
-		padding     : 0 ($separacion / 2);
-	}
-
-	// Segundo y tercer nivel
-	ul {
-		position : absolute;
-		width    : $ancho-submenu;
-		z-index  : 50;  // evita que los submenus se oculten
-	}
-}
-
-// Mixin menu vertical básico
-@mixin menu-vertical($fondo,$color,$altura,$ancho,$padding){
-	background : $fondo;
-	display    : table;
-	width      : $ancho;
-
-	&, ul, li {
-		list-style : none;
-		margin     : 0;
-		padding    : 0;
-	}
-
-	li {
-		position: relative;
-
-		&:hover {
-			background: rgba(#000,.15);
-		
-			> ul > li {
-				max-height : $altura;
-				overflow   : visible;
-			}
-		}
-	}
-
-	// Submenus
-	ul {
-		background : darken($fondo,4%);
-		position   : absolute;
-		top        : 0;
-		left       : 100%;
-		width      : $ancho;
-
-		li {
-			max-height : 0;
-			overflow   : hidden;
-			transition : all .3s;
-		}
-
-		ul {
-			background : darken($fondo,8%);
-		}
-	}
-
-	a {
-		color       : $color;
-		line-height : $altura;
-		display     : block;
-		padding     : 0 $padding;
-	}
-}
-
-// Mixin botón mostrar menu
-@mixin mostrar-menu($color,$font-size){
-	&:before{
-		content      : "";
-		cursor       : pointer;
-		display      : inline-block;
-		width        : $font-size*1.6;
-		height       : $font-size;
-		margin-right : .5em;
-		position     : relative;
-		top          : .1em;
-		background   : linear-gradient(
-	                   $color 25%,
-	                   transparent 25%,
-	                   transparent 37%,
-	                   $color 37%,
-	                   $color 62%,
-	                   transparent 62%,
-	                   transparent 75%,
-	                   $color 75%
-			          );
-	}
-}
-
-// Mixin boton cerrar menu
-@mixin cerrar-menu($color,$font-size){
-	&:before{
-		content       : "";
-		cursor        : pointer;
-		display       : inline-block;
-		border-radius : 50%;
-		width         : $font-size;
-		height        : $font-size;
-		background    : linear-gradient(
-					    -45deg,
-					     transparent 45%,
-					     $color 45%,
-					     $color 55%,
-					     transparent 55%
-					     ),
-					     linear-gradient(
-					     45deg,
-					     transparent 45%,
-					     $color 45%,
-					     $color 55%,
-					     transparent 55%
-					   );
-    }
-}

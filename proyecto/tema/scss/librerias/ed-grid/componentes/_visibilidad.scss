@@ -1,6 +1,4 @@
 // Visibilidad
-// solo-$size ya no se usa porque se puede conseguir
-// combinando clases desde y hasta
 
 // Visibilidad desde $size
 @each $size, $screen-size in $breakpoints{

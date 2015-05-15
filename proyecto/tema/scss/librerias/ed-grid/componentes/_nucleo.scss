@@ -8,11 +8,13 @@
 	position   : relative;
 	max-width  : $grupo--max-width;
 	margin     : 0 auto;
+    width      : 100%;
 
 	&.total {
 		max-width : 100% !important;
 	}
 
+    //Limpiar el float de los grupos
 	&:before, &:after {
 		content : "";
 		display : table;
@@ -25,10 +27,10 @@
 		margin        : 0;
 		padding-left  : ($caja--separacion / 2);
 		padding-right : ($caja--separacion / 2);
-		width         : 100%;
+        width         : 100%;
 		
 		&:last-child{
-			float: right;
+			float : right;
 		}
 	}
 
@@ -36,6 +38,7 @@
 		float   : none;
 		display : table;
 
+        //Limpiar la caja total
 		&:before, &:after {
 			content : "";
 			display : table;
@@ -45,21 +48,6 @@
 	}
 }
 
-//Tamaño base en porcentajes
-@for $i from 1 through 20 {
-	.grupo .base-#{$i*5}{
-		width: unquote($i*5 + "%");
-	}
-}
-
-// Tamaño base en fracciones
-@each $fraccion-nombre, $fraccion in $fracciones{
-	@for $i from 1 through $fraccion{
-		.grupo .base-#{$i}-#{$fraccion}{
-			width: (100% / $fraccion) * $i; 
-		}
-	}
-}
 
 // Breakpoints
 @each $size, $screen-size in $breakpoints{
@@ -67,14 +55,16 @@
 	@media all and (min-width: $screen-size){
 		/*Tamaños en porcentajes*/
 		@for $i from 1 through 20 {
-			.grupo .caja.#{$size}-#{$i*5}{
+			.#{$size}-#{$i*5},
+            .grupo .caja.#{$size}-#{$i*5}{
 				width: unquote($i*5 + "%");
 			}
 		}
 		/*Tamaño en fracciones*/
 		@each $fraccion-nombre, $fraccion in $fracciones{
 			@for $i from 1 through $fraccion{
-				.grupo .caja.#{$size}-#{$i}-#{$fraccion}{
+				.#{$size}-#{$i}-#{$fraccion},
+                .grupo .caja.#{$size}-#{$i}-#{$fraccion}{
 					width: (100% / $fraccion) * $i; 
 				}
 			}
