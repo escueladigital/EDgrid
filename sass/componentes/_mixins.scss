@@ -142,7 +142,8 @@
 		top: 50%;
 		left: 50%;
 		transform: translateY(-50%) translateX(-50%);
-		transform: -webkit-translateY(-50%) -webkit-translateX(-50%);
+		-webkit-transform: translateY(-50%) translateX(-50%);
+		-ms-transform: translateY(-50%) translateX(-50%);
 		margin: auto !important;
 	}
 }
@@ -153,7 +154,8 @@
 		position: absolute;
 		top: 50%;
 		transform: translateY(-50%);
-		transform: -webkit-translateY(-50%);
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
 		margin: auto !important;
 	}
 }
@@ -184,4 +186,3 @@
 	width: $width;
 	margin: $margin auto;
 }
-

@@ -41,6 +41,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.espacio:before{
+	margin-right: .3em;
+}
+
 .icon-youtube:before {
   content: "a";
 }

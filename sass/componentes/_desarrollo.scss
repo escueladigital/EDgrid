@@ -98,7 +98,7 @@ body.desarrollo:before {
 $screen-size in $breakpoints {
   @include desde($size) {
     body.desarrollo:before {
-      content: "ED-GRID: Tamaño #{$size}, a partir de #{$screen-size}";
+      content: "ED-GRID: Tamaño #{$size}, desde #{$screen-size}";
     }
   }
 }

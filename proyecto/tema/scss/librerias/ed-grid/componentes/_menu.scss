@@ -1,10 +1,11 @@
 // Mixin menu horizontal básico
-@mixin ed-menuh(        $fondo         : #eee,  		// Color de fondo del menu
-						$color         : initial,		// Color de los enlaces
-						$hover         : rgba(#000,.1),	// Color de fondo para el hover de los items
-						$altura        : 2.5em,			// Altura del menu (de los items)
-						$separacion    : 3em,			// Separación entre los enlaces del menu
-						$ancho-submenu : 10em			// Ancho de los submenus
+@mixin ed-menuh(        
+	$fondo         : #eee,  		// Color de fondo del menu
+	$color         : initial,		// Color de los enlaces
+	$hover         : rgba(#000,.1),	// Color de fondo para el hover de los items
+	$altura        : 2.5em,			// Altura del menu (de los items)
+	$separacion    : 3em,			// Separación entre los enlaces del menu
+	$ancho-submenu : 10em			// Ancho de los submenus
 	) {
 		display: table;
 		background: $fondo;
@@ -65,12 +66,13 @@
 }
 
 // Mixin menu vertical básico
-@mixin ed-menuv(        $fondo   : #eee,			// Color de fondo del menu
-						$color   : initial,			// Color de los enlaces
-						$hover   : rgba(#000,.1),	// Color de fondo en hover para los items
-						$altura  : 2.5em,			// Altura de los items del menu
-						$padding : 1.5em,			// Padding de los enlaces
-						$ancho-submenu   : 10em 			// Ancho del menu (y los submenus)
+@mixin ed-menuv(        
+	$fondo   : #eee,			// Color de fondo del menu
+	$color   : initial,			// Color de los enlaces
+	$hover   : rgba(#000,.1),	// Color de fondo en hover para los items
+	$altura  : 2.5em,			// Altura de los items del menu
+	$padding : 1.5em,			// Padding de los enlaces
+	$ancho-submenu   : 10em 			// Ancho del menu (y los submenus)
 	) {
 		background: $fondo;
 		display: table;

@@ -2,7 +2,7 @@
 	ESTILOS DE LAYOUT
 	==================
 */
-.centro {
+.centro, .centrar {
 	display: block;
 	clear: both;
 	float: none !important;
@@ -24,7 +24,8 @@
 }
 
 .centrar-texto,
-.centrar-contenido{
+.centrar-contenido,
+.centro-contenido{
 	text-align: center;
 }
 
