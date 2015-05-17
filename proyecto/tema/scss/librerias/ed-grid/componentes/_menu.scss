@@ -1,138 +1,115 @@
-// ED MENU
-.ed-menu {
-    display: table;
-    &, ul, li {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        background: #eee;
-    }
-    li {
-        position: relative;
-    }
-    a {
-        text-decoration: none;
-        display: block;
-        line-height: 2.5em;
-    }
-}
-
 // Mixin menu horizontal básico
-@mixin menu-horizontal($fondo:#fff,
-$color: initial,
-$hover: rgba(#000,.1),
-$altura: 2.5em,
-$separacion: 3em,
-$ancho-submenu: 10em) {
-    display: table;
-    background: $fondo;
-    &, ul, li {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-    li {
-        position: relative;
-        &:hover {
-            background: rgba(#000, .1);
-        }
-    }
-    // Items del menu
-    > li {
-        float: left;
-        // Submenu de segundo nivel
-        > ul {
-            top: 100%;
-            left: 0;
-            // Submenu de tercer nivel en adelante
-            ul {
-                top: 0;
-                left: 100%;
-            }
-        }
-        // Preparar animación de submenus
-        li {
-            max-height: 0;
-            overflow: hidden;
-            transition: all .3s;
-        }
-    }
-    //Mostrar el submenu
-    li:hover > ul > li {
-        max-height: $altura;
-        overflow: visible;
-    }
-    // Links del menu
-    a {
-        color: $color;
-        line-height: $altura;
-        display: block;
-        padding: 0 ($separacion / 2);
-        text-decoration: none;
-    }
-    // Segundo y tercer nivel
-    ul {
-        position: absolute;
-        width: $ancho-submenu;
-        z-index: 50; // evita que los submenus se oculten
-    }
+@mixin ed-menuh(        $fondo         : #eee,  		// Color de fondo del menu
+						$color         : initial,		// Color de los enlaces
+						$hover         : rgba(#000,.1),	// Color de fondo para el hover de los items
+						$altura        : 2.5em,			// Altura del menu (de los items)
+						$separacion    : 3em,			// Separación entre los enlaces del menu
+						$ancho-submenu : 10em			// Ancho de los submenus
+	) {
+		display: table;
+		background: $fondo;
+		&, ul, li {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+		}
+		li {
+				position: relative;
+				&:hover {
+						background: rgba(#000, .1);
+						a {
+							text-decoration: none !important;
+						}
+				}
+		}
+		// Items del menu
+		> li {
+				float: left;
+				// Submenu de segundo nivel
+				> ul {
+						top: 100%;
+						left: 0;
+						// Submenu de tercer nivel en adelante
+						ul {
+								top: 0;
+								left: 100%;
+						}
+				}
+				// Preparar animación de submenus
+				li {
+						max-height: 0;
+						overflow: hidden;
+						transition: all .3s;
+				}
+		}
+		//Mostrar el submenu
+		li:hover > ul > li {
+				max-height: $altura;
+				overflow: visible;
+		}
+		// Links del menu
+		a {
+				color: $color;
+				line-height: $altura;
+				display: block;
+				padding: 0 ($separacion / 2);
+				text-decoration: none;
+		}
+		// Segundo y tercer nivel
+			 ul {
+				background: $fondo;
+				position: absolute;
+				width: $ancho-submenu;
+				z-index: 50; // evita que los submenus se oculten
+		}
 }
 
 // Mixin menu vertical básico
-@mixin menu-vertical($fondo:#eee,
-$color:initial,
-$hover: rgba(#000,.1),
-$altura: 2.5em,
-$ancho: 10em,
-$padding: 1.5em) {
-    background: $fondo;
-    display: table;
-    &, ul, li {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-    li {
-        position: relative;
-        &:hover {
-            background: rgba(#000, .15);
-            > ul > li {
-                max-height: $altura;
-                overflow: visible;
-            }
-        }
-    }
-    // Submenus
-    ul {
-        position: absolute;
-        top: 0;
-        left: 100%;
-        width: $ancho;
-        li {
-            max-height: 0;
-            overflow: hidden;
-            transition: all .3s;
-        }
-    }
-    a {
-        color: $color;
-        line-height: $altura;
-        display: block;
-        padding: 0 $padding;
-    }
-}
-
-
-//Menus en diferentes tamaños
-@each $size, $screen-size in $breakpoints {
-	@media all and (min-width: $screen-size){
-		.ed-menu {
-			&.#{$size}-horizontal{
-				@include menu-horizontal();
-			}
-			&.#{$size}-vertical{
-				@include menu-vertical();
-			}
+@mixin ed-menuv(        $fondo   : #eee,			// Color de fondo del menu
+						$color   : initial,			// Color de los enlaces
+						$hover   : rgba(#000,.1),	// Color de fondo en hover para los items
+						$altura  : 2.5em,			// Altura de los items del menu
+						$padding : 1.5em,			// Padding de los enlaces
+						$ancho-submenu   : 10em 			// Ancho del menu (y los submenus)
+	) {
+		background: $fondo;
+		display: table;
+		&, ul, li {
+				list-style: none;
+				margin: 0;
+				padding: 0;
 		}
-	}
+		li {
+				position: relative;
+				&:hover {
+						background: $hover;
+						> ul > li {
+								max-height: $altura;
+								overflow: visible;
+						}
+						a {
+							text-decoration: none !important;
+						}
+				}
+		}
+		// Submenus
+		ul {
+				background: $fondo;
+				position: absolute;
+				top: 0;
+				left: 100%;
+				width: $ancho-submenu;
+				li {			
+						max-height: 0;
+						overflow: hidden;
+						transition: all .3s;
+				}
+		}
+		a {
+				color: $color;
+				line-height: $altura;
+				display: block;
+				padding: 0 $padding;
+				text-decoration: none;
+		}
 }

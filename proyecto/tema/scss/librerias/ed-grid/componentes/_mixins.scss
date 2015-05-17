@@ -109,3 +109,79 @@
 	padding-bottom : $width * ($v/$h);
 }
 
+@mixin ed-boton(
+    $font-size: 1em, // Tamaño de fuente
+    $color: initial,  //Color del texto
+    $background: #eee, // Color de fondo
+    $hover: #ddd,  // Fondo para el botón en hover
+	$line-height: 2.5em, // Altura del botón
+    $border-radius: 0,  // Border radius
+    $border: 1px solid rgba(#000,.2),  // Estilo del borde
+    $padding: 1em  // Padding izquierdo y derecho
+	){
+	color         : $color;
+	display       : inline-block;
+	line-height   : $line-height;
+	background    : $background;
+	padding       : 0 $padding;
+	border        : $border;
+	border-radius : $border-radius;
+	font-size     : $font-size;
+	cursor        : pointer;
+	margin        : 1em;
+    &:hover{
+		background : $hover;
+		text-decoration: none !important;
+	}
+}
+
+@mixin abcenter($item){
+	position: relative;
+	#{$item},.#{$item} {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateY(-50%) translateX(-50%);
+		transform: -webkit-translateY(-50%) -webkit-translateX(-50%);
+		margin: auto !important;
+	}
+}
+
+@mixin vcenter($item){
+	position: relative;
+	#{$item},.#{$item} {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		transform: -webkit-translateY(-50%);
+		margin: auto !important;
+	}
+}
+
+@mixin limpiar {
+	&:before,&:after{
+		content: "";
+		width: 100%;
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin derecha($width:auto,$margin-left:1em){
+	float: right;
+	width: $width;
+	margin-left: $margin-left;
+}
+
+@mixin izquierda($width:auto,$margin-right:1em){
+	float: left;
+	width: $width;
+	margin-right: $margin-right;
+}
+
+@mixin centro($width:auto,$margin:auto){
+	display: table;
+	width: $width;
+	margin: $margin auto;
+}
+

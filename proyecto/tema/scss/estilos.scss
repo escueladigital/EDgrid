@@ -38,7 +38,7 @@
 		$h6--font-size : .8em;
 
 	// ESTIILOS DE ENLACES
-		$link--color : blue;  // color para los enlaces
+		$link--color : initial;  // color para los enlaces
 
 	// ESTILOS DE PÁRRAFOS
 		$p--font-size   : 1em; 			// Tamaño de fuente
@@ -53,7 +53,6 @@
 // Librerias
 	@import "librerias/normalize";
 	@import "librerias/ed-grid/ed-grid";
-	@import "librerias/ed-menu";
 
 // Base
 	@import "base/base";
