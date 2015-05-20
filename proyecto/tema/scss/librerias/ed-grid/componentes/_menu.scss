@@ -17,7 +17,7 @@
 		li {
 				position: relative;
 				&:hover {
-						background: rgba(#000, .1);
+						background: $hover;
 						a {
 							text-decoration: none !important;
 						}

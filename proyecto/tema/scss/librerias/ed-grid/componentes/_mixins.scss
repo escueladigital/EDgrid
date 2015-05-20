@@ -129,6 +129,7 @@
 	font-size     : $font-size;
 	cursor        : pointer;
 	margin        : 1em;
+	text-decoration: none;
     &:hover{
 		background : $hover;
 		text-decoration: none !important;

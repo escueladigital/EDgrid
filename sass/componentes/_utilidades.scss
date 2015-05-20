@@ -2,20 +2,24 @@
 	ESTILOS DE LAYOUT
 	==================
 */
-.centro, .centrar {
-	display: block;
-	clear: both;
-	float: none !important;
-	margin-right: auto !important;
+
+.centro,
+.centrar {
+    display: block;
+    clear: both;
+    float: none !important;
+    margin-right: auto !important;
     margin-left: auto !important;
 }
 
-.left, .izquierda {
-	float: left;
+.left,
+.izquierda {
+    float: left;
 }
 
-.right, .derecha {
-	float: right;
+.right,
+.derecha {
+    float: right;
 }
 
 .total {
@@ -25,18 +29,18 @@
 
 .centrar-texto,
 .centrar-contenido,
-.centro-contenido{
-	text-align: center;
+.centro-contenido {
+    text-align: center;
 }
 
 .izquierda-texto,
 .izquierda-contenido {
-	text-align: left ;
+    text-align: left;
 }
 
 .derecha-texto,
 .derecha-contenido {
-	text-align: right;
+    text-align: right;
 }
 
 .circulo {
@@ -51,29 +55,42 @@
         clear: both;
     }
 }
-
 /* 	NO PADDING
 	===========
 	class="no-padding" al grupo, le da padding cero a todas sus cajas.
 	class="no-padding" a la caja le da padding cero solo a ella
 */
+
 .no-padding.grupo > .caja,
 .caja.no-padding {
-	padding-left: 0 !important;
-	padding-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
-
 /* Controlar el padding*/
+
 .padding {
-	padding-left: ($caja--separacion / 2);
-	padding-right: ($caja--separacion / 2);
+    padding-left: ($caja--separacion / 2);
+    padding-right: ($caja--separacion / 2);
 }
 
 .padding-2 {
-	padding-left: $caja--separacion;
-	padding-right: $caja--separacion;
+    padding-left: $caja--separacion;
+    padding-right: $caja--separacion;
 }
+
 .padding-3 {
-	padding-left: $caja--separacion * 1.5;
-	padding-right: $caja--separacion * 1.5;
+    padding-left: $caja--separacion * 1.5;
+    padding-right: $caja--separacion * 1.5;
+}
+
+// Hacks para alinear icon fonts
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+    position: relative;
+    top: .15em;
+    display: inline-block
+}
+
+.espacio:before {
+    margin-right: .3em;
 }
