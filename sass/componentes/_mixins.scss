@@ -182,8 +182,9 @@
 	margin-right: $margin-right;
 }
 
-@mixin centro($width:auto,$margin:auto){
+@mixin centro($width:auto){
 	display: table;
 	width: $width;
-	margin: $margin auto;
+	margin-left: auto;
+	margin-right: auto;
 }

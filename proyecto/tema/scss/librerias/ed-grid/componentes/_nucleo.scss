@@ -36,7 +36,7 @@
 
 	.caja.total {
 		float   : none;
-		display : table;
+		width   : 100%;
 
         //Limpiar la caja total
 		&:before, &:after {
