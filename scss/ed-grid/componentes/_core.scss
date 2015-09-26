@@ -1,0 +1,80 @@
+// todo: v2. mixins ed-container() y ed-item() para aplicarlos donde se requiera
+/*
+  GRUPOS Y CAJAS
+  ==============
+  Los grupos son contenedores para las cajas.
+  Las cajas crean las divisiones en el grupo (columnas).
+  En ED GRID 1.2. los grupos son containers y las
+  cajas son items. Para crear un namespace se usan las
+  clases ed-container y ed-item. Se pueden seguir usando
+  las clases .grupo y .caja pero se desaconseja (en la v2 desaparecerán)
+*/
+.grupo,
+.ed-container {
+  display      : flex;
+  flex-wrap    : wrap;
+  max-width    : $max-width;
+  margin-left  : auto;
+  margin-right : auto;
+  width        : 100%;
+
+  &.total,
+  &.full {
+    max-width : 100%;
+  }
+}
+
+.caja,
+.ed-item {
+  margin        : 0;
+  padding-left  : $padding;
+  padding-right : $padding;
+  width         : 100%;
+}
+
+
+// Tamaños base en porcentajes
+@for $i from 1 through 20 {
+  .base-#{$i*5},
+  .caja.base-#{$i*5},
+  .ed-item.base-#{$i*5}{
+    width: unquote($i*5 + "%");
+  }
+}
+
+// Tamaños base en fracciones
+@each $fraccion-nombre, $fraccion in $fracciones{
+  @for $i from 1 through $fraccion{
+    .base-#{$i}-#{$fraccion},
+    .caja.base-#{$i}-#{$fraccion},
+    .ed-item.base-#{$i}-#{$fraccion}{
+      width: (100% / $fraccion) * $i;
+    }
+  }
+}
+
+
+// Breakpoints
+@each $size, $screen-size in $breakpoints{
+  // Loops para tamaños en porcentajes y fracciones
+  @media all and (min-width: $screen-size){
+    // Tamaños en porcentajes
+    @for $i from 1 through 20 {
+      .#{$size}-#{$i*5},
+      .caja.#{$size}-#{$i*5},
+      .ed-item.#{$size}-#{$i*5}{
+        width: unquote($i*5 + "%");
+      }
+    }
+    //Tamaño en fracciones
+    @each $fraccion-nombre, $fraccion in $fracciones{
+      @for $i from 1 through $fraccion{
+        .#{$size}-#{$i}-#{$fraccion},
+        .caja.#{$size}-#{$i}-#{$fraccion},
+        .ed-item.#{$size}-#{$i}-#{$fraccion}{
+          width: (100% / $fraccion) * $i;
+        }
+      }
+    }
+  }
+}

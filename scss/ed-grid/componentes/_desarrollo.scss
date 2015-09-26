@@ -1,0 +1,131 @@
+/*ESTILOS PARA DESARROLLO
+========================
+Añada la clase "desarrollo"
+a <body> para tener ayudas al trabajar con ED GRID
+*/
+
+body.desarrollo {
+  margin: 0 !important;
+  &:before {
+    // Estilos para el mensaje en el top del body
+    background: steelblue;
+    color: #fff;
+    // Estilos de fuente
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 36px;
+    text-align: center;
+    // Layout y caja
+    display: block;
+    height: 36px;
+    margin-bottom: 30px;
+    // Poner el mensaje por sobre cualquier elemento
+    position: relative;
+    z-index: 900;
+  }
+  .grupo,
+  .ed-container {
+    // El padding deja espacio para imprimir la clase
+    padding-top: 22px;
+    // Se separan los grupos para ver mejor el layout
+    margin-bottom: 10px;
+    // Identificar al grupo
+    outline: 1px solid tomato;
+    position: relative;
+    .caja,
+    .ed-item {
+      // Para dar position absolute a las clases que se imprimen
+      position: relative;
+      // Espacio inferior para imprimir las clases
+      padding-bottom: 22px;
+      // Colorear los pares de otro color para diferenciar las cajas
+      &:nth-child(even) {
+        background: rgba(steelblue, .2);
+      }
+    }
+    .grupo,
+    .ed-container {
+      // Grupos dentro de grupos
+      margin-bottom: 0;
+    }
+  }
+}
+
+.desarrollo .grupo:before,
+.desarrollo .ed-container:before,
+.desarrollo .grupo .caja:after,
+.desarrollo .ed-container .ed-item:after {
+  // Imprimir las clases
+  content: attr(class);
+  // Diseño
+  font-style: italic;
+  font-size: 12px;
+  font-weight: normal;
+  // Layout
+  padding: 0 5px;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  display: table;
+  width: 100%;
+  height: 22px;
+  line-height: 22px;
+}
+
+.desarrollo .grupo,
+.desarrollo .ed-container {
+  &:before {
+    background: rgba(tomato, .3);
+    color: tomato;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+
+.desarrollo .caja:after,
+.desarrollo .ed-item:after{
+  background: rgba(steelblue, .2);
+  color: steelblue;
+}
+
+.desarrollo .caja.total:after,
+.desarrollo .ed-item.total:after {
+  background: rgba(darken(steelblue, 30%), .3);
+}
+
+// Mensajes de desarrollo
+body.desarrollo:before {
+  content: "ED-GRID: Tamaño base";
+}
+
+// Loop para imprimir el mensaje de desarrollo basado en los breakpoints
+@each $size, $screen-size in $breakpoints {
+  @include desde($size) {
+    body.desarrollo:before {
+      content: "ED-GRID: Tamaño #{$size}, desde #{$screen-size}";
+    }
+  }
+}
+
+// Demostrar los grupos y cajas en tutoriales y documentación
+.grupo.demostrar,
+.ed-container.demostrar{
+  outline: 1px solid tomato;
+  margin: 1em auto;
+  & > .caja,
+  & > .ed-item {
+    background: #eee;
+    box-shadow: 0 0 0 1px steelblue;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    p {
+      margin-bottom: 0;
+    }
+    &:nth-child(odd) {
+      background: #ddd;
+    }
+  }
+}

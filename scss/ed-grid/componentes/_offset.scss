@@ -1,0 +1,22 @@
+// Definir offsets (los han pedido hace mucho)
+@each $size, $screen-size in $breakpoints{
+  // Loops para tamaños en porcentajes y fracciones
+  @media all and (min-width: $screen-size){
+    // Tamaños en porcentajes
+    @for $i from 1 through 20 {
+      .caja.#{$size}-offset-#{$i*5},
+      .ed-item.#{$size}-offset-#{$i*5}{
+        margin-left: unquote($i*5 + "%");
+      }
+    }
+    //Tamaño en fracciones
+    @each $fraccion-nombre, $fraccion in $fracciones{
+      @for $i from 1 through $fraccion{
+        .caja.#{$size}-offset-#{$i}-#{$fraccion},
+        .ed-item.#{$size}-offset-#{$i}-#{$fraccion}{
+          margin-left: (100% / $fraccion) * $i;
+        }
+      }
+    }
+  }
+}

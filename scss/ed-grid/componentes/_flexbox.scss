@@ -1,0 +1,87 @@
+// todo: las clases de alineacion (como justify, top, bottom etc) deben poder aplicarse a un item unico o a todo un container para que se herede en todos sus items.
+
+// Orden de los items
+// usar clases del tipo .size-order-n
+// donde size es un tamaño de ed-grid y n es cualquier entero del 1 al 10.
+@each $size, $screen-size in $breakpoints{
+  @media screen and (min-width: $screen-size){
+    @for $i from 1 through 10 {
+      .#{$size}-order-#{$i} {
+        order: $i;
+      }
+    }
+  }
+}
+
+// Alineación del contenido o de los hijos
+// Se aplican al contenedor
+.column,
+.column-reverse,
+.abcenter,
+.justify,
+.distribute,
+.main-start,
+.main-center,
+.main-end,
+.cross-start,
+.cross-center,
+.cross-end {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// Alineacion en el main axis
+.justify {
+  justify-content: space-between;
+}
+
+.distribute,
+.distributed {
+  justify-content: space-around;
+}
+
+.main-center {
+  justify-content: center;
+}
+
+.main-start {
+  justify-content: flex-start;
+}
+
+.main-end {
+  justify-content: flex-end;
+}
+
+// Alineación en el cross axis
+.cross-start {
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.cross-center {
+  align-items: center;
+  align-content: center;
+}
+
+.cross-end {
+  align-items: flex-end;
+  align-content: flex-end;
+}
+
+// Orientación del container
+.reverse {
+  flex-direction: row-reverse;
+}
+.column {
+  flex-direction: column;
+}
+.column-reverse {
+  flex-direction: column-reverse;
+}
+
+// Centrado absoluto (vertical y horizontal)
+.abcenter {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

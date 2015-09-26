@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "ed-grid";
+  src:url("../fonts/ed-grid.eot");
+  src:url("../fonts/ed-grid.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/ed-grid.woff") format("woff"),
+    url("../fonts/ed-grid.ttf") format("truetype"),
+    url("../fonts/ed-grid.svg#ed-grid") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "ed-grid", sans-serif !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  //-moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "ed-grid",sans-serif !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  //-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-youtube:before {
+  content: "a";
+}
+.icon-twitter:before {
+  content: "b";
+}
+.icon-facebook:before {
+  content: "c";
+}
+.icon-linkedin:before {
+  content: "d";
+}
+.icon-pinterest:before {
+  content: "e";
+}
+.icon-instagram:before {
+  content: "f";
+}
+.icon-rss:before {
+  content: "g";
+}
+.icon-github:before {
+  content: "h";
+}
+.icon-izquierda:before {
+  content: "i";
+}
+.icon-derecha:before {
+  content: "j";
+}
+.icon-arriba:before {
+  content: "k";
+}
+.icon-abajo:before {
+  content: "l";
+}
+.icon-triangulo-izquierda:before {
+  content: "m";
+}
+.icon-triangulo-derecha:before {
+  content: "n";
+}
+.icon-triangulo-arriba:before {
+  content: "p";
+}
+.icon-aceptar:before {
+  content: "q";
+}
+.icon-triangulo-abajo:before {
+  content: "o";
+}
+.icon-telefono:before {
+  content: "r";
+}
+.icon-android:before {
+  content: "s";
+}
+.icon-apple:before {
+  content: "t";
+}
+.icon-bitcoin:before {
+  content: "u";
+}
+.icon-fecha:before {
+  content: "v";
+}
+.icon-camara:before {
+  content: "w";
+}
+.icon-tarjeta:before {
+  content: "x";
+}
+.icon-pin:before {
+  content: "y";
+}
+.icon-cerrar:before {
+  content: "z";
+}
+.icon-whatsapp:before {
+  content: "A";
+}
+.icon-vimeo:before {
+  content: "B";
+}
+.icon-menu:before {
+  content: "C";
+}
+.icon-menu-secundario:before {
+  content: "D";
+}
+.icon-correo:before {
+  content: "E";
+}
+.icon-ed:before {
+  content: "F";
+}
+.icon-google-plus:before {
+  content: "G";
+}
+.icon-carrito:before {
+  content: "H";
+}
+.icon-usuario:before {
+  content: "I";
+}
+.icon-enlace:before {
+  content: "J";
+}
+.icon-portafolio:before {
+  content: "K";
+}
+.icon-mastercard:before {
+  content: "L";
+}
+.icon-paypal:before {
+  content: "M";
+}
+.icon-visa:before {
+  content: "N";
+}
+.icon-buscar:before {
+  content: "O";
+}

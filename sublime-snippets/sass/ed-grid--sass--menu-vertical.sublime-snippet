@@ -1,9 +1,0 @@
-<snippet>
-	<content><![CDATA[
-@include menu-vertical(${1:fondo},${2:color},${3:altura},${4:ancho},${5:padding});
-]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>menuv</tabTrigger>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<scope>source.sass</scope>
-</snippet>
