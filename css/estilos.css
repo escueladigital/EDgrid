@@ -1034,30 +1034,6 @@ a {
   }
 }
 
-.grid {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-  margin-left: -0.5em;
-  margin-right: -0.5em;
-}
-
-.grid > grid-item, .grid > .grid-item {
-  width: -webkit-calc(20% - 1em);
-  width: calc(20% - 1em);
-  margin: 0.5em;
-}
-
-.grid-item {
-  background: lightblue;
-  text-align: center;
-  padding: 0 1em;
-}
-
 /*ESTILOS PARA DESARROLLO
 ========================
 Añada la clase "desarrollo"
