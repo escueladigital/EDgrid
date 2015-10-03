@@ -103,6 +103,7 @@
 // Se aplica al contendor de la cuadricula. 
 // Los parámetros son el selector de cada item y el número de columnas
 // El tercer parámetro (opcional) es la separacion entre columnas (no son validos los porcentajes)
+// todo: clases del tipo size-grid-n para poder crear grids por clases (no solo por sass) de preferencia en un archivo aparte para que lo desactiven quienes van a usar solo sass
 
 @function item-width($width,$separacion){
   @return calc(#{$width} - #{$separacion});
