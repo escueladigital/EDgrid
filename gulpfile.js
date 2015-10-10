@@ -37,7 +37,7 @@ gulp.task('connect', function() {
 });
 
 gulp.task('watch', ['css', 'html'], function () {
-  gulp.watch('./scss/**/styles.scss', ['css']);
+  gulp.watch('./scss/**/*.scss', ['css']);
   gulp.watch('./jade/**/*.jade', ['html']);
 });
 
