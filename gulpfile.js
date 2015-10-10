@@ -12,7 +12,7 @@ gulp.task('css', function () {
     autoprefixer({ browsers: ['last 2 versions'] })
   ];
 
-  return gulp.src('./scss/*.scss')
+  return gulp.src('./scss/styles.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss(processors))
     .pipe(gulp.dest('./css'))
@@ -37,7 +37,7 @@ gulp.task('connect', function() {
 });
 
 gulp.task('watch', ['css', 'html'], function () {
-  gulp.watch('./scss/**/*.scss', ['css']);
+  gulp.watch('./scss/**/styles.scss', ['css']);
   gulp.watch('./jade/**/*.jade', ['html']);
 });
 
