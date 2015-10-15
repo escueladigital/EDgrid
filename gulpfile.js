@@ -3,12 +3,13 @@
 /**
  * Dependencias
  */
-var gulp = require('gulp');
-var postcss = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-var sass = require('gulp-sass');
-var jade = require('gulp-jade');
-var connect = require('gulp-connect');
+var gulp = require('gulp'),
+    plumber = require('gulp-plumber'),
+    postcss = require('gulp-postcss'),
+    autoprefixer = require('autoprefixer'),
+    sass = require('gulp-sass'),
+    jade = require('gulp-jade'),
+    connect = require('gulp-connect');
 
 /**
  * Variable de entorno.
@@ -31,6 +32,7 @@ gulp.task('sass', function () {
 
   return gulp.src('./scss/*.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(plumber())
     .pipe(postcss(processors))
     .pipe(gulp.dest('./css'))
     .pipe(connect.reload());
@@ -43,6 +45,7 @@ gulp.task('sass', function () {
  */
 gulp.task('jade', function() {
   gulp.src('./jade/*.jade')
+    .pipe(plumber())
     .pipe(jade({
       pretty: true
     }))
