@@ -1,8 +1,8 @@
 // todo: estrategia para subniveles en moviles
 
-// Por defecto el menú es vertical. Se debe añadir la clase
+// Por defecto el menÃº es vertical. Se debe aÃ±adir la clase
 // .tablet-horizontal o .web-horizontal para definir a partir
-// de qué tamaño será horizontal
+// de quÃ© tamaÃ±o serÃ¡ horizontal
 .ed-menu {
   // resetear los estilos de menu principal y submenus
   &,ul{
@@ -23,7 +23,7 @@
     display: none;
   }
 
-  // Igualar tamaño de los <a> a su contenedor <li>
+  // Igualar tamaÃ±o de los <a> a su contenedor <li>
   a {
     display: block;
     width: 100%;
@@ -31,7 +31,7 @@
     padding: 0 1em;
   }
 
-  // Estilo predeterminado (añadiendo la clase .default)
+  // Estilo predeterminado (aÃ±adiendo la clase .default)
   &.default {
     background: #eee;
     li {
@@ -42,7 +42,7 @@
         background: rgba(#000,.1);
       }
     }
-    // submenús
+    // submenÃºs
     ul {
       background: darken(#eee,5);
     }
@@ -50,14 +50,14 @@
       color: #666;
     }
   }
-  // Estilo barra de navegación (con la clase .nav-bar)
+  // Estilo barra de navegaciÃ³n (con la clase .nav-bar)
   &.nav-bar {
     // hereda todas las propiedades de .default
     @extend .default;
     $border: 1px solid rgba(#000,.1);
     border: $border;
-    // Bordes inferiores a los <li> menos el último
-    // porque el menú es vertical
+    // Bordes inferiores a los <li> menos el Ãºltimo
+    // porque el menÃº es vertical
     li {
       border-bottom: $border;
       &:last-child {
@@ -65,7 +65,7 @@
       }
     }
 
-    // Submenús
+    // SubmenÃºs
     ul {
       border: $border;
       li {
@@ -76,7 +76,7 @@
       }
     }
   }
-  // Estilo barra de botones (añadiendo la clase .button-bar)
+  // Estilo barra de botones (aÃ±adiendo la clase .button-bar)
   &.button-bar {
     li {
       margin-bottom: .5em;
@@ -98,7 +98,7 @@
   }
 }
 
-// Mixin para crear menús horizontales según tamaños
+// Mixin para crear menÃºs horizontales segÃºn tamaÃ±os
 @mixin menu-horizontal($size) {
   @include from($size){
     display: flex;
@@ -115,30 +115,30 @@
     a {
       text-align: center;
     }
-    // Submenús
+    // SubmenÃºs
     ul {
       position: absolute;
       top: 100%;
       min-width: 10em;
       ul {
-        // Posición de los sub-sub menús
+        // Posicion de los sub-sub menÃºs
         top: 0;
         left: 100%;
       }
     }
-    // Mostrar los submenús
+    // Mostrar los submenus
     li:hover > ul{
       display: block;
     }
   }
 }
 
-// Menú horizontal desde tablet
+// MenÃº horizontal desde tablet
 .tablet-horizontal {
   @include menu-horizontal(tablet)
 }
 
-// Menú horizontal desde web
-&.web-horizontal {
+// Menu horizontal desde web
+.web-horizontal {
   @include menu-horizontal(web)
 }
