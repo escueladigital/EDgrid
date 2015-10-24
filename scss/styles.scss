@@ -53,13 +53,13 @@
   $p--font-weight : $normal;    // Grosor predeterminado de la fuente
 
 
-// Compile este archivo en ../css/estilos.css
+// Compile este archivo en ../css/styles.css
 // Importe en este archivo los partials de css de su proyecto
 
 // Importar ed grid
   @import "ed-grid/ed-grid";
 
-// Base
+// Base (estilos para los elementos html, sin clases ni id)
   @import "base/base";
 
 // Tema. Los componentes básicos de cualquier proyecto
@@ -67,6 +67,7 @@
   @import "tema/header";
   @import "tema/footer";
   @import "tema/main";
+  @import "tema/aside";
 
-// Modulos. Los estilos propios construidos para el proyecto
+// Modulos. Los componentes que se repiten en varias partes del proyecto
   @import "modulos/modulos";
