@@ -103,8 +103,14 @@
 // Se aplica al contendor de la cuadricula. 
 // Los parámetros son el selector de cada item y el número de columnas
 // El tercer parámetro (opcional) es la separacion entre columnas (no son validos los porcentajes)
+// todo: clases del tipo size-grid-n para poder crear grids por clases (no solo por sass) de preferencia en un archivo aparte para que lo desactiven quienes van a usar solo sass
+
+@function item-width($width,$separacion){
+  @return calc(#{$width} - #{$separacion});
+}
 
 @mixin cuadricula($items, $columnas, $separacion:1em){
+  $width: 100% / $columnas;
   display: flex;
   flex-wrap: wrap;
   margin-left: -($separacion / 2);
@@ -120,20 +126,14 @@
       margin-left: 0;
     }
   }
-  @function item-width(){
-    $width: 100% / $columnas;
-    @return calc(#{$width} - #{$separacion});
-  }
-
-  @include from(base){
-    & > #{$items}, & > .#{$items}{
-      width  : item-width();
-      margin : $separacion / 2;
-    }
+  & > #{$items}, & > .#{$items}{
+    width  : item-width($width,$separacion);
+    margin : $separacion / 2;
   }
 }
 
 @mixin grid($items, $columnas, $separacion:1em){
+  $width: 100% / $columnas;
   display: flex;
   flex-wrap: wrap;
   margin-left: -($separacion / 2);
@@ -149,29 +149,13 @@
       margin-left: 0;
     }
   }
-  @function item-width(){
-    $width: 100% / $columnas;
-    @return calc(#{$width} - #{$separacion});
-  }
 
   & > #{$items}, & > .#{$items}{
-    width  : item-width();
+    width  : item-width($width,$separacion);
     margin : $separacion / 2;
   }
 
 }
-
-.grid {
-    @include grid(grid-item,5);
-
-  &-item {
-    background: lightblue;
-    text-align: center;
-    padding: 0 1em;
-  }
-}
-
-
 
 // Mixin para controlar el padding
 // El parámetro es por cuanto se va a multiplicar el padding base.
