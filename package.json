@@ -1,12 +1,13 @@
 {
   "name": "ed-grid",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Framework de CSS puro para crear diseños web responsive y mobile first.",
   "author": "Alvaro Felipe <informes@escueladigital.pe>",
   "contributors": [
     {
       "name": "Daniel Guillermo Romero Gelvez",
-      "email": "danielromeroauk@gmail.com"
+      "email": "danielromeroauk@gmail.com",
+      "url": "http://adsiar.com"
     }
   ],
   "repository": {
@@ -17,13 +18,13 @@
     "url": "https://github.com/escueladigital/ED-GRID/issues"
   },
   "devDependencies": {
-    "autoprefixer": "^6.1.1",
+    "autoprefixer": "^6.2.1",
+    "browser-sync": "^2.10.1",
     "gulp": "^3.9.0",
-    "gulp-connect": "^2.2.0",
     "gulp-jade": "^1.1.0",
     "gulp-plumber": "^1.0.1",
     "gulp-postcss": "^6.0.1",
-    "gulp-sass": "^2.0.4"
+    "gulp-sass": "^2.1.1"
   },
   "license": "ISC"
 }

@@ -38,8 +38,7 @@ a {
   margin-left: auto;
   margin-right: auto;
   width: 100%; }
-  .grupo.total,
-  .grupo.full,
+  .grupo.total, .grupo.full,
   .ed-container.total,
   .ed-container.full {
     max-width: 100%; }
@@ -1034,9 +1033,9 @@ body.desarrollo:before {
 .circle {
   border-radius: 50%; }
 
-.limpiar:before,
-.limpiar:after,
-.clearfix:before, .clearfix:after {
+.limpiar:before, .limpiar:after,
+.clearfix:before,
+.clearfix:after {
   content: "";
   display: table;
   width: 100%;
@@ -2728,8 +2727,7 @@ p, blockquote, li {
 
 p {
   margin: 0 0 1em 0; }
-  p:last-child,
-  p:only-child {
+  p:last-child, p:only-child {
     margin: 0; }
 
 h1, h2, h3, h4, h5, h6 {
