@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     autoprefixer = require('autoprefixer'),
     sass = require('gulp-sass'),
     jade = require('gulp-jade'),
-    connect = require('gulp-connect');
+    browserSync = require('browser-sync').create();
 
 /**
  * Variable de entorno.
@@ -17,7 +17,7 @@ var gulp = require('gulp'),
  * de las tareas watch, un ejemplo de uso sería:
  * PORT=8080 gulp watch:all
  */
- var PORT = process.env.PORT || 7070;
+var PORT = process.env.PORT || 7070;
 
 
 /**
@@ -26,16 +26,16 @@ var gulp = require('gulp'),
  * Los archivos CSS generados se guardan en la carpeta `css/`.
  */
 gulp.task('sass', function () {
-  var processors = [
-    autoprefixer({ browsers: ['last 2 versions'] })
-  ];
+    var processors = [
+        autoprefixer({browsers: ['last 2 versions']})
+    ];
 
-  return gulp.src('./scss/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(plumber())
-    .pipe(postcss(processors))
-    .pipe(gulp.dest('./css'))
-    .pipe(connect.reload());
+    return gulp.src('./scss/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(plumber())
+        .pipe(postcss(processors))
+        .pipe(gulp.dest('./css'))
+        .pipe(browserSync.stream());
 });
 
 
@@ -43,14 +43,14 @@ gulp.task('sass', function () {
  * Compila los archivos jade hijos directos de la carpeta `jade/`.
  * Los archivos HTML generados se guardan en la carpeta raíz del proyecto.
  */
-gulp.task('jade', function() {
-  gulp.src('./jade/*.jade')
-    .pipe(plumber())
-    .pipe(jade({
-      pretty: true
-    }))
-    .pipe(gulp.dest('./'))
-    .pipe(connect.reload());
+gulp.task('jade', function () {
+    return gulp.src('./jade/*.jade')
+        .pipe(plumber())
+        .pipe(jade({
+            pretty: true
+        }))
+        .pipe(gulp.dest('./'))
+        .on('end', browserSync.reload);
 });
 
 
@@ -59,49 +59,76 @@ gulp.task('jade', function() {
  * Creado para quienes no usen Jade.
  */
 gulp.task('html', function () {
-  gulp.src('./*.html')
-    .pipe(connect.reload());
+    browserSync.reload();
+});
+
+/**
+ * Recarga el navegador
+ */
+gulp.task('js', function () {
+    browserSync.reload('*.js');
 });
 
 
 /**
- * Crea un servidor local livereload
+ * Crea un servidor local
  * http://localhost:7070
  */
-gulp.task('connect', function() {
-  connect.server({
-    // root: '.',
-    port: PORT,
-    livereload: true
-  });
+gulp.task('browser-sync', function () {
+    browserSync.init({
+        port: PORT,
+        server: {
+            baseDir: "./"
+        },
+        ui: {
+            port: PORT + 1
+        }
+    });
 });
 
 
 /**
- * Ejecuta las tareas connect y sass, queda escuchando los cambios de todos
+ * Ejecuta la tarea sass y queda escuchando los cambios de todos
  * los archivos Sass de la carpeta `scss/` y subcarpetas.
  */
-gulp.task('watch:sass', ['connect', 'sass'], function () {
-  gulp.watch('./scss/**/*.scss', ['sass']);
+gulp.task('watch:sass', function () {
+    browserSync.watch('./scss/**/*.scss').on('change', function () {
+        gulp.start('sass');
+    });
 });
 
 
 /**
- * Ejecuta las tareas connect y jade, queda escuchando los cambios de todos
+ * Ejecuta la tarea jade y queda escuchando los cambios de todos
  * los archivos jade de la carpeta `jade/` y subcarpetas.
  */
-gulp.task('watch:jade', ['connect', 'jade'], function () {
-  gulp.watch('./jade/**/*.jade', ['jade']);
+gulp.task('watch:jade', function () {
+    browserSync.watch('./jade/**/*.jade').on('change', function () {
+        gulp.start('jade');
+    });
 });
 
 
 /**
- * Ejecuta las tareas connect y html, queda escuchando los cambios de todos
+ * Ejecuta la tarea html y queda escuchando los cambios de todos
  * los archivos HTML de la carpeta raíz del proyecto.
  * Creado para quienes no usen Jade.
  */
-gulp.task('watch:html', ['connect', 'html'], function () {
-  gulp.watch('./*.html', ['html']);
+gulp.task('watch:html', function () {
+    browserSync.watch('./*.html').on('change', function () {
+        gulp.start('html');
+    });
+});
+
+
+/**
+ * Ejecuta la tarea js y queda escuchando los cambios de todos
+ * los archivos Javascript.
+ */
+gulp.task('watch:js', function () {
+    browserSync.watch('./js/**/*.js').on('change', function () {
+        gulp.start('js');
+    });
 });
 
 
@@ -113,9 +140,14 @@ gulp.task('watch:html-sass', ['watch:html', 'watch:sass']);
 
 
 /**
- * Ejecuta las tareas watch:sass y watch:jade.
+ * Ejecuta las tareas browser-sync, watch:sass, watch:jade y watch:js.
  */
-gulp.task('watch:all', ['watch:sass', 'watch:jade']);
+gulp.task('watch:all', function () {
+    gulp.start('browser-sync');
+    gulp.start('watch:sass');
+    gulp.start('watch:jade');
+    gulp.start('watch:js');
+});
 
 
 /**
