@@ -1970,10 +1970,10 @@ class="no-padding" a la caja le da padding cero solo a ella
             flex-wrap: wrap; } }
 
 .cross-end {
-  -ms-grid-row-align: flex-end;
--webkit-align-items: flex-end;
-    -ms-flex-align: end;
-        align-items: flex-end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+              -ms-grid-row-align: flex-end;
+          align-items: flex-end;
   -webkit-align-content: flex-end;
       -ms-flex-line-pack: end;
           align-content: flex-end; }
@@ -2213,10 +2213,10 @@ class="no-padding" a la caja le da padding cero solo a ella
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-grid-row-align: center;
--webkit-align-items: center;
-    -ms-flex-align: center;
-        align-items: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+              -ms-grid-row-align: center;
+          align-items: center;
   text-align: center; }
 
 @media all and (min-width: 480px) {
