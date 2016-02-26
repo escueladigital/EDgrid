@@ -45,3 +45,4 @@ prepros.cfg
 .idea
 
 node_modules/
+npm-debug.log
