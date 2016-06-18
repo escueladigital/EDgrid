@@ -10,7 +10,7 @@
   clases ed-container y ed-item. Se pueden seguir usando
   las clases .grupo y .caja pero se desaconseja (en la v2 desaparecerán)
 */
-.grupo,
+
 .#{$container} {
   display      : flex;
   flex-wrap    : wrap;
@@ -19,13 +19,11 @@
   margin-right : auto;
   width        : 100%;
 
-  &.total,
   &.full {
     max-width : 100%;
   }
 }
 
-.caja,
 .#{$item} {
   margin        : 0;
   padding-left  : $padding;
@@ -37,7 +35,6 @@
 // Base sizes in percentages
 @for $i from 1 through 20 {
   .base-#{$i*5},
-  .caja.base-#{$i*5},
   .#{$item}.base-#{$i*5}{
     width: percentage($i * 0.05);
   }
@@ -47,7 +44,6 @@
 @each $fraction in $fractions{
   @for $i from 1 through $fraction{
     .base-#{$i}-#{$fraction},
-    .caja.base-#{$i}-#{$fraction},
     .#{$item}.base-#{$i}-#{$fraction}{
       width: (100% / $fraction) * $i;
     }
@@ -62,7 +58,6 @@
     // Tamaños en porcentajes
     @for $i from 1 through 20 {
       .#{$size}-#{$i*5},
-      .caja.#{$size}-#{$i*5},
       .#{$item}.#{$size}-#{$i*5}{
         width: unquote($i*5 + "%");
       }
@@ -71,7 +66,6 @@
     @each $fraction in $fractions{
       @for $i from 1 through $fraction{
         .#{$size}-#{$i}-#{$fraction},
-        .caja.#{$size}-#{$i}-#{$fraction},
         .#{$item}.#{$size}-#{$i}-#{$fraction}{
           width: (100% / $fraction) * $i;
         }
