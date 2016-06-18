@@ -68,9 +68,9 @@ class="no-padding" a la caja le da padding cero solo a ella
 */
 
 .no-padding.grupo > .caja,
-.no-padding.ed-container > .ed-item,
+.no-padding.#{$container} > .#{$item},
 .caja.no-padding,
-.ed-item.no-padding {
+.#{$item}.no-padding {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }

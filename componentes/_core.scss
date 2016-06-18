@@ -1,4 +1,5 @@
 // todo: v2. mixins ed-container() y ed-item() para aplicarlos donde se requiera
+// todo: los selectores ed-container y ed-item en variables para poderse modificar
 /*
   GRUPOS Y CAJAS
   ==============
@@ -10,7 +11,7 @@
   las clases .grupo y .caja pero se desaconseja (en la v2 desaparecerán)
 */
 .grupo,
-.ed-container {
+.#{$container} {
   display      : flex;
   flex-wrap    : wrap;
   max-width    : $max-width;
@@ -25,7 +26,7 @@
 }
 
 .caja,
-.ed-item {
+.#{$item} {
   margin        : 0;
   padding-left  : $padding;
   padding-right : $padding;
@@ -33,22 +34,22 @@
 }
 
 
-// Tamaños base en porcentajes
+// Base sizes in percentages
 @for $i from 1 through 20 {
   .base-#{$i*5},
   .caja.base-#{$i*5},
-  .ed-item.base-#{$i*5}{
+  .#{$item}.base-#{$i*5}{
     width: percentage($i * 0.05);
   }
 }
 
 // Tamaños base en fracciones
-@each $fraccion in $fracciones{
-  @for $i from 1 through $fraccion{
-    .base-#{$i}-#{$fraccion},
-    .caja.base-#{$i}-#{$fraccion},
-    .ed-item.base-#{$i}-#{$fraccion}{
-      width: (100% / $fraccion) * $i;
+@each $fraction in $fractions{
+  @for $i from 1 through $fraction{
+    .base-#{$i}-#{$fraction},
+    .caja.base-#{$i}-#{$fraction},
+    .#{$item}.base-#{$i}-#{$fraction}{
+      width: (100% / $fraction) * $i;
     }
   }
 }
@@ -62,17 +63,17 @@
     @for $i from 1 through 20 {
       .#{$size}-#{$i*5},
       .caja.#{$size}-#{$i*5},
-      .ed-item.#{$size}-#{$i*5}{
+      .#{$item}.#{$size}-#{$i*5}{
         width: unquote($i*5 + "%");
       }
     }
     //Tamaño en fracciones
-    @each $fraccion-nombre, $fraccion in $fracciones{
-      @for $i from 1 through $fraccion{
-        .#{$size}-#{$i}-#{$fraccion},
-        .caja.#{$size}-#{$i}-#{$fraccion},
-        .ed-item.#{$size}-#{$i}-#{$fraccion}{
-          width: (100% / $fraccion) * $i;
+    @each $fraction in $fractions{
+      @for $i from 1 through $fraction{
+        .#{$size}-#{$i}-#{$fraction},
+        .caja.#{$size}-#{$i}-#{$fraction},
+        .#{$item}.#{$size}-#{$i}-#{$fraction}{
+          width: (100% / $fraction) * $i;
         }
       }
     }
