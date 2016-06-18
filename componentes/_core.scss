@@ -38,7 +38,7 @@
   .base-#{$i*5},
   .caja.base-#{$i*5},
   .ed-item.base-#{$i*5}{
-    width: unquote($i*5 + "%");
+    width: percentage($i * 0.05);
   }
 }
 
