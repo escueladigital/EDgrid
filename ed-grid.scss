@@ -1,13 +1,15 @@
-// VARIABLES DE ED GRID
+// ED GRID
+// Desde este archivo podrá modificar los componentes y valores
+// por defecto de ed-grid
 
 // flex-container y flex-item
-$container: row;
-$item: column;
+$container: ed-container;
+$item: ed-item;
 
-// Ancho máximo de cada grupo
+// Ancho máximo de cada container
 $max-width: 1200px;
 
-// Separación entre cajas
+// Separación entre items
 $padding: 15px;
 
 // Tamaños. Puede editar los nombres y las
