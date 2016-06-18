@@ -1,4 +1,8 @@
-// todo: las clases de alineacion (como justify, top, bottom etc) deben poder aplicarse a un item unico o a todo un container para que se herede en todos sus items.
+/*
+todo: las clases de alineacion (como justify, top, bottom etc) deben poder
+aplicarse a un item unico o a todo_ un container para que se herede en
+todos sus items.
+*/
 
 // Orden de los items
 // usar clases del tipo .size-order-n
@@ -180,6 +184,7 @@
 
 // Centrado absoluto (vertical y horizontal)
 .abcenter {
+  display : flex;
   justify-content: center;
   align-items: center;
   text-align: center;

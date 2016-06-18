@@ -850,32 +850,20 @@ body.desarrollo {
     margin-bottom: 30px;
     position: relative;
     z-index: 900; }
-  body.desarrollo .grupo,
   body.desarrollo .row {
     padding-top: 22px;
     margin-bottom: 10px;
     outline: 1px solid tomato;
     position: relative; }
-    body.desarrollo .grupo .caja,
-    body.desarrollo .grupo .column,
-    body.desarrollo .row .caja,
     body.desarrollo .row .column {
       position: relative;
       padding-bottom: 22px; }
-      body.desarrollo .grupo .caja:nth-child(even),
-      body.desarrollo .grupo .column:nth-child(even),
-      body.desarrollo .row .caja:nth-child(even),
       body.desarrollo .row .column:nth-child(even) {
         background: rgba(70, 130, 180, 0.2); }
-    body.desarrollo .grupo .grupo,
-    body.desarrollo .grupo .row,
-    body.desarrollo .row .grupo,
     body.desarrollo .row .row {
       margin-bottom: 0; }
 
-.desarrollo .grupo:before,
 .desarrollo .row:before,
-.desarrollo .grupo .caja:after,
 .desarrollo .row .column:after {
   content: attr(class);
   font-style: italic;
@@ -891,7 +879,6 @@ body.desarrollo {
   height: 22px;
   line-height: 22px; }
 
-.desarrollo .grupo:before,
 .desarrollo .row:before {
   background: rgba(255, 99, 71, 0.3);
   color: tomato;
@@ -899,12 +886,10 @@ body.desarrollo {
   left: 0;
   width: 100%; }
 
-.desarrollo .caja:after,
 .desarrollo .column:after {
   background: rgba(70, 130, 180, 0.2);
   color: steelblue; }
 
-.desarrollo .caja.total:after,
 .desarrollo .column.total:after {
   background: rgba(27, 50, 70, 0.3); }
 
@@ -927,25 +912,18 @@ body.desarrollo:before {
   body.desarrollo:before {
     content: "ED-GRID: Tamaño hd, desde 1400px"; } }
 
-.grupo.demostrar,
 .row.demostrar {
   outline: 1px solid tomato;
   margin: 1em auto; }
-  .grupo.demostrar > .caja,
-  .grupo.demostrar > .column,
   .row.demostrar > .caja,
   .row.demostrar > .column {
     background: #eee;
     box-shadow: 0 0 0 1px steelblue;
     padding-top: 1em;
     padding-bottom: 1em; }
-    .grupo.demostrar > .caja p,
-    .grupo.demostrar > .column p,
     .row.demostrar > .caja p,
     .row.demostrar > .column p {
       margin-bottom: 0; }
-    .grupo.demostrar > .caja:nth-child(odd),
-    .grupo.demostrar > .column:nth-child(odd),
     .row.demostrar > .caja:nth-child(odd),
     .row.demostrar > .column:nth-child(odd) {
       background: #ddd; }
@@ -990,47 +968,38 @@ body.desarrollo:before {
   .to-hd {
     display: none !important; } }
 
-.centro,
-.centrar,
 .center {
   display: block;
   clear: both;
   margin-right: auto !important;
   margin-left: auto !important; }
 
-.left,
-.izquierda {
+.left {
   float: left; }
 
-.right,
-.derecha {
+.right {
   float: right; }
 
-.total,
 .full {
   width: 100%;
   clear: both; }
 
-.centrar-texto,
 .center-text,
 .text-center {
   text-align: center; }
 
-.izquierda-texto,
-.izquierda-contenido {
+.left-text,
+.text-left {
   text-align: left; }
 
-.derecha-texto,
-.derecha-contenido {
+.right-text,
+.text-right {
   text-align: right; }
 
-.circulo,
 .circle {
   border-radius: 50%; }
 
-.limpiar:before, .limpiar:after,
-.clearfix:before,
-.clearfix:after {
+.clearfix:before, .clearfix:after {
   content: "";
   display: table;
   width: 100%;
@@ -1041,9 +1010,7 @@ body.desarrollo:before {
 class="no-padding" al grupo, le da padding cero a todas sus cajas.
 class="no-padding" a la caja le da padding cero solo a ella
 */
-.no-padding.grupo > .caja,
 .no-padding.row > .column,
-.caja.no-padding,
 .column.no-padding {
   padding-left: 0 !important;
   padding-right: 0 !important; }
@@ -1335,6 +1302,11 @@ class="no-padding" a la caja le da padding cero solo a ella
 .icon-buscar:before {
   content: "O"; }
 
+/*
+todo: las clases de alineacion (como justify, top, bottom etc) deben poder
+aplicarse a un item unico o a todo_ un container para que se herede en
+todos sus items.
+*/
 @media screen and (min-width: 480px) {
   .movil-order-1 {
     order: 1; }
@@ -1759,6 +1731,7 @@ class="no-padding" a la caja le da padding cero solo a ella
     flex-wrap: wrap; } }
 
 .abcenter {
+  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center; }

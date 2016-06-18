@@ -23,7 +23,7 @@ $breakpoints: (
 $fractions: 3 6 8;
 
 // Por favor desactive los que no vaya a usar para mejorar el rendimiento
-// Para hacerlo solo comente la linea correspondiente escribiendo doble slash al inicio
+
 @import "componentes/base";        // Estilos básicos para RWD
 @import "componentes/core";        // Núcleo de ED GRID, grupos y cajas
 @import "componentes/mixins";      // Mixins ED GRID

@@ -24,7 +24,6 @@ body.desarrollo {
     position: relative;
     z-index: 900;
   }
-  .grupo,
   .#{$container} {
     // El padding deja espacio para imprimir la clase
     padding-top: 22px;
@@ -33,7 +32,6 @@ body.desarrollo {
     // Identificar al grupo
     outline: 1px solid tomato;
     position: relative;
-    .caja,
     .#{$item} {
       // Para dar position absolute a las clases que se imprimen
       position: relative;
@@ -44,7 +42,6 @@ body.desarrollo {
         background: rgba(steelblue, .2);
       }
     }
-    .grupo,
     .#{$container} {
       // Grupos dentro de grupos
       margin-bottom: 0;
@@ -52,9 +49,7 @@ body.desarrollo {
   }
 }
 
-.desarrollo .grupo:before,
 .desarrollo .#{$container}:before,
-.desarrollo .grupo .caja:after,
 .desarrollo .#{$container} .#{$item}:after {
   // Imprimir las clases
   content: attr(class);
@@ -74,7 +69,6 @@ body.desarrollo {
   line-height: 22px;
 }
 
-.desarrollo .grupo,
 .desarrollo .#{$container} {
   &:before {
     background: rgba(tomato, .3);
@@ -85,13 +79,11 @@ body.desarrollo {
   }
 }
 
-.desarrollo .caja:after,
 .desarrollo .#{$item}:after{
   background: rgba(steelblue, .2);
   color: steelblue;
 }
 
-.desarrollo .caja.total:after,
 .desarrollo .#{$item}.total:after {
   background: rgba(darken(steelblue, 30%), .3);
 }
@@ -111,7 +103,6 @@ body.desarrollo:before {
 }
 
 // Demostrar los grupos y cajas en tutoriales y documentación
-.grupo.demostrar,
 .#{$container}.demostrar{
   outline: 1px solid tomato;
   margin: 1em auto;
