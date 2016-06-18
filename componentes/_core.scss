@@ -43,7 +43,7 @@
 }
 
 // Tamaños base en fracciones
-@each $fraccion-nombre, $fraccion in $fracciones{
+@each $fraccion in $fracciones{
   @for $i from 1 through $fraccion{
     .base-#{$i}-#{$fraccion},
     .caja.base-#{$i}-#{$fraccion},
