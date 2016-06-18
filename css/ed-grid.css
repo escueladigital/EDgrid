@@ -32,7 +32,7 @@ a {
   margin-left: auto;
   margin-right: auto;
   width: 100%; }
-  .ed-container.total, .ed-container.full {
+  .ed-container.full {
     max-width: 100%; }
 
 .ed-item {
