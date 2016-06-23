@@ -1,6 +1,4 @@
 // ESTILOS DE LAYOUT
-.centro,
-.centrar,
 .center {
     display: block;
     clear: both;
@@ -8,51 +6,43 @@
     margin-left: auto !important;
 }
 
-.left,
-.izquierda {
+.left {
     float: left;
 }
 
-.right,
-.derecha {
+.right{
     float: right;
 }
 
-.total,
 .full {
     width: 100%;
     clear: both;
 }
 
-
-
 // Las clases de alineaciones de texto siguientes
 // serán eliminadas en la v2. Se recomienda usar
 // las clases basadas en flexbox
-  .centrar-texto,
+
   .center-text,
   .text-center {
     text-align: center;
   }
 
-  .izquierda-texto,
-  .izquierda-contenido {
+  .left-text,
+  .text-left {
       text-align: left;
   }
 
-  .derecha-texto,
-  .derecha-contenido {
+  .right-text,
+  .text-right {
       text-align: right;
   }
 
 
-
-.circulo,
 .circle {
     border-radius: 50%;
 }
 
-.limpiar,
 .clearfix {
   &:before, &:after {
     content: "";
@@ -67,15 +57,13 @@ class="no-padding" al grupo, le da padding cero a todas sus cajas.
 class="no-padding" a la caja le da padding cero solo a ella
 */
 
-.no-padding.grupo > .caja,
-.no-padding.ed-container > .ed-item,
-.caja.no-padding,
-.ed-item.no-padding {
+.no-padding.#{$container} > .#{$item},
+.#{$item}.no-padding {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
-/* Controlar el padding*/
 
+/* Controlar el padding*/
 .padding {
   padding-left: $padding;
   padding-right: $padding;

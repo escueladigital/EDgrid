@@ -1,4 +1,4 @@
-// Botones, el mixin button recibe tres par�metros (todos opcionales)
+// Botones, el mixin button recibe tres parametros (todos opcionales)
 // color de fondo, color de texto, estilo (round o radius)
 @mixin button($bg-color: #ddd,$front-color: #333,$style: default){
   display: inline-block;
@@ -23,7 +23,7 @@
 }
 
 // Aplicar el mixin button()
-// Puede aplicarlo a otras clases o crear variaciones con par�metros
+// Puede aplicarlo a otras clases o crear variaciones con parametros
 .boton, .button, button {
   @include button();
   &.round {
@@ -33,29 +33,3 @@
     @include button($bg-color: #ddd,$front-color: #333,$style: round);
   }
 }
-
-// todo: crear un map de los colores sociales y un mixin con los parámetros que permita escoger los colores del map o definir tus propios colores. Además de personalizar el estilo (vertical, redondo, cuadrado, etc.)
-// .ed-social {
-//   display: table;
-//   a {
-//     display: inline-block;
-//     color: rgba(#fff,.7);
-//     line-height: 1;
-//   }
-//   &.circle,
-//   &.square{
-//     a {
-//       background: rgba(#000,.5);
-//       padding: .4em;
-//       margin: .3em;
-//       &:hover {
-//         background: rgba(#000,.5);
-//       }
-//     }
-//   }
-//   &.circle {
-//     a:before {
-//       border-radius: 50%;
-//     }
-//   }
-// }

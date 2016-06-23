@@ -5,16 +5,16 @@
     // Tamaños en porcentajes
     @for $i from 1 through 20 {
       .caja.#{$size}-offset-#{$i*5},
-      .ed-item.#{$size}-offset-#{$i*5}{
+      .#{$item}.#{$size}-offset-#{$i*5}{
         margin-left: unquote($i*5 + "%");
       }
     }
     //Tamaño en fracciones
-    @each $fraccion-nombre, $fraccion in $fracciones{
-      @for $i from 1 through $fraccion{
-        .caja.#{$size}-offset-#{$i}-#{$fraccion},
-        .ed-item.#{$size}-offset-#{$i}-#{$fraccion}{
-          margin-left: (100% / $fraccion) * $i;
+    @each $fraction in $fractions{
+      @for $i from 1 through length($fractions){
+        .caja.#{$size}-offset-#{$i}-#{$fraction},
+        .#{$item}.#{$size}-offset-#{$i}-#{$fraction}{
+          margin-left: (100% / $fraction) * $i;
         }
       }
     }
