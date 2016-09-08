@@ -56,12 +56,15 @@
   // Loops para tamaños en porcentajes y fracciones
   @media all and (min-width: $screen-size){
     // Tamaños en porcentajes
+    // Los tamaños no solo se aplican a los ed-items sino a cualquier elemento
+    // Se incluye el selector .ed-item por especificidad
     @for $i from 1 through 20 {
       .#{$size}-#{$i*5},
       .#{$item}.#{$size}-#{$i*5}{
         width: unquote($i*5 + "%");
       }
     }
+
     //Tamaño en fracciones
     @each $fraction in $fractions{
       @for $i from 1 through $fraction{
