@@ -100,7 +100,7 @@
 }
 
 // Mixins para cuadriculas
-// Se aplica al contendor de la cuadricula. 
+// Se aplica al contendor de la cuadricula.
 // Los parámetros son el selector de cada item y el número de columnas
 // El tercer parámetro (opcional) es la separacion entre columnas (no son validos los porcentajes)
 // todo: clases del tipo size-grid-n para poder crear grids por clases (no solo por sass) de preferencia en un archivo aparte para que lo desactiven quienes van a usar solo sass
@@ -160,12 +160,12 @@
 // Mixin para controlar el padding
 // El parámetro es por cuanto se va a multiplicar el padding base.
 @mixin padding($numero){
-  padding-left: $padding * $numero;
-  padding-right: $padding * $numero;
+  padding-left: $gutter * $numero;
+  padding-right: $gutter * $numero;
 }
 
 // Mixin para proporcion de aspecto, se le pasan tres parámetros
-// Horizontal, Vertical y Ancho. Este ultimo es opcional, si no 
+// Horizontal, Vertical y Ancho. Este ultimo es opcional, si no
 // se pasa, se tomará el 100% de ancho por defecto.
 @mixin proporcion($h,$v,$width:100%){
   width          : $width;

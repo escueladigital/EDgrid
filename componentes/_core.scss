@@ -26,8 +26,8 @@
 
 .#{$item} {
   margin        : 0;
-  padding-left  : $padding;
-  padding-right : $padding;
+  padding-left  : $gutter;
+  padding-right : $gutter;
   width         : 100%;
 }
 

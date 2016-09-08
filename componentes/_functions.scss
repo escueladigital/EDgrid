@@ -1,0 +1,15 @@
+@function em($el,$context:16px) {
+  @if type_of($el) == number and unit($el) == 'px' {
+    @return ($el / $context) * 1em;
+  } @else {
+    @error 'Function em() requires a px unit as first argument'
+  }
+}
+
+@function rem($el) {
+  @if type_of($el) == number and unit($el) == 'px' {
+    @return ($el / 16px) * 1em;
+  } @else {
+    @error 'Function em() requires a px unit as first argument'
+  }
+}

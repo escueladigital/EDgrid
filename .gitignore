@@ -46,3 +46,5 @@ prepros.cfg
 
 node_modules/
 npm-debug.log
+
+gulpfile.js

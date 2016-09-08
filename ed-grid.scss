@@ -1,30 +1,28 @@
-// ED GRID
-// Desde este archivo podrá modificar los componentes y valores
-// por defecto de ed-grid
+// todo: Revisar SassDocs
 
-// flex-container y flex-item
+@import "componentes/functions";
+
+// flex-container and flex-item
+// You can set your own names for container and items
 $container: ed-container;
 $item: ed-item;
 
-// Ancho máximo de cada container
-$max-width: 1200px;
+// Max width of containers
+$max-width: rem(1200px);
 
-// Separación entre items
-$padding: 15px;
+// Gutter between same line items
+// Total gutter between items is $gutter * 2
+$gutter : em(15px);
 
-// Tamaños. Puede editar los nombres y las
-// medidas, añadir más o quitar.
-// todo: crear funcion para convertir px a em y usarla aqui
+// Breakpoints
 $breakpoints: (
-  movil  : 480px,
-  tablet : 768px,
-  web    : 1024px,
-  hd     : 1400px
+  movil  : em(480px),
+  tablet : em(768px),
+  web    : em(1024px),
+  hd     : em(1400px)
 );
 
 $fractions: 3 6 8;
-
-// Por favor desactive los que no vaya a usar para mejorar el rendimiento
 
 @import "componentes/base";        // Estilos básicos para RWD
 @import "componentes/core";        // Núcleo de ED GRID, grupos y cajas
