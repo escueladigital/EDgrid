@@ -109,35 +109,12 @@
   @return calc(#{$width} - #{$separacion});
 }
 
-@mixin cuadricula($items, $columnas, $separacion:1em){
-  $width: 100% / $columnas;
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -($separacion / 2);
-  margin-right: -($separacion / 2);
-
-  // por si el contenedor es un ul
-  @if $items == li {
-    margin     : 0;
-    padding    : 0;
-    list-style : none;
-
-    li {
-      margin-left: 0;
-    }
-  }
-  & > #{$items}, & > .#{$items}{
-    width  : item-width($width,$separacion);
-    margin : $separacion / 2;
-  }
-}
-
 @mixin grid($items, $columnas, $separacion:1em){
-  $width: 100% / $columnas;
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -($separacion / 2);
-  margin-right: -($separacion / 2);
+  $width       : 100% / $columnas;
+  display      : flex;
+  flex-wrap    : wrap;
+  margin-left  : -($separacion / 2);
+  margin-right : -($separacion / 2);
 
   // por si el contenedor es un ul
   @if $items == li {
@@ -160,14 +137,15 @@
 // Mixin para controlar el padding
 // El parámetro es por cuanto se va a multiplicar el padding base.
 @mixin padding($numero){
-  padding-left: $gutter * $numero;
-  padding-right: $gutter * $numero;
+  padding-left  : $gutter * $numero;
+  padding-right : $gutter * $numero;
 }
 
 // Mixin para proporcion de aspecto, se le pasan tres parámetros
 // Horizontal, Vertical y Ancho. Este ultimo es opcional, si no
 // se pasa, se tomará el 100% de ancho por defecto.
-@mixin proporcion($h,$v,$width:100%){
+@mixin proporcion($h,$v) {
+  $width         : 100%;
   width          : $width;
   height         : 0;
   overflow       : hidden;
@@ -176,28 +154,28 @@
 
 @mixin limpiar {
   &:before,&:after{
-    content: "";
-    width: 100%;
-    display: table;
-    clear: both;
+    content : "";
+    width   : 100%;
+    display : table;
+    clear   : both;
   }
 }
 
-@mixin derecha($width:auto,$margin-left:1em){
-  float: right;
-  width: $width;
-  margin-left: $margin-left;
+@mixin right($width:auto,$margin-left:1em){
+  float       : right;
+  width       : $width;
+  margin-left : $margin-left;
 }
 
-@mixin izquierda($width:auto,$margin-right:1em){
-  float: left;
-  width: $width;
-  margin-right: $margin-right;
+@mixin left($width:auto,$margin-right:1em){
+  float        : left;
+  width        : $width;
+  margin-right : $margin-right;
 }
 
 @mixin centro($width:auto){
-  display: table;
-  width: $width;
-  margin-left: auto;
-  margin-right: auto;
+  display      : table;
+  width        : $width;
+  margin-left  : auto;
+  margin-right : auto;
 }
