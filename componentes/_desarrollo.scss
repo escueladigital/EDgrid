@@ -4,6 +4,10 @@ Añada la clase "desarrollo"
 a <body> para tener ayudas al trabajar con ED GRID
 */
 
+// todo: revisar
+// todo: fixed al mensaje de la parte superior en modo desarrollo
+// todo: activar el modo desarrollo con una variable en true no solo con el html
+
 body.desarrollo {
   margin: 0 !important;
   &:before {
