@@ -1,45 +1,14 @@
-// todo: revisar que mixins ya no son útiles en la nueva versión con flexbox
-
-// Mixins para media queries
-// El parámetro es el nombre del breakpoint
-
-@mixin hasta($size){
-  @if map-has-key($breakpoints,$size){
-  // Si el parámetro es el nombre de un tamaño, se extrae desde el map
-    @media screen and (max-width: map-get($breakpoints,$size) - 1){
-      @content;
-    }
-  } @else {
-  // Si el parámetro no existe en el map, se toma su valor para construir la media query
-    @media screen and (max-width: $size){
-      @content;
-    }
-  }
-}
+// todo: añadir debuggin con @error a los mixins de breakpoints
 
 @mixin to($size){
   @if map-has-key($breakpoints,$size){
-    // Si el parámetro es el nombre de un tamaño, se extrae desde el map
+  // Si el parámetro es el nombre de un tamaño, se extrae desde el map
     @media screen and (max-width: map-get($breakpoints,$size) - 1){
       @content;
     }
   } @else {
-    // Si el parámetro no existe en el map, se toma su valor para construir la media query
-    @media screen and (max-width: $size){
-      @content;
-    }
-  }
-}
-
-@mixin desde($size){
-  @if map-has-key($breakpoints,$size){
-  // Si el parámetro es el nombre de un tamaño, se extrae desde el map
-    @media screen and (min-width: map-get($breakpoints,$size)){
-      @content;
-    }
-  } @else {
   // Si el parámetro no existe en el map, se toma su valor para construir la media query
-    @media screen and (min-width: $size){
+    @media screen and (max-width: $size){
       @content;
     }
   }
@@ -47,38 +16,19 @@
 
 @mixin from($size){
   @if map-has-key($breakpoints,$size){
-    // Si el parámetro es el nombre de un tamaño, se extrae desde el map
+  // Si el parámetro es el nombre de un tamaño, se extrae desde el map
     @media screen and (min-width: map-get($breakpoints,$size)){
       @content;
     }
   } @else {
-    // Si el parámetro no existe en el map, se toma su valor para construir la media query
+  // Si el parámetro no existe en el map, se toma su valor para construir la media query
     @media screen and (min-width: $size){
       @content;
     }
   }
 }
 
-@mixin desde-hasta($desde,$hasta){
-  @if map-has-key($breakpoints,$desde) and map-has-key($breakpoints,$hasta){
-    @media screen and (min-width: map-get($breakpoints,$desde)) and (max-width: map-get($breakpoints,$hasta) - 1){
-      @content;
-    }
-  } @else if map-has-key($breakpoints,$desde) and not map-has-key($breakpoints,$hasta){
-    @media screen and (min-width: map-get($breakpoints,$desde)) and (max-width: $hasta) {
-      @content;
-    }
-  } @else if not map-has-key($breakpoints,$desde) and map-has-key($breakpoints,$hasta) {
-    @media screen and (min-width: $desde) and (max-width: map-get($breakpoints,$hasta) - 1){
-      @content;
-    }
-  } @else {
-    @media screen and (min-width: $desde) and (max-width: $hasta){
-      @content;
-    }
-  }
-}
-
+// todo: testear este mixin
 @mixin from-to($desde,$hasta){
   @if map-has-key($breakpoints,$desde) and map-has-key($breakpoints,$hasta){
     @media screen and (min-width: map-get($breakpoints,$desde)) and (max-width: map-get($breakpoints,$hasta) - 1){
@@ -105,16 +55,18 @@
 // El tercer parámetro (opcional) es la separacion entre columnas (no son validos los porcentajes)
 // todo: clases del tipo size-grid-n para poder crear grids por clases (no solo por sass) de preferencia en un archivo aparte para que lo desactiven quienes van a usar solo sass
 
-@function item-width($width,$separacion){
-  @return calc(#{$width} - #{$separacion});
+@function item-width($width,$gutter){
+  @return calc(#{$width} - #{$gutter});
 }
 
-@mixin grid($items, $columnas, $separacion:1em){
-  $width       : 100% / $columnas;
+// todo: debugging (sobre todo_ para indicar que el primer parámetro debe ser entrecomillado)
+
+@mixin grid($items, $columns, $gutter:1em){
+  $width       : 100% / $columns;
   display      : flex;
   flex-wrap    : wrap;
-  margin-left  : -($separacion / 2);
-  margin-right : -($separacion / 2);
+  margin-left  : -($gutter / 2);
+  margin-right : -($gutter / 2);
 
   // por si el contenedor es un ul
   @if $items == li {
@@ -124,14 +76,14 @@
 
     li {
       margin-left: 0;
+      list-style: none;
     }
   }
 
-  & > #{$items}, & > .#{$items}{
-    width  : item-width($width,$separacion);
-    margin : $separacion / 2;
+  & > #{$items} {
+    width  : item-width($width,$gutter);
+    margin : $gutter / 2;
   }
-
 }
 
 // Mixin para controlar el padding
@@ -144,7 +96,7 @@
 // Mixin para proporcion de aspecto, se le pasan tres parámetros
 // Horizontal, Vertical y Ancho. Este ultimo es opcional, si no
 // se pasa, se tomará el 100% de ancho por defecto.
-@mixin proporcion($h,$v) {
+@mixin ratio($h,$v) {
   $width         : 100%;
   width          : $width;
   height         : 0;
@@ -152,8 +104,9 @@
   padding-bottom : $width * ($v/$h);
 }
 
-@mixin limpiar {
-  &:before,&:after{
+@mixin clearfix {
+  &:before,
+  &:after {
     content : "";
     width   : 100%;
     display : table;
@@ -161,19 +114,23 @@
   }
 }
 
-@mixin right($width:auto,$margin-left:1em){
+
+// Self-aligning mixins
+// todo: Revisar si se quedan o se remplazan con flexbox
+
+@mixin toRight($width:auto,$margin-left:1em){
   float       : right;
   width       : $width;
   margin-left : $margin-left;
 }
 
-@mixin left($width:auto,$margin-right:1em){
+@mixin toLeft($width:auto,$margin-right:1em){
   float        : left;
   width        : $width;
   margin-right : $margin-right;
 }
 
-@mixin centro($width:auto){
+@mixin toCenter($width:auto){
   display      : table;
   width        : $width;
   margin-left  : auto;
