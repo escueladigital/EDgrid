@@ -1,4 +1,4 @@
-@mixin edContainer {
+%ed-container {
   display      : flex;
   flex-wrap    : wrap;
   max-width    : $max-width;
@@ -7,16 +7,25 @@
   width        : 100%;
 }
 
+%ed-item {
+  margin        : 0;
+  padding-left  : $gutter;
+  padding-right : $gutter;
+}
+
+@mixin edContainer {
+  @extend %ed-container;
+
+  @if $devMode == true {
+    @include devModeContainer();
+  }
+}
+
 @mixin full {
   max-width : 100%;
 }
 
-// calcular el ancho de un editem por breakpoint
-// comparando si se han pasado los parametros
-// y si es menor que 1 (fraccion)
 @mixin edItemWidth($currentBp, $prevBp, $coreBp){
-  // solo aplica si el breakpoint actual se ha especificado
-  // es decir, si es diferente del previo
   @if $currentBp != $prevBp{
     @if $currentBp < 1 {
       @include from($coreBp){
@@ -32,9 +41,11 @@
 }
 
 @mixin edItem($s:100,$m:$s,$l:$m,$xl:$l) {
-  margin        : 0;
-  padding-left  : $gutter;
-  padding-right : $gutter;
+  @extend %ed-item;
+
+  @if $devMode == true {
+    @include devModeItem();
+  }
 
   // fractions detection (>1)
   // detectar si se pasó una fraccion (>1)
@@ -51,10 +62,18 @@
   @include edItemWidth($xl,$l,xl); //xlarge
 }
 
-.#{$item} {
-  @include edItem();
+.#{$container} {
+  @include edContainer();
 }
 
+.#{$item} {
+  @include edItem();
+
+  &.#{$container}{
+    padding-left : 0;
+    padding-right : 0;
+  }
+}
 
 // Breakpoints
 @mixin coreGrid(){
@@ -80,3 +99,5 @@
     }
   }
 }
+
+@include coreGrid();
