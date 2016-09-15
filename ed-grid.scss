@@ -15,11 +15,11 @@ $max-width: rem(1200px);
 $gutter : em(15px);
 
 // Breakpoints
-$breakpoints: (
-  movil  : em(480px),
-  tablet : em(768px),
-  web    : em(1024px),
-  hd     : em(1400px)
+$breakpoints : (
+  s  : em(320px),
+  m  : em(640px),
+  l  : em(1024px),
+  xl : em(1440px)
 );
 
 $fractions: 3 6 8;
