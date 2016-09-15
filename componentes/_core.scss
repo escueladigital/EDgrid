@@ -31,7 +31,7 @@
   }
 }
 
-@mixin edItem($s:100%,$m:$s,$l:$m,$xl:$l) {
+@mixin edItem($s:100,$m:$s,$l:$m,$xl:$l) {
   margin        : 0;
   padding-left  : $gutter;
   padding-right : $gutter;
@@ -57,22 +57,24 @@
 
 
 // Breakpoints
-@each $size, $screen-size in $breakpoints{
-  // porcentajes
-  @media all and (min-width: $screen-size){
-    @for $i from 1 through 20 {
-      .#{$size}-#{$i*5},
-      .#{$item}.#{$size}-#{$i*5}{
-        width: unquote($i*5 + "%");
+@mixin coreGrid(){
+  @each $size, $screen-size in $breakpoints{
+    // porcentajes
+    @media all and (min-width: $screen-size){
+      @for $i from 1 through 20 {
+        .#{$size}-#{$i*5},
+        .#{$item}.#{$size}-#{$i*5}{
+          width: unquote($i*5 + "%");
+        }
       }
-    }
 
-    // fracciones
-    @each $fraction in $fractions{
-      @for $i from 1 through $fraction{
-        .#{$size}-#{$i}-#{$fraction},
-        .#{$item}.#{$size}-#{$i}-#{$fraction}{
-          width: (100% / $fraction) * $i;
+      // fracciones
+      @each $fraction in $fractions{
+        @for $i from 1 through $fraction{
+          .#{$size}-#{$i}-#{$fraction},
+          .#{$item}.#{$size}-#{$i}-#{$fraction}{
+            width: (100% / $fraction) * $i;
+          }
         }
       }
     }
