@@ -1,5 +1,6 @@
 // Botones, el mixin button recibe tres parametros (todos opcionales)
 // color de fondo, color de texto, estilo (round o radius)
+// todo: revisar completamente esto
 @mixin button($bg-color: #ddd,$front-color: #333,$style: default){
   display: inline-block;
   line-height: 2.5em;

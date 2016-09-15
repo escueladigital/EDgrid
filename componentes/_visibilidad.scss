@@ -1,9 +1,10 @@
 // Visibilidad
 
 // Visibilidad desde $size
+// todo: Revisar
+// todo: mixins para agregarlos sin tocar el html
 @each $size, $screen-size in $breakpoints{
   @media screen and (max-width: $screen-size - 1){
-    .desde-#{$size},
     .from-#{$size}{
       display: none !important;
     }
@@ -13,7 +14,6 @@
 // Visibilidad hasta $size
 @each $size, $screen-size in $breakpoints{
   @media screen and (min-width: $screen-size){
-    .hasta-#{$size},
     .to-#{$size}{
       display: none !important;
     }

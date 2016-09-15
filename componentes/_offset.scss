@@ -1,3 +1,5 @@
+// todo: mixins para usarlo sin tocar html
+
 // Definir offsets (los han pedido hace mucho)
 @each $size, $screen-size in $breakpoints{
   // Loops para tamaños en porcentajes y fracciones
