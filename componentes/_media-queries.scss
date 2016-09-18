@@ -1,0 +1,119 @@
+@function isCoreBreakpoint($bp){
+  @if map-get($breakpoints,$bp) {
+    @return true
+  } @else {
+    @return false
+  }
+}
+
+@function isValidBreakpoint($bp){
+  @if type-of($bp) == number and (unit($bp) == 'px' or unit($bp) == 'em' or unit($bp) == 'rem') {
+    @return true
+  } @else {
+    @return false
+  }
+}
+
+@function getBreakpoint($bp){
+  @return map-get($breakpoints,$bp)
+}
+
+@function toPx($value){
+  @if type-of($value) == number {
+    @if unit($value) == 'em'{
+      @return ($value / 1em) * 16px;
+    } @else if unit($value) == 'rem'{
+      @return ($value / 1rem) * 16px
+    } @else if unit($value) == 'px' {
+      @return $value;
+    } @else {
+      @error "La funcion toPx() solo acepta numeros en em o rem o px"
+    }
+  } @else {
+    @error "La funcion toPx() solo acepta numeros en em o rem"
+  }
+}
+
+
+@mixin from($from){
+  @if isCoreBreakpoint($from){
+    @media screen and (min-width: getBreakpoint($from)){
+      @content
+    }
+  } @else if isValidBreakpoint($from){
+    @media screen and (min-width: $from){
+      @content
+    }
+  } @else {
+    @error 'El mixin from() solo puede recibir un breakpoint del Core (#{map-keys($breakpoints)}) o un número en px, em o rem'
+  }
+}
+
+@mixin to($to){
+  @if isCoreBreakpoint($to){
+    @media screen and (max-width: getBreakpoint($to)){
+      @content
+    }
+  } @else if isValidBreakpoint($to){
+    @media screen and (max-width: $to){
+      @content
+    }
+  } @else {
+    @error 'El mixin to() solo puede recibir un breakpoint del Core (#{map-keys($breakpoints)}) o un número en px, em o rem'
+  }
+}
+
+@mixin fromTo($from,$to){
+  @if isCoreBreakpoint($from) and isCoreBreakpoint($to){
+    @if getBreakpoint($to) > getBreakpoint($from) {
+      @media screen and (min-width : getBreakpoint($from)) and (max-width : getBreakpoint($to)) {
+        @content
+      }
+    } @else {
+      @error "El segundo argumento del mixin fromTo debe ser mayor que el primero"
+    }
+  }
+
+  @else if isCoreBreakpoint($from) and not isCoreBreakpoint($to){
+    @if isValidBreakpoint($to) {
+      @if toPx($to) > toPx(getBreakpoint($from)) {
+        @media screen and (min-width : getBreakpoint($from)) and (max-width : $to) {
+          @content
+        }
+      } @else {
+        @error "El segundo argumento del mixin fromTo debe ser mayor que el primero"
+      }
+    } @else {
+      @error "El segundo argumento del mixin fromTo() debe ser un breakpoint del Core (#{map-keys($breakpoints)}) o un número en px, em o rem"
+    }
+  }
+
+  @else if not isCoreBreakpoint($from) and isCoreBreakpoint($to) {
+    @if isValidBreakpoint($from) {
+      @if toPx(getBreakpoint($to)) > toPx($from){
+        @media screen and (min-width : $from) and (max-width : getBreakpoint($to)) {
+          @content
+        }
+      } @else {
+        @error "El segundo argumento del mixin fromTo debe ser mayor que el primero"
+      }
+    }
+    @else {
+      @error "El primer argumento del mixin fromTo() debe ser un breakpoint del Core (#{map-keys($breakpoints)}) o un número en px, em o rem"
+    }
+  }
+
+  @else if isValidBreakpoint($from) and isValidBreakpoint($to){
+    @if toPx($to) > toPx($from) {
+      @media screen and (min-width : $from) and (max-width : $to) {
+        @content
+      }
+    } @else {
+      @error "El segundo argumento del mixin fromTo debe ser mayor que el primero"
+    }
+  }
+
+  @else {
+    @error 'Los argumentos del mixin fromTo() deben ser breakpoints del Core (#{map-keys($breakpoints)}) o números en px, em o rem';
+  }
+}
