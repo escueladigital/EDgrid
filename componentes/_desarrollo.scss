@@ -1,142 +1,92 @@
 
 // todo: forma de añadirlo con la clase .dev en body
-// todo: revisar la maquetacion
+
+// altura de los pseudoelementos que imprimiran clases
+$infoHeight: rem(20px);
+$devMode : false !default;
+$infoFontSize: $infoHeight * 0.6;
+
+%info {
+  content: attr(class);
+  font-style: italic;
+  font-size: $infoFontSize;
+  font-weight: normal;
+
+  z-index: 1;
+  right: 0;
+  position: absolute;
+
+  display: table;
+  width: 100%;
+  padding: 0 em(5px);
+  height: $infoHeight;
+  line-height: $infoHeight;
+}
 
 @mixin devModeContainer{
-  // El padding deja espacio para imprimir la clase
-  padding-top: 22px;
-  // Se separan los grupos para ver mejor el layout
+  padding-top: $infoHeight;
   margin-bottom: 10px;
-  // Identificar al grupo
   outline: 1px solid tomato;
   position: relative;
 
   .#{$container} {
-    // Grupos dentro de grupos
     margin-bottom: 0;
   }
 
   &:before {
-    content: attr(class);
-    // Diseño
-    font-style: italic;
-    font-size: 12px;
-    font-weight: normal;
-    // Layout
-    padding: 0 5px;
-    z-index: 1;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    display: table;
-    width: 100%;
-    height: 22px;
-    line-height: 22px;
-  }
-
-  &:before {
+    @extend %info;
+    top: 0;
     background: rgba(tomato, .3);
     color: tomato;
-    top: 0;
-    left: 0;
-    width: 100%;
   }
-
-
 }
 
 @mixin devModeItem {
-  // Para dar position absolute a las clases que se imprimen
   position: relative;
-  // Espacio inferior para imprimir las clases
-  padding-bottom: 22px;
-  // Colorear los pares de otro color para diferenciar las cajas
+  padding-bottom: $infoHeight;
+  background-color: rgba(yellow,.3);
+  background-clip: content-box;
 
-  &:nth-child(even) {
-    background: rgba(steelblue, .2);
+  &:before {
+    @extend %info;
+    background: rgba(steelblue, .8);
+    color: #fff;
+    bottom : 0;
   }
 
-  &:after{
-    background: rgba(steelblue, .2);
+  &:nth-child(even):before{
+    background: rgba(steelblue, .4);
     color: steelblue;
   }
-
-  &.full:after {
-    background: rgba(darken(steelblue, 30%), .3);
-  }
-
-  &:after {
-    // Imprimir las clases
-    content: attr(class);
-    // Diseño
-    font-style: italic;
-    font-size: 12px;
-    font-weight: normal;
-    // Layout
-    padding: 0 5px;
-    z-index: 1;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    display: table;
-    width: 100%;
-    height: 22px;
-    line-height: 22px;
-  }
 }
 
-$devMode : false !default;
 @mixin devMode(){
-  @if $devMode == true {
-    body {
-      margin: 0 !important;
+  margin: 0 !important;
+  position : relative;
+  top : 66px;
+
+  &:before {
+    @extend %info;
+    position : fixed;
+    background: steelblue;
+    color: #fff;
+    font-size : $infoHeight * 0.7;
+    text-align: center;
+    line-height: 36px;
+    height: 36px;
+  }
+
+  @each $size, $screen-size in $breakpoints {
+    @include from($size) {
       &:before {
-        // Estilos para el mensaje en el top del body
-        background: steelblue;
-        color: #fff;
-        // Estilos de fuente
-        font-family: sans-serif;
-        line-height: 36px;
-        text-align: center;
-        // Layout y caja
-        display: block;
-        height: 36px;
-        margin-bottom: 30px;
-        // Poner el mensaje por sobre cualquier elemento
-        position: relative;
-        z-index: 900;
-      }
-
-    }
-
-    // Loop para imprimir el mensaje de dev basado en los breakpoints
-    @each $size, $screen-size in $breakpoints {
-      @include from($size) {
-        body:before {
-          content: "ed-grid: size #{$size}, from #{$screen-size} (ed-containers: red, ed-items: blue)";
-        }
-      }
-    }
-
-    // Demostrar los grupos y cajas en tutoriales y documentación
-    .#{$container}.demostrar{
-      outline: 1px solid tomato;
-      margin: 1em auto;
-      & > .caja,
-      & > .#{$item} {
-        background: #eee;
-        box-shadow: 0 0 0 1px steelblue;
-        padding-top: 1em;
-        padding-bottom: 1em;
-        p {
-          margin-bottom: 0;
-        }
-        &:nth-child(odd) {
-          background: #ddd;
-        }
+        content: "ed-grid: size #{$size}, from #{$screen-size} (ed-containers: red, ed-items: blue, yellow)";
       }
     }
   }
 }
 
-@include devMode();
+@if $devMode == true {
+  body {
+    @include devMode();
+  }
+}
