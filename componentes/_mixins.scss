@@ -1,101 +1,23 @@
-// todo: añadir debuggin con @error a los mixins de breakpoints
-
-@mixin to($size){
-  @if map-has-key($breakpoints,$size){
-  // Si el parámetro es el nombre de un tamaño, se extrae desde el map
-    @media screen and (max-width: map-get($breakpoints,$size) - 1){
-      @content;
-    }
-  } @else {
-  // Si el parámetro no existe en el map, se toma su valor para construir la media query
-    @media screen and (max-width: $size){
-      @content;
-    }
-  }
-}
-
-@mixin from($size){
-  @if map-has-key($breakpoints,$size){
-  // Si el parámetro es el nombre de un tamaño, se extrae desde el map
-    @media screen and (min-width: map-get($breakpoints,$size)){
-      @content;
-    }
-  } @else {
-  // Si el parámetro no existe en el map, se toma su valor para construir la media query
-    @media screen and (min-width: $size){
-      @content;
-    }
-  }
-}
-
-// todo: testear este mixin
-@mixin from-to($desde,$hasta){
-  @if map-has-key($breakpoints,$desde) and map-has-key($breakpoints,$hasta){
-    @media screen and (min-width: map-get($breakpoints,$desde)) and (max-width: map-get($breakpoints,$hasta) - 1){
-      @content;
-    }
-  } @else if map-has-key($breakpoints,$desde) and not map-has-key($breakpoints,$hasta){
-    @media screen and (min-width: map-get($breakpoints,$desde)) and (max-width: $hasta) {
-      @content;
-    }
-  } @else if not map-has-key($breakpoints,$desde) and map-has-key($breakpoints,$hasta) {
-    @media screen and (min-width: $desde) and (max-width: map-get($breakpoints,$hasta) - 1){
-      @content;
-    }
-  } @else {
-    @media screen and (min-width: $desde) and (max-width: $hasta){
-      @content;
-    }
-  }
-}
-
-// Mixins para cuadriculas
-// Se aplica al contendor de la cuadricula.
-// Los parámetros son el selector de cada item y el número de columnas
-// El tercer parámetro (opcional) es la separacion entre columnas (no son validos los porcentajes)
-// todo: clases del tipo size-grid-n para poder crear grids por clases (no solo por sass) de preferencia en un archivo aparte para que lo desactiven quienes van a usar solo sass
-
-@function item-width($width,$gutter){
-  @return calc(#{$width} - #{$gutter});
-}
-
-// todo: debugging (sobre todo_ para indicar que el primer parámetro debe ser entrecomillado)
-
-@mixin grid($items, $columns, $gutter:1em){
-  $width       : 100% / $columns;
-  display      : flex;
-  flex-wrap    : wrap;
-  margin-left  : -($gutter / 2);
-  margin-right : -($gutter / 2);
-
-  // por si el contenedor es un ul
-  @if $items == li {
-    margin     : 0;
-    padding    : 0;
-    list-style : none;
-
-    li {
-      margin-left: 0;
-      list-style: none;
-    }
-  }
-
-  & > #{$items} {
-    width  : item-width($width,$gutter);
-    margin : $gutter / 2;
-  }
-}
-
-// Mixin para controlar el padding
-// El parámetro es por cuanto se va a multiplicar el padding base.
-@mixin padding($numero){
+@mixin padding($numero:1){
   padding-left  : $gutter * $numero;
   padding-right : $gutter * $numero;
 }
 
-// Mixin para proporcion de aspecto, se le pasan tres parámetros
-// Horizontal, Vertical y Ancho. Este ultimo es opcional, si no
-// se pasa, se tomará el 100% de ancho por defecto.
+%noPadding {
+  padding-left  : 0;
+  padding-right : 0;
+}
+
+@mixin noPadding(){
+  @extend %noPadding;
+}
+
+@mixin noPaddingContainer(){
+  > .#{$item} {
+    @extend %noPadding;
+  }
+}
+
 @mixin ratio($h,$v) {
   $width         : 100%;
   width          : $width;
@@ -114,10 +36,6 @@
   }
 }
 
-
-// Self-aligning mixins
-// todo: Revisar si se quedan o se remplazan con flexbox
-
 @mixin toRight($width:auto,$margin-left:1em){
   float       : right;
   width       : $width;
@@ -135,4 +53,68 @@
   width        : $width;
   margin-left  : auto;
   margin-right : auto;
+}
+
+@mixin circle {
+  border-radius : 50%;
+}
+
+@mixin clearfix(){
+  &:before, &:after {
+    content: "";
+    display: table;
+    width: 100%;
+    clear: both;
+  }
+}
+
+@mixin full(){
+  width: 100%;
+  clear: both;
+}
+
+
+// Versiones CSS
+.to-center {
+  @include toCenter();
+}
+
+.to-left {
+  @include toLeft();
+}
+
+.to-right {
+  @include toRight();
+}
+
+.full {
+  @include full();
+}
+
+.circle {
+  @include circle();
+}
+
+.clearfix {
+  @include clearfix();
+}
+
+.no-padding.#{$container} {
+  @include noPaddingContainer();
+}
+
+.no-padding.#{$item}{
+  @include noPadding();
+}
+
+.padding {
+  @include padding();
+}
+
+.padding-2 {
+  @include padding(2)
+}
+
+.padding-3 {
+  @include padding(3)
 }
