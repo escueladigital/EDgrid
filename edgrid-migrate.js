@@ -1,8 +1,10 @@
 // todo: cambiar las clases movil, tablet, web, hd a s, m, l, xl
 
 var selectors = {
-  container: ['grupo','ed-container'],
-  item: ['caja','ed-item'],
+  grupo: ['grupo','edc'],
+  caja: ['caja','edi'],
+  edContainer: ['ed-container','edc'],
+  edItem: ['ed-item','edi'],
   total: ['total', 'full']
 };
 

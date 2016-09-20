@@ -1,37 +1,14 @@
-// todo: Revisar SassDocs
-
-@import "componentes/functions";
-
-// flex-container and flex-item
-// You can set your own names for container and items
-$container: ed-container;
-$item: ed-item;
-
-// Max width of containers
-$max-width: rem(1200px);
-
-// Gutter between same line items
-// Total gutter between items is $gutter * 2
-$gutter : em(15px);
-
-// Breakpoints
-$breakpoints : (
-  s  : em(320px),
-  m  : em(640px),
-  l  : em(1024px),
-  xl : em(1440px)
-);
-
-$fractions: 3 6 8;
-
-@import "componentes/base";        // Estilos básicos para RWD
-@import "componentes/core";        // Núcleo de ED GRID, grupos y cajas
-@import "componentes/mixins";      // Mixins ED GRID
-@import "componentes/desarrollo";  // Modo desarrollo
-@import "componentes/visibilidad"; // Controlar la visibilidad
-@import "componentes/utilidades";  // Utilidades adicionales
-@import "componentes/video";       // Videos responsive
-@import "componentes/ed-menu";     // Ed menu
-@import "componentes/flexbox";     // Flexbox
-@import "componentes/offset";      // Offset
-@import "componentes/modulos";      // Botones, sociales
+@import "config";
+@import "components/base";
+@import "components/media-queries";
+@import "components/helpers";
+@import "components/dev";
+@import "components/core";
+@import "components/grid";
+@import "components/visibility";
+@import "components/video";
+@import "components/ed-menu";
+@import "components/flexbox";
+@import "components/offset";
+@import "components/buttons";
+@import "components/css";

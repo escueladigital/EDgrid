@@ -4,20 +4,41 @@
   <meta charset="UTF-8">
   <title>ed-grid test page</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    h2 {
+      margin : 0;
+    }
+  </style>
 </head>
 <body>
-  <div class="row">
-    <section class="column row">
-      <div class="column">
-        <h2>Hola mundo</h2>
-      </div>
-      <div class="column">
-        <h2>Hola mundo 2</h2>
-      </div>
-    </section>
-    <aside class="column">
-      <h2>Hola mundo 3</h2>
-    </aside>
+  <div class="grupo">
+    <div class="caja l20 cross-center">
+      <h2>Escuela Digital</h2>
+    </div>
+    <nav class="caja l80">
+      <ul class="ed-menu xl-horizontal nav-bar" id="menu">
+        <li><a href="#">Item mas largo</a></li>
+        <li><a href="#">Item 2</a></li>
+        <li><a href="#">Item 3</a>
+          <ul>
+            <li><a href="#">Subitem 1 bastante largo</a>
+              <ul>
+                <li><a href="#">Subitem 1 que es mucho más largo</a></li>
+                <li><a href="#">Subitem 2</a></li>
+                <li><a href="#">Subitem 3</a></li>
+                <li><a href="#">Subitem 4</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Subitem 2</a></li>
+            <li><a href="#">Subitem 3</a></li>
+            <li><a href="#">Subitem 4</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Item 4</a></li>
+        <li><a href="#">Item 5</a></li>
+      </ul>
+    </nav>
   </div>
+  <script src="edgrid-legacy.js"></script>
 </body>
 </html>

@@ -1,0 +1,125 @@
+
+@mixin defaultMenu {
+  background : #eee;
+  li:hover { background : rgba(#000, .1)  }
+  ul       { background : darken(#eee, 5) }
+  a        { color      : #666            }
+}
+
+@mixin navMenu($bp) {
+  $border : 1px solid rgba(#000, .1);
+  background : #EEE;
+  border  : $border;
+
+  li:hover { background : rgba(#000, .1)  }
+  ul       { background : darken(#eee, 5) }
+  a        { color      : #666            }
+
+
+  li {
+    border-bottom : $border;
+
+    &:last-child {
+      border-right : none;
+      border-bottom : none;
+    }
+  }
+
+  ul {
+    border : $border;
+
+    li {
+      border-bottom : $border;
+
+      &:last-child { border-bottom : none }
+    }
+  }
+
+  @include from($bp) {
+    > li {
+      border-right  : 1px solid rgba(#000, .1);
+      border-bottom : none;
+    }
+  }
+}
+
+@mixin buttonMenu {
+  li {
+    margin-bottom : .5em;
+    margin-right  : .5em;
+  }
+
+  a {
+    border        : 1px solid rgba(#000, .1);
+    background    : #EEE;
+    line-height   : 2.5em;
+    padding       : 0 1.5em;
+    border-radius : 4px;
+    color         : #666;
+
+    &:hover { background : rgba(#000, .1) }
+  }
+}
+
+@mixin edMenu($bp,$style:null) {
+  width : 100%;
+
+  &, ul {
+    margin-top    : 0;
+    margin-bottom : 0;
+    padding-left  : 0;
+    list-style    : none;
+  }
+
+  li {
+    position   : relative;
+    list-style : none;
+    flex       : auto;
+  }
+
+  ul {
+    position : absolute;
+    display  : none;
+  }
+
+  a {
+    display     : block;
+    line-height : 3em;
+    padding     : 0 1em;
+
+    &:hover { text-decoration : none }
+  }
+
+  @include from($bp) {
+    display     : flex;
+    align-items : center;
+
+    a { text-align : center; }
+
+    ul {
+      position    : absolute;
+      top         : 100%;
+      min-width   : 100%;
+      white-space : nowrap;
+
+      a { text-align : left; }
+
+      ul {
+        top  : 0;
+        left : 100%;
+      }
+    }
+
+    li:hover > ul { display : block }
+  }
+
+  @if style == default { @include defaultMenu  }
+  @if style == nav     { @include navMenu($bp) }
+  @if style == button  { @include buttonMenu   }
+
+  @if $cssCore == true {
+    &.default    { @include defaultMenu  }
+    &.nav-bar    { @include navMenu($bp) }
+    &.button-bar { @include buttonMenu   }
+  }
+}

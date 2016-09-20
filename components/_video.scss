@@ -1,5 +1,5 @@
 // Videos responsive
-@mixin ed-video {
+@mixin edVideo {
   height         : 0;
   overflow       : hidden;
   padding-bottom : 56.25%;
@@ -15,8 +15,4 @@
     width    : 100%;
     height   : 100%;
   }
-}
-
-.ed-video {
-  @include ed-video;
 }

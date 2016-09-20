@@ -75,46 +75,16 @@
 
 
 // Versiones CSS
-.to-center {
-  @include toCenter();
-}
-
-.to-left {
-  @include toLeft();
-}
-
-.to-right {
-  @include toRight();
-}
-
-.full {
-  @include full();
-}
-
-.circle {
-  @include circle();
-}
-
-.clearfix {
-  @include clearfix();
-}
-
-.no-padding.#{$container} {
-  @include noPaddingContainer();
-}
-
-.no-padding.#{$item}{
-  @include noPadding();
-}
-
-.padding {
-  @include padding();
-}
-
-.padding-2 {
-  @include padding(2)
-}
-
-.padding-3 {
-  @include padding(3)
+@mixin helpers {
+  .to-center                { @include toCenter()           }
+  .to-left                  { @include toLeft()             }
+  .to-right                 { @include toRight()            }
+  .full                     { @include full()               }
+  .circle                   { @include circle()             }
+  .clearfix                 { @include clearfix()           }
+  .no-padding.#{$container} { @include noPaddingContainer() }
+  .no-padding.#{$item}      { @include noPadding()          }
+  .padding                  { @include padding()            }
+  .padding-2                { @include padding(2)           }
+  .padding-3                { @include padding(3)           }
 }

@@ -1,21 +1,4 @@
-//Variables que definen los componentes (podria ser un mapa)
-//$devMode: true;
-
+$cssCore: false;
+$cssHelpers: false;
+$devMode: false;
 @import '../ed-grid';
-
-body {
-  background : #eee;
-}
-
-.row {
-  @include edContainer;
-}
-
-.column {
-  @include edItem(50)
-}
-
-.column.row {
-  padding-left :0;
-  padding-right : 0;
-}
