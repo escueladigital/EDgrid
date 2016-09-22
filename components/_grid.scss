@@ -21,7 +21,7 @@
 // params: selector (quoted string)
 // $s, $m, $l, $xl -> number of columns in each breakpoint
 // gutter -> gutter between grid items
-@mixin grid($selector,$s,$m,$l,$xl,$gutter:1em){
+@mixin grid($selector,$s,$m:$s,$l:$m,$xl:$l,$gutter:1em){
   $width       : 100% / $s;
   display      : flex;
   flex-wrap    : wrap;
