@@ -3,18 +3,9 @@
   padding-right : $gutter * $numero;
 }
 
-%noPadding {
-  padding-left  : 0;
-  padding-right : 0;
-}
-
-@mixin noPadding(){
-  @extend %noPadding;
-}
-
 @mixin noPaddingContainer(){
   > .#{$item} {
-    @extend %noPadding;
+    @include padding(0);
   }
 }
 
@@ -69,8 +60,9 @@
 }
 
 @mixin full(){
-  width: 100%;
-  clear: both;
+  width     : 100%;
+  max-width : 100%;
+  clear     : both;
 }
 
 
@@ -83,8 +75,8 @@
   .circle                   { @include circle()             }
   .clearfix                 { @include clearfix()           }
   .no-padding.#{$container} { @include noPaddingContainer() }
-  .no-padding.#{$item}      { @include noPadding()          }
-  .padding                  { @include padding()            }
+  .no-padding.#{$item}      { @include padding(0)           }
+  .padding                  { @include padding(1)           }
   .padding-2                { @include padding(2)           }
   .padding-3                { @include padding(3)           }
 }
