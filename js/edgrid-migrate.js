@@ -2,7 +2,7 @@
   var selectors = {
     grupo: ['grupo','ed-container'],
     caja: ['caja','ed-item'],
-    total: ['total', 'full']
+    total: ['total', 'full'],
   };
 
   var addNewSelector = function(selector, newSelector) {
@@ -20,11 +20,11 @@
 
 (function (d) {
   var oldSizes = {
-    'base-'  : 's',
-    'movil-' : 's',
-    'tablet-': 'm',
-    'web-'   : 'l',
-    'hd'     : 'xl'
+    'base-'  : 's-',
+    'movil-' : 's-',
+    'tablet-': 'm-',
+    'web-'   : 'l-',
+    'hd'     : 'xl-'
   };
 
 
