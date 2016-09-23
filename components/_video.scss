@@ -1,18 +1,27 @@
 // Videos responsive
-@mixin edVideo {
+@mixin edVideo ($video: null) {
   height         : 0;
   overflow       : hidden;
   padding-bottom : 56.25%;
   position       : relative;
 
-  > iframe,
-  > object,
-  > video
-  > .video {
-    position : absolute;
-    top      : 0;
-    left     : 0;
-    width    : 100%;
-    height   : 100%;
+  @if $video != null {
+    #{$video} {
+      position : absolute;
+      top      : 0;
+      left     : 0;
+      width    : 100%;
+      height   : 100%;
+    }
+  } @else {
+    > iframe,
+    > video
+    > .video {
+      position : absolute;
+      top      : 0;
+      left     : 0;
+      width    : 100%;
+      height   : 100%;
+    }
   }
 }
