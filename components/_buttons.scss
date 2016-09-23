@@ -7,7 +7,7 @@
   border        : none;
 }
 
-@mixin button($bg-color: #DDD,$front-color: #333,$style: default) {
+@mixin button($bg-color: #ddd,$front-color: #333,$style: default) {
   @extend    %button;
   background : $bg-color;
   color      : $front-color;

@@ -1,9 +1,3 @@
-/*
-todo: las clases de alineacion (como justify, top, bottom etc) deben poder
-aplicarse a un item unico o a todo_ un container para que se herede en
-todos sus items.
-*/
-
 @mixin flexOrder {
   // Solo existe para css, es innecesario en Sass (una sola línea)
   @each $size, $screen-size in $breakpoints{
@@ -224,8 +218,8 @@ todos sus items.
 
 // Versiones CSS
 @mixin flexCssHelpers {
-  .justify             { @include mainJustify       }
-  .distribute          { @include mainDistribute    }
+  .main-justify        { @include mainJustify       }
+  .main-distribute     { @include mainDistribute    }
   .main-center         { @include mainCenter        }
   .main-start          { @include mainStart         }
   .main-end            { @include mainEnd           }
