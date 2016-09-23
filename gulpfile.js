@@ -4,7 +4,8 @@ const gulp = require('gulp'),
       postcss = require('gulp-postcss'),
       autoprefixer = require('autoprefixer'),
       cssnano = require('cssnano'),
-      browserSync = require('browser-sync').create();
+      browserSync = require('browser-sync').create(),
+      concat = require('gulp-concat');
 
 let postcssPlugins = [
   autoprefixer({browsers: 'last 2 versions'}),
@@ -23,6 +24,12 @@ gulp.task('styles', () =>
       .pipe(browserSync.stream())
 );
 
+gulp.task('scripts', () =>
+  gulp.src('./js/*.js')
+      .pipe(concat('scripts.js'))
+      .pipe(gulp.dest('./test'))
+);
+
 gulp.task('sw', () =>
   gulp.watch('./**/**.scss', ['styles'])
 );
@@ -34,5 +41,7 @@ gulp.task('default', () => {
     }
   });
   gulp.watch('./**/**.scss', ['styles']);
-  gulp.watch('./test/**.html').on('change', browserSync.reload)
+  gulp.watch('./js/*.js', ['scripts']);
+  gulp.watch('./test/**.html').on('change', browserSync.reload);
+  gulp.watch('./js/*.js').on('change', browserSync.reload);
 });
