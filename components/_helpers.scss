@@ -4,9 +4,7 @@
 }
 
 @mixin noPaddingContainer(){
-  > .#{$item} {
-    @include padding(0);
-  }
+  > .#{$item} { @include padding(0) }
 }
 
 @mixin ratio($h,$v) {
@@ -44,18 +42,17 @@
   width        : $width;
   margin-left  : auto;
   margin-right : auto;
+  text-align   : center;
 }
 
-@mixin circle {
-  border-radius : 50%;
-}
+@mixin circle { border-radius : 50% }
 
 @mixin clearfix(){
   &:before, &:after {
-    content: "";
-    display: table;
-    width: 100%;
-    clear: both;
+    content : "";
+    display : table;
+    width   : 100%;
+    clear   : both;
   }
 }
 
@@ -65,6 +62,25 @@
   clear     : both;
 }
 
+@mixin stickyFooter {
+  @at-root {
+    body {
+      display        : flex;
+      flex-direction : column;
+      min-height     : 100vh;
+    }
+  }
+
+  margin-top : auto;
+}
+
+@mixin cssStyckyFooter {
+  display        : flex;
+  flex-direction : column;
+  min-height     : 100vh;
+
+  > footer { margin-top : auto }
+}
 
 // Versiones CSS
 @mixin helpers {
@@ -79,4 +95,6 @@
   .padding                  { @include padding(1)           }
   .padding-2                { @include padding(2)           }
   .padding-3                { @include padding(3)           }
+  body.sticky-footer        { @include cssStyckyFooter()    }
 }
+
