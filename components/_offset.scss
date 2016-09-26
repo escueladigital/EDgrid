@@ -1,18 +1,35 @@
 @mixin cssOffset {
   @each $size, $screen-size in $breakpoints{
-    @media all and (min-width: $screen-size){
+
+    @if $size == s {
       @for $i from 1 through 20 {
-        .#{$item}.#{$size}-offset-#{$i*5},
         .#{$size}-offset-#{$i*5}{
           margin-left: unquote($i*5 + "%");
         }
       }
-
       @each $fraction in $fractions{
         @for $i from 1 through length($fractions){
-          .#{$item}.#{$size}-offset-#{$i}-#{$fraction}
           .#{$size}-offset-#{$i}-#{$fraction} {
             margin-left: (100% / $fraction) * $i;
+          }
+        }
+      }
+    }
+
+    @else {
+      @media all and (min-width: $screen-size){
+        //porcentajes
+        @for $i from 1 through 20 {
+          .#{$size}-offset-#{$i*5}{
+            margin-left: unquote($i*5 + "%");
+          }
+        }
+        //fracciones
+        @each $fraction in $fractions{
+          @for $i from 1 through length($fractions){
+            .#{$size}-offset-#{$i}-#{$fraction} {
+              margin-left: (100% / $fraction) * $i;
+            }
           }
         }
       }
