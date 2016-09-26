@@ -17,10 +17,10 @@ $gutter : em(15px);
 
 // Breakpoints
 $breakpoints : (
-  s  : em(320px),
+  s  : em(0px),
   m  : em(640px),
   l  : em(1024px),
   xl : em(1440px)
 );
 
-$fractions: 3 6 8;
+$fractions: 3 6;
