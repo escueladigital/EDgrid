@@ -1,0 +1,30 @@
+#pre-grid
+  h2 Grids preconstruidos
+  p En CSS ed-grid cuenta con dos grids preconstruidos: 1,2,3,4 y 2,3,4,5 (los números representan las columnas en cada breakpoint de ed-grid).
+  p Para utilizarlos, use la clase grid-container en el contedor, además la clase grid-1234 o grid-2345 para indicar el tipo de grid.
+  p Por último, a cada item de la galeria asignele la clase grid-item
+  .ed-marcar
+    pre.copytoclipboard.line-numbers
+      code.language-markup
+        |&lt;div class=&quot;grid-container grid-1234&quot;&gt;
+        |  &lt;div class=&quot;grid-item&quot;&gt;&lt;img src=&quot;img/001.jpg&quot; alt=&quot;img1&quot;/&gt;&lt;/div&gt;
+        |  &lt;div class=&quot;grid-item&quot;&gt;&lt;img src=&quot;img/002.jpg&quot; alt=&quot;img2&quot;/&gt;&lt;/div&gt;
+        |  &lt;div class=&quot;grid-item&quot;&gt;&lt;img src=&quot;img/003.jpg&quot; alt=&quot;img3&quot;/&gt;&lt;/div&gt;
+        |  &lt;div class=&quot;grid-item&quot;&gt;&lt;img src=&quot;img/004.jpg&quot; alt=&quot;img4&quot;/&gt;&lt;/div&gt;
+        |  &lt;div class=&quot;grid-item&quot;&gt;&lt;img src=&quot;img/005.jpg&quot; alt=&quot;img5&quot;/&gt;&lt;/div&gt;
+        |  &lt;div class=&quot;grid-item&quot;&gt;&lt;img src=&quot;img/006.jpg&quot; alt=&quot;img6&quot;/&gt;&lt;/div&gt;
+        |&lt;/div&gt;
+  .pre-grid__ejemplo-001
+    .grid-container.grid-1234
+      .grid-item
+        img(src="img/001.jpg", alt="img1")
+      .grid-item
+        img(src="img/002.jpg", alt="img2")
+      .grid-item
+        img(src="img/003.jpg", alt="img3")
+      .grid-item
+        img(src="img/004.jpg", alt="img4")
+      .grid-item
+        img(src="img/005.jpg", alt="img5")
+      .grid-item
+        img(src="img/006.jpg", alt="img6")

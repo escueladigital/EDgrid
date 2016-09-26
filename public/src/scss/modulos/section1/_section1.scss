@@ -1,0 +1,44 @@
+.section1 {
+  min-height: 400px;
+  background-color: $blanco;
+  width: 100%;
+  h1 {
+    color: #007FFF;
+    font-size: 38px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  h2 {
+    font-size: 18px;
+    color: $gris2;
+    text-align: center;
+    margin: 0;
+    font-weight: 300;
+  }
+  .section1__btn-iniciar {
+    border: 1px solid $azul;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 10px 30px;
+    color: $azul;
+    transition: all .3s;
+    font-size: 24px;
+    margin: 30px auto 0 auto;
+    display: inline-block;
+    &:hover {
+      background-color: $azul;
+      color: $blanco;
+      text-decoration: none;
+    }
+  }
+  @media (min-width: $m){
+    h1 {
+      font-size: 52px;
+    }
+    h2 {
+      font-size: 28px;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+body {
+  background-color: $gris4;
+}
+
+.contenido-documentado {
+  padding: 30px 0;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+strong {
+  font-weight: 500;
+}
+// resaltar clases
+strong.resaltar {
+  font-weight: 500;
+  background-color: rgba($azul,.8);
+  color: $blanco;
+  display: inline-block;
+  padding: 0 4px;
+}
+
+// margen al pintar sintaxis
+.ed-marcar {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+// indece fijo
+.menu-fixed {
+  position: fixed;
+  top: 0;
+}
+
+// table responsive
+.table-responsive {
+  min-height: .01%;
+  overflow-x: auto;
+  table {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+// copiar codigo
+button.copiarCodigo {
+  background-color: rgba($azul,.4);
+  top: 0 !important;
+  right: 0 !important;
+  color: $blanco;
+  font-size: 16px;
+  transition: all .3s;
+  border-radius: 0 0.3em 0 5px;
+  outline: none;
+  i {
+    margin-right: 8px;
+  }
+  &:hover {
+    background-color: $azul;
+  }
+}
+
+// ejemplo modo dev
+.modo-dev__ejemplo.dev,
+.modo-dev__ejemplo.desarrollo {
+  @include devMode();
+  .ed-container { @include devModeContainer; }
+  .ed-item      { @include devModeItem; }
+  top: 0;
+}

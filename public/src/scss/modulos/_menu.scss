@@ -1,0 +1,32 @@
+#menu {
+  width: 100%;
+  padding: 10px 0;
+  background-color: $blanco;
+  border: 1px solid $gris;
+  .menu__logo {
+    a {
+      font-size: 32px;
+      color: $azul;
+      transition: all .3s;
+      &:hover {
+        color: rgba($azul,.7);
+        text-decoration: none;
+      }
+    }
+  }
+  .menu_nav {
+    a {
+      font-size: 18px;
+      color: $negro4;
+      margin-left: 15px;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:hover,
+      &.activo {
+        color: $azul;
+        text-decoration: none;
+      }
+    }
+  }
+}

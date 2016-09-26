@@ -1,0 +1,59 @@
+$cssCore: true;
+$cssHelpers: true;
+@import "ed-grid/ed-grid";
+
+$font: 'Roboto', sans-serif;
+
+// break points
+  $s: 320px;
+  $m: 640px;
+  $l: 1024px;
+  $xl: 1440px;
+
+// PALETA DE COLOR, modifique para su propia paleta de color
+  $blanco : #ffffff;
+  $amarillo: #F1C40F;
+  $azul: #007FFF;
+  $azul2: #2980b9;
+  $rojo: #E74C3C;
+  $negro: #060606;
+  $morado: #9B59B6;
+  $verde: #2ECC71;
+  $negro2: #272727;
+  $negro3: #404040;
+  $negro4: #272822;
+  $gris: #ECF0F1;
+  $gris2: #BDC3C7;
+  $gris3: #fafafa;
+  $gris4: #f2f2f2;
+
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+table,
+ul,
+li,
+em,
+strong,
+a {
+  font-family: $font;
+  color: $negro3;
+  font-weight: 400;
+}
+
+// @import "modulos/header/_header.scss";
+@import "modulos/aside/_indice.scss";
+@import "ionicons/ionicons.scss";
+@import "modulos/section1/_section1.scss";
+@import "modulos/estructura/_estructura.scss";
+@import "modulos/flujo-trabajo/_flujo-trabajo.scss";
+@import "modulos/ejemplos/_ejemplos.scss";
+@import "modulos/_menu.scss";
+@import "modulos/_global.scss";

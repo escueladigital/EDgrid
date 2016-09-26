@@ -1,0 +1,29 @@
+.estructura__lista {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 16px;
+  li {
+    margin-bottom: 8px;
+    span {
+      background-color: $negro4;
+      border-radius: 5px;
+      color: $blanco;
+      padding: 6px 8px;
+      margin-bottom: 10px;
+      display: inline-block;
+      &.estructura__carpeta {
+        margin-bottom: 10px;
+        background-color: $azul;
+      }
+    }
+  }
+  > li {
+    ul {
+      list-style: none;
+      padding-left: 15px;
+      >li {
+      }
+    }
+  }
+}

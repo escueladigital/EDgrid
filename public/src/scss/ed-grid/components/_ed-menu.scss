@@ -7,9 +7,9 @@
 }
 
 @mixin navMenu($bp) {
-  $border : 1px solid rgba(#000, .1);
+  $border    : 1px solid rgba(#000, .1);
   background : #EEE;
-  border  : $border;
+  border     : $border;
 
   li:hover { background : rgba(#000, .1)  }
   ul       { background : darken(#eee, 5) }
@@ -20,7 +20,7 @@
     border-bottom : $border;
 
     &:last-child {
-      border-right : none;
+      border-right  : none;
       border-bottom : none;
     }
   }
@@ -102,7 +102,7 @@
       min-width   : 100%;
       white-space : nowrap;
 
-      a { text-align : left; }
+      a { text-align : left }
 
       ul {
         top  : 0;

@@ -1,0 +1,9 @@
+meta(charset="UTF-8")
+title Documentación Ed Grid
+//- fuente desde google font
+link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700")
+link(link rel="shortcut icon" href="http://escuela.digital/sites/default/files/favicon.png" type="image/png")
+// build:css ../dist/css/estilo.min.css
+each css in files.CSS
+  link(rel="stylesheet" href=css)
+// endbuild

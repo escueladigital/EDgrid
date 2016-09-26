@@ -1,0 +1,36 @@
+#modo-dev
+  h2 Modo Dev
+  p una característica exclusiva de ed-grid (no existente en otros frameworks) que nos permite saber el breakpoint actual y los componentes del layout (ed-container y ed-item).
+  p Al activarlo el navegador muestra el layout de la siguiente manera:
+  .modo-dev__ejemplo.dev
+    .ed-container
+      .ed-item.s-50.l-1-3
+        p  Lorem ipsum dolor sit amet.
+      .ed-item.s-50.l-1-3
+        p  Lorem ipsum dolor sit amet.
+      .ed-item.s-100.l-1-3
+        p  Lorem ipsum dolor sit amet.
+  .ed-marcar
+    pre.copytoclipboard.line-numbers
+      code.language-markup
+        | &lt;!DOCTYPE html&gt;
+        | &lt;html lang=&quot;es&quot;&gt;
+        | &lt;head&gt;
+        |   &lt;meta charset=&quot;UTF-8&quot;&gt;
+        |   &lt;title&gt;Modo Dev&lt;/title&gt; 
+        |   &lt;link href=&quot;http://escuela.digital/ed-grid.css&quot;&gt;
+        | &lt;/head&gt;
+        | &lt;body class="dev"&gt;
+        |   &lt;div class=&quot;ed-container&quot;&gt;
+        |     &lt;div class=&quot;ed-item s-50 l-1-3&quot;&gt;
+        |       &lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;
+        |     &lt;/div&gt;
+        |     &lt;div class=&quot;ed-item s-50 l-1-3&quot;&gt;
+        |       &lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;
+        |     &lt;/div&gt;
+        |     &lt;div class=&quot;ed-item s-100 l-1-3&quot;&gt;
+        |       &lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;
+        |     &lt;/div&gt;
+        |   &lt;/div&gt;
+        | &lt;/body&gt;
+        | &lt;/html&gt;

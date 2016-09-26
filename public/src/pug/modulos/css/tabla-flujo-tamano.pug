@@ -1,0 +1,31 @@
+.table-responsive
+  table.flujo-trabajo__tabla-tamanos
+    tbody
+      tr
+        th(scope='col')  
+        th(scope='col') small
+        th(scope='col') medium
+        th(scope='col') large
+        th(scope='col') xlarge
+      tr
+        th(scope='row') Contenedor
+        td(colspan='4') ancho maximo de 1200px
+      tr
+        th(scope='row') pantalla
+        td ≥ 320px
+        td ≥ 640px
+        td ≥ 1024px
+        td ≥ 1440px
+      tr
+        th(scope='row') Prefijos
+        td .s-*
+        td .m-*
+        td .l-*
+        td .xl-*
+      tr
+        th(scope='row') Rejilla
+        td(colspan='4')
+          | multiplos de 5 (5,10,...,100) o fracciones de 3, 6 u 8 (1-3, 2-3, 3-3,1-6,2-6...)
+      tr
+        th(scope='row') Padding
+        td(colspan='4')  15px al lado de cada ed-item
