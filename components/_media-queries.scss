@@ -34,16 +34,16 @@
   }
 }
 
-
 @mixin from($from){
   @if isCoreBreakpoint($from){
-    @media screen and (min-width: getBreakpoint($from)){
+    @if $from == s {
       @content
+    }
+    @else {
+      @media screen and (min-width: getBreakpoint($from)){ @content }
     }
   } @else if isValidBreakpoint($from){
-    @media screen and (min-width: $from){
-      @content
-    }
+    @media screen and (min-width: $from){ @content }
   } @else {
     @error 'El mixin from() solo puede recibir un breakpoint del Core (#{map-keys($breakpoints)}) o un número en px, em o rem'
   }
@@ -51,13 +51,13 @@
 
 @mixin to($to){
   @if isCoreBreakpoint($to){
-    @media screen and (max-width: getBreakpoint($to)){
-      @content
+    @if $to == s {
+      @content;
+    } @else {
+      @media screen and (max-width : getBreakpoint($to)) { @content }
     }
   } @else if isValidBreakpoint($to){
-    @media screen and (max-width: $to){
-      @content
-    }
+    @media screen and (max-width: $to){ @content }
   } @else {
     @error 'El mixin to() solo puede recibir un breakpoint del Core (#{map-keys($breakpoints)}) o un número en px, em o rem'
   }
