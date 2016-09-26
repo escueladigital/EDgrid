@@ -31,7 +31,6 @@
 
   var addNewClasses = function(oldSize,newSize){
     var items = d.querySelectorAll(`[class*="${oldSize}"]`);
-    console.log(items);
     var oldClasses = [];
     var newClasses;
     var itemsL = items.length;
