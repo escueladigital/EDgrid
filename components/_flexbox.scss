@@ -1,10 +1,18 @@
 @mixin flexOrder {
   // Solo existe para css, es innecesario en Sass (una sola línea)
   @each $size, $screen-size in $breakpoints{
-    @media screen and (min-width: $screen-size){
+    @if $size == s {
       @for $i from 1 through 10 {
         .#{$size}-order-#{$i} {
           order: $i;
+        }
+      }
+    } @else {
+      @media screen and (min-width: $screen-size){
+        @for $i from 1 through 10 {
+          .#{$size}-order-#{$i} {
+            order: $i;
+          }
         }
       }
     }
@@ -14,21 +22,28 @@
 // Alineacion en el main axis
 // Aplican al flex-container
 @mixin flex {
-  display: flex;
-  flex-wrap: wrap;
+  display   : flex;
+  flex-wrap : wrap;
 }
 
 @mixin mainJustify {
   @include flex;
-  justify-content: space-between;
+  justify-content : space-between;
 }
 
 @mixin cssMainJustify {
   @each $size, $screen-size in $breakpoints {
-    @media all and (min-width: $screen-size){
+    @if $size == s {
       .#{$size}-justify {
         @include flex;
-        justify-content: space-between;
+        justify-content : space-between;
+      }
+    } @else {
+      @media all and (min-width: $screen-size){
+        .#{$size}-justify {
+          @include flex;
+          justify-content : space-between;
+        }
       }
     }
   }
@@ -36,15 +51,22 @@
 
 @mixin mainDistribute {
   @include flex;
-  justify-content: space-around;
+  justify-content : space-around;
 }
 
 @mixin cssMainDistribute {
   @each $size, $screen-size in $breakpoints {
-    @media all and (min-width: $screen-size){
+    @if $size == s {
       .#{$size}-distribute {
         @include flex;
-        justify-content: space-around;
+        justify-content : space-around;
+      }
+    } @else {
+      @media all and (min-width: $screen-size){
+        .#{$size}-distribute {
+          @include flex;
+          justify-content : space-around;
+        }
       }
     }
   }
@@ -52,15 +74,22 @@
 
 @mixin mainCenter {
   @include flex;
-  justify-content: center;
+  justify-content : center;
 }
 
 @mixin cssMainCenter {
   @each $size, $screen-size in $breakpoints {
-    @media all and (min-width: $screen-size){
+    @if $size == s {
       .#{$size}-main-center {
         @include flex;
-        justify-content: center;
+        justify-content : center;
+      }
+    } @else {
+      @media all and (min-width: $screen-size){
+        .#{$size}-main-center {
+          @include flex;
+          justify-content : center;
+        }
       }
     }
   }
@@ -68,15 +97,22 @@
 
 @mixin mainStart{
   @include flex;
-  justify-content: flex-start;
+  justify-content : flex-start;
 }
 
 @mixin cssMainStart{
   @each $size, $screen-size in $breakpoints {
-    @media all and (min-width: $screen-size){
+    @if $size == s {
       .#{$size}-main-start {
         @include flex;
-        justify-content: flex-start;
+        justify-content : flex-start;
+      }
+    } @else {
+      @media all and (min-width: $screen-size){
+        .#{$size}-main-start {
+          @include flex;
+          justify-content : flex-start;
+        }
       }
     }
   }
@@ -84,15 +120,22 @@
 
 @mixin mainEnd{
   @include flex;
-  justify-content: flex-end;
+  justify-content : flex-end;
 }
 
 @mixin cssMainEnd{
   @each $size, $screen-size in $breakpoints {
-    @media all and (min-width: $screen-size){
+    @if $size == s {
       .#{$size}-main-end {
         @include flex;
-        justify-content: flex-end;
+        justify-content : flex-end;
+      }
+    } @else {
+      @media all and (min-width: $screen-size){
+        .#{$size}-main-end {
+          @include flex;
+          justify-content : flex-end;
+        }
       }
     }
   }
@@ -101,17 +144,25 @@
 // Alineación en el cross axis. Aplican al flex-container
 @mixin crossStart{
   @include flex;
-  align-items: flex-start;
-  align-content: flex-start;
+  align-items   : flex-start;
+  align-content : flex-start;
 }
 
 @mixin cssCrossStart{
   @each $size, $screen-size in $breakpoints {
-    @media all and (min-width: $screen-size){
+    @if $size == s {
       .#{$size}-cross-start {
         @include flex;
-        align-items: flex-start;
-        align-content: flex-start;
+        align-items   : flex-start;
+        align-content : flex-start;
+      }
+    } @else {
+      @media all and (min-width: $screen-size){
+        .#{$size}-cross-start {
+          @include flex;
+          align-items   : flex-start;
+          align-content : flex-start;
+        }
       }
     }
   }
@@ -119,17 +170,25 @@
 
 @mixin crossCenter {
   @include flex;
-  align-items: center;
-  align-content: center;
+  align-items   : center;
+  align-content : center;
 }
 
 @mixin cssCrossCenter {
   @each $size, $screen-size in $breakpoints {
-    @media all and (min-width: $screen-size){
+    @if $size == 0 {
       .#{$size}-cross-center {
         @include flex;
-        align-items: center;
-        align-content: center;
+        align-items   : center;
+        align-content : center;
+      }
+    } @else {
+      @media all and (min-width: $screen-size){
+        .#{$size}-cross-center {
+          @include flex;
+          align-items   : center;
+          align-content : center;
+        }
       }
     }
   }
@@ -137,17 +196,25 @@
 
 @mixin crossEnd {
   @include flex;
-  align-items: flex-end;
-  align-content: flex-end;
+  align-items   : flex-end;
+  align-content : flex-end;
 }
 
 @mixin cssCrossEnd {
   @each $size, $screen-size in $breakpoints {
-    @media all and (min-width: $screen-size){
+    @if $size == s {
       .#{$size}-cross-end {
         @include flex;
-        align-items: flex-end;
-        align-content: flex-end;
+        align-items   : flex-end;
+        align-content : flex-end;
+      }
+    } @else {
+      @media all and (min-width: $screen-size){
+        .#{$size}-cross-end {
+          @include flex;
+          align-items   : flex-end;
+          align-content : flex-end;
+        }
       }
     }
   }
@@ -156,15 +223,22 @@
 // Orientación del container
 @mixin flexReverse {
   @include flex;
-  flex-direction: row-reverse;
+  flex-direction : row-reverse;
 }
 
 @mixin cssFlexReverse{
   @each $size, $screen-size in $breakpoints {
-    @media all and (min-width: $screen-size){
+    @if $size == s {
       .#{$size}-reverse {
         @include flex;
-        flex-direction: row-reverse;
+        flex-direction : row-reverse;
+      }
+    } @else {
+      @media all and (min-width: $screen-size){
+        .#{$size}-reverse {
+          @include flex;
+          flex-direction : row-reverse;
+        }
       }
     }
   }
@@ -172,15 +246,22 @@
 
 @mixin flexColumn {
   @include flex;
-  flex-direction: column;
+  flex-direction : column;
 }
 
 @mixin cssFlexColumn {
   @each $size, $screen-size in $breakpoints {
-    @media all and (min-width: $screen-size){
+    @if $size == s {
       .#{$size}-column {
         @include flex;
-        flex-direction: column;
+        flex-direction : column;
+      }
+    } @else {
+      @media all and (min-width: $screen-size){
+        .#{$size}-column {
+          @include flex;
+          flex-direction : column;
+        }
       }
     }
   }
@@ -188,15 +269,22 @@
 
 @mixin flexColumnReverse {
   @include flex;
-  flex-direction: column-reverse;
+  flex-direction : column-reverse;
 }
 
 @mixin cssFlexColumnReverse {
   @each $size, $screen-size in $breakpoints {
-    @media all and (min-width: $screen-size){
+    @if $size == s {
       .#{$size}-column-reverse {
         @include flex;
-        flex-direction: column-reverse;
+        flex-direction : column-reverse;
+      }
+    } @else {
+      @media all and (min-width: $screen-size){
+        .#{$size}-column-reverse {
+          @include flex;
+          flex-direction : column-reverse;
+        }
       }
     }
   }
@@ -204,10 +292,10 @@
 
 // Centrado absoluto (vertical y horizontal)
 @mixin flexCenter($child: null) {
-  display : flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  text-align      : center;
 
   @if $child != null {
     #{$child}{
