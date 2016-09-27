@@ -1,0 +1,86 @@
+// altura de los pseudoelementos que imprimiran clases
+$infoHeight : rem(20px);
+$infoFontSize : $infoHeight * 0.6;
+
+%info {
+  content     : attr(class);
+  font-style  : italic;
+  font-size   : $infoFontSize;
+  font-weight : normal;
+
+  z-index     : 1;
+  right       : 0;
+  position    : absolute;
+
+  display     : table;
+  width       : 100%;
+  padding     : 0 em(5px);
+  height      : $infoHeight;
+  line-height : $infoHeight;
+}
+
+@mixin devModeContainer {
+  padding-top   : $infoHeight;
+  margin-bottom : 10px;
+  outline       : 1px solid tomato;
+  position      : relative;
+
+  .#{$container} { margin-bottom : 0 }
+
+  &:before {
+    @extend %info;
+    top        : 0;
+    background : rgba(tomato, .3);
+    color      : tomato;
+  }
+}
+
+@mixin devModeItem {
+  position         : relative;
+  padding-bottom   : $infoHeight;
+  background-color : rgba(yellow, .3);
+  background-clip  : content-box;
+
+  &:before {
+    @extend %info;
+    background : rgba(steelblue, .8);
+    color      : #FFF;
+    bottom     : 0;
+  }
+
+  &:nth-child(even):before {
+    background : rgba(steelblue, .4);
+    color      : steelblue;
+  }
+}
+
+@mixin devMode() {
+  margin   : 0 !important;
+  position : relative;
+  top      : 66px;
+
+  &:before {
+    @extend %info;
+    position    : fixed;
+    background  : steelblue;
+    color       : #FFF;
+    font-size   : $infoHeight * 0.7;
+    text-align  : center;
+    line-height : 36px;
+    height      : 36px;
+  }
+
+  @each $size, $screen-size in $breakpoints {
+    @include from($size) {
+      &:before {
+        content : "ed-grid: size #{$size}, from #{$screen-size} (ed-containers: red, ed-items: blue, yellow)";
+      }
+    }
+  }
+}
+
+@if $devMode == true {
+  body {
+    @include devMode();
+  }
+}

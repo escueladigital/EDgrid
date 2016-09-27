@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es"></html>
+<head>
+  <meta charset="UTF-8"/>
+  <title>Documentación Ed Grid</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700"/>
+  <link link="link" rel="shortcut icon" href="http://escuela.digital/sites/default/files/favicon.png" type="image/png"/>
+  <!-- build:css ../dist/css/estilo.min.css-->
+  <link rel="stylesheet" href="../../node_modules/prismjs/themes/prism-okaidia.css"/>
+  <link rel="stylesheet" href="../../node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css"/>
+  <link rel="stylesheet" href="css/estilo.css"/>
+  <!-- endbuild-->
+</head>
+<body>
+  <header>
+    <div class="menu" id="menu">
+      <div class="ed-container main-justify cross-center">
+        <div class="ed-item">
+          <div class="menu__logo"><a href="http://escuela.digital" target="blank">ED</a></div>
+        </div>
+        <div class="ed-item">
+          <nav class="menu_nav"><a class="activo" href="index.html">Css</a><a href="http://escuela.digital/edgrid/docs"> Sass</a></nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="section1 main-center cross-center">
+      <div class="ed-container main-center cross-center">
+        <div class="ed-item m-100">
+          <h1>ED Grid</h1>
+          <h2>framework css minimalista</h2>
+          <div class="main-center"><a class="section1__btn-iniciar" href="#">Cómo Empezar</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="ed-container contenido-documentado">
+      <div class="ed-item s-100 l-75">
+        <div id="instalar">
+          <h2>Descargar</h2>
+          <div class="comenzar__instalar-zip">
+            <h3>.Zip</h3>
+            <pre><code class="language-markup">https://github.com/escueladigital/ed-grid/releases</code></pre>
+          </div>
+        </div>
+        <div id="estructura">
+          <div class="estructura__informacion">
+            <h2>Estructura de archivos</h2>
+            <p>La siguiente es la estructura de archivos de ed-grid. Solo se explican los archivos y directorios propios del proyecto y no las herramientas comunes de desarrollo (package.json, .gitignore, etc)</p>
+          </div>
+          <ul class="estructura__lista">
+            <li><span class="estructura__carpeta">components/</span> Carpeta con componentes de ed-grid
+              <ul>
+                <li><span>_base.scss</span> Estilos base para rwd</li>
+                <li><span>_buttons.scss</span> Mixin para botones</li>
+                <li><span>_core.scss</span> Core de ed-grid con los containers, items y el grid base</li>
+                <li><span>_css.scss</span> Mixins Sass incluidos para ser compilados a css (si usará la versión css)</li>
+                <li><span>_dev.scss</span> Mixins para el modo dev (desarrollo en versiones previas)</li>
+                <li><span>_ed-medu.scss</span> Mixins para crear menús rwd</li>
+                <li><span>_flexbox.scss</span> Mixins para trabajar con flexbox</li>
+                <li><span>_functions.scss</span> Funciones para transformar pixeles a em y rem</li>
+                <li><span>_grid.scss</span> Mixins para crear grids (cuadriculas) rwd</li>
+                <li><span>_helpers.scss</span> Mixins de ayuda para maquetación</li>
+                <li><span>_media-queries.scss</span> Mixins para trabajar fácilmente con media queries</li>
+                <li><span>_offset.scss</span> Mixins para crear offsets a los items</li>
+                <li><span>_video.scss</span> Mixin para videos rwd</li>
+                <li><span>_visibility.scss</span> Mixins para controlar la visibilidad de elementos según el breakpoint</li>
+              </ul>
+            </li>
+            <li><span class="estructura__carpeta">css/</span> Carpeta con la versión css de ed-grid
+              <ul>
+                <li>​​<span>ed-grid.css</span> Version css de ed-grid (si va a trabajar sin Sass)</li>
+              </ul>
+            </li>
+            <li><span class="estructura__carpeta">test/</span> Carpeta para testear ed-grid
+              <ul>
+                <li>​​index.html</li>
+                <li>readme.md</li>
+                <li>styles.css</li>
+                <li><span>styles.scss</span> Archivo desde el que se importa ed-grid y compila a styles.css</li>
+              </ul>
+            </li>
+            <li>.editorconfig</li>
+            <li>.gitattributes</li>
+            <li>.gitignore</li>
+            <li>.npmignore</li>
+            <li><span>.config.scss</span> Especifica las variables que se usarán en ed-grid</li>
+            <li><span>ed-grid.scss</span> Archivo principal de ed-grid, es el que debe ser importado para usar este framework.</li>
+            <li><span>edgrid-menu.js</span> Scripts para hacer el menú responsive (en desarrollo)</li>
+            <li><span>edgrid-migrate.js</span> Scripts para migrar de versiones anteriores de ed-grid a esta (en desarrollo)</li>
+            <li>gulpfile.js</li>
+            <li>package.json</li>
+            <li>README.md</li>
+          </ul>
+        </div>
+        <div id="comenzar">
+          <div class="comenzar__intro">
+            <h2>Introducción</h2>
+            <p>Ed-grid es un framework para responsive Web Design escrito con Sass cuyas ventajas son:</p>
+            <ul class="comenzar__intro-lista">
+              <li>Solo genera el layout de la interfaz. Por lo que puede integrarse a cualquier tipo de proyecto sin crear conflictos.</li>
+              <li>No está limitado a doce columnas (como el 99.9% de opciones similares) sino que puedes construir tu layout con absoluta libertad</li>
+              <li>No genera CSS innecesario pues compila solo lo que explicitamente use.</li>
+              <li>Curva de aprendizaje muy rápida.</li>
+              <li>Puede usarse con Sass (recomendado) o con CSS</li>
+            </ul>
+            <h3>Archivo necesario</h3>
+            <pre class="copytoclipboard line-numbers"><code class="language-markup">&lt;!-- Css  --&gt;
+&lt;link rel="stylesheet" href="css/ed-grid.css"&gt;</code></pre>
+          </div>
+        </div>
+        <div id="flujo-trabajo">
+          <h2>Flujo de trabajo.</h2>
+          <p>ed-grid permite construir layouts con facilidad</p>
+          <h3>ED containers</h3>
+          <p>ed-grid requiere un contenedor padre para envolver a los items podemos usar el contenedor con tamaño fijo <strong class="resaltar">.ed-container</strong> o puedes hacer que ocupe el 100% de viewport agregando la clase <strong class="resaltar">.full</strong></p>
+          <pre class="copytoclipboard line-numbers"><code class="language-markup">&lt;!-- contenedor fijo 1200px  --&gt;
+&lt;div class="ed-container"&gt;
+ &lt;!-- información  --&gt;
+&lt;/div&gt;
+ 
+&lt;!-- contenedor full viewport  --&gt;
+&lt;div class="ed-container full"&gt;
+ &lt;!-- información  --&gt;
+&lt;/div&gt;</code></pre>
+          <h3>ED Items</h3>
+          <p>ed-grid permite crear elementos hijos del elemento <strong class="resaltar">.ed-container</strong> solo debemos usar la clase <strong class="resaltar">.ed-item</strong></p>
+          <pre class="copytoclipboard line-numbers"><code class="language-markup">&lt;!-- contenedor padre  --&gt;
+&lt;div class="ed-container"&gt;
+ &lt;!-- contenedor hijo (items)  --&gt;
+  &lt;div class="ed-item"&gt;
+   &lt;!-- información  --&gt;
+ &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          <ul>
+            <li>ed-grid no usa filas y columnas porque estas no existen. Un contenedor no es una fila porque los items dentro del contenedor pueden ordenarse en varias filas. Y los items no son columnas porque sus dimensiones son ajustables según el requerimiento del proyecto.</li>
+            <li>Los ed-item deben ser hijos directos de un ed-container</li>
+            <li>No es necesario indicar el ancho en cada tamaño, pues los tamaños superiores heredan el ancho del ultimo tamaño inferior declarado</li>
+          </ul>
+          <div class="table-responsive">
+            <table class="flujo-trabajo__tabla-tamanos">
+              <tbody>
+                <tr>
+                  <th scope="col"> </th>
+                  <th scope="col">small</th>
+                  <th scope="col">medium</th>
+                  <th scope="col">large</th>
+                  <th scope="col">xlarge</th>
+                </tr>
+                <tr>
+                  <th scope="row">Contenedor</th>
+                  <td colspan="4">ancho maximo de 1200px</td>
+                </tr>
+                <tr>
+                  <th scope="row">pantalla</th>
+                  <td>≥ 320px</td>
+                  <td>≥ 640px</td>
+                  <td>≥ 1024px</td>
+                  <td>≥ 1440px</td>
+                </tr>
+                <tr>
+                  <th scope="row">Prefijos</th>
+                  <td>.s-*</td>
+                  <td>.m-*</td>
+                  <td>.l-*</td>
+                  <td>.xl-*</td>
+                </tr>
+                <tr>
+                  <th scope="row">Rejilla</th>
+                  <td colspan="4">multiplos de 5 (5,10,...,100) o fracciones de 3, 6 u 8 (1-3, 2-3, 3-3,1-6,2-6...)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Padding</th>
+                  <td colspan="4"> 15px al lado de cada ed-item</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="ejemplo-grid">
+          <h2>Ejemplos Grid
+            <h3>Ejemplo: ed-item</h3>
+            <div class="ejemplo-grid__001">
+              <div class="ed-container">
+                <div class="ed-item ed-ejemplo">
+                  <p> ed-item 1</p>
+                </div>
+                <div class="ed-item ed-ejemplo">
+                  <p> ed-item 2</p>
+                </div>
+              </div>
+              <div class="ed-marcar">
+                <pre class="copytoclipboard line-numbers"><code class="language-markup">&lt;!-- contenedor padre  --&gt;
+&lt;div class="ed-container"&gt;
+ &lt;!-- contenedor hijo  --&gt;
+  &lt;div class="ed-item"&gt;
+   &lt;p&gt; ed-item 1 &lt;p&gt;
+  &lt;/div&gt;
+  &lt;div class="ed-item"&gt;
+   &lt;p&gt; ed-item 1 &lt;p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+            <h3>Ejemplo: movil - escritorio</h3>
+            <p><strong>Movil</strong> el item 1 y 2 al 50% y el item 3 al 100%</p>
+            <p><strong>Escritorio</strong> el item 1, 2 y 3 distribuido en el ancho</p>
+            <div class="ejemplo-grid__002">
+              <div class="ed-container">
+                <div class="ed-item s-50 l-1-3 ed-ejemplo">
+                  <p> ed-item 1</p>
+                </div>
+                <div class="ed-item s-50 l-1-3 ed-ejemplo">
+                  <p> ed-item 2</p>
+                </div>
+                <div class="ed-item s-100 l-1-3 ed-ejemplo">
+                  <p> ed-item 3</p>
+                </div>
+              </div>
+              <div class="ed-marcar">
+                <pre class="copytoclipboard line-numbers"><code class="language-markup">&lt;!-- contenedor padre  --&gt;
+&lt;div class="ed-container"&gt;
+ &lt;!-- contenedor hijo  --&gt;
+  &lt;div class="ed-item s-50 l-1-3"&gt;
+   &lt;p&gt; ed-item 1 &lt;p&gt;
+  &lt;/div&gt;
+  &lt;div class="ed-item s-50 l-1-3"&gt;
+   &lt;p&gt; ed-item 2 &lt;p&gt;
+  &lt;/div&gt;
+  &lt;div class="ed-item s-100 l-1-3"&gt;
+   &lt;p&gt; ed-item 3 &lt;p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+            <h3>Ejemplo: movil - tableta - escritorio</h3>
+            <p>en este ejemplo tambien aplicamos herencia</p>
+            <p><strong>Movil</strong> el item 1, 2 al 50% y los items 3 y 4 al 100%</p>
+            <p><strong>tableta</strong> el item 1, 2 al 50% e igualmente 3 y 4</p>
+            <p><strong>Escritorio</strong> el item 1, 2, 3 y 4 distribuido en el ancho</p>
+            <div class="ejemplo-grid__002">
+              <div class="ed-container">
+                <div class="ed-item s-50 l-25 ed-ejemplo">
+                  <p> ed-item 1</p>
+                </div>
+                <div class="ed-item s-50 l-25 ed-ejemplo">
+                  <p> ed-item 2</p>
+                </div>
+                <div class="ed-item s-100 m-50 l-25 ed-ejemplo">
+                  <p> ed-item 3</p>
+                </div>
+                <div class="ed-item s-100 m-50 l-25 ed-ejemplo">
+                  <p> ed-item 4</p>
+                </div>
+              </div>
+              <div class="ed-marcar">
+                <pre class="copytoclipboard line-numbers"><code class="language-markup">&lt;!-- contenedor padre  --&gt;
+&lt;div class="ed-container"&gt;
+ &lt;!-- contenedor hijo  --&gt;
+  &lt;div class="ed-item s-50 l-25"&gt;
+   &lt;p&gt; ed-item 1 &lt;p&gt;
+  &lt;/div&gt;
+  &lt;div class="ed-item s-50 l-25"&gt;
+   &lt;p&gt; ed-item 2 &lt;p&gt;
+  &lt;/div&gt;
+  &lt;div class="ed-item s-100 m-50 l-25"&gt;
+   &lt;p&gt; ed-item 3 &lt;p&gt;
+  &lt;/div&gt;
+  &lt;div class="ed-item s-100 m-50 l-25"&gt;
+   &lt;p&gt; ed-item 4 &lt;p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </div>
+          </h2>
+        </div>
+        <div id="modo-dev">
+          <h2>Modo Dev</h2>
+          <p>una característica exclusiva de ed-grid (no existente en otros frameworks) que nos permite saber el breakpoint actual y los componentes del layout (ed-container y ed-item).</p>
+          <p>Al activarlo el navegador muestra el layout de la siguiente manera:</p>
+          <div class="modo-dev__ejemplo dev">
+            <div class="ed-container">
+              <div class="ed-item s-50 l-1-3">
+                <p> Lorem ipsum dolor sit amet.</p>
+              </div>
+              <div class="ed-item s-50 l-1-3">
+                <p> Lorem ipsum dolor sit amet.</p>
+              </div>
+              <div class="ed-item s-100 l-1-3">
+                <p> Lorem ipsum dolor sit amet.</p>
+              </div>
+            </div>
+          </div>
+          <div class="ed-marcar">
+            <pre class="copytoclipboard line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Modo Dev&lt;/title&gt; 
+  &lt;link href=&quot;http://escuela.digital/ed-grid.css&quot;&gt;
+&lt;/head&gt;
+&lt;body class="dev"&gt;
+  &lt;div class=&quot;ed-container&quot;&gt;
+    &lt;div class=&quot;ed-item s-50 l-1-3&quot;&gt;
+      &lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;ed-item s-50 l-1-3&quot;&gt;
+      &lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;ed-item s-100 l-1-3&quot;&gt;
+      &lt;p&gt;Lorem ipsum dolor sit amet.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+        <div id="pre-grid">
+          <h2>Grids preconstruidos</h2>
+          <p>En CSS ed-grid cuenta con dos grids preconstruidos: 1,2,3,4 y 2,3,4,5 (los números representan las columnas en cada breakpoint de ed-grid).</p>
+          <p>Para utilizarlos, use la clase grid-container en el contedor, además la clase grid-1234 o grid-2345 para indicar el tipo de grid.</p>
+          <p>Por último, a cada item de la galeria asignele la clase grid-item</p>
+          <div class="ed-marcar">
+            <pre class="copytoclipboard line-numbers"><code class="language-markup">&lt;div class=&quot;grid-container grid-1234&quot;&gt;
+ &lt;div class=&quot;grid-item&quot;&gt;&lt;img src=&quot;img/001.jpg&quot; alt=&quot;img1&quot;/&gt;&lt;/div&gt;
+ &lt;div class=&quot;grid-item&quot;&gt;&lt;img src=&quot;img/002.jpg&quot; alt=&quot;img2&quot;/&gt;&lt;/div&gt;
+ &lt;div class=&quot;grid-item&quot;&gt;&lt;img src=&quot;img/003.jpg&quot; alt=&quot;img3&quot;/&gt;&lt;/div&gt;
+ &lt;div class=&quot;grid-item&quot;&gt;&lt;img src=&quot;img/004.jpg&quot; alt=&quot;img4&quot;/&gt;&lt;/div&gt;
+ &lt;div class=&quot;grid-item&quot;&gt;&lt;img src=&quot;img/005.jpg&quot; alt=&quot;img5&quot;/&gt;&lt;/div&gt;
+ &lt;div class=&quot;grid-item&quot;&gt;&lt;img src=&quot;img/006.jpg&quot; alt=&quot;img6&quot;/&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+          <div class="pre-grid__ejemplo-001">
+            <div class="grid-container grid-1234">
+              <div class="grid-item"><img src="img/001.jpg" alt="img1"/></div>
+              <div class="grid-item"><img src="img/002.jpg" alt="img2"/></div>
+              <div class="grid-item"><img src="img/003.jpg" alt="img3"/></div>
+              <div class="grid-item"><img src="img/004.jpg" alt="img4"/></div>
+              <div class="grid-item"><img src="img/005.jpg" alt="img5"/></div>
+              <div class="grid-item"><img src="img/006.jpg" alt="img6"/></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ed-item s-100 m-25">
+        <div class="from-l indice-documentacion">
+          <ul class="indice-documentacion__lista">
+            <li><a href="#instalar">Descargar</a></li>
+            <li><a href="#estructura">Estrucutra de archivos</a></li>
+            <li><a href="#comenzar">Comenzar con ed-grid</a></li>
+            <li><a href="#flujo-trabajo">Flujo de trabajo</a></li>
+            <li><a href="#ejemplo-grid">Ejemplos grid</a></li>
+            <li><a href="#modo-dev">Mode dev</a></li>
+            <li><a href="#pre-grid">Pre-grid</a></li>
+            <li><a href="">Visibilidad</a></li>
+            <li><a href="">aliniación</a></li>
+            <li><a href="">Helpers</a></li>
+            <li><a href="">Offset</a></li>
+            <li><a href="">Video</a></li>
+            <li><a href="">Botones</a></li>
+            <li><a href="">Menus Responsive</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- build:js ../dist/js/script.min.css-->
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../../node_modules/picturefill/dist/picturefill.min.js"></script>
+  <script src="../../node_modules/clipboard/dist/clipboard.min.js"></script>
+  <script src="../../node_modules/animatescroll.js/animatescroll.min.js"></script>
+  <script src="../../node_modules/prismjs/prism.js"></script>
+  <script src="../../node_modules/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="js/edgrid-menu.js"></script>
+  <script src="js/jquery.nav.js"></script>
+  <script src="js/main.js"></script>
+  <!-- enbuild-->
+</body>

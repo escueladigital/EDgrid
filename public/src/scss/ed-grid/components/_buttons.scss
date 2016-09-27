@@ -1,0 +1,30 @@
+%button {
+  display       : inline-block;
+  line-height   : 2.5em;
+  padding       : 0 1.5em;
+  cursor        : pointer;
+  margin-bottom : 1em;
+  border        : none;
+}
+
+@mixin button($bg-color: #ddd,$front-color: #333,$style: default) {
+  @extend    %button;
+  background : $bg-color;
+  color      : $front-color;
+
+  &:hover {
+    background      : darken($bg-color, 5);
+    text-decoration : none;
+  }
+
+  &:active {
+    transform : scale(.97);
+  }
+
+  // estilos del boton (radius o round)
+  @if $style == radius {
+    border-radius : .25em;
+  } @else if $style == round {
+    border-radius : 1.25em;
+  }
+}

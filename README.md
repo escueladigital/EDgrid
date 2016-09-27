@@ -2,9 +2,9 @@
 
 ED GRID  es un FRAMEWORK SOLO CSS para crear diseños web responsive y mobile first.
 
-Documentación oficial: http://escueladigital.pe/ed-grid
+Documentación oficial: http://escuela.digital/edgrid
 
-Autor: Álvaro Felipe de Escuela Digital http://escueladigital.pe
+Autor: Álvaro Felipe de Escuela Digital http://escuela.digital
 
 Colaboradores:
 
@@ -23,6 +23,7 @@ npm install --save ed-grid
 ```
 
 #### Instalar desde bower
+
 ```
 bower install --save ed-grid
 ```
@@ -38,9 +39,11 @@ Luego debes copiar el archivo ed-grid.css a tu carpeta donde tienes los archivos
 #### GulpJS
 
 Importamos ed-grid en nuestro archivo **main.scss**
+
 ```scss
 @import 'ed-grid/ed-grid';
 ```
+
 Usaremos el plugin [**gulp-sass**](https://github.com/dlmanning/gulp-sass) con la siguiente configuración, a la opción **includePaths** le pasamos el directorio donde se instalo ed-grid
 
 Ejemplo npm:

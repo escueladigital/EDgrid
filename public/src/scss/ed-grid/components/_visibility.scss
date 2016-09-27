@@ -1,0 +1,31 @@
+@mixin showFrom($bp){
+  @include to($bp){
+    display : none;
+  }
+}
+
+@mixin showTo($bp){
+  @include from($bp){
+    display : none;
+  }
+}
+
+@mixin hideFrom($bp){
+  @include from($bp){
+    display : none;
+  }
+}
+
+@mixin hideTo($bp){
+  @include to($bp){
+    display : none;
+  }
+}
+
+// Version css
+@mixin visibility {
+  @each $size, $screenSize in $breakpoints {
+    .from-#{$size} { @include showFrom($size) }
+    .to-#{$size} { @include showTo($size) }
+  }
+}

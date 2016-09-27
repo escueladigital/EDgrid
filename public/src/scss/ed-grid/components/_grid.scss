@@ -1,0 +1,52 @@
+// returns grid-item width based on columns number and gutter
+// retorna el ancho del grid-item basado en el número de columnas y el gutter
+@function item-width($width,$gutter){
+  @return calc(#{$width} - #{$gutter});
+}
+
+// asigns grid-item width for each breakpoint
+@mixin columnWidth($currentBp, $prevBp, $coreBp,$gutter,$selector){
+  // check if current breakpoint is not equal to previous breakpoint
+  @if $currentBp != $prevBp{
+    @include from($coreBp){
+      $width: 100% / $currentBp;
+      & > #{$selector}{
+        width : item-width($width,$gutter);
+      }
+    }
+  }
+}
+
+// create grid
+// params: selector (quoted string)
+// $s, $m, $l, $xl -> number of columns in each breakpoint
+// gutter -> gutter between grid items
+@mixin grid($selector,$s,$m:$s,$l:$m,$xl:$l,$gutter:1em){
+  $width       : 100% / $s;
+  display      : flex;
+  flex-wrap    : wrap;
+  margin-left  : -($gutter / 2);
+  margin-right : -($gutter / 2);
+
+  // por si el contenedor es un ul
+  @if $selector == li {
+    margin     : 0;
+    padding    : 0;
+    list-style : none;
+
+    li {
+      margin-left : 0;
+      list-style  : none;
+    }
+  }
+
+  & > #{$selector} {
+    width  : item-width($width,$gutter);
+    margin : $gutter / 2;
+  }
+
+  // calculate grid item width for each breakpoint
+  @include columnWidth($m,$s,m,$gutter,$selector);    // medium
+  @include columnWidth($l,$m,l,$gutter,$selector);    // large
+  @include columnWidth($xl,$l,xl,$gutter,$selector);  // xlarge
+}

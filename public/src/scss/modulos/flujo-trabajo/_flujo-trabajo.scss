@@ -1,0 +1,28 @@
+#flujo-trabajo{
+  .flujo-trabajo__tabla-tamanos {
+    width: 100%;
+    tr {
+      &:nth-child(){
+        background-color: $blanco;
+      }
+      &:nth-child(odd){
+        background-color: $blanco;
+      }
+      &:hover {
+        background-color: $azul;
+        color: $blanco;
+      }
+      > th {
+        color: $blanco;
+        padding: 10px;
+        font-weight: 300;
+        background-color: #272822;
+      }
+      > td {
+        padding: 12px;
+        font-weight: 300;
+        // border: 1px solid #ddd;
+      }
+    }
+  }
+}

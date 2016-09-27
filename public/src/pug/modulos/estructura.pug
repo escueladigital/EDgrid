@@ -1,0 +1,41 @@
+#estructura
+  .estructura__informacion
+    h2 Estructura de archivos
+    p La siguiente es la estructura de archivos de ed-grid. Solo se explican los archivos y directorios propios del proyecto y no las herramientas comunes de desarrollo (package.json, .gitignore, etc)
+  ul.estructura__lista
+    li <span class="estructura__carpeta">components/</span> Carpeta con componentes de ed-grid
+      ul
+        li <span>_base.scss</span> Estilos base para rwd
+        li <span>_buttons.scss</span> Mixin para botones
+        li <span>_core.scss</span> Core de ed-grid con los containers, items y el grid base
+        li <span>_css.scss</span> Mixins Sass incluidos para ser compilados a css (si usará la versión css)
+        li <span>_dev.scss</span> Mixins para el modo dev (desarrollo en versiones previas)
+        li <span>_ed-medu.scss</span> Mixins para crear menús rwd
+        li <span>_flexbox.scss</span> Mixins para trabajar con flexbox
+        li <span>_functions.scss</span> Funciones para transformar pixeles a em y rem
+        li <span>_grid.scss</span> Mixins para crear grids (cuadriculas) rwd
+        li <span>_helpers.scss</span> Mixins de ayuda para maquetación
+        li <span>_media-queries.scss</span> Mixins para trabajar fácilmente con media queries
+        li <span>_offset.scss</span> Mixins para crear offsets a los items
+        li <span>_video.scss</span> Mixin para videos rwd
+        li <span>_visibility.scss</span> Mixins para controlar la visibilidad de elementos según el breakpoint
+    li <span class="estructura__carpeta">css/</span> Carpeta con la versión css de ed-grid
+      ul
+        li ​​<span>ed-grid.css</span> Version css de ed-grid (si va a trabajar sin Sass)
+    li <span class="estructura__carpeta">test/</span> Carpeta para testear ed-grid
+      ul
+        li ​​index.html
+        li readme.md
+        li styles.css
+        li <span>styles.scss</span> Archivo desde el que se importa ed-grid y compila a styles.css
+    li .editorconfig
+    li .gitattributes
+    li .gitignore
+    li .npmignore
+    li <span>.config.scss</span> Especifica las variables que se usarán en ed-grid
+    li <span>ed-grid.scss</span> Archivo principal de ed-grid, es el que debe ser importado para usar este framework.
+    li <span>edgrid-menu.js</span> Scripts para hacer el menú responsive (en desarrollo)
+    li <span>edgrid-migrate.js</span> Scripts para migrar de versiones anteriores de ed-grid a esta (en desarrollo)
+    li gulpfile.js
+    li package.json
+    li README.md

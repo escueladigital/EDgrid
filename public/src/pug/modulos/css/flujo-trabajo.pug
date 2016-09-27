@@ -1,0 +1,35 @@
+#flujo-trabajo
+  h2 Flujo de trabajo.
+  p ed-grid permite construir layouts con facilidad
+  //- ed containers
+  h3 ED containers
+  p ed-grid requiere un contenedor padre para envolver a los items podemos usar el contenedor con tamaño fijo <strong class="resaltar">.ed-container</strong> o puedes hacer que ocupe el 100% de viewport agregando la clase <strong class="resaltar">.full</strong>
+  pre.copytoclipboard.line-numbers
+    code.language-markup
+      | &lt;!-- contenedor fijo 1200px  --&gt;
+      | &lt;div class="ed-container"&gt;
+      |  &lt;!-- información  --&gt;
+      | &lt;/div&gt;
+      | 
+      | &lt;!-- contenedor full viewport  --&gt;
+      | &lt;div class="ed-container full"&gt;
+      |  &lt;!-- información  --&gt;
+      | &lt;/div&gt;
+  //- ed items
+  h3 ED Items
+  p ed-grid permite crear elementos hijos del elemento <strong class="resaltar">.ed-container</strong> solo debemos usar la clase <strong class="resaltar">.ed-item</strong>
+  pre.copytoclipboard.line-numbers
+    code.language-markup
+      | &lt;!-- contenedor padre  --&gt;
+      | &lt;div class="ed-container"&gt;
+      |  &lt;!-- contenedor hijo (items)  --&gt;
+      |   &lt;div class="ed-item"&gt;
+      |    &lt;!-- información  --&gt;
+      |  &lt;/div&gt;
+      | &lt;/div&gt;
+  ul
+    li ed-grid no usa filas y columnas porque estas no existen. Un contenedor no es una fila porque los items dentro del contenedor pueden ordenarse en varias filas. Y los items no son columnas porque sus dimensiones son ajustables según el requerimiento del proyecto.
+    li Los ed-item deben ser hijos directos de un ed-container
+    li No es necesario indicar el ancho en cada tamaño, pues los tamaños superiores heredan el ancho del ultimo tamaño inferior declarado
+  //- tabala de tamaños
+  include ./tabla-flujo-tamano.pug

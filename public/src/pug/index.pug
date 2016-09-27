@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+html(lang="es")
+head
+  include modulos/head.pug
+body
+  header
+    include modulos/menu.pug
+  main.main
+    include modulos/header.pug
+    .ed-container.contenido-documentado
+      .ed-item.s-100.l-75
+        include modulos/css/descargar.pug
+        include modulos/estructura.pug
+        include modulos/css/comenzar.pug
+        include modulos/css/flujo-trabajo.pug
+        include modulos/css/ejemplo-grid.pug
+        include modulos/css/modo-dev.pug
+        include modulos/css/pre-grid.pug
+      .ed-item.s-100.m-25
+        include modulos/css/aside.pug
+  include modulos/script
