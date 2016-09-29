@@ -1,0 +1,103 @@
+%ed-container {
+  display      : flex;
+  flex-wrap    : wrap;
+  max-width    : $max-width;
+  margin-left  : auto;
+  margin-right : auto;
+  width        : 100%;
+}
+
+%ed-item {
+  margin        : 0;
+  padding-left  : $gutter;
+  padding-right : $gutter;
+}
+
+@mixin edContainer {
+  @extend %ed-container;
+
+  @if $devMode == true {
+    @include devModeContainer();
+  }
+}
+
+@mixin full {
+  max-width : 100%;
+}
+
+@mixin edItemWidth($currentBp, $prevBp, $coreBp){
+  @if $currentBp != $prevBp{
+    @if $currentBp < 1 {
+      @include from($coreBp){
+        width : $currentBp * 100%;
+      }
+    }
+    @else {
+      @include from($coreBp){
+        width : $currentBp * 1%;
+      }
+    }
+  }
+}
+
+@mixin edItem($s:auto,$m:$s,$l:$m,$xl:$l) {
+  @extend %ed-item;
+
+  @if $devMode == true {
+    @include devModeItem();
+  }
+
+  // fractions detection (>1)
+  // detectar si se pasó una fraccion (>1)
+  @if $s == auto {
+    width: auto;
+  } @else if $s < 1 {
+    width : $s * 100%;
+  } @else {
+    width : $s * 1%;
+  }
+
+  // widths for each breakpoint
+  // anchos para cada breakpoint
+  @include edItemWidth($m,$s,m); //medium
+  @include edItemWidth($l,$m,l); //large
+  @include edItemWidth($xl,$l,xl); //xlarge
+}
+
+.#{$container} { @include edContainer() }
+
+.#{$item} {
+  @include edItem();
+
+  &.#{$container}{
+    padding-left : 0;
+    padding-right : 0;
+  }
+}
+
+// Breakpoints
+@mixin coreGrid(){
+  @each $size, $screen-size in $breakpoints{
+    @if $size == s {
+      @for $i from 1 through 20 {
+        .s-#{$i*5} { width: unquote($i*5 + "%") }
+      }
+      @each $fraction in $fractions{
+        @for $i from 1 through $fraction{
+          .s-#{$i}-#{$fraction} { width: (100% / $fraction) * $i }
+        }
+      }
+    } @else {
+      @media all and (min-width: $screen-size){
+        @for $i from 1 through 20 {
+          .#{$size}-#{$i*5} { width: unquote($i*5 + "%") }
+        }
+        @each $fraction in $fractions {
+          @for $i from 1 through $fraction{
+            .#{$size}-#{$i}-#{$fraction} { width: (100% / $fraction) * $i }
+          }
+        }
+      }
+    }
+  }
+}

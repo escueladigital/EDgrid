@@ -1,0 +1,66 @@
+@mixin cssOffset {
+  @each $size, $screen-size in $breakpoints{
+
+    @if $size == s {
+      @for $i from 1 through 20 {
+        .#{$size}-offset-#{$i*5}{
+          margin-left: unquote($i*5 + "%");
+        }
+      }
+      @each $fraction in $fractions{
+        @for $i from 1 through length($fractions){
+          .#{$size}-offset-#{$i}-#{$fraction} {
+            margin-left: (100% / $fraction) * $i;
+          }
+        }
+      }
+    }
+
+    @else {
+      @media all and (min-width: $screen-size){
+        //porcentajes
+        @for $i from 1 through 20 {
+          .#{$size}-offset-#{$i*5}{
+            margin-left: unquote($i*5 + "%");
+          }
+        }
+        //fracciones
+        @each $fraction in $fractions{
+          @for $i from 1 through length($fractions){
+            .#{$size}-offset-#{$i}-#{$fraction} {
+              margin-left: (100% / $fraction) * $i;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@mixin offsetWidth($currentBp, $prevBp, $coreBp){
+  @if $currentBp != $prevBp{
+    @if $currentBp < 1 {
+      @include from($coreBp){
+        margin-left : $currentBp * 100%;
+      }
+    }
+    @else {
+      @include from($coreBp){
+        margin-left : $currentBp * 1%;
+      }
+    }
+  }
+}
+
+@mixin offset($s,$m:$s,$l:$m,$xl:$l){
+  @if $s < 1 {
+    margin-left : $s * 100%;
+  } @else {
+    margin-left : $s * 1%;
+  }
+
+  @include offsetWidth($m,$s,m);
+  @include offsetWidth($l,$m,l);
+  @include offsetWidth($xl,$l,xl);
+}
