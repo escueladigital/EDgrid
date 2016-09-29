@@ -1,6 +1,7 @@
 'use strict';
 const gulp = require('gulp'),
       sass = require('gulp-sass'),
+			plumber = require('gulp-plumber'),
       postcss = require('gulp-postcss'),
       autoprefixer = require('autoprefixer'),
       cssnano = require('cssnano'),
@@ -18,8 +19,15 @@ let sassOptions = {
 
 gulp.task('styles', () =>
   gulp.src('./test/styles.scss')
+			.pipe(plumber({
+				errorHandler: function (err) {
+					console.log(err);
+					this.emit('end');
+				}
+			}))		
       .pipe(sass(sassOptions))
       .pipe(postcss(postcssPlugins))
+			.pipe(plumber.stop())		
       .pipe(gulp.dest('./test'))
       .pipe(browserSync.stream())
 );
