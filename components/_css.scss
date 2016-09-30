@@ -1,4 +1,5 @@
 @if $cssCore == true {
+  // offset
   @include cssOffset();
 
   // flexbox
@@ -22,6 +23,7 @@
   .grid-container.grid-1234 { @include grid('.grid-item', 1, 2, 3, 4, 1em) }
   .grid-container.grid-2345 { @include grid('.grid-item', 2, 3, 4, 5, 1em) }
 
+  // devMode
   body.dev,
   body.desarrollo {
     @include devMode();
@@ -37,7 +39,9 @@
     &.radius { @include button(#DDD, 333, radius) }
   }
 
-  //menu
+  // Menus
+  // se requiere la clase .ed-menu
+  // y la clase para cambio a horizontal
   .ed-menu {
     &.s-horizontal  { @include edMenu(s)  }
     &.m-horizontal  { @include edMenu(m)  }
@@ -46,7 +50,8 @@
   }
 }
 
-
+// todo: ver que componentes mover a cssCore (quizas flexbox)
+// todo: o quizas separarlos para activar unos u otros
 @if $cssHelpers == true {
   @include coreGrid();
   @include helpers();
