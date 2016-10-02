@@ -1,81 +1,92 @@
-(function(d){
-  // parejas de selectores
-  let selectors = {
-    grupo: ['grupo','ed-container'],
-    caja: ['caja','ed-item'],
-    total: ['total', 'full'],
-  };
+;(function (window, document) {
 
-  // función para añadir nuevo selector
-  let addNewSelector = function(selector, newSelector) {
-    let elements = d.querySelectorAll(`.${selector}`);
-    let elementsLength = elements.length;
-    while (elementsLength--) {
-      elements[elementsLength].classList.add(newSelector)
-    }
-  };
-
-  // Recorrer el objeto selector para añadir las clases nuevas
-  for (let selector in selectors) {
-    addNewSelector(selectors[selector][0],selectors[selector][1])
+  // Selectores de las clases antiguas.
+  const selectors = {
+    grupo: 'ed-container',
+    caja: 'ed-item',
+    total: 'full',
+    'hasta-tablet': 'to-m',
+    'hasta-web': 'to-l',
+    'hasta-hd': 'to-xl',
+    'desde-tablet': 'from-m',
+    'desde-web': 'from-l',
+    'desde-hd': 'from-xl',
+    'base-': 's-',
+    'movil-': 's-',
+    'tablet-': 'm-',
+    'web-': 'l-',
+    'hd-': 'xl-'
   }
-})(document);
 
+  // Obtenemos los selectores antiguos.
+  const oldSelectors = Object.keys(selectors)
 
-(function (d) {
-  let oldSizes = {
-    'base-'        : 's-',
-    'movil-'       : 's-',
-    'tablet-'      : 'm-',
-    'web-'         : 'l-',
-    'hd'           : 'xl-',
-    'hasta-tablet' : 'to-m',
-    'hasta-web'    : 'to-l',
-    'hasta-hd'     : 'to-xl',
-    'desde-tablet' : 'from-m',
-    'desde-web'    : 'from-l',
-    'desde-hd'     : 'from-hd'
-  };
+  // Expresión regular que encuentra los selectores antiguos
+  // a partir del className de un elemento.
+  // Creada a partir de: http://stackoverflow.com/questions/195951/change-an-elements-class-with-javascript#answer-196038
+  const OLD_SELECTORS_REGEX = new RegExp([
+    // Coincide con el inicio del className o
+    // con un espacio que precede al selector antiguo.
+    '(^|\\s)',
 
-  // función para añadir las nuevas clases
-  let addNewClasses = function(oldSize,newSize){
-    // nodeList de elementos con las clases antiguas
-    let items = d.querySelectorAll(`[class*="${oldSize}"]`);
-    let itemsArray = Array.prototype.slice.apply(items);
-    // array en el que se guardaran las clases antiguas
-    let oldClasses = [];
-    // array en el que se guardarán las nuevas clases
-    let newClasses;
-    let itemsL = items.length;
+    // Conicide con uno de todos los selectores.
+    `(${oldSelectors.join('|')})`,
 
-    // Ciclo para extraer las clases antiguas
-    for (let i = 0; i < itemsL; i++) {
-      // obtener las clases de cada elemento
-      let thisClasses = items[i].classList;
-      let classesArray = Array.prototype.slice.apply(thisClasses);
+    // Coincide con el tamaño asignado por el selector
+    // ej: base-50, coincidiría con 50.
+    '(\\d{1,3})?',
 
-      // recuperar la clase antigua
-      let extractedClasses = classesArray.filter(function(classItem){
-        return classItem.indexOf(oldSize) == 0;
-      });
+    // Coincide con el selector antiguo que este seguido
+    // por un espacio o con el final del className.
+    '(?!\\S)'
+  ].join(''), 'g')
 
-      // Añadir la clase antigua al array oldClasses
-      oldClasses.push(extractedClasses[0]);
+  let i = oldSelectors.length;
+
+  // Iteramos todos los selectores antiguos para reeemplazar
+  // algunos que necesitan un selector de atributo, tales como:
+  // base-, movil-, etc...
+  while (i--) {
+    const oldSelector = oldSelectors[i]
+
+    // Verificamos si se necesita un selector de atributo,
+    // sí se necesita, lo reasignamos con este
+    if (oldSelector.endsWith('-')) {
+      oldSelectors[i] = `[class*="${oldSelector}"]`
+
+    // De lo contrario, lo reasignamos como selector de clase
+    } else {
+      oldSelectors[i] = `.${oldSelector}`
     }
-
-    // Crear un nuevo array con las nuevas clases
-    newClasses = oldClasses.map(function(classItem){
-      return classItem.replace(oldSize,newSize)
-    });
-
-    // Añadir las nuevas clases a los items
-    itemsArray.forEach(function(size, index){
-      size.classList.add(newClasses[index]);
-    });
-  };
-
-  // añadir las nuevas clases a los items
-  for (let oldSize in oldSizes) {
-    addNewClasses(oldSize,oldSizes[oldSize])
   }
-})(document);
+
+  /**
+   * Agrega los nuevos selectores de clase
+   *
+   * @return void
+   *
+   * @private
+   */
+  function addNewSelectors () {
+    const elements = document.querySelectorAll(oldSelectors.join())
+    let elementsLen = elements.length
+
+    while (elementsLen--) {
+      const element = elements[elementsLen]
+
+      element.className = element.className
+        // Agrega el nuevo selector al className del elemento con la clase antigua
+        .replace(OLD_SELECTORS_REGEX, (_, space = '', oldSelector, size = '') => {
+          return space
+            // Antiguo selector
+            + oldSelector + size
+            + ' '
+            // Nuevo selector
+            + selectors[oldSelector] + size
+        })
+    }
+  }
+
+  addNewSelectors()
+
+})(window, window.document)
