@@ -7,7 +7,46 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header class="main-header ed-container">		
+		<div class="ed-item s-80">
+			<h2 class="logo_completo">SPSG</h2>
+			<h3 class="logo_descripcion">Servicios Profesionales en Sistemas de Gestion</h3>
+		</div>
+		<div class="ed-item s-20 main-end cross-center">
+			<div id="main-nav-toggle" class="toggle-menu to-l"></div>
+		</div>	
+	</header>
+	
+		
+	
+	<nav id="main-nav" class="main-nav">
+			<ul id="main-menu" class="main-menu">
+				<li><a href="#">Item 1</a></li>
+				<li><a href="#">Item 2</a></li>
+				<li><a href="#">Item 3</a></li>
+				<li><a href="#">Item 4</a></li>
+			</ul>
+	</nav>
+
+	<section class="slider ed-container">
+		<div class="ed-item s-100">			
+			<img src="img/slider.jpg" class="s-100" alt="SPSG">
+		</div>
+	</section>
+
+	<div class="ed-container main-page">
+		<main class="ed-item m-75">
+			<h1>Contenido principal</h1>
+		</main>
+	</div>
+
+	<footer class="main-footer ed-container">
+		<p>Servicios Profesionales en Sistemas de Gestion 2016</p>
+	</footer>
   <!-- Puede hacer pruebas aqui -->
   <script src="scripts.js"></script>
+  <script>
+  	edMenu('main-nav', 'main-menu');
+  </script>
 </body>
 </html>
