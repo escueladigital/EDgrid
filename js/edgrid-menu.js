@@ -20,8 +20,9 @@ let edMenu = function(navId,menuId) {
   }
 
   if (menu) {
-    // Detectar submenus
     let menuItems = menu.querySelectorAll('li');
+    let menuLinks = menu.querySelectorAll('a');
+    let menuLinksLength = menuLinks.length;
     let menuItemsLength = menuItems.length;
 
     function showSubMenu(e) {
@@ -32,7 +33,16 @@ let edMenu = function(navId,menuId) {
       }
     }
 
-    menu.addEventListener('click', (e) => {
+    // open external links in new tab
+    while(menuLinksLength--) {
+      let menuLink = menuLinks[menuLinksLength];
+      if(menuLink.href.indexOf('http') == 0){
+        menuLink.setAttribute('target', '_blank')
+      }
+    }
+
+    // show submenus
+    menu.addEventListener('click', e => {
       showSubMenu(e);
     });
 
