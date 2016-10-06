@@ -25,8 +25,8 @@ let edMenu = function(navId,menuId) {
     let menuItemsLength = menuItems.length;
 
     function showSubMenu(e) {
-      e.preventDefault();
       if (e.target.classList.contains('expand-submenu')) {
+        e.preventDefault();
         e.target.classList.toggle('active');
         e.target.previousElementSibling.classList.toggle('show-submenu');
       }
