@@ -157,8 +157,8 @@
       height : 40%;
       top : 20%;
       left : 30%;
-      border-left : ($size * 0.15) solid #666;
-      border-bottom : ($size * 0.15) solid #666;
+      border-left : ($size * 0.15) solid;
+      border-bottom : ($size * 0.15) solid;
       border-radius : ($size * 0.08);
       transform: rotate(-45deg);
       transition: all .3s;
