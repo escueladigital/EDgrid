@@ -49,3 +49,48 @@ $devMode: false;
 .toggle-menu {
 	@include navToggle(1.3em, #222);
 }
+
+.slider {
+	margin: 0;
+	padding: 0;		
+	position: relative;
+	width: 100vw;
+	min-height: 200px; 
+	overflow: hidden;
+	border: 0px solid red;
+
+	@include to(s) {
+		min-height: 150px;
+	}
+	.slider-wrapper {
+		// position: absolute;
+		margin: 0;
+		padding: 0;
+		list-style: none;		
+		position: absolute;
+		left: 0;
+		// height: 250px;
+
+		li {
+			float: left;
+			width: 100vw;
+			height: 100%;
+			// overflow: hidden;
+			// width: 100%;
+
+			img {
+				 
+			}			
+		}
+
+		
+
+	}
+}
+
+
+
+.main-footer {
+	border: 1px solid red;
+	@include stickyFooter;		
+}

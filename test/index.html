@@ -28,25 +28,47 @@
 			</ul>
 	</nav>
 
-	<section class="slider ed-container">
-		<div class="ed-item s-100">			
-			<img src="img/slider.jpg" class="s-100" alt="SPSG">
-		</div>
+	<section class="slider ed-container">		
+		<ul id="slider-wrapper" class="slider-wrapper">
+			<li>			
+				<img src="img/slider.jpg" class="" alt="SPSG">
+			</li>
+			<li>
+				<h2>caCa 2</h2>
+			</li>
+		</ul>		
 	</section>
-
+		
 	<div class="ed-container main-page">
 		<main class="ed-item m-75">
 			<h1>Contenido principal</h1>
 		</main>
 	</div>
 
-	<footer class="main-footer ed-container">
-		<p>Servicios Profesionales en Sistemas de Gestion 2016</p>
+	<footer class="main-footer ed-container main-center">		
+			Servicios Profesionales en Sistemas de Gestion 2016		
 	</footer>
   <!-- Puede hacer pruebas aqui -->
   <script src="scripts.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://itemslide.github.io/dist/itemslide.min.js"></script>
   <script>
   	edMenu('main-nav', 'main-menu');
+
+  	var carousel;
+
+  	$(document).ready(function () {
+  		carousel = $("#slider-wrapper");
+
+	    carousel.itemslide({
+	        one_item: true //Set this for proper full screen navigation
+	    }); //initialize itemslide
+
+	    $(window).resize(function () {
+	        carousel.reload();
+
+	    }); //Recalculate width and center positions and sizes when window is resized
+  	});
   </script>
 </body>
 </html>
