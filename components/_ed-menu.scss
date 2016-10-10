@@ -94,12 +94,14 @@
   ul {
     display  : none;
 
-    &.show-submenu {
-      display : block;
-      width : 100%;
-      order: 3;
-      margin-left : 1em;
-      margin-bottom : .5em;
+    @include to($bp) {
+      &.show-submenu {
+        display       : block;
+        width         : 100%;
+        order         : 3;
+        margin-left   : 1em;
+        margin-bottom : .5em;
+      }
     }
   }
 
@@ -190,6 +192,7 @@
     transition : all .3s;
     height     : 100vh;
     z-index    : 200;
+    overflow-y : auto;
 
     @if $direction == left or $direction == right {
       width : $lrWidth;
