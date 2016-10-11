@@ -47,15 +47,6 @@
 
 @mixin circle { border-radius : 50% }
 
-@mixin clearfix(){
-  &:before, &:after {
-    content : "";
-    display : table;
-    width   : 100%;
-    clear   : both;
-  }
-}
-
 @mixin full(){
   width     : 100%;
   max-width : 100%;
