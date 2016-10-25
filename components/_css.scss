@@ -58,6 +58,6 @@
   @include flexCssHelpers();
   @include visibility();
 
-  .ed-video { @include edVideo }
-  .button   { @include button  }
+  .ed-video { @include edVideo() }
+  .button   { @include button()  }
 }
