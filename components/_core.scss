@@ -1,3 +1,4 @@
+// placeholder para ed-container
 %ed-container {
   display      : flex;
   flex-wrap    : wrap;
@@ -7,12 +8,14 @@
   width        : 100%;
 }
 
+// placeholder para ed-item
 %ed-item {
   margin        : 0;
   padding-left  : $gutter;
   padding-right : $gutter;
 }
 
+// mixin para crear ed-container
 @mixin edContainer {
   @extend %ed-container;
 
@@ -21,11 +24,15 @@
   }
 }
 
+// mixin para ed-container total
 @mixin full {
   max-width : 100%;
 }
 
+// Mixin para calcular el ancho de un ed-item
 @mixin edItemWidth($currentBp, $prevBp, $coreBp){
+  // Si el tamaño actual es diferente al previo
+  // asignará el ancho en porcentaje
   @if $currentBp != $prevBp{
     @if $currentBp < 1 {
       @include from($coreBp){
@@ -40,35 +47,41 @@
   }
 }
 
-@mixin edItem($s:auto,$m:$s,$l:$m,$xl:$l) {
+// mixin para crear un ed-item
+@mixin edItem($s:100,$m:$s,$l:$m,$xl:$l) {
   @extend %ed-item;
 
   @if $devMode == true {
     @include devModeItem();
   }
 
-  // fractions detection (>1)
-  // detectar si se pasó una fraccion (>1)
-  @if $s == auto {
-    width: auto;
+  // calcular el ancho para el primer breakpoint
+  // por defecto es 100% y se convertirá al porcentaje adecuado
+  // según el valor que se le pase
+  @if $s == 100 {
+    width: 100%;
   } @else if $s < 1 {
     width : $s * 100%;
   } @else {
     width : $s * 1%;
   }
 
-  // widths for each breakpoint
-  // anchos para cada breakpoint
+  // widths for others breakpoints
+  // anchos para los demás breakpoints
   @include edItemWidth($m,$s,m); //medium
   @include edItemWidth($l,$m,l); //large
   @include edItemWidth($xl,$l,xl); //xlarge
 }
 
+// crear un ed-container
 .#{$container} { @include edContainer() }
 
+// crear un ed-item
 .#{$item} {
   @include edItem();
 
+  // un ed-item a la vez puede ser ed-container
+  // para evitar anidaciones innecesarias
   &.#{$container}{
     padding-left : 0;
     padding-right : 0;
@@ -80,21 +93,33 @@
   @each $size, $screen-size in $breakpoints{
     @if $size == s {
       @for $i from 1 through 20 {
-        .s-#{$i*5} { width: unquote($i*5 + "%") }
+        .s-#{$i*5},
+        .#{$item}.s-#{$i*5} {
+          width: $i * 5%;
+        }
       }
       @each $fraction in $fractions{
         @for $i from 1 through $fraction{
-          .s-#{$i}-#{$fraction} { width: (100% / $fraction) * $i }
+          .s-#{$i}-#{$fraction},
+          .#{$item}.s-#{$i}-#{$fraction} {
+            width: (100% / $fraction) * $i;
+          }
         }
       }
     } @else {
       @media all and (min-width: $screen-size){
         @for $i from 1 through 20 {
-          .#{$size}-#{$i*5} { width: unquote($i*5 + "%") }
+          .#{$size}-#{$i*5},
+          .#{$item}.#{$size}-#{$i*5}{
+            width: $i * 5%;
+          }
         }
         @each $fraction in $fractions {
           @for $i from 1 through $fraction{
-            .#{$size}-#{$i}-#{$fraction} { width: (100% / $fraction) * $i }
+            .#{$size}-#{$i}-#{$fraction}
+            .#{$item}.#{$size}-#{$i}-#{$fraction} {
+              width: (100% / $fraction) * $i
+            }
           }
         }
       }
