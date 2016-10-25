@@ -83,10 +83,10 @@
 
     // Si es padre de un submenu
     &.parent-submenu {
-      display : flex;
-      flex-wrap: wrap;
+      display   : flex;
+      flex-wrap : wrap;
 
-      a { flex: auto }
+      a { flex : auto }
     }
   }
 
@@ -143,31 +143,31 @@
 
   // expand submenu button
   .expand-submenu {
-    $size: 3em;
-    position : relative;
-    right : 0;
-    width : $size;
-    height : $size;
-    cursor: pointer;
     @include hideFrom($bp);
-    transition: all .3s;
+    $size      : 3em;
+    position   : relative;
+    right      : 0;
+    width      : $size;
+    height     : $size;
+    cursor     : pointer;
+    transition : all .3s;
 
     &::after {
-      content: "";
-      position : absolute;
-      width : 40%;
-      height : 40%;
-      top : 20%;
-      left : 30%;
-      border-left : ($size * 0.15) solid;
+      content       : "";
+      position      : absolute;
+      width         : 40%;
+      height        : 40%;
+      top           : 20%;
+      left          : 30%;
+      border-left   : ($size * 0.15) solid;
       border-bottom : ($size * 0.15) solid;
       border-radius : ($size * 0.08);
-      transform: rotate(-45deg);
-      transition: all .3s;
+      transform     : rotate(-45deg);
+      transition    : all .3s;
     }
 
     &.active {
-      transform: rotate(180deg);
+      transform : rotate(180deg);
     }
   }
 
@@ -187,7 +187,7 @@
 // mixin Nav (para el contenedor del menú)
 @mixin edNav($direction, $bp){
   @include to($bp) {
-    $lrWidth : 85%;
+    $lrWidth   : 85%;
     position   : fixed;
     transition : all .3s;
     height     : 100vh;
