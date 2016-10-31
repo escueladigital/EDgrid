@@ -9,7 +9,7 @@ $container : ed-container !default;
 $item      : ed-item !default;
 
 // Max width of containers
-$max-width : rem(1200px) !default;
+$max-width : 1200px !default;
 
 // Gutter between same line items
 // Total gutter between items is $gutter * 2
@@ -17,10 +17,10 @@ $gutter : em(15px) !default;
 
 // Breakpoints
 $breakpoints : (
-  s  : em(0px),
-  m  : em(640px),
-  l  : em(1024px),
-  xl : em(1440px)
+  s  : 0,
+  m  : 640px,
+  l  : 1024px,
+  xl : 1440px
 ) !default;
 
 $fractions : 3 6 !default;
