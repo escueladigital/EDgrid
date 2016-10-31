@@ -1,7 +1,7 @@
 'use strict';
 const gulp = require('gulp'),
       sass = require('gulp-sass'),
-			plumber = require('gulp-plumber'),
+      plumber = require('gulp-plumber'),
       postcss = require('gulp-postcss'),
       autoprefixer = require('autoprefixer'),
       cssnano = require('cssnano'),
