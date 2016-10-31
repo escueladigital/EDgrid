@@ -47,3 +47,4 @@ prepros.cfg
 node_modules/
 npm-debug.log
 test/styles.css
+test/scripts.js.map
