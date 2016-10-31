@@ -16,10 +16,10 @@
     'tablet-': 'm-',
     'web-': 'l-',
     'hd-': 'xl-'
-  }
+  };
 
   // Obtenemos los selectores antiguos.
-  const oldSelectors = Object.keys(selectors)
+  const oldSelectors = Object.keys(selectors);
 
   // Expresión regular que encuentra los selectores antiguos
   // a partir del className de un elemento.
@@ -34,12 +34,12 @@
 
     // Coincide con el tamaño asignado por el selector
     // ej: base-50, coincidiría con 50.
-    '(\\d{1,3})?',
+    '(\\d{1,3}|\\d-\\d)?',
 
     // Coincide con el selector antiguo que este seguido
     // por un espacio o con el final del className.
     '(?!\\S)'
-  ].join(''), 'g')
+  ].join(''), 'g');
 
   let i = oldSelectors.length;
 
@@ -47,12 +47,12 @@
   // algunos que necesitan un selector de atributo, tales como:
   // base-, movil-, etc...
   while (i--) {
-    const oldSelector = oldSelectors[i]
+    const oldSelector = oldSelectors[i];
 
     // Verificamos si se necesita un selector de atributo,
     // sí se necesita, lo reasignamos con este
     if (oldSelector.endsWith('-')) {
-      oldSelectors[i] = `[class*="${oldSelector}"]`
+      oldSelectors[i] = `[class*="${oldSelector}"]`;
 
     // De lo contrario, lo reasignamos como selector de clase
     } else {
@@ -68,11 +68,11 @@
    * @private
    */
   function addNewSelectors () {
-    const elements = document.querySelectorAll(oldSelectors.join())
-    let elementsLen = elements.length
+    const elements = document.querySelectorAll(oldSelectors.join());
+    let elementsLen = elements.length;
 
     while (elementsLen--) {
-      const element = elements[elementsLen]
+      const element = elements[elementsLen];
 
       element.className = element.className
         // Agrega el nuevo selector al className del elemento con la clase antigua
@@ -89,4 +89,4 @@
 
   addNewSelectors()
 
-})(window, window.document)
+})(window, window.document);
