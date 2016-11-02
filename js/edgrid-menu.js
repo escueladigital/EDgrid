@@ -32,14 +32,6 @@ let edMenu = function(navId,menuId) {
       }
     }
 
-    // open external links in new tab
-    while(menuLinksLength--) {
-      let menuLink = menuLinks[menuLinksLength];
-      if(menuLink.href.indexOf('http') == 0){
-        menuLink.setAttribute('target', '_blank')
-      }
-    }
-
     // show submenus
     menu.addEventListener('click', e => {
       showSubMenu(e);
