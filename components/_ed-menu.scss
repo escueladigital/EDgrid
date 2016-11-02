@@ -228,12 +228,12 @@
 
 
 @mixin navToggle($size, $color) {
-  $segmentHeight : ($size / 8);
+  $segmentHeight : ($size / 5);
   position       : relative;
   z-index        : 300;
   width          : $size * 1.3;
   height         : $size;
-  box-shadow     : 0 ($segmentHeight * 2) $color inset;
+  box-shadow     : 0 ($segmentHeight) $color inset;
   cursor         : pointer;
 
   &::after,
@@ -241,12 +241,12 @@
     content          : "";
     position         : absolute;
     width            : 100%;
-    height           : ($segmentHeight * 2);
+    height           : ($segmentHeight);
     background-color : $color;
     bottom           : 0;
   }
 
   &::after {
-    bottom : $segmentHeight * 3;
+    bottom : $segmentHeight * 2;
   }
 }
