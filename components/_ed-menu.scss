@@ -231,7 +231,7 @@
   $segmentHeight : ($size / 5);
   position       : relative;
   z-index        : 300;
-  width          : $size * 1.3;
+  width          : $size * 1.5;
   height         : $size;
   box-shadow     : 0 ($segmentHeight) $color inset;
   cursor         : pointer;
