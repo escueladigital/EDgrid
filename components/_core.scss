@@ -116,7 +116,7 @@
         }
         @each $fraction in $fractions {
           @for $i from 1 through $fraction{
-            .#{$size}-#{$i}-#{$fraction}
+            .#{$size}-#{$i}-#{$fraction},
             .#{$item}.#{$size}-#{$i}-#{$fraction} {
               width: (100% / $fraction) * $i
             }
