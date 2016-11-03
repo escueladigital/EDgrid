@@ -1,12 +1,12 @@
 'use strict';
 
-var edgrid = {};
+const edgrid = {};
 
 // menu
-edgrid.menu = function (navId, menuId) {
-  var nav = document.getElementById(navId),
-      menu = document.getElementById(menuId),
-      toggleButton = document.getElementById(navId + '-toggle');
+edgrid.menu = function(navId,menuId) {
+  let nav = document.getElementById(navId),
+    menu = document.getElementById(menuId),
+    toggleButton = document.getElementById(`${navId}-toggle`);
 
   function showNav() {
     nav.classList.toggle('show-menu');
@@ -25,42 +25,43 @@ edgrid.menu = function (navId, menuId) {
     if (toggleButton) {
       toggleButton.addEventListener('click', showNav);
     } else {
-      console.error('Not found ' + navId + '-toggle Id');
+      console.error(`Not found ${navId}-toggle Id`)
     }
   } else {
-    console.error('Not found ' + navId + ' Id');
+    console.error(`Not found ${navId} Id`)
   }
 
+
   if (menu) {
-    var menuItems = menu.querySelectorAll('li');
-    var menuItemsLength = menuItems.length;
+    let menuItems = menu.querySelectorAll('li');
+    let menuItemsLength = menuItems.length;
 
     // show submenus
-    menu.addEventListener('click', function (e) {
+    menu.addEventListener('click', e => {
       showSubMenu(e);
     });
 
     while (menuItemsLength--) {
-      var menuItem = menuItems[menuItemsLength];
+      let menuItem = menuItems[menuItemsLength];
       // Detectar si un item es padre de un submenu
       if (menuItem.querySelector('ul') != null) {
         menuItem.classList.add('parent-submenu');
 
         //Crear toggle button para submenus
-        var expandSubmenu = document.createElement('div');
+        let expandSubmenu = document.createElement('div');
         expandSubmenu.classList.add('expand-submenu');
         menuItem.appendChild(expandSubmenu);
       }
     }
   } else {
-    console.error('Not found ' + menuId + ' Id');
+    console.error(`Not found ${menuId} Id`)
   }
 };
 
 // migrate
-edgrid.migrate = function () {
+edgrid.migrate = function() {
   // Selectores de las clases antiguas.
-  var selectors = {
+  const selectors = {
     grupo: 'ed-container',
     caja: 'ed-item',
     total: 'full',
@@ -78,43 +79,44 @@ edgrid.migrate = function () {
   };
 
   // Obtenemos los selectores antiguos.
-  var oldSelectors = Object.keys(selectors);
+  const oldSelectors = Object.keys(selectors);
 
   // Expresión regular que encuentra los selectores antiguos
   // a partir del className de un elemento.
   // Creada a partir de: http://stackoverflow.com/questions/195951/change-an-elements-class-with-javascript#answer-196038
-  var OLD_SELECTORS_REGEX = new RegExp([
-  // Coincide con el inicio del className o
-  // con un espacio que precede al selector antiguo.
-  '(^|\\s)',
+  const OLD_SELECTORS_REGEX = new RegExp([
+    // Coincide con el inicio del className o
+    // con un espacio que precede al selector antiguo.
+    '(^|\\s)',
 
-  // Conicide con uno de todos los selectores.
-  '(' + oldSelectors.join('|') + ')',
+    // Conicide con uno de todos los selectores.
+    `(${oldSelectors.join('|')})`,
 
-  // Coincide con el tamaño asignado por el selector
-  // ej: base-50, coincidiría con 50.
-  '(\\d{1,3}|\\d-\\d)?',
+    // Coincide con el tamaño asignado por el selector
+    // ej: base-50, coincidiría con 50.
+    '(\\d{1,3}|\\d-\\d)?',
 
-  // Coincide con el selector antiguo que este seguido
-  // por un espacio o con el final del className.
-  '(?!\\S)'].join(''), 'g');
+    // Coincide con el selector antiguo que este seguido
+    // por un espacio o con el final del className.
+    '(?!\\S)'
+  ].join(''), 'g');
 
-  var i = oldSelectors.length;
+  let i = oldSelectors.length;
 
   // Iteramos todos los selectores antiguos para reeemplazar
   // algunos que necesitan un selector de atributo, tales como:
   // base-, movil-, etc...
   while (i--) {
-    var oldSelector = oldSelectors[i];
+    const oldSelector = oldSelectors[i];
 
     // Verificamos si se necesita un selector de atributo,
     // sí se necesita, lo reasignamos con este
     if (oldSelector.endsWith('-')) {
-      oldSelectors[i] = '[class*="' + oldSelector + '"]';
+      oldSelectors[i] = `[class*="${oldSelector}"]`;
 
       // De lo contrario, lo reasignamos como selector de clase
     } else {
-      oldSelectors[i] = '.' + oldSelector;
+      oldSelectors[i] = `.${oldSelector}`
     }
   }
 
@@ -125,28 +127,24 @@ edgrid.migrate = function () {
    *
    * @private
    */
-  function addNewSelectors() {
-    var elements = document.querySelectorAll(oldSelectors.join());
-    var elementsLen = elements.length;
+  function addNewSelectors () {
+    const elements = document.querySelectorAll(oldSelectors.join());
+    let elementsLen = elements.length;
 
     while (elementsLen--) {
-      var element = elements[elementsLen];
+      const element = elements[elementsLen];
 
       element.className = element.className
       // Agrega el nuevo selector al className del elemento con la clase antigua
-      .replace(OLD_SELECTORS_REGEX, function (_) {
-        var space = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-        var oldSelector = arguments[2];
-        var size = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
-
-        return space
-        // Antiguo selector
-        + oldSelector + size + ' '
-        // Nuevo selector
-        + selectors[oldSelector] + size;
-      });
+        .replace(OLD_SELECTORS_REGEX, (_, space = '', oldSelector, size = '') => {
+          return space
+            // Antiguo selector
+            + oldSelector + size
+            + ' '
+            // Nuevo selector
+            + selectors[oldSelector] + size
+        })
     }
   }
   addNewSelectors();
 };
-//# sourceMappingURL=scripts.js.map
