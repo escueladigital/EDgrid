@@ -12,7 +12,7 @@ const gulp = require('gulp'),
 
 let postcssPlugins = [
   autoprefixer({browsers: 'last 2 versions'}),
-  cssnano({core:true})
+  cssnano({core:false})
 ];
 
 let sassOptions = {
@@ -34,7 +34,7 @@ gulp.task('styles', () =>
       .pipe(browserSync.stream())
 );
 
-gulp.task('compileCoreEdgrid', () =>
+gulp.task('compileCore', () =>
   gulp.src('./ed-grid.scss')
     .pipe(sass(sassOptions))
     .pipe(postcss(postcssPlugins))
