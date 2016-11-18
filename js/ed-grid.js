@@ -1,9 +1,31 @@
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.edgrid = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
-var edgrid = {};
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-// menu
-edgrid.menu = function (navId, menuId) {
+var _menu = require('./menu');
+
+var _menu2 = _interopRequireDefault(_menu);
+
+var _migrate = require('./migrate');
+
+var _migrate2 = _interopRequireDefault(_migrate);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = { menu: _menu2.default, migrate: _migrate2.default };
+module.exports = exports['default'];
+
+},{"./menu":2,"./migrate":3}],2:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function (navId, menuId) {
   var nav = document.getElementById(navId),
       menu = document.getElementById(menuId),
       toggleButton = document.getElementById(navId + '-toggle');
@@ -57,8 +79,17 @@ edgrid.menu = function (navId, menuId) {
   }
 };
 
-// migrate
-edgrid.migrate = function () {
+module.exports = exports['default'];
+
+},{}],3:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+
   // Selectores de las clases antiguas.
   var selectors = {
     grupo: 'ed-container',
@@ -84,6 +115,7 @@ edgrid.migrate = function () {
   // a partir del className de un elemento.
   // Creada a partir de: http://stackoverflow.com/questions/195951/change-an-elements-class-with-javascript#answer-196038
   var OLD_SELECTORS_REGEX = new RegExp([
+
   // Coincide con el inicio del className o
   // con un espacio que precede al selector antiguo.
   '(^|\\s)',
@@ -147,6 +179,14 @@ edgrid.migrate = function () {
       });
     }
   }
+
   addNewSelectors();
 };
-//# sourceMappingURL=scripts.js.map
+
+module.exports = exports['default'];
+
+},{}]},{},[1])(1)
+});
+
+
+//# sourceMappingURL=ed-grid.js.map
