@@ -1,7 +1,9 @@
+import { $, each } from './utils'
+
 export default (navId, menuId) => {
-  let nav = document.getElementById(navId),
-    menu = document.getElementById(menuId),
-    toggleButton = document.getElementById(`${navId}-toggle`);
+  let nav = $(`#${navId}`),
+    menu = $(`#${menuId}`),
+    toggleButton = $(`#${navId}-toggle`);
 
   function showNav() {
     nav.classList.toggle('show-menu');
@@ -28,18 +30,12 @@ export default (navId, menuId) => {
 
 
   if (menu) {
-    let menuItems = menu.querySelectorAll('li');
-    let menuItemsLength = menuItems.length;
-
     // show submenus
-    menu.addEventListener('click', e => {
-      showSubMenu(e);
-    });
+    menu.addEventListener('click', showSubMenu);
 
-    while (menuItemsLength--) {
-      let menuItem = menuItems[menuItemsLength];
+    each($('li', menu) /* menuItems */, menuItem => {
       // Detectar si un item es padre de un submenu
-      if (menuItem.querySelector('ul') != null) {
+      if ($('ul', menuItem) != null) {
         menuItem.classList.add('parent-submenu');
 
         //Crear toggle button para submenus
@@ -47,7 +43,7 @@ export default (navId, menuId) => {
         expandSubmenu.classList.add('expand-submenu');
         menuItem.appendChild(expandSubmenu);
       }
-    }
+    })
   } else {
     console.error(`Not found ${menuId} Id`)
   }

@@ -1,3 +1,5 @@
+import { $, each } from './utils'
+
 export default () => {
 
   // Selectores de las clases antiguas.
@@ -69,12 +71,7 @@ export default () => {
    * @private
    */
   function addNewSelectors () {
-    const elements = document.querySelectorAll(oldSelectors.join());
-    let elementsLen = elements.length;
-
-    while (elementsLen--) {
-      const element = elements[elementsLen];
-
+    each($(oldSelectors.join()), element => {
       element.className = element.className
       // Agrega el nuevo selector al className del elemento con la clase antigua
         .replace(OLD_SELECTORS_REGEX, (_, space = '', oldSelector, size = '') => {
@@ -85,7 +82,7 @@ export default () => {
             // Nuevo selector
             + selectors[oldSelector] + size
         })
-    }
+    })
   }
 
   addNewSelectors();

@@ -25,10 +25,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _utils = require('./utils');
+
 exports.default = function (navId, menuId) {
-  var nav = document.getElementById(navId),
-      menu = document.getElementById(menuId),
-      toggleButton = document.getElementById(navId + '-toggle');
+  var nav = (0, _utils.$)('#' + navId),
+      menu = (0, _utils.$)('#' + menuId),
+      toggleButton = (0, _utils.$)('#' + navId + '-toggle');
 
   function showNav() {
     nav.classList.toggle('show-menu');
@@ -54,18 +56,12 @@ exports.default = function (navId, menuId) {
   }
 
   if (menu) {
-    var menuItems = menu.querySelectorAll('li');
-    var menuItemsLength = menuItems.length;
-
     // show submenus
-    menu.addEventListener('click', function (e) {
-      showSubMenu(e);
-    });
+    menu.addEventListener('click', showSubMenu);
 
-    while (menuItemsLength--) {
-      var menuItem = menuItems[menuItemsLength];
+    (0, _utils.each)((0, _utils.$)('li', menu) /* menuItems */, function (menuItem) {
       // Detectar si un item es padre de un submenu
-      if (menuItem.querySelector('ul') != null) {
+      if ((0, _utils.$)('ul', menuItem) != null) {
         menuItem.classList.add('parent-submenu');
 
         //Crear toggle button para submenus
@@ -73,7 +69,7 @@ exports.default = function (navId, menuId) {
         expandSubmenu.classList.add('expand-submenu');
         menuItem.appendChild(expandSubmenu);
       }
-    }
+    });
   } else {
     console.error('Not found ' + menuId + ' Id');
   }
@@ -81,12 +77,14 @@ exports.default = function (navId, menuId) {
 
 module.exports = exports['default'];
 
-},{}],3:[function(require,module,exports){
+},{"./utils":4}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _utils = require('./utils');
 
 exports.default = function () {
 
@@ -158,12 +156,7 @@ exports.default = function () {
    * @private
    */
   function addNewSelectors() {
-    var elements = document.querySelectorAll(oldSelectors.join());
-    var elementsLen = elements.length;
-
-    while (elementsLen--) {
-      var element = elements[elementsLen];
-
+    (0, _utils.each)((0, _utils.$)(oldSelectors.join()), function (element) {
       element.className = element.className
       // Agrega el nuevo selector al className del elemento con la clase antigua
       .replace(OLD_SELECTORS_REGEX, function (_) {
@@ -177,13 +170,60 @@ exports.default = function () {
         // Nuevo selector
         + selectors[oldSelector] + size;
       });
-    }
+    });
   }
 
   addNewSelectors();
 };
 
 module.exports = exports['default'];
+
+},{"./utils":4}],4:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.$ = $;
+exports.each = each;
+/**
+ * Alias del método `querySelectorAll`
+ *
+ * @param {String} selector
+ * @param {Document|HTMLElement} context
+ *
+ * @return {NodeList|HTMLElement}
+ *
+ * @private
+ */
+function $(selector) {
+  var context = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
+
+  if (/^#[\w-]+$/.test(selector)) {
+    return context.getElementById(selector.slice(1));
+  }
+
+  return context.querySelectorAll(selector);
+}
+
+/**
+ * Recorre todos los elementos de un NodeList o HTMLCollection.
+ *
+ * @param {NodeList|HTMLCollection} elements
+ * @param {Function} callback
+ *
+ * @return void
+ *
+ * @private
+ */
+function each(elements, callback) {
+  var length = elements.length;
+
+
+  for (var i = 0; i < length; ++i) {
+    callback(elements[i], i, elements);
+  }
+}
 
 },{}]},{},[1])(1)
 });
