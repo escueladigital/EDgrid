@@ -88,8 +88,8 @@ var _utils = require('./utils');
 
 exports.default = function () {
 
-  // Selectores de las clases antiguas.
-  var selectors = {
+  // Clases antiguas (como clave) y nuevas (como valor).
+  var classes = {
     grupo: 'ed-container',
     caja: 'ed-item',
     total: 'full',
@@ -106,8 +106,8 @@ exports.default = function () {
     'hd-': 'xl-'
   };
 
-  // Obtenemos los selectores antiguos.
-  var oldSelectors = Object.keys(selectors);
+  // Obtenemos las clases antiguas.
+  var oldClasses = Object.keys(classes);
 
   // Expresión regular que encuentra los selectores antiguos
   // a partir del className de un elemento.
@@ -119,7 +119,7 @@ exports.default = function () {
   '(^|\\s)',
 
   // Conicide con uno de todos los selectores.
-  '(' + oldSelectors.join('|') + ')',
+  '(' + oldClasses.join('|') + ')',
 
   // Coincide con el tamaño asignado por el selector
   // ej: base-50, coincidiría con 50.
@@ -129,24 +129,19 @@ exports.default = function () {
   // por un espacio o con el final del className.
   '(?!\\S)'].join(''), 'g');
 
-  var i = oldSelectors.length;
+  // Creamos un nuevo arreglo con los selectores de atributo
+  // y de clase, resultantes de las clases antiguas.
+  var oldSelectors = oldClasses.map(function (oldClass) {
 
-  // Iteramos todos los selectores antiguos para reeemplazar
-  // algunos que necesitan un selector de atributo, tales como:
-  // base-, movil-, etc...
-  while (i--) {
-    var oldSelector = oldSelectors[i];
-
-    // Verificamos si se necesita un selector de atributo,
-    // sí se necesita, lo reasignamos con este
-    if (oldSelector.endsWith('-')) {
-      oldSelectors[i] = '[class*="' + oldSelector + '"]';
-
-      // De lo contrario, lo reasignamos como selector de clase
-    } else {
-      oldSelectors[i] = '.' + oldSelector;
+    // Verificamos si se necesita un selector de atributo.
+    // Si se necesita, lo retornamos con este.
+    if (oldClass.endsWith('-')) {
+      return '[class*="' + oldClass + '"]';
     }
-  }
+
+    // De lo contrario, lo retornamos como selector de clase.
+    return '.' + oldClass;
+  });
 
   // Iteramos todos los elementos para añadir las nuevas clases.
   (0, _utils.each)((0, _utils.$)(oldSelectors.join()), function (element) {
@@ -155,7 +150,7 @@ exports.default = function () {
 
     // Iteramos todas las coincidencias.
     while (match = OLD_SELECTORS_REGEX.exec(element.className)) {
-      newClasses += ' ' + (selectors[match[2]] + (match[3] || ''));
+      newClasses += ' ' + (classes[match[2]] + (match[3] || ''));
     }
 
     // Añadimos las nuevas clases.
