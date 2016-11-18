@@ -63,27 +63,17 @@ export default () => {
     }
   }
 
-  /**
-   * Agrega los nuevos selectores de clase
-   *
-   * @return void
-   *
-   * @private
-   */
-  function addNewSelectors () {
-    each($(oldSelectors.join()), element => {
-      element.className = element.className
-      // Agrega el nuevo selector al className del elemento con la clase antigua
-        .replace(OLD_SELECTORS_REGEX, (_, space = '', oldSelector, size = '') => {
-          return space
-            // Antiguo selector
-            + oldSelector + size
-            + ' '
-            // Nuevo selector
-            + selectors[oldSelector] + size
-        })
-    })
-  }
+  // Iteramos todos los elementos para añadir las nuevas clases.
+  each($(oldSelectors.join()), element => {
+    let match
+    let newClasses = ''
 
-  addNewSelectors();
+    // Iteramos todas las coincidencias.
+    while (match = OLD_SELECTORS_REGEX.exec(element.className)) {
+      newClasses += ` ${selectors[match[2]] + (match[3] || '')}`
+    }
+
+    // Añadimos las nuevas clases.
+    element.className += newClasses
+  })
 }

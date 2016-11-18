@@ -148,32 +148,19 @@ exports.default = function () {
     }
   }
 
-  /**
-   * Agrega los nuevos selectores de clase
-   *
-   * @return void
-   *
-   * @private
-   */
-  function addNewSelectors() {
-    (0, _utils.each)((0, _utils.$)(oldSelectors.join()), function (element) {
-      element.className = element.className
-      // Agrega el nuevo selector al className del elemento con la clase antigua
-      .replace(OLD_SELECTORS_REGEX, function (_) {
-        var space = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-        var oldSelector = arguments[2];
-        var size = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+  // Iteramos todos los elementos para añadir las nuevas clases.
+  (0, _utils.each)((0, _utils.$)(oldSelectors.join()), function (element) {
+    var match = void 0;
+    var newClasses = '';
 
-        return space
-        // Antiguo selector
-        + oldSelector + size + ' '
-        // Nuevo selector
-        + selectors[oldSelector] + size;
-      });
-    });
-  }
+    // Iteramos todas las coincidencias.
+    while (match = OLD_SELECTORS_REGEX.exec(element.className)) {
+      newClasses += ' ' + (selectors[match[2]] + (match[3] || ''));
+    }
 
-  addNewSelectors();
+    // Añadimos las nuevas clases.
+    element.className += newClasses;
+  });
 };
 
 module.exports = exports['default'];
