@@ -2,19 +2,22 @@
   // offset
   @include cssOffset();
 
-  // flexbox
+  // flexbox order
   @include flexOrder();
 
+  // Incluir alineaciones en main axis
   @include cssMainJustify();
   @include cssMainDistribute();
   @include cssMainStart();
   @include cssMainCenter();
   @include cssMainEnd();
 
+  // Alineaciones en cross axis
   @include cssCrossStart();
   @include cssCrossCenter();
   @include cssCrossEnd();
 
+  // Dirección del main axis
   @include cssFlexReverse();
   @include cssFlexColumn();
   @include cssFlexColumnReverse();

@@ -141,7 +141,7 @@
   }
 }
 
-// Alineación en el cross axis. Aplican al flex-container
+// Al inicio en el cross axis para CSSCore
 @mixin crossStart{
   @include flex;
   align-items   : flex-start;
@@ -168,6 +168,7 @@
   }
 }
 
+// Al centro en el cross axis para CSSCore
 @mixin crossCenter {
   @include flex;
   align-items   : center;
@@ -194,6 +195,7 @@
   }
 }
 
+// Al final en el cross axis para CSSCore
 @mixin crossEnd {
   @include flex;
   align-items   : flex-end;
@@ -304,7 +306,8 @@
   }
 }
 
-// Versiones CSS
+// Versiones CSS Helpers
+// si se omite el breakpoint se aplica siempre
 @mixin flexCssHelpers {
   .main-justify        { @include mainJustify       }
   .main-distribute     { @include mainDistribute    }
