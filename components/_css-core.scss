@@ -53,8 +53,6 @@
   }
 }
 
-// todo: ver que componentes mover a cssCore (quizas flexbox)
-// todo: o quizas separarlos para activar unos u otros
 @if $cssHelpers == true {
   @include coreGrid();
   @include helpers();
