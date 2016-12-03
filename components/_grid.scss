@@ -28,6 +28,13 @@
   margin-left  : -($gutter / 2);
   margin-right : -($gutter / 2);
 
+  // Evitar scroll horizontal
+  @at-root {
+    body {
+      overflow-x: hidden;
+    }
+  }
+
   // por si el contenedor es un ul
   @if $selector == li {
     margin     : 0;
