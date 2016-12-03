@@ -2,14 +2,14 @@
 
 ED GRID  es un FRAMEWORK SOLO CSS para crear diseños web responsive y mobile first.
 
-Documentación oficial: http://escueladigital.pe/ed-grid
+Documentación oficial: http://escuela.digital/edgrid
 
-Autor: Álvaro Felipe de Escuela Digital http://escueladigital.pe
+Autor: Álvaro Felipe de Escuela Digital http://escuela.digital
 
 Colaboradores:
 
 * **Daniel Guillermo Romero** http://adsiar.com
-* **Carlos Cuatin** http://carloscuatin.com
+* **Carlos Cuatin**
 
 Este repositorio incluye los siguientes archivos:
 
