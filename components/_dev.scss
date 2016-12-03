@@ -19,6 +19,7 @@ $infoFontSize : $infoHeight * 0.6;
   line-height : $infoHeight;
 }
 
+// estilos para los containers en modo dev
 @mixin devModeContainer {
   padding-top   : $infoHeight;
   margin-bottom : 10px;
@@ -35,6 +36,7 @@ $infoFontSize : $infoHeight * 0.6;
   }
 }
 
+// estilos para los items en modo dev
 @mixin devModeItem {
   position         : relative;
   padding-bottom   : $infoHeight;
@@ -54,11 +56,12 @@ $infoFontSize : $infoHeight * 0.6;
   }
 }
 
-@mixin devMode() {
+@mixin devMode {
   margin   : 0 !important;
   position : relative;
   top      : 66px;
 
+  // imprimir información del breakpoint
   &:before {
     @extend %info;
     position    : fixed;
@@ -68,6 +71,7 @@ $infoFontSize : $infoHeight * 0.6;
     text-align  : center;
     line-height : 36px;
     height      : 36px;
+    top         : 0;
   }
 
   @each $size, $screen-size in $breakpoints {
@@ -79,8 +83,5 @@ $infoFontSize : $infoHeight * 0.6;
   }
 }
 
-@if $devMode == true {
-  body {
-    @include devMode();
-  }
-}
+// Incluir el modo dev en body
+@if $devMode == true { body { @include devMode } }
