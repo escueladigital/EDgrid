@@ -2,3 +2,95 @@ $cssCore: false;
 $cssHelpers: true;
 $devMode: false;
 @import '../ed-grid';
+
+.main-header {
+	background: transparent;
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+
+.logo {
+
+
+	&_completo {
+		color: #333;
+		font-size: 2em;
+		border: 0 solid red;
+		margin:0;
+		padding:0;
+	}
+
+	&_descripcion {
+		color: #666;		
+		font-size: .8em;
+		border: 0 solid blue;
+		margin:0;
+		padding:0;
+	}
+}
+
+.main-menu {	
+	@include edMenu(l, nav);	
+
+	li {
+		background: steelblue;
+		border-bottom: 1px solid rgba(#fff, .5);
+	}
+
+	a {
+		color: white;
+	}
+}
+
+.main-nav {	
+	@include edNav(left, l);
+}
+
+.toggle-menu {
+	@include navToggle(1.3em, #222);
+}
+
+.slider {
+	margin: 0;
+	padding: 0;		
+	position: relative;
+	width: 100vw;
+	min-height: 200px; 
+	overflow: hidden;
+	border: 0px solid red;
+
+	@include to(s) {
+		min-height: 150px;
+	}
+	.slider-wrapper {
+		// position: absolute;
+		margin: 0;
+		padding: 0;
+		list-style: none;		
+		position: absolute;
+		left: 0;
+		// height: 250px;
+
+		li {
+			float: left;
+			width: 100vw;
+			height: 100%;
+			// overflow: hidden;
+			// width: 100%;
+
+			img {
+				 
+			}			
+		}
+
+		
+
+	}
+}
+
+
+
+.main-footer {
+	border: 1px solid red;
+	@include stickyFooter;		
+}
