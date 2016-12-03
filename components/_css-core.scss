@@ -51,14 +51,25 @@
     &.l-horizontal  { @include edMenu(l)  }
     &.xl-horizontal { @include edMenu(xl) }
   }
+
+  .ed-nav {
+    &.l-top { @include edNav(top,l)}
+    &.l-bottom { @include edNav(bottom,l)}
+    &.l-left { @include edNav(left,l)}
+    &.l-right { @include edNav(right,l)}
+    &.x-top { @include edNav(top,xl)}
+    &.xl-bottom { @include edNav(bottom,xl)}
+    &.xl-left { @include edNav(left,xl)}
+    &.xl-right { @include edNav(right,xl)}
+    &.m-top { @include edNav(top,m)}
+    &.m-bottom { @include edNav(bottom,m)}
+    &.m-left { @include edNav(left,m)}
+    &.m-right { @include edNav(right,m)}
+  }
+
+  .nav-toggle {
+    @include navToggle(20px,#333)
+  }
 }
 
-@if $cssHelpers == true {
-  @include coreGrid();
-  @include helpers();
-  @include flexCssHelpers();
-  @include visibility();
 
-  .ed-video { @include edVideo() }
-  .button   { @include button()  }
-}
