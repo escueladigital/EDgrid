@@ -1,5 +1,7 @@
 ## ED-GRID
 
+[![Join the chat at https://gitter.im/escueladigital/EDgrid](https://badges.gitter.im/escueladigital/EDgrid.svg)](https://gitter.im/escueladigital/EDgrid?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ED GRID  es un FRAMEWORK SOLO CSS para crear diseños web responsive y mobile first.
 
 Documentación oficial: http://escuela.digital/edgrid
@@ -9,7 +11,7 @@ Autor: Álvaro Felipe de Escuela Digital http://escuela.digital
 Colaboradores:
 
 * **Daniel Guillermo Romero** http://adsiar.com
-* **Carlos Cuatin** http://carloscuatin.com
+* **Carlos Cuatin**
 
 Este repositorio incluye los siguientes archivos:
 
