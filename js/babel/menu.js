@@ -32,10 +32,20 @@ export default (navId, menuId) => {
   if (menu) {
     // show submenus
     menu.addEventListener('click', showSubMenu);
+    //
+    // while (menuItemsLength--) {
+    //   let menuItem = menuItems[menuItemsLength];
+    //   // Detectar si un item es padre de un submenu
+    //   if (menuItem.querySelector('ul') != null) {
+    //     menuItem.classList.add('parent-submenu');
+    //
+    //
+    //   }
+    // }
 
     each($('li', menu) /* menuItems */, menuItem => {
       // Detectar si un item es padre de un submenu
-      if ($('ul', menuItem) != null) {
+      if (menuItem.querySelector('ul') != null) {
         menuItem.classList.add('parent-submenu');
 
         //Crear toggle button para submenus

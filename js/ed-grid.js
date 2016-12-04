@@ -58,10 +58,20 @@ exports.default = function (navId, menuId) {
   if (menu) {
     // show submenus
     menu.addEventListener('click', showSubMenu);
+    //
+    // while (menuItemsLength--) {
+    //   let menuItem = menuItems[menuItemsLength];
+    //   // Detectar si un item es padre de un submenu
+    //   if (menuItem.querySelector('ul') != null) {
+    //     menuItem.classList.add('parent-submenu');
+    //
+    //
+    //   }
+    // }
 
     (0, _utils.each)((0, _utils.$)('li', menu) /* menuItems */, function (menuItem) {
       // Detectar si un item es padre de un submenu
-      if ((0, _utils.$)('ul', menuItem) != null) {
+      if (menuItem.querySelector('ul') != null) {
         menuItem.classList.add('parent-submenu');
 
         //Crear toggle button para submenus

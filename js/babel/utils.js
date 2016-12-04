@@ -27,7 +27,7 @@ export function $ (selector, context = document) {
  * @private
  */
 export function each (elements, callback) {
-  const { length } = elements
+  const { length } = elements;
 
   for (let i = 0; i < length; ++i) {
     callback(elements[i], i, elements)
