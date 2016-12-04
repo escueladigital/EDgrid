@@ -1,14 +1,17 @@
-'use strict';
-const gulp = require('gulp'),
-      sass = require('gulp-sass'),
-      plumber = require('gulp-plumber'),
-      postcss = require('gulp-postcss'),
-      autoprefixer = require('autoprefixer'),
-      cssnano = require('cssnano'),
-      browserSync = require('browser-sync').create(),
-      concat = require('gulp-concat'),
-      sourcemaps = require('gulp-sourcemaps'),
-      babel = require('gulp-babel');
+import gulp from 'gulp'
+import sass from 'gulp-sass'
+import plumber from 'gulp-plumber'
+import postcss from 'gulp-postcss'
+import autoprefixer from 'autoprefixer'
+import cssnano from 'cssnano'
+import browserSync from 'browser-sync'
+import sourcemaps from 'gulp-sourcemaps'
+import browserify from 'browserify'
+import babelify from 'babelify'
+import buffer from 'vinyl-buffer'
+import source from 'vinyl-source-stream'
+
+const server = browserSync.create();
 
 let postcssPlugins = [
   autoprefixer({browsers: 'last 2 versions'}),
@@ -31,7 +34,7 @@ gulp.task('styles', () =>
       .pipe(postcss(postcssPlugins))
       .pipe(plumber.stop())
       .pipe(gulp.dest('./test'))
-      .pipe(browserSync.stream())
+      .pipe(server.stream())
 );
 
 gulp.task('compileCore', () =>
@@ -42,12 +45,17 @@ gulp.task('compileCore', () =>
 );
 
 gulp.task('scripts', () =>
-  gulp.src('./js/*.js')
-    .pipe(sourcemaps.init())
-    .pipe(babel())
-    .pipe(concat('scripts.js'))
+  browserify('./js/babel/index.js', {
+      debug: true,
+      standalone: 'edgrid'
+    })
+    .transform(babelify)
+    .bundle()
+    .pipe(source('ed-grid.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./test'))
+    .pipe(gulp.dest('./js'))
 );
 
 gulp.task('sw', () =>
@@ -55,13 +63,16 @@ gulp.task('sw', () =>
 );
 
 gulp.task('default', () => {
-  browserSync.init({
+  server.init({
     server: {
       baseDir: './test' //para pruebas con la carpeta test
-    }
+    },
+
+    serveStatic: ['./js']
   });
+
   gulp.watch('./**/**.scss', ['styles']);
   gulp.watch('./js/*.js', ['scripts']);
-  gulp.watch('./test/**.html').on('change', browserSync.reload);
-  gulp.watch('./js/*.js').on('change', browserSync.reload);
+  gulp.watch('./test/**.html').on('change', server.reload);
+  gulp.watch('./js/*.js').on('change', server.reload);
 });
