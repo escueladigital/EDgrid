@@ -23,8 +23,8 @@
   @include cssFlexColumnReverse();
 
   //grids
-  .grid-container.grid-1234 { @include grid('.grid-item', 1, 2, 3, 4, 1em) }
-  .grid-container.grid-2345 { @include grid('.grid-item', 2, 3, 4, 5, 1em) }
+  .grid-container.grid-1234 { @include grid('.grid-item', (1, 2, 3, 4)) }
+  .grid-container.grid-2345 { @include grid('.grid-item', (2, 3, 4, 5)) }
 
   // devMode
   body.dev,
