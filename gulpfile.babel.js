@@ -15,7 +15,7 @@ const server = browserSync.create();
 
 let postcssPlugins = [
   autoprefixer({browsers: 'last 2 versions'}),
-  cssnano({core:false})
+  cssnano({core:true})
 ];
 
 let sassOptions = {
