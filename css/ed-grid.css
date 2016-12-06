@@ -57,7 +57,6 @@ body.desarrollo .ed-container:before,body.desarrollo .ed-item:before,body.desarr
   padding-left:0;
   padding-right:0;
 }
-
 .button,.button.radius,.button.round,button,button.radius,button.round{
   display:inline-block;
   line-height:2.5em;
@@ -1064,6 +1063,10 @@ body.desarrollo .ed-container:before,body.desarrollo .ed-item:before,body.desarr
   margin-right:-.5em;
 }
 
+.grid-container.grid-1234 img{
+  display:block;
+}
+
 .grid-container.grid-1234>.grid-item{
   width:calc(100% - 1em);
   margin:.5em;
@@ -1094,6 +1097,10 @@ body.desarrollo .ed-container:before,body.desarrollo .ed-item:before,body.desarr
       flex-wrap:wrap;
   margin-left:-.5em;
   margin-right:-.5em;
+}
+
+.grid-container.grid-2345 img{
+  display:block;
 }
 
 body{
@@ -1305,6 +1312,7 @@ body.desarrollo .ed-item:nth-child(even):before,body.dev .ed-item:nth-child(even
 
 .ed-menu.s-horizontal ul{
   position:absolute;
+  left:0;
   top:100%;
   min-width:100%;
   white-space:nowrap;
@@ -1498,6 +1506,7 @@ body.desarrollo .ed-item:nth-child(even):before,body.dev .ed-item:nth-child(even
   }
   .ed-menu.m-horizontal ul{
     position:absolute;
+    left:0;
     top:100%;
     min-width:100%;
     white-space:nowrap;
@@ -1696,6 +1705,7 @@ body.desarrollo .ed-item:nth-child(even):before,body.dev .ed-item:nth-child(even
   }
   .ed-menu.l-horizontal ul{
     position:absolute;
+    left:0;
     top:100%;
     min-width:100%;
     white-space:nowrap;
@@ -1894,6 +1904,7 @@ body.desarrollo .ed-item:nth-child(even):before,body.dev .ed-item:nth-child(even
   }
   .ed-menu.xl-horizontal ul{
     position:absolute;
+    left:0;
     top:100%;
     min-width:100%;
     white-space:nowrap;
