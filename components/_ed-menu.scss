@@ -1,4 +1,7 @@
 // estilo default del menu
+/// Aplica un estilo por defecto al menu.
+/// @group   menu
+/// @author  Alvaro Felipe
 @mixin menuStyleDefault {
   background : #eee;
   li:hover { background : rgba(#000, .1)  }
@@ -44,7 +47,9 @@
   }
 }
 
-// estilo button para el menú
+/// estilo button para el menú
+/// @group   menu
+/// @author  Alvaro Felipe
 @mixin menuStyleButton {
   li {
     margin-bottom : .5em;

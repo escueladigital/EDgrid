@@ -1,4 +1,14 @@
-// Devuelve true si el breakpoint es parte del core
+/// Devuelve true si el breakpoint es parte del core
+/// @group mq
+/// @author  Alvaro Felipe
+/// @param   {number} $bp - breakpoint
+/// @example scss
+///    .elemento {
+///      @if isCoreBreakpoint(l) {
+///        $customBp : 720px;
+///        ....
+///      }
+///    }
 @function isCoreBreakpoint($bp){
   @if map-get($breakpoints,$bp) {
     @return true
@@ -7,7 +17,10 @@
   }
 }
 
-// Devuelve true si el breakpint es válido (em, rem, px)
+/// Devuelve true si el breakpint es válido (em, rem, px)
+/// @group   mq
+/// @author  Alvaro Felipe
+/// @param   {number} $bp - breakpoint a verificar.
 @function isValidBreakpoint($bp){
   @if type-of($bp) == number and (unit($bp) == 'px' or unit($bp) == 'em' or unit($bp) == 'rem') {
     @return true
@@ -16,12 +29,18 @@
   }
 }
 
-// Obtiene un breakpoint del core
+/// Obtiene un breakpoint del core
+/// @group   mq
+/// @author  Alvaro Felipe
+/// @param   {number} $bp - breakpoint a obtener.
 @function getBp($bp){
   @return map-get($breakpoints,$bp)
 }
 
-// Convierte un valor en em o rem a px
+/// Convierte un valor en em o rem a px
+/// @group   mq
+/// @author  Alvaro Felipe
+/// @param   {number} $value - var a convertir a pixeles.
 @function toPx($value){
   @if type-of($value) == number {
     @if unit($value) == 'em'{
@@ -38,7 +57,17 @@
   }
 }
 
-// From (mayor que $bp)
+/// From (mayor que $bp)
+/// @group   mq
+/// @author  Alvaro Felipe
+/// @param   {number} $from - breakpoint
+/// @example scss
+///     .elemento {
+///       width: 30%;
+///       @include from(m) {
+///         width: 50%;
+///       }
+///     }
 @mixin from($from){
   @if isCoreBreakpoint($from){
     @if $from == s {
@@ -54,7 +83,17 @@
   }
 }
 
-// To (es menor que $to)
+/// To (es menor que $to)
+/// @group   mq
+/// @author  Alvaro Felipe
+/// @param   {number} $to - breakpoint
+/// @example scss
+///     .elemento {
+///       width: 50%;
+///       @include to(m) {
+///         width: 30%;
+///       }
+///     }
 @mixin to($to){
   // Si es un breakpoint del core
   @if isCoreBreakpoint($to){
@@ -74,6 +113,18 @@
   }
 }
 
+/// fromTo la regla se ejecuta entre ambos breakpoints.
+/// @group   mq
+/// @author  Alvaro Felipe
+/// @param   {number} $from - breakpoint desde que medida se iniciara la regla.
+/// @param   {number} $to - breakpoint hasta que medida se ejecutara la regla.
+/// @example scss
+///     .elemento {
+///       background-color: cyan;
+///       @include fromTo(s, l) {
+///         background-color: darken(cyan, .8);
+///       }
+///     }
 @mixin fromTo($from,$to){
   // Si ambos son breakpoints del core
   @if isCoreBreakpoint($from) and isCoreBreakpoint($to){

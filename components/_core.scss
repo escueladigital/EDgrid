@@ -15,7 +15,13 @@
   padding-right : $gutter;
 }
 
-// mixin para crear ed-container
+/// mixin para crear un ed-container
+/// @group   layout
+/// @author  Alvaro Felipe
+/// @example scss
+/// .container {
+///   @include edContainer;
+///}
 @mixin edContainer {
   @extend %ed-container;
 
@@ -24,12 +30,22 @@
   }
 }
 
-// mixin para ed-container total
+/// Hace que un elemento siempre mida el 100% del ancho disponible
+/// @group   layout
+/// @author  Alvaro Felipe
+/// @example scss
+/// .full {
+///   @include full;
+/// }
 @mixin full {
   max-width : 100%;
 }
 
-// Mixin para calcular el ancho de un ed-item
+/// Mixin para calcular el ancho de un ed-item
+/// @group   helpers
+/// @author  Alvaro Felipe
+/// @param   [param] $[param name] - [param description]
+/// @example [scss | sass] - Usage
 @mixin edItemWidth($currentBp, $prevBp, $coreBp){
   // Si el tamaño actual es diferente al previo
   // asignará el ancho en porcentaje
