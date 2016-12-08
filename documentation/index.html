@@ -1,0 +1,580 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Ed-grid - v2.0.0</title><link rel="stylesheet" href="assets/css/main.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Ed-grid - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="<p>Framework de CSS puro para crear diseños web responsive y mobile first.</p>
+"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title">Ed-grid - 2.0.0</h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="functions"><a href="#functions">functions</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="functions-function"><a href="#functions-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="functions" data-name="em" data-type="function"><a href="#functions-function-em">em</a></li><li class="sidebar__item sassdoc__item" data-group="functions" data-name="rem" data-type="function"><a href="#functions-function-rem">rem</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="grid"><a href="#grid">grid</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="grid-mixin"><a href="#grid-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="grid" data-name="grid" data-type="mixin"><a href="#grid-mixin-grid">grid</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="helpers"><a href="#helpers">helpers</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="helpers-mixin"><a href="#helpers-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="helpers" data-name="padding" data-type="mixin"><a href="#helpers-mixin-padding">padding</a></li><li class="sidebar__item sassdoc__item" data-group="helpers" data-name="noPaddingContainer" data-type="mixin"><a href="#helpers-mixin-noPaddingContainer">noPaddingContainer</a></li><li class="sidebar__item sassdoc__item" data-group="helpers" data-name="ratio" data-type="mixin"><a href="#helpers-mixin-ratio">ratio</a></li><li class="sidebar__item sassdoc__item" data-group="helpers" data-name="clearfix" data-type="mixin"><a href="#helpers-mixin-clearfix">clearfix</a></li><li class="sidebar__item sassdoc__item" data-group="helpers" data-name="toRight" data-type="mixin"><a href="#helpers-mixin-toRight">toRight</a></li><li class="sidebar__item sassdoc__item" data-group="helpers" data-name="toLeft" data-type="mixin"><a href="#helpers-mixin-toLeft">toLeft</a></li><li class="sidebar__item sassdoc__item" data-group="helpers" data-name="toCenter" data-type="mixin"><a href="#helpers-mixin-toCenter">toCenter</a></li><li class="sidebar__item sassdoc__item" data-group="helpers" data-name="circle" data-type="mixin"><a href="#helpers-mixin-circle">circle</a></li><li class="sidebar__item sassdoc__item" data-group="helpers" data-name="full" data-type="mixin"><a href="#helpers-mixin-full">full</a></li><li class="sidebar__item sassdoc__item" data-group="helpers" data-name="stickyFooter" data-type="mixin"><a href="#helpers-mixin-stickyFooter">stickyFooter</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="layouts"><a href="#layouts">layouts</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="layouts-mixin"><a href="#layouts-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="layouts" data-name="full" data-type="mixin"><a href="#layouts-mixin-full">full</a></li><li class="sidebar__item sassdoc__item" data-group="layouts" data-name="edItem" data-type="mixin"><a href="#layouts-mixin-edItem">edItem</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="menu"><a href="#menu">menu</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="menu-mixin"><a href="#menu-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="menu" data-name="menuStyleDefault" data-type="mixin"><a href="#menu-mixin-menuStyleDefault">menuStyleDefault</a></li><li class="sidebar__item sassdoc__item" data-group="menu" data-name="menuStyleButton" data-type="mixin"><a href="#menu-mixin-menuStyleButton">menuStyleButton</a></li><li class="sidebar__item sassdoc__item" data-group="menu" data-name="edMenu" data-type="mixin"><a href="#menu-mixin-edMenu">edMenu</a></li><li class="sidebar__item sassdoc__item" data-group="menu" data-name="edNav" data-type="mixin"><a href="#menu-mixin-edNav">edNav</a></li><li class="sidebar__item sassdoc__item" data-group="menu" data-name="navToggle" data-type="mixin"><a href="#menu-mixin-navToggle">navToggle</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="mq"><a href="#mq">mq</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="mq-function"><a href="#mq-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="mq" data-name="isCoreBreakpoint" data-type="function"><a href="#mq-function-isCoreBreakpoint">isCoreBreakpoint</a></li><li class="sidebar__item sassdoc__item" data-group="mq" data-name="isValidBreakpoint" data-type="function"><a href="#mq-function-isValidBreakpoint">isValidBreakpoint</a></li><li class="sidebar__item sassdoc__item" data-group="mq" data-name="getBp" data-type="function"><a href="#mq-function-getBp">getBp</a></li><li class="sidebar__item sassdoc__item" data-group="mq" data-name="toPx" data-type="function"><a href="#mq-function-toPx">toPx</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="mq-mixin"><a href="#mq-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="mq" data-name="from" data-type="mixin"><a href="#mq-mixin-from">from</a></li><li class="sidebar__item sassdoc__item" data-group="mq" data-name="to" data-type="mixin"><a href="#mq-mixin-to">to</a></li><li class="sidebar__item sassdoc__item" data-group="mq" data-name="fromTo" data-type="mixin"><a href="#mq-mixin-fromTo">fromTo</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="offset"><a href="#offset">offset</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="offset-mixin"><a href="#offset-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="offset" data-name="offset" data-type="mixin"><a href="#offset-mixin-offset">offset</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="undefined"><a href="#undefined">General</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-mixin"><a href="#undefined-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="edContainer" data-type="mixin"><a href="#undefined-mixin-edContainer">edContainer</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="video"><a href="#video">video</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="video-mixin"><a href="#video-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="video" data-name="edVideo" data-type="mixin"><a href="#video-mixin-edVideo">edVideo</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="visibility"><a href="#visibility">visibility</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="visibility-mixin"><a href="#visibility-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="visibility" data-name="showFrom" data-type="mixin"><a href="#visibility-mixin-showFrom">showFrom</a></li><li class="sidebar__item sassdoc__item" data-group="visibility" data-name="showTo" data-type="mixin"><a href="#visibility-mixin-showTo">showTo</a></li><li class="sidebar__item sassdoc__item" data-group="visibility" data-name="hideFrom" data-type="mixin"><a href="#visibility-mixin-hideFrom">hideFrom</a></li><li class="sidebar__item sassdoc__item" data-group="visibility" data-name="hideTo" data-type="mixin"><a href="#visibility-mixin-hideTo">hideTo</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="functions"><div class="container">functions</div></h1><section class="main__sub-section" id="functions-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="functions-function-em"><h3 class="item__heading"><a class="item__name" href="#function-em">em</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function em($el, $context) { 
+  @if type_of($el) == number and unit($el) == &#39;px&#39; {
+    @return ($el / $context) * 1em;
+  } @else {
+    @error &#39;Function em() requires a px unit as first argument / La función em() requiere una unidad de pixeles como primer argumento (el segundo es opcional)&#39;
+  }
+ }" data-collapsed="@function em($el, $context) { ... }"><code>@function em($el, $context) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Transforma un valor en pixeles a em.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$el</code></th><td data-label="desc"><p>el valor en pixeles que se desea convertir.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$context</code></th><td data-label="desc"><p>el valor en pixeles del contenedor.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>el tamaño transformado en em.</p></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>Function em() requires a px unit as first argument / La función em() requiere una unidad de pixeles como primer argumento (el segundo es opcional)</p></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section><section class="main__item container item" id="functions-function-rem"><h3 class="item__heading"><a class="item__name" href="#function-rem">rem</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function rem($el) { 
+  @if type_of($el) == number and unit($el) == &#39;px&#39; {
+    @return ($el / 16px) * 1rem;
+  } @else {
+    @error &#39;Function rem() requires a px unit as argument / La funcion rem() requiere una unidad de pixeles como argumento&#39;;
+  }
+ }" data-collapsed="@function rem($el) { ... }"><code>@function rem($el) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Transforma un valor en pixeles a rem.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$el</code></th><td data-label="desc"><p>el valor en pixeles que se desea convertir.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>el tamaño transformado en rem.</p></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>Function rem() requires a px unit as argument / La funcion rem() requiere una unidad de pixeles como argumento</p></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="grid"><div class="container">grid</div></h1><section class="main__sub-section" id="grid-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="grid-mixin-grid"><h3 class="item__heading"><a class="item__name" href="#mixin-grid">grid</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin grid($selector, $listColumns, $gutter) { 
+  // $width sirve para calcular el ancho de cada item
+  $width       : 100% / nth($listColumns,1);
+
+  // elimina el espaciado vertical de las imágenes
+  img {
+    display : block;
+  }
+
+  display      : flex;
+  flex-wrap    : wrap;
+  margin-left  : -($gutter / 2);
+  margin-right : -($gutter / 2);
+
+  // Evitar scroll horizontal
+  @at-root {
+    body {
+      overflow-x: hidden;
+    }
+  }
+
+  // por si el contenedor es un ul
+  @if $selector == li {
+    margin     : 0;
+    padding    : 0;
+    list-style : none;
+
+    li {
+      margin-left : 0;
+      list-style  : none;
+    }
+  }
+
+  &amp; &gt; #{$selector} {
+    width  : item-width($width,$gutter);
+    margin : $gutter / 2;
+  }
+
+  // calculate grid item width for each breakpoint
+  $indice: 1;
+  $longListColumns: length($listColumns);
+  @each $size, $_ in $breakpoints{
+    @if $indice &gt; 1 and $indice &lt;= $longListColumns{
+      @include columnWidth(nth($listColumns,$indice),nth($listColumns,$indice - 1),$size,$gutter,$selector);
+    }
+    $indice: $indice + 1;
+  }
+ }" data-collapsed="@mixin grid($selector, $listColumns, $gutter) { ... }"><code>@mixin grid($selector, $listColumns, $gutter) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>mixin para crear cuadriculas</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$selector</code></th><td data-label="desc"><p>nombre del selector css de cada item de la cuadricula.</p></td><td data-label="type"><code>Element</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$listColumns</code></th><td data-label="desc"><p>lista de numeros de columnas en cada breakpoint. Ej: (1,2,3,4), el numero de columnas del ultimo breakpoint se hereda a breakpoints superiores</p></td><td data-label="type"><code>List</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutter</code></th><td data-label="desc"><p>el espaciado entre cada elemento de la cuadricula. Por defecto es de 1em.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.gallery {
+  @include grid(li, 5 );
+}</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="helpers"><div class="container">helpers</div></h1><section class="main__sub-section" id="helpers-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="helpers-mixin-padding"><h3 class="item__heading"><a class="item__name" href="#mixin-padding">padding</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin padding($numero) { 
+  padding-left  : $gutter * $numero;
+  padding-right : $gutter * $numero;
+ }" data-collapsed="@mixin padding($numero) { ... }"><code>@mixin padding($numero) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Añade padding a los lados para compenzar el gutter de EDgrid.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$numero</code></th><td data-label="desc"><p>La cantidad de padding (1 == 1 gutter == 15px).</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>Si el número es 0 el padding se elimina.
+  .selector1 { @include padding(3) }</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#helpers-mixin-noPaddingContainer"><code>noPaddingContainer</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section><section class="main__item container item" id="helpers-mixin-noPaddingContainer"><h3 class="item__heading"><a class="item__name" href="#mixin-noPaddingContainer">noPaddingContainer</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin noPaddingContainer() { 
+  &gt; .#{$item} { @include padding(0) }
+ }" data-collapsed="@mixin noPaddingContainer() { ... }"><code>@mixin noPaddingContainer() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Elimina los paddings horizontales de todos los hijos directos</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.selector2 { @include noPaddingContainer; }</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#helpers-mixin-padding"><code>padding</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section><section class="main__item container item" id="helpers-mixin-ratio"><h3 class="item__heading"><a class="item__name" href="#mixin-ratio">ratio</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin ratio() { 
+  $width         : 100%;
+  width          : $width;
+  height         : 0;
+  overflow       : hidden;
+  padding-bottom : $width * ($v/$h);
+ }" data-collapsed="@mixin ratio() { ... }"><code>@mixin ratio() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Hace que un elemento tenga la proporcion de aspecto especificada. Las propiedades de alinecion con flexbox, no funcionaran en este elemento</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section><section class="main__item container item" id="helpers-mixin-clearfix"><h3 class="item__heading"><a class="item__name" href="#mixin-clearfix">clearfix</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin clearfix() { 
+  &amp;:before,
+  &amp;:after {
+    content : &quot;&quot;;
+    width   : 100%;
+    display : table;
+    clear   : both;
+  }
+ }" data-collapsed="@mixin clearfix() { ... }"><code>@mixin clearfix() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Limpia los floats.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>| sass] - Usage</p></div><pre class="example__code language-scss"><code>.clearfix {
+  @include clearfix;
+}</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section><section class="main__item container item" id="helpers-mixin-toRight"><h3 class="item__heading"><a class="item__name" href="#mixin-toRight">toRight</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin toRight($width, $margin-left) { 
+  float       : right;
+  width       : $width;
+  margin-left : $margin-left;
+ }" data-collapsed="@mixin toRight($width, $margin-left) { ... }"><code>@mixin toRight($width, $margin-left) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Alinea el elemento a la derecha</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$width</code></th><td data-label="desc"><p>Ancho del elemento (con su unidad)</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$margin-left</code></th><td data-label="desc"><p>cantidad de margen derecho (opcional)</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.fb-icon {
+  @include toRight(20%, 1em);
+}</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section><section class="main__item container item" id="helpers-mixin-toLeft"><h3 class="item__heading"><a class="item__name" href="#mixin-toLeft">toLeft</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin toLeft($width, $margin-right) { 
+  float        : left;
+  width        : $width;
+  margin-right : $margin-right;
+ }" data-collapsed="@mixin toLeft($width, $margin-right) { ... }"><code>@mixin toLeft($width, $margin-right) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Alinea el elemento a la izquierda</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$width</code></th><td data-label="desc"><p>Ancho del elemento (con su unidad)</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$margin-right</code></th><td data-label="desc"><p>cantidad de margen izquierdo (opcional)</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.fb-icon {
+  @include toLeft(20%, 1em);
+}</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section><section class="main__item container item" id="helpers-mixin-toCenter"><h3 class="item__heading"><a class="item__name" href="#mixin-toCenter">toCenter</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin toCenter($width) { 
+  display      : block;
+  width        : $width;
+  margin-left  : auto;
+  margin-right : auto;
+  text-align   : center;
+ }" data-collapsed="@mixin toCenter($width) { ... }"><code>@mixin toCenter($width) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Centra un elemento</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$width</code></th><td data-label="desc"><p>Ancho del elemento (con su unidad)</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.fb-icon {
+  @include toCenter(20%);
+}</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section><section class="main__item container item" id="helpers-mixin-circle"><h3 class="item__heading"><a class="item__name" href="#mixin-circle">circle</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin circle() {  border-radius : 50%  }" data-collapsed="@mixin circle() { ... }"><code>@mixin circle() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Hace al elemento circular.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.item::before {
+  content: &quot;&quot;;
+  width: 150px;
+  height: 150px;
+  display: block;
+  @include circle;
+}</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section><section class="main__item container item" id="helpers-mixin-full"><h3 class="item__heading"><a class="item__name" href="#mixin-full">full</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin full() { 
+  width     : 100%;
+  max-width : 100%;
+  clear     : both;
+ }" data-collapsed="@mixin full() { ... }"><code>@mixin full() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Hace que el elemento ocupe el 100% de su contenedor.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.header {
+  @include full;
+}</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section><section class="main__item container item" id="helpers-mixin-stickyFooter"><h3 class="item__heading"><a class="item__name" href="#mixin-stickyFooter">stickyFooter</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin stickyFooter() { 
+  @at-root {
+    body {
+      display        : flex;
+      flex-direction : column;
+      min-height     : 100vh;
+    }
+  }
+
+  margin-top : auto;
+ }" data-collapsed="@mixin stickyFooter() { ... }"><code>@mixin stickyFooter() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Hace que un elemento se quede pegado en la parte inferior de la pagina indistintamente del tamaño del contenido del sitio.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.main-footer {
+  width: 100%;
+  display: block;
+  height: 150px;
+  @include stickyFooter;
+}</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="layouts"><div class="container">layouts</div></h1><section class="main__sub-section" id="layouts-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="layouts-mixin-full"><h3 class="item__heading"><a class="item__name" href="#mixin-full">full</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin full() { 
+  max-width : 100%;
+ }" data-collapsed="@mixin full() { ... }"><code>@mixin full() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Hace que un elemento siempre mida el 100% del ancho disponible</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.full {
+  @include full;
+}</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section><section class="main__item container item" id="layouts-mixin-edItem"><h3 class="item__heading"><a class="item__name" href="#mixin-edItem">edItem</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin edItem($s, $m, $l, $xl) { 
+  @extend %ed-item;
+
+  @if $devMode == true {
+    @include devModeItem();
+  }
+
+  // calcular el ancho para el primer breakpoint
+  // por defecto es 100% y se convertirá al porcentaje adecuado
+  // según el valor que se le pase
+  @if $s == 100 {
+    width: 100%;
+  } @else if $s &lt; 1 {
+    width : $s * 100%;
+  } @else {
+    width : $s * 1%;
+  }
+
+  // widths for others breakpoints
+  // anchos para los demás breakpoints
+  @include edItemWidth($m,$s,m); //medium
+  @include edItemWidth($l,$m,l); //large
+  @include edItemWidth($xl,$l,xl); //xlarge
+ }" data-collapsed="@mixin edItem($s, $m, $l, $xl) { ... }"><code>@mixin edItem($s, $m, $l, $xl) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>mixin para crear un ed-item Description Los argumentos que acepta son las diferentes medidas que tendra el elemento en diferentes resoluciones de pantalla. Las medidas pueden especificarse como porcentajes ( % ) o como fracciones (1/3, 3/3 o 3/6, 2/6).</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$s</code></th><td data-label="desc"><p>para resoluciones entre 0px y 640px</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$m</code></th><td data-label="desc"><p>para resoluciones entre 640px y 1024px</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$l</code></th><td data-label="desc"><p>para resoluciones entre 1024px y 1440px</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$xl</code></th><td data-label="desc"><p>para resoluciones desde 1440px en adelante.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.container {
+  @include edContainer;
+}
+
+.content {
+  @include edItem(100, 75, 60);
+}
+.sidebar {
+  @include edItem(100, 25, 40);
+}</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="menu"><div class="container">menu</div></h1><section class="main__sub-section" id="menu-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="menu-mixin-menuStyleDefault"><h3 class="item__heading"><a class="item__name" href="#mixin-menuStyleDefault">menuStyleDefault</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin menuStyleDefault() { 
+  background : #eee;
+  li:hover { background : rgba(#000, .1)  }
+  ul       { background : darken(#eee, 5) }
+  a        { color      : #666            }
+ }" data-collapsed="@mixin menuStyleDefault() { ... }"><code>@mixin menuStyleDefault() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Aplica un estilo por defecto al menu.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section><section class="main__item container item" id="menu-mixin-menuStyleButton"><h3 class="item__heading"><a class="item__name" href="#mixin-menuStyleButton">menuStyleButton</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin menuStyleButton() { 
+  li {
+    margin-bottom : .5em;
+    margin-right  : .5em;
+  }
+
+  a {
+    border        : 1px solid rgba(#000, .1);
+    background    : #EEE;
+    line-height   : 2.5em;
+    padding       : 0 1.5em;
+    border-radius : 4px;
+    color         : #666;
+
+    &amp;:hover { background : rgba(#000, .1) }
+  }
+ }" data-collapsed="@mixin menuStyleButton() { ... }"><code>@mixin menuStyleButton() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>estilo button para el menú</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section><section class="main__item container item" id="menu-mixin-edMenu"><h3 class="item__heading"><a class="item__name" href="#mixin-edMenu">edMenu</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin edMenu($bp, $style) { 
+  width : 100%;
+
+  &amp;, ul {
+    margin-top    : 0;
+    margin-bottom : 0;
+    padding-left  : 0;
+    list-style    : none;
+  }
+
+  li {
+    position   : relative;
+    list-style : none;
+    flex       : auto;
+
+    // Si es padre de un submenu
+    &amp;.parent-submenu {
+      display   : flex;
+      flex-wrap : wrap;
+
+      a { flex : auto }
+    }
+  }
+
+  //submenus
+  ul {
+    display  : none;
+
+    @include to($bp) {
+      &amp;.show-submenu {
+        display       : block;
+        width         : 100%;
+        order         : 3;
+        margin-left   : 1em;
+        margin-bottom : .5em;
+      }
+    }
+  }
+
+  a {
+    display     : block;
+    line-height : 3em;
+    padding     : 0 1em;
+
+    &amp;:hover { text-decoration : none }
+  }
+
+  // cambio a horizontal
+  @include from($bp) {
+    display     : flex;
+    align-items : center;
+
+    a { text-align : center }
+
+    // Ocultar el botón de expandir en horizontal
+    .expand { display : none}
+
+    ul {
+      position    : absolute;
+      left        : 0;
+      top         : 100%;
+      min-width   : 100%;
+      white-space : nowrap;
+
+      a { text-align : left }
+
+      ul {
+        top  : 0;
+        left : 100%;
+      }
+    }
+
+    // mostrar submenu
+    li:hover &gt; ul { display : block }
+  }
+
+  // expand submenu button
+  .expand-submenu {
+    @include hideFrom($bp);
+    $size      : 3em;
+    position   : relative;
+    right      : 0;
+    width      : $size;
+    height     : $size;
+    cursor     : pointer;
+    transition : all .3s;
+
+    &amp;::after {
+      content       : &quot;&quot;;
+      position      : absolute;
+      width         : 40%;
+      height        : 40%;
+      top           : 20%;
+      left          : 30%;
+      border-left   : ($size * 0.15) solid;
+      border-bottom : ($size * 0.15) solid;
+      border-radius : ($size * 0.08);
+      transform     : rotate(-45deg);
+      transition    : all .3s;
+    }
+
+    &amp;.active {
+      transform : rotate(180deg);
+    }
+  }
+
+  // incluir el estilo del menu si se ha definido
+  @if $style == default { @include menuStyleDefault  }
+  @if $style == nav     { @include menuStyleNav($bp) }
+  @if $style == button  { @include menuStyleButton   }
+
+  // compilar los mixins en modo CSS
+  @if $cssCore == true {
+    &amp;.default    { @include menuStyleDefault  }
+    &amp;.nav-bar    { @include menuStyleNav($bp) }
+    &amp;.button-bar { @include menuStyleButton    }
+  }
+ }" data-collapsed="@mixin edMenu($bp, $style) { ... }"><code>@mixin edMenu($bp, $style) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>mixin que construye el menú sin un tema, solo maqueta</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$bp</code></th><td data-label="desc"><p>Breakpoint a partir del cual el menu se volvera horizontal.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$style</code></th><td data-label="desc"><p>estilo a usar en el menu las opciones son: [default | nav | button], este argumento es opcional.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>[scss | sass] - Usage</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#mq-mixin-to"><code>to</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#mq-mixin-from"><code>from</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#visibility-mixin-hideFrom"><code>hideFrom</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section><section class="main__item container item" id="menu-mixin-edNav"><h3 class="item__heading"><a class="item__name" href="#mixin-edNav">edNav</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin edNav($direction, $bp) { 
+  @include to($bp) {
+    $lrWidth   : 85%;
+    position   : fixed;
+    transition : all .3s;
+    height     : 100vh;
+    z-index    : 200;
+    overflow-y : auto;
+
+    @if $direction == left or $direction == right {
+      width : $lrWidth;
+    } @else {
+      width : 100%;
+    }
+
+    @if $direction == left {
+      left : $lrWidth * -1;
+
+      &amp;.show-menu { left : 0 }
+    }
+
+    @if $direction == right {
+      right : $lrWidth * -1;
+
+      &amp;.show-menu { right : 0 }
+    }
+
+    @if $direction == top {
+      width : 100%;
+      left : 0;
+      top : -100%;
+
+      &amp;.show-menu { top : 0 }
+    }
+
+    @if $direction == bottom {
+      width : 100%;
+      left : 0;
+      bottom : -100%;
+
+      &amp;.show-menu { bottom : 0 }
+    }
+  }
+ }" data-collapsed="@mixin edNav($direction, $bp) { ... }"><code>@mixin edNav($direction, $bp) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>mixin Nav (para el contenedor del menú)</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$direction</code></th><td data-label="desc"><p>El eje desde donde aparecera el menu. Las opciones son [left | right | top | bottom]</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$bp</code></th><td data-label="desc"><p>breakpoint que indica hasta donde debe mostrarse en vertical.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>nav {
+  @include edNav(left, m);
+}</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#mq-mixin-to"><code>to</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section><section class="main__item container item" id="menu-mixin-navToggle"><h3 class="item__heading"><a class="item__name" href="#mixin-navToggle">navToggle</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin navToggle($size, $color) { 
+  $segmentHeight : ($size / 5);
+  position       : relative;
+  z-index        : 300;
+  width          : $size * 1.5;
+  height         : $size;
+  box-shadow     : 0 ($segmentHeight) $color inset;
+  cursor         : pointer;
+
+  &amp;::after,
+  &amp;::before {
+    content          : &quot;&quot;;
+    position         : absolute;
+    width            : 100%;
+    height           : ($segmentHeight);
+    background-color : $color;
+    bottom           : 0;
+  }
+
+  &amp;::after {
+    bottom : $segmentHeight * 2;
+  }
+ }" data-collapsed="@mixin navToggle($size, $color) { ... }"><code>@mixin navToggle($size, $color) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Toggle del menu</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$size</code></th><td data-label="desc"><p>especifica el tamaño del elemento toggle</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>especifica el color del toggle.</p></td><td data-label="type"><code>Color</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.menu-toggle {
+  @include navToggle(200px, $black);
+}</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="mq"><div class="container">mq</div></h1><section class="main__sub-section" id="mq-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="mq-function-isCoreBreakpoint"><h3 class="item__heading"><a class="item__name" href="#function-isCoreBreakpoint">isCoreBreakpoint</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function isCoreBreakpoint($bp) { 
+  @if map-get($breakpoints,$bp) {
+    @return true
+  } @else {
+    @return false
+  }
+ }" data-collapsed="@function isCoreBreakpoint($bp) { ... }"><code>@function isCoreBreakpoint($bp) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Devuelve true si el breakpoint es parte del core</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$bp</code></th><td data-label="desc"><p>breakpoint</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.elemento {
+  @if isCoreBreakpoint(l) {
+    $customBp : 720px;
+    ....
+  }
+}</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#mq-mixin-from"><code>from</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#mq-mixin-to"><code>to</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#mq-mixin-fromTo"><code>fromTo</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section><section class="main__item container item" id="mq-function-isValidBreakpoint"><h3 class="item__heading"><a class="item__name" href="#function-isValidBreakpoint">isValidBreakpoint</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function isValidBreakpoint($bp) { 
+  @if type-of($bp) == number and (unit($bp) == &#39;px&#39; or unit($bp) == &#39;em&#39; or unit($bp) == &#39;rem&#39;) {
+    @return true
+  } @else {
+    @return false
+  }
+ }" data-collapsed="@function isValidBreakpoint($bp) { ... }"><code>@function isValidBreakpoint($bp) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Devuelve true si el breakpint es válido (em, rem, px)</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$bp</code></th><td data-label="desc"><p>breakpoint a verificar.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#mq-mixin-from"><code>from</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#mq-mixin-to"><code>to</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#mq-mixin-fromTo"><code>fromTo</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section><section class="main__item container item" id="mq-function-getBp"><h3 class="item__heading"><a class="item__name" href="#function-getBp">getBp</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function getBp($bp) { 
+  @return map-get($breakpoints,$bp)
+ }" data-collapsed="@function getBp($bp) { ... }"><code>@function getBp($bp) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Obtiene un breakpoint del core</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$bp</code></th><td data-label="desc"><p>breakpoint a obtener.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#mq-mixin-from"><code>from</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#mq-mixin-to"><code>to</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#mq-mixin-fromTo"><code>fromTo</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section><section class="main__item container item" id="mq-function-toPx"><h3 class="item__heading"><a class="item__name" href="#function-toPx">toPx</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function toPx($value) { 
+  @if type-of($value) == number {
+    @if unit($value) == &#39;em&#39;{
+      @return ($value / 1em) * 16px;
+    } @else if unit($value) == &#39;rem&#39;{
+      @return ($value / 1rem) * 16px
+    } @else if unit($value) == &#39;px&#39; {
+      @return $value;
+    } @else {
+      @error &quot;La funcion toPx() solo acepta numeros en em o rem o px&quot;
+    }
+  } @else {
+    @error &quot;La funcion toPx() solo acepta numeros en em o rem&quot;
+  }
+ }" data-collapsed="@function toPx($value) { ... }"><code>@function toPx($value) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Convierte un valor en em o rem a px</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$value</code></th><td data-label="desc"><p>var a convertir a pixeles.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>La funcion toPx() solo acepta numeros en em o rem o px</p></li><li><p>La funcion toPx() solo acepta numeros en em o rem</p></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#mq-mixin-to"><code>to</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#mq-mixin-fromTo"><code>fromTo</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section></section><section class="main__sub-section" id="mq-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="mq-mixin-from"><h3 class="item__heading"><a class="item__name" href="#mixin-from">from</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin from($from) { 
+  @if isCoreBreakpoint($from){
+    @if $from == s {
+      @content
+    }
+    @else {
+      @media screen and (min-width: getBp($from)){ @content }
+    }
+  } @else if isValidBreakpoint($from){
+    @media screen and (min-width: $from){ @content }
+  } @else {
+    @error &#39;El mixin from() solo puede recibir un breakpoint del Core (#{map-keys($breakpoints)}) o un número en px, em o rem&#39;
+  }
+ }" data-collapsed="@mixin from($from) { ... }"><code>@mixin from($from) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>From (mayor que $bp)</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$from</code></th><td data-label="desc"><p>breakpoint</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Content</h3><p>This mixin allows extra content to be passed (through the <code>@content</code> directive).<h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.elemento {
+  width: 30%;
+  @include from(m) {
+    width: 50%;
+  }
+}</code></pre></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>El mixin from() solo puede recibir un breakpoint del Core (#{map-keys($breakpoints)}) o un número en px, em o rem</p></li></ul><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#mq-function-isCoreBreakpoint"><code>isCoreBreakpoint</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#mq-function-getBp"><code>getBp</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#mq-function-isValidBreakpoint"><code>isValidBreakpoint</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#menu-mixin-edMenu"><code>edMenu</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#visibility-mixin-showTo"><code>showTo</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#visibility-mixin-hideFrom"><code>hideFrom</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></p></section><section class="main__item container item" id="mq-mixin-to"><h3 class="item__heading"><a class="item__name" href="#mixin-to">to</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin to($to) { 
+  // Si es un breakpoint del core
+  @if isCoreBreakpoint($to){
+    @if $to == s {
+      @content;
+    } @else {
+      @media screen and (max-width : getBp($to) - 1px) { @content }
+    }
+  }
+  // Si es un breakpoint válido (px, em, rem)
+  @else if isValidBreakpoint($to){
+    @media screen and (max-width: toPx($to) - 1px){ @content }
+  }
+  // Si no es un breakpoint válido lanzar error
+  @else {
+    @error &#39;El mixin to() solo puede recibir un breakpoint del Core (#{map-keys($breakpoints)}) o un número en px, em o rem&#39;
+  }
+ }" data-collapsed="@mixin to($to) { ... }"><code>@mixin to($to) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>To (es menor que $to)</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$to</code></th><td data-label="desc"><p>breakpoint</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Content</h3><p>This mixin allows extra content to be passed (through the <code>@content</code> directive).<h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.elemento {
+  width: 50%;
+  @include to(m) {
+    width: 30%;
+  }
+}</code></pre></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>El mixin to() solo puede recibir un breakpoint del Core (#{map-keys($breakpoints)}) o un número en px, em o rem</p></li></ul><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#mq-function-isCoreBreakpoint"><code>isCoreBreakpoint</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#mq-function-getBp"><code>getBp</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#mq-function-isValidBreakpoint"><code>isValidBreakpoint</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#mq-function-toPx"><code>toPx</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#menu-mixin-edMenu"><code>edMenu</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#menu-mixin-edNav"><code>edNav</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#visibility-mixin-showFrom"><code>showFrom</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#visibility-mixin-hideTo"><code>hideTo</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></p></section><section class="main__item container item" id="mq-mixin-fromTo"><h3 class="item__heading"><a class="item__name" href="#mixin-fromTo">fromTo</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin fromTo($from, $to) { 
+  // Si ambos son breakpoints del core
+  @if isCoreBreakpoint($from) and isCoreBreakpoint($to){
+    @if getBp($to) &gt; getBp($from) {
+      @media screen and (min-width : getBp($from)) and (max-width : getBp($to) - 1px) {
+        @content
+      }
+    } @else {
+      @error &quot;El segundo argumento del mixin fromTo debe ser mayor que el primero&quot;
+    }
+  }
+
+  // Si solo $from es breakpoint del core
+  @else if isCoreBreakpoint($from) and not isCoreBreakpoint($to){
+    @if isValidBreakpoint($to) {
+      @if toPx($to) &gt; toPx(getBp($from)) {
+        @media screen and (min-width : getBp($from)) and (max-width : toPx($to) - 1px) {
+          @content
+        }
+      } @else {
+        @error &quot;El segundo argumento del mixin fromTo debe ser mayor que el primero&quot;
+      }
+    } @else {
+      @error &quot;El segundo argumento del mixin fromTo() debe ser un breakpoint del Core (#{map-keys($breakpoints)}) o un número en px, em o rem&quot;
+    }
+  }
+
+  // Si solo $to es breakpoint del core
+  @else if not isCoreBreakpoint($from) and isCoreBreakpoint($to) {
+    @if isValidBreakpoint($from) {
+      @if toPx(getBp($to)) &gt; toPx($from){
+        @media screen and (min-width : $from) and (max-width : getBp($to) - 1px) {
+          @content
+        }
+      } @else {
+        @error &quot;El segundo argumento del mixin fromTo debe ser mayor que el primero&quot;
+      }
+    }
+    @else {
+      @error &quot;El primer argumento del mixin fromTo() debe ser un breakpoint del Core (#{map-keys($breakpoints)}) o un número en px, em o rem&quot;
+    }
+  }
+
+  // Si no son breakpoints del core pero son breakpoints válidos (px, em, rem)
+  @else if isValidBreakpoint($from) and isValidBreakpoint($to){
+    @if toPx($to) &gt; toPx($from) {
+      @media screen and (min-width : $from) and (max-width : toPx($to) - 1px) {
+        @content
+      }
+    } @else {
+      @error &quot;El segundo argumento del mixin fromTo debe ser mayor que el primero&quot;
+    }
+  }
+
+  // Si al menos hay un breakpoint inválido
+  @else {
+    @error &#39;Los argumentos del mixin fromTo() deben ser breakpoints del Core (#{map-keys($breakpoints)}) o números en px, em o rem&#39;;
+  }
+ }" data-collapsed="@mixin fromTo($from, $to) { ... }"><code>@mixin fromTo($from, $to) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>fromTo la regla se ejecuta entre ambos breakpoints.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$from</code></th><td data-label="desc"><p>breakpoint desde que medida se iniciara la regla.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$to</code></th><td data-label="desc"><p>breakpoint hasta que medida se ejecutara la regla.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Content</h3><p>This mixin allows extra content to be passed (through the <code>@content</code> directive).<h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.elemento {
+  background-color: cyan;
+  @include fromTo(s, l) {
+    background-color: darken(cyan, .8);
+  }
+}</code></pre></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>El segundo argumento del mixin fromTo debe ser mayor que el primero</p></li><li><p>El segundo argumento del mixin fromTo() debe ser un breakpoint del Core (#{map-keys($breakpoints)}) o un número en px, em o rem</p></li><li><p>El primer argumento del mixin fromTo() debe ser un breakpoint del Core (#{map-keys($breakpoints)}) o un número en px, em o rem</p></li><li><p>Los argumentos del mixin fromTo() deben ser breakpoints del Core (#{map-keys($breakpoints)}) o números en px, em o rem</p></li></ul><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#mq-function-isCoreBreakpoint"><code>isCoreBreakpoint</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#mq-function-getBp"><code>getBp</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#mq-function-isValidBreakpoint"><code>isValidBreakpoint</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#mq-function-toPx"><code>toPx</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></p></section></section></section><section class="main__section"><h1 class="main__heading" id="offset"><div class="container">offset</div></h1><section class="main__sub-section" id="offset-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="offset-mixin-offset"><h3 class="item__heading"><a class="item__name" href="#mixin-offset">offset</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin offset($s, $m, $l, $xl) { 
+  @if $s &lt; 1 {
+    margin-left : $s * 100%;
+  } @else {
+    margin-left : $s * 1%;
+  }
+
+  @include offsetWidth($m,$s,m);
+  @include offsetWidth($l,$m,l);
+  @include offsetWidth($xl,$l,xl);
+ }" data-collapsed="@mixin offset($s, $m, $l, $xl) { ... }"><code>@mixin offset($s, $m, $l, $xl) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>mixin para aplicarle un desplazamiento a un elemento. Description el unico parametro necesario es el primero, luego los demas parametros si no estan especificados toman la medida del anterior.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$s</code></th><td data-label="desc"><p>desplazamiento para medidas menores a 640px.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$m</code></th><td data-label="desc"><p>desplazamiento para medidas mayores a 640px y menores o iguales a 1024px.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$l</code></th><td data-label="desc"><p>desplazamiento para medidas mayores a 1024px y menores o iguales a 1440px.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$xl</code></th><td data-label="desc"><p>desplazamiento para medidas mayores a 1440px en adelante.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.sidebar {
+  @include offset(2, 5, 7);
+}</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="undefined"><div class="container">General</div></h1><section class="main__sub-section" id="undefined-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="undefined-mixin-edContainer"><h3 class="item__heading"><a class="item__name" href="#mixin-edContainer">edContainer</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin edContainer() { 
+  @extend %ed-container;
+
+  @if $devMode == true {
+    @include devModeContainer();
+  }
+ }" data-collapsed="@mixin edContainer() { ... }"><code>@mixin edContainer() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>mixin para crear un ed-container Description hace que el elemento sea un contenedor, esto dota al elemento para que tambien sea un flex-container. @group layouts @author Alvaro Felipe @example scss .container { @include edContainer; }</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section></section></section><section class="main__section"><h1 class="main__heading" id="video"><div class="container">video</div></h1><section class="main__sub-section" id="video-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="video-mixin-edVideo"><h3 class="item__heading"><a class="item__name" href="#mixin-edVideo">edVideo</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin edVideo($video) { 
+  height         : 0;
+  overflow       : hidden;
+  padding-bottom : 56.25%;
+  position       : relative;
+
+  @if $video != null {
+    #{$video} {
+      position : absolute;
+      top      : 0;
+      left     : 0;
+      width    : 100%;
+      height   : 100%;
+    }
+  } @else {
+    &gt; iframe,
+    &gt; video,
+    &gt; .video {
+      position : absolute;
+      top      : 0;
+      left     : 0;
+      width    : 100%;
+      height   : 100%;
+    }
+  }
+ }" data-collapsed="@mixin edVideo($video) { ... }"><code>@mixin edVideo($video) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Videos responsive Este mixing se debe aplicar al contenedor del video.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$video</code></th><td data-label="desc"><p>selector del elemento video</p></td><td data-label="type"><code>Selector</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>#ed-cursos {
+  @include edVideo(&quot;video&quot;);
+}</code></pre></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="visibility"><div class="container">visibility</div></h1><section class="main__sub-section" id="visibility-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="visibility-mixin-showFrom"><h3 class="item__heading"><a class="item__name" href="#mixin-showFrom">showFrom</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin showFrom($bp) { 
+  @include to($bp){
+    display : none;
+  }
+ }" data-collapsed="@mixin showFrom($bp) { ... }"><code>@mixin showFrom($bp) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Muestra un elemento a partir del breakpoint especificado</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$bp</code></th><td data-label="desc"><p>breakpoint a partir del cual mostrar el elemento</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.sidebar {
+  @include showFrom(l);
+}</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#mq-mixin-to"><code>to</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section><section class="main__item container item" id="visibility-mixin-showTo"><h3 class="item__heading"><a class="item__name" href="#mixin-showTo">showTo</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin showTo($bp) { 
+  @include from($bp){
+    display : none;
+  }
+ }" data-collapsed="@mixin showTo($bp) { ... }"><code>@mixin showTo($bp) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Muestra un elemento por debajo del breakpoint especificado.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$bp</code></th><td data-label="desc"><p>breakpoint.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.sidebar {
+  @include showFrom(l);
+}</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#mq-mixin-from"><code>from</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section><section class="main__item container item" id="visibility-mixin-hideFrom"><h3 class="item__heading"><a class="item__name" href="#mixin-hideFrom">hideFrom</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin hideFrom($bp) { 
+  @include from($bp){
+    display : none;
+  }
+ }" data-collapsed="@mixin hideFrom($bp) { ... }"><code>@mixin hideFrom($bp) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Oculta un elemento a partir del breakpoint especificado</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$bp</code></th><td data-label="desc"><p>breakpoint a partir del cual ocultar el elemento</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.sidebar {
+  @include hideFrom(l);
+}</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#mq-mixin-from"><code>from</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#menu-mixin-edMenu"><code>edMenu</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section><section class="main__item container item" id="visibility-mixin-hideTo"><h3 class="item__heading"><a class="item__name" href="#mixin-hideTo">hideTo</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin hideTo($bp) { 
+  @include to($bp){
+    display : none;
+  }
+ }" data-collapsed="@mixin hideTo($bp) { ... }"><code>@mixin hideTo($bp) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Oculta un elemento por debajo del breakpoint especificado.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$bp</code></th><td data-label="desc"><p>breakpoint</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.sidebar {
+  @include hideFrom(l);
+}</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#mq-mixin-to"><code>to</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Alvaro Felipe</p></li></ul></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --><span class="project-info__name">Ed-grid</span><!-- Version --> <span class="project-info__version">- v2.0.0</span><!-- License --> <span class="project-info__license">, under ISC</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>
