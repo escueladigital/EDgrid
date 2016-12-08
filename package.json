@@ -1,6 +1,6 @@
 {
   "name": "ed-grid",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "description": "Framework de CSS puro para crear diseños web responsive y mobile first.",
   "style": "ed-grid.scss",
   "main": "ed-grid.scss",

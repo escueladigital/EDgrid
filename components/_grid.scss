@@ -22,14 +22,19 @@
 |
 | $selector: nombre del selector CSS de cada item de la cuadricula
 |
-| $listColumns:
-|              * lista de numeros de columnas en cada breakpoint. Ej: (1,2,3,4)
-|              * usar parenteris "()" si la lista contiene mas de un elemento
-|              * el numero de columnas del ultimo breakpoint se hereda a breakpoints superiores
-|
 | $gutter: separación entre cada item de la cuadricula (opcional)
 |
 */
+/// mixin para crear cuadriculas
+/// @group   grid
+/// @author  Alvaro Felipe
+/// @param   {element} $selector - nombre del selector css de cada item de la cuadricula.
+/// @param   {list} $listColumns - lista de numeros de columnas en cada breakpoint. Ej: (1,2,3,4), el numero de columnas del ultimo breakpoint se hereda a breakpoints superiores
+/// @param   {number} $gutter - el espaciado entre cada elemento de la cuadricula. Por defecto es de 1em.
+/// @example scss
+///   .gallery {
+///     @include grid(li, 5 );
+///   }
 
 @mixin grid($selector,$listColumns,$gutter:1em){
   // $width sirve para calcular el ancho de cada item

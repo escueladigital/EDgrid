@@ -48,3 +48,4 @@ node_modules/
 npm-debug.log
 test/styles.css
 js/ed-grid.js.map
+js/babel/.tern-port
