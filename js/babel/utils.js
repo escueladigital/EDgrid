@@ -9,11 +9,15 @@
  * @private
  */
 export function $ (selector, context = document) {
-  if (/^#[\w-]+$/.test(selector)) {
-    return context.getElementById(selector.slice(1))
-  }
+  //if (/^#[\w-]+$/.test(selector)) {
+    //return context.getElementById(selector.slice(1))
+  //}
 
-  return context.querySelectorAll(selector)
+  //return context.querySelectorAll(selector)
+
+return /^#[\w-]+$/.test(selector)
+      ? context.getElementById(selector.slice(1))
+      : context.querySelectorAll(selector);
 }
 
 /**

@@ -1,4 +1,13 @@
-// Videos responsive
+/// Videos responsive
+/// Este mixing se debe aplicar al contenedor del video.
+/// @group   video
+/// @author  Alvaro Felipe
+/// @param   {selector} $video - selector del elemento video
+/// @example scss
+///     #ed-cursos {
+///       @include edVideo("video");
+///     }
+
 @mixin edVideo ($video: null) {
   height         : 0;
   overflow       : hidden;

@@ -1,12 +1,28 @@
+/// Añade padding a los lados para compenzar el gutter de EDgrid.
+/// @group   helpers
+/// @author  Alvaro Felipe
+/// @param   {number} $numero - La cantidad de padding (1 == 1 gutter == 15px).
+/// @example scss
+/// Si el número es 0 el padding se elimina.
+///   .selector1 { @include padding(3) }
 @mixin padding($numero:1){
   padding-left  : $gutter * $numero;
   padding-right : $gutter * $numero;
 }
 
+/// Elimina los paddings horizontales de todos los hijos directos
+/// @group   helpers
+/// @author  Alvaro Felipe
+/// @example scss
+///   .selector2 { @include noPaddingContainer; }
 @mixin noPaddingContainer(){
   > .#{$item} { @include padding(0) }
 }
 
+/// Hace que un elemento tenga la proporcion de aspecto especificada.
+/// Las propiedades de alinecion con flexbox, no funcionaran en este elemento
+/// @group   helpers
+/// @author  Alvaro Felipe
 @mixin ratio($h,$v) {
   $width         : 100%;
   width          : $width;
@@ -15,6 +31,13 @@
   padding-bottom : $width * ($v/$h);
 }
 
+/// Limpia los floats.
+/// @group   helpers
+/// @author  Alvaro Felipe
+/// @example [scss | sass] - Usage
+///   .clearfix {
+///     @include clearfix;
+///   }
 @mixin clearfix {
   &:before,
   &:after {
@@ -24,19 +47,44 @@
     clear   : both;
   }
 }
-
+/// Alinea el elemento a la derecha
+/// @group   helpers
+/// @author  Alvaro Felipe
+/// @param   {number} $width - Ancho del elemento (con su unidad)
+/// @param   {number} $margin-left - cantidad de margen derecho (opcional)
+/// @example scss
+///   .fb-icon {
+///     @include toRight(20%, 1em);
+///   }
 @mixin toRight($width:auto,$margin-left:1em){
   float       : right;
   width       : $width;
   margin-left : $margin-left;
 }
 
+/// Alinea el elemento a la izquierda
+/// @group   helpers
+/// @author  Alvaro Felipe
+/// @param   {number} $width - Ancho del elemento (con su unidad)
+/// @param   {number} $margin-right - cantidad de margen izquierdo (opcional)
+/// @example scss
+///   .fb-icon {
+///     @include toLeft(20%, 1em);
+///   }
 @mixin toLeft($width:auto,$margin-right:1em){
   float        : left;
   width        : $width;
   margin-right : $margin-right;
 }
 
+/// Centra un elemento
+/// @group   helpers
+/// @author  Alvaro Felipe
+/// @param   {number} $width - Ancho del elemento (con su unidad)
+/// @example scss
+///   .fb-icon {
+///     @include toCenter(20%);
+///   }
 @mixin toCenter($width:auto){
   display      : block;
   width        : $width;
@@ -44,15 +92,41 @@
   margin-right : auto;
   text-align   : center;
 }
-
+/// Hace al elemento circular.
+/// @group   helpers
+/// @author  Alvaro Felipe
+/// @example scss
+///   .item::before {
+///     content: "";
+///     width: 150px;
+///     height: 150px;
+///     display: block;
+///     @include circle;
+///   }
 @mixin circle { border-radius : 50% }
 
+/// Hace que el elemento ocupe el 100% de su contenedor.
+/// @group   helpers
+/// @author  Alvaro Felipe
+/// @example 
+///   .header {
+///     @include full;
+///   }
 @mixin full(){
   width     : 100%;
   max-width : 100%;
   clear     : both;
 }
-
+/// Hace que un elemento se quede pegado en la parte inferior de la pagina indistintamente del tamaño del contenido del sitio.
+/// @group   helpers
+/// @author  Alvaro Felipe
+/// @example scss
+///    .main-footer {
+///      width: 100%;
+///      display: block;
+///      height: 150px;
+///      @include stickyFooter;
+///    }
 @mixin stickyFooter {
   @at-root {
     body {

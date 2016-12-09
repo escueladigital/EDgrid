@@ -15,7 +15,14 @@
   padding-right : $gutter;
 }
 
-// mixin para crear ed-container
+/// mixin para crear un ed-container
+/// Description hace que el elemento sea un contenedor, esto dota al elemento para que tambien sea un flex-container.
+/// @group layouts
+/// @author  Alvaro Felipe
+/// @example scss
+/// .container {
+///   @include edContainer;
+///}
 @mixin edContainer {
   @extend %ed-container;
 
@@ -24,12 +31,17 @@
   }
 }
 
-// mixin para ed-container total
+/// Hace que un elemento siempre mida el 100% del ancho disponible
+/// @group layouts
+/// @author Alvaro Felipe
+/// @example scss
+/// .full {
+///   @include full;
+/// }
 @mixin full {
   max-width : 100%;
 }
 
-// Mixin para calcular el ancho de un ed-item
 @mixin edItemWidth($currentBp, $prevBp, $coreBp){
   // Si el tamaño actual es diferente al previo
   // asignará el ancho en porcentaje
@@ -47,7 +59,28 @@
   }
 }
 
-// mixin para crear un ed-item
+
+/// mixin para crear un ed-item
+/// Description
+/// Los argumentos que acepta son las diferentes medidas que tendra el elemento en diferentes resoluciones de pantalla.
+/// Las medidas pueden especificarse como porcentajes ( %  ) o como fracciones (1/3, 3/3 o 3/6, 2/6).
+/// @group layouts
+/// @author  Alvaro Felipe
+/// @param   {number} $s - para resoluciones entre 0px y 640px
+/// @param   {number} $m - para resoluciones entre 640px y 1024px
+/// @param   {number} $l - para resoluciones entre 1024px y 1440px
+/// @param   {number} $xl - para resoluciones desde 1440px en adelante.
+/// @example scss
+///   .container {
+///     @include edContainer;
+///   }
+///
+///   .content {
+///     @include edItem(100, 75, 60);
+///   }
+///   .sidebar {
+///     @include edItem(100, 25, 40);
+///   }
 @mixin edItem($s:100,$m:$s,$l:$m,$xl:$l) {
   @extend %ed-item;
 

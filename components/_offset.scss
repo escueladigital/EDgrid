@@ -53,6 +53,20 @@
   }
 }
 
+/// mixin para aplicarle un desplazamiento a un elemento.
+/// Description el unico parametro necesario es el primero, luego los demas parametros si no estan especificados toman la medida del anterior.
+/// @group   offset
+/// @author  Alvaro Felipe
+/// @param   {number} $s - desplazamiento para medidas menores a 640px.
+/// @param   {number} $m - desplazamiento para medidas mayores a 640px y menores o iguales a 1024px.
+/// @param   {number} $l - desplazamiento para medidas mayores a 1024px y menores o iguales a 1440px.
+/// @param   {number} $xl -desplazamiento para medidas mayores a 1440px en adelante.
+/// @example scss
+///   .sidebar {
+///     @include offset(2, 5, 7);
+///   }
+
+
 @mixin offset($s,$m:$s,$l:$m,$xl:$l){
   @if $s < 1 {
     margin-left : $s * 100%;

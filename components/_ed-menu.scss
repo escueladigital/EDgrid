@@ -1,4 +1,7 @@
 // estilo default del menu
+/// Aplica un estilo por defecto al menu.
+/// @group   menu
+/// @author  Alvaro Felipe
 @mixin menuStyleDefault {
   background : #eee;
   li:hover { background : rgba(#000, .1)  }
@@ -44,7 +47,9 @@
   }
 }
 
-// estilo button para el menú
+/// estilo button para el menú
+/// @group   menu
+/// @author  Alvaro Felipe
 @mixin menuStyleButton {
   li {
     margin-bottom : .5em;
@@ -63,9 +68,12 @@
   }
 }
 
-// mixin que construye el menú sin un tema, solo maqueta
-// recibe el breakpoint en que se vuelve horizontal
-// y el estilo (opcional): default|nav|button
+/// mixin que construye el menú sin un tema, solo maqueta
+/// @group   menu
+/// @author  Alvaro Felipe
+/// @param   {number} $bp - Breakpoint a partir del cual el menu se volvera horizontal.
+/// @param   {number} $style - estilo a usar en el menu las opciones son: [default | nav | button], este argumento es opcional.
+/// @example [scss | sass] - Usage
 @mixin edMenu($bp,$style:null) {
   width : 100%;
 
@@ -185,7 +193,16 @@
   }
 }
 
-// mixin Nav (para el contenedor del menú)
+/// mixin Nav (para el contenedor del menú) 
+/// @group   menu
+/// @author  Alvaro Felipe
+/// @param   {string} $direction  - El eje desde donde aparecera el menu. Las opciones son [left | right | top | bottom]
+/// @param   {number} $bp  - breakpoint que indica hasta donde debe mostrarse en vertical.
+/// @example scss
+///   nav {
+///     @include edNav(left, m);
+///   }
+
 @mixin edNav($direction, $bp){
   @include to($bp) {
     $lrWidth   : 85%;
@@ -231,7 +248,15 @@
   }
 }
 
-
+/// Toggle del menu
+/// @group   menu
+/// @author  Alvaro Felipe
+/// @param   {number} $size - especifica el tamaño del elemento toggle
+/// @param   {color} $color - especifica el color del toggle.
+/// @example scss
+///   .menu-toggle {
+///     @include navToggle(200px, $black);
+///   }
 @mixin navToggle($size, $color) {
   $segmentHeight : ($size / 5);
   position       : relative;

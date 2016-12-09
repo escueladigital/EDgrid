@@ -1,5 +1,6 @@
 import { $, each } from './utils'
 
+//TODO: Add null pointer error checked.
 export default (navId, menuId) => {
   let nav = $(`#${navId}`),
     menu = $(`#${menuId}`),

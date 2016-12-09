@@ -1,3 +1,9 @@
+/// Transforma un valor en pixeles a em.
+/// @group   functions
+/// @author  Alvaro Felipe
+/// @param   {number} $el - el valor en pixeles que se desea convertir.
+/// @param   {number} $context - el valor en pixeles del contenedor.
+/// @return  {number} el tamaño transformado en em.
 @function em($el,$context:16px) {
   @if type_of($el) == number and unit($el) == 'px' {
     @return ($el / $context) * 1em;
@@ -6,6 +12,11 @@
   }
 }
 
+/// Transforma un valor en pixeles a rem.
+/// @group   functions
+/// @author  Alvaro Felipe
+/// @param   {number} $el - el valor en pixeles que se desea convertir.
+/// @return  {number} el tamaño transformado en rem.
 @function rem($el) {
   @if type_of($el) == number and unit($el) == 'px' {
     @return ($el / 16px) * 1rem;
