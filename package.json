@@ -24,6 +24,9 @@
   "bugs": {
     "url": "https://github.com/escueladigital/ED-GRID/issues"
   },
+  "scripts": {
+    "start": "gulp"
+  },
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^6.4.1",
