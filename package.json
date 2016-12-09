@@ -25,7 +25,7 @@
     "url": "https://github.com/escueladigital/ED-GRID/issues"
   },
   "scripts": {
-    "start": "gulp"
+    "start": "./node_modules/.bin/gulp"
   },
   "license": "ISC",
   "devDependencies": {
