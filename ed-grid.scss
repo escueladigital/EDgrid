@@ -8,12 +8,13 @@
 
 // Variables globales (puede sobreescribirlas antes de importar ED grid)
 // No las sobreescriba aquí, sino desde su proyecto.
-  $cssCore    : true  !default;
-  $cssHelpers : true  !default;
-  $devMode    : false !default;
+  $cssCore    : true  !default; //Compila todo el css (no recomendado si se trabaja con sass).
+  $cssHelpers : true  !default; //Ayudas extras para el layout (para alinear elementos, limpiar los floats, controlar el padding, etc...) Se recomienda activarlo.
+  $devMode    : false !default; //Ayuda visual que nos permite ver en el navegador breakpoints, el tamaño de los elementos, el area disponible etc... 
 
 // Selectores (clases) para flex-container y flex-item
-  $container : ed-container !default;
+
+  $container : ed-container !default; // Permite modificar el nombre de las clases usadas como contenedor e item.
   $item      : ed-item !default;
 
 // Ancho máximo para los contenedores
