@@ -14,7 +14,7 @@ import source from 'vinyl-source-stream'
 const server = browserSync.create();
 
 let postcssPlugins = [
-  autoprefixer({browsers: 'last 2 versions'}),
+  autoprefixer({browsers: '> 1%, last 2 versions, Firefox ESR, Opera 12.1'}),
   cssnano({core:true})
 ];
 
