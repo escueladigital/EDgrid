@@ -40,16 +40,23 @@
 
 // From (mayor que $bp)
 @mixin from($from){
+  // Si el bp es del core de EDgrid
   @if isCoreBreakpoint($from){
+    // no imprime media query para tamaño s
     @if $from == s {
       @content
     }
+    // imprime media query en los otros tamaños
     @else {
       @media screen and (min-width: getBp($from)){ @content }
     }
-  } @else if isValidBreakpoint($from){
+  }
+  // Si el bp no es del core de EDgrid pero es una unidad válida
+  @else if isValidBreakpoint($from){
     @media screen and (min-width: $from){ @content }
-  } @else {
+  }
+  // Error
+  @else {
     @error 'El mixin from() solo puede recibir un breakpoint del Core (#{map-keys($breakpoints)}) o un número en px, em o rem'
   }
 }
