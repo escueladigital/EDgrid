@@ -104,10 +104,12 @@
     }
 
     @each $size, $_ in $breakpoints{
-      @include from($size) {
-        grid-template-columns: repeat(nth($listColumns,$i),1fr);
+      @if $i <= $longListColumns {
+        @include from($size) {
+          grid-template-columns: repeat(nth($listColumns,$i),1fr);
+        }
+        $i: $i + 1;
       }
-      $i: $i + 1;
     }
 
     // grid-item
