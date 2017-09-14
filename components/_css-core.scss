@@ -39,7 +39,7 @@
   button {
     @include button();
     &.round  { @include button(#DDD, #333, round) }
-    &.radius { @include button(#DDD, 333, radius) }
+    &.radius { @include button(#DDD, #333, radius) }
   }
 
   // Menus
