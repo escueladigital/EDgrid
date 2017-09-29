@@ -1,5 +1,5 @@
 {
-  "name": "ed-grid",
+  "name": "EDgrid",
   "version": "2.0.0",
   "description": "Framework de CSS puro para crear diseños web responsive y mobile first.",
   "style": "ed-grid.scss",
