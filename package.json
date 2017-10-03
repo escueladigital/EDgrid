@@ -1,10 +1,10 @@
 {
   "name": "EDgrid",
   "version": "2.0.0",
-  "description": "Framework de CSS puro para crear diseños web responsive y mobile first.",
+  "description": "EDgrid (aka ed-grid) is a minimalist CSS library for building responsive web layouts.",
   "style": "ed-grid.scss",
   "main": "ed-grid.scss",
-  "author": "Alvaro Felipe <informes@escueladigital.pe>",
+  "author": "Alvaro Felipe <afelipech@gmail.com>",
   "contributors": [
     {
       "name": "Daniel Guillermo Romero Gelvez",
