@@ -1,13 +1,13 @@
 %button {
-  display       : inline-block;
-  line-height   : 2.5em;
-  padding       : 0 1.5em;
-  cursor        : pointer;
-  margin-bottom : 1em;
-  border        : none;
+  display         : inline-block;
+  padding         : .8em 1.6em;
+  cursor          : pointer;
+  margin          : 1em;
+  border          : none;
+  text-decoration : none;
 }
 
-@mixin button($bg-color: #ddd,$front-color: #333,$style: default) {
+@mixin edgridButton($bg-color: #ddd,$front-color: #333,$style: default) {
   @extend    %button;
   background : $bg-color;
   color      : $front-color;
