@@ -108,7 +108,7 @@
 /// Hace que el elemento ocupe el 100% de su contenedor.
 /// @group   helpers
 /// @author  Alvaro Felipe
-/// @example 
+/// @example
 ///   .header {
 ///     @include full;
 ///   }
@@ -153,6 +153,10 @@
     display : block;
     margin-right : auto;
     margin-left : auto;
+
+    &.ed-container {
+      display : flex;
+    }
   }
   .to-left                  { @include toLeft()             }
   .to-right                 { @include toRight()            }
