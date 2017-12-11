@@ -37,9 +37,9 @@
   // Botones
   .button,
   button {
-    @include button();
-    &.round  { @include button(#DDD, #333, round) }
-    &.radius { @include button(#DDD, #333, radius) }
+    @include edgridButton();
+    &.round  { @include edgridButton(#DDD, #333, round) }
+    &.radius { @include edgridButton(#DDD, #333, radius) }
   }
 
   // Menus

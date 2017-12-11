@@ -5,5 +5,5 @@
   @include visibility();
 
   .ed-video { @include edVideo() }
-  .button   { @include button()  }
+  .button   { @include edgridButton()  }
 }
