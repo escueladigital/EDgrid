@@ -1,6 +1,6 @@
 {
   "name": "ed-grid",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "description": "EDgrid (aka ed-grid) is a minimalist CSS library for building responsive web layouts.",
   "style": "ed-grid.scss",
   "main": "ed-grid.scss",
