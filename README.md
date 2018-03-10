@@ -90,3 +90,15 @@ module: {
   ]
 }
 ```
+
+#### Importar desde un CDN
+
+Hacemos uso de https://cdn.jsdelivr.net solo cambiando la versión
+```
+# Ejemplo producción:
+https://cdn.jsdelivr.net/gh/escueladigital/EDgrid@version/css/ed-grid.css
+
+# Ejemplo en nuestro html al importar.
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/escueladigital/EDgrid@v2.1.7/css/ed-grid.css">
+```
+En el caso de querer usar el archivo minificado para producción solo debe cambiar <code>ed-grid.css</code> por <code>ed-grid.min.css</code>.
