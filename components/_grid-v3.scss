@@ -16,6 +16,7 @@ $gap: $gutter * 2;
   margin-right    : 1rem;
 
   @include from($max-width) {
+    width: $max-width;
     margin-left  : auto;
     margin-right : auto;
   }
@@ -28,14 +29,14 @@ $gap: $gutter * 2;
   // Columnas en el container
   @for $i from 2 through $max-grid-columns {
     &.cols-#{$i} {
-      @include grid-column-width($i);
+      grid-template-columns: repeat($i,1fr);
     }
   }
 
   @include from(m) {
     @for $i from 2 through $max-grid-columns {
       &.cols-m-#{$i} {
-        @include grid-column-width($i);
+        grid-template-columns: repeat($i,1fr);
       }
     }
   }
@@ -43,7 +44,7 @@ $gap: $gutter * 2;
   @include from(l) {
     @for $i from 2 through $max-grid-columns {
       &.cols-l-#{$i} {
-        @include grid-column-width($i);
+        grid-template-columns: repeat($i,1fr);
       }
     }
   }
@@ -51,7 +52,7 @@ $gap: $gutter * 2;
   @include from(xl) {
     @for $i from 2 through $max-grid-columns {
       &.cols-xl-#{$i} {
-        @include grid-column-width($i);
+        grid-template-columns: repeat($i,1fr);
       }
     }
   }
