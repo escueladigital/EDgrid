@@ -1,8 +1,16 @@
 $max-grid-columns: 20;
+$gap: $gutter * 2;
+
+@mixin grid-column-width($i) {
+  $gaps: $i - 1;
+  $internal-gap: ($gap * $gaps) / $i;
+  $column-width: calc((100% / #{$i}) - #{$internal-gap});
+  grid-template-columns : repeat($i, $column-width);
+}
 
 .ed-grid {
   display         : grid;
-  grid-column-gap : $gutter * 2;
+  grid-column-gap : $gap;
   max-width       : $max-width;
   margin-left     : 1rem;
   margin-right    : 1rem;
@@ -20,14 +28,14 @@ $max-grid-columns: 20;
   // Columnas en el container
   @for $i from 2 through $max-grid-columns {
     &.cols-#{$i} {
-      grid-template-columns : repeat(#{$i}, 1fr);
+      @include grid-column-width($i);
     }
   }
 
   @include from(m) {
     @for $i from 2 through $max-grid-columns {
       &.cols-m-#{$i} {
-        grid-template-columns : repeat(#{$i}, 1fr);
+        @include grid-column-width($i);
       }
     }
   }
@@ -35,7 +43,7 @@ $max-grid-columns: 20;
   @include from(l) {
     @for $i from 2 through $max-grid-columns {
       &.cols-l-#{$i} {
-        grid-template-columns : repeat(#{$i}, 1fr);
+        @include grid-column-width($i);
       }
     }
   }
@@ -43,7 +51,7 @@ $max-grid-columns: 20;
   @include from(xl) {
     @for $i from 2 through $max-grid-columns {
       &.cols-xl-#{$i} {
-        grid-template-columns : repeat(#{$i}, 1fr);
+        @include grid-column-width($i);
       }
     }
   }
