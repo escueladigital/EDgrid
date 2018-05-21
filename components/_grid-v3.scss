@@ -1,23 +1,33 @@
 $max-grid-columns: 20;
 
 .ed-grid {
-  display: grid;
-  grid-column-gap: $gutter * 2;
-  max-width : $max-width;
-  margin-left : auto;
-  margin-right : auto;
+  display         : grid;
+  grid-column-gap : $gutter * 2;
+  max-width       : $max-width;
+  margin-left     : 1rem;
+  margin-right    : 1rem;
+
+  @include from($max-width) {
+    margin-left  : auto;
+    margin-right : auto;
+  }
+
+  .ed-grid {
+    margin-right : 0;
+    margin-left  : 0;
+  }
 
   // Columnas en el container
   @for $i from 2 through $max-grid-columns {
     &.cols-#{$i} {
-      grid-template-columns: repeat(#{$i}, 1fr);
+      grid-template-columns : repeat(#{$i}, 1fr);
     }
   }
 
   @include from(m) {
     @for $i from 2 through $max-grid-columns {
       &.cols-m-#{$i} {
-        grid-template-columns: repeat(#{$i}, 1fr);
+        grid-template-columns : repeat(#{$i}, 1fr);
       }
     }
   }
@@ -25,7 +35,7 @@ $max-grid-columns: 20;
   @include from(l) {
     @for $i from 2 through $max-grid-columns {
       &.cols-l-#{$i} {
-        grid-template-columns: repeat(#{$i}, 1fr);
+        grid-template-columns : repeat(#{$i}, 1fr);
       }
     }
   }
@@ -33,39 +43,38 @@ $max-grid-columns: 20;
   @include from(xl) {
     @for $i from 2 through $max-grid-columns {
       &.cols-xl-#{$i} {
-        grid-template-columns: repeat(#{$i}, 1fr);
+        grid-template-columns : repeat(#{$i}, 1fr);
       }
     }
   }
 
   // Columnas en los items
-
   @for $i from 2 through $max-grid-columns {
-    .span-#{$i} {
-      grid-column: span $i;
+    & > .span-#{$i} {
+      grid-column : span $i;
     }
   }
 
   @include from(m) {
     @for $i from 2 through $max-grid-columns {
-      .span-m-#{$i} {
-        grid-column: span $i;
+      & > .span-m-#{$i} {
+        grid-column : span $i;
       }
     }
   }
 
   @include from(l) {
     @for $i from 2 through $max-grid-columns {
-      .span-l-#{$i} {
-        grid-column: span $i;
+      & > .span-l-#{$i} {
+        grid-column : span $i;
       }
     }
   }
 
   @include from(xl) {
     @for $i from 2 through $max-grid-columns {
-      .span-xl-#{$i} {
-        grid-column: span $i;
+      & > .span-xl-#{$i} {
+        grid-column : span $i;
       }
     }
   }
