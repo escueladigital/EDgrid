@@ -33,14 +33,14 @@ $gap              : $gutter * 2;
     // Columnas en el container
     @if $size == s {
       @for $i from 2 through $max-grid-columns {
-        &.s-cols-#{$i} {
+        &.cols-s-#{$i} {
           grid-template-columns: repeat($i,1fr);
         }
       }
     } @else {
       @media all and (min-width: $screen-size){
         @for $i from 2 through $max-grid-columns {
-          &.#{$size}-cols-#{$i} {
+          &.cols-#{$size}-#{$i} {
             grid-template-columns: repeat($i,1fr);
           }
         }
@@ -50,14 +50,14 @@ $gap              : $gutter * 2;
     // Columnas en los items
     @if $size == s {
       @for $i from 2 through $max-grid-columns {
-        > .#{$size}-span-#{$i} {
+        > .span-s-#{$i} {
           grid-column: span $i;
         }
       }
     } @else {
       @media all and (min-width: $screen-size){
         @for $i from 2 through $max-grid-columns {
-          > .#{$size}-span-#{$i} {
+          > .span-#{$size}-#{$i} {
             grid-column: span $i;
           }
         }
