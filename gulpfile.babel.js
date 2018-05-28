@@ -10,6 +10,7 @@ import browserify from 'browserify'
 import babelify from 'babelify'
 import buffer from 'vinyl-buffer'
 import source from 'vinyl-source-stream'
+import rename from 'gulp-rename'
 
 const server = browserSync.create();
 
@@ -37,10 +38,24 @@ gulp.task('styles', () =>
       .pipe(server.stream())
 );
 
-gulp.task('compileCore', () =>
+gulp.task('compileCoreExpanded', () =>
   gulp.src('./ed-grid.scss')
     .pipe(sass(sassOptions))
-    .pipe(postcss(postcssPlugins))
+    .pipe(postcss([
+      autoprefixer({browsers: '> 1%, last 2 versions, Firefox ESR, Opera 12.1'}),
+      cssnano({core:false})
+    ]))
+    .pipe(gulp.dest('./css'))
+);
+
+gulp.task('compileCoreMinified', () =>
+  gulp.src('./ed-grid.scss')
+    .pipe(sass(sassOptions))
+    .pipe(postcss([
+      autoprefixer({browsers: '> 1%, last 2 versions, Firefox ESR, Opera 12.1'}),
+      cssnano({core:true})
+    ]))
+    .pipe(rename('ed-grid.min.css'))
     .pipe(gulp.dest('./css'))
 );
 
