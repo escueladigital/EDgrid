@@ -49,14 +49,14 @@ $gap              : $gutter * 2;
 
     // Columnas en los items
     @if $size == s {
-      @for $i from 2 through $max-grid-columns {
+      @for $i from 1 through $max-grid-columns {
         > .span-s-#{$i} {
           grid-column: span $i;
         }
       }
     } @else {
       @media all and (min-width: $screen-size){
-        @for $i from 2 through $max-grid-columns {
+        @for $i from 1 through $max-grid-columns {
           > .span-#{$size}-#{$i} {
             grid-column: span $i;
           }
