@@ -1,10 +1,10 @@
-$max-grid-columns: 20;
-$gap: $gutter * 2;
+$max-grid-columns : 20;
+$gap              : $gutter * 2;
 
 @mixin grid-column-width($i) {
-  $gaps: $i - 1;
-  $internal-gap: ($gap * $gaps) / $i;
-  $column-width: calc((100% / #{$i}) - #{$internal-gap});
+  $gaps                 : $i - 1;
+  $internal-gap         : ($gap * $gaps) / $i;
+  $column-width         : calc((100% / #{$i}) - #{$internal-gap});
   grid-template-columns : repeat($i, $column-width);
 }
 
@@ -16,74 +16,51 @@ $gap: $gutter * 2;
   margin-right    : 1rem;
 
   @include from($max-width) {
-    width: $max-width;
+    width        : $max-width;
     margin-left  : auto;
     margin-right : auto;
   }
 
-  .ed-grid {
+  .ed-grid,
+  &.full {
+    width        : 100%;
+    max-width    : 100%;
     margin-right : 0;
     margin-left  : 0;
   }
 
-  // Columnas en el container
-  @for $i from 2 through $max-grid-columns {
-    &.cols-#{$i} {
-      grid-template-columns: repeat($i,1fr);
-    }
-  }
-
-  @include from(m) {
-    @for $i from 2 through $max-grid-columns {
-      &.cols-m-#{$i} {
-        grid-template-columns: repeat($i,1fr);
+  @each $size, $screen-size in $breakpoints {
+    // Columnas en el container
+    @if $size == s {
+      @for $i from 2 through $max-grid-columns {
+        &.s-cols-#{$i} {
+          grid-template-columns: repeat($i,1fr);
+        }
+      }
+    } @else {
+      @media all and (min-width: $screen-size){
+        @for $i from 2 through $max-grid-columns {
+          &.#{$size}-cols-#{$i} {
+            grid-template-columns: repeat($i,1fr);
+          }
+        }
       }
     }
-  }
 
-  @include from(l) {
-    @for $i from 2 through $max-grid-columns {
-      &.cols-l-#{$i} {
-        grid-template-columns: repeat($i,1fr);
+    // Columnas en los items
+    @if $size == s {
+      @for $i from 2 through $max-grid-columns {
+        > .#{$size}-span-#{$i} {
+          grid-column: span $i;
+        }
       }
-    }
-  }
-
-  @include from(xl) {
-    @for $i from 2 through $max-grid-columns {
-      &.cols-xl-#{$i} {
-        grid-template-columns: repeat($i,1fr);
-      }
-    }
-  }
-
-  // Columnas en los items
-  @for $i from 2 through $max-grid-columns {
-    & > .span-#{$i} {
-      grid-column : span $i;
-    }
-  }
-
-  @include from(m) {
-    @for $i from 2 through $max-grid-columns {
-      & > .span-m-#{$i} {
-        grid-column : span $i;
-      }
-    }
-  }
-
-  @include from(l) {
-    @for $i from 2 through $max-grid-columns {
-      & > .span-l-#{$i} {
-        grid-column : span $i;
-      }
-    }
-  }
-
-  @include from(xl) {
-    @for $i from 2 through $max-grid-columns {
-      & > .span-xl-#{$i} {
-        grid-column : span $i;
+    } @else {
+      @media all and (min-width: $screen-size){
+        @for $i from 2 through $max-grid-columns {
+          > .#{$size}-span-#{$i} {
+            grid-column: span $i;
+          }
+        }
       }
     }
   }
