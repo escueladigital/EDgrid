@@ -34,14 +34,16 @@ $gap              : $gutter * 2;
     @if $size == s {
       @for $i from 2 through $max-grid-columns {
         &.cols-s-#{$i} {
-          grid-template-columns: repeat($i,1fr);
+          //grid-template-columns: repeat($i,1fr);
+          @include grid-column-width($i);
         }
       }
     } @else {
       @media all and (min-width: $screen-size){
         @for $i from 2 through $max-grid-columns {
           &.cols-#{$size}-#{$i} {
-            grid-template-columns: repeat($i,1fr);
+            //grid-template-columns: repeat($i,1fr);
+            @include grid-column-width($i);
           }
         }
       }
