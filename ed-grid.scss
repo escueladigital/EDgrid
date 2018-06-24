@@ -10,6 +10,7 @@
 // No las sobreescriba aquí, sino desde su proyecto.
   $cssCore    : true  !default; //Compila todo el css (no recomendado si se trabaja con sass).
   $cssHelpers : true  !default; //Ayudas extras para el layout (para alinear elementos, limpiar los floats, controlar el padding, etc...) Se recomienda activarlo.
+  $buttons    : true  !default;
   $devMode    : false !default; //Ayuda visual que nos permite ver en el navegador breakpoints, el tamaño de los elementos, el area disponible etc...
 
 // Selectores (clases) para flex-container y flex-item
@@ -49,4 +50,4 @@
 @import "components/buttons";         // mixin button()
 @import "components/css-core";        // componentes que se compilaran por default a css
 @import "components/css-helpers";     // ayudas en css (por medio de clases)
-@import "components/grid-v3";     // ayudas en css (por medio de clases)
+@import "components/grid-v3";         // ayudas en css (por medio de clases)

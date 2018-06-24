@@ -1,29 +1,16 @@
-%button {
+@mixin ed-button {
   display         : inline-block;
-  padding         : .8em 1.6em;
+  padding         : .6em 1.2em;
   cursor          : pointer;
   border          : none;
   text-decoration : none;
-}
-
-@mixin edgridButton($bg-color: #ddd,$front-color: #333,$style: default) {
-  @extend    %button;
-  background : $bg-color;
-  color      : $front-color;
+  background      : #eee;
+  color           : #333;
+  margin-right    : 1rem;
+  margin-bottom   : 1rem;
 
   &:hover {
-    background      : darken($bg-color, 5);
-    text-decoration : none;
-  }
-
-  &:active {
-    transform : scale(.97);
-  }
-
-  // estilos del boton (radius o round)
-  @if $style == radius {
-    border-radius : .25em;
-  } @else if $style == round {
-    border-radius : 1.25em;
+    background: #ddd;
   }
 }
+
