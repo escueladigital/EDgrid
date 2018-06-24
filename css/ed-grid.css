@@ -3887,3 +3887,25 @@ body.sticky-footer>footer{
         grid-column:span 20;
   }
 }
+
+.l-block{
+  margin-top:0;
+  margin-bottom:1rem;
+}
+
+@media screen and (min-width:1024px){
+  .l-block{
+    margin-bottom:2rem;
+  }
+}
+
+.l-section{
+  margin-top:0;
+  margin-bottom:2rem;
+}
+
+@media screen and (min-width:1024px){
+  .l-section{
+    margin-bottom:4rem;
+  }
+}
