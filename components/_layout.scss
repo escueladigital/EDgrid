@@ -1,0 +1,17 @@
+.l-block {
+  margin-top : 0;
+  margin-bottom : 1rem;
+
+  @include from(l) {
+    margin-bottom : 2rem;
+  }
+}
+
+.l-section {
+  margin-top : 0;
+  margin-bottom : 2rem;
+
+  @include from(l) {
+    margin-bottom : 4rem;
+  }
+}
