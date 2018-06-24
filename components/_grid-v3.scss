@@ -1,26 +1,34 @@
 $max-grid-columns : 20;
-$gap              : $gutter * 2;
+$gap              : $gutter;
+
+:root {
+  --gap: #{$gap}
+}
 
 @mixin grid-column-width($i) {
-  $gaps                 : $i - 1;
-  $internal-gap         : ($gap * $gaps) / $i;
-  $column-width         : calc((100% / #{$i}) - #{$internal-gap});
+  $gaps: ($i - 1) * $gap * 2;
+  $column-width: calc((100% - #{$gaps}) / #{$i});
   grid-template-columns : repeat($i, $column-width);
 }
 
 .ed-grid {
   display         : grid;
-  grid-column-gap : $gap;
-  max-width       : $max-width;
+  grid-column-gap : $gap * 2;
+
+  // Evita que en tamaños moviles los items queden pegados a los lados
+  width           : calc(100vw - var(--gap) * 2);
   margin-left     : 1rem;
   margin-right    : 1rem;
 
+  // Por sobre el max width el container se centra
   @include from($max-width) {
     width        : $max-width;
     margin-left  : auto;
     margin-right : auto;
   }
 
+  // Para containers hijos de otro container o con clase full
+  // se elimninan los márgenes y se ocupa todo_ el ancho disponible
   .ed-grid,
   &.full {
     width        : 100%;
