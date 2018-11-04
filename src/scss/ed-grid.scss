@@ -7,7 +7,7 @@
 
 // Variables globales (puede sobreescribirlas antes de importar ED grid)
 // No las sobreescriba aquí, sino desde su proyecto.
-$cssCore : true !default; //Compila todo_ el css (no recomendado si se trabaja con sass).
+$cssCore : false !default; //Compila todo_ el css (no recomendado si se trabaja con sass).
 $cssHelpers : true !default; //Ayudas extras para el layout (para alinear elementos, limpiar los floats, controlar el padding, etc...) Se recomienda activarlo.
 $buttons : true !default;
 $devMode : false !default; //Ayuda visual que nos permite ver en el navegador breakpoints, el tamaño de los elementos, el area disponible etc...
@@ -21,7 +21,7 @@ $item : ed-item !default;
 $max-width : 1200px !default;
 
 // Seperación horizontal entre items (*2)
-$gutter : 1rem !default;
+$gap : 2rem !default;
 
 // Breakpoints
 $breakpoints : (
