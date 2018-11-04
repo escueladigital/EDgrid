@@ -3,6 +3,11 @@
 //
 // export default { menu, migrate }
 
+import activeMenu from './modules/activeMenu'
+
+activeMenu('main-menu')
+activeMenu('vertical-menu')
+
 
 /* PrismJS 1.9.0
 http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+clike+javascript+scss&plugins=toolbar+show-language */
