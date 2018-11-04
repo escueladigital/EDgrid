@@ -27,6 +27,11 @@ $gap              : $gutter;
     margin-right : auto;
   }
 
+  // Agrega separación vertical entre filas
+  .row-gap, .rows-gap {
+    grid-row-gap : $gap * 2;
+  }
+
   // Para containers hijos de otro container o con clase full
   // se elimninan los márgenes y se ocupa todo_ el ancho disponible
   .ed-grid,
