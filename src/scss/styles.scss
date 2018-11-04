@@ -6,13 +6,13 @@
 */
 //@import "../../node_modules/edteam-style-guides/edteam-style-guides";
 // Config
-@import "web-styles/config/functions";
-@import "web-styles/config/variables";
-@import "web-styles/config/mixins";
+//@import "web-styles/config/functions";
+//@import "web-styles/config/variables";
+//@import "web-styles/config/mixins";
 // libraries
 @import "web-styles/libraries/prism";
 // Base and elements (generic)
-@import "web-styles/base/base";
+//@import "web-styles/base/base";
 // LAYOUT
 // Escribe solo los estilos de layout (division en regiones del viewport)
 @import "web-styles/layout/layout";
@@ -22,11 +22,11 @@
 @import "web-styles/components/buttons";
 @import "web-styles/components/menus";
 // Theme (colors and fonts)
-@import "web-styles/theme/typography";
-@import "web-styles/theme/footer";
-@import "web-styles/theme/banner";
-@import "web-styles/theme/main-features";
-@import "web-styles/theme/icons";
+//@import "web-styles/theme/typography";
+//@import "web-styles/theme/footer";
+//@import "web-styles/theme/banner";
+//@import "web-styles/theme/icons";
+@import "web-styles/components/main-features";
 // Utilities (hacks)
 // Todos los hacks que hayas necesitado para solucionar conflictos
 // o resolver situaciones extremas. Se espera poder mejorarlos luego.
