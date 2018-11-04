@@ -8,8 +8,8 @@ html(lang="es")
     meta(charset="utf-8")
     meta(name="viewport" content="initial-scale=1.0, width=device-width")
     meta(name="description" content= description)
+    // Estilos
     link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:700")
-    link(href="https://file.myfontastic.com/zKXDvy8Nub3UzMaVbdbSTe/icons.css" rel="stylesheet")
     link(rel="stylesheet" href="/css/styles.css?180113")
     link(rel="shortcut icon" href="images/favicon.png")
     //- Open Graph Protocol
@@ -31,8 +31,22 @@ html(lang="es")
     meta(property="twitter:description" content=description)
     meta(name="theme-color" content="#007BDF")
     meta(name="twitter:image" content="images/edgrid-poster.jpg")
+  // Body
   body(itemscope itemtype="http://schema.org/WebPage")
     include ../includes/header
-    block main
+    // Banner section
+    block banner
+    // Main
+    if docsMenu
+      .ed-grid.cols-l-4.main-section
+        aside(itemscope="itemscope" itemtype="http://schema.org/WPSideBar" role="complementary").main-sidebar.sidebar-first
+          .vertical-menu-toggle.to-l#vertical-menu-toggle(data-content="Filtros")
+          include ../includes/docs-menu
+        .span-l-3
+          block main
+    else
+      .main-section
+        block main
+    // Footer
     include ../includes/footer
     script(src="/js/scripts.js")
