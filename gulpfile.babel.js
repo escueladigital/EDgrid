@@ -88,7 +88,7 @@ gulp.task('pug-dev', () =>
     }))
     .pipe(pug({
       pretty: true,
-      basedir: './dev/pug'
+      basedir: './'
     }))
     .pipe(gulp.dest('./public'))
 )
@@ -101,7 +101,7 @@ gulp.task('pug-build', () =>
       return JSON.parse(fs.readFileSync('./src/data/casos-de-exito.json'))
     }))
     .pipe(pug({
-      basedir: './dev/pug'
+      basedir: './'
     }))
     .pipe(gulp.dest('./public'))
 )
@@ -201,6 +201,7 @@ gulp.task('dev', ['styles-dev', 'pug-dev', 'scripts-dev', 'images-dev'], () => {
   watch('./src/js/**/**', () => gulp.start('scripts-dev', server.reload))
   watch('./src/pug/**/**', () => gulp.start('pug-dev', server.reload))
   watch('./src/data/**/**', () => gulp.start('pug-dev', server.reload))
+  watch('./src/md/**/**', () => gulp.start('pug-dev', server.reload))
   watch('./src/img/**/**', () => gulp.start('images-dev'))
 })
 
