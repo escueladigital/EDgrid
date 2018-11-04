@@ -1,0 +1,38 @@
+block config
+  include config
+
+doctype html
+html(lang="es")
+  head
+    title= title
+    meta(charset="utf-8")
+    meta(name="viewport" content="initial-scale=1.0, width=device-width")
+    meta(name="description" content= description)
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:700")
+    link(href="https://file.myfontastic.com/zKXDvy8Nub3UzMaVbdbSTe/icons.css" rel="stylesheet")
+    link(rel="stylesheet" href="css/styles.css?180113")
+    link(rel="shortcut icon" href="images/favicon.png")
+    //- Open Graph Protocol
+    meta(property="og:title" content= title)
+    meta(property="og:type" content="website")
+    meta(property="og:description" content= description)
+    meta(property="og:url" content= ogUrl)
+    meta(property="og:image" content="images/edgrid-poster.jpg")
+    meta(property="og:site_name" content="EDteam")
+    meta(property="og:locale" content="es_PE")
+    meta(property="og:locale:alternate" content="es_CO")
+    meta(property="og:locale:alternate" content="es_MX")
+    meta(property="og:locale:alternate" content="es_DO")
+    meta(property="og:locale:alternate" content="es_BO")
+    //- Twitter Cards
+    meta(property="twitter:card" content="summary_large_image")
+    meta(property="twitter:title" content= title)
+    meta(property="twitter:site" content="@EDteamLat")
+    meta(property="twitter:description" content=description)
+    meta(name="theme-color" content="#007BDF")
+    meta(name="twitter:image" content="images/edgrid-poster.jpg")
+  body(itemscope itemtype="http://schema.org/WebPage")
+    include ../includes/header
+    block main
+    include ../includes/footer
+    script(src="js/scripts.js")

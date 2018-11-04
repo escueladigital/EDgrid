@@ -1,0 +1,9 @@
+*,
+*::before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: fontSize(small);
+}

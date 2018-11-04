@@ -1,0 +1,11 @@
+extends ../config/template
+append config
+  -title = "EDgrid | Botones (Sass/CSS)"
+  -description = "Desarrollo de botones de manera rapida, incluyendo clases para personalizarlo."
+  -active = 'Botones (Sass/CSS)'
+
+block main
+  .ed-container.main-section
+    include ../includes/docs-menu
+    main(itemscope itemprop="mainContentOfPage" role="main").ed-item.l-75.main-main
+      include:markdown-it(html) ../../md/docs/botones.md

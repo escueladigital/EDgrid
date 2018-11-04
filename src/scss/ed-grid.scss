@@ -1,0 +1,54 @@
+/**
+  EDgrid es una librería CSS para construir layouts con Responsive Web Design
+  Importe este archivo en su proyecto para empezar a usarlo
+**/
+//Funciones para convertir px a em y rem
+@import "ed-grid-components/functions";
+
+// Variables globales (puede sobreescribirlas antes de importar ED grid)
+// No las sobreescriba aquí, sino desde su proyecto.
+$cssCore : true !default; //Compila todo_ el css (no recomendado si se trabaja con sass).
+$cssHelpers : true !default; //Ayudas extras para el layout (para alinear elementos, limpiar los floats, controlar el padding, etc...) Se recomienda activarlo.
+$buttons : true !default;
+$devMode : false !default; //Ayuda visual que nos permite ver en el navegador breakpoints, el tamaño de los elementos, el area disponible etc...
+
+// Selectores (clases) para flex-container y flex-item
+
+$container : ed-container !default; // Permite modificar el nombre de las clases usadas como contenedor e item.
+$item : ed-item !default;
+
+// Ancho máximo para los contenedores
+$max-width : 1200px !default;
+
+// Seperación horizontal entre items (*2)
+$gutter : 1rem !default;
+
+// Breakpoints
+$breakpoints : (
+  s : 0,
+  m : 640px,
+  l : 1024px,
+  lg : 1024px,
+  xl : 1440px
+) !default;
+
+// Fracciones para calcular anchos de los items
+$fractions : 3 6 !default;
+
+// Importar componentes
+@import "ed-grid-components/base"; // estilos base
+@import "ed-grid-components/media-queries"; // mixins from(), to(), fromTo()
+@import "ed-grid-components/helpers"; // utilidades
+@import "ed-grid-components/dev"; // modo dev
+@import "ed-grid-components/core"; // core de EDgrid (containers y items)
+@import "ed-grid-components/grid"; // mixin grid()
+@import "ed-grid-components/visibility"; // mixins para visibilidad
+@import "ed-grid-components/video"; // video RWD
+@import "ed-grid-components/ed-menu"; // estilos para menus
+@import "ed-grid-components/flexbox"; // utilidades con flexbox
+@import "ed-grid-components/offset"; // offsets
+@import "ed-grid-components/buttons"; // mixin button()
+@import "ed-grid-components/css-core"; // componentes que se compilaran por default a css
+@import "ed-grid-components/css-helpers"; // ayudas en css (por medio de clases)
+@import "ed-grid-components/grid-v3"; // ayudas en css (por medio de clases)
+@import "ed-grid-components/layout"; // l-block y l-section

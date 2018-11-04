@@ -1,9 +1,0 @@
-$cssCore: false;
-$cssHelpers: true;
-$devMode: false;
-@import '../ed-grid';
-
-
-.grid-container {
-  @include grid('.grid-item', 1 2 3 4, 1.5em)
-}

@@ -1,0 +1,41 @@
+.main-features{
+  .main-features__content{
+    .main-features__img{
+      display: block;
+      margin: 0 auto .5em;
+      width: 200px;
+      height: 98px;
+      background: url(../images/ed-grid--features.png);
+      background-size: 200px;
+    }
+  }
+}
+
+main {
+  @include from(l) {
+    padding-bottom :  4rem;
+  }
+  margin-bottom : 0 !important // conflicto con main-section;
+}
+
+.main-section {
+  @include to(l) {
+    margin-bottom : 0;
+  }
+}
+
+footer{
+  .main-footer--content{
+    [class*=icon].space:before{
+      margin-left: .3em;
+    }
+  }
+}
+
+.cards-grid {
+  @include grid('.card', 1 2 3, 2rem);
+
+  .card {
+    margin : 0;
+  }
+}

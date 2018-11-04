@@ -1,0 +1,104 @@
+{
+  "casos": [
+    {
+      "img": "../images/ed-team-web.PNG",
+      "title": "EDteam",
+      "subtitle": "Web oficial de EDteam",
+      "description": "Plataforma dedicada a la enseñanza de programación, diseño web y todo lo referente al mundo de desarrollo web.",
+      "url": "https://ed.team/",
+      "user": "no",
+      "imageUser": "",
+      "linkUser": ""
+    },
+    {
+      "img": "../images/map-chile-web.png",
+      "title": "Map",
+      "subtitle": "Agencia de selección y Outsourcing",
+      "description": "MAP es una Agencia encargada de captación de nuevos talentos para empresas.",
+      "url": "http://www.map-chile.cl/",
+      "user": "no",
+      "imageUser": "",
+      "linkUser": ""
+    },
+      {
+      "img": "../images/wizardgva-web.png",
+      "title": "Wizardgva",
+      "subtitle": "Agencia de soluciones TI",
+      "description": "Wizardgva nace del sueño de un joven por brindar soluciones de hardware rápidas y accesibles",
+      "url": "https://wizardgva.com/",
+      "user": "Danny Restrepo",
+      "imageUser": "../images/wizardgva-user.png",
+      "linkUser": "https://www.linkedin.com/in/restrepodanny/"
+    },
+      {
+      "img": "../images/alkila-web.png",
+      "title": "Alkila",
+      "subtitle": "Empresa de reta de autos",
+      "description": "Alkila es una empresa Peruana dedicada al rubro de alquiler de vehículos.",
+      "url": "http://alkilarentacar.com",
+      "user": "Edwing Romero Rodriguez",
+      "imageUser": "/images/alkila-user.png",
+      "linkUser": "https://www.linkedin.com/in/edwingromero/"
+    },
+      {
+      "img": "../images/gema-web.png",
+      "title": "Agencia Gema",
+      "subtitle": "Agencia de eventos",
+      "description": "En Gema, son especialistas en el servicio de banquetes y renta de equipo para todo tipo de eventos",
+      "url": "http://agenciagema.com/",
+      "user": "no",
+      "imageUser": "",
+      "linkUser": ""
+    },
+    {
+      "img": "../images/starwars-web.png",
+      "title": "Carlos - Star Wars project",
+      "subtitle": "Proyecto",
+      "description": "Esta web es un poryecto personal usando EDgrid y Angular.",
+      "url": "https://carlosmanotas.github.io/star-wars-ng2/",
+      "user": "Carlos Manotas",
+      "imageUser": "../images/starwars-user.png",
+      "linkUser": "https://github.com/CarlosManotas"
+    },
+    {
+      "img": "../images/cripcakes-web.png",
+      "title": "CrispCakes",
+      "subtitle": "Microempresa",
+      "description": "Microempresa dedicada a la producción de Cakes",
+      "url": "http://crispcakes.tk/index.html",
+      "user": "Jaime Falquez",
+      "imageUser": "../images/cripcakes-user.png",
+      "linkUser": "https://www.facebook.com/rinnenedo?fref=gc&dti=1752954624922544"
+    },
+    {
+      "img": "../images/robert-web.png",
+      "title": "Portafolio - Robert",
+      "subtitle": "Portafolio",
+      "description": "Esta web es el portfolio de Robert Huamán Cáceres, estudiante en Ingeniería informática y sistemas de la Universidad Nacional Micaela Bastidas de Apurímac - Perú",
+      "url": "https://pepobj.github.io/dist/",
+      "user": "Robert BJ Huamán Cáceres",
+      "imageUser": "../images/robert-user.png",
+      "linkUser": "https://www.linkedin.com/in/robert-bj-huaman/"
+    },
+    {
+      "img": "../images/militaria-web.png",
+      "title": "Militaria",
+      "subtitle": "Empresa",
+      "description": "Empresa peruana dedicada a la exportación de indumentaria y accesorios para uso militar.",
+      "url": "http://militaria.com.pe/",
+      "user": "Edwing Romero Rodríguez",
+      "imageUser": "../images/alkila-user.png",
+      "linkUser": "https://www.linkedin.com/in/robert-bj-huaman/"
+    },
+    {
+      "img": "../images/jeanda.jpg",
+      "title": "Jeanda",
+      "subtitle": "Portafolio",
+      "description": "Hola, mi nombre es Jean David soy de Querétaro, México y soy desarrollador y diseñador web frontend.",
+      "url": "http://jeandah.com/",
+      "user": "Jean David Herrera Guerrero",
+      "imageUser": "../images/jeanda.jpg",
+      "linkUser": "http://jeandah.com/"
+    }
+  ]
+}

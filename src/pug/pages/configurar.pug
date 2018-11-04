@@ -1,0 +1,11 @@
+extends ../config/template
+append config
+  -title = "EDgrid | Configurar (Sass)"
+  -description = "Si va a trabajar con Sass lo primero es importarlo en su proyecto. @import 'path/ed-grid/ed-grid' Sin embargo, ed-grid posee un archivo config.scss que define las variables y que pueden sobreescribirse (antes de la importación). Recomendamos fijarse en estas tres variables"
+  -ogUrl= "/configurar.html"
+
+block main
+  .ed-container.main-section
+    include ../includes/docs-menu
+    main(itemscope itemprop="mainContentOfPage" role="main").ed-item.l-75.main-main
+      include:markdown-it(html) ../../md/docs/configurar.md

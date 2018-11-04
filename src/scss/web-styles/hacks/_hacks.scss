@@ -1,0 +1,18 @@
+
+// alineación de íconos
+[class*="icon"].space::before {
+  position : relative;
+  top : .1em;
+  margin-right : .3em;
+}
+
+// re-escribe el contenido de titulo del menu de documentacion en responsive
+.vertical-menu-toggle::after{
+  content: "Documentación"
+}
+
+// hack ritmo vertical
+
+.section-title {
+  margin-top : 0;
+}

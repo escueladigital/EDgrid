@@ -1,0 +1,24 @@
+extends ../config/template
+include ../includes/banner
+append config
+  -title = "EDgrid | Documentación"
+  -description = "Puede usar EDgrid con CSS y Sass."
+  -ogUrl= "/documentacion.html"
+
+  -img = "images/docs-banner.jpg"
+  -title = "Documentación de EDgrid"
+  -description = "EDgrid es muy fácil de aprender, en treinta minutos estará usándolo en sus proyectos."
+  -clase = "secondary"
+  -boton = ""
+  -botonClass= ""
+  -botonUrl=""
+  -botonIco= ""
+  -botonText =""
+  -botones = ""
+
+block main
+  +banner(img, title, description, clase, boton, botonClass, botonUrl, botonIco, botonText, botones)
+  .ed-container.main-section
+    include ../includes/docs-menu
+    main(itemscope itemprop="mainContentOfPage" role="main").ed-item.l-75.main-main
+      include:markdown-it(html) ../../md/docs/documentacion.md

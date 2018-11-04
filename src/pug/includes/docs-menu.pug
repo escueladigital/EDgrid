@@ -1,0 +1,12 @@
+block link-section
+  - var active = 'Comenzar con EDgrid';
+
+- var sidebar = { 'Comenzar con EDgrid': '/documentacion.html', 'Estructura de archivos': '/estructura.html', 'CSS': '/css.html', 'Sass': '/sass.html', 'Flujo de trabajo (CSS/Sass)': '/flujo.html', 'Configurar (Sass)': '/configurar.html',  'Base (CSS/Sass)': '/base.html', 'Core (CSS/Sass)': '/core.html', 'Mediaqueries (Sass)': '/mediaqueries.html', 'Modo dev': '/modo-dev.html', 'Grid (Sass/CSS)': '/grid.html', 'Visibilidad (CSS/Sass)': '/visibilidad.html', 'Flexbox (CSS/Sass)': '/flexbox.html', 'Funciones (Sass)': '/funciones.html', 'Helpers (CSS/Sass)': '/helpers.html',  'Offset (Sass/CSS)': '/offset.html', 'Videos responsive (Sass/CSS)': '/videos.html', 'Botones (Sass/CSS)': '/botones.html',  'Menus (Sass/CSS)': '/menus.html' };
+
+aside(itemscope="itemscope" itemtype="http://schema.org/WPSideBar" role="complementary").ed-item.l-25.main-sidebar.sidebar-first
+  .vertical-menu-toggle.to-l#vertical-menu-toggle(data-content="Filtros")
+  nav(itemscope itemtype="http://schema.org/WPSideBar").vertical-menu#vertical-menu
+    ul
+      each val, key in sidebar
+        li(itemprop="url")
+          a(href=val itemprop="name" title= "Enlace de " + key)= key
