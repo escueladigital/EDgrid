@@ -11,16 +11,12 @@ append config
   -descriptionBanner = "Proyectos que usan EDgrid en producción"
 
     //- Variables de los banners
-  -clase = "tertiary"
-  -boton = "si"
-  -botonClass= "cta"
   -botonUrl="http://ed.team/contacto"
-  -botonIco= ""
   -botonText ="Envía tu proyecto"
-  -botones = ""
 
-block main
+block banner
   +banner(img, titleBanner, descriptionBanner, clase, boton, botonClass, botonUrl, botonIco, botonText, botones)
+block main
   main.main-section
     .ed-container
       .ed-item.cards-grid

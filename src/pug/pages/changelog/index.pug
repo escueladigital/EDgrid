@@ -15,10 +15,11 @@ append config
   -botonIco= "icon-github space"
   -botonText ="Ver en Github"
   -botones = ""
-block main
+block banner
   +banner(img, titleBanner, descriptionBanner, clase, boton, botonClass,botonUrl, botonIco, botonText ,botones)
-  .ed-container.main-section
-    .ed-item.l-75.to-center
+block main
+  .ed-grid
+    .l-75.to-center
       ul.data-list
         li
           p

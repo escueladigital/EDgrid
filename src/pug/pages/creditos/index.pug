@@ -15,11 +15,11 @@ append config
   -botonIco= ""
   -botonText =""
   -botones = ""
-
-block main
+block banner
   +banner(img, titleBanner, descriptionBanner, clase, boton, botonClass, botonUrl, botonIco, botonText, botones)
-  main.ed-container.main-section
-    .ed-item.l-60.to-center
+block main
+  main.ed-grid
+    .l-60.to-center
       ul.data-list
         li
           p
