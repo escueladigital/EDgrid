@@ -1,7 +1,7 @@
 {
   "name": "ed-grid",
   "version": "2.5.10",
-  "description": "EDgrid (aka ed-grid) is a minimalist CSS library for building responsive web layouts.",
+  "description": "EDgrid (aka ed-grid) is a minimalist Sass/CSS library for building responsive web layouts.",
   "style": "ed-grid.scss",
   "main": "ed-grid.scss",
   "author": "Alvaro Felipe <afelipech@gmail.com>",
@@ -46,6 +46,17 @@
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-cache-bust": "^1.4.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-minify": "^3.1.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sitemap": "^5.1.0",
+    "gulp-watch": "^5.0.1",
+    "jstransformer-markdown-it": "^2.1.0",
+    "node-sass-tilde-importer": "^1.0.2",
+    "edteam-style-guides": "0.0.28",
+    "gulp-data": "^1.3.1"
   }
 }
