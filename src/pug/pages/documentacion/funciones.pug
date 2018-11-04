@@ -2,10 +2,9 @@ extends ../../config/template
 append config
   -title = "EDgrid | Funciones (Sass)"
   -description = "ed-grid incluye dos funciones útiles en el RWD: em($px) y rem($px). Estas funciones convierten un número en px a em o rem respectivamente. Estas funciones lanzarán un error si le pasa un valor diferente a un número en pixeles"
-  -ogUrl = "/funciones.html"
+  -ogUrl = "/documentacion/funciones.html"
+  -docsMenu = true
 
 block main
-  .ed-container.main-section
-    include ../../includes/docs-menu
-    main(itemscope itemprop="mainContentOfPage" role="main").ed-item.l-75.main-main
-      include:markdown-it(html) ../../../md/docs/funciones.md
+  main(itemscope itemprop="mainContentOfPage" role="main")
+    include:markdown-it(html) ../../../md/docs/funciones.md
