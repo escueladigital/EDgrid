@@ -1,4 +1,4 @@
-extends ../config/template
+extends ../../config/template
 append config
   -title = "EDgrid | Base (CSS/Sass)"
   -description = "Los estilos base normalizan los elementos HTML para Responsive Web Design."
@@ -6,6 +6,6 @@ append config
 
 block main
   .ed-container.main-section
-    include ../includes/docs-menu
+    include ../../includes/docs-menu
     main(itemscope itemprop="mainContentOfPage" role="main").ed-item.l-75.main-main
-      include:markdown-it(html) ../../md/docs/base.md
+      include:markdown-it(html) ../../../md/docs/base.md

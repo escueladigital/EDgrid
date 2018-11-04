@@ -1,4 +1,4 @@
-extends ../config/template
+extends ../../config/template
 append config
   -title = "EDgrid | Flujo de trabajo (CSS/Sass)"
   -description = "Sass o CSS Puede usar ed-grid con CSS (añadiendo el archivo css e insertando clases en html) o con Sass (mixins preconstruidos). Se recomienda Sass para aprovechar todo el potencial de ed-grid. A lo largo de esta documentación se indicará si nos referimos al trabajo con Sass o CSS."
@@ -6,6 +6,6 @@ append config
 
 block main
   .ed-container.main-section
-    include ../includes/docs-menu
+    include ../../includes/docs-menu
     main(itemscope itemprop="mainContentOfPage" role="main").ed-item.l-75.main-main
-      include:markdown-it(html) ../../md/docs/flujo.md
+      include:markdown-it(html) ../../../md/docs/flujo.md
