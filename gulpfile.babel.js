@@ -39,7 +39,7 @@ gulp.task('styles-dev', () => {
     }))
     .pipe(postcss(postcssPlugins))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./public/css/'))
+    .pipe(gulp.dest('./docs/css/'))
     .pipe(server.stream({match: '**/*.css'}))
 })
 
@@ -52,7 +52,7 @@ gulp.task('styles-build', () => {
       outputStyle: 'compressed'
     }))
     .pipe(postcss(postcssPlugins))
-    .pipe(gulp.dest('./public/css/'))
+    .pipe(gulp.dest('./docs/css/'))
     .pipe(server.stream({match: '**/*.css'}))
 })
 
@@ -90,7 +90,7 @@ gulp.task('pug-dev', () =>
       pretty: true,
       basedir: './'
     }))
-    .pipe(gulp.dest('./public'))
+    .pipe(gulp.dest('./docs'))
 )
 
 // Compila páginas internas minificadas
@@ -103,7 +103,7 @@ gulp.task('pug-build', () =>
     .pipe(pug({
       basedir: './'
     }))
-    .pipe(gulp.dest('./public'))
+    .pipe(gulp.dest('./docs'))
 )
 
 // Compila JavaScript sin minificar
@@ -127,7 +127,7 @@ gulp.task('scripts-dev', () =>
     }))
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./public/js'))
+    .pipe(gulp.dest('./docs/js'))
 )
 
 // Compila JavaScript minificado
@@ -151,7 +151,7 @@ gulp.task('scripts-build', () =>
     }))
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./public/js'))
+    .pipe(gulp.dest('./docs/js'))
 )
 
 // Copia y comprime imágenes
@@ -163,37 +163,37 @@ gulp.task('images-build', () => {
       imagemin.optipng({optimizationLevel: 5}),
       imagemin.svgo()
     ]))
-    .pipe(gulp.dest('./public/assets/img'))
+    .pipe(gulp.dest('./docs/assets/img'))
 })
 
 // Copia imágenes para desarrollo
 gulp.task('images-dev', () => {
   gulp.src('./src/img/**/**')
-    .pipe(gulp.dest('./public/assets/img'))
+    .pipe(gulp.dest('./docs/assets/img'))
 })
 
 gulp.task('sitemap', () => {
-  gulp.src('./public/**/*.html', {
+  gulp.src('./docs/**/*.html', {
     read: false
   })
     .pipe(sitemap({
       siteUrl: 'https://ed-grid.com' // remplazar por tu dominio
     }))
-    .pipe(gulp.dest('./public'))
+    .pipe(gulp.dest('./docs'))
 })
 
 gulp.task('cache', () => {
-  gulp.src('./public/**/*.html')
+  gulp.src('./docs/**/*.html')
     .pipe(cachebust({
       type: 'timestamp'
     }))
-    .pipe(gulp.dest('./public'))
+    .pipe(gulp.dest('./docs'))
 })
 
 gulp.task('dev', ['styles-dev', 'pug-dev', 'scripts-dev', 'images-dev'], () => {
   server.init({
     server: {
-      baseDir: './public'
+      baseDir: './docs'
     }
   })
 
