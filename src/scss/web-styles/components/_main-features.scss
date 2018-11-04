@@ -1,18 +1,16 @@
+// Features de EDgrid que aparecen en el home
 .main-features {
-  @include grid('.main-feature', 1 2 3, 2rem);
-  text-align : center;
+  text-align  : center;
   padding-top : 2rem;
-  h2 {
-    margin-top : 1rem;
-    font-size: fontSize(normal);
-  }
 }
 
+// Imágenes de cada feature
 .main-feature__img {
-  width : 6rem;
-  height : 6rem;
+  --size   : 6rem;
+  width    : var(--size);
+  height   : var(--size);
   overflow : hidden;
-  margin : auto;
+  margin   : 0 auto 1rem;
 
   img {
     width : 100%;
@@ -22,6 +20,6 @@
   }
 
   .main-feature:first-child & {
-    width : 12rem;
+    width : calc(var(--size) * 2);
   }
 }
