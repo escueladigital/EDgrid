@@ -6,8 +6,8 @@
 /// Si el número es 0 el padding se elimina.
 ///   .selector1 { @include padding(3) }
 @mixin padding($numero:1){
-  padding-left  : $gutter * $numero;
-  padding-right : $gutter * $numero;
+  padding-left  : $gap * $numero;
+  padding-right : $gap * $numero;
 }
 
 /// Elimina los paddings horizontales de todos los hijos directos
@@ -169,5 +169,8 @@
   .padding-2                { @include padding(2)           }
   .padding-3                { @include padding(3)           }
   body.sticky-footer        { @include cssStyckyFooter()    }
+  .center { text-align : center; }
+  .left { text-align : left; }
+  .right { text-align : right; }
 }
 
