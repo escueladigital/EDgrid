@@ -200,22 +200,10 @@ gulp.task('dev', ['styles-dev', 'pug-dev', 'scripts-dev', 'images-dev'], () => {
   watch('./src/scss/**/**', () => gulp.start('styles-dev'))
   watch('./src/js/**/**', () => gulp.start('scripts-dev', server.reload))
   watch('./src/pug/**/**', () => gulp.start('pug-dev', server.reload))
+  watch('./src/data/**/**', () => gulp.start('pug-dev', server.reload))
   watch('./src/img/**/**', () => gulp.start('images-dev'))
 })
 
 // Compila versión CSS para producción
 gulp.task('css', ['css-build', 'css-build-min'])
 gulp.task('build', ['styles-build', 'pug-build', 'scripts-build', 'images-build', 'cache', 'sitemap'])
-
-
-/*
-gulp.task('pug', () =>
-  gulp.src('./dev/pug/pages/*.pug')
-    .pipe(plumber())
-    .pipe(data(function(file) {
-      return JSON.parse(fs.readFileSync('./dev/data/casos-de-exito.json'))
-    }))
-    .pipe(pug())
-    .pipe(gulp.dest('./public'))
-)
-*/
