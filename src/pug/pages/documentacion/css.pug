@@ -7,4 +7,46 @@ append config
 
 block main
   main(itemscope itemprop="mainContentOfPage" role="main")
-    include:markdown-it(html) ../../../md/docs/css.md
+    :markdown-it
+      # Comprender EDgrid CSS
+
+        En EDgrid puede decidir que código será compilado a CSS.
+
+        Si usted desea puede trabajar solo con la versión CSS de EDgrid, y añadir clases a su marcado HTML para construir su layout según el [flujo de trabajo recomendado](/documentacion/flujo.html).
+
+        El código CSS de EDgrid 2 se clasifica en 2 grupos:
+
+        ## cssCore
+        Cojunto de clases CSS recomendadas si va a trabajar con la versión CSS. Si va a trabajar con Sass puede saltarse está sección.
+
+        * [offset](/documentacion/offset.html)\
+        Clases para agregar un margen inicial a los elementos
+        * [flexbox](/documentacion/flexbox.html)\
+        Clases para alinear elementos en vertical y horizontal con flexbox.
+        * [grid](/documentacion/flexbox)\
+        Clases para crear cuadrículas (p.ej. para galerías de fotos)
+        * [devMode](/documentacion/modo-dev.html)\
+        Genera el modo dev para visualizar la construcción del layout
+        * [botones](/documentacion/botones.html)\
+        Clases para crear botones
+        * [ed-menu](/documentacion/menus.html)\
+        Clases para crear menu de navegacion
+
+        ## cssHelpers
+
+        Clases utilitarias de CSS que incluyen la funcionalidad base de EDgrid. Por eso, incluso en la [versión Sass](/documentacion/sass.html) vienen activadas por defecto.
+
+        * **Breakpoints**\
+        Define los tamaños de viewport en los que se cambia el layout
+        * **Layout (flexbox)**\
+        Construye layouts con Flexbox
+        * **Layout (CSS Grid)**\
+        Construye layouts con CSS Grid (beta)
+        * **Helpers para alineación con flexbox**\
+        Alineación de elementos en horizontal y vertical respecto a su padre
+        * **Helpers**\
+        Clases para alineación de elementos
+        * **Visibilidad**\
+        Clases para definir en qué breakpoints será visible u oculto un elemento.
+        * **Video responsive**\
+        Crea videos responsive 16:9

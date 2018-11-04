@@ -1,8 +1,8 @@
-# Visibilidad (CSS/Sass)
+# Visibilidad
 El componente visibilidad permite definir los breakpoints en los que un elemento se mostrará y los breakpoints en los que se ocultará.
 
-##Uso con CSS (cssHelpers)
-Use las clases `from-bp` o `to-bp` donde bp es un breakpoint válido de ed-grid (`s,m,l,xl`)
+## Uso con CSS
+Use las clases `from-breakpoint` o `to-breakpoint` donde **breakpoint** es un breakpoint válido de EDgrid (`s,m,l,xl`)
 
 `from-bp` hará al elemento visible a partir del breakpoint especificado e invisible por debajo de él.
 

@@ -1,4 +1,4 @@
-extends ../../config/template
+extends /src/pug/config/template
 append config
   -title = "EDgrid | Base (CSS/Sass)"
   -description = "Los estilos base normalizan los elementos HTML para Responsive Web Design."
@@ -7,4 +7,4 @@ append config
 
 block main
   main(itemscope itemprop="mainContentOfPage" role="main")
-    include:markdown-it(html) ../../../md/docs/base.md
+    include:markdown-it(html) /src/md/base.md

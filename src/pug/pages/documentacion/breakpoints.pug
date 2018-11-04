@@ -1,0 +1,56 @@
+extends ../../config/template
+append config
+  -title = "EDgrid | CSS"
+  -description = "La principal diferencia de ed-grid 2 con su versión anterior es que podemos decidir qué componentes compilar a CSS. En la versión 1, todo el CSS era compilado generando código innecesario. Si usted desea puede trabajar solo con la versión CSS de ed-grid 2, y añadir clases al código HTML para construir su layout según el flujo de trabajo recomendado. El CSS de ed-grid 2 se clasifica en 2 grupos:"
+  -ogUrl= "documentacion/breakpoints.html"
+  -docsMenu = true
+
+block main
+  main(itemscope itemprop="mainContentOfPage" role="main")
+    :markdown-it
+      # Breakpoints
+
+      Los breakpoints son los puntos de quiebre donde el layout cambia. Estan definidos en el siguiente Sass map:
+
+      ```scss
+      $breakpoints : (
+        s  : 0,     // Todos los tamaños
+        m  : 40em,  // ~ 640px
+        lg : 64em,  // ~ 1024px
+        xl : 90em   // ~1440px
+      ) !default;
+      ```
+    .small
+      :markdown-it
+        \* En versiones anteriores se usaba el breakpoint `l` que ahora se ha cambiado a `lg` para evitar confusión con la nomenclatura de SMACSS en la que `l` no significa `large` sino `layout`. Sin embargo, por compatibilidad hacia atrás, EDgrid reconoce aun el breakpoint `l` por lo que su proyecto no se verá afectado. Aunque recomendamos dejar de usarlo en el futuro.
+
+    :markdown-it
+      ## Mobile first
+
+      EDgrid usa el patrón **Mobile first**, lo que significa que el estilo definido en un breakpoint será heredado en breakpoints superiores salvo que sea sobreescrito. En el siguiente ejemplo, el elemento medirá 50% de ancho (`s-50`) en todos los tamaños ya que fue definido en el breakpoint menor y no ha sido sobreescrito.
+
+      ```markup
+      <article class="s-50">Hola mundo</article>
+      ```
+
+      En cambio, en este ejemplo, medirá 50% en los breakpoints `s` y `m` pero en `l` y `xl` medirá 75%.
+
+       ```markup
+      <article class="s-50 lg-75">Hola mundo</article>
+      ```
+
+      ## Cambiar los breakpoints (Sass)
+
+      Si es usuario avanzado puede cambiar los breakpoints por los suyos. Puede cambiar el tamaño, el nombre o la cantidad.  Solo debe declarar el Sass map `$breakpoints` antes de importar EDgrid.
+
+      ```scss
+      $breakpoints : (
+        small   : 0,
+        medium  : 45em,
+        large   : 80em,
+        xlarge  : 90em,
+        xxlarge : 120em
+      )
+
+      @import "~ed-grid/ed-grid";
+      ```
