@@ -6,14 +6,21 @@ var _activeMenu = require('./modules/activeMenu');
 
 var _activeMenu2 = _interopRequireDefault(_activeMenu);
 
+var _menu = require('./modules/menu');
+
+var _menu2 = _interopRequireDefault(_menu);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _activeMenu2.default)('main-menu'); // import menu from './modules/menu'
+// import menu from './modules/menu'
 // import migrate from './modules/migrate'
 //
 // export default { menu, migrate }
 
+(0, _activeMenu2.default)('main-menu');
 (0, _activeMenu2.default)('vertical-menu');
+(0, _menu2.default)('main-menu', 'main-menu-toggle');
+(0, _menu2.default)('vertical-menu', 'vertical-menu-toggle');
 
 /* PrismJS 1.9.0
 http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+clike+javascript+scss&plugins=toolbar+show-language */
@@ -513,7 +520,7 @@ Prism.languages.scss = Prism.languages.extend('css', {
 }();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./modules/activeMenu":2}],2:[function(require,module,exports){
+},{"./modules/activeMenu":2,"./modules/menu":3}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -534,6 +541,27 @@ var activeMenu = function activeMenu(menuId) {
 };
 
 exports.default = activeMenu;
+module.exports = exports['default'];
+
+},{}],3:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var openMenu = function openMenu(navId, toggleId) {
+  var nav = document.getElementById(navId);
+  var toggle = document.getElementById(toggleId);
+
+  if (!nav || !toggle) return;
+
+  toggle.addEventListener('click', function () {
+    nav.classList.toggle('show');
+    toggle.classList.toggle('active');
+  });
+};
+
+exports.default = openMenu;
 module.exports = exports['default'];
 
 },{}]},{},[1]);
