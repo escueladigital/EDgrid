@@ -1,18 +1,41 @@
-
-// alineación de íconos
-[class*="icon"].space::before {
-  position : relative;
-  top : .1em;
-  margin-right : .3em;
-}
-
 // re-escribe el contenido de titulo del menu de documentacion en responsive
-.vertical-menu-toggle::after{
-  content: "Documentación"
+.vertical-menu-toggle {
+  --size        : 3rem;
+  width         : var(--size);
+  height        : var(--size);
+  background    : var(--first-color);
+  border-radius : 50%;
+  //border        : 1px solid var(--body-bg);
+  position      : fixed;
+  bottom        : 1rem;
+  right         : 1rem;
+  z-index       : var(--z-fixed);
+  transition    : transform .3s;
+
+  &::before,
+  &::after {
+    content       : "";
+    width         : calc(var(--size) * 0.6);
+    height        : calc(var(--size) * 0.1);
+    background    : #FFF;
+    position      : absolute;
+    left          : 50%;
+    top           : 50%;
+    transform     : translate(-50%, -50%);
+    border-radius : calc(var(--size) * 0.05);
+  }
+
+  &::after {
+    transform : translate(-50%, -50%) rotate(90deg);
+  }
+
+  &.active {
+    transform : rotate(-45deg);
+  }
+
 }
 
 // hack ritmo vertical
-
 .section-title {
   margin-top : 0;
 }
@@ -29,12 +52,12 @@
 }
 
 main {
-  padding-top    : var(--main-padding-vertical);
+  padding-top    : calc(var(--main-padding-vertical) * 0.5);
   padding-bottom : var(--main-padding-vertical);
 }
 
 .main-section {
-  padding-top    : var(--main-padding-vertical);
+  padding-top    : calc(var(--main-padding-vertical) * 0.5);
   padding-bottom : var(--main-padding-vertical);
 
   main {
