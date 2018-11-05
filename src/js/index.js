@@ -4,9 +4,13 @@
 // export default { menu, migrate }
 
 import activeMenu from './modules/activeMenu'
+import openMenu from './modules/menu'
+
 
 activeMenu('main-menu')
 activeMenu('vertical-menu')
+openMenu('main-menu','main-menu-toggle')
+openMenu('vertical-menu','vertical-menu-toggle')
 
 
 /* PrismJS 1.9.0
