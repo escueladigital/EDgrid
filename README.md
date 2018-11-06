@@ -5,6 +5,6 @@ EDgrid  es una librería Sass/CSS para construir layouts web responsive y mobile
 
 Documentación oficial: https://ed-grid.com
 
-Autor: Álvaro Felipe de Escuela Digital https://ed.team/alvaro
+Autor: Álvaro Felipe https://ed.team/alvaro
 
 Colaboradores: https://ed-grid.com/creditos/
