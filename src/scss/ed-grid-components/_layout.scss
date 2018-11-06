@@ -1,17 +1,120 @@
-.l-block {
-  margin-top : 0;
-  margin-bottom : 1rem;
+:root {
+  --vertical-block-space   : 1rem;
+  --vertical-content-space : 1rem;
 
   @include from(l) {
-    margin-bottom : 2rem;
+    --vertical-block-space : 2rem;
   }
 }
 
-.l-section {
-  margin-top : 0;
-  margin-bottom : 2rem;
+// SEPARACIONES
+// Use las siguientes clases para crear separaciones verticales armoniosas
+// Las clases cancel-l- cancelan el margin bottom del hermano anterior
 
-  @include from(l) {
-    margin-bottom : 4rem;
+.l-block,
+.cancel-l-block,
+.l-section,
+.cancel-l-section,
+.l-big-section,
+.cancel-l-big-section {
+  margin-top : 0;
+}
+
+// Bloque
+.l-block {
+  margin-bottom : var(--vertical-block-space);
+}
+
+.cancel-l-block {
+  margin-top : calc(var(--vertical-block-space) * -1);
+}
+
+// Sección
+.l-section {
+  margin-bottom : calc(var(--vertical-block-space) * 2);
+}
+
+.cancel-l-section {
+  margin-top : calc(var(--vertical-block-space) * -2);
+}
+
+// Big section
+.l-big-section {
+  margin-bottom : calc(var(--vertical-block-space) * 4);
+}
+
+.cancel-l-big-section {
+  margin-top : calc(var(--vertical-block-space) * -4);
+}
+
+// sticky footer
+body {
+  display        : flex;
+  flex-direction : column;
+  min-height     : 100vh;
+}
+
+.main-footer {
+  margin-top : auto;
+}
+
+// Distribución vertical de contenido
+// Puede sobreescribirlas usando las clases de arriba
+
+// Encabezados
+h1, h2, h3, h4, h5, h6 {
+  margin-top    : 0;
+  margin-bottom : var(--vertical-content-space);
+}
+
+h1 {
+  margin-bottom : calc(var(--vertical-content-space) * 1.5) !important;
+}
+
+// Separación entre secciones de contenido
+// La norma recomienda encerrar cada sección en una etiqueta section
+// Pero en la práctica es dificil conseguirlo siempre así que la presencia
+// De un titulo indica el cambio de sección
+p,
+video,
+blockquote,
+article,
+section,
+form,
+figure,
+iframe,
+ul,
+ol,
+pre,
+hr,
+dl,
+address {
+  margin-top    : 0;
+  margin-bottom : var(--vertical-content-space);
+
+  + h2 {
+    padding-top : calc(var(--vertical-content-space) * 1.5);
   }
+
+  + h3 {
+    padding-top : var(--vertical-content-space);
+  }
+}
+
+// Eliminar separaciones
+
+// Eliminar separación horizontal
+.l-v-last {
+  margin-bottom : 0;
+}
+
+// Eliminar separación vertical
+.l-h-last {
+  margin-right : 0;
+}
+
+// Eliminar separaciones horizontal y vertical a la vez
+.l-last {
+  margin-right  : 0;
+  margin-bottom : 0;
 }
