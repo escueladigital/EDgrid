@@ -38,14 +38,16 @@ html(lang="es")
     block banner
     // Main
     if docsMenu
-      .ed-grid.cols-l-4.main-section
+      .l-section
+      .ed-grid.cols-l-4.main-section.l-big-section
         aside(itemscope="itemscope" itemtype="http://schema.org/WPSideBar" role="complementary").main-sidebar.sidebar-first
           .vertical-menu-toggle.to-l#vertical-menu-toggle(data-content="Filtros")
           include ../includes/docs-menu
         .span-l-3
           block main
     else
-      .main-section
+      .l-section
+      .main-section.l-big-section
         block main
     // Footer
     include ../includes/footer
