@@ -27,7 +27,8 @@ $max-grid-columns : 20;
   }
 
   // Agrega separación vertical entre filas
-  .row-gap, .rows-gap {
+  &.row-gap,
+  &.rows-gap {
     grid-row-gap : $gap;
   }
 
