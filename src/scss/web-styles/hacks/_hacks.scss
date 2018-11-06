@@ -44,24 +44,7 @@
   position : relative !important;
 }
 
-:root {
-  --main-padding-vertical : 2rem;
-  @include from(l) {
-    --main-padding-vertical : 4rem;
-  }
-}
 
 main {
-  padding-top    : calc(var(--main-padding-vertical) * 0.5);
-  padding-bottom : var(--main-padding-vertical);
-}
-
-.main-section {
-  padding-top    : calc(var(--main-padding-vertical) * 0.5);
-  padding-bottom : var(--main-padding-vertical);
-
-  main {
-    padding-top    : 0;
-    padding-bottom : 0;
-  }
+  padding-bottom : 0 !important;
 }
