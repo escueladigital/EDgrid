@@ -10,32 +10,3 @@
     }
   }
 }
-
-main {
-  @include from(l) {
-    padding-bottom :  4rem;
-  }
-  margin-bottom : 0 !important // conflicto con main-section;
-}
-
-.main-section {
-  @include to(l) {
-    margin-bottom : 0;
-  }
-}
-
-footer{
-  .main-footer--content{
-    [class*=icon].space:before{
-      margin-left: .3em;
-    }
-  }
-}
-
-.cards-grid {
-  @include grid('.card', 1 2 3, 2rem);
-
-  .card {
-    margin : 0;
-  }
-}
