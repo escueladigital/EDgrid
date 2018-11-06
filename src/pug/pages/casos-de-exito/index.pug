@@ -18,8 +18,7 @@ block banner
   +banner(img, titleBanner, descriptionBanner, clase, boton, botonClass, botonUrl, botonIco, botonText, botones)
 block main
   main.main-section
-    .ed-container
-      .ed-item.cards-grid
-        -for(var i = 0; i < casos.length ; i++)
+    .ed-grid.cols-l-3.rows-gap
+        -for (var i = 0; i < casos.length ; i++)
           -var caso = casos[i]
           +card(caso.img, caso.title, caso.subtitle, caso.description, caso.url, caso.user, caso.imageUser, caso.linkUser)
