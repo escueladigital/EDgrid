@@ -11,7 +11,7 @@ html(lang="es")
     // Estilos
     link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:700")
     link(rel="stylesheet" href="/css/styles.css?180113")
-    link(rel="shortcut icon" href="images/favicon.png")
+    link(rel="shortcut icon" href="/assets/img/edgrid-favicon.png")
     //- Open Graph Protocol
     meta(property="og:title" content= title)
     meta(property="og:type" content="website")
@@ -30,7 +30,6 @@ html(lang="es")
     meta(property="twitter:site" content="@EDteamLat")
     meta(property="twitter:description" content=description)
     meta(name="theme-color" content="#007BDF")
-    meta(name="twitter:image" content="images/edgrid-poster.jpg")
   // Body
   body(itemscope itemtype="http://schema.org/WebPage")
     include ../includes/header
@@ -38,7 +37,7 @@ html(lang="es")
     block banner
     // Main
     if docsMenu
-      .l-section
+      .l-block
       .ed-grid.cols-l-4.main-section.l-big-section
         aside(itemscope="itemscope" itemtype="http://schema.org/WPSideBar" role="complementary").main-sidebar.sidebar-first
           .vertical-menu-toggle.to-l#vertical-menu-toggle(data-content="Filtros")
@@ -46,7 +45,7 @@ html(lang="es")
         .span-l-3
           block main
     else
-      .l-section
+      .l-block
       .main-section.l-big-section
         block main
     // Footer
