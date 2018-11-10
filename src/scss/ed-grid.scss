@@ -9,7 +9,7 @@
 // No las sobreescriba aquí, sino desde su proyecto.
 $cssCore : false !default; //Compila todo_ el css (no recomendado si se trabaja con sass).
 $cssHelpers : true !default; //Ayudas extras para el layout (para alinear elementos, limpiar los floats, controlar el padding, etc...) Se recomienda activarlo.
-$buttons : true !default;
+$buttons : false !default;
 $devMode : false !default; //Ayuda visual que nos permite ver en el navegador breakpoints, el tamaño de los elementos, el area disponible etc...
 
 // Selectores (clases) para flex-container y flex-item
