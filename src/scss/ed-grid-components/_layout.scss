@@ -88,7 +88,8 @@ ol,
 pre,
 hr,
 dl,
-address {
+address,
+table {
   margin-top    : 0;
   margin-bottom : var(--vertical-content-space);
 
@@ -102,6 +103,13 @@ address {
 }
 
 // Eliminar separaciones
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-bottom: 0;
+}
 
 // Eliminar separación horizontal
 .l-v-last {
@@ -117,4 +125,11 @@ address {
 .l-last {
   margin-right  : 0;
   margin-bottom : 0;
+}
+
+
+// Separacion vertical de anclas
+*:target {
+  display: block;
+  padding-top: var(--vertical-block-space);
 }
