@@ -58,7 +58,7 @@ gulp.task('styles-build', () => {
 
 // Compila versión CSS minificada
 gulp.task('css-build-min', () => {
-  gulp.src('./src/scss/ed-grid.scss')
+  gulp.src('./src/scss/ed-grid-css.scss')
     .pipe(plumber())
     .pipe(sass({
       outputStyle: 'compressed'
@@ -70,12 +70,13 @@ gulp.task('css-build-min', () => {
 
 // Compila versión CSS sin minificar
 gulp.task('css-build', () => {
-  gulp.src('./src/scss/ed-grid.scss')
+  gulp.src('./src/scss/ed-grid-css.scss')
     .pipe(plumber())
     .pipe(sass({
       outputStyle: 'expanded'
     }))
     .pipe(postcss(postcssPlugins))
+    .pipe(rename('ed-grid.css'))
     .pipe(gulp.dest('./src/css/'))
 })
 
