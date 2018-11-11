@@ -8,9 +8,13 @@ $max-grid-columns : 20;
   }
 }
 
+// Calcula ancho de cada columna
 @mixin grid-column-width($i) {
+  // La cantidad de gaps es igual a la cantidad de columnas menos 1
   $n : #{$i - 1};
+  // Formula para calcular el ancho de cada columna
   $column-width : calc((100% - var(--gap) * #{$n}) / #{$i});
+  // Define las columnas en el contenedor
   grid-template-columns : repeat($i, $column-width);
 }
 
@@ -51,39 +55,25 @@ $max-grid-columns : 20;
     margin-left  : 0;
   }
 
+  // Define columnas en containers e items por breakpoint
   @each $size, $screen-size in $breakpoints {
-    // Columnas en el container
-    @if $size == s {
+    // Estilos por breakpoint
+    @include from($size) {
+      // Recorre la cantidad de columnas
       @for $i from 2 through $max-grid-columns {
-        &.cols-s-#{$i} {
-          //grid-template-columns: repeat($i,1fr);
+        // Columnas en el contenedor
+        &.cols-#{$size}-#{$i},
+        &.#{$size}-cols-#{$i} {
           @include grid-column-width($i);
         }
-      }
-    } @else {
-      @media all and (min-width: $screen-size){
-        @for $i from 2 through $max-grid-columns {
-          &.cols-#{$size}-#{$i} {
-            //grid-template-columns: repeat($i,1fr);
-            @include grid-column-width($i);
-          }
+        // Columnas en los items
+        > .span-#{$size}-#{$i},
+        > .#{$size}-span-#{$i} {
+          grid-column : span $i;
         }
-      }
-    }
-
-    // Columnas en los items
-    @if $size == s {
-      @for $i from 1 through $max-grid-columns {
-        > .span-s-#{$i} {
-          grid-column: span $i;
-        }
-      }
-    } @else {
-      @media all and (min-width: $screen-size){
-        @for $i from 1 through $max-grid-columns {
-          > .span-#{$size}-#{$i} {
-            grid-column: span $i;
-          }
+        // Inicio de columna en items
+        > .#{$size}-start-#{$i} {
+          grid-column-start : $i;
         }
       }
     }
