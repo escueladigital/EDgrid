@@ -133,3 +133,69 @@ ol ul {
   display: block;
   padding-top: var(--vertical-block-space);
 }
+
+// Margenes y paddings
+
+// Unidad minima de layout
+$l-unit : .5rem;
+
+// Crea paddings y margenes
+@each $size, $screen-size in $breakpoints {
+  @include from($size) {
+    // Crea cuatro niveles de separacion
+    @for $i from 0 through 4 {
+      // Unidad de separación actual
+      $unit : $l-unit * $i;
+      // Valida el cero para evitar devolver 0rem como unidad
+      @if $i == 0 {
+        $unit : 0;
+      }
+      // Padding top
+      .#{$size}-pt-#{$i} {
+        padding-top : $unit;
+      }
+      // Padding left
+      .#{$size}-pl-#{$i} {
+        padding-left : $unit;
+      }
+      // Padding bottom
+      .#{$size}-pb-#{$i} {
+        padding-bottom : $unit;
+      }
+      // Padding right
+      .#{$size}-pr-#{$i} {
+        padding-right : $unit;
+      }
+      // Padding vertical
+      .#{$size}-px-#{$i} {
+        padding-top    : $unit;
+        padding-bottom : $unit;
+      }
+      // Padding horizontal
+      .#{$size}-py-#{$i} {
+        padding-left  : $unit;
+        padding-right : $unit;
+      }
+      // Padding total
+      .#{$size}-pxy-#{$i} {
+        padding : $unit;
+      }
+      // Margin right
+      .#{$size}-mr-#{$i} {
+        margin-right : $unit;
+      }
+      // Margin bottom
+      .#{$size}-mb-#{$i} {
+        margin-bottom : $unit;
+      }
+      // Margin bottom (negativo)
+      .#{$size}-mt-#{$i} {
+        margin-top : $unit * -1;
+      }
+      // Margin top (negativo)
+      .#{$size}-ml-#{$i} {
+        margin-left : $unit * -1;
+      }
+    }
+  }
+}
