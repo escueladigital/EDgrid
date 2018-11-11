@@ -7,7 +7,7 @@
     <meta name="description" content="Sass o CSS Puede usar ed-grid con CSS (añadiendo el archivo css e insertando clases en html) o con Sass (mixins preconstruidos). Se recomienda Sass para aprovechar todo el potencial de ed-grid. A lo largo de esta documentación se indicará si nos referimos al trabajo con Sass o CSS.">
     <!-- Estilos-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:700">
-    <link rel="stylesheet" href="/css/styles.css?t=1541810198332">
+    <link rel="stylesheet" href="/css/styles.css?t=1541903416352">
     <link rel="shortcut icon" href="/assets/img/edgrid-favicon.png">
     <meta property="og:title" content="EDgrid | Flujo de trabajo (CSS/Sass)">
     <meta property="og:type" content="website">
@@ -89,8 +89,8 @@
 </ol>
 <h2>Contenedor ed-grid</h2>
 <p>En esta versión se usa <code>ed-grid</code> como contenedor y es en él donde debemos definir las columnas (es así como funciona CSS Grid).</p>
-<p>Para definir las columnas use la nomenclatura <code>cols-breakpoint-numero</code>.</p>
-<pre><code class="language-html">&lt;div class=&quot;ed-grid cols-s-2 cols-lg-4 cols-xl-10&quot;&gt;
+<p>Para definir las columnas use la nomenclatura <code>breakpoint-cols-numero</code>.</p>
+<pre><code class="language-html">&lt;div class=&quot;ed-grid s-cols-2 lg-cols-4 xl-cols-10&quot;&gt;
   &lt;!-- Este contenedor tiene 2 columnas en tamaño s, 4 columnas en tamaño lg y 10 columnas en tamaño xl --&gt;
 &lt;/div&gt;
 </code></pre>
@@ -98,28 +98,36 @@
 <p>Cualquier hijo directo de <code>ed-grid</code> es automáticamente un item del layout. Y automáticamente tomará una columna de su contenedor. Así que si necesita que cada item ocupe una columna, solo tiene que definir las columnas en el contenedor y no hacer nada en los items.</p>
 <pre><code class="language-html">&lt;!-- Layout de tres columnas donde cada card ocupa una columna.
 No tiene que hacer nada en los items. Solo definir las columnas en el contenedor --&gt;
-&lt;div class=&quot;ed-grid cols-m-3&quot;&gt;
+&lt;div class=&quot;ed-grid m-cols-3&quot;&gt;
   &lt;div class=&quot;card&quot;&gt;&lt;/div&gt;
   &lt;div class=&quot;card&quot;&gt;&lt;/div&gt;
   &lt;div class=&quot;card&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 <h3>Definir cantidad de columnas que ocupa el item</h3>
-<p>Use la siguiente nomenclatura <code>span-breakpoint-numero</code> Donde número es la cantidad de columnas.</p>
+<p>Use la siguiente nomenclatura <code>breakpoint-span-numero</code> Donde número es la cantidad de columnas.</p>
 <p>Por ejemplo, para crear un layout de sidebar al 25% y contenido al 75% el marcado sería el siguiente:</p>
-<pre><code class="language-html">&lt;div class=&quot;ed-grid cols-lg-4&quot;&gt;
+<pre><code class="language-html">&lt;div class=&quot;ed-grid lg-cols-4&quot;&gt;
   &lt;aside&gt;&lt;/aside&gt;
-  &lt;main class=&quot;span-lg-3&quot;&gt;&lt;/main&gt;
+  &lt;main class=&quot;lg-span-3&quot;&gt;&lt;/main&gt;
+&lt;/div&gt;
+</code></pre>
+<h3>Definir en qué columna inicia un item</h3>
+<p>Use la nomenclatura: <code>breakpoint-start-numero</code> para indicar en qué columna iniciará un item.</p>
+<pre><code class="language-html">&lt;div class=&quot;ed-grid lg-cols-4&quot;&gt;
+  &lt;main class=&quot;lg-span-3 lg-start-2&quot;&gt;
+  &lt;!-- Este elemento inicia en la columna 2 en breakpoint lg --&gt;
+  &lt;/main&gt;
 &lt;/div&gt;
 </code></pre>
 <h2>Anidar contenedores</h2>
 <p>Puesto que CSS Grid define la separación entre tracks internamente, puede anidar contenedores como desee, sin restricciones.</p>
-<pre><code class="language-html">&lt;div class=&quot;ed-grid cols-lg-2&quot;&gt;
+<pre><code class="language-html">&lt;div class=&quot;ed-grid lg-cols-2&quot;&gt;
   &lt;div class=&quot;card&quot;&gt;
-    &lt;div class=&quot;ed-grid cols-lg-3&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;ed-grid lg-cols-3&quot;&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&quot;ed-grid cols-lg-2&quot;&gt;
+&lt;div class=&quot;ed-grid lg-cols-2&quot;&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -148,6 +156,6 @@ No tiene que hacer nada en los items. Solo definir las columnas en el contenedor
         </div>
       </div>
     </footer>
-    <script src="/js/scripts.js?t=1541810198332"></script>
+    <script src="/js/scripts.js?t=1541903416352"></script>
   </body>
 </html>
