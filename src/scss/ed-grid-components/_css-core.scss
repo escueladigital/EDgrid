@@ -2,26 +2,6 @@
   // offset
   @include cssOffset();
 
-  // flexbox order
-  @include flexOrder();
-
-  // Incluir alineaciones en main axis
-  @include cssMainJustify();
-  @include cssMainDistribute();
-  @include cssMainStart();
-  @include cssMainCenter();
-  @include cssMainEnd();
-
-  // Alineaciones en cross axis
-  @include cssCrossStart();
-  @include cssCrossCenter();
-  @include cssCrossEnd();
-
-  // Dirección del main axis
-  @include cssFlexReverse();
-  @include cssFlexColumn();
-  @include cssFlexColumnReverse();
-
   //grids
   .grid-container.grid-1234 { @include grid('.grid-item', 1 2 3 4) }
   .grid-container.grid-2345 { @include grid('.grid-item', 2 3 4 5) }
