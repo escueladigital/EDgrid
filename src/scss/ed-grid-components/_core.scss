@@ -157,35 +157,18 @@
 // Breakpoints
 @mixin coreGrid(){
   @each $size, $screen-size in $breakpoints{
-    @if $size == s {
+    @include from($size) {
       @for $i from 1 through 20 {
-        .s-#{$i*5},
-        .#{$item}.s-#{$i*5} {
-          width: $i * 5%;
+        .#{$size}-#{$i*5},
+        .#{$item}.#{$size}-#{$i*5} {
+          width : $i * 5%;
         }
       }
-      @each $fraction in $fractions{
-        @for $i from 1 through $fraction{
-          .s-#{$i}-#{$fraction},
-          .#{$item}.s-#{$i}-#{$fraction} {
-            width: (100% / $fraction) * $i;
-          }
-        }
-      }
-    } @else {
-      @media all and (min-width: $screen-size){
-        @for $i from 1 through 20 {
-          .#{$size}-#{$i*5},
-          .#{$item}.#{$size}-#{$i*5}{
-            width: $i * 5%;
-          }
-        }
-        @each $fraction in $fractions {
-          @for $i from 1 through $fraction{
-            .#{$size}-#{$i}-#{$fraction},
-            .#{$item}.#{$size}-#{$i}-#{$fraction} {
-              width: (100% / $fraction) * $i
-            }
+      @each $fraction in $fractions {
+        @for $i from 1 through $fraction {
+          .#{$size}-#{$i}-#{$fraction},
+          .#{$item}.#{$size}-#{$i}-#{$fraction} {
+            width : (100% / $fraction) * $i
           }
         }
       }
