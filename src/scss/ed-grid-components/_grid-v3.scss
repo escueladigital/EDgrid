@@ -60,11 +60,13 @@ $max-grid-columns : 20;
     // Estilos por breakpoint
     @include from($size) {
       // Recorre la cantidad de columnas
-      @for $i from 2 through $max-grid-columns {
+      @for $i from 1 through $max-grid-columns {
         // Columnas en el contenedor
-        &.cols-#{$size}-#{$i},
-        &.#{$size}-cols-#{$i} {
-          @include grid-column-width($i);
+        @if $i > 1 {
+          &.cols-#{$size}-#{$i},
+          &.#{$size}-cols-#{$i} {
+            @include grid-column-width($i);
+          }
         }
         // Columnas en los items
         > .span-#{$size}-#{$i},
@@ -72,8 +74,10 @@ $max-grid-columns : 20;
           grid-column : span $i;
         }
         // Inicio de columna en items
-        > .#{$size}-start-#{$i} {
-          grid-column-start : $i;
+        @if $i > 1 {
+          > .#{$size}-start-#{$i} {
+            grid-column-start : $i;
+          }
         }
       }
     }
