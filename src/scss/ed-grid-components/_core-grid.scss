@@ -1,4 +1,4 @@
-$max-grid-columns : 20;
+$max-grid-columns : 12;
 
 :root {
   --gap : #{$gap * 0.5};
@@ -64,19 +64,33 @@ $max-grid-columns : 20;
         // Columnas en el contenedor
         @if $i > 1 {
           &.cols-#{$size}-#{$i},
-          &.#{$size}-cols-#{$i} {
+          &.#{$size}-grid-#{$i} {
             @include grid-column-width($i);
           }
         }
         // Columnas en los items
         > .span-#{$size}-#{$i},
-        > .#{$size}-span-#{$i} {
-          grid-column : span $i;
+        > .#{$size}-cols-#{$i} {
+          grid-column-end : span $i;
         }
+
+        // rows en los items
+        > .#{$size}-rows-#{$i} {
+          grid-row-end : span $i;
+        }
+
+
         // Inicio de columna en items
         @if $i > 1 {
-          > .#{$size}-start-#{$i} {
+          > .#{$size}-x-#{$i} {
             grid-column-start : $i;
+          }
+        }
+
+        // Inicio de fila en items
+        @if $i > 1 {
+          > .#{$size}-y-#{$i} {
+            grid-row-start : $i;
           }
         }
       }

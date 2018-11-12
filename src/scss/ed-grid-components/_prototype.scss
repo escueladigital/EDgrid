@@ -1,0 +1,17 @@
+.button {
+  display         : inline-block;
+  padding         : .5em 1em;
+  color      : #fff;
+  background           : var(--color);
+  cursor          : pointer;
+  text-decoration : none;
+  line-height     : inherit;
+  border-radius   : .25rem;
+  transition      : transform .05s;
+  border          : none;
+
+  &:hover {
+    background : var(--color-alt);
+  }
+}
+
