@@ -186,11 +186,12 @@
   @if $style == button  { @include menuStyleButton   }
 
   // compilar los mixins en modo CSS
-  @if $cssCore == true {
-    &.default    { @include menuStyleDefault  }
-    &.nav-bar    { @include menuStyleNav($bp) }
-    &.button-bar { @include menuStyleButton    }
-  }
+  // Se comenta para corregirlo luego de eliminar cssCore
+  //@if $cssCore == true {
+  //  &.default    { @include menuStyleDefault  }
+  //  &.nav-bar    { @include menuStyleNav($bp) }
+  //  &.button-bar { @include menuStyleButton    }
+  //}
 }
 
 /// mixin Nav (para el contenedor del menú) 
@@ -279,4 +280,34 @@
   &::after {
     bottom : $segmentHeight * 2;
   }
+}
+
+// Version CSS
+// Menus
+// se requiere la clase .ed-menu
+// y la clase para cambio a horizontal
+.ed-menu {
+  &.s-horizontal { @include edMenu(s) }
+  &.m-horizontal { @include edMenu(m) }
+  &.l-horizontal { @include edMenu(l) }
+  &.xl-horizontal { @include edMenu(xl) }
+}
+
+.ed-nav {
+  &.l-top { @include edNav(top, l)}
+  &.l-bottom { @include edNav(bottom, l)}
+  &.l-left { @include edNav(left, l)}
+  &.l-right { @include edNav(right, l)}
+  &.x-top { @include edNav(top, xl)}
+  &.xl-bottom { @include edNav(bottom, xl)}
+  &.xl-left { @include edNav(left, xl)}
+  &.xl-right { @include edNav(right, xl)}
+  &.m-top { @include edNav(top, m)}
+  &.m-bottom { @include edNav(bottom, m)}
+  &.m-left { @include edNav(left, m)}
+  &.m-right { @include edNav(right, m)}
+}
+
+.nav-toggle {
+  @include navToggle(20px, #333)
 }
