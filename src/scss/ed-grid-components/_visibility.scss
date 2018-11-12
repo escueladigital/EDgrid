@@ -55,9 +55,8 @@
 }
 
 // Version css
-@mixin visibility {
-  @each $size, $screenSize in $breakpoints {
-    .from-#{$size} { @include showFrom($size) }
-    .to-#{$size} { @include showTo($size) }
-  }
+@each $size, $screenSize in $breakpoints {
+  .from-#{$size} { @include showFrom($size) }
+  .to-#{$size} { @include showTo($size) }
 }
+
