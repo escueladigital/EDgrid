@@ -1,12 +1,3 @@
-:root {
-  --vertical-block-space   : 1rem;
-  --vertical-content-space : 1rem;
-
-  @include from(l) {
-    --vertical-block-space : 2rem;
-  }
-}
-
 // SEPARACIONES
 // Use las siguientes clases para crear separaciones verticales armoniosas
 // Las clases cancel-l- cancelan el margin bottom del hermano anterior
@@ -68,7 +59,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  margin-bottom : calc(var(--vertical-content-space) * 1.5) !important;
+  margin-bottom : calc(var(--vertical-content-space) * 1.5);
 }
 
 // Separación entre secciones de contenido
@@ -126,18 +117,6 @@ ol ul {
   margin-right  : 0;
   margin-bottom : 0;
 }
-
-
-// Separacion vertical de anclas
-*:target {
-  display: block;
-  padding-top: var(--vertical-block-space);
-}
-
-// Margenes y paddings
-
-// Unidad minima de layout
-$l-unit : .5rem;
 
 // Crea paddings y margenes
 @each $size, $screen-size in $breakpoints {
