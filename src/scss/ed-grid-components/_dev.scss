@@ -84,4 +84,14 @@ $infoFontSize : $infoHeight * 0.6;
 }
 
 // Incluir el modo dev en body
-@if $devMode == true { body { @include devMode } }
+@if $dev == true {
+  body { @include devMode }
+}
+
+// CSS
+body.dev,
+body.desarrollo {
+  @include devMode();
+  .ed-container { @include devModeContainer; }
+  .ed-item { @include devModeItem; }
+}
