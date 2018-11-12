@@ -13,8 +13,9 @@
     }
     // Crea las alineaciones de bloques
     .#{$bp}-to-left {
-      float       : left;
-      margin-left : 0;
+      float        : left;
+      margin-left  : 0;
+      margin-right : auto;
     }
     .#{$bp}-to-center {
       margin-left  : auto;
@@ -23,6 +24,7 @@
     .#{$bp}-to-right {
       float        : right;
       margin-right : 0;
+      margin-left  : auto;
     }
   }
 }
@@ -30,7 +32,7 @@
 // Order
 @each $size, $screen-size in $breakpoints {
   @include from ($size) {
-    @for $i from 1 through 10 {
+    @for $i from 1 through $max-grid-columns {
       .#{$size}-order-#{$i} {
         order : $i;
       }
@@ -123,87 +125,4 @@ $selectors : '.flex';
       }
     }
   }
-}
-
-/* Clases para alineaciones con compatibilidad hacia atrás */
-@mixin flex {
-  display   : flex;
-  flex-wrap : wrap;
-}
-
-.main-justify {
-  @include flex;
-  justify-content : space-between;
-}
-
-.main-distribute {
-  @include flex;
-  justify-content : space-evenly;
-}
-
-.main-center {
-  @include flex;
-  justify-content : center;
-}
-
-.main-start {
-  @include flex;
-  justify-content : flex-start;
-}
-
-.main-end {
-  @include flex;
-  justify-content : flex-end;
-}
-
-.cross-start {
-  @include flex;
-  align-items   : start;
-  align-content : start;
-}
-
-.cross-center {
-  @include flex;
-  align-items   : center;
-  align-content : center;
-}
-
-.cross-end {
-  @include flex;
-  align-items   : end;
-  align-content : end;
-}
-
-.flex-reverse {
-  @include flex;
-  flex-direction : row-reverse;
-}
-
-.flex-column {
-  @include flex;
-  flex-direction : column;
-}
-
-.flex-column-reverse {
-  @include flex;
-  flex-direction : column-reverse;
-}
-
-.abcenter {
-  @include flex;
-  justify-content : center;
-  align-items     : center;
-}
-
-/* Mixins de alineacion con compatibilidad hacia atras*/
-
-@mixin crossCenter {
-  @include flex;
-  align-items   : center;
-  align-content : center;
-}
-
-@mixin mainCenter {
-  @include flex;
-  justify-content : center;
 }
