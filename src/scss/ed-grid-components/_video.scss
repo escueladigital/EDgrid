@@ -1,36 +1,15 @@
-/// Videos responsive
-/// Este mixing se debe aplicar al contenedor del video.
-/// @group   video
-/// @author  Alvaro Felipe
-/// @param   {selector} $video - selector del elemento video
-/// @example scss
-///     #ed-cursos {
-///       @include edVideo("video");
-///     }
-
-@mixin edVideo ($video: null) {
+.ed-video {
   height         : 0;
   overflow       : hidden;
   padding-bottom : 56.25%;
   position       : relative;
-
-  @if $video != null {
-    #{$video} {
-      position : absolute;
-      top      : 0;
-      left     : 0;
-      width    : 100%;
-      height   : 100%;
-    }
-  } @else {
-    > iframe,
-    > video,
-    > .video {
-      position : absolute;
-      top      : 0;
-      left     : 0;
-      width    : 100%;
-      height   : 100%;
-    }
+  > iframe,
+  > video,
+  > .video {
+    position : absolute;
+    top      : 0;
+    left     : 0;
+    width    : 100%;
+    height   : 100%;
   }
 }
