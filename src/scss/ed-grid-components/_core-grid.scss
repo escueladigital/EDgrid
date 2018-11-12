@@ -1,13 +1,3 @@
-$max-grid-columns : 12;
-
-:root {
-  --gap : #{$gap * 0.5};
-
-  @include from(l) {
-    --gap : #{$gap};
-  }
-}
-
 // Calcula ancho de cada columna
 @mixin grid-column-width($i) {
   // La cantidad de gaps es igual a la cantidad de columnas menos 1
