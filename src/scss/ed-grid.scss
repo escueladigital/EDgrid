@@ -1,27 +1,14 @@
-/**
-  EDgrid es una librería CSS para construir layouts con Responsive Web Design
-  Importe este archivo en su proyecto para empezar a usarlo
-**/
-//Funciones para convertir px a em y rem
-@import "ed-grid-components/functions";
-
-// Variables globales (puede sobreescribirlas antes de importar ED grid)
-// No las sobreescriba aquí, sino desde su proyecto.
-$cssCore : false !default; //Compila todo_ el css (no recomendado si se trabaja con sass).
-$cssHelpers : true !default; //Ayudas extras para el layout (para alinear elementos, limpiar los floats, controlar el padding, etc...) Se recomienda activarlo.
-$buttons : false !default;
-$devMode : false !default; //Ayuda visual que nos permite ver en el navegador breakpoints, el tamaño de los elementos, el area disponible etc...
-
-// Selectores (clases) para flex-container y flex-item
-
-$container : ed-container !default; // Permite modificar el nombre de las clases usadas como contenedor e item.
-$item : ed-item !default;
-
-// Ancho máximo para los contenedores
+// Configuraciones
+$prototype : true !default;
+$dev : false !default;
 $max-width : 1200px !default;
-
-// Seperación horizontal entre items (*2)
 $gap : 2rem !default;
+$fractions : 3 6 !default;
+$legacy : false !default;
+$container : ed-container !default;
+$item : ed-item !default;
+$max-grid-columns : 12 !default;
+$l-unit : .5rem;
 
 // Breakpoints
 $breakpoints : (
@@ -32,23 +19,43 @@ $breakpoints : (
   xl : 1440px
 ) !default;
 
-// Fracciones para calcular anchos de los items
-$fractions : 3 6 !default;
-
 // Importar componentes
-@import "ed-grid-components/base"; // estilos base
-@import "ed-grid-components/media-queries"; // mixins from(), to(), fromTo()
-@import "ed-grid-components/helpers"; // utilidades
-@import "ed-grid-components/dev"; // modo dev
-@import "ed-grid-components/core"; // core de EDgrid (containers y items)
-@import "ed-grid-components/grid"; // mixin grid()
-@import "ed-grid-components/visibility"; // mixins para visibilidad
-@import "ed-grid-components/video"; // video RWD
-@import "ed-grid-components/ed-menu"; // estilos para menus
-@import "ed-grid-components/offset"; // offsets
-@import "ed-grid-components/buttons"; // mixin button()
-@import "ed-grid-components/css-core"; // componentes que se compilaran por default a css
-@import "ed-grid-components/css-helpers"; // ayudas en css (por medio de clases)
-@import "ed-grid-components/grid-v3"; // ayudas en css (por medio de clases)
-@import "ed-grid-components/layout"; // l-block y l-section
-@import "ed-grid-components/alignment"; // l-block y l-section
+// Core
+@import "ed-grid-components/functions";
+@import "ed-grid-components/base";
+@import "ed-grid-components/media-queries";
+@import "ed-grid-components/dev";
+@import "ed-grid-components/core-flexbox";
+@import "ed-grid-components/core-grid";
+@import "ed-grid-components/layout";
+@import "ed-grid-components/alignment";
+// Recommended Utilities
+@import "ed-grid-components/visibility";
+@import "ed-grid-components/prototype";
+@import "ed-grid-components/video";
+@import "ed-grid-components/ed-menu";
+// Not recomended (legacy)
+// Mixins
+@import "ed-grid-components/offset";
+@import "ed-grid-components/grid";
+// Generate css from offsets and grid mixins
+@import "ed-grid-components/legacy";
+
+// CSS Variables
+:root {
+  // Prototype
+  --color                  : #007BDF;
+  --color-alt              : #006DC6;
+  --border-color           : #DFE0E0;
+  --light-bg               : #F0F0F0;
+  --border-radius          : .25rem;
+  // layout
+  --vertical-block-space   : 1rem;
+  --vertical-content-space : 1rem;
+  --gap                    : #{$gap * 0.5};
+
+  @include from(lg) {
+    --vertical-block-space : 2rem;
+    --gap                  : #{$gap};
+  }
+}
