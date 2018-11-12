@@ -1,17 +1,98 @@
-.button {
-  display         : inline-block;
-  padding         : .5em 1em;
-  color      : #fff;
-  background           : var(--color);
-  cursor          : pointer;
-  text-decoration : none;
-  line-height     : inherit;
-  border-radius   : .25rem;
-  transition      : transform .05s;
-  border          : none;
-
-  &:hover {
-    background : var(--color-alt);
-  }
+@mixin ratio($h,$v) {
+  $width : 100%;
+  width          : $width;
+  height         : 0;
+  overflow       : hidden;
+  padding-bottom : $width * ($v/$h);
+  position       : relative;
 }
 
+@if $prototype == true {
+  .button {
+    display         : inline-block;
+    padding         : .5em 1em;
+    color           : #FFF;
+    background      : var(--color);
+    cursor          : pointer;
+    text-decoration : none;
+    line-height     : inherit;
+    border-radius   : .25rem;
+    transition      : transform .05s;
+    border          : none;
+
+    &:hover {
+      background : var(--color-alt);
+    }
+  }
+
+  .border {
+    border : 1px solid var(--border-color);
+  }
+
+  .border-top {
+    border-top : 1px solid var(--border-color);
+  }
+
+  .border-bottom {
+    border-bottom : 1px solid var(--border-color);
+  }
+
+  .border-right {
+    border-right : 1px solid var(--border-color);
+  }
+
+  .border-left {
+    border-left : 1px solid var(--border-color);
+  }
+
+  .radius {
+    border-radius : var(--border-radius);
+  }
+
+  .radius-tl {
+    border-top-left-radius : var(--border-radius);
+  }
+
+  .radius-tr {
+    border-top-right-radius : var(--border-radius);
+  }
+
+  .radius-bl {
+    border-bottom-left-radius : var(--border-radius);
+  }
+
+  .radius-br {
+    border-bottom-right-radius : var(--border-radius);
+  }
+
+  .bg-grey {
+    background : var(--light-bg);
+  }
+
+  .bg-blue {
+    background : var(--color);
+  }
+
+  //
+  .circle,
+  .square {
+    @include ratio(1, 1);
+  }
+
+  .circle {
+    border-radius : 50%;
+  }
+
+  .circle,
+  .img-container {
+    position : relative;
+    img {
+      width      : 100%;
+      height     : 100%;
+      position   : absolute;
+      top        : 0;
+      left       : 0;
+      object-fit : cover;
+    }
+  }
+}
