@@ -173,6 +173,12 @@ gulp.task('images-dev', () => {
     .pipe(gulp.dest('./docs/assets/img'))
 })
 
+// Copia html de testing
+gulp.task('html', () => {
+  gulp.src('./test.html')
+    .pipe(gulp.dest('./docs/'))
+})
+
 gulp.task('sitemap', () => {
   gulp.src('./docs/**/*.html', {
     read: false
@@ -191,7 +197,7 @@ gulp.task('cache', () => {
     .pipe(gulp.dest('./docs'))
 })
 
-gulp.task('dev', ['styles-dev', 'pug-dev', 'scripts-dev', 'images-dev'], () => {
+gulp.task('dev', ['styles-dev', 'pug-dev', 'scripts-dev', 'images-dev', 'html'], () => {
   server.init({
     server: {
       baseDir: './docs'
@@ -203,6 +209,7 @@ gulp.task('dev', ['styles-dev', 'pug-dev', 'scripts-dev', 'images-dev'], () => {
   watch('./src/pug/**/**', () => gulp.start('pug-dev', server.reload))
   watch('./src/data/**/**', () => gulp.start('pug-dev', server.reload))
   watch('./src/md/**/**', () => gulp.start('pug-dev', server.reload))
+  watch('./test.html', () => gulp.start('html', server.reload))
   watch('./src/img/**/**', () => gulp.start('images-dev'))
 })
 
