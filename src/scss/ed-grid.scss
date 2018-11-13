@@ -2,13 +2,13 @@
 $prototype : true !default;
 $dev : false !default;
 $max-width : 1200px !default;
-$gap : 2rem !default;
+$l-unit : .5rem !default;
+$gap : $l-unit * 4 !default;  // 2rem
 $fractions : 3 6 !default;
 $legacy : false !default;
 $container : ed-container !default;
 $item : ed-item !default;
 $max-grid-columns : 12 !default;
-$l-unit : .5rem;
 
 // Breakpoints
 $breakpoints : (
@@ -18,6 +18,8 @@ $breakpoints : (
   lg : 1024px,
   xl : 1440px
 ) !default;
+
+$sizes: map-keys($breakpoints);
 
 // Importar componentes
 // Core
@@ -48,14 +50,14 @@ $breakpoints : (
   --color-alt              : #006DC6;
   --border-color           : #DFE0E0;
   --light-bg               : #F0F0F0;
-  --border-radius          : .25rem;
+  --border-radius          : #{$l-unit * 0.5}; // .25rem
   // layout
-  --vertical-block-space   : 1rem;
-  --vertical-content-space : 1rem;
-  --gap                    : #{$gap * 0.5};
+  --vertical-block-space   : #{$l-unit * 2};  // 1rem
+  --vertical-content-space : #{$l-unit * 2};  // 1rem
+  --gap                    : #{$l-unit * 2};  // 1rem
 
   @include from(lg) {
-    --vertical-block-space : 2rem;
-    --gap                  : #{$gap};
+    --vertical-block-space : #{$l-unit * 4};
+    --gap                  : #{$l-unit * 4};  // 2rem
   }
 }
