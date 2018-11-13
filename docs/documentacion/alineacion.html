@@ -31,7 +31,7 @@
     <header class="main-header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="ed-grid s-grid-5 cols-lg-10">
         <div class="s-cols-2 cross-center" itemscope itemtype="http://schema.org/Organization"><a href="/" itemprop="url"><img class="main-logo" alt="Logotipo de EDgrid" itemprop="logo" src="/assets/img/EDgrid-logo.svg"></a></div>
-        <div class="s-cols-3 lg-cols-8 main-menu-container lg-cross-center lg-main-end">
+        <div class="s-cols-3 lg-cols-8 main-menu-container s-cross-center s-main-end">
           <nav class="main-menu" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation" id="main-menu">
             <ul>
               <li itemprop="url"><a href="/documentacion" target="" itemprop="name" title="Enlace de Documentación">Documentación</a></li>
@@ -115,7 +115,7 @@
 &lt;/p&gt;
 </code></pre>
 <p>Ejemplo:</p>
-<p class="bg-grey s-pxy-1 s-75 m-50 lg-40 s-to-left m-to-center l-to-right">EDgrid es una libreria construida con Sass (y con versión CSS) para Responsive Web Design (RWD). Es muy ligero, personalizable y te permite prototipar y crear layouts en muy poco tiempo sin conflictos con tu proyecto.</p>
+<p class="s-bg-grey s-pxy-1 s-75 m-50 lg-40 s-to-left m-to-center l-to-right">EDgrid es una libreria construida con Sass (y con versión CSS) para Responsive Web Design (RWD). Es muy ligero, personalizable y te permite prototipar y crear layouts en muy poco tiempo sin conflictos con tu proyecto.</p>
 <p>* <em>Para que las alineaciones de bloque funcionen debe agregar clases de ancho.</em></p>
 <p><a id="markdown-ancho-de-los-bloques" name="ancho-de-los-bloques"></a></p>
 <h2>Ancho de los bloques</h2>
@@ -129,7 +129,7 @@
 &lt;/p&gt;
 </code></pre>
 <p>Ejemplo:</p>
-<p class="bg-grey s-pxy-1 s-75 m-50 lg-40 s-to-left m-to-center l-to-right">EDgrid es una libreria construida con Sass (y con versión CSS) para Responsive Web Design (RWD). Es muy ligero, personalizable y te permite prototipar y crear layouts en muy poco tiempo sin conflictos con tu proyecto.</p>
+<p class="s-bg-grey s-pxy-1 s-75 m-50 lg-40 s-to-left m-to-center l-to-right">EDgrid es una libreria construida con Sass (y con versión CSS) para Responsive Web Design (RWD). Es muy ligero, personalizable y te permite prototipar y crear layouts en muy poco tiempo sin conflictos con tu proyecto.</p>
 <p><a id="markdown-diferencia-entre-bloque--y-contenido" name="diferencia-entre-bloque--y-contenido"></a></p>
 <h2>Diferencia entre bloque  y contenido</h2>
 <p>Comprender la diferencia entre estos dos conceptos le ahorrará dolores de cabeza y sufrimiento. Se considera contenido a todo elemento inline y bloque a todo elemento de bloque (en la definición de HTML). Los elementos inline son mostrados por el navegador uno al lado del otro y con saltos de línea (cuando se agota el ancho). Los elementos de bloque fuerzan un salto de línea (salvo que lo modifiques con CSS).</p>
@@ -139,7 +139,7 @@ Este es un párrafo cuyo texto se ha alineado a la derecha
 &lt;/p&gt;
 </code></pre>
 <p>Ejemplo:</p>
-<p class="s-pxy-1 bg-grey s-right">
+<p class="s-pxy-1 s-bg-grey s-right">
 Este es un párrafo cuyo texto se ha alineado a la derecha
 </p>
 <pre><code class="language-html">&lt;p class=&quot;s-75 s-to-right&quot;&gt;
@@ -147,7 +147,7 @@ Este es un párrafo alineado a la derecha (como bloque)
 &lt;/p&gt;
 </code></pre>
 <p>Ejemplo:</p>
-<p class="s-pxy-1 bg-grey s-75 s-to-right">
+<p class="s-pxy-1 s-bg-grey s-75 s-to-right">
 Este es un párrafo alineado a la derecha (como bloque)
 </p>
 <pre><code class="language-html">&lt;p class=&quot;s-75 s-to-center s-right&quot;&gt;
@@ -155,7 +155,7 @@ Este es un párrafo alineado al centro como bloque &lt;br&gt; y con el contenido
 &lt;/p&gt;
 </code></pre>
 <p>Ejemplo:</p>
-<p class="s-pxy-1 bg-grey s-75 s-to-center s-right">
+<p class="s-pxy-1 s-bg-grey s-75 s-to-center s-right">
 Este es un párrafo alineado al centro como bloque <br> y con el contenido alineado a la derecha.
 </p>
 <p>Comprender esta sutil diferencia es crucial para construir layouts. Por ejemplo, si quiere una imagen centrada, agregarle una clase <code>s-to-center</code> no hará nada porque las imágenes son inline (igual que los <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;label&gt;</code>). Podría maldecir a EDgrid pero así funciona CSS y no podemos hacer nada.</p>

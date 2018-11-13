@@ -31,7 +31,7 @@
     <header class="main-header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="ed-grid s-grid-5 cols-lg-10">
         <div class="s-cols-2 cross-center" itemscope itemtype="http://schema.org/Organization"><a href="/" itemprop="url"><img class="main-logo" alt="Logotipo de EDgrid" itemprop="logo" src="/assets/img/EDgrid-logo.svg"></a></div>
-        <div class="s-cols-3 lg-cols-8 main-menu-container lg-cross-center lg-main-end">
+        <div class="s-cols-3 lg-cols-8 main-menu-container s-cross-center s-main-end">
           <nav class="main-menu" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation" id="main-menu">
             <ul>
               <li itemprop="url"><a href="/documentacion" target="" itemprop="name" title="Enlace de Documentación">Documentación</a></li>
@@ -143,17 +143,17 @@ adarga antigua, rocín flaco y galgo corredor.
 <p>La nomenclatura de clase es <code>breakpoint-numero</code> Donde número es cualquier número múltiplo de 5 entre 0 y 100. Así que la clase <code>lg-75</code> significa que el elemento tendrá 75% del ancho de su padre a partir del breakpoint <code>lg</code>.</p>
 <pre><code class="language-html">&lt;div class=&quot;ed-container&quot;&gt;
 &lt;div class=&quot;ed-container&quot;&gt;
-  &lt;div class=&quot;ed-item lg-50&quot;&gt;1&lt;/div&gt;
-  &lt;div class=&quot;ed-item lg-25&quot;&gt;2&lt;/div&gt;
-  &lt;div class=&quot;ed-item lg-25&quot;&gt;3&lt;/div&gt;
+  &lt;div class=&quot;ed-item s-30 lg-50&quot;&gt;1&lt;/div&gt;
+  &lt;div class=&quot;ed-item s-50 lg-25&quot;&gt;2&lt;/div&gt;
+  &lt;div class=&quot;ed-item s-20 lg-25&quot;&gt;3&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 <div class="ed-grid-demo">
 <div class="ed-container">
-  <div class="ed-item lg-50">1</div>
-  <div class="ed-item lg-25">2</div>
-  <div class="ed-item lg-25">3</div>
+  <div class="ed-item s-30 lg-50">1</div>
+  <div class="ed-item s-50 lg-25">2</div>
+  <div class="ed-item s-20 lg-25">3</div>
 </div>
 </div>
 <ul>
@@ -166,16 +166,16 @@ adarga antigua, rocín flaco y galgo corredor.
 <p>Si quiere dividir el ancho entre 3 o 6 necesitará fracciones. La nomenclatura es <code>breakpoint-numerador-denominador</code>. Por ejemplo: <code>lg-1-3</code> significa un tercio de ancho (33.33%) a partir del breakpoint <code>lg</code> (1024px). Mientras que <code>xl-2-3</code> significa dos tercios a partir del breakpoint <code>xl</code> (1440px).</p>
 <pre><code class="language-html">&lt;!-- Layout de tres columnas a partir de 1024px de pantalla --&gt;
 &lt;div class=&quot;ed-container&quot;&gt;
-    &lt;div class=&quot;ed-item lg-1-3&quot;&gt;1&lt;/div&gt;
-    &lt;div class=&quot;ed-item lg-1-3&quot;&gt;2&lt;/div&gt;
-    &lt;div class=&quot;ed-item lg-1-3&quot;&gt;3&lt;/div&gt;
+    &lt;div class=&quot;ed-item s-1-3&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;ed-item s-1-3&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;ed-item s-1-3&quot;&gt;3&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 <div class="ed-grid-demo">
 <div class="ed-container">
-<div class="ed-item lg-1-3">1</div>
-<div class="ed-item lg-1-3">2</div>
-<div class="ed-item lg-1-3">3</div>
+<div class="ed-item s-1-3">1</div>
+<div class="ed-item s-1-3">2</div>
+<div class="ed-item s-1-3">3</div>
 </div>
 </div>
 <p><a id="markdown-anidar-contenedores-e-items" name="anidar-contenedores-e-items"></a></p>
@@ -187,30 +187,30 @@ adarga antigua, rocín flaco y galgo corredor.
 </ol>
 <pre><code class="language-html">&lt;!-- Bien --&gt;
 &lt;div class=&quot;ed-container&quot;&gt;
-    &lt;div class=&quot;ed-item lg-60&quot;&gt;1&lt;/div&gt;
-    &lt;div class=&quot;ed-item lg-40 ed-container&quot;&gt;
-        &lt;div class=&quot;ed-item lg-50&quot;&gt;2&lt;/div&gt;
-        &lt;div class=&quot;ed-item lg-50&quot;&gt;3&lt;/div&gt;
+    &lt;div class=&quot;ed-item s-60&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;ed-item s-40 ed-container&quot;&gt;
+        &lt;div class=&quot;ed-item s-50&quot;&gt;2&lt;/div&gt;
+        &lt;div class=&quot;ed-item s-50&quot;&gt;3&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;!-- Mal --&gt;
 &lt;div class=&quot;ed-container&quot;&gt;
-    &lt;div class=&quot;ed-item lg-1-3&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;ed-item lg-2-3&quot;&gt;
+    &lt;div class=&quot;ed-item s-1-3&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;ed-item s-2-3&quot;&gt;
         &lt;div class=&quot;ed-container&quot;&gt;
-            &lt;div class=&quot;ed-item lg-50&quot;&gt;&lt;/div&gt;
-            &lt;div class=&quot;ed-item lg-50&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;ed-item s-50&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;ed-item s-50&quot;&gt;&lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 <div class="ed-grid-demo">
 <div class="ed-container">
-    <div class="ed-item lg-60">1</div>
-    <div class="ed-item lg-40 ed-container">
-        <div class="ed-item lg-50">2</div>
-        <div class="ed-item lg-50">3</div>
+    <div class="ed-item s-60">1</div>
+    <div class="ed-item s-40 ed-container">
+        <div class="ed-item s-50">2</div>
+        <div class="ed-item s-50">3</div>
     </div>
 </div>
 </div>

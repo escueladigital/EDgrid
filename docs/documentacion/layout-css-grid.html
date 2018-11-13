@@ -31,7 +31,7 @@
     <header class="main-header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="ed-grid s-grid-5 cols-lg-10">
         <div class="s-cols-2 cross-center" itemscope itemtype="http://schema.org/Organization"><a href="/" itemprop="url"><img class="main-logo" alt="Logotipo de EDgrid" itemprop="logo" src="/assets/img/EDgrid-logo.svg"></a></div>
-        <div class="s-cols-3 lg-cols-8 main-menu-container lg-cross-center lg-main-end">
+        <div class="s-cols-3 lg-cols-8 main-menu-container s-cross-center s-main-end">
           <nav class="main-menu" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation" id="main-menu">
             <ul>
               <li itemprop="url"><a href="/documentacion" target="" itemprop="name" title="Enlace de Documentación">Documentación</a></li>
@@ -95,7 +95,7 @@
 <p>Cualquier hijo directo de <code>ed-grid</code> es automáticamente un item del layout. Y automáticamente tomará una columna de su contenedor.</p>
 <pre><code class="language-html">&lt;!-- Layout de tres columnas donde cada card ocupa una columna.
 No tiene que hacer nada en los items. Solo definir las columnas en el contenedor --&gt;
-&lt;div class=&quot;ed-grid m-grid-3&quot;&gt;
+&lt;div class=&quot;ed-grid s-grid-3&quot;&gt;
   &lt;div class=&quot;card&quot;&gt;&lt;/div&gt;
   &lt;div class=&quot;card&quot;&gt;&lt;/div&gt;
   &lt;div class=&quot;card&quot;&gt;&lt;/div&gt;
@@ -103,7 +103,7 @@ No tiene que hacer nada en los items. Solo definir las columnas en el contenedor
 </code></pre>
 <p>Ejemplo:</p>
 <div class="ed-grid-demo">
-<div class="ed-grid m-grid-3">
+<div class="ed-grid s-grid-3">
   <div class="article">1</div>
   <div class="article">2</div>
   <div class="article">3</div>
@@ -112,75 +112,75 @@ No tiene que hacer nada en los items. Solo definir las columnas en el contenedor
 <h3>Definir cantidad de columnas que ocupa el item</h3>
 <p>Use la siguiente nomenclatura <code>breakpoint-cols-numero</code> Donde número es la cantidad de columnas.</p>
 <p>Por ejemplo, para crear un layout de sidebar al 25% y contenido al 75% el marcado sería el siguiente:</p>
-<pre><code class="language-html">&lt;div class=&quot;ed-grid lg-grid-4&quot;&gt;
+<pre><code class="language-html">&lt;div class=&quot;ed-grid s-grid-4&quot;&gt;
   &lt;div&gt;1&lt;/div&gt;
-  &lt;div class=&quot;lg-cols-3&quot;&gt;2&lt;/div&gt;
+  &lt;div class=&quot;s-cols-3&quot;&gt;2&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 <p>Ejemplo</p>
 <div class="ed-grid-demo">
-<div class="ed-grid lg-grid-4">
+<div class="ed-grid s-grid-4">
   <div>1</div>
-  <div class="lg-cols-3">2</div>
+  <div class="s-cols-3">2</div>
 </div>
 </div>
 <h3>Definir en qué columna inicia un item</h3>
 <p>Use la nomenclatura: <code>breakpoint-x-numero</code> para indicar en qué columna iniciará un item.</p>
-<pre><code class="language-html">&lt;div class=&quot;ed-grid lg-grid-4&quot;&gt;
-  &lt;div class=&quot;lg-cols-3 lg-x-2&quot;&gt;
+<pre><code class="language-html">&lt;div class=&quot;ed-grid s-grid-4&quot;&gt;
+  &lt;div class=&quot;s-cols-3 s-x-2&quot;&gt;
   Comienzo en la columna 2 y ocupo 3 columnas
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 <p>Ejemplo:</p>
 <div class="ed-grid-demo">
-<div class="ed-grid lg-grid-4">
-  <div class="lg-cols-3 lg-x-2">
+<div class="ed-grid s-grid-4">
+  <div class="s-cols-3 s-x-2">
   Comienzo en la columna 2 y ocupo 3 columnas
   </div>
 </div>
 </div>
 <h3>Definir cantidad de filas que ocupa el item</h3>
 <p>Use la siguiente nomenclatura <code>breakpoint-rows-numero</code> Donde número es la cantidad de filas.</p>
-<pre><code class="language-html">&lt;div class=&quot;ed-grid rows-gap lg-grid-2&quot;&gt;
-  &lt;div class=&quot;lg-rows-2&quot;&gt;1&lt;/div&gt;
-  &lt;div class=&quot;&quot;&gt;2&lt;/div&gt;
+<pre><code class="language-html">&lt;div class=&quot;ed-grid rows-gap s-grid-2&quot;&gt;
+  &lt;div class=&quot;s-rows-2&quot;&gt;1&lt;/div&gt;
+  &lt;div &gt;2&lt;/div&gt;
   &lt;div&gt;3&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 <p>Ejemplo:</p>
 <div class="ed-grid-demo">
-<div class="ed-grid rows-gap lg-grid-2">
-  <div class="lg-rows-2">1</div>
-  <div class="">2</div>
+<div class="ed-grid rows-gap s-grid-2">
+  <div class="s-rows-2">1</div>
+  <div>2</div>
   <div>3</div>
 </div>
 </div>
 <h3>Definir en qué fila inicia un item</h3>
 <p>Use la nomenclatura: <code>breakpoint-y-numero</code> para indicar en qué columna iniciará un item.</p>
-<pre><code class="language-html">&lt;div class=&quot;ed-grid rows-gap lg-grid-4&quot;&gt;
-  &lt;div class=&quot;lg-rows-2&quot;&gt;1&lt;/div&gt;
+<pre><code class="language-html">&lt;div class=&quot;ed-grid rows-gap s-grid-4&quot;&gt;
+  &lt;div class=&quot;s-rows-2&quot;&gt;1&lt;/div&gt;
   &lt;div class=&quot;&quot;&gt;2&lt;/div&gt;
-  &lt;div class=&quot;lg-y-2 lg-x-2 lg-cols-2&quot;&gt;3&lt;/div&gt;
+  &lt;div class=&quot;s-y-2 s-x-2 s-cols-2&quot;&gt;3&lt;/div&gt;
   &lt;div&gt;4&lt;/div&gt;
-  &lt;div class=&quot;lg-rows-2&quot;&gt;5&lt;/div&gt;
+  &lt;div class=&quot;s-rows-2&quot;&gt;5&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 <p>Ejemplo:</p>
 <div class="ed-grid-demo">
-<div class="ed-grid rows-gap lg-grid-4">
-  <div class="lg-rows-2">1</div>
+<div class="ed-grid rows-gap s-grid-4">
+  <div class="s-rows-2">1</div>
   <div class="">2</div>
-  <div class="lg-y-2 lg-x-2 lg-cols-2">3</div>
+  <div class="s-y-2 s-x-2 s-cols-2">3</div>
   <div>4</div>
-  <div class="lg-rows-2">5</div>
+  <div class="s-rows-2">5</div>
 </div>
 </div>
 <h2>Anidar contenedores</h2>
 <p>Puesto que CSS Grid define la separación entre tracks internamente, puede anidar contenedores como desee, sin restricciones.</p>
 <pre><code class="language-html">&lt;div class=&quot;ed-grid lg-grid-3&quot;&gt;
-    &lt;div class=&quot;lg-cols-2 ed-grid lg-grid-3 rows-gap&quot;&gt;
-        &lt;div class=&quot;lg-cols-3&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;s-cols-2 ed-grid s-grid-3 rows-gap&quot;&gt;
+        &lt;div class=&quot;s-cols-3&quot;&gt;1&lt;/div&gt;
         &lt;div&gt;2&lt;/div&gt;
         &lt;div&gt;3&lt;/div&gt;
         &lt;div&gt;4&lt;/div&gt;
@@ -190,9 +190,9 @@ No tiene que hacer nada en los items. Solo definir las columnas en el contenedor
 </code></pre>
 <p>Ejemplo:</p>
 <div class="ed-grid-demo">
-<div class="ed-grid lg-grid-3">
-    <div class="lg-cols-2 ed-grid lg-grid-3 rows-gap">
-      <div class="lg-cols-3">1</div>
+<div class="ed-grid s-grid-3">
+    <div class="s-cols-2 ed-grid s-grid-3 rows-gap">
+      <div class="s-cols-3">1</div>
       <div>2</div>
       <div>3</div>
       <div>4</div>

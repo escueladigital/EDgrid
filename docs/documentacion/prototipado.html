@@ -31,7 +31,7 @@
     <header class="main-header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="ed-grid s-grid-5 cols-lg-10">
         <div class="s-cols-2 cross-center" itemscope itemtype="http://schema.org/Organization"><a href="/" itemprop="url"><img class="main-logo" alt="Logotipo de EDgrid" itemprop="logo" src="/assets/img/EDgrid-logo.svg"></a></div>
-        <div class="s-cols-3 lg-cols-8 main-menu-container lg-cross-center lg-main-end">
+        <div class="s-cols-3 lg-cols-8 main-menu-container s-cross-center s-main-end">
           <nav class="main-menu" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation" id="main-menu">
             <ul>
               <li itemprop="url"><a href="/documentacion" target="" itemprop="name" title="Enlace de Documentación">Documentación</a></li>
@@ -192,7 +192,7 @@
 <p>Con los ratios puede obtener elementos de un proporcion de ancho y alto definidos. Por ejemplo <strong>3 x 1</strong> (el triple de ancho que de alto). Tenga en cuenta que por limitaciones de css los elementos con ratio siempre tienen el 100% del ancho de su contenedor.</p>
 <p>Use las clases <code>breakpoint-ratio-x-y</code> donde <code>x</code> y <code>y</code> son numeros enteros del 1 al 4. <code>x</code> representa el ancho y <code>y</code> el alto.</p>
 <pre><code class="language-html">&lt;div class=&quot;ed-grid lg-grid-3 lg-60 lg-to-center s-pxy-1 s-border s-radius s-shadow-bottom&quot;&gt;
-    &lt;div class=&quot;s-ratio-2-3 s-bg-blue&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;s-ratio-16-9 lg-ratio-2-3 s-bg-blue s-mb-2 lg-mb-0&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;lg-cols-2&quot;&gt;
         &lt;h3&gt;Bienvenido a a EDgrid&lt;/h3&gt;
         &lt;p&gt;EDgrid es una libreria construida con Sass (y con versión CSS) 
@@ -202,7 +202,7 @@
 &lt;/div&gt;
 </code></pre>
 <div class="ed-grid lg-grid-3 lg-60 lg-to-center s-pxy-1 s-border s-radius s-shadow-bottom l-block">
-    <div class="s-ratio-2-3 s-bg-blue"></div>
+    <div class="s-ratio-16-9 lg-ratio-2-3 s-bg-blue s-mb-2 lg-mb-0"></div>
     <div class="lg-cols-2">
         <h3>Bienvenido a a EDgrid</h3>
         <p>EDgrid es una libreria construida con Sass (y con versión CSS) para Responsive Web Design (RWD). Es muy ligero, personalizable.</p>
@@ -261,7 +261,7 @@
         &lt;/div&gt;
         &lt;footer class=&quot;s-cross-center s-bg-grey s-pxy-2&quot;&gt;
             &lt;!--Define el ancho máximo de la imagen--&gt;
-            &lt;div class=&quot;s-20 lg-10 s-mr-1&quot;&gt;
+            &lt;div class=&quot;s-10 s-mr-1&quot;&gt;
             &lt;!--Contenedor de la imagen--&gt;
             &lt;div class=&quot;circle &quot;&gt;
                 &lt;img  src=&quot;/img/tioalexys.jpg&quot;&gt;
@@ -288,7 +288,7 @@
         </div>
         <footer class="s-cross-center s-bg-grey s-pxy-2">
             <!--Define el ancho máximo de la imagen-->
-            <div class="s-20 lg-10 s-mr-1">
+            <div class="s-10 s-mr-1">
             <!--Contenedor de la imagen-->
             <div class="circle ">
                 <img  src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2018-11/tioalexys.jpg?itok=7vDpJuSh">
