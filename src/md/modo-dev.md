@@ -13,9 +13,10 @@ Al activarlo el navegador muestra el layout de la siguiente manera:
         
 <p class="small">* Esta caracterísitica no está disponible al 100% en layouts con CSS Grid</p>
 
-## Uso en CSS (cssCore)
+## Activar modo dev con clases HTML
 
 Basta con añadirle la clase dev al elemento body
+
 ```html
 <body class="dev">
 </body>
@@ -24,6 +25,7 @@ Basta con añadirle la clase dev al elemento body
 ## Activar el modo dev en Sass
 
 Redefinir la variable `$devMode` a `true` antes de importar `ed-grid`
+
 ```scss
 $devMode: true;
 @import 'path/ed-grid/ed-grid';

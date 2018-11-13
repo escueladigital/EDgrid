@@ -4,9 +4,9 @@ El componente visibilidad permite definir los breakpoints en los que un elemento
 ## Uso con CSS
 Use las clases `from-breakpoint` o `to-breakpoint` donde **breakpoint** es un breakpoint válido de EDgrid (`s,m,l,xl`)
 
-`from-bp` hará al elemento visible a partir del breakpoint especificado e invisible por debajo de él.
+`from-lg` hará al elemento visible a partir de 1024px e invisible por debajo de esa medida.
 
-`to-bp` hará al elemento visible por debajo del breakpoint especificado e invisible por encima de él.
+`to-xl` Hará al elemento visible por debajo de 1440px e invisible por encima de él.
 
 ## Uso con Sass
 En la versión Sass cuenta con cuatro mixins que reciben como parámetro un breakpoint del core de ed-grid ( `s,m,l,xl`) o uno en `px`, `em` o `rem`.
@@ -19,7 +19,7 @@ En la versión Sass cuenta con cuatro mixins que reciben como parámetro un brea
 Ejemplo
 ```scss
 .menu-movil {
-  @include hideFrom(l)
+  @include hideFrom(lg)
 }
 
 .menu-desktop {
@@ -29,13 +29,13 @@ Ejemplo
 
 Compila a
 ```scss
-@media screen and (min-width:64em){
+@media screen and (min-width:1024px){
   .menu-movil{
     display:none;
   }
 }
 
-@media screen and (max-width:90em){
+@media screen and (max-width:1440px){
   .menu-desktop{
     display:none;
   }

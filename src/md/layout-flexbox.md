@@ -1,4 +1,4 @@
-# Layout con Flexbox
+# Sistema de columnas con flexbox
 <!-- TOC -->
 
 - [ed-container y ed-item](#ed-container-y-ed-item)
@@ -80,36 +80,50 @@ Cada `ed-item` tiene 100% del ancho de su padre a menos que se especifique lo co
 
 La nomenclatura de clase es `breakpoint-numero` Donde número es cualquier número múltiplo de 5 entre 0 y 100. Así que la clase `lg-75` significa que el elemento tendrá 75% del ancho de su padre a partir del breakpoint `lg`.
 
-```markup
+```html
 <div class="ed-container">
-<div class="ed-item s-40 lg-75">
-<p>Este ed-item mide 40% de ancho por debajo de lg (1024px),
-y 75% por encima de lg (1024px)</p>
-</div>
-<div class="ed-item s-60 lg-25">
-<p>Este ed-item mide 60% de ancho por debajo de lg (1024px),
-y 25% por encima de lg (1024px)</p>
+<div class="ed-container">
+  <div class="ed-item lg-50">1</div>
+  <div class="ed-item lg-25">2</div>
+  <div class="ed-item lg-25">3</div>
 </div>
 </div>
 ```
 
-p.small Obviamente, si la suma de los anchos da más de 100, habrá saltos de fila. Así puede crear layouts más complejos sin crear nuevos contenedores.
+<div class="ed-grid-demo">
+<div class="ed-container">
+  <div class="ed-item lg-50">1</div>
+  <div class="ed-item lg-25">2</div>
+  <div class="ed-item lg-25">3</div>
+</div>
+</div>
 
-:markdown-it
+* Como puede ver, las separaciones entre columnas se crean con paddings laterales.
+* Si no desea separaciones con paddings (que dan problemas en layouts complejos) use nuestra versión con [CSS Grid](/documentacion/layout-css-grid.html)
+* Si la suma de los anchos da más de 100, habrá saltos de fila. Así puede crear layouts más complejos sin crear nuevos contenedores.
+
 
 <a id="markdown-2-fracciones" name="2-fracciones"></a>
 ### 2. Fracciones
 
 Si quiere dividir el ancho entre 3 o 6 necesitará fracciones. La nomenclatura es `breakpoint-numerador-denominador`. Por ejemplo: `lg-1-3` significa un tercio de ancho (33.33%) a partir del breakpoint `lg` (1024px). Mientras que `xl-2-3` significa dos tercios a partir del breakpoint `xl` (1440px).
 
-```markup
+```html
 <!-- Layout de tres columnas a partir de 1024px de pantalla -->
 <div class="ed-container">
-<div class="ed-item lg-1-3"></div>
-<div class="ed-item lg-1-3"></div>
-<div class="ed-item lg-1-3"></div>
+    <div class="ed-item lg-1-3">1</div>
+    <div class="ed-item lg-1-3">2</div>
+    <div class="ed-item lg-1-3">3</div>
 </div>
 ```
+
+<div class="ed-grid-demo">
+<div class="ed-container">
+<div class="ed-item lg-1-3">1</div>
+<div class="ed-item lg-1-3">2</div>
+<div class="ed-item lg-1-3">3</div>
+</div>
+</div>
 
 <a id="markdown-anidar-contenedores-e-items" name="anidar-contenedores-e-items"></a>
 ## Anidar contenedores e items
@@ -119,27 +133,36 @@ Si necesita anidar elementos para crear layouts más complejos tenga en cuenta l
 1. No cree un `ed-container` como hijo de un `ed-item`
 2. Para anidar, agregue la clase `ed-container` a un `ed-item` entonces ya podrá crear nuevos `ed-item` nietos.
 
-```markup
+```html
 <!-- Bien -->
 <div class="ed-container">
-<div class="ed-item lg-1-3"></div>
-<div class="ed-item lg-2-3 ed-container">
-<div class="ed-item lg-50"></div>
-<div class="ed-item lg-50"></div>
-</div>
+    <div class="ed-item lg-60">1</div>
+    <div class="ed-item lg-40 ed-container">
+        <div class="ed-item lg-50">2</div>
+        <div class="ed-item lg-50">3</div>
+    </div>
 </div>
 
 <!-- Mal -->
 <div class="ed-container">
-<div class="ed-item lg-1-3"></div>
-<div class="ed-item lg-2-3">
-<div class="ed-container">
-<div class="ed-item lg-50"></div>
-<div class="ed-item lg-50"></div>
-</div>
-</div>
+    <div class="ed-item lg-1-3"></div>
+    <div class="ed-item lg-2-3">
+        <div class="ed-container">
+            <div class="ed-item lg-50"></div>
+            <div class="ed-item lg-50"></div>
+        </div>
+    </div>
 </div>
 ```
+<div class="ed-grid-demo">
+<div class="ed-container">
+    <div class="ed-item lg-60">1</div>
+    <div class="ed-item lg-40 ed-container">
+        <div class="ed-item lg-50">2</div>
+        <div class="ed-item lg-50">3</div>
+    </div>
+</div>
+</div>
 
 <a id="markdown-avanzado-crea-tus-propios-contenedores-e-items" name="avanzado-crea-tus-propios-contenedores-e-items"></a>
 ## Avanzado: crea tus propios contenedores e items

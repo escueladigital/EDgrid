@@ -1,6 +1,7 @@
-# Menus (Sass/CSS)
+# Menus 
 Con EDgrid puede crear menus responsive fácilmente. Basta con crear una lista `ul` y los enlaces dentro de cada `li`.
-## Uso con CSS (cssCore)
+## Uso con clases CSS
+
 Añada la clase `ed-menu al` `ul` de nivel superior.
 
 Añada la clase `n-horizontal siendo` `n` el breakpoint (`s,m,l,xl`) desde el cual el menú será horizontal

@@ -1,10 +1,11 @@
 # Personalizar EDgrid con Sass
 
-Una de las principales ventajas de EDgrid es que es altamente personalizable pues sus variables de configuración pueden ser sobreescritas. Para hacerlo, debe redefinirlas antes de importar EDgrid.
+EDgrid es altamente personalizable pues sus variables de configuración pueden ser sobreescritas. Para hacerlo, debe redefinirlas antes de importar EDgrid.
 
 ```scss
 // 1. Personalice sus variables
-$cssCore: false;
+$prototype: false;
+$dev: true;
 // 2. Importe EDgrid
 @import "~ed-grid/ed-grid";
 ```
@@ -16,34 +17,41 @@ Tenga en cuenta que no siempre querrá personalizar EDgrid y le bastará con sol
 A continuación se muestran las variables que puede redefinir, con su valor por defecto y la explicación de su función.
 
 ```scss
-// Helpers
-$cssCore    : false; // Compila ayudas de css (no recomendado si trabaja con Sass).
-$cssHelpers : true;  // Ayudas extras para el layout (recomendado siempre).
-$buttons    : true;  // Imcluir botones de EDgrid. Cambiélo a false si va a usar sus propios botones.
-$devMode    : false; // Modo debug. Cámbielo a true para ver ayudas al layout
-
-// Selectores ed-container y ed-item.
-$container : ed-container; 
-$item : ed-item;
-
-// Ancho máximo para los contenedores
-$max-width : 1200px;
-
-// Separación entre filas y columnas del layout
-$gap: 2rem;
-
-// Máximo número de columnas enn layouts con CSS Grid
-$max-grid-columns : 20;
-
 // Breakpoints
 $breakpoints : (
-  s : 0,
-  m : 640px,
-  l : 1024px,
+  s  : 0,
+  m  : 640px,
   lg : 1024px,
   xl : 1440px
 );
 
-// Fracciones para calcular anchos de los items
-$fractions : 3 6;
+$prototype        : true;         // Activa los estilos de prototipado
+$dev              : false;        // Activa los estilos para debuggin
+$max-width        : 1200px;       // Ancho máximo de los contenedores ed-container y ed-grid
+$gap              : $l-unit * 4;  // Separación entre columnas (2rem)
+$legacy           : false;        // Soporte para versiones antiguas
+$container        : ed-container; // Clase para el contenedor (core flexbox)
+$item             : ed-item;      // Clase para los items (core flexbox)
+$max-grid-columns : 12;           // Máximo número de columnas (core css grid)
+$l-unit           : .5rem;        // Unidad básica de layout (para separaciones verticales, margin y padding)
+$fractions        : 3 6;          // Fracciones para crear columnas (core flexbox)
+
+// CSS Variables
+:root {
+  // Variables para prototipar
+  --color                  : #007BDF;          // Color base (azul EDteam)
+  --color-alt              : #006DC6;          // Color alterno (azul EDteam alterno)
+  --border-color           : #DFE0E0;          // Color para bordes (gris suave)
+  --light-bg               : #F0F0F0;          // Color gris para fondos
+  --border-radius          : #{$l-unit * 0.5}; // .25rem
+  // layout
+  --vertical-block-space   : #{$l-unit * 2};   // 1rem
+  --vertical-content-space : #{$l-unit * 2};   // 1rem
+  --gap                    : #{$l-unit * 2};   // 1rem
+
+  @include from(lg) {
+    --vertical-block-space : #{$l-unit * 4};
+    --gap                  : #{$l-unit * 4};    // 2rem
+  }
+}
 ```
