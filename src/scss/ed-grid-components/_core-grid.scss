@@ -13,6 +13,12 @@
   grid-template-columns : 100%;
   grid-column-gap       : var(--gap);
 
+  @for $i from 0 through 4 {
+    &.gap-#{$i} {
+      --gap: #{$l-unit * $i}
+    }
+  }
+
   // Evita que en tamaños moviles los items queden pegados a los lados
   width                 : calc(100vw - var(--gap) * 2);
   margin-left           : 1rem;
@@ -43,6 +49,37 @@
     max-width    : 100%;
     margin-right : 0;
     margin-left  : 0;
+  }
+
+  // Fuerza a ed-grid a tomar tamaños y alineaciones con clases
+  // Es por conflicto con la declaracion anterior, toca revisar
+  @each $size in $sizes {
+    @include from($size) {
+      @for $i from 1 through 20 {
+        .ed-grid.#{$size}-#{$i*5},
+        .ed-grid .ed-grid.#{$size}-#{$i*5} {
+          width : $i * 5%;
+        }
+      }
+
+      .ed-grid.#{$size}-to-center,
+      .ed-grid .ed-grid.#{$size}-to-center {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .ed-grid.#{$size}-to-right,
+      .ed-grid .ed-grid.#{$size}-to-right {
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .ed-grid.#{$size}-to-left,
+      .ed-grid .ed-grid.#{$size}-to-left {
+        margin-left: 0;
+        margin-right: auto;
+      }
+    }
   }
 
   // Define columnas en containers e items por breakpoint
@@ -86,4 +123,12 @@
       }
     }
   }
+
+// Hack para las alineaciones
+// Ahora un edgrid puede alinear todos sus hijos
+ &[class*="-main-"],
+ &[class*="-cross-"] {
+   display: grid;
+ }
 }
+
