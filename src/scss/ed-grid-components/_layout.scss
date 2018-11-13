@@ -82,7 +82,7 @@ dl,
 address,
 table {
   margin-top    : 0;
-  margin-bottom : var(--vertical-content-space);
+  margin-bottom : calc(var(--vertical-content-space) * 1.5);
 
   + h2 {
     padding-top : calc(var(--vertical-content-space) * 1.5);
@@ -100,22 +100,6 @@ ol ol,
 ul ol,
 ol ul {
   margin-bottom: 0;
-}
-
-// Eliminar separación horizontal
-.l-v-last {
-  margin-bottom : 0;
-}
-
-// Eliminar separación vertical
-.l-h-last {
-  margin-right : 0;
-}
-
-// Eliminar separaciones horizontal y vertical a la vez
-.l-last {
-  margin-right  : 0;
-  margin-bottom : 0;
 }
 
 // Crea paddings y margenes
