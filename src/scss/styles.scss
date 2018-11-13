@@ -1,4 +1,5 @@
 // Use este archivo para escribir los estilos de la página de documentación
+$legacy: false;
 @import "ed-grid";
 @import "~edteam-style-guides/edteam-style-guides";
 /*
@@ -21,6 +22,7 @@
 // Crea los archivos adicionales que necesites (uno por componente)
 @import "web-styles/components/buttons";
 @import "web-styles/components/menus";
+@import "web-styles/components/demo";
 // Theme (colors and fonts)
 //@import "web-styles/theme/typography";
 //@import "web-styles/theme/footer";
