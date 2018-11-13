@@ -29,9 +29,9 @@
   <!-- Body-->
   <body itemscope itemtype="http://schema.org/WebPage">
     <header class="main-header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="ed-grid cols-s-5 cols-lg-10">
-        <div class="span-s-2 span-lg-2 cross-center" itemscope itemtype="http://schema.org/Organization"><a href="/" itemprop="url"><img class="main-logo" alt="Logotipo de EDgrid" itemprop="logo" src="/assets/img/EDgrid-logo.svg"></a></div>
-        <div class="span-s-3 span-lg-8 main-menu-container cross-center main-end">
+      <div class="ed-grid s-grid-5 cols-lg-10">
+        <div class="s-cols-2 cross-center" itemscope itemtype="http://schema.org/Organization"><a href="/" itemprop="url"><img class="main-logo" alt="Logotipo de EDgrid" itemprop="logo" src="/assets/img/EDgrid-logo.svg"></a></div>
+        <div class="s-cols-3 lg-cols-8 main-menu-container lg-cross-center lg-main-end">
           <nav class="main-menu" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation" id="main-menu">
             <ul>
               <li itemprop="url"><a href="/documentacion" target="" itemprop="name" title="Enlace de Documentación">Documentación</a></li>
@@ -56,68 +56,73 @@
             <li itemprop="url"><a href="/documentacion" itemprop="name" title="Enlace de Comenzar con EDgrid">Comenzar con EDgrid</a></li>
             <li itemprop="url"><a href="/documentacion/instalacion.html" itemprop="name" title="Enlace de Instalación">Instalación</a></li>
             <li itemprop="url"><a href="/documentacion/estructura.html" itemprop="name" title="Enlace de Estructura de archivos">Estructura de archivos</a></li>
-            <li itemprop="url"><a href="/documentacion/css.html" itemprop="name" title="Enlace de Estructura CSS">Estructura CSS</a></li>
-            <li itemprop="url"><a href="/documentacion/sass.html" itemprop="name" title="Enlace de Estructura Sass">Estructura Sass</a></li>
-            <li itemprop="url"><a href="/documentacion/breakpoints.html" itemprop="name" title="Enlace de Breakpoints">Breakpoints</a></li>
-            <li itemprop="url"><a href="/documentacion/layout-flexbox.html" itemprop="name" title="Enlace de Layout con Flexbox">Layout con Flexbox</a></li>
-            <li itemprop="url"><a href="/documentacion/layout-css-grid.html" itemprop="name" title="Enlace de Layout con CSS Grid">Layout con CSS Grid</a></li>
-            <li itemprop="url"><a href="/documentacion/layout.html" itemprop="name" title="Enlace de Layout vertical">Layout vertical</a></li>
             <li itemprop="url"><a href="/documentacion/personalizar.html" itemprop="name" title="Enlace de Personalizar EDgrid">Personalizar EDgrid</a></li>
-            <li itemprop="url"><a href="/documentacion/mediaqueries.html" itemprop="name" title="Enlace de Mediaqueries (Sass)">Mediaqueries (Sass)</a></li>
-            <li itemprop="url"><a href="/documentacion/base.html" itemprop="name" title="Enlace de Base">Base</a></li>
-            <li itemprop="url"><a href="/documentacion/modo-dev.html" itemprop="name" title="Enlace de Modo dev">Modo dev</a></li>
-            <li itemprop="url"><a href="/documentacion/grids.html" itemprop="name" title="Enlace de Grids (cuadrículas)">Grids (cuadrículas)</a></li>
+            <li itemprop="url"><a href="/documentacion/breakpoints.html" itemprop="name" title="Enlace de Breakpoints">Breakpoints</a></li>
+            <li itemprop="url"><a href="/documentacion/layout-flexbox.html" itemprop="name" title="Enlace de Columnas con Flexbox">Columnas con Flexbox</a></li>
+            <li itemprop="url"><a href="/documentacion/layout-css-grid.html" itemprop="name" title="Enlace de Filas y columnas con CSS Grid (beta)">Filas y columnas con CSS Grid (beta)</a></li>
+            <li itemprop="url"><a href="/documentacion/layout.html" itemprop="name" title="Enlace de Layout">Layout</a></li>
+            <li itemprop="url"><a href="/documentacion/distribucion.html" itemprop="name" title="Enlace de Distribucion">Distribucion</a></li>
+            <li itemprop="url"><a href="/documentacion/alineacion.html" itemprop="name" title="Enlace de Alineación">Alineación</a></li>
             <li itemprop="url"><a href="/documentacion/visibilidad.html" itemprop="name" title="Enlace de Visibilidad">Visibilidad</a></li>
+            <li itemprop="url"><a href="/documentacion/mediaqueries.html" itemprop="name" title="Enlace de Mediaqueries">Mediaqueries</a></li>
+            <li itemprop="url"><a href="/documentacion/base.html" itemprop="name" title="Enlace de Estilos base">Estilos base</a></li>
+            <li itemprop="url"><a href="/documentacion/modo-dev.html" itemprop="name" title="Enlace de Modo dev">Modo dev</a></li>
             <li itemprop="url"><a href="/documentacion/funciones.html" itemprop="name" title="Enlace de Funciones">Funciones</a></li>
-            <li itemprop="url"><a href="/documentacion/helpers.html" itemprop="name" title="Enlace de Helpers">Helpers</a></li>
-            <li itemprop="url"><a href="/documentacion/offset.html" itemprop="name" title="Enlace de Offset">Offset</a></li>
             <li itemprop="url"><a href="/documentacion/videos.html" itemprop="name" title="Enlace de Videos responsive">Videos responsive</a></li>
-            <li itemprop="url"><a href="/documentacion/botones.html" itemprop="name" title="Enlace de Botones">Botones</a></li>
             <li itemprop="url"><a href="/documentacion/menus.html" itemprop="name" title="Enlace de Menus">Menus</a></li>
+            <li itemprop="url"><a href="/documentacion/prototipado.html" itemprop="name" title="Enlace de Prototipado (beta)">Prototipado (beta)</a></li>
           </ul>
         </nav>
       </aside>
       <div class="span-l-3">
         <main itemscope itemprop="mainContentOfPage" role="main"><h1>Personalizar EDgrid con Sass</h1>
-<p>Una de las principales ventajas de EDgrid es que es altamente personalizable pues sus variables de configuración pueden ser sobreescritas. Para hacerlo, debe redefinirlas antes de importar EDgrid.</p>
+<p>EDgrid es altamente personalizable pues sus variables de configuración pueden ser sobreescritas. Para hacerlo, debe redefinirlas antes de importar EDgrid.</p>
 <pre><code class="language-scss">// 1. Personalice sus variables
-$cssCore: false;
+$prototype: false;
+$dev: true;
 // 2. Importe EDgrid
 @import &quot;~ed-grid/ed-grid&quot;;
 </code></pre>
 <p>Tenga en cuenta que no siempre querrá personalizar EDgrid y le bastará con solo importar la librería.</p>
 <h2>Variables que puede personalizar.</h2>
 <p>A continuación se muestran las variables que puede redefinir, con su valor por defecto y la explicación de su función.</p>
-<pre><code class="language-scss">// Helpers
-$cssCore    : false; // Compila ayudas de css (no recomendado si trabaja con Sass).
-$cssHelpers : true;  // Ayudas extras para el layout (recomendado siempre).
-$buttons    : true;  // Imcluir botones de EDgrid. Cambiélo a false si va a usar sus propios botones.
-$devMode    : false; // Modo debug. Cámbielo a true para ver ayudas al layout
-
-// Selectores ed-container y ed-item.
-$container : ed-container; 
-$item : ed-item;
-
-// Ancho máximo para los contenedores
-$max-width : 1200px;
-
-// Separación entre filas y columnas del layout
-$gap: 2rem;
-
-// Máximo número de columnas enn layouts con CSS Grid
-$max-grid-columns : 20;
-
-// Breakpoints
+<pre><code class="language-scss">// Breakpoints
 $breakpoints : (
-  s : 0,
-  m : 640px,
-  l : 1024px,
+  s  : 0,
+  m  : 640px,
   lg : 1024px,
   xl : 1440px
 );
 
-// Fracciones para calcular anchos de los items
-$fractions : 3 6;
+$prototype        : true;         // Activa los estilos de prototipado
+$dev              : false;        // Activa los estilos para debuggin
+$max-width        : 1200px;       // Ancho máximo de los contenedores ed-container y ed-grid
+$gap              : $l-unit * 4;  // Separación entre columnas (2rem)
+$legacy           : false;        // Soporte para versiones antiguas
+$container        : ed-container; // Clase para el contenedor (core flexbox)
+$item             : ed-item;      // Clase para los items (core flexbox)
+$max-grid-columns : 12;           // Máximo número de columnas (core css grid)
+$l-unit           : .5rem;        // Unidad básica de layout (para separaciones verticales, margin y padding)
+$fractions        : 3 6;          // Fracciones para crear columnas (core flexbox)
+
+// CSS Variables
+:root {
+  // Variables para prototipar
+  --color                  : #007BDF;          // Color base (azul EDteam)
+  --color-alt              : #006DC6;          // Color alterno (azul EDteam alterno)
+  --border-color           : #DFE0E0;          // Color para bordes (gris suave)
+  --light-bg               : #F0F0F0;          // Color gris para fondos
+  --border-radius          : #{$l-unit * 0.5}; // .25rem
+  // layout
+  --vertical-block-space   : #{$l-unit * 2};   // 1rem
+  --vertical-content-space : #{$l-unit * 2};   // 1rem
+  --gap                    : #{$l-unit * 2};   // 1rem
+
+  @include from(lg) {
+    --vertical-block-space : #{$l-unit * 4};
+    --gap                  : #{$l-unit * 4};    // 2rem
+  }
+}
 </code></pre>
 
         </main>
@@ -126,12 +131,12 @@ $fractions : 3 6;
     <!-- Footer-->
     <footer class="main-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
       <div class="ed-container main-footer--content">
-        <div class="ed-item l-50 to-center center">
+        <div class="ed-item l-50 s-to-center s-center">
           <p class="smaller">EDgrid es una librería Sass/Css para crear diseños web responsive y mobile first.<a class="icon-slack space" href="https://join.slack.com/t/edlabs/shared_invite/enQtMjk1MjcxOTUzMzgxLTgyY2MwZjY3ODRhNGQyMWJkOWRkOGFlZjQ1YjJiYjAxOTMwNGIzMGViMjc5ODZmMmI3ZGFlNGNiMTEwNGIyNzc" target="_blank" title="Slack de EDgrid"></a><a class="icon-github space" href="https://github.com/escueladigital/EDgrid" target="_blank" title="EDgrid en EDgrid"></a><a class="icon-docs space" href="documentacion" target="_blank" title="Documentación de EDgrid"></a></p>
-          <p class="smaller">EDgrid es una marca de <a href="https://ed.team" target="_blank">EDteam</a>. Repositorio de este sitio web en  <a href="https://github.com/edgrid/edgrid-website" target="_blank">Github</a></p>
+          <p class="smaller">EDgrid es una marca de <a href="https://ed.team" target="_blank">EDteam</a>. Repositorio de este sitio web en  <a href="https://github.com/escueladigital/EDgrid" target="_blank">Github</a></p>
         </div>
-        <div class="ed-item center">
-          <p class="smaller"><a href="https://ed.team/alvaro" target="_blank" title="Blog de Alvaro Felipe">Alvaro Felipe </a><span>2015 - 2018</span></p>
+        <div class="ed-item">
+          <p class="smaller s-center"><a href="https://ed.team/alvaro" target="_blank" title="Blog de Alvaro Felipe">Alvaro Felipe </a><span>2015 - 2018</span></p>
         </div>
       </div>
     </footer>

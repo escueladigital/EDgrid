@@ -12,7 +12,7 @@
     <meta property="og:title" content="EDgrid | Base (CSS/Sass)">
     <meta property="og:type" content="website">
     <meta property="og:description" content="Los estilos base normalizan los elementos HTML para Responsive Web Design.">
-    <meta property="og:url" content="/documentacion/instalacion.html">
+    <meta property="og:url" content="/base.html">
     <meta property="og:image" content="/assets/img/edgrid-poster.jpg">
     <meta property="og:site_name" content="EDteam">
     <meta property="og:locale" content="es_PE">
@@ -59,39 +59,43 @@
             <li itemprop="url"><a href="/documentacion/personalizar.html" itemprop="name" title="Enlace de Personalizar EDgrid">Personalizar EDgrid</a></li>
             <li itemprop="url"><a href="/documentacion/breakpoints.html" itemprop="name" title="Enlace de Breakpoints">Breakpoints</a></li>
             <li itemprop="url"><a href="/documentacion/layout-flexbox.html" itemprop="name" title="Enlace de Columnas con Flexbox">Columnas con Flexbox</a></li>
-            <li itemprop="url"><a href="/documentacion/layout-css-grid.html" itemprop="name" title="Enlace de Filas y columnas con CSS Grid (beta)">Filas y columnas con CSS Grid (beta)</a></li>
+            <li itemprop="url"><a href="/documentacion/layout-css-grid.html" itemprop="name" title="Enlace de Filas y columnas con CSS Grid">Filas y columnas con CSS Grid</a></li>
             <li itemprop="url"><a href="/documentacion/layout.html" itemprop="name" title="Enlace de Layout">Layout</a></li>
-            <li itemprop="url"><a href="/documentacion/distribucion.html" itemprop="name" title="Enlace de Distribucion">Distribucion</a></li>
-            <li itemprop="url"><a href="/documentacion/alineacion.html" itemprop="name" title="Enlace de Alineación">Alineación</a></li>
-            <li itemprop="url"><a href="/documentacion/visibilidad.html" itemprop="name" title="Enlace de Visibilidad">Visibilidad</a></li>
             <li itemprop="url"><a href="/documentacion/mediaqueries.html" itemprop="name" title="Enlace de Mediaqueries">Mediaqueries</a></li>
             <li itemprop="url"><a href="/documentacion/base.html" itemprop="name" title="Enlace de Estilos base">Estilos base</a></li>
             <li itemprop="url"><a href="/documentacion/modo-dev.html" itemprop="name" title="Enlace de Modo dev">Modo dev</a></li>
+            <li itemprop="url"><a href="/documentacion/visibilidad.html" itemprop="name" title="Enlace de Visibilidad">Visibilidad</a></li>
             <li itemprop="url"><a href="/documentacion/funciones.html" itemprop="name" title="Enlace de Funciones">Funciones</a></li>
             <li itemprop="url"><a href="/documentacion/videos.html" itemprop="name" title="Enlace de Videos responsive">Videos responsive</a></li>
             <li itemprop="url"><a href="/documentacion/menus.html" itemprop="name" title="Enlace de Menus">Menus</a></li>
-            <li itemprop="url"><a href="/documentacion/prototipado.html" itemprop="name" title="Enlace de Prototipado (beta)">Prototipado (beta)</a></li>
+            <li itemprop="url"><a href="/documentacion/alineacion.html" itemprop="name" title="Enlace de Alineación">Alineación</a></li>
           </ul>
         </nav>
       </aside>
       <div class="span-l-3">
-        <main itemscope itemprop="mainContentOfPage" role="main"><h1>Instalación</h1>
-<p>Puede usar EDgrid con <a href="https://ed.team/cursos/sass">Sass</a> (recomendado) y <a href="https://ed.team/cursos/css">CSS</a>.</p>
-<h2>Instalación de versión CSS</h2>
-<ul>
-<li>Descargue la última versión de EDgrid desde <a href="https://github.com/escueladigital/EDgrid/archive/master.zip">Github</a></li>
-<li>Descomprima y busque la carpeta <code>src/css</code>. Dentro encontrará dos archivos: <code>ed-grid.css</code> y <code>ed-grid.min.css</code>. Incluya cualquiera de los dos a su proyecto y listo.</li>
-<li>La unica diferencia entre estos archivos es que la versión <code>ed-grid.min.css</code> es minificada y la versión <code>ed-grid.css</code> incluye saltos de línea, indentación y comentarios si quiere estudiar como se construyó la librería.</li>
-</ul>
-<h2>Instalación de versión Sass</h2>
-<p>Para instalar la versión Sass puede utilizar npm:</p>
-<pre><code class="language-bash">npm install --save-dev ed-grid
-</code></pre>
-<p>También puede usar yarn:</p>
-<pre><code class="language-bash">yarn add ed-grid --dev
-</code></pre>
-<p>Posteriormente, impórtelo en su estructura de archivos Sass</p>
-<pre><code class="language-scss">@import &quot;~ed-grid/ed-grid&quot;
+        <main itemscope itemprop="mainContentOfPage" role="main"><h1>Estilos base</h1>
+<p>Los estilos base normalizan los elementos HTML para Responsive Web Design.</p>
+<pre><code class="language-scss">*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin      : 0;
+  font-family : sans-serif;
+}
+
+img {
+  max-width : 100%;
+  height    : auto;
+}
+
+a {
+  text-decoration : none;
+
+  &amp;:hover { text-decoration : underline }
+}
 </code></pre>
 
         </main>
@@ -100,12 +104,12 @@
     <!-- Footer-->
     <footer class="main-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
       <div class="ed-container main-footer--content">
-        <div class="ed-item l-50 s-to-center s-center">
+        <div class="ed-item l-50 to-center center">
           <p class="smaller">EDgrid es una librería Sass/Css para crear diseños web responsive y mobile first.<a class="icon-slack space" href="https://join.slack.com/t/edlabs/shared_invite/enQtMjk1MjcxOTUzMzgxLTgyY2MwZjY3ODRhNGQyMWJkOWRkOGFlZjQ1YjJiYjAxOTMwNGIzMGViMjc5ODZmMmI3ZGFlNGNiMTEwNGIyNzc" target="_blank" title="Slack de EDgrid"></a><a class="icon-github space" href="https://github.com/escueladigital/EDgrid" target="_blank" title="EDgrid en EDgrid"></a><a class="icon-docs space" href="documentacion" target="_blank" title="Documentación de EDgrid"></a></p>
-          <p class="smaller">EDgrid es una marca de <a href="https://ed.team" target="_blank">EDteam</a>. Repositorio de este sitio web en  <a href="https://github.com/escueladigital/EDgrid" target="_blank">Github</a></p>
+          <p class="smaller">EDgrid es una marca de <a href="https://ed.team" target="_blank">EDteam</a>. Repositorio de este sitio web en  <a href="https://github.com/edgrid/edgrid-website" target="_blank">Github</a></p>
         </div>
-        <div class="ed-item">
-          <p class="smaller s-center"><a href="https://ed.team/alvaro" target="_blank" title="Blog de Alvaro Felipe">Alvaro Felipe </a><span>2015 - 2018</span></p>
+        <div class="ed-item center">
+          <p class="smaller"><a href="https://ed.team/alvaro" target="_blank" title="Blog de Alvaro Felipe">Alvaro Felipe </a><span>2015 - 2018</span></p>
         </div>
       </div>
     </footer>
