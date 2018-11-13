@@ -39,7 +39,7 @@
     "browser-sync": "^2.16.0",
     "browserify": "^13.1.1",
     "cssnano": "^3.7.5",
-    "edteam-style-guides": "0.0.40",
+    "edteam-style-guides": "0.0.42",
     "gulp": "^3.9.1",
     "gulp-babel": "^8.0.0",
     "gulp-cache-bust": "^1.4.0",
