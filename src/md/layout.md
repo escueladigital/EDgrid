@@ -171,12 +171,12 @@ El número va de 0 a 4 con separaciones de `.5rem` Por ejemplo `lg-mb-0` signifi
 Usando margenes
 
 ```html
-<img class="s-mr-2" alt="Logotipo de EDgrid" src="/assets/img/EDgrid-logo.svg" width="200">
+<img class="m-mr-2 s-mb-2" alt="Logotipo de EDgrid" src="/assets/img/EDgrid-logo.svg" width="200">
 <img alt="Logotipo de EDgrid" src="/assets/img/EDgrid-logo.svg" width="200">
 ```
 
 <div class="ed-grid-demo s-pxy-1">
-<img class="s-mr-2" alt="Logotipo de EDgrid" src="/assets/img/EDgrid-logo.svg" width="200">
+<img class="m-mr-2 s-mb-2" alt="Logotipo de EDgrid" src="/assets/img/EDgrid-logo.svg" width="200">
 <img alt="Logotipo de EDgrid" src="/assets/img/EDgrid-logo.svg" width="200">
 </div>
 

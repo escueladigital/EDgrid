@@ -28,7 +28,7 @@ Cualquier hijo directo de `ed-grid` es automáticamente un item del layout. Y au
 ```html
 <!-- Layout de tres columnas donde cada card ocupa una columna.
 No tiene que hacer nada en los items. Solo definir las columnas en el contenedor -->
-<div class="ed-grid m-grid-3">
+<div class="ed-grid s-grid-3">
   <div class="card"></div>
   <div class="card"></div>
   <div class="card"></div>
@@ -37,7 +37,7 @@ No tiene que hacer nada en los items. Solo definir las columnas en el contenedor
 Ejemplo: 
 
 <div class="ed-grid-demo">
-<div class="ed-grid m-grid-3">
+<div class="ed-grid s-grid-3">
   <div class="article">1</div>
   <div class="article">2</div>
   <div class="article">3</div>
@@ -51,18 +51,18 @@ Use la siguiente nomenclatura `breakpoint-cols-numero` Donde número es la canti
 Por ejemplo, para crear un layout de sidebar al 25% y contenido al 75% el marcado sería el siguiente:
 
 ```html
-<div class="ed-grid lg-grid-4">
+<div class="ed-grid s-grid-4">
   <div>1</div>
-  <div class="lg-cols-3">2</div>
+  <div class="s-cols-3">2</div>
 </div>
 ```
 
 Ejemplo
 
 <div class="ed-grid-demo">
-<div class="ed-grid lg-grid-4">
+<div class="ed-grid s-grid-4">
   <div>1</div>
-  <div class="lg-cols-3">2</div>
+  <div class="s-cols-3">2</div>
 </div>
 </div>
 
@@ -71,8 +71,8 @@ Ejemplo
 Use la nomenclatura: `breakpoint-x-numero` para indicar en qué columna iniciará un item.
 
 ```html
-<div class="ed-grid lg-grid-4">
-  <div class="lg-cols-3 lg-x-2">
+<div class="ed-grid s-grid-4">
+  <div class="s-cols-3 s-x-2">
   Comienzo en la columna 2 y ocupo 3 columnas
   </div>
 </div>
@@ -81,8 +81,8 @@ Use la nomenclatura: `breakpoint-x-numero` para indicar en qué columna iniciar�
 Ejemplo:
 
 <div class="ed-grid-demo">
-<div class="ed-grid lg-grid-4">
-  <div class="lg-cols-3 lg-x-2">
+<div class="ed-grid s-grid-4">
+  <div class="s-cols-3 s-x-2">
   Comienzo en la columna 2 y ocupo 3 columnas
   </div>
 </div>
@@ -93,18 +93,18 @@ Ejemplo:
 Use la siguiente nomenclatura `breakpoint-rows-numero` Donde número es la cantidad de filas.
 
 ```html
-<div class="ed-grid rows-gap lg-grid-2">
-  <div class="lg-rows-2">1</div>
-  <div class="">2</div>
+<div class="ed-grid rows-gap s-grid-2">
+  <div class="s-rows-2">1</div>
+  <div >2</div>
   <div>3</div>
 </div>
 ```
 Ejemplo:
 
 <div class="ed-grid-demo">
-<div class="ed-grid rows-gap lg-grid-2">
-  <div class="lg-rows-2">1</div>
-  <div class="">2</div>
+<div class="ed-grid rows-gap s-grid-2">
+  <div class="s-rows-2">1</div>
+  <div>2</div>
   <div>3</div>
 </div>
 </div>
@@ -114,24 +114,24 @@ Ejemplo:
 Use la nomenclatura: `breakpoint-y-numero` para indicar en qué columna iniciará un item.
 
 ```html
-<div class="ed-grid rows-gap lg-grid-4">
-  <div class="lg-rows-2">1</div>
+<div class="ed-grid rows-gap s-grid-4">
+  <div class="s-rows-2">1</div>
   <div class="">2</div>
-  <div class="lg-y-2 lg-x-2 lg-cols-2">3</div>
+  <div class="s-y-2 s-x-2 s-cols-2">3</div>
   <div>4</div>
-  <div class="lg-rows-2">5</div>
+  <div class="s-rows-2">5</div>
 </div>
 ```
 
 Ejemplo:
 
 <div class="ed-grid-demo">
-<div class="ed-grid rows-gap lg-grid-4">
-  <div class="lg-rows-2">1</div>
+<div class="ed-grid rows-gap s-grid-4">
+  <div class="s-rows-2">1</div>
   <div class="">2</div>
-  <div class="lg-y-2 lg-x-2 lg-cols-2">3</div>
+  <div class="s-y-2 s-x-2 s-cols-2">3</div>
   <div>4</div>
-  <div class="lg-rows-2">5</div>
+  <div class="s-rows-2">5</div>
 </div>
 </div>
 
@@ -141,8 +141,8 @@ Puesto que CSS Grid define la separación entre tracks internamente, puede anida
 
 ```html
 <div class="ed-grid lg-grid-3">
-    <div class="lg-cols-2 ed-grid lg-grid-3 rows-gap">
-        <div class="lg-cols-3">1</div>
+    <div class="s-cols-2 ed-grid s-grid-3 rows-gap">
+        <div class="s-cols-3">1</div>
         <div>2</div>
         <div>3</div>
         <div>4</div>
@@ -153,9 +153,9 @@ Puesto que CSS Grid define la separación entre tracks internamente, puede anida
 Ejemplo:
 
 <div class="ed-grid-demo">
-<div class="ed-grid lg-grid-3">
-    <div class="lg-cols-2 ed-grid lg-grid-3 rows-gap">
-      <div class="lg-cols-3">1</div>
+<div class="ed-grid s-grid-3">
+    <div class="s-cols-2 ed-grid s-grid-3 rows-gap">
+      <div class="s-cols-3">1</div>
       <div>2</div>
       <div>3</div>
       <div>4</div>

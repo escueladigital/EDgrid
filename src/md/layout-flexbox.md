@@ -83,18 +83,18 @@ La nomenclatura de clase es `breakpoint-numero` Donde número es cualquier núme
 ```html
 <div class="ed-container">
 <div class="ed-container">
-  <div class="ed-item lg-50">1</div>
-  <div class="ed-item lg-25">2</div>
-  <div class="ed-item lg-25">3</div>
+  <div class="ed-item s-30 lg-50">1</div>
+  <div class="ed-item s-50 lg-25">2</div>
+  <div class="ed-item s-20 lg-25">3</div>
 </div>
 </div>
 ```
 
 <div class="ed-grid-demo">
 <div class="ed-container">
-  <div class="ed-item lg-50">1</div>
-  <div class="ed-item lg-25">2</div>
-  <div class="ed-item lg-25">3</div>
+  <div class="ed-item s-30 lg-50">1</div>
+  <div class="ed-item s-50 lg-25">2</div>
+  <div class="ed-item s-20 lg-25">3</div>
 </div>
 </div>
 
@@ -111,17 +111,17 @@ Si quiere dividir el ancho entre 3 o 6 necesitará fracciones. La nomenclatura e
 ```html
 <!-- Layout de tres columnas a partir de 1024px de pantalla -->
 <div class="ed-container">
-    <div class="ed-item lg-1-3">1</div>
-    <div class="ed-item lg-1-3">2</div>
-    <div class="ed-item lg-1-3">3</div>
+    <div class="ed-item s-1-3">1</div>
+    <div class="ed-item s-1-3">2</div>
+    <div class="ed-item s-1-3">3</div>
 </div>
 ```
 
 <div class="ed-grid-demo">
 <div class="ed-container">
-<div class="ed-item lg-1-3">1</div>
-<div class="ed-item lg-1-3">2</div>
-<div class="ed-item lg-1-3">3</div>
+<div class="ed-item s-1-3">1</div>
+<div class="ed-item s-1-3">2</div>
+<div class="ed-item s-1-3">3</div>
 </div>
 </div>
 
@@ -136,30 +136,30 @@ Si necesita anidar elementos para crear layouts más complejos tenga en cuenta l
 ```html
 <!-- Bien -->
 <div class="ed-container">
-    <div class="ed-item lg-60">1</div>
-    <div class="ed-item lg-40 ed-container">
-        <div class="ed-item lg-50">2</div>
-        <div class="ed-item lg-50">3</div>
+    <div class="ed-item s-60">1</div>
+    <div class="ed-item s-40 ed-container">
+        <div class="ed-item s-50">2</div>
+        <div class="ed-item s-50">3</div>
     </div>
 </div>
 
 <!-- Mal -->
 <div class="ed-container">
-    <div class="ed-item lg-1-3"></div>
-    <div class="ed-item lg-2-3">
+    <div class="ed-item s-1-3"></div>
+    <div class="ed-item s-2-3">
         <div class="ed-container">
-            <div class="ed-item lg-50"></div>
-            <div class="ed-item lg-50"></div>
+            <div class="ed-item s-50"></div>
+            <div class="ed-item s-50"></div>
         </div>
     </div>
 </div>
 ```
 <div class="ed-grid-demo">
 <div class="ed-container">
-    <div class="ed-item lg-60">1</div>
-    <div class="ed-item lg-40 ed-container">
-        <div class="ed-item lg-50">2</div>
-        <div class="ed-item lg-50">3</div>
+    <div class="ed-item s-60">1</div>
+    <div class="ed-item s-40 ed-container">
+        <div class="ed-item s-50">2</div>
+        <div class="ed-item s-50">3</div>
     </div>
 </div>
 </div>

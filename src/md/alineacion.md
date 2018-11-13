@@ -48,7 +48,7 @@ Use las clases `breakpoint-to-left`, `breakpoint-to-center`, `breakpoint-to-righ
 ```
 Ejemplo: 
 
-<p class="bg-grey s-pxy-1 s-75 m-50 lg-40 s-to-left m-to-center l-to-right">EDgrid es una libreria construida con Sass (y con versión CSS) para Responsive Web Design (RWD). Es muy ligero, personalizable y te permite prototipar y crear layouts en muy poco tiempo sin conflictos con tu proyecto.</p>
+<p class="s-bg-grey s-pxy-1 s-75 m-50 lg-40 s-to-left m-to-center l-to-right">EDgrid es una libreria construida con Sass (y con versión CSS) para Responsive Web Design (RWD). Es muy ligero, personalizable y te permite prototipar y crear layouts en muy poco tiempo sin conflictos con tu proyecto.</p>
 
 \* *Para que las alineaciones de bloque funcionen debe agregar clases de ancho.*
 
@@ -70,7 +70,7 @@ Combine estas clases con las de alineación para crear layouts avanzados.
 
 Ejemplo:
 
-<p class="bg-grey s-pxy-1 s-75 m-50 lg-40 s-to-left m-to-center l-to-right">EDgrid es una libreria construida con Sass (y con versión CSS) para Responsive Web Design (RWD). Es muy ligero, personalizable y te permite prototipar y crear layouts en muy poco tiempo sin conflictos con tu proyecto.</p>
+<p class="s-bg-grey s-pxy-1 s-75 m-50 lg-40 s-to-left m-to-center l-to-right">EDgrid es una libreria construida con Sass (y con versión CSS) para Responsive Web Design (RWD). Es muy ligero, personalizable y te permite prototipar y crear layouts en muy poco tiempo sin conflictos con tu proyecto.</p>
 
 <a id="markdown-diferencia-entre-bloque--y-contenido" name="diferencia-entre-bloque--y-contenido"></a>
 ## Diferencia entre bloque  y contenido
@@ -86,7 +86,7 @@ Este es un párrafo cuyo texto se ha alineado a la derecha
 ```
 Ejemplo:
 
-<p class="s-pxy-1 bg-grey s-right">
+<p class="s-pxy-1 s-bg-grey s-right">
 Este es un párrafo cuyo texto se ha alineado a la derecha
 </p>
 
@@ -97,7 +97,7 @@ Este es un párrafo alineado a la derecha (como bloque)
 ```
 Ejemplo:
 
-<p class="s-pxy-1 bg-grey s-75 s-to-right">
+<p class="s-pxy-1 s-bg-grey s-75 s-to-right">
 Este es un párrafo alineado a la derecha (como bloque)
 </p>
 
@@ -108,7 +108,7 @@ Este es un párrafo alineado al centro como bloque <br> y con el contenido aline
 ```
 Ejemplo:
 
-<p class="s-pxy-1 bg-grey s-75 s-to-center s-right">
+<p class="s-pxy-1 s-bg-grey s-75 s-to-center s-right">
 Este es un párrafo alineado al centro como bloque <br> y con el contenido alineado a la derecha.
 </p>
 

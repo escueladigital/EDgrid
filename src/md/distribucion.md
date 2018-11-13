@@ -101,7 +101,7 @@ Use las siguientes clases para definir la orientacion de los hijos de un element
 ```
 
 <div class="ed-grid-demo">
-<div class="lg-50 lg-to-center bg-blue column">
+<div class="lg-50 lg-to-center s-bg-blue column">
     <div class="box-demo">1</div>
     <div class="box-demo">2</div>
     <div class="box-demo">3</div>

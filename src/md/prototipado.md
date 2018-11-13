@@ -148,7 +148,7 @@ Use las clases `breakpoint-ratio-x-y` donde `x` y `y` son numeros enteros del 1 
 
 ```html
 <div class="ed-grid lg-grid-3 lg-60 lg-to-center s-pxy-1 s-border s-radius s-shadow-bottom">
-    <div class="s-ratio-2-3 s-bg-blue"></div>
+    <div class="s-ratio-16-9 lg-ratio-2-3 s-bg-blue s-mb-2 lg-mb-0"></div>
     <div class="lg-cols-2">
         <h3>Bienvenido a a EDgrid</h3>
         <p>EDgrid es una libreria construida con Sass (y con versión CSS) 
@@ -159,7 +159,7 @@ Use las clases `breakpoint-ratio-x-y` donde `x` y `y` son numeros enteros del 1 
 ```
 
 <div class="ed-grid lg-grid-3 lg-60 lg-to-center s-pxy-1 s-border s-radius s-shadow-bottom l-block">
-    <div class="s-ratio-2-3 s-bg-blue"></div>
+    <div class="s-ratio-16-9 lg-ratio-2-3 s-bg-blue s-mb-2 lg-mb-0"></div>
     <div class="lg-cols-2">
         <h3>Bienvenido a a EDgrid</h3>
         <p>EDgrid es una libreria construida con Sass (y con versión CSS) para Responsive Web Design (RWD). Es muy ligero, personalizable.</p>
@@ -227,7 +227,7 @@ Ejemplo de tarjeta:
         </div>
         <footer class="s-cross-center s-bg-grey s-pxy-2">
             <!--Define el ancho máximo de la imagen-->
-            <div class="s-20 lg-10 s-mr-1">
+            <div class="s-10 s-mr-1">
             <!--Contenedor de la imagen-->
             <div class="circle ">
                 <img  src="/img/tioalexys.jpg">
@@ -255,7 +255,7 @@ Ejemplo de tarjeta:
         </div>
         <footer class="s-cross-center s-bg-grey s-pxy-2">
             <!--Define el ancho máximo de la imagen-->
-            <div class="s-20 lg-10 s-mr-1">
+            <div class="s-10 s-mr-1">
             <!--Contenedor de la imagen-->
             <div class="circle ">
                 <img  src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2018-11/tioalexys.jpg?itok=7vDpJuSh">
