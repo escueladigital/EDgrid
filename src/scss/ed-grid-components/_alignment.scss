@@ -1,28 +1,45 @@
 /* Alineación de contenido */
 // Recorrer los breakpoints
-@each $bp, $size in $breakpoints {
+@each $size in $sizes {
   // Lista de alineaciones
   $aligns : left, center, right;
   // Crea las alineaciones por cada breakpoint
-  @include from($bp) {
+  @include from($size) {
     // Crea las alineaciones de contenido
     @each $align in $aligns {
-      .#{$bp}-#{$align} {
+      .#{$size}-#{$align} {
         text-align : $align;
       }
     }
     // Crea las alineaciones de bloques
-    .#{$bp}-to-left {
-      float        : left;
+    .#{$size}-to-left {
       margin-left  : 0;
       margin-right : auto;
+
     }
-    .#{$bp}-to-center {
+    .#{$size}-to-center {
       margin-left  : auto;
       margin-right : auto;
     }
-    .#{$bp}-to-right {
-      float        : right;
+    .#{$size}-to-right {
+      margin-right : 0;
+      margin-left  : auto;
+    }
+
+    .#{$size}-block-left {
+      display      : block;
+      margin-left  : 0;
+      margin-right : auto;
+    }
+
+    .#{$size}-block-center {
+      display      : block;
+      margin-left  : auto;
+      margin-right : auto;
+    }
+
+    .#{$size}-block-right {
+      display      : block;
       margin-right : 0;
       margin-left  : auto;
     }
@@ -30,7 +47,7 @@
 }
 
 // Order
-@each $size, $screen-size in $breakpoints {
+@each $size in $sizes {
   @include from ($size) {
     @for $i from 1 through $max-grid-columns {
       .#{$size}-order-#{$i} {
@@ -92,7 +109,7 @@ $flex-alignments : (
 // Selector inicial (placeholder)
 $selectors : '.flex';
 // Recorre los breakpoints
-@each $size, $screen-size in $breakpoints {
+@each $size in $sizes {
   // Recorre el mapa de selectores
   @each $selector, $property in $flex-alignments {
     // Crea el selector actual
@@ -108,10 +125,10 @@ $selectors : '.flex';
   flex-wrap : wrap;
 }
 
-/*Crea selectores de flex alignmente en todos los breakpoints*/
+/*Crea selectores de flex alignment en todos los breakpoints*/
 
 // Recorre los breakpoints
-@each $size, $screen-size in $breakpoints {
+@each $size  in $sizes {
   @include from($size) {
     // Recorre el mapa de selectores
     @each $selector, $property in $flex-alignments {
