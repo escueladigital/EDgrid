@@ -7,6 +7,13 @@
   position       : relative;
 }
 
+$border-radius: (
+  tl: top-left,
+  tr: top-right,
+  bl: bottom-left,
+  br: bottom-right
+);
+
 @if $prototype == true {
   .button {
     display         : inline-block;
@@ -25,55 +32,113 @@
     }
   }
 
-  .border {
-    border : 1px solid var(--border-color);
+  @each $size in $sizes {
+    $border: 1px solid var(--border-color);
+
+    @include from($size) {
+      .#{$size}-border {
+        border :$border;
+      }
+
+      .#{$size}-border-none {
+        border :none;
+      }
+
+      .#{$size}-radius {
+        border-radius: var(--border-radius);
+      }
+
+      .#{$size}-radius-none {
+        border-radius: none;
+      }
+
+      // boder top, left, right, bottom
+      @each $direction in top right bottom left {
+        .#{$size}-border-#{$direction} {
+          border-#{$direction}: $border;
+        }
+
+        .#{$size}-border-none {
+          border-#{$direction}: none;
+        }
+      }
+
+      // Border radius
+      @each $corner in map-keys($border-radius) {
+        .#{$size}-radius-#{$corner} {
+          border-#{map-get($border-radius,$corner)}-radius: var(--border-radius);
+        }
+
+        .#{$size}-radius-#{$corner}-none {
+          border-#{map-get($border-radius,$corner)}-radius: 0;
+        }
+      }
+
+      // Background
+      .#{$size}-bg-blue {
+        background-color : var(--color);
+      }
+
+      .#{$size}-bg-grey {
+        background-color : var(--light-bg);
+      }
+
+      .#{$size}-none {
+        background-color : var(--light-bg);
+      }
+
+      // ratios
+      @each $x in 1 2 3 4 {
+        @each $y in 1 2 3 4 {
+          .#{$size}-ratio-#{$x}-#{$y} {
+            @include ratio($x,$y)
+          }
+        }
+      }
+
+      // 16,9
+
+      .#{$size}-ratio-16-9 {
+        @include ratio(16,9)
+      }
+
+      .#{$size}-ratio-9-16 {
+        @include ratio(9,16)
+      }
+
+      .#{$size}-ratio-21-9 {
+        @include ratio(21,9)
+      }
+    }
+
+    // Sombras
+
+    .#{$size}-shadow {
+      box-shadow: 0 0 1rem #ccc;
+      // box-shadow: 0 0.5rem 1rem -0.5rem #ccc;
+    }
+
+    .#{$size}-shadow-bottom {
+      box-shadow: 0 0.5rem 1rem -0.5rem #ccc;
+    }
+
+    .#{$size}-shadow-top {
+      box-shadow: 0 -0.5rem 1rem -0.5rem #ccc;
+    }
+
+    .#{$size}-shadow-right {
+      box-shadow: 0.5rem 0 1rem -0.5rem #ccc;
+    }
+
+    .#{$size}-shadow-left {
+      box-shadow: -0.5rem 0 1rem -0.5rem #ccc;
+    }
+
+    .#{$size}-shadow-none {
+      box-shadow: none;
+    }
   }
 
-  .border-top {
-    border-top : 1px solid var(--border-color);
-  }
-
-  .border-bottom {
-    border-bottom : 1px solid var(--border-color);
-  }
-
-  .border-right {
-    border-right : 1px solid var(--border-color);
-  }
-
-  .border-left {
-    border-left : 1px solid var(--border-color);
-  }
-
-  .radius {
-    border-radius : var(--border-radius);
-  }
-
-  .radius-tl {
-    border-top-left-radius : var(--border-radius);
-  }
-
-  .radius-tr {
-    border-top-right-radius : var(--border-radius);
-  }
-
-  .radius-bl {
-    border-bottom-left-radius : var(--border-radius);
-  }
-
-  .radius-br {
-    border-bottom-right-radius : var(--border-radius);
-  }
-
-  .bg-grey {
-    background : var(--light-bg);
-  }
-
-  .bg-blue {
-    background : var(--color);
-  }
-
-  //
   .circle,
   .square {
     @include ratio(1, 1);
