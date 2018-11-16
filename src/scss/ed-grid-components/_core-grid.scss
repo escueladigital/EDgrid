@@ -15,7 +15,7 @@
 
   @for $i from 0 through 4 {
     &.gap-#{$i} {
-      --gap: #{$l-unit * $i}
+      --gap: #{$l-unit * $i};
     }
   }
 
@@ -106,19 +106,14 @@
           grid-row-end : span $i;
         }
 
-
         // Inicio de columna en items
-        @if $i > 1 {
-          > .#{$size}-x-#{$i} {
-            grid-column-start : $i;
-          }
+        > .#{$size}-x-#{$i} {
+          grid-column-start : $i;
         }
 
         // Inicio de fila en items
-        @if $i > 1 {
-          > .#{$size}-y-#{$i} {
-            grid-row-start : $i;
-          }
+        > .#{$size}-y-#{$i} {
+          grid-row-start : $i;
         }
       }
     }
