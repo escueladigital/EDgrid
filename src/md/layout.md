@@ -159,6 +159,8 @@ Use las clases de márgenes para separar elementos. La nomenclatura es la siguie
 
 El número va de 0 a 4 con separaciones de `.5rem` Por ejemplo `lg-mb-0` significa `margin-bottom:0` a partir del breakpoint `lg`. Y `m-br-4` sinifica `margin-right: 2rem` a partir del breakpoint `m`.
 
+\* *Puede usar el numero `05` para crear separaciones de `.25rem`. Ejemplo: `s-mb-05`.*
+
 ```html
 <img alt="Logotipo de EDgrid" src="/assets/img/EDgrid-logo.svg" width="200">
 <img alt="Logotipo de EDgrid" src="/assets/img/EDgrid-logo.svg" width="200">
@@ -222,3 +224,4 @@ Donde `direction` puede ser `t` (top), `r` (right), `b` (bottom), `l` (left). Po
 * Para paddings horizontales (left y right a la vez) use `breakpoint-px-numero`
 * Para paddings en las cuatro direcciones use `breakpoint-pxy-numero`
 
+\* *Puede usar el numero `05` para crear paddings de `.25rem`. Ejemplo: `s-py-05`.*
