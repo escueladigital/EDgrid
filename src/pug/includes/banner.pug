@@ -1,7 +1,7 @@
 mixin banner(img, title, description, clase, boton, botonClass, botonUrl, botonIco, botonText, botones)
   div(class='main-banner--' + clase + ' main-banner diagonal l-block')
-    .ed-container
-      .ed-item.l-75.to-center
+    .ed-grid
+      .l-75.s-to-center
         img(src=img).main-banner__img
         .main-banner__data
           h1= title
@@ -10,7 +10,7 @@ mixin banner(img, title, description, clase, boton, botonClass, botonUrl, botonI
           if (boton)
             a(class='button--'+botonClass+' '+ botonIco '' href=botonUrl target="_blank" title=botonText).center=botonText
           if (botones)
-            .center
+            .s-center
               a.button--ghost-light.s-mr-2(href="https://join.slack.com/t/edlabs/shared_invite/enQtMjk1MjcxOTUzMzgxLTgyY2MwZjY3ODRhNGQyMWJkOWRkOGFlZjQ1YjJiYjAxOTMwNGIzMGViMjc5ODZmMmI3ZGFlNGNiMTEwNGIyNzc" target="_blank" title="Slack de EDgrid")
                 span Slack
               a.button--ghost-light.s-mr-2(href="https://github.com/escueladigital/EDgrid" target="_blank" title="EDgrid en Github")
