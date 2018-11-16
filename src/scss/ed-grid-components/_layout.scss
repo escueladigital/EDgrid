@@ -103,16 +103,22 @@ ol ul {
 }
 
 // Crea paddings y margenes
-@each $size, $screen-size in $breakpoints {
+@each $size in $sizes {
   @include from($size) {
     // Crea cuatro niveles de separacion
-    @for $i from 0 through 4 {
+    @for $i from 0 through 5 {
       // Unidad de separación actual
       $unit : $l-unit * $i;
       // Valida el cero para evitar devolver 0rem como unidad
       @if $i == 0 {
         $unit : 0;
       }
+      // Valida el 5 para devolver nueva clase y unidad
+      @if $i == 5 {
+        $i : "05";
+        $unit: $l-unit * 0.5;
+      }
+
       // Padding top
       .#{$size}-pt-#{$i} {
         padding-top : $unit;
@@ -130,12 +136,12 @@ ol ul {
         padding-right : $unit;
       }
       // Padding vertical
-      .#{$size}-px-#{$i} {
+      .#{$size}-py-#{$i} {
         padding-top    : $unit;
         padding-bottom : $unit;
       }
       // Padding horizontal
-      .#{$size}-py-#{$i} {
+      .#{$size}-px-#{$i} {
         padding-left  : $unit;
         padding-right : $unit;
       }
