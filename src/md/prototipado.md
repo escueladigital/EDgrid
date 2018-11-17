@@ -200,7 +200,7 @@ La imagen es la misma en todos los casos:
     <div class="s-ratio-9-16 img-container">
         <img src="https://cocha2018.ed.team/assets/img/banner-edcamp.jpg">
     </div>
-    <div class="circle">
+    <div class="circle img-container">
         <img src="https://cocha2018.ed.team/assets/img/banner-edcamp.jpg">
     </div>
     <div class="s-ratio-16-9 img-container">
@@ -208,7 +208,7 @@ La imagen es la misma en todos los casos:
     </div>
 </div>
 
-* Puede usar la clase `circle` en lugar de `s-ratio-1-1 img-container`
+* Puede usar la clase `circle` para obtener un círculo perfecto sin usar clases de ratio. Si va a usarlo para contener una imagen, agregué tambien la clase `img-container`.
 
 Ejemplo de tarjeta:
 
@@ -229,7 +229,7 @@ Ejemplo de tarjeta:
             <!--Define el ancho máximo de la imagen-->
             <div class="s-10 s-mr-1">
             <!--Contenedor de la imagen-->
-            <div class="circle ">
+            <div class="circle img-container">
                 <img  src="/img/tioalexys.jpg">
             </div>
             <!--Profesor-->
