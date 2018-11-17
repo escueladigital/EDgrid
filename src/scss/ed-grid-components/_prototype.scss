@@ -109,33 +109,31 @@ $border-radius: (
       .#{$size}-ratio-21-9 {
         @include ratio(21,9)
       }
-    }
 
-    // Sombras
+      // Sombras
+      .#{$size}-shadow {
+        box-shadow : 0 0 1rem #CCC;
+      }
 
-    .#{$size}-shadow {
-      box-shadow: 0 0 1rem #ccc;
-      // box-shadow: 0 0.5rem 1rem -0.5rem #ccc;
-    }
+      .#{$size}-shadow-bottom {
+        box-shadow : 0 0.5rem 1rem -0.5rem #CCC;
+      }
 
-    .#{$size}-shadow-bottom {
-      box-shadow: 0 0.5rem 1rem -0.5rem #ccc;
-    }
+      .#{$size}-shadow-top {
+        box-shadow : 0 -0.5rem 1rem -0.5rem #CCC;
+      }
 
-    .#{$size}-shadow-top {
-      box-shadow: 0 -0.5rem 1rem -0.5rem #ccc;
-    }
+      .#{$size}-shadow-right {
+        box-shadow : 0.5rem 0 1rem -0.5rem #CCC;
+      }
 
-    .#{$size}-shadow-right {
-      box-shadow: 0.5rem 0 1rem -0.5rem #ccc;
-    }
+      .#{$size}-shadow-left {
+        box-shadow : -0.5rem 0 1rem -0.5rem #CCC;
+      }
 
-    .#{$size}-shadow-left {
-      box-shadow: -0.5rem 0 1rem -0.5rem #ccc;
-    }
-
-    .#{$size}-shadow-none {
-      box-shadow: none;
+      .#{$size}-shadow-none {
+        box-shadow : none;
+      }
     }
   }
 
@@ -148,7 +146,6 @@ $border-radius: (
     border-radius : 50%;
   }
 
-  .circle,
   .img-container {
     position : relative;
     img {
