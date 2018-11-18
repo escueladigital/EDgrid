@@ -6,16 +6,18 @@ append config
   -description = "Casos de éxito que se encuentran actualmente en producción y que utilizan la librería de EDgrid."
   -ogUrl = "/casos-exito.html"
 
-  -img = "images/casos-de-exito-banner.jpg"
-  -titleBanner = "Casos de Éxito"
+  -img = "/assets/img/docs-banner.jpg"
+  -titleBanner = "Casos de éxito"
   -descriptionBanner = "Proyectos que usan EDgrid en producción"
-
-    //- Variables de los banners
-  -botonUrl="http://ed.team/contacto"
-  -botonText ="Envía tu proyecto"
+  -clase = "third-color"
+  -boton = false
+  -botonClass= ""
+  -botonUrl=""
+  -botonText =""
+  -botones = false
 
 block banner
-  +banner(img, titleBanner, descriptionBanner, clase, boton, botonClass, botonUrl, botonIco, botonText, botones)
+  +banner(img, titleBanner, descriptionBanner, clase, boton, botonClass, botonUrl, botonText, botones)
 block main
   main.main-section
     .ed-grid.cols-l-3.rows-gap

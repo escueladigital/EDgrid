@@ -5,21 +5,21 @@ append config
   -description = "Créditos de quien realizo la librería, colaboro desarrollando el portal."
   -ogUrl = "/creditos.html"
 
-  -img = "images/creditos-banner.jpg"
-  -titleBanner = "Créditos"  
+  -img = "/assets/img/docs-banner.jpg"
+  -titleBanner = "Créditos"
   -descriptionBanner = "Colaboradores de EDgrid"
-  -clase = "accent"
-  -boton = ""
+  -clase = "dark-color"
+  -boton = false
   -botonClass= ""
   -botonUrl=""
-  -botonIco= ""
   -botonText =""
-  -botones = ""
+  -botones = false
+
 block banner
-  +banner(img, titleBanner, descriptionBanner, clase, boton, botonClass, botonUrl, botonIco, botonText, botones)
+  +banner(img, titleBanner, descriptionBanner, clase, boton, botonClass, botonUrl, botonText, botones)
 block main
-  main.ed-grid
-    .l-60.to-center
+  main.ed-grid.lg-grid-6
+    .lg-cols-4.lg-x-2
       ul.data-list
         li
           p

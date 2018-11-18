@@ -7,21 +7,20 @@ append config
 
   -img = "/assets/img/docs-banner.jpg"
   -titleBanner = "EDgrid"
-  -Bannerdescription = "Libreria Sass/CSS de EDteam para construir layouts web responsive"
+  -descriptionBanner = "Libreria Sass/CSS de EDteam para construir layouts web responsive"
   -clase = ""
-  -boton = ""
-  -botonClass= "button--ghost"
+  -boton = false
+  -botonClass= ""
   -botonUrl=""
-  -botonIco= ""
   -botonText =""
-  -botones = "si"
+  -botones = true
 
 block banner
-  +banner(img, titleBanner, Bannerdescription, clase, boton, botonClass, botonUrl, botonIco, botonText, botones)
+  +banner(img, titleBanner, descriptionBanner, clase, boton, botonClass, botonUrl, botonText, botones)
 block main
   main
     .ed-grid
-        h2.section-title.center El responsive web design nunca fue tan sencillo
+        h1.t2.s-to-center.lg-mb-4 El responsive web design nunca fue tan sencillo
         .main-features.ed-grid.cols-l-3.cols-m-2.rows-gap
           .main-feature
             .main-feature__img

@@ -5,21 +5,22 @@ append config
   -description = "Registro de cambios que ha tenido la librería EDgrid."
   -ogUrl = "/funciones.html"
 
-  -img = "images/changelog-banner.jpg"
+  -img = "/assets/img/docs-banner.jpg"
   -titleBanner = "Changelog"
-  -descriptionBanner = "EDgrid a traves del tiempo, descubre la evolución de esta herramienta"
-  -clase = "dark"
-  -boton = "si"
-  -botonClass= "tertiary"
-  -botonUrl="https://github.com/escueladigital/EDgrid/releases"
-  -botonIco= "icon-github space"
-  -botonText ="Ver en Github"
-  -botones = ""
+  -descriptionBanner = "Lanzamientos importantes de EDgrid"
+  -clase = "accent-color"
+  -boton = false
+  -botonClass= ""
+  -botonUrl=""
+  -botonText =""
+  -botones = false
+
 block banner
-  +banner(img, titleBanner, descriptionBanner, clase, boton, botonClass,botonUrl, botonIco, botonText ,botones)
+  +banner(img, titleBanner, descriptionBanner, clase, boton, botonClass, botonUrl, botonText, botones)
+
 block main
-  .ed-grid
-    .l-75.to-center
+  .ed-grid.lg-grid-6
+    .lg-cols-4.lg-x-2
       ul.data-list
         li
           p

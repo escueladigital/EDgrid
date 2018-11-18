@@ -6,19 +6,18 @@ append config
   -ogUrl= "/documentacion"
   -docsMenu = true
 
-  -img = "images/docs-banner.jpg"
-  -title = "Documentación de EDgrid"
-  -description = "EDgrid es muy fácil de aprender, en treinta minutos estará usándolo en sus proyectos."
-  -clase = "secondary"
-  -boton = ""
+  -img = "/assets/img/docs-banner.jpg"
+  -titleBanner = "Documentación"
+  -descriptionBanner = "EDgrid es muy fácil de aprender. En una hora ya lo estará usando en sus proyectos"
+  -clase = "dark-color"
+  -boton = false
   -botonClass= ""
   -botonUrl=""
-  -botonIco= ""
   -botonText =""
-  -botones = ""
+  -botones = false
 
 block banner
-  +banner(img, title, description, clase, boton, botonClass, botonUrl, botonIco, botonText, botones)
+  +banner(img, titleBanner, descriptionBanner, clase, boton, botonClass, botonUrl, botonText, botones)
 block main
   main(itemscope itemprop="mainContentOfPage" role="main")
     :markdown-it
