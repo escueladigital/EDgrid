@@ -1,14 +1,5 @@
 # Alineación
-<!-- TOC -->
-
-- [Alineación de contenido](#alineaci%C3%B3n-de-contenido)
-- [Alineación de bloques](#alineaci%C3%B3n-de-bloques)
-- [Ancho de los bloques](#ancho-de-los-bloques)
-- [Diferencia entre bloque y contenido](#diferencia-entre-bloque-y-contenido)
-- [Alineación de imágenes y elementos inline](#alineaci%C3%B3n-de-im%C3%A1genes-y-elementos-inline)
-    - [Sobre el ancho de las imágenes](#sobre-el-ancho-de-las-im%C3%A1genes)
-
-<!-- /TOC -->
+<!-- TOC -->autoauto- [Alineación de contenido](#alineación-de-contenido)auto- [Alineación de bloques](#alineación-de-bloques)auto- [Ancho de los bloques](#ancho-de-los-bloques)auto- [Diferencia entre bloque  y contenido](#diferencia-entre-bloque--y-contenido)auto- [Alineación de imágenes y elementos inline](#alineación-de-imágenes-y-elementos-inline)auto  - [Sobre el ancho de las imágenes](#sobre-el-ancho-de-las-imágenes)autoauto<!-- /TOC -->
 
 --- 
 
@@ -114,6 +105,8 @@ Este es un párrafo alineado al centro como bloque <br> y con el contenido aline
 
 
 Comprender esta sutil diferencia es crucial para construir layouts. Por ejemplo, si quiere una imagen centrada, agregarle una clase `s-to-center` no hará nada porque las imágenes son inline (igual que los `<span>`, `<a>`, `<input>`, `<label>`). Podría maldecir a EDgrid pero así funciona CSS y no podemos hacer nada. 
+
+\* *Puede usar estas clases también para alinear botones*
 
 <a id="markdown-alineación-de-imágenes-y-elementos-inline" name="alineación-de-imágenes-y-elementos-inline"></a>
 ## Alineación de imágenes y elementos inline
