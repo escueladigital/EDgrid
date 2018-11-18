@@ -76,19 +76,7 @@
       </aside>
       <div class="span-l-3">
         <main itemscope itemprop="mainContentOfPage" role="main"><h1>Alineación</h1>
-<!-- TOC -->
-<ul>
-<li><a href="#alineaci%C3%B3n-de-contenido">Alineación de contenido</a></li>
-<li><a href="#alineaci%C3%B3n-de-bloques">Alineación de bloques</a></li>
-<li><a href="#ancho-de-los-bloques">Ancho de los bloques</a></li>
-<li><a href="#diferencia-entre-bloque-y-contenido">Diferencia entre bloque y contenido</a></li>
-<li><a href="#alineaci%C3%B3n-de-im%C3%A1genes-y-elementos-inline">Alineación de imágenes y elementos inline</a>
-<ul>
-<li><a href="#sobre-el-ancho-de-las-im%C3%A1genes">Sobre el ancho de las imágenes</a></li>
-</ul>
-</li>
-</ul>
-<!-- /TOC -->
+<!-- TOC -->autoauto- [Alineación de contenido](#alineación-de-contenido)auto- [Alineación de bloques](#alineación-de-bloques)auto- [Ancho de los bloques](#ancho-de-los-bloques)auto- [Diferencia entre bloque  y contenido](#diferencia-entre-bloque--y-contenido)auto- [Alineación de imágenes y elementos inline](#alineación-de-imágenes-y-elementos-inline)auto  - [Sobre el ancho de las imágenes](#sobre-el-ancho-de-las-imágenes)autoauto<!-- /TOC -->
 <hr>
 <p>Con EDgrid puede alinear elementos o su contenido en horizontal y vertical según el breakpoint.</p>
 <p><a id="markdown-alineación-de-contenido" name="alineación-de-contenido"></a></p>
@@ -159,6 +147,7 @@ Este es un párrafo alineado al centro como bloque &lt;br&gt; y con el contenido
 Este es un párrafo alineado al centro como bloque <br> y con el contenido alineado a la derecha.
 </p>
 <p>Comprender esta sutil diferencia es crucial para construir layouts. Por ejemplo, si quiere una imagen centrada, agregarle una clase <code>s-to-center</code> no hará nada porque las imágenes son inline (igual que los <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;label&gt;</code>). Podría maldecir a EDgrid pero así funciona CSS y no podemos hacer nada.</p>
+<p>* <em>Puede usar estas clases también para alinear botones</em></p>
 <p><a id="markdown-alineación-de-imágenes-y-elementos-inline" name="alineación-de-imágenes-y-elementos-inline"></a></p>
 <h2>Alineación de imágenes y elementos inline</h2>
 <p>Para centrar una imágen puede aplicarle la clase <code>breakpoint-center</code> a su contenedor. Por ejemplo:</p>
@@ -195,11 +184,11 @@ Este es un párrafo alineado al centro como bloque <br> y con el contenido aline
     <footer class="main-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
       <div class="ed-container main-footer--content">
         <div class="ed-item l-50 s-to-center s-center">
-          <p class="smaller">EDgrid es una librería Sass/Css para crear diseños web responsive y mobile first.<a class="icon-slack space" href="https://join.slack.com/t/edlabs/shared_invite/enQtMjk1MjcxOTUzMzgxLTgyY2MwZjY3ODRhNGQyMWJkOWRkOGFlZjQ1YjJiYjAxOTMwNGIzMGViMjc5ODZmMmI3ZGFlNGNiMTEwNGIyNzc" target="_blank" title="Slack de EDgrid"></a><a class="icon-github space" href="https://github.com/escueladigital/EDgrid" target="_blank" title="EDgrid en EDgrid"></a><a class="icon-docs space" href="documentacion" target="_blank" title="Documentación de EDgrid"></a></p>
-          <p class="smaller">EDgrid es una marca de <a href="https://ed.team" target="_blank">EDteam</a>. Repositorio de este sitio web en  <a href="https://github.com/escueladigital/EDgrid" target="_blank">Github</a></p>
+          <p class="smaller s-mb-1">EDgrid es una librería Sass/Css para crear diseños web responsive y mobile first.<a class="icon-slack space" href="https://join.slack.com/t/edlabs/shared_invite/enQtMjk1MjcxOTUzMzgxLTgyY2MwZjY3ODRhNGQyMWJkOWRkOGFlZjQ1YjJiYjAxOTMwNGIzMGViMjc5ODZmMmI3ZGFlNGNiMTEwNGIyNzc" target="_blank" title="Slack de EDgrid"></a><a class="icon-github space" href="https://github.com/escueladigital/EDgrid" target="_blank" title="EDgrid en EDgrid"></a><a class="icon-docs space" href="documentacion" target="_blank" title="Documentación de EDgrid"></a></p>
+          <p class="smaller s-mb-1">EDgrid es una marca de <a href="https://ed.team" target="_blank">EDteam</a>. Repositorio de este sitio web en  <a href="https://github.com/escueladigital/EDgrid" target="_blank">Github</a></p>
         </div>
         <div class="ed-item">
-          <p class="smaller s-center"><a href="https://ed.team/alvaro" target="_blank" title="Blog de Alvaro Felipe">Alvaro Felipe </a><span>2015 - 2018</span></p>
+          <p class="smaller s-center s-mb-0"><a href="https://ed.team/alvaro" target="_blank" title="Blog de Alvaro Felipe">Alvaro Felipe </a><span>2015 - 2018</span></p>
         </div>
       </div>
     </footer>

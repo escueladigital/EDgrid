@@ -10,14 +10,15 @@ var _menu = require('./modules/menu');
 
 var _menu2 = _interopRequireDefault(_menu);
 
+var _scrollBarWIdth = require('./modules/scrollBarWIdth');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import menu from './modules/menu'
+(0, _activeMenu2.default)('main-menu'); // import menu from './modules/menu'
 // import migrate from './modules/migrate'
 //
 // export default { menu, migrate }
 
-(0, _activeMenu2.default)('main-menu');
 (0, _activeMenu2.default)('vertical-menu');
 (0, _menu2.default)('main-menu', 'main-menu-toggle');
 (0, _menu2.default)('vertical-menu', 'vertical-menu-toggle');
@@ -520,7 +521,7 @@ Prism.languages.scss = Prism.languages.extend('css', {
 }();
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./modules/activeMenu":2,"./modules/menu":3}],2:[function(require,module,exports){
+},{"./modules/activeMenu":2,"./modules/menu":3,"./modules/scrollBarWIdth":4}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -563,6 +564,20 @@ var openMenu = function openMenu(navId, toggleId) {
 
 exports.default = openMenu;
 module.exports = exports['default'];
+
+},{}],4:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var getScrollBarWidth = function getScrollBarWidth() {
+  return window.innerWidth - document.documentElement.getBoundingClientRect().width;
+};
+
+document.documentElement.style.setProperty('--scrollbar', getScrollBarWidth() + 'px');
+
+exports.getScrollBarWidth = getScrollBarWidth;
 
 },{}]},{},[1]);
 
