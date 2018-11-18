@@ -5,7 +5,7 @@
 
 import activeMenu from './modules/activeMenu'
 import openMenu from './modules/menu'
-
+import { getScrollBarWidth } from './modules/scrollBarWIdth'
 
 activeMenu('main-menu')
 activeMenu('vertical-menu')
