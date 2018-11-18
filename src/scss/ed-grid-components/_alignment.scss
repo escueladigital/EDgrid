@@ -13,15 +13,18 @@
     }
     // Crea las alineaciones de bloques
     .#{$size}-to-left {
+      &[class*=button] { display: table }
       margin-left  : 0;
       margin-right : auto;
 
     }
     .#{$size}-to-center {
+      &[class*=button] { display: table }
       margin-left  : auto;
       margin-right : auto;
     }
     .#{$size}-to-right {
+      &[class*=button] { display: table }
       margin-right : 0;
       margin-left  : auto;
     }
