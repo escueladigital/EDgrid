@@ -20,17 +20,13 @@
   }
 
   // Evita que en tamaños moviles los items queden pegados a los lados
-  width        : calc(100vw - var(--scrollbar) - var(--gap) * 2);
-  margin-left  : 1rem;
-  margin-right : 1rem;
-
-  @include from(l) {
-    // width : calc(100vw - var(--gap));
-  }
+  width                 : calc(100% - 2rem);
+  margin-left           : 1rem;
+  margin-right          : 1rem;
+  max-width             : $max-width;
 
   // Por sobre el max width el container se centra
   @include from($max-width) {
-    max-width    : $max-width;
     margin-left  : auto;
     margin-right : auto;
   }
