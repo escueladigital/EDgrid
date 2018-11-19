@@ -35,6 +35,7 @@ $border-radius: (
   @each $size in $sizes {
     $border: 1px solid var(--border-color);
 
+    // Bordes
     @include from($size) {
       .#{$size}-border {
         border :$border;
@@ -77,6 +78,10 @@ $border-radius: (
       // Background
       .#{$size}-bg-blue {
         background-color : var(--color);
+      }
+
+      .#{$size}-white {
+        background-color : #FFF;
       }
 
       .#{$size}-bg-grey {
@@ -133,6 +138,13 @@ $border-radius: (
 
       .#{$size}-shadow-none {
         box-shadow : none;
+      }
+
+      // Opacidad
+      @for $i from 1 through 10 {
+        .#{$size}-opacity-#{$i} {
+          opacity : $i * 0.1;
+        }
       }
     }
   }
