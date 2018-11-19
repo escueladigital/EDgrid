@@ -27,6 +27,7 @@
 
   // Por sobre el max width el container se centra
   @include from($max-width) {
+    width        : 100%;
     margin-left  : auto;
     margin-right : auto;
   }
