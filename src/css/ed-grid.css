@@ -816,6 +816,7 @@ body.desarrollo .ed-item:nth-child(even):before {
 
 @media screen and (min-width: 1200px) {
   .ed-grid {
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
