@@ -109,10 +109,10 @@ $flex-alignments : (
 );
 
 /* Crea selectores agrupados para propiedades básicas de flexbox*/
-// Selector inicial (placeholder)
-$selectors : '.flex';
 // Recorre los breakpoints
 @each $size in $sizes {
+  // Selector inicial (placeholder)
+  $selectors : '.flex';
   // Recorre el mapa de selectores
   @each $selector, $property in $flex-alignments {
     // Crea el selector actual
@@ -120,12 +120,12 @@ $selectors : '.flex';
     // Concatena el selector actual a la lista total de selectores (con coma)
     $selectors : append($selectors, unquote($selector), comma);
   }
-}
-
-// Usa el selector agrupado para asignar las propiedades base de flex
-#{$selectors} {
-  display   : flex;
-  flex-wrap : wrap;
+  @include from($size) {
+    #{$selectors} {
+      display   : flex;
+      flex-wrap : wrap;
+    }
+  }
 }
 
 /*Crea selectores de flex alignment en todos los breakpoints*/
