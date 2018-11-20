@@ -86,6 +86,16 @@
       // Recorre la cantidad de columnas
       @for $i from 1 through $max-grid-columns {
         // Columnas en el contenedor
+
+        // Una columna
+        @if $i == 1 {
+          &.cols-#{$size}-1,
+          &.#{$size}-grid-1 {
+            grid-template-columns : 100%;
+          }
+        }
+
+        // Más de una columna
         @if $i > 1 {
           &.cols-#{$size}-#{$i},
           &.#{$size}-grid-#{$i} {
