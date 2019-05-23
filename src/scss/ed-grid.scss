@@ -1,13 +1,16 @@
 // Configuraciones
-$prototype : true !default;
-$dev : false !default;
-$max-width : 1200px !default;
-$l-unit : .5rem !default;
-$gap : $l-unit * 4 !default;  // 2rem
-$fractions : 3 6 !default;
-$legacy : false !default;
-$container : ed-container !default;
-$item : ed-item !default;
+$prototype        : true !default;
+$dev              : false !default;
+$dev-hover        : false !default;
+$max-width        : 1200px !default;
+$l-unit           : .5rem !default;
+$gap              : $l-unit * 4 !default;  // 2rem
+$fractions        : 3 6 !default;
+$legacy           : false !default;
+$container        : ed-container !default;
+$item             : ed-item !default;
+$grid-container   : ed-grid !default;
+$grid-item        : -cols- !default;
 $max-grid-columns : 12 !default;
 
 // Breakpoints

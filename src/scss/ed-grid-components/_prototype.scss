@@ -1,5 +1,5 @@
 @mixin ratio($h,$v) {
-  $width : 100%;
+  $width         : 100%;
   width          : $width;
   height         : 0;
   overflow       : hidden;

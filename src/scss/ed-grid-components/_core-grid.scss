@@ -132,5 +132,13 @@
  &[class*="-cross-"] {
    display: grid;
  }
+
+  
+  @include dev-container;
+      
+  > * {
+    @include dev-item;
+  }
+
 }
 

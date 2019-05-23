@@ -19,17 +19,13 @@
 @mixin edContainer {
   @extend %ed-container;
 
-  @if $dev == true {
-    @include devModeContainer();
-  }
+  @include dev-container;
 }
 
 @mixin ed-container {
   @extend %ed-container;
 
-  @if $dev == true {
-    @include devModeContainer();
-  }
+  @include dev-container;
 }
 
 // Hace que un elemento siempre mida el 100% del ancho disponible
@@ -58,9 +54,7 @@
 @mixin edItem($s:100,$m:$s,$l:$m,$xl:$l) {
   @extend %ed-item;
 
-  @if $dev == true {
-    @include devModeItem();
-  }
+  @include dev-item;
 
   // calcular el ancho para el primer breakpoint
   // por defecto es 100% y se convertirá al porcentaje adecuado
@@ -83,9 +77,7 @@
 @mixin ed-item($s:100,$m:$s,$l:$m,$xl:$l) {
   @extend %ed-item;
 
-  @if $dev == true {
-    @include devModeItem();
-  }
+  @include dev-item;
 
   // calcular el ancho para el primer breakpoint
   // por defecto es 100% y se convertirá al porcentaje adecuado
