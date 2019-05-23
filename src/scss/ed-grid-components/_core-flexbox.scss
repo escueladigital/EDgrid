@@ -2,7 +2,7 @@
 %ed-container {
   display      : flex;
   flex-wrap    : wrap;
-  max-width    : $max-width;
+  max-width    : var(--max-width);
   margin-left  : auto;
   margin-right : auto;
   width        : 100%;
@@ -13,6 +13,11 @@
   margin        : 0;
   padding-left  : $gap / 2;
   padding-right : $gap / 2;
+}
+
+// Hace que un elemento siempre mida el 100% del ancho disponible
+@mixin full {
+  max-width : 100%;
 }
 
 // mixin para crear un ed-container
@@ -26,11 +31,11 @@
   @extend %ed-container;
 
   @include dev-container;
-}
 
-// Hace que un elemento siempre mida el 100% del ancho disponible
-@mixin full {
-  max-width : 100%;
+  &.full {
+    @include full;
+  }
+
 }
 
 @mixin edItemWidth($currentBp, $prevBp, $coreBp){
