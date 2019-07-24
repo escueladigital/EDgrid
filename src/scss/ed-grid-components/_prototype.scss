@@ -60,10 +60,6 @@ $z-indexs: (
       border-radius: var(--border-radius);
     }
 
-    &-radius-none {
-      border-radius: none;
-    }
-
     // boder top, left, right, bottom
     @each $direction in top right bottom left {
       &-border-#{$direction} {
@@ -80,10 +76,22 @@ $z-indexs: (
       &-radius-#{$corner} {
         border-#{map-get($border-radius,$corner)}-radius: var(--border-radius);
       }
+    }
 
+    @include prototype("radius", "border-radius");
+
+    @each $corner in map-keys($border-radius) {
+      @include prototype("radius-#{$corner}", "border-#{map-get($border-radius,$corner)}-radius");
+    }
+
+    @each $corner in map-keys($border-radius) {
       &-radius-#{$corner}-none {
         border-#{map-get($border-radius,$corner)}-radius: 0;
       }
+    }
+
+    &-radius-none {
+      border-radius: none;
     }
 
     // Backgrounds
