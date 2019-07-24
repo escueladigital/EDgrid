@@ -1,0 +1,62 @@
+/// Muestra un elemento a partir del breakpoint especificado
+/// @group   visibility
+/// @author  Alvaro Felipe
+/// @param   {number} $bp - breakpoint a partir del cual mostrar el elemento
+/// @example scss
+///   .sidebar {
+///     @include showFrom(l);
+///   }
+@mixin showFrom($bp){
+  @include to($bp){
+    display : none;
+  }
+}
+
+/// Muestra un elemento por debajo del breakpoint especificado.
+/// @group   visibility
+/// @author  Alvaro Felipe
+/// @param   {number} $bp - breakpoint.
+/// @example scss
+///   .sidebar {
+///     @include showFrom(l);
+///   }
+@mixin showTo($bp){
+  @include from($bp){
+    display : none;
+  }
+}
+
+/// Oculta un elemento a partir del breakpoint especificado
+/// @group   visibility
+/// @author  Alvaro Felipe
+/// @param   {number} $bp - breakpoint a partir del cual ocultar el elemento
+/// @example scss
+///   .sidebar {
+///     @include hideFrom(l);
+///   }
+@mixin hideFrom($bp){
+  @include from($bp){
+    display : none;
+  }
+}
+
+/// Oculta un elemento por debajo del breakpoint especificado.
+/// @group   visibility
+/// @author  Alvaro Felipe
+/// @param   {number} $bp - breakpoint
+/// @example scss
+///   .sidebar {
+///     @include hideFrom(l);
+///   }
+@mixin hideTo($bp){
+  @include to($bp){
+    display : none;
+  }
+}
+
+// Version css
+@each $size, $screenSize in $breakpoints {
+  .from-#{$size} { @include showFrom($size) }
+  .to-#{$size} { @include showTo($size) }
+}
+

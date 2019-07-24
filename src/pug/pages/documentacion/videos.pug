@@ -1,0 +1,10 @@
+extends ../../config/template
+append config
+  -title = "EDgrid | Videos responsive (Sass/CSS)"
+  -description = "ed-grid le permite insertar videos responsive con la proporcion 16:9 en cualquier breakpoint. El video siempre se expandirá al 100% del ancho de su contenedor. Uso con CSS (cssHelpers) Añada la clase ed-video al contenedor de su video (que puede ser un iframe elemento video o cualquier elemento con la clase .video)"
+  -ogUrl = "/videos.html"
+  -docsMenu = true
+
+block main
+    main(itemscope itemprop="mainContentOfPage" role="main")
+      include:markdown-it(html) ../../../md/docs/videos.md

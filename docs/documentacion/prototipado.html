@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>EDgrid | Base (CSS/Sass)</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta name="description" content="Los estilos base normalizan los elementos HTML para Responsive Web Design.">
+    <!-- Estilos-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:700">
+    <link rel="stylesheet" href="/css/styles.css?180113">
+    <link rel="shortcut icon" href="/assets/img/edgrid-favicon.png">
+    <meta property="og:title" content="EDgrid | Base (CSS/Sass)">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Los estilos base normalizan los elementos HTML para Responsive Web Design.">
+    <meta property="og:url" content="/base.html">
+    <meta property="og:image" content="/assets/img/edgrid-poster.jpg">
+    <meta property="og:site_name" content="EDteam">
+    <meta property="og:locale" content="es_PE">
+    <meta property="og:locale:alternate" content="es_CO">
+    <meta property="og:locale:alternate" content="es_MX">
+    <meta property="og:locale:alternate" content="es_DO">
+    <meta property="og:locale:alternate" content="es_BO">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="EDgrid | Base (CSS/Sass)">
+    <meta property="twitter:site" content="@EDteamLat">
+    <meta property="twitter:description" content="Los estilos base normalizan los elementos HTML para Responsive Web Design.">
+    <meta name="theme-color" content="#007BDF">
+  </head>
+  <!-- Body-->
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <header class="main-header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="ed-grid s-grid-5 cols-lg-10">
+        <div class="s-cols-2 cross-center" itemscope itemtype="http://schema.org/Organization"><a href="/" itemprop="url"><img class="main-logo" alt="Logotipo de EDgrid" itemprop="logo" src="/assets/img/EDgrid-logo.svg"></a></div>
+        <div class="s-cols-3 lg-cols-8 main-menu-container s-cross-center s-main-end">
+          <nav class="main-menu" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation" id="main-menu">
+            <ul>
+              <li itemprop="url"><a href="/documentacion" target="" itemprop="name" title="Enlace de Documentación">Documentación</a></li>
+              <li itemprop="url"><a href="/casos-de-exito" target="" itemprop="name" title="Enlace de Casos de éxito">Casos de éxito</a></li>
+              <li itemprop="url"><a href="/changelog" target="" itemprop="name" title="Enlace de Changelog">Changelog</a></li>
+              <li itemprop="url"><a href="/creditos" target="" itemprop="name" title="Enlace de Créditos">Créditos</a></li>
+              <li itemprop="url"><a href="https://ed.team" target="&quot;_blank&quot;" itemprop="name" title="Enlace de Ir a EDteam">Ir a EDteam</a></li>
+            </ul>
+          </nav>
+          <div class="main-menu-toggle to-l" id="main-menu-toggle"></div>
+        </div>
+      </div>
+    </header>
+    <!-- Banner section-->
+    <!-- Main-->
+    <div class="l-block"></div>
+    <div class="ed-grid cols-l-4 main-section l-big-section">
+      <aside class="main-sidebar sidebar-first" itemscope="itemscope" itemtype="http://schema.org/WPSideBar" role="complementary">
+        <div class="vertical-menu-toggle to-l" id="vertical-menu-toggle" data-content="Filtros"></div>
+        <nav class="vertical-menu" itemscope itemtype="http://schema.org/WPSideBar" id="vertical-menu">
+          <ul>
+            <li itemprop="url"><a href="/documentacion" itemprop="name" title="Enlace de Comenzar con EDgrid">Comenzar con EDgrid</a></li>
+            <li itemprop="url"><a href="/documentacion/instalacion.html" itemprop="name" title="Enlace de Instalación">Instalación</a></li>
+            <li itemprop="url"><a href="/documentacion/estructura.html" itemprop="name" title="Enlace de Estructura de archivos">Estructura de archivos</a></li>
+            <li itemprop="url"><a href="/documentacion/personalizar.html" itemprop="name" title="Enlace de Personalizar EDgrid">Personalizar EDgrid</a></li>
+            <li itemprop="url"><a href="/documentacion/breakpoints.html" itemprop="name" title="Enlace de Breakpoints">Breakpoints</a></li>
+            <li itemprop="url"><a href="/documentacion/layout-flexbox.html" itemprop="name" title="Enlace de Columnas con Flexbox">Columnas con Flexbox</a></li>
+            <li itemprop="url"><a href="/documentacion/layout-css-grid.html" itemprop="name" title="Enlace de Filas y columnas con CSS Grid (beta)">Filas y columnas con CSS Grid (beta)</a></li>
+            <li itemprop="url"><a href="/documentacion/layout.html" itemprop="name" title="Enlace de Layout">Layout</a></li>
+            <li itemprop="url"><a href="/documentacion/distribucion.html" itemprop="name" title="Enlace de Distribucion">Distribucion</a></li>
+            <li itemprop="url"><a href="/documentacion/alineacion.html" itemprop="name" title="Enlace de Alineación">Alineación</a></li>
+            <li itemprop="url"><a href="/documentacion/visibilidad.html" itemprop="name" title="Enlace de Visibilidad">Visibilidad</a></li>
+            <li itemprop="url"><a href="/documentacion/mediaqueries.html" itemprop="name" title="Enlace de Mediaqueries">Mediaqueries</a></li>
+            <li itemprop="url"><a href="/documentacion/base.html" itemprop="name" title="Enlace de Estilos base">Estilos base</a></li>
+            <li itemprop="url"><a href="/documentacion/modo-dev.html" itemprop="name" title="Enlace de Modo dev">Modo dev</a></li>
+            <li itemprop="url"><a href="/documentacion/funciones.html" itemprop="name" title="Enlace de Funciones">Funciones</a></li>
+            <li itemprop="url"><a href="/documentacion/videos.html" itemprop="name" title="Enlace de Videos responsive">Videos responsive</a></li>
+            <li itemprop="url"><a href="/documentacion/menus.html" itemprop="name" title="Enlace de Menus">Menus</a></li>
+            <li itemprop="url"><a href="/documentacion/prototipado.html" itemprop="name" title="Enlace de Prototipado (beta)">Prototipado (beta)</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <div class="span-l-3">
+        <main itemscope itemprop="mainContentOfPage" role="main"><h1>Prototipado (beta)</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#botones">Botones</a></li>
+<li><a href="#bordes">Bordes</a></li>
+<li><a href="#esquinas-redondeadas">Esquinas redondeadas</a></li>
+<li><a href="#fondos">Fondos</a></li>
+<li><a href="#sombras">Sombras</a></li>
+<li><a href="#ratios">Ratios</a></li>
+<li><a href="#contenedores-de-im%C3%A1genes">Contenedores de imágenes</a></li>
+<li>Contenedor sticky (próximamente)</li>
+</ul>
+<!-- /TOC -->
+<hr>
+<p>EDgrid le permite hacer prototipos rápidos con poco esfuerzo.</p>
+<p><a id="markdown-botones" name="botones"></a></p>
+<h2>Botones</h2>
+<p>Agrega la clase <code>button</code> a un elemento. Si necesita darle márgenes, centrarlo, etc, use las clases que EDgrid proporciona.</p>
+<div class="button">Soy un boton</div>
+<p><a id="markdown-bordes" name="bordes"></a></p>
+<h2>Bordes</h2>
+<ul>
+<li>Use la clase <code>breakpoint-border</code> para agregar un borde a los cuatro lados.</li>
+<li>Use la clase <code>breakpoint-border-none</code> para anular el borde en los cuatro lados.</li>
+<li>Use la clase <code>breakpoint-border-[top|right|bottom|left]</code> para agregar un borde solo en el lado seleccionado.</li>
+<li>Use la clase <code>breakpoint-border-[top|right|bottom|left]-none</code> para anular el borde en el lado seleccionado.</li>
+</ul>
+<pre><code class="language-html">&lt;div class=&quot;s-border lg-30 lg-to-center s-pxy-2&quot;&gt;
+    &lt;h3 class=&quot;s-border-bottom&quot;&gt;Soy una tarjeta&lt;/h3&gt;
+    &lt;p class=&quot;s-mb-0&quot;&gt;Yo soy el contenido de esta tarjeta&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<div class="s-border lg-30 lg-to-center s-pxy-2">
+<h3 class="s-border-bottom">Soy una tarjeta</h3>
+<p class="s-mb-0">Yo soy el contenido de esta tarjeta</p>
+</div>
+<p><a id="markdown-esquinas-redondeadas" name="esquinas-redondeadas"></a></p>
+<h2>Esquinas redondeadas</h2>
+<ul>
+<li>Use la clase <code>breakpoint-radius</code> para asignar un border-radius a las cuatro esquinas.</li>
+<li>Use la clase <code>breakpoint-radius-none</code> para anular el border-radius de las cuatro esquinas</li>
+<li>Use la clase <code>breakpoint-radius-[tl|tr|br|bl]</code> para agregar border-radius en <code>top-left|top-right|bottom-right|bottom-left</code> respectivamente</li>
+<li>Use la clase <code>breakpoint-radius-[tl|tr|br|bl]-none</code> para anular el border-radius en <code>top-left|top-right|bottom-right|bottom-left</code> respectivamente</li>
+</ul>
+<pre><code class="language-html">&lt;div class=&quot;s-radius s-border lg-30 lg-to-center s-pxy-2&quot;&gt;
+    &lt;h3 class=&quot;s-border-bottom&quot;&gt;Soy una tarjeta&lt;/h3&gt;
+    &lt;p class=&quot;s-mb-0&quot;&gt;Yo soy el contenido de esta tarjeta&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<div class="s-radius s-border lg-30 lg-to-center s-pxy-2">
+<h3 class="s-border-bottom">Soy una tarjeta</h3>
+<p class="s-mb-0">Yo soy el contenido de esta tarjeta</p>
+</div>
+<p><a id="markdown-fondos" name="fondos"></a></p>
+<h2>Fondos</h2>
+<p>Puede usar las clases <code>breakpoint-bg-[grey|blue]</code> Para asignarle un fondo a un elemento. Así podemos crear componentes muy rápido. Por ejemplo, tarjetas:</p>
+<pre><code class="language-html">&lt;div class=&quot;lg-50 lg-to-center s-bg-grey s-radius s-pxy-2 l-block&quot;&gt;
+    &lt;p&gt;EDgrid es una libreria construida con Sass (y con versión CSS) 
+        para Responsive Web Design (RWD). Es muy ligero, personalizable 
+        y te permite prototipar y crear layouts en muy poco tiempo 
+        sin conflictos con tu proyecto.&lt;/p&gt;
+    &lt;div class=&quot;button&quot;&gt;Empezar con EDgrid&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<div class="lg-50 lg-to-center s-bg-grey s-radius s-pxy-2 l-block">
+    <p>EDgrid es una libreria construida con Sass (y con versión CSS) 
+    para Responsive Web Design (RWD). Es muy ligero, personalizable 
+    y te permite prototipar y crear layouts en muy poco tiempo sin 
+    conflictos con tu proyecto.</p>
+    <div class="button">Empezar con EDgrid</div>
+</div>
+<pre><code class="language-html">&lt;div class=&quot;lg-50 lg-to-center s-border s-radius&quot;&gt;
+  &lt;p class=&quot;s-pxy-2 s-mb-0&quot;&gt;EDgrid es una libreria construida con Sass 
+      (y con versión CSS) para Responsive Web Design (RWD). Es muy ligero, 
+      personalizable y te permite prototipar y crear layouts en muy poco
+      tiempo sin conflictos con tu proyecto.&lt;/p&gt;
+  &lt;div class=&quot;s-bg-grey s-pxy-2&quot;&gt;
+    &lt;div class=&quot;button&quot;&gt;Empezar con EDgrid&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<div class="lg-50 lg-to-center s-border s-radius">
+<p class="s-pxy-2 s-mb-0">EDgrid es una libreria construida con Sass (y con versión CSS) para Responsive Web Design (RWD). Es muy ligero, personalizable y te permite prototipar y crear layouts en muy poco tiempo sin conflictos con tu proyecto.</p>
+<div class="s-bg-grey s-pxy-2">
+    <div class="button">Empezar con EDgrid</div>
+</div>
+</div>
+<p><a id="markdown-sombras" name="sombras"></a></p>
+<h2>Sombras</h2>
+<ul>
+<li>Use las clases <code>breakpoint-shadow</code> para aplicar sombras en los cuatro lados.</li>
+<li>Use las clases <code>breakpoint-shadow-[top|right|bottom|left]</code> para aplicar sombras en los lados seleccionados</li>
+<li>Use las clases <code>breakpoint-shadow-none</code> para anular las sombras en los cuatro lados.</li>
+</ul>
+<pre><code class="language-html">&lt;img class=&quot;s-shadow s-block-center&quot; src=&quot;/img/tioalexys.jpg&quot;&gt;
+</code></pre>
+<img class="s-shadow s-block-center l-block" src="https://ed.team/sites/default/files/styles/perfil_en_views_200x200_/public/pictures/2018-11/tioalexys.jpg">
+<pre><code class="language-html">&lt;div class=&quot;s-shadow-bottom lg-50 lg-to-center s-border s-radius&quot;&gt;
+  &lt;p class=&quot;s-pxy-2 s-mb-0&quot;&gt;EDgrid es una libreria construida con Sass 
+      (y con versión CSS) para Responsive Web Design (RWD). Es muy ligero, 
+      personalizable y te permite prototipar y crear layouts en muy poco 
+      tiempo sin conflictos con tu proyecto.&lt;/p&gt;
+  &lt;div class=&quot;s-bg-grey s-pxy-2&quot;&gt;
+    &lt;div class=&quot;button&quot;&gt;Empezar con EDgrid&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<div class="s-shadow-bottom lg-50 lg-to-center s-border s-radius">
+<p class="s-pxy-2 s-mb-0">EDgrid es una libreria construida con Sass (y con versión CSS) para Responsive Web Design (RWD). Es muy ligero, personalizable y te permite prototipar y crear layouts en muy poco tiempo sin conflictos con tu proyecto.</p>
+<div class="s-bg-grey s-pxy-2">
+    <div class="button">Empezar con EDgrid</div>
+</div>
+</div>
+<p><a id="markdown-ratios" name="ratios"></a></p>
+<h2>Ratios</h2>
+<p>Con los ratios puede obtener elementos de un proporcion de ancho y alto definidos. Por ejemplo <strong>3 x 1</strong> (el triple de ancho que de alto). Tenga en cuenta que por limitaciones de css los elementos con ratio siempre tienen el 100% del ancho de su contenedor.</p>
+<p>Use las clases <code>breakpoint-ratio-x-y</code> donde <code>x</code> y <code>y</code> son numeros enteros del 1 al 4. <code>x</code> representa el ancho y <code>y</code> el alto.</p>
+<pre><code class="language-html">&lt;div class=&quot;ed-grid lg-grid-3 lg-60 lg-to-center s-pxy-1 s-border s-radius s-shadow-bottom&quot;&gt;
+    &lt;div class=&quot;s-ratio-16-9 lg-ratio-2-3 s-bg-blue s-mb-2 lg-mb-0&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;lg-cols-2&quot;&gt;
+        &lt;h3&gt;Bienvenido a a EDgrid&lt;/h3&gt;
+        &lt;p&gt;EDgrid es una libreria construida con Sass (y con versión CSS) 
+            para Responsive Web Design (RWD). Es muy ligero, personalizable.&lt;/p&gt;
+        &lt;div class=&quot;button&quot;&gt;Comenzar con EDgrid&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<div class="ed-grid lg-grid-3 lg-60 lg-to-center s-pxy-1 s-border s-radius s-shadow-bottom l-block">
+    <div class="s-ratio-16-9 lg-ratio-2-3 s-bg-blue s-mb-2 lg-mb-0"></div>
+    <div class="lg-cols-2">
+        <h3>Bienvenido a a EDgrid</h3>
+        <p>EDgrid es una libreria construida con Sass (y con versión CSS) para Responsive Web Design (RWD). Es muy ligero, personalizable.</p>
+        <div class="button">Comenzar con EDgrid</div>
+    </div>
+</div>
+<p>Además EDgrid incluye las clases <code>breakpoint-ratio-16-9</code>, <code>breakpoint-ratio-9-16</code> y <code>breakpoint-ratio-21-9</code> Ya que son proporciones comunes de elementos multimedia.</p>
+<p><a id="markdown-contenedores-de-imágenes" name="contenedores-de-imágenes"></a></p>
+<h2>Contenedores de imágenes</h2>
+<p>Puede usar las clases de ratios para contener imagenes evitando que se desborden o se deformen. Solo agregue la clase <code>img-container</code>.</p>
+<pre><code class="language-html">&lt;div class=&quot;ed-grid s-grid-2 m-grid-3 lg-grid-4 s-cross-center&quot;&gt;
+    &lt;div class=&quot;s-ratio-4-3 img-container&quot;&gt;
+        &lt;img src=&quot;https://cocha2018.ed.team/assets/img/banner-edcamp.jpg&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;s-ratio-9-16 img-container&quot;&gt;
+        &lt;img src=&quot;https://cocha2018.ed.team/assets/img/banner-edcamp.jpg&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;circle&quot;&gt;
+        &lt;img src=&quot;https://cocha2018.ed.team/assets/img/banner-edcamp.jpg&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;s-ratio-16-9 img-container&quot;&gt;
+        &lt;img src=&quot;https://cocha2018.ed.team/assets/img/banner-edcamp.jpg&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>La imagen es la misma en todos los casos:</p>
+<div class="ed-grid s-grid-2 m-grid-3 lg-grid-4 l-block s-cross-center">
+    <div class="s-ratio-4-3 img-container">
+        <img src="https://cocha2018.ed.team/assets/img/banner-edcamp.jpg">
+    </div>
+    <div class="s-ratio-9-16 img-container">
+        <img src="https://cocha2018.ed.team/assets/img/banner-edcamp.jpg">
+    </div>
+    <div class="circle img-container">
+        <img src="https://cocha2018.ed.team/assets/img/banner-edcamp.jpg">
+    </div>
+    <div class="s-ratio-16-9 img-container">
+        <img src="https://cocha2018.ed.team/assets/img/banner-edcamp.jpg">
+    </div>
+</div>
+<ul>
+<li>Puede usar la clase <code>circle</code> para obtener un círculo perfecto sin usar clases de ratio. Si va a usarlo para contener una imagen, agregué tambien la clase <code>img-container</code>.</li>
+</ul>
+<p>Ejemplo de tarjeta:</p>
+<pre><code class="language-html">&lt;div class=&quot;lg-50 lg-to-center&quot;&gt;
+    &lt;!--Contenedor de la imagen--&gt;
+    &lt;div class=&quot;s-ratio-16-9 img-container s-radius-tl s-radius-tr&quot;&gt;
+        &lt;img src=&quot;/img/curso.jpg&quot;&gt;
+    &lt;/div&gt;
+    &lt;!--Contenido--&gt;
+    &lt;div class=&quot;s-border s-radius-br s-radius-bl s-shadow-bottom&quot;&gt;
+        &lt;div class=&quot;s-pxy-2&quot;&gt;
+            &lt;h3&gt;Curso Bases de Datos Desde Cero&lt;/h3&gt;
+            &lt;p class=&quot;s-mb-0&quot;&gt;Diseña, estructura y administra bases de datos 
+                SQL y crea un sistema de facturación&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;footer class=&quot;s-cross-center s-bg-grey s-pxy-2&quot;&gt;
+            &lt;!--Define el ancho máximo de la imagen--&gt;
+            &lt;div class=&quot;s-10 s-mr-1&quot;&gt;
+            &lt;!--Contenedor de la imagen--&gt;
+            &lt;div class=&quot;circle img-container&quot;&gt;
+                &lt;img  src=&quot;/img/tioalexys.jpg&quot;&gt;
+            &lt;/div&gt;
+            &lt;!--Profesor--&gt;
+            &lt;/div&gt;
+            &lt;p class=&quot;s-mb-0&quot;&gt;Prof. Alexys Lozada&lt;/p&gt;
+            &lt;!--Boton--&gt;
+            &lt;div class=&quot;button s-to-right&quot;&gt;$40USD&lt;/div&gt;
+        &lt;/footer&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<div class="lg-50 lg-to-center">
+    <!--Contenedor de la imagen-->
+    <div class="s-ratio-16-9 img-container s-radius-tl s-radius-tr">
+        <img src="https://ed.team/sites/default/files/styles/large/public/courses/images/sql.jpg?itok=ndgCTmxW">
+    </div>
+    <!--Contenido-->
+    <div class="s-border s-radius-br s-radius-bl s-shadow-bottom">
+        <div class="s-pxy-2">
+            <h3>Curso Bases de Datos Desde Cero</h3>
+            <p class="s-mb-0">Diseña, estructura y administra bases de datos SQL y crea un sistema de facturación</p>
+        </div>
+        <footer class="s-cross-center s-bg-grey s-pxy-2">
+            <!--Define el ancho máximo de la imagen-->
+            <div class="s-10 s-mr-1">
+            <!--Contenedor de la imagen-->
+            <div class="circle ">
+                <img  src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2018-11/tioalexys.jpg?itok=7vDpJuSh">
+            </div>
+            <!--Profesor-->
+            </div>
+            <p class="s-mb-0">Prof. Alexys Lozada</p>
+            <!--Boton-->
+            <div class="button s-to-right">$40USD</div>
+        </footer>
+    </div>
+</div>
+
+        </main>
+      </div>
+    </div>
+    <!-- Footer-->
+    <footer class="main-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+      <div class="ed-container main-footer--content">
+        <div class="ed-item l-50 s-to-center s-center">
+          <p class="smaller s-mb-1">EDgrid es una librería Sass/Css para crear diseños web responsive y mobile first.<a class="icon-slack space" href="https://join.slack.com/t/edlabs/shared_invite/enQtMjk1MjcxOTUzMzgxLTgyY2MwZjY3ODRhNGQyMWJkOWRkOGFlZjQ1YjJiYjAxOTMwNGIzMGViMjc5ODZmMmI3ZGFlNGNiMTEwNGIyNzc" target="_blank" title="Slack de EDgrid"></a><a class="icon-github space" href="https://github.com/escueladigital/EDgrid" target="_blank" title="EDgrid en EDgrid"></a><a class="icon-docs space" href="documentacion" target="_blank" title="Documentación de EDgrid"></a></p>
+          <p class="smaller s-mb-1">EDgrid es una marca de <a href="https://ed.team" target="_blank">EDteam</a>. Repositorio de este sitio web en  <a href="https://github.com/escueladigital/EDgrid" target="_blank">Github</a></p>
+        </div>
+        <div class="ed-item">
+          <p class="smaller s-center s-mb-0"><a href="https://ed.team/alvaro" target="_blank" title="Blog de Alvaro Felipe">Alvaro Felipe </a><span>2015 - 2019</span></p>
+        </div>
+      </div>
+    </footer>
+    <script src="/js/scripts.js"></script>
+  </body>
+</html>

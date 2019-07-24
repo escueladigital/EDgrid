@@ -1,0 +1,193 @@
+/// Devuelve true si el breakpoint es parte del core
+/// @group mq
+/// @author  Alvaro Felipe
+/// @param   {number} $bp - breakpoint
+/// @example scss
+///    .elemento {
+///      @if isCoreBreakpoint(l) {
+///        $customBp : 720px;
+///        ....
+///      }
+///    }
+@function isCoreBreakpoint($bp){
+  @if map-get($breakpoints,$bp) {
+    @return true
+  } @else {
+    @return false
+  }
+}
+
+/// Devuelve true si el breakpint es válido (em, rem, px)
+/// @group   mq
+/// @author  Alvaro Felipe
+/// @param   {number} $bp - breakpoint a verificar.
+@function isValidBreakpoint($bp){
+  @if type-of($bp) == number and (unit($bp) == 'px' or unit($bp) == 'em' or unit($bp) == 'rem') {
+    @return true
+  } @else {
+    @return false
+  }
+}
+
+/// Obtiene un breakpoint del core
+/// @group   mq
+/// @author  Alvaro Felipe
+/// @param   {number} $bp - breakpoint a obtener.
+@function getBp($bp){
+  @return map-get($breakpoints,$bp)
+}
+
+/// Convierte un valor en em o rem a px
+/// @group   mq
+/// @author  Alvaro Felipe
+/// @param   {number} $value - var a convertir a pixeles.
+@function toPx($value){
+  @if type-of($value) == number {
+    @if unit($value) == 'em'{
+      @return ($value / 1em) * 16px;
+    } @else if unit($value) == 'rem'{
+      @return ($value / 1rem) * 16px
+    } @else if unit($value) == 'px' {
+      @return $value;
+    } @else {
+      @error "La funcion toPx() solo acepta numeros en em o rem o px"
+    }
+  } @else {
+    @error "La funcion toPx() solo acepta numeros en em o rem"
+  }
+}
+
+/// From (mayor que $bp)
+/// @group   mq
+/// @author  Alvaro Felipe
+/// @param   {number} $from - breakpoint
+/// @example scss
+///     .elemento {
+///       width: 30%;
+///       @include from(m) {
+///         width: 50%;
+///       }
+///     }
+@mixin from($from){
+  // Si el bp es del core de EDgrid
+  @if isCoreBreakpoint($from){
+    // no imprime media query para tamaño s
+    @if $from == s {
+      @content
+    }
+    // imprime media query en los otros tamaños
+    @else {
+      @media screen and (min-width: getBp($from)){ @content }
+    }
+  }
+  // Si el bp no es del core de EDgrid pero es una unidad válida
+  @else if isValidBreakpoint($from){
+    @media screen and (min-width: $from){ @content }
+  }
+  // Error
+  @else {
+    @error 'El mixin from() solo puede recibir un breakpoint del Core (#{map-keys($breakpoints)}) o un número en px, em o rem'
+  }
+}
+
+/// To (es menor que $to)
+/// @group   mq
+/// @author  Alvaro Felipe
+/// @param   {number} $to - breakpoint
+/// @example scss
+///     .elemento {
+///       width: 50%;
+///       @include to(m) {
+///         width: 30%;
+///       }
+///     }
+@mixin to($to){
+  // Si es un breakpoint del core
+  @if isCoreBreakpoint($to){
+    @if $to == s {
+      @content;
+    } @else {
+      @media screen and (max-width : getBp($to) - 1px) { @content }
+    }
+  }
+  // Si es un breakpoint válido (px, em, rem)
+  @else if isValidBreakpoint($to){
+    @media screen and (max-width: toPx($to) - 1px){ @content }
+  }
+  // Si no es un breakpoint válido lanzar error
+  @else {
+    @error 'El mixin to() solo puede recibir un breakpoint del Core (#{map-keys($breakpoints)}) o un número en px, em o rem'
+  }
+}
+
+/// fromTo la regla se ejecuta entre ambos breakpoints.
+/// @group   mq
+/// @author  Alvaro Felipe
+/// @param   {number} $from - breakpoint desde que medida se iniciara la regla.
+/// @param   {number} $to - breakpoint hasta que medida se ejecutara la regla.
+/// @example scss
+///     .elemento {
+///       background-color: cyan;
+///       @include fromTo(s, l) {
+///         background-color: darken(cyan, .8);
+///       }
+///     }
+@mixin fromTo($from,$to){
+  // Si ambos son breakpoints del core
+  @if isCoreBreakpoint($from) and isCoreBreakpoint($to){
+    @if getBp($to) > getBp($from) {
+      @media screen and (min-width : getBp($from)) and (max-width : getBp($to) - 1px) {
+        @content
+      }
+    } @else {
+      @error "El segundo argumento del mixin fromTo debe ser mayor que el primero"
+    }
+  }
+
+  // Si solo $from es breakpoint del core
+  @else if isCoreBreakpoint($from) and not isCoreBreakpoint($to){
+    @if isValidBreakpoint($to) {
+      @if toPx($to) > toPx(getBp($from)) {
+        @media screen and (min-width : getBp($from)) and (max-width : toPx($to) - 1px) {
+          @content
+        }
+      } @else {
+        @error "El segundo argumento del mixin fromTo debe ser mayor que el primero"
+      }
+    } @else {
+      @error "El segundo argumento del mixin fromTo() debe ser un breakpoint del Core (#{map-keys($breakpoints)}) o un número en px, em o rem"
+    }
+  }
+
+  // Si solo $to es breakpoint del core
+  @else if not isCoreBreakpoint($from) and isCoreBreakpoint($to) {
+    @if isValidBreakpoint($from) {
+      @if toPx(getBp($to)) > toPx($from){
+        @media screen and (min-width : $from) and (max-width : getBp($to) - 1px) {
+          @content
+        }
+      } @else {
+        @error "El segundo argumento del mixin fromTo debe ser mayor que el primero"
+      }
+    }
+    @else {
+      @error "El primer argumento del mixin fromTo() debe ser un breakpoint del Core (#{map-keys($breakpoints)}) o un número en px, em o rem"
+    }
+  }
+
+  // Si no son breakpoints del core pero son breakpoints válidos (px, em, rem)
+  @else if isValidBreakpoint($from) and isValidBreakpoint($to){
+    @if toPx($to) > toPx($from) {
+      @media screen and (min-width : $from) and (max-width : toPx($to) - 1px) {
+        @content
+      }
+    } @else {
+      @error "El segundo argumento del mixin fromTo debe ser mayor que el primero"
+    }
+  }
+
+  // Si al menos hay un breakpoint inválido
+  @else {
+    @error 'Los argumentos del mixin fromTo() deben ser breakpoints del Core (#{map-keys($breakpoints)}) o números en px, em o rem';
+  }
+}

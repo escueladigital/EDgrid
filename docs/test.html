@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .dev .ed-grid {
+      outline: 1px solid hsl(0,100%,80%);
+      padding : 5px;
+      position : relative;
+    }
+    .dev .ed-grid::before {
+      content: attr(class);
+      position : absolute;
+      bottom : 0;
+      right : 0;
+      background : hsl(0,100%,80%);
+      color: #fff;
+      padding : 2px 6px;
+      opacity : .9;
+    }
+    .dev .ed-grid > * {
+      outline: 1px solid hsl(120,100%,40%);
+      position : relative;
+    }
+
+    .dev .ed-grid > *::before {
+      font-size : 14px;
+      font-weight : normal;
+      content: attr(class);
+      position : absolute;
+      bottom : 0;
+      right : 0;
+      background : hsl(120,100%,40%);
+      color: #fff;
+      padding : 2px 6px;
+      opacity : .9;
+    }
+  </style>
+</head>
+<body>
+
+</body>
+</html>

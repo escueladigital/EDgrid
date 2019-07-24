@@ -1,0 +1,107 @@
+// altura de los pseudoelementos que imprimiran clases
+$info-height    : rem(20px);
+$info-font-size : $info-height * 0.6;
+
+%info {
+  content     : attr(class);
+  font-style  : italic;
+  font-size   : $info-font-size;
+  font-weight : normal;
+
+  z-index     : 1;
+  right       : 0;
+  position    : absolute;
+
+  display     : table;
+  width       : 100%;
+  padding     : 0 em(5px);
+  height      : $info-height;
+  line-height : $info-height;
+}
+
+// estilos para los containers en modo dev
+@mixin dev-container-style {
+  $dev-color    : tomato;
+  padding-top   : $info-height;
+  margin-bottom : 10px;
+  outline       : 1px solid $dev-color;
+  position      : relative;
+
+  .#{$container}, 
+  .#{$grid-container} { margin-bottom : 0 }
+
+  &:before {
+    @extend %info;
+    top        : 0;
+    background : rgba($dev-color, .3);
+    color      : $dev-color;
+  }
+}
+
+@mixin dev-container{
+  @if $dev == true {@include dev-container-style} 
+  @else if $dev-hover == true {&:hover {@include dev-container-style}}
+}
+
+// estilos para los items en modo dev
+@mixin dev-item-style {
+  $dev-color       : steelblue;
+  position         : relative;
+  padding-bottom   : $info-height;
+  background-color : rgba($dev-color, 0.1);
+  outline          : 1px solid $dev-color;
+  background-clip  : content-box;
+
+  &:before {
+    @extend %info;
+    background : rgba($dev-color, .8);
+    color      : #FFF;
+    bottom     : 0;
+  }
+}
+
+@mixin dev-item {
+  @if $dev == true {@include dev-item-style}
+  @else if $dev-hover == true {&:hover {@include dev-item-style}}
+}
+
+// Mixin para modo desarrollo
+@mixin dev-mode {
+  margin   : 0 !important;
+  position : relative;
+  top      : 66px;
+
+  // imprimir información del breakpoint
+  &:before {
+    @extend %info;
+    position    : fixed;
+    background  : steelblue;
+    color       : #FFF;
+    font-size   : $info-height * 0.7;
+    text-align  : center;
+    line-height : 36px;
+    height      : 36px;
+    top         : 0;
+  }
+
+  @each $size, $screen-size in $breakpoints {
+    @include from($size) {
+      &:before {
+        content : "ed-grid: size #{$size}, from #{$screen-size} (ed-containers: red, ed-items: blue, yellow)";
+      }
+    }
+  }
+}
+
+// Incluir el modo dev en body
+@if $dev == true {
+  body { @include dev-mode }
+}
+
+// CSS
+body.dev,
+body.desarrollo {
+  @include dev-mode;
+  .ed-container { @include dev-container; }
+  .ed-item { @include dev-item }
+}

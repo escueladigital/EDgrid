@@ -1,0 +1,20 @@
+mixin card(cardImage, cardTitle, cardSub, cardText, cardlink, user, imageUser,  linkuser)
+  .card
+    .card__img
+      img(src=cardImage)
+    .card__content
+      .card__title=cardTitle
+      .card__subtitle
+        p=cardSub
+      .card__body
+        p=cardText
+      footer.card__footer
+        if (user !== "no")
+          .card__user
+            .card__user-img
+              img(src=imageUser)
+            .card__user-name
+              a(target="_blank" href=linkuser)= user
+        .card__button
+          a(target="_blank" href=cardlink title=cardTitle).button--ghost--tertiary.button--small Ver página
+

@@ -1,0 +1,10 @@
+extends ../../config/template
+append config
+  -title = "EDgrid | Estructura"
+  -description = "La siguiente es la estructura de archivos de ed-grid. Solo se explican los archivos y directorios propios del proyecto y no las herramientas comunes de desarrollo (package.json, .gitignore, etc)"
+  -ogUrl= "/estructura.html"
+  -docsMenu = true
+
+block main
+  main(itemscope itemprop="mainContentOfPage" role="main")
+    include:markdown-it(html) /src/md/estructura.md

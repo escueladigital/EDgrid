@@ -1,0 +1,70 @@
+// Configuraciones
+$prototype        : true !default;
+$dev              : false !default;
+$dev-hover        : false !default;
+$max-width        : 1200px !default;
+$l-unit           : .5rem !default;
+$gap              : $l-unit * 4 !default;  // 2rem
+$fractions        : 3 6 !default;
+$legacy           : false !default;
+$container        : ed-container !default;
+$item             : ed-item !default;
+$grid-container   : ed-grid !default;
+$grid-item        : -cols- !default;
+$max-grid-columns : 12 !default;
+
+// Breakpoints
+$breakpoints : (
+  s  : 0,
+  m  : 640px,
+  l  : 1024px,
+  lg : 1024px,
+  xl : 1440px
+) !default;
+
+$sizes: map-keys($breakpoints);
+
+// Importa archivos de configuración
+@import "web-styles/config/mixins";
+
+// Importar componentes
+// Core
+@import "ed-grid-components/functions";
+@import "ed-grid-components/base";
+@import "ed-grid-components/media-queries";
+@import "ed-grid-components/dev";
+@import "ed-grid-components/core-flexbox";
+@import "ed-grid-components/core-grid";
+@import "ed-grid-components/layout";
+@import "ed-grid-components/alignment";
+// Recommended Utilities
+@import "ed-grid-components/visibility";
+@import "ed-grid-components/prototype";
+@import "ed-grid-components/video";
+@import "ed-grid-components/ed-menu";
+// Not recomended (legacy)
+// Mixins
+@import "ed-grid-components/offset";
+@import "ed-grid-components/grid";
+// Generate css from offsets and grid mixins
+@import "ed-grid-components/legacy";
+
+// CSS Variables
+:root {
+  // Prototype
+  --color                  : #007BDF;
+  --color-alt              : #006DC6;
+  --border-color           : #DFE0E0;
+  --light-bg               : #F0F0F0;
+  --border-radius          : #{$l-unit * 0.5}; // .25rem
+  // layout
+  --vertical-block-space   : #{$l-unit * 2};  // 1rem
+  --vertical-content-space : #{$l-unit * 2};  // 1rem
+  --gap                    : #{$l-unit * 2};  // 1rem
+  --max-width              : #{$max-width};
+
+  @include from(lg) {
+    --vertical-block-space : #{$l-unit * 4};
+    --gap                  : #{$l-unit * 4};  // 2rem
+  }
+}

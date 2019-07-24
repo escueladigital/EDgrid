@@ -1,0 +1,10 @@
+extends /src/pug/config/template
+append config
+  -title = "EDgrid | Distribucion"
+  -description = "Distrubción y dirección de los elementos"
+  -ogUrl = "/docs/distribucion.html"
+  -docsMenu = true
+
+block main
+  main(itemscope itemprop="mainContentOfPage" role="main")
+    include:markdown-it(html) /src/md/distribucion.md

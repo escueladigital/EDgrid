@@ -1,0 +1,148 @@
+/* Alineación de contenido */
+// Recorrer los breakpoints
+@each $size in $sizes {
+  // Lista de alineaciones
+  $aligns : left, center, right;
+  // Crea las alineaciones por cada breakpoint
+  @include from($size) {
+    // Crea las alineaciones de contenido
+    @each $align in $aligns {
+      .#{$size}-#{$align} {
+        text-align : $align;
+      }
+    }
+    // Crea las alineaciones de bloques
+    .#{$size}-to-left {
+      &[class*=button] { display: table }
+      margin-left  : 0;
+      margin-right : auto;
+
+    }
+    .#{$size}-to-center {
+      &[class*=button] { display: table }
+      margin-left  : auto;
+      margin-right : auto;
+    }
+    .#{$size}-to-right {
+      &[class*=button] { display: table }
+      margin-right : 0;
+      margin-left  : auto;
+    }
+
+    .#{$size}-block-left {
+      display      : block;
+      margin-left  : 0;
+      margin-right : auto;
+    }
+
+    .#{$size}-block-center {
+      display      : block;
+      margin-left  : auto;
+      margin-right : auto;
+    }
+
+    .#{$size}-block-right {
+      display      : block;
+      margin-right : 0;
+      margin-left  : auto;
+    }
+  }
+}
+
+// Order
+@each $size in $sizes {
+  @include from ($size) {
+    @for $i from 1 through $max-grid-columns {
+      .#{$size}-order-#{$i} {
+        order : $i;
+      }
+    }
+  }
+}
+
+// Flex aignments map
+// Used for build aligments properties in breakpoints
+$flex-alignments : (
+  row: (
+    flex-direction: row
+  ),
+  row-reverse: (
+    flex-direction: row-reverse
+  ),
+  column: (
+    flex-direction: column
+  ),
+  column-reverse: (
+    flex-direction: column-reverse
+  ),
+  justify: (
+    justify-content: space-between,
+  ),
+  distribute: (
+    justify-content: space-evenly
+  ),
+  main-start: (
+    justify-content: flex-start
+  ),
+  main-center: (
+    justify-content: center,
+  ),
+  main-end: (
+    justify-content: flex-end
+  ),
+  baseline: (
+    align-items: baseline,
+    align-content: baseline
+  ),
+  cross-start: (
+    align-items: flex-start,
+    align-content: flex-start
+  ),
+  cross-center: (
+    align-items: center,
+    align-content: center
+  ),
+  cross-end: (
+    align-items: flex-end,
+    align-content: flex-end
+  )
+);
+
+/* Crea selectores agrupados para propiedades básicas de flexbox*/
+// Recorre los breakpoints
+@each $size in $sizes {
+  // Selector inicial (placeholder)
+  $selectors : '.flex';
+  // Recorre el mapa de selectores
+  @each $selector, $property in $flex-alignments {
+    // Crea el selector actual
+    $selector : ".#{$size}-#{$selector}";
+    // Concatena el selector actual a la lista total de selectores (con coma)
+    $selectors : append($selectors, unquote($selector), comma);
+  }
+  @include from($size) {
+    #{$selectors} {
+      display   : flex;
+      flex-wrap : wrap;
+    }
+  }
+}
+
+/*Crea selectores de flex alignment en todos los breakpoints*/
+
+// Recorre los breakpoints
+@each $size  in $sizes {
+  @include from($size) {
+    // Recorre el mapa de selectores
+    @each $selector, $property in $flex-alignments {
+      // Construye el selector
+      .#{$size}-#{$selector} {
+        // Recorre el submapa de propiedades y valores
+        @each $prop, $value in $property {
+          // Imprime cada propiedad y valor
+          #{$prop} : $value;
+        }
+      }
+    }
+  }
+}

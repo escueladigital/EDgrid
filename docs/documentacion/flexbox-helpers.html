@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>EDgrid | Flexbox (CSS/Sass)</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta name="description" content="El core de ed-grid está construido con flexbox, cero floats, display:table, inline-blocks u otros hacks extraños. Sin embargo, ed-grid ofrece mcuhas utilidades extra para aprovechar el poder de flexbox. Estas utilidades están dentro de los helpers de CSS ($cssHelpers : true) por lo que se recomienda activarlos aunque su flujo de trabajo sea con Sass.">
+    <!-- Estilos-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:700">
+    <link rel="stylesheet" href="/css/styles.css?180113">
+    <link rel="shortcut icon" href="/assets/img/edgrid-favicon.png">
+    <meta property="og:title" content="EDgrid | Flexbox (CSS/Sass)">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="El core de ed-grid está construido con flexbox, cero floats, display:table, inline-blocks u otros hacks extraños. Sin embargo, ed-grid ofrece mcuhas utilidades extra para aprovechar el poder de flexbox. Estas utilidades están dentro de los helpers de CSS ($cssHelpers : true) por lo que se recomienda activarlos aunque su flujo de trabajo sea con Sass.">
+    <meta property="og:url" content="/documentacion/flexbox.html">
+    <meta property="og:image" content="/assets/img/edgrid-poster.jpg">
+    <meta property="og:site_name" content="EDteam">
+    <meta property="og:locale" content="es_PE">
+    <meta property="og:locale:alternate" content="es_CO">
+    <meta property="og:locale:alternate" content="es_MX">
+    <meta property="og:locale:alternate" content="es_DO">
+    <meta property="og:locale:alternate" content="es_BO">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="EDgrid | Flexbox (CSS/Sass)">
+    <meta property="twitter:site" content="@EDteamLat">
+    <meta property="twitter:description" content="El core de ed-grid está construido con flexbox, cero floats, display:table, inline-blocks u otros hacks extraños. Sin embargo, ed-grid ofrece mcuhas utilidades extra para aprovechar el poder de flexbox. Estas utilidades están dentro de los helpers de CSS ($cssHelpers : true) por lo que se recomienda activarlos aunque su flujo de trabajo sea con Sass.">
+    <meta name="theme-color" content="#007BDF">
+  </head>
+  <!-- Body-->
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <header class="main-header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="ed-grid s-grid-5 cols-lg-10">
+        <div class="s-cols-2 cross-center" itemscope itemtype="http://schema.org/Organization"><a href="/" itemprop="url"><img class="main-logo" alt="Logotipo de EDgrid" itemprop="logo" src="/assets/img/EDgrid-logo.svg"></a></div>
+        <div class="s-cols-3 lg-cols-8 main-menu-container s-cross-center s-main-end">
+          <nav class="main-menu" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation" id="main-menu">
+            <ul>
+              <li itemprop="url"><a href="/documentacion" target="" itemprop="name" title="Enlace de Documentación">Documentación</a></li>
+              <li itemprop="url"><a href="/casos-de-exito" target="" itemprop="name" title="Enlace de Casos de éxito">Casos de éxito</a></li>
+              <li itemprop="url"><a href="/changelog" target="" itemprop="name" title="Enlace de Changelog">Changelog</a></li>
+              <li itemprop="url"><a href="/creditos" target="" itemprop="name" title="Enlace de Créditos">Créditos</a></li>
+              <li itemprop="url"><a href="https://ed.team" target="&quot;_blank&quot;" itemprop="name" title="Enlace de Ir a EDteam">Ir a EDteam</a></li>
+            </ul>
+          </nav>
+          <div class="main-menu-toggle to-l" id="main-menu-toggle"></div>
+        </div>
+      </div>
+    </header>
+    <!-- Banner section-->
+    <!-- Main-->
+    <div class="l-block"></div>
+    <div class="ed-grid cols-l-4 main-section l-big-section">
+      <aside class="main-sidebar sidebar-first" itemscope="itemscope" itemtype="http://schema.org/WPSideBar" role="complementary">
+        <div class="vertical-menu-toggle to-l" id="vertical-menu-toggle" data-content="Filtros"></div>
+        <nav class="vertical-menu" itemscope itemtype="http://schema.org/WPSideBar" id="vertical-menu">
+          <ul>
+            <li itemprop="url"><a href="/documentacion" itemprop="name" title="Enlace de Comenzar con EDgrid">Comenzar con EDgrid</a></li>
+            <li itemprop="url"><a href="/documentacion/instalacion.html" itemprop="name" title="Enlace de Instalación">Instalación</a></li>
+            <li itemprop="url"><a href="/documentacion/estructura.html" itemprop="name" title="Enlace de Estructura de archivos">Estructura de archivos</a></li>
+            <li itemprop="url"><a href="/documentacion/personalizar.html" itemprop="name" title="Enlace de Personalizar EDgrid">Personalizar EDgrid</a></li>
+            <li itemprop="url"><a href="/documentacion/breakpoints.html" itemprop="name" title="Enlace de Breakpoints">Breakpoints</a></li>
+            <li itemprop="url"><a href="/documentacion/layout-flexbox.html" itemprop="name" title="Enlace de Columnas con Flexbox">Columnas con Flexbox</a></li>
+            <li itemprop="url"><a href="/documentacion/layout-css-grid.html" itemprop="name" title="Enlace de Filas y columnas con CSS Grid (beta)">Filas y columnas con CSS Grid (beta)</a></li>
+            <li itemprop="url"><a href="/documentacion/layout.html" itemprop="name" title="Enlace de Layout">Layout</a></li>
+            <li itemprop="url"><a href="/documentacion/distribucion.html" itemprop="name" title="Enlace de Distribucion">Distribucion</a></li>
+            <li itemprop="url"><a href="/documentacion/alineacion.html" itemprop="name" title="Enlace de Alineación">Alineación</a></li>
+            <li itemprop="url"><a href="/documentacion/visibilidad.html" itemprop="name" title="Enlace de Visibilidad">Visibilidad</a></li>
+            <li itemprop="url"><a href="/documentacion/mediaqueries.html" itemprop="name" title="Enlace de Mediaqueries">Mediaqueries</a></li>
+            <li itemprop="url"><a href="/documentacion/base.html" itemprop="name" title="Enlace de Estilos base">Estilos base</a></li>
+            <li itemprop="url"><a href="/documentacion/modo-dev.html" itemprop="name" title="Enlace de Modo dev">Modo dev</a></li>
+            <li itemprop="url"><a href="/documentacion/funciones.html" itemprop="name" title="Enlace de Funciones">Funciones</a></li>
+            <li itemprop="url"><a href="/documentacion/videos.html" itemprop="name" title="Enlace de Videos responsive">Videos responsive</a></li>
+            <li itemprop="url"><a href="/documentacion/menus.html" itemprop="name" title="Enlace de Menus">Menus</a></li>
+            <li itemprop="url"><a href="/documentacion/prototipado.html" itemprop="name" title="Enlace de Prototipado (beta)">Prototipado (beta)</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <div class="span-l-3">
+        <main itemscope itemprop="mainContentOfPage" role="main"><h1>Flexbox (CSS/Sass)</h1>
+<p>El core de ed-grid está construido con flexbox, cero floats, display:table, inline-blocks u otros hacks extraños. Sin embargo, ed-grid ofrece muchas utilidades extra para aprovechar el poder de flexbox.</p>
+<p>Estas utilidades están dentro de los helpers de CSS ($cssHelpers : true) por lo que se recomienda activarlos aunque su flujo de trabajo sea con Sass.</p>
+<ul>
+<li>Flexbox alinea los elementos respecto a dos ejes: main (horizontal por defecto) y cross (vertical por defecto).</li>
+<li>En las siguientes instrucciones, la version css indicará la clase que debe añadirse al marcado html del contenedor</li>
+<li>En la versión Sass se indicará el mixin que debe incluirse al contenedor</li>
+<li>En la version CSS (cssCore), si desea indicar un breakpoint, inicie la clase con él, así <code>l-main-justify</code> <code>m-flex-reverse</code> <code>xl-cross-center</code></li>
+<li>Si no indica el breakpoint (cssHelpers), así <code>cross-end</code></li>
+</ul>
+<h2>Alineaciones en el eje principal</h2>
+<h3>Alinear los elementos a la izquierda y derecha</h3>
+<h4>Versión con css</h4>
+<pre><code class="language-markup">&lt;!-- version con css --&gt;
+&lt;div class=&quot;main-justify&quot;&gt;
+&lt;div&gt;1&lt;/div&gt;
+&lt;div&gt;2&lt;/div&gt;
+&lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4>Versión con Sass</h4>
+<pre><code class="language-scss">// version con Sass *******
+.container { @include mainJustify }
+</code></pre>
+<h3>Distribuir el espacio disponible alrededor de los elementos</h3>
+<h4>Versión con css</h4>
+<pre><code class="language-markup">&lt;!-- version con css --&gt;
+&lt;div class=&quot;main-distribute&quot;&gt;
+&lt;div&gt;1&lt;/div&gt;
+&lt;div&gt;2&lt;/div&gt;
+&lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4>Versión con Sass</h4>
+<pre><code class="language-scss">// version con Sass
+.container { @include mainDistribute }
+</code></pre>
+<h3>Alinear los elementos al inicio del eje</h3>
+<h4>Versión con css</h4>
+<pre><code class="language-markup">&lt;!-- version con css --&gt;
+&lt;div class=&quot;main-start&quot;&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4>Versión con Sass</h4>
+<pre><code class="language-scss">// version con Sass
+.container { @include mainStart }
+</code></pre>
+<h3>Alinear los elementos al centro del eje</h3>
+<h4>Versión con css</h4>
+<pre><code class="language-markup">&lt;!-- version con css --&gt;
+&lt;div class=&quot;main-center&quot;&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4>Versión con Sass</h4>
+<p>:markdown-it</p>
+<pre><code class="language-scss">// version con Sass
+.container { @include mainCenter }
+</code></pre>
+<h3>Alinea los elementos al final del eje</h3>
+<h4>Versión con css</h4>
+<pre><code class="language-markup">&lt;!-- version con css --&gt;
+&lt;div class=&quot;main-end&quot;&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4>Versión con Sass</h4>
+<pre><code class="language-scss">// version con Sass
+.container { @include mainEnd }
+</code></pre>
+<h2>Alineaciones en el eje secundario</h2>
+<h3>Al inicio del eje secundario</h3>
+<h4>Versión con css</h4>
+<pre><code class="language-markup">&lt;div class=&quot;cross-start&quot;&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4>Versión con Sass</h4>
+<pre><code class="language-scss">// version con Sass
+.container { @include crossStart }
+</code></pre>
+<h3>Al centro del eje secundario</h3>
+<h5>Versión con css</h5>
+<pre><code class="language-markup">&lt;!-- version con css --&gt;
+&lt;div class=&quot;cross-center&quot;&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4>Versión con Sass</h4>
+<pre><code class="language-scss">// version con Sass
+.container { @include crossCenter }
+</code></pre>
+<h3>Al final del eje secundario</h3>
+<h5>Versión con css</h5>
+<pre><code class="language-markup">&lt;!-- version con css --&gt;
+&lt;div class=&quot;cross-end&quot;&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4>Versión con Sass</h4>
+<pre><code class="language-scss">// version con Sass
+.container { @include crossEnd }
+</code></pre>
+<h2>Combinar alineaciones en ambos ejes</h2>
+<p>Puede combinar alineaciones para el eje principal y secundario</p>
+<h4>Versión con css</h4>
+<pre><code class="language-markup">&lt;!-- version con css --&gt;
+&lt;div class=&quot;main-center cross-center&quot;&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4>Versión con Sass</h4>
+<pre><code class="language-scss">// version con Sass
+.container {
+  @include mainCenter;
+  @include crossCenter;
+}
+</code></pre>
+<h2>Orientación de los ejes</h2>
+<h3>Reversa horizontal</h3>
+<h4>Versión con css</h4>
+<pre><code class="language-markup">&lt;!-- version con css --&gt;
+&lt;div class=&quot;flex-reverse&quot;&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4>Versión con Sass</h4>
+<pre><code class="language-scss">// version con Sass
+.container { @include flexReverse }
+</code></pre>
+<h3>En columna (de arriba hacia abajo)</h3>
+<h4>Versión con css</h4>
+<pre><code class="language-markup">&lt;!-- version con css --&gt;
+&lt;div class=&quot;flex-column&quot;&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4>Versión con Sass</h4>
+<pre><code class="language-scss">//version con Sass
+.container { @include flexReverse }
+</code></pre>
+<h3>Columna en reversa (de abajo hacia arriba)</h3>
+<h4>Versión con css</h4>
+<pre><code class="language-markup">&lt;!-- version con css --&gt;
+&lt;div class=&quot;flex-column-reverse&quot;&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4>Versión con Sass</h4>
+<pre><code class="language-scss">// version con Sass
+.container { @include flexColumnReverse }
+</code></pre>
+<h2>Centrado absoluto</h2>
+<p>El centrado absoluto se aplica a un container que tiene un solo hijo, el cual puede ser solo texto o un elemento html</p>
+<h4>Versión con css</h4>
+<pre><code class="language-markup">&lt;!-- version con css --&gt;
+&lt;div class=&quot;flex-center&quot;&gt;
+  &lt;div&gt;1&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4>Versión con Sass</h4>
+<pre><code class="language-scss">// version con Sass
+.container { @include flexCenter }
+</code></pre>
+<h2>Orden de elementos (solo CSS)</h2>
+<p>A través de clases html con el formato <code>bp-order-n</code> siendo <code>bp</code> un breakpoint válido de ed-grid, y <code>n</code> un número entre 1 y 10 se puede controlar la aparicion de los elementos en el navegador. Recuerde que todos los elementos tienen por defecto el valor 0 para la propiedad <code>order</code>.</p>
+<p>Ejemplo</p>
+<pre><code class="language-markup">&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;m-order-2&quot;&gt;1&lt;/div&gt;
+  &lt;div class=&quot;m-order-1&quot;&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Esta característica no esta disponible para Sass porque en Sass basta escribir una linea de código en la media query requerida. Escribir los mixins consume más código que tan solo escribir manualmente el orden cuando sea necesario.</p>
+
+        </main>
+      </div>
+    </div>
+    <!-- Footer-->
+    <footer class="main-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+      <div class="ed-container main-footer--content">
+        <div class="ed-item l-50 s-to-center s-center">
+          <p class="smaller s-mb-1">EDgrid es una librería Sass/Css para crear diseños web responsive y mobile first.<a class="icon-slack space" href="https://join.slack.com/t/edlabs/shared_invite/enQtMjk1MjcxOTUzMzgxLTgyY2MwZjY3ODRhNGQyMWJkOWRkOGFlZjQ1YjJiYjAxOTMwNGIzMGViMjc5ODZmMmI3ZGFlNGNiMTEwNGIyNzc" target="_blank" title="Slack de EDgrid"></a><a class="icon-github space" href="https://github.com/escueladigital/EDgrid" target="_blank" title="EDgrid en EDgrid"></a><a class="icon-docs space" href="documentacion" target="_blank" title="Documentación de EDgrid"></a></p>
+          <p class="smaller s-mb-1">EDgrid es una marca de <a href="https://ed.team" target="_blank">EDteam</a>. Repositorio de este sitio web en  <a href="https://github.com/escueladigital/EDgrid" target="_blank">Github</a></p>
+        </div>
+        <div class="ed-item">
+          <p class="smaller s-center s-mb-0"><a href="https://ed.team/alvaro" target="_blank" title="Blog de Alvaro Felipe">Alvaro Felipe </a><span>2015 - 2019</span></p>
+        </div>
+      </div>
+    </footer>
+    <script src="/js/scripts.js"></script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+extends ../config/template
+include ../includes/banner
+append config
+  -title = "EDgrid - Libreria Sass/CSS de EDteam para construir layouts web responsive"
+  -description = "Libreria Sass/CSS de EDteam para construir layouts web responsive"
+  -ogUrl = "/index.html"
+
+  -img = "/assets/img/docs-banner.jpg"
+  -titleBanner = "EDgrid"
+  -descriptionBanner = "Libreria Sass/CSS de EDteam para construir layouts web responsive"
+  -clase = ""
+  -boton = false
+  -botonClass= ""
+  -botonUrl=""
+  -botonText =""
+  -botones = true
+
+block banner
+  +banner(img, titleBanner, descriptionBanner, clase, boton, botonClass, botonUrl, botonText, botones)
+block main
+  main
+    .ed-grid
+        h1.t2.s-to-center.lg-mb-4 El responsive web design nunca fue tan sencillo
+        .main-features.ed-grid.cols-l-3.cols-m-2.rows-gap
+          .main-feature
+            .main-feature__img
+              img(src="assets/img/EDgrid-logo.svg")
+            h3 ¿Qué es?
+            p EDgrid es una libreria construida con Sass (y con versión CSS) para Responsive Web Design (RWD). Es muy ligero, personalizable y te permite prototipar y crear layouts en muy poco tiempo sin conflictos con tu proyecto.
+
+          .main-feature
+            .main-feature__img
+              img(src="assets/img/rwd.svg")
+            h3 Solo Layout
+            p No añade botones, tipografías, colores ni otro estilo visual. Es layout puro para maquetar que no genera conflictos. Además EDgrid en su versión Sass compila solo el código necesario sin css extra.
+
+          .main-feature
+            .main-feature__img
+              img(src="assets/img/open-source.svg")
+            h3 Open Source
+            p Completamente gratuito y de código abierto (GPL2). Puede usarlo en proyectos comerciales, descargarlo y estudiar el código y crear sus propias versiones derivadas sin pagar una licencia.
+
+          .main-feature
+            .main-feature__img
+              img(src="assets/img/grid-flexbox.svg")
+            h3 CSS Grid y Flexbox
+            p EDgrid usa las características más modernas de CSS: Flexbox y Grid. Además incluye fallbacks para Grid en navegadores que todavía no lo soporten.
+
+          .main-feature
+            .main-feature__img
+              img(src="assets/img/columnas.svg")
+            h3 Adiós columnas
+            p ¿Cansado de las 12 columnas? Con EDgrid puedes crear layouts con completa libertad sin amarrarte a usar siempre doce columnas.
+
+          .main-feature
+            .main-feature__img
+              img(src="assets/img/dev.svg")
+            h3 Debug
+            p El modo dev se activa con una sola línea de código y te muestra la construcción del layout por debajo del capó. Así podrás corregir problemas con facilidad.

@@ -1,0 +1,10 @@
+extends ../../config/template
+append config
+  -title = "EDgrid | Offset (Sass/CSS)"
+  -description = "Se conoce como offset al movimiento de un elemento respecto a la posición que se supone deberia tener. En ed-grid, offset no es más que un margin-left. La única ventaja de usar offsets con ed-grid es no escribir a mano las media queries. Uso con CSS (cssCore) Basta añadir clases del formato bp-offset-n donde bp es un breakpoint válido de ed-grid (s,m,l,xl) y n un múltiplo de 5 o una fracción según lo indicado en el flujo de trabajo recomendado."
+  -ogUrl = "/documentacion/offset.html"
+  -docsMenu = true
+
+block main
+    main(itemscope itemprop="mainContentOfPage" role="main")
+      include:markdown-it(html) ../../../md/docs/offset.md

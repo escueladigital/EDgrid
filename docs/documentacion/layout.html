@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>EDgrid | Base (CSS/Sass)</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta name="description" content="Los estilos base normalizan los elementos HTML para Responsive Web Design.">
+    <!-- Estilos-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:700">
+    <link rel="stylesheet" href="/css/styles.css?180113">
+    <link rel="shortcut icon" href="/assets/img/edgrid-favicon.png">
+    <meta property="og:title" content="EDgrid | Base (CSS/Sass)">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Los estilos base normalizan los elementos HTML para Responsive Web Design.">
+    <meta property="og:url" content="/base.html">
+    <meta property="og:image" content="/assets/img/edgrid-poster.jpg">
+    <meta property="og:site_name" content="EDteam">
+    <meta property="og:locale" content="es_PE">
+    <meta property="og:locale:alternate" content="es_CO">
+    <meta property="og:locale:alternate" content="es_MX">
+    <meta property="og:locale:alternate" content="es_DO">
+    <meta property="og:locale:alternate" content="es_BO">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="EDgrid | Base (CSS/Sass)">
+    <meta property="twitter:site" content="@EDteamLat">
+    <meta property="twitter:description" content="Los estilos base normalizan los elementos HTML para Responsive Web Design.">
+    <meta name="theme-color" content="#007BDF">
+  </head>
+  <!-- Body-->
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <header class="main-header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="ed-grid s-grid-5 cols-lg-10">
+        <div class="s-cols-2 cross-center" itemscope itemtype="http://schema.org/Organization"><a href="/" itemprop="url"><img class="main-logo" alt="Logotipo de EDgrid" itemprop="logo" src="/assets/img/EDgrid-logo.svg"></a></div>
+        <div class="s-cols-3 lg-cols-8 main-menu-container s-cross-center s-main-end">
+          <nav class="main-menu" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation" id="main-menu">
+            <ul>
+              <li itemprop="url"><a href="/documentacion" target="" itemprop="name" title="Enlace de Documentación">Documentación</a></li>
+              <li itemprop="url"><a href="/casos-de-exito" target="" itemprop="name" title="Enlace de Casos de éxito">Casos de éxito</a></li>
+              <li itemprop="url"><a href="/changelog" target="" itemprop="name" title="Enlace de Changelog">Changelog</a></li>
+              <li itemprop="url"><a href="/creditos" target="" itemprop="name" title="Enlace de Créditos">Créditos</a></li>
+              <li itemprop="url"><a href="https://ed.team" target="&quot;_blank&quot;" itemprop="name" title="Enlace de Ir a EDteam">Ir a EDteam</a></li>
+            </ul>
+          </nav>
+          <div class="main-menu-toggle to-l" id="main-menu-toggle"></div>
+        </div>
+      </div>
+    </header>
+    <!-- Banner section-->
+    <!-- Main-->
+    <div class="l-block"></div>
+    <div class="ed-grid cols-l-4 main-section l-big-section">
+      <aside class="main-sidebar sidebar-first" itemscope="itemscope" itemtype="http://schema.org/WPSideBar" role="complementary">
+        <div class="vertical-menu-toggle to-l" id="vertical-menu-toggle" data-content="Filtros"></div>
+        <nav class="vertical-menu" itemscope itemtype="http://schema.org/WPSideBar" id="vertical-menu">
+          <ul>
+            <li itemprop="url"><a href="/documentacion" itemprop="name" title="Enlace de Comenzar con EDgrid">Comenzar con EDgrid</a></li>
+            <li itemprop="url"><a href="/documentacion/instalacion.html" itemprop="name" title="Enlace de Instalación">Instalación</a></li>
+            <li itemprop="url"><a href="/documentacion/estructura.html" itemprop="name" title="Enlace de Estructura de archivos">Estructura de archivos</a></li>
+            <li itemprop="url"><a href="/documentacion/personalizar.html" itemprop="name" title="Enlace de Personalizar EDgrid">Personalizar EDgrid</a></li>
+            <li itemprop="url"><a href="/documentacion/breakpoints.html" itemprop="name" title="Enlace de Breakpoints">Breakpoints</a></li>
+            <li itemprop="url"><a href="/documentacion/layout-flexbox.html" itemprop="name" title="Enlace de Columnas con Flexbox">Columnas con Flexbox</a></li>
+            <li itemprop="url"><a href="/documentacion/layout-css-grid.html" itemprop="name" title="Enlace de Filas y columnas con CSS Grid (beta)">Filas y columnas con CSS Grid (beta)</a></li>
+            <li itemprop="url"><a href="/documentacion/layout.html" itemprop="name" title="Enlace de Layout">Layout</a></li>
+            <li itemprop="url"><a href="/documentacion/distribucion.html" itemprop="name" title="Enlace de Distribucion">Distribucion</a></li>
+            <li itemprop="url"><a href="/documentacion/alineacion.html" itemprop="name" title="Enlace de Alineación">Alineación</a></li>
+            <li itemprop="url"><a href="/documentacion/visibilidad.html" itemprop="name" title="Enlace de Visibilidad">Visibilidad</a></li>
+            <li itemprop="url"><a href="/documentacion/mediaqueries.html" itemprop="name" title="Enlace de Mediaqueries">Mediaqueries</a></li>
+            <li itemprop="url"><a href="/documentacion/base.html" itemprop="name" title="Enlace de Estilos base">Estilos base</a></li>
+            <li itemprop="url"><a href="/documentacion/modo-dev.html" itemprop="name" title="Enlace de Modo dev">Modo dev</a></li>
+            <li itemprop="url"><a href="/documentacion/funciones.html" itemprop="name" title="Enlace de Funciones">Funciones</a></li>
+            <li itemprop="url"><a href="/documentacion/videos.html" itemprop="name" title="Enlace de Videos responsive">Videos responsive</a></li>
+            <li itemprop="url"><a href="/documentacion/menus.html" itemprop="name" title="Enlace de Menus">Menus</a></li>
+            <li itemprop="url"><a href="/documentacion/prototipado.html" itemprop="name" title="Enlace de Prototipado (beta)">Prototipado (beta)</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <div class="span-l-3">
+        <main itemscope itemprop="mainContentOfPage" role="main"><h1>Layout</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#secciones">Secciones</a>
+<ul>
+<li><a href="#anular-espaciado-entre-secciones">Anular espaciado entre secciones</a></li>
+<li><a href="#valores-de-los-espaciados-verticales">Valores de los espaciados verticales</a></li>
+</ul>
+</li>
+<li><a href="#espaciado-vertical-entre-contenido">Espaciado vertical entre contenido</a>
+<ul>
+<li><a href="#titulos">Titulos</a></li>
+<li><a href="#contenido">Contenido</a></li>
+</ul>
+</li>
+<li><a href="#m%C3%A1rgenes">Márgenes</a>
+<ul>
+<li><a href="#m%C3%A1rgenes-negativos">Márgenes negativos</a></li>
+</ul>
+</li>
+<li><a href="#paddings">Paddings</a></li>
+</ul>
+<!-- /TOC -->
+<hr>
+<p>EDgrid agrega clases para crear separaciones exteriores (margin) e interiores (padding) para crear layouts armoniosos y bien distribuidos.</p>
+<p>Para seguir buenas prácticas, considere lo siguiente:</p>
+<ul>
+<li>Las clases de layout comienzan con <code>l-</code>. *Además todos l</li>
+<li>Los espacios verticales se crean solamente con <code>margin-bottom</code>.</li>
+<li>La propiedad <code>margin-top</code> se usa solamente en negativo para cancelar una separación vertical</li>
+<li>Los espacios horizontales se crean solamente con <code>margin-right</code></li>
+<li>La propiedad <code>margin-left</code> se usa solo en negativo para cancelar una separación horizontal.</li>
+<li>Evite usar css para márgenes y paddings, utilice las clases de EDgrid</li>
+</ul>
+<p><a id="markdown-secciones" name="secciones"></a></p>
+<h2>Secciones</h2>
+<p>En EDgrid existen tres tipos de secciones que se indican con las siguientes clases.</p>
+<ul>
+<li><code>l-block</code> Bloques pequeños como widgets, cards, separadores.</li>
+<li><code>l-section</code> Sección grande de contenido.</li>
+<li><code>l-big-section</code> Igual que el anterior pero cuando se quiere dar una separación mayor.</li>
+</ul>
+<p><a id="markdown-anular-espaciado-entre-secciones" name="anular-espaciado-entre-secciones"></a></p>
+<h3>Anular espaciado entre secciones</h3>
+<p>Si en algun caso desea anular el espaciado de una seccion con la anterior. Use las siguientes clases:</p>
+<ul>
+<li><code>cancel-l-block</code> Cancela margin-bottom de hermano anterior <code>l-block</code></li>
+<li><code>cancel-l-section</code> Cancela margin-bottom de hermano anterior <code>l-section</code></li>
+<li><code>cancel-l-big-section</code> Cancela margin-bottom de hermano anterior <code>l-big-section</code></li>
+</ul>
+<p><a id="markdown-valores-de-los-espaciados-verticales" name="valores-de-los-espaciados-verticales"></a></p>
+<h3>Valores de los espaciados verticales</h3>
+<p>EDgrid usa la variable CSS <code>--vertical-block-space</code> cuyo valor cambia según el breakpoint</p>
+<pre><code class="language-scss">:root {
+  --vertical-block-space   : #{$l-unit * 2};  // 1rem
+
+  @include from(lg) {
+    --vertical-block-space : #{$l-unit * 4};  // 2rem
+  }
+}
+</code></pre>
+<p>El código que crea las separaciones es el siguiente.</p>
+<pre><code class="language-scss">// Block
+.l-block {
+  margin-bottom : var(--vertical-block-space); // 1rem mobile, 2rem desktop
+}
+
+.cancel-l-block {
+  margin-top : calc(var(--vertical-block-space) * -1);
+}
+
+// Section
+.l-section {
+  margin-bottom : calc(var(--vertical-block-space) * 2); // 2rem mobile, 4rem desktop
+}
+
+.cancel-l-section {
+  margin-top : calc(var(--vertical-block-space) * -2); 
+}
+
+// Big section
+.l-big-section {
+  margin-bottom : calc(var(--vertical-block-space) * 4); // 4rem mobile, 8rem desktop
+}
+
+.cancel-l-big-section {
+  margin-top : calc(var(--vertical-block-space) * -4);
+}
+</code></pre>
+<p><a id="markdown-espaciado-vertical-entre-contenido" name="espaciado-vertical-entre-contenido"></a></p>
+<h2>Espaciado vertical entre contenido</h2>
+<p>EDgrid incluye espaciado vertical armonioso entre contenido (parrafos, titulos, listas, etc). No tiene que hacer nada. Solo escribir su contenido.</p>
+<p><a id="markdown-titulos" name="titulos"></a></p>
+<h3>Titulos</h3>
+<pre><code class="language-scss">:root {
+  --vertical-content-space : 1rem;
+}
+// Encabezados
+h1, h2, h3, h4, h5, h6 {
+  margin-top    : 0;
+  margin-bottom : var(--vertical-content-space);
+}
+
+h1 {
+  margin-bottom : calc(var(--vertical-content-space) * 1.5) !important;
+}
+</code></pre>
+<p><a id="markdown-contenido" name="contenido"></a></p>
+<h3>Contenido</h3>
+<p>La norma recomienda encerrar cada sección en una etiqueta section. Pero en la práctica es dificil conseguirlo siempre así que la presenciad e un titulo indica el cambio de sección y por eso se le agrega una separación vertical mayor con el hermano anterior.</p>
+<pre><code class="language-scss">:root {
+  --vertical-content-space : 1rem;
+}
+
+p,
+video,
+blockquote,
+article,
+section,
+form,
+figure,
+iframe,
+ul,
+ol,
+pre,
+hr,
+dl,
+address {
+  margin-top    : 0;
+  margin-bottom : var(--vertical-content-space);
+
+  + h2 {
+    padding-top : calc(var(--vertical-content-space) * 1.5);
+  }
+
+  + h3 {
+    padding-top : var(--vertical-content-space);
+  }
+}
+</code></pre>
+<p><a id="markdown-márgenes" name="márgenes"></a></p>
+<h2>Márgenes</h2>
+<p>Use las clases de márgenes para separar elementos. La nomenclatura es la siguiente <code>breakpoint-mr-numero</code> y <code>breakpoint-mb-numero</code> Donde <code>mr</code> es <code>margin-right</code> y <code>mb</code> es <code>margin-bottom</code>.</p>
+<p>El número va de 0 a 4 con separaciones de <code>.5rem</code> Por ejemplo <code>lg-mb-0</code> significa <code>margin-bottom:0</code> a partir del breakpoint <code>lg</code>. Y <code>m-br-4</code> sinifica <code>margin-right: 2rem</code> a partir del breakpoint <code>m</code>.</p>
+<p>* <em>Puede usar el numero <code>05</code> para crear separaciones de <code>.25rem</code>. Ejemplo: <code>s-mb-05</code>.</em></p>
+<pre><code class="language-html">&lt;img alt=&quot;Logotipo de EDgrid&quot; src=&quot;/assets/img/EDgrid-logo.svg&quot; width=&quot;200&quot;&gt;
+&lt;img alt=&quot;Logotipo de EDgrid&quot; src=&quot;/assets/img/EDgrid-logo.svg&quot; width=&quot;200&quot;&gt;
+</code></pre>
+<div class="ed-grid-demo s-pxy-1">
+<img alt="Logotipo de EDgrid" src="/assets/img/EDgrid-logo.svg" width="200">
+<img alt="Logotipo de EDgrid" src="/assets/img/EDgrid-logo.svg" width="200">
+</div>
+<p>Usando margenes</p>
+<pre><code class="language-html">&lt;img class=&quot;m-mr-2 s-mb-2&quot; alt=&quot;Logotipo de EDgrid&quot; src=&quot;/assets/img/EDgrid-logo.svg&quot; width=&quot;200&quot;&gt;
+&lt;img alt=&quot;Logotipo de EDgrid&quot; src=&quot;/assets/img/EDgrid-logo.svg&quot; width=&quot;200&quot;&gt;
+</code></pre>
+<div class="ed-grid-demo s-pxy-1">
+<img class="m-mr-2 s-mb-2" alt="Logotipo de EDgrid" src="/assets/img/EDgrid-logo.svg" width="200">
+<img alt="Logotipo de EDgrid" src="/assets/img/EDgrid-logo.svg" width="200">
+</div>
+<p><a id="markdown-márgenes-negativos" name="márgenes-negativos"></a></p>
+<h3>Márgenes negativos</h3>
+<p>Con la misma nomenclatura puede crear márgenes superiores <code>margin-top</code> e izquierdos <code>margin-left</code> pero estos siempre serán negativos y debe usarlos para cancelar una separación con un hermano anterior.</p>
+<pre><code class="language-html">&lt;h1&gt;Bienvenidos a EDteam&lt;/h1&gt;
+&lt;p&gt;Este es un subtítulo pero aparecerá muy abajo del título&lt;/p&gt;
+</code></pre>
+<p>Ejemplo:</p>
+<div class="ed-grid-demo s-pxy-1">
+<h1>Bienvenidos a EDteam</h1>
+<p>Este es un subtítulo pero aparecerá muy abajo del título</p>
+</div>
+<p>Usando márgenes negativos:</p>
+<pre><code class="language-html">&lt;h1&gt;Bienvenidos a EDteam&lt;/h1&gt;
+&lt;p class=&quot;s-mt-3&quot;&gt;Este es un subtítulo con un margen superior negativo&lt;/p&gt;
+</code></pre>
+<p>Ejemplo:</p>
+<div class="ed-grid-demo s-pxy-1">
+<h1>Bienvenidos a EDteam</h1>
+<p class="s-mt-3">Este es un subtítulo con un margen superior negativo</p>
+</div>
+<p><a id="markdown-paddings" name="paddings"></a></p>
+<h2>Paddings</h2>
+<p>Los paddings agregan una separación interna y tienen la siguiente nomenclatura de clases: <code>breakpoint-p[direction]-numero</code></p>
+<p>Donde <code>direction</code> puede ser <code>t</code> (top), <code>r</code> (right), <code>b</code> (bottom), <code>l</code> (left). Por ejemplo: <code>xl-pb-4</code>. Al igual que en margin, los números van de 0 a 4 indicando separaciones de <code>.5rem</code>.</p>
+<ul>
+<li>Para paddings verticales (top y bottom a la vez) use <code>breakpoint-py-numero)</code>.</li>
+<li>Para paddings horizontales (left y right a la vez) use <code>breakpoint-px-numero</code></li>
+<li>Para paddings en las cuatro direcciones use <code>breakpoint-pxy-numero</code></li>
+</ul>
+<p>* <em>Puede usar el numero <code>05</code> para crear paddings de <code>.25rem</code>. Ejemplo: <code>s-py-05</code>.</em></p>
+
+        </main>
+      </div>
+    </div>
+    <!-- Footer-->
+    <footer class="main-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+      <div class="ed-container main-footer--content">
+        <div class="ed-item l-50 s-to-center s-center">
+          <p class="smaller s-mb-1">EDgrid es una librería Sass/Css para crear diseños web responsive y mobile first.<a class="icon-slack space" href="https://join.slack.com/t/edlabs/shared_invite/enQtMjk1MjcxOTUzMzgxLTgyY2MwZjY3ODRhNGQyMWJkOWRkOGFlZjQ1YjJiYjAxOTMwNGIzMGViMjc5ODZmMmI3ZGFlNGNiMTEwNGIyNzc" target="_blank" title="Slack de EDgrid"></a><a class="icon-github space" href="https://github.com/escueladigital/EDgrid" target="_blank" title="EDgrid en EDgrid"></a><a class="icon-docs space" href="documentacion" target="_blank" title="Documentación de EDgrid"></a></p>
+          <p class="smaller s-mb-1">EDgrid es una marca de <a href="https://ed.team" target="_blank">EDteam</a>. Repositorio de este sitio web en  <a href="https://github.com/escueladigital/EDgrid" target="_blank">Github</a></p>
+        </div>
+        <div class="ed-item">
+          <p class="smaller s-center s-mb-0"><a href="https://ed.team/alvaro" target="_blank" title="Blog de Alvaro Felipe">Alvaro Felipe </a><span>2015 - 2019</span></p>
+        </div>
+      </div>
+    </footer>
+    <script src="/js/scripts.js"></script>
+  </body>
+</html>

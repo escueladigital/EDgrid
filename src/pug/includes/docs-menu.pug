@@ -1,0 +1,30 @@
+block link-section
+  - var active = 'Comenzar con EDgrid';
+
+-
+  let sidebar = {
+  'Comenzar con EDgrid': '/documentacion',
+  'Instalación': '/documentacion/instalacion.html',
+  'Estructura de archivos': '/documentacion/estructura.html',
+  'Personalizar EDgrid': '/documentacion/personalizar.html',
+  'Breakpoints': '/documentacion/breakpoints.html',
+  'Columnas con Flexbox': '/documentacion/layout-flexbox.html',
+  'Filas y columnas con CSS Grid (beta)': '/documentacion/layout-css-grid.html',
+  'Layout': '/documentacion/layout.html',
+  'Distribucion': '/documentacion/distribucion.html',
+  'Alineación': '/documentacion/alineacion.html',
+  'Visibilidad': '/documentacion/visibilidad.html',
+  'Mediaqueries': '/documentacion/mediaqueries.html',
+  'Estilos base': '/documentacion/base.html',
+  'Modo dev': '/documentacion/modo-dev.html',
+  'Funciones': '/documentacion/funciones.html',
+  'Videos responsive': '/documentacion/videos.html',
+  'Menus': '/documentacion/menus.html',
+  'Prototipado (beta)' : '/documentacion/prototipado.html'
+  }
+
+nav(itemscope itemtype="http://schema.org/WPSideBar").vertical-menu#vertical-menu
+  ul
+    each val, key in sidebar
+      li(itemprop="url")
+        a(href=val itemprop="name" title= "Enlace de " + key)= key

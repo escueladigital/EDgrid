@@ -1,0 +1,10 @@
+block link-section
+  - var active = 'Documentación';
+
+- var menu = { 'Documentación': '/documentacion', 'Casos de éxito': '/casos-de-exito', 'Changelog': '/changelog', 'Créditos': '/creditos', 'Ir a EDteam': 'https://ed.team' };
+
+ul
+  each val, key in menu
+    - var target = val === 'https://ed.team' ? '"_blank"' : ''
+    li(itemprop="url")
+      a(href=val target=target itemprop="name" title= "Enlace de " + key)= key

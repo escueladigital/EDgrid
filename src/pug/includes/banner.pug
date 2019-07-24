@@ -1,0 +1,19 @@
+mixin banner(img, title, description, clase, boton, botonClass, botonUrl, botonText, botones)
+  .main-banner.diagonal.l-block.img-container(class=clase)
+    .ed-grid.lg-grid-6
+      .lg-cols-4.lg-x-2.s-center
+        img(src=img).main-banner__img
+        .main-banner__data
+          .t2= title
+          if description
+            p.s-mb-2= description
+          if boton
+            a(class='button--'+botonClass href=botonUrl target="_blank")= botonText
+          if botones
+            .s-center
+              a.button--ghost-light.s-mr-2(href="https://join.slack.com/t/edlabs/shared_invite/enQtMjk1MjcxOTUzMzgxLTgyY2MwZjY3ODRhNGQyMWJkOWRkOGFlZjQ1YjJiYjAxOTMwNGIzMGViMjc5ODZmMmI3ZGFlNGNiMTEwNGIyNzc" target="_blank" title="Slack de EDgrid")
+                span Slack
+              a.button--ghost-light.s-mr-2(href="https://github.com/escueladigital/EDgrid" target="_blank" title="EDgrid en Github")
+                span Github
+              a.button--ghost-light(href="/documentacion" title="Documentación de EDgrid")
+                span Documentación

@@ -1,0 +1,48 @@
+extends ../../config/template
+include ../../includes/banner
+append config
+  -title = "EDgrid | Changelog"
+  -description = "Registro de cambios que ha tenido la librería EDgrid."
+  -ogUrl = "/funciones.html"
+
+  -img = "/assets/img/docs-banner.jpg"
+  -titleBanner = "Changelog"
+  -descriptionBanner = "Lanzamientos importantes de EDgrid"
+  -clase = "accent-color"
+  -boton = false
+  -botonClass= ""
+  -botonUrl=""
+  -botonText =""
+  -botones = false
+
+block banner
+  +banner(img, titleBanner, descriptionBanner, clase, boton, botonClass, botonUrl, botonText, botones)
+
+block main
+  .ed-grid.lg-grid-6
+    .lg-cols-4.lg-x-2
+      ul.data-list
+        li
+          p
+            span.strong Actual (v 2.1.6)
+            br
+            span.small Agrega CSS grid y resuelve varios bugs menores.
+          a(href="https://github.com/escueladigital/EDgrid/archive/master.zip" itemprop="url" target="_blank").button.small.icon-download.space Descargar versión
+        li
+          p
+            span.strong v2.0 (3 dic 2016)
+            br
+            span.small Cambia su enfoque al de librería (pretendía ser un framework) en versión Sass y CSS. Permite usar mixins que compilano solo el código necesario, además de activar y desactivar componentes.
+          a(href="https://github.com/escueladigital/EDgrid/releases/tag/v2.0.0" itemprop="url" target="_blank").button.small.icon-download.space Descargar versión
+        li
+          p
+            span.strong v1.2 (26 sep 2015)
+            br
+            span.small Se cambia floats por flexbox. Se usan las clases <code>.ed-container</code> y <code>.ed-item</code> en remplazo de <code>.grupo</code> y <code>.caja</code>
+          a(href="https://github.com/escueladigital/EDgrid/releases/tag/1.2" itemprop="url" target="_blank").button.small.icon-download.space Descargar versión
+        li
+          p
+            span.strong v1.0 (19 abr 2015)
+            br
+            span.small Uso de floats, clases <code>.grupo</code> y <code>.caja</code>
+          a(href="https://github.com/escueladigital/EDgrid/releases/tag/v1.0" itemprop="url" target="_blank").button.small.icon-download.space Descargar versión

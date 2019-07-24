@@ -1,0 +1,10 @@
+extends /src/pug/config/template
+append config
+  -title = "EDgrid | Modo dev"
+  -description = "El modo dev (modo desarrollo en versiones anteriores) es una característica exclusiva de ed-grid (no existente en otros frameworks) que nos permite saber el breakpoint actual y los componentes del layout (ed-container y ed-item). Al activarlo el navegador muestra el layout de la siguiente manera: En la parte superior en una franja azul se muestra el breakpoint actual y la leyenda de colores para el ed-container y los ed-item. El layout de la página es coloreado de la siguiente manera:"
+  -ogUrl= "/modo-dev.html"
+  -docsMenu = true
+
+block main
+  main(itemscope itemprop="mainContentOfPage" role="main")
+    include:markdown-it(html) /src/md/modo-dev.md

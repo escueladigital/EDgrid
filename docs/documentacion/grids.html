@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>EDgrid | Grid (CSS/Sass)</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta name="description" content="La principal diferencia de ed-grid 2 con su versión anterior es que podemos decidir qué componentes compilar a CSS. En la versión 1, todo el CSS era compilado generando código innecesario. Si usted desea puede trabajar solo con la versión CSS de ed-grid 2, y añadir clases al código HTML para construir su layout según el flujo de trabajo recomendado. El CSS de ed-grid 2 se clasifica en 2 grupos:">
+    <!-- Estilos-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:700">
+    <link rel="stylesheet" href="/css/styles.css?180113">
+    <link rel="shortcut icon" href="/assets/img/edgrid-favicon.png">
+    <meta property="og:title" content="EDgrid | Grid (CSS/Sass)">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="La principal diferencia de ed-grid 2 con su versión anterior es que podemos decidir qué componentes compilar a CSS. En la versión 1, todo el CSS era compilado generando código innecesario. Si usted desea puede trabajar solo con la versión CSS de ed-grid 2, y añadir clases al código HTML para construir su layout según el flujo de trabajo recomendado. El CSS de ed-grid 2 se clasifica en 2 grupos:">
+    <meta property="og:url" content="/grid.html">
+    <meta property="og:image" content="/assets/img/edgrid-poster.jpg">
+    <meta property="og:site_name" content="EDteam">
+    <meta property="og:locale" content="es_PE">
+    <meta property="og:locale:alternate" content="es_CO">
+    <meta property="og:locale:alternate" content="es_MX">
+    <meta property="og:locale:alternate" content="es_DO">
+    <meta property="og:locale:alternate" content="es_BO">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="EDgrid | Grid (CSS/Sass)">
+    <meta property="twitter:site" content="@EDteamLat">
+    <meta property="twitter:description" content="La principal diferencia de ed-grid 2 con su versión anterior es que podemos decidir qué componentes compilar a CSS. En la versión 1, todo el CSS era compilado generando código innecesario. Si usted desea puede trabajar solo con la versión CSS de ed-grid 2, y añadir clases al código HTML para construir su layout según el flujo de trabajo recomendado. El CSS de ed-grid 2 se clasifica en 2 grupos:">
+    <meta name="theme-color" content="#007BDF">
+  </head>
+  <!-- Body-->
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <header class="main-header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="ed-grid s-grid-5 cols-lg-10">
+        <div class="s-cols-2 cross-center" itemscope itemtype="http://schema.org/Organization"><a href="/" itemprop="url"><img class="main-logo" alt="Logotipo de EDgrid" itemprop="logo" src="/assets/img/EDgrid-logo.svg"></a></div>
+        <div class="s-cols-3 lg-cols-8 main-menu-container s-cross-center s-main-end">
+          <nav class="main-menu" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation" id="main-menu">
+            <ul>
+              <li itemprop="url"><a href="/documentacion" target="" itemprop="name" title="Enlace de Documentación">Documentación</a></li>
+              <li itemprop="url"><a href="/casos-de-exito" target="" itemprop="name" title="Enlace de Casos de éxito">Casos de éxito</a></li>
+              <li itemprop="url"><a href="/changelog" target="" itemprop="name" title="Enlace de Changelog">Changelog</a></li>
+              <li itemprop="url"><a href="/creditos" target="" itemprop="name" title="Enlace de Créditos">Créditos</a></li>
+              <li itemprop="url"><a href="https://ed.team" target="&quot;_blank&quot;" itemprop="name" title="Enlace de Ir a EDteam">Ir a EDteam</a></li>
+            </ul>
+          </nav>
+          <div class="main-menu-toggle to-l" id="main-menu-toggle"></div>
+        </div>
+      </div>
+    </header>
+    <!-- Banner section-->
+    <!-- Main-->
+    <div class="l-block"></div>
+    <div class="ed-grid cols-l-4 main-section l-big-section">
+      <aside class="main-sidebar sidebar-first" itemscope="itemscope" itemtype="http://schema.org/WPSideBar" role="complementary">
+        <div class="vertical-menu-toggle to-l" id="vertical-menu-toggle" data-content="Filtros"></div>
+        <nav class="vertical-menu" itemscope itemtype="http://schema.org/WPSideBar" id="vertical-menu">
+          <ul>
+            <li itemprop="url"><a href="/documentacion" itemprop="name" title="Enlace de Comenzar con EDgrid">Comenzar con EDgrid</a></li>
+            <li itemprop="url"><a href="/documentacion/instalacion.html" itemprop="name" title="Enlace de Instalación">Instalación</a></li>
+            <li itemprop="url"><a href="/documentacion/estructura.html" itemprop="name" title="Enlace de Estructura de archivos">Estructura de archivos</a></li>
+            <li itemprop="url"><a href="/documentacion/personalizar.html" itemprop="name" title="Enlace de Personalizar EDgrid">Personalizar EDgrid</a></li>
+            <li itemprop="url"><a href="/documentacion/breakpoints.html" itemprop="name" title="Enlace de Breakpoints">Breakpoints</a></li>
+            <li itemprop="url"><a href="/documentacion/layout-flexbox.html" itemprop="name" title="Enlace de Columnas con Flexbox">Columnas con Flexbox</a></li>
+            <li itemprop="url"><a href="/documentacion/layout-css-grid.html" itemprop="name" title="Enlace de Filas y columnas con CSS Grid (beta)">Filas y columnas con CSS Grid (beta)</a></li>
+            <li itemprop="url"><a href="/documentacion/layout.html" itemprop="name" title="Enlace de Layout">Layout</a></li>
+            <li itemprop="url"><a href="/documentacion/distribucion.html" itemprop="name" title="Enlace de Distribucion">Distribucion</a></li>
+            <li itemprop="url"><a href="/documentacion/alineacion.html" itemprop="name" title="Enlace de Alineación">Alineación</a></li>
+            <li itemprop="url"><a href="/documentacion/visibilidad.html" itemprop="name" title="Enlace de Visibilidad">Visibilidad</a></li>
+            <li itemprop="url"><a href="/documentacion/mediaqueries.html" itemprop="name" title="Enlace de Mediaqueries">Mediaqueries</a></li>
+            <li itemprop="url"><a href="/documentacion/base.html" itemprop="name" title="Enlace de Estilos base">Estilos base</a></li>
+            <li itemprop="url"><a href="/documentacion/modo-dev.html" itemprop="name" title="Enlace de Modo dev">Modo dev</a></li>
+            <li itemprop="url"><a href="/documentacion/funciones.html" itemprop="name" title="Enlace de Funciones">Funciones</a></li>
+            <li itemprop="url"><a href="/documentacion/videos.html" itemprop="name" title="Enlace de Videos responsive">Videos responsive</a></li>
+            <li itemprop="url"><a href="/documentacion/menus.html" itemprop="name" title="Enlace de Menus">Menus</a></li>
+            <li itemprop="url"><a href="/documentacion/prototipado.html" itemprop="name" title="Enlace de Prototipado (beta)">Prototipado (beta)</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <div class="span-l-3">
+        <main itemscope itemprop="mainContentOfPage" role="main"><h1>Grids (cuadrículas)</h1>
+<p>Con EDgrid puede crear cuadrículas fácilmente.</p>
+<h2>Grids con CSS</h2>
+<p>En CSS EDgrid cuenta con dos grids preconstruidos: <code>1,2,3,4</code> y <code>2,3,4,5</code> (los números representan las columnas en cada breakpoint de ed-grid).</p>
+<p>Para utilizarlos, use la clase <code>grid-container</code> en el contedor, además la clase <code>grid-1234</code> o <code>grid-2345</code> para indicar el tipo de grid.</p>
+<p>Por último, a cada item de la galeria asignele la clase <code>grid-item</code></p>
+<pre><code class="language-html">&lt;div class=&quot;grid-container grid-1234&quot;&gt;
+  &lt;div class=&quot;grid-item&quot;&gt;&lt;!-- Cualquier contenido--&gt;&lt;/div&gt;
+  &lt;div class=&quot;grid-item&quot;&gt;&lt;!-- Cualquier contenido--&gt;&lt;/div&gt;
+  &lt;div class=&quot;grid-item&quot;&gt;&lt;!-- Cualquier contenido--&gt;&lt;/div&gt;
+  &lt;div class=&quot;grid-item&quot;&gt;&lt;!-- Cualquier contenido--&gt;&lt;/div&gt;
+  &lt;div class=&quot;grid-item&quot;&gt;&lt;!-- Cualquier contenido--&gt;&lt;/div&gt;
+  &lt;div class=&quot;grid-item&quot;&gt;&lt;!-- Cualquier contenido--&gt;&lt;/div&gt;
+  &lt;div class=&quot;grid-item&quot;&gt;&lt;!-- Cualquier contenido--&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>Grids con Sass</h2>
+<p>Para Sass, use el mixin <code>grid($item,$s $m $l $xl,$gutter)</code> aplicado al contenedor del grid. Los parámetros son:</p>
+<ul>
+<li><code>$item</code> (obligatorio) es el selector css de cada item del grid. Debe pasarse entrecomillado.</li>
+<li><code>$s $m $l $xl</code> (solo el primero obligatorio) son el número de columnas en cada breakpoint de EDgrid (separados por espacios)
+<ul>
+<li>Los breakpoints superiores heredaran el número de columnas del último breakpoint declarado en el mixin</li>
+<li><code>$gutter</code> (opcional) es la separación entre los items. Solo se aceptan <code>em</code>, <code>rem</code> o <code>px</code>.</li>
+</ul>
+</li>
+</ul>
+<p>Ejemplo, para el siguiente HTML:</p>
+<pre><code class="language-html">&lt;div class=&quot;gallery&quot;&gt;
+  &lt;div class=&quot;image&quot;&gt;&lt;!-- Una foto en la galeria--&gt;&lt;/div&gt;
+  &lt;div class=&quot;image&quot;&gt;&lt;!-- Una foto en la galeria--&gt;&lt;/div&gt;
+  &lt;div class=&quot;image&quot;&gt;&lt;!-- Una foto en la galeria--&gt;&lt;/div&gt;
+  &lt;div class=&quot;image&quot;&gt;&lt;!-- Una foto en la galeria--&gt;&lt;/div&gt;
+  &lt;div class=&quot;image&quot;&gt;&lt;!-- Una foto en la galeria--&gt;&lt;/div&gt;
+  &lt;div class=&quot;image&quot;&gt;&lt;!-- Una foto en la galeria--&gt;&lt;/div&gt;
+  &lt;div class=&quot;image&quot;&gt;&lt;!-- Una foto en la galeria--&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Crearemos un grid 1,1,2,3</p>
+<pre><code class="language-scss">.gallery {
+  @include grid('.image',1 1 2 3);
+}
+</code></pre>
+<p>Los grids son creados con CSS Grid y agregan un fallback con flexbox para navegadores que no lo soportem.</p>
+
+        </main>
+      </div>
+    </div>
+    <!-- Footer-->
+    <footer class="main-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+      <div class="ed-container main-footer--content">
+        <div class="ed-item l-50 s-to-center s-center">
+          <p class="smaller s-mb-1">EDgrid es una librería Sass/Css para crear diseños web responsive y mobile first.<a class="icon-slack space" href="https://join.slack.com/t/edlabs/shared_invite/enQtMjk1MjcxOTUzMzgxLTgyY2MwZjY3ODRhNGQyMWJkOWRkOGFlZjQ1YjJiYjAxOTMwNGIzMGViMjc5ODZmMmI3ZGFlNGNiMTEwNGIyNzc" target="_blank" title="Slack de EDgrid"></a><a class="icon-github space" href="https://github.com/escueladigital/EDgrid" target="_blank" title="EDgrid en EDgrid"></a><a class="icon-docs space" href="documentacion" target="_blank" title="Documentación de EDgrid"></a></p>
+          <p class="smaller s-mb-1">EDgrid es una marca de <a href="https://ed.team" target="_blank">EDteam</a>. Repositorio de este sitio web en  <a href="https://github.com/escueladigital/EDgrid" target="_blank">Github</a></p>
+        </div>
+        <div class="ed-item">
+          <p class="smaller s-center s-mb-0"><a href="https://ed.team/alvaro" target="_blank" title="Blog de Alvaro Felipe">Alvaro Felipe </a><span>2015 - 2019</span></p>
+        </div>
+      </div>
+    </footer>
+    <script src="/js/scripts.js"></script>
+  </body>
+</html>

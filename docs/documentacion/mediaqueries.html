@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>EDgrid | Mediaqueries (Sass)</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta name="description" content="Con ed-grid escribir media queries es tan sencillo como usar cualquiera de estos tres mixins from($bp) to($bp) fromTo($from,$to) Los tres mixins reciben como parámetros breakpoints válidos que pueden ser del core de ed-grid s,m,l,xl o números especificados en px, em o rem. from($bp) remplaza al antiguo desde($size) significa que los estilos se aplicarán desde ese breakpoint en adelante.">
+    <!-- Estilos-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:700">
+    <link rel="stylesheet" href="/css/styles.css?180113">
+    <link rel="shortcut icon" href="/assets/img/edgrid-favicon.png">
+    <meta property="og:title" content="EDgrid | Mediaqueries (Sass)">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Con ed-grid escribir media queries es tan sencillo como usar cualquiera de estos tres mixins from($bp) to($bp) fromTo($from,$to) Los tres mixins reciben como parámetros breakpoints válidos que pueden ser del core de ed-grid s,m,l,xl o números especificados en px, em o rem. from($bp) remplaza al antiguo desde($size) significa que los estilos se aplicarán desde ese breakpoint en adelante.">
+    <meta property="og:url" content="/mediaqueries.html">
+    <meta property="og:image" content="/assets/img/edgrid-poster.jpg">
+    <meta property="og:site_name" content="EDteam">
+    <meta property="og:locale" content="es_PE">
+    <meta property="og:locale:alternate" content="es_CO">
+    <meta property="og:locale:alternate" content="es_MX">
+    <meta property="og:locale:alternate" content="es_DO">
+    <meta property="og:locale:alternate" content="es_BO">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="EDgrid | Mediaqueries (Sass)">
+    <meta property="twitter:site" content="@EDteamLat">
+    <meta property="twitter:description" content="Con ed-grid escribir media queries es tan sencillo como usar cualquiera de estos tres mixins from($bp) to($bp) fromTo($from,$to) Los tres mixins reciben como parámetros breakpoints válidos que pueden ser del core de ed-grid s,m,l,xl o números especificados en px, em o rem. from($bp) remplaza al antiguo desde($size) significa que los estilos se aplicarán desde ese breakpoint en adelante.">
+    <meta name="theme-color" content="#007BDF">
+  </head>
+  <!-- Body-->
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <header class="main-header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="ed-grid s-grid-5 cols-lg-10">
+        <div class="s-cols-2 cross-center" itemscope itemtype="http://schema.org/Organization"><a href="/" itemprop="url"><img class="main-logo" alt="Logotipo de EDgrid" itemprop="logo" src="/assets/img/EDgrid-logo.svg"></a></div>
+        <div class="s-cols-3 lg-cols-8 main-menu-container s-cross-center s-main-end">
+          <nav class="main-menu" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation" id="main-menu">
+            <ul>
+              <li itemprop="url"><a href="/documentacion" target="" itemprop="name" title="Enlace de Documentación">Documentación</a></li>
+              <li itemprop="url"><a href="/casos-de-exito" target="" itemprop="name" title="Enlace de Casos de éxito">Casos de éxito</a></li>
+              <li itemprop="url"><a href="/changelog" target="" itemprop="name" title="Enlace de Changelog">Changelog</a></li>
+              <li itemprop="url"><a href="/creditos" target="" itemprop="name" title="Enlace de Créditos">Créditos</a></li>
+              <li itemprop="url"><a href="https://ed.team" target="&quot;_blank&quot;" itemprop="name" title="Enlace de Ir a EDteam">Ir a EDteam</a></li>
+            </ul>
+          </nav>
+          <div class="main-menu-toggle to-l" id="main-menu-toggle"></div>
+        </div>
+      </div>
+    </header>
+    <!-- Banner section-->
+    <!-- Main-->
+    <div class="l-block"></div>
+    <div class="ed-grid cols-l-4 main-section l-big-section">
+      <aside class="main-sidebar sidebar-first" itemscope="itemscope" itemtype="http://schema.org/WPSideBar" role="complementary">
+        <div class="vertical-menu-toggle to-l" id="vertical-menu-toggle" data-content="Filtros"></div>
+        <nav class="vertical-menu" itemscope itemtype="http://schema.org/WPSideBar" id="vertical-menu">
+          <ul>
+            <li itemprop="url"><a href="/documentacion" itemprop="name" title="Enlace de Comenzar con EDgrid">Comenzar con EDgrid</a></li>
+            <li itemprop="url"><a href="/documentacion/instalacion.html" itemprop="name" title="Enlace de Instalación">Instalación</a></li>
+            <li itemprop="url"><a href="/documentacion/estructura.html" itemprop="name" title="Enlace de Estructura de archivos">Estructura de archivos</a></li>
+            <li itemprop="url"><a href="/documentacion/personalizar.html" itemprop="name" title="Enlace de Personalizar EDgrid">Personalizar EDgrid</a></li>
+            <li itemprop="url"><a href="/documentacion/breakpoints.html" itemprop="name" title="Enlace de Breakpoints">Breakpoints</a></li>
+            <li itemprop="url"><a href="/documentacion/layout-flexbox.html" itemprop="name" title="Enlace de Columnas con Flexbox">Columnas con Flexbox</a></li>
+            <li itemprop="url"><a href="/documentacion/layout-css-grid.html" itemprop="name" title="Enlace de Filas y columnas con CSS Grid (beta)">Filas y columnas con CSS Grid (beta)</a></li>
+            <li itemprop="url"><a href="/documentacion/layout.html" itemprop="name" title="Enlace de Layout">Layout</a></li>
+            <li itemprop="url"><a href="/documentacion/distribucion.html" itemprop="name" title="Enlace de Distribucion">Distribucion</a></li>
+            <li itemprop="url"><a href="/documentacion/alineacion.html" itemprop="name" title="Enlace de Alineación">Alineación</a></li>
+            <li itemprop="url"><a href="/documentacion/visibilidad.html" itemprop="name" title="Enlace de Visibilidad">Visibilidad</a></li>
+            <li itemprop="url"><a href="/documentacion/mediaqueries.html" itemprop="name" title="Enlace de Mediaqueries">Mediaqueries</a></li>
+            <li itemprop="url"><a href="/documentacion/base.html" itemprop="name" title="Enlace de Estilos base">Estilos base</a></li>
+            <li itemprop="url"><a href="/documentacion/modo-dev.html" itemprop="name" title="Enlace de Modo dev">Modo dev</a></li>
+            <li itemprop="url"><a href="/documentacion/funciones.html" itemprop="name" title="Enlace de Funciones">Funciones</a></li>
+            <li itemprop="url"><a href="/documentacion/videos.html" itemprop="name" title="Enlace de Videos responsive">Videos responsive</a></li>
+            <li itemprop="url"><a href="/documentacion/menus.html" itemprop="name" title="Enlace de Menus">Menus</a></li>
+            <li itemprop="url"><a href="/documentacion/prototipado.html" itemprop="name" title="Enlace de Prototipado (beta)">Prototipado (beta)</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <div class="span-l-3">
+        <main itemscope itemprop="mainContentOfPage" role="main"><h1>Mediaqueries (Sass)</h1>
+<p>EDgrid incluye mixins para crear mediaqueries fácilmente:</p>
+<ol>
+<li><code>from($bp)</code><br>
+Para tamaños mayores al breakpoint (parámetro)</li>
+<li><code>to($bp)</code><br>
+Para tamaños menores al breakpoint (parámetro)</li>
+<li><code>fromTo($from,$to)</code><br>
+Para tamaños comprendidos entre los dos parámetros.</li>
+</ol>
+<p>Los tres mixins reciben como parámetros breakpoints válidos que pueden ser del core de ed-grid <code>s,m,lg,xl</code> o números especificados en <code>px</code>, <code>em</code> o <code>rem</code>.</p>
+<p>Ejemplos:</p>
+<pre><code class="language-scss">// Ejemplo mixin from()
+.from {
+  color: red;
+  
+  @include from(m) {
+    color: blue;
+  }
+
+  @include from(700px) {
+    color: red
+  }
+}
+
+// Ejemplo mixin to()
+.to {
+  display: flex;
+  
+  @include to(l) {
+    display: block
+  }
+}
+
+// Ejemplo mixin from-to()
+.from-to {
+  display: block;
+  
+  @include from-to(m,800px) {
+    display: none
+  }
+  
+}
+</code></pre>
+<p>Compila a:</p>
+<pre><code class="language-scss">// From
+.from{
+  color:red;
+}
+
+@media screen and (min-width:40em){
+  .from{
+    color:blue;
+  }
+}
+
+@media screen and (min-width:700px){
+  .from{
+    color:red;
+  }
+}
+
+// To
+.to {
+  display:flex;
+}
+
+@media screen and (max-width:64em){
+  .to {
+    display:block;
+  }
+}
+
+// From to
+.from-to {
+  display:block;
+}
+
+@media screen and (min-width:40em) and (max-width:800px){
+  .from-to {
+    display:none;
+  }
+}
+
+</code></pre>
+<h2>Control de errores</h2>
+<p>Si los parámetros pasados a estos mixins no son válidos EDgrid lanzará un mensaje en terminal indicando el error.</p>
+
+        </main>
+      </div>
+    </div>
+    <!-- Footer-->
+    <footer class="main-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+      <div class="ed-container main-footer--content">
+        <div class="ed-item l-50 s-to-center s-center">
+          <p class="smaller s-mb-1">EDgrid es una librería Sass/Css para crear diseños web responsive y mobile first.<a class="icon-slack space" href="https://join.slack.com/t/edlabs/shared_invite/enQtMjk1MjcxOTUzMzgxLTgyY2MwZjY3ODRhNGQyMWJkOWRkOGFlZjQ1YjJiYjAxOTMwNGIzMGViMjc5ODZmMmI3ZGFlNGNiMTEwNGIyNzc" target="_blank" title="Slack de EDgrid"></a><a class="icon-github space" href="https://github.com/escueladigital/EDgrid" target="_blank" title="EDgrid en EDgrid"></a><a class="icon-docs space" href="documentacion" target="_blank" title="Documentación de EDgrid"></a></p>
+          <p class="smaller s-mb-1">EDgrid es una marca de <a href="https://ed.team" target="_blank">EDteam</a>. Repositorio de este sitio web en  <a href="https://github.com/escueladigital/EDgrid" target="_blank">Github</a></p>
+        </div>
+        <div class="ed-item">
+          <p class="smaller s-center s-mb-0"><a href="https://ed.team/alvaro" target="_blank" title="Blog de Alvaro Felipe">Alvaro Felipe </a><span>2015 - 2019</span></p>
+        </div>
+      </div>
+    </footer>
+    <script src="/js/scripts.js"></script>
+  </body>
+</html>

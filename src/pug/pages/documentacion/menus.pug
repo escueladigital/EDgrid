@@ -1,0 +1,10 @@
+extends ../../config/template
+append config
+  -title = "EDgrid | Uso con CSS (cssCore)"
+  -description = "Con ed-grid puede crear menus responsive fácilmente. Basta con crear una lista ul y los enlaces dentro de cada li. Uso con CSS (cssCore) Añada la clase ed-menu al ul de nivel superior. Añada la clase n-horizontal siendo n el breakpoint (s,m,l,xl) desde el cual el menú será horizontal. Añada alguna de las tres clases para cambiar el estilo: default nav-bar button-bar"
+  -ogUrl = "/menus.html"
+  -docsMenu = true
+
+block main
+    main(itemscope itemprop="mainContentOfPage" role="main")
+      include:markdown-it(html) ../../../md/docs/menu.md

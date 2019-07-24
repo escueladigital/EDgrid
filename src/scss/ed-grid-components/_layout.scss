@@ -1,0 +1,177 @@
+// SEPARACIONES
+// Use las siguientes clases para crear separaciones verticales armoniosas
+// Las clases cancel-l- cancelan el margin bottom del hermano anterior
+
+.l-block,
+.cancel-l-block,
+.l-section,
+.cancel-l-section,
+.l-big-section,
+.cancel-l-big-section {
+  margin-top : 0;
+}
+
+// Bloque
+.l-block {
+  margin-bottom : var(--vertical-block-space);
+}
+
+.cancel-l-block {
+  margin-top : calc(var(--vertical-block-space) * -1);
+}
+
+// Sección
+.l-section {
+  margin-bottom : calc(var(--vertical-block-space) * 2);
+}
+
+.cancel-l-section {
+  margin-top : calc(var(--vertical-block-space) * -2);
+}
+
+// Big section
+.l-big-section {
+  margin-bottom : calc(var(--vertical-block-space) * 4);
+}
+
+.cancel-l-big-section {
+  margin-top : calc(var(--vertical-block-space) * -4);
+}
+
+// sticky footer
+body {
+  display        : flex;
+  flex-direction : column;
+  min-height     : 100vh;
+}
+
+.main-footer {
+  margin-top : auto;
+}
+
+// Distribución vertical de contenido
+// Puede sobreescribirlas usando las clases de arriba
+
+// Encabezados
+h1, h2, h3, h4, h5, h6 {
+  margin-top    : 0;
+  margin-bottom : var(--vertical-content-space);
+}
+
+h1 {
+  margin-bottom : calc(var(--vertical-content-space) * 1.5);
+}
+
+// Separación entre secciones de contenido
+// La norma recomienda encerrar cada sección en una etiqueta section
+// Pero en la práctica es dificil conseguirlo siempre así que la presencia
+// De un titulo indica el cambio de sección
+p,
+video,
+blockquote,
+article,
+section,
+form,
+figure,
+iframe,
+ul,
+ol,
+pre,
+hr,
+dl,
+address,
+table {
+  margin-top    : 0;
+  margin-bottom : calc(var(--vertical-content-space) * 1.5);
+
+  + h2 {
+    padding-top : calc(var(--vertical-content-space) * 1.5);
+  }
+
+  + h3 {
+    padding-top : var(--vertical-content-space);
+  }
+}
+
+// Eliminar separaciones
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-bottom: 0;
+}
+
+// Creación de márgenes y paddings
+@include sizes {
+  // Crea cinco niveles de separacion
+  @for $i from 0 through 5 {
+    // Unidad de separación actual
+    $unit : $l-unit * $i;
+    // Valida el cero para evitar devolver 0rem como unidad
+    @if $i == 0 {
+      $unit : 0;
+    }
+    // Valida el 5 para devolver nueva clase y unidad
+    @if $i == 5 {
+      $i : "05";
+      $unit: $l-unit * 0.5;
+    }
+
+    // Padding top
+    &-pt-#{$i} {
+      padding-top : $unit;
+    }
+    // Padding left
+    &-pl-#{$i} {
+      padding-left : $unit;
+    }
+    // Padding bottom
+    &-pb-#{$i} {
+      padding-bottom : $unit;
+    }
+    // Padding right
+    &-pr-#{$i} {
+      padding-right : $unit;
+    }
+    // Padding vertical
+    &-py-#{$i} {
+      padding-top    : $unit;
+      padding-bottom : $unit;
+    }
+    // Padding horizontal
+    &-px-#{$i} {
+      padding-left  : $unit;
+      padding-right : $unit;
+    }
+    // Padding total
+    &-pxy-#{$i} {
+      padding : $unit;
+    }
+    // Margin right
+    &-mr-#{$i} {
+      margin-right : $unit;
+    }
+    // Margin bottom
+    &-mb-#{$i} {
+      margin-bottom : $unit;
+    }
+    // Margin bottom (negativo)
+    &-mt-#{$i} {
+      margin-top : $unit * -1;
+    }
+    // Margin top (negativo)
+    &-ml-#{$i} {
+      margin-left : $unit * -1;
+    }
+
+    // Elemento sticky
+    &-sticky-#{$i} {
+      position: sticky;
+      top: calc(var(--header-height) + #{$unit});
+    }
+  }
+  &-sticky-none {
+    position: static;
+  }
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>EDgrid | CSS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta name="description" content="La principal diferencia de ed-grid 2 con su versión anterior es que podemos decidir qué componentes compilar a CSS. En la versión 1, todo el CSS era compilado generando código innecesario. Si usted desea puede trabajar solo con la versión CSS de ed-grid 2, y añadir clases al código HTML para construir su layout según el flujo de trabajo recomendado. El CSS de ed-grid 2 se clasifica en 2 grupos:">
+    <!-- Estilos-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:700">
+    <link rel="stylesheet" href="/css/styles.css?t=1542648441020">
+    <link rel="shortcut icon" href="/assets/img/edgrid-favicon.png">
+    <meta property="og:title" content="EDgrid | CSS">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="La principal diferencia de ed-grid 2 con su versión anterior es que podemos decidir qué componentes compilar a CSS. En la versión 1, todo el CSS era compilado generando código innecesario. Si usted desea puede trabajar solo con la versión CSS de ed-grid 2, y añadir clases al código HTML para construir su layout según el flujo de trabajo recomendado. El CSS de ed-grid 2 se clasifica en 2 grupos:">
+    <meta property="og:url" content="/css.html">
+    <meta property="og:image" content="/assets/img/edgrid-poster.jpg">
+    <meta property="og:site_name" content="EDteam">
+    <meta property="og:locale" content="es_PE">
+    <meta property="og:locale:alternate" content="es_CO">
+    <meta property="og:locale:alternate" content="es_MX">
+    <meta property="og:locale:alternate" content="es_DO">
+    <meta property="og:locale:alternate" content="es_BO">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="EDgrid | CSS">
+    <meta property="twitter:site" content="@EDteamLat">
+    <meta property="twitter:description" content="La principal diferencia de ed-grid 2 con su versión anterior es que podemos decidir qué componentes compilar a CSS. En la versión 1, todo el CSS era compilado generando código innecesario. Si usted desea puede trabajar solo con la versión CSS de ed-grid 2, y añadir clases al código HTML para construir su layout según el flujo de trabajo recomendado. El CSS de ed-grid 2 se clasifica en 2 grupos:">
+    <meta name="theme-color" content="#007BDF">
+  </head>
+  <!-- Body-->
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <header class="main-header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="ed-grid s-grid-5 cols-lg-10">
+        <div class="s-cols-2 cross-center" itemscope itemtype="http://schema.org/Organization"><a href="/" itemprop="url"><img class="main-logo" alt="Logotipo de EDgrid" itemprop="logo" src="/assets/img/EDgrid-logo.svg"></a></div>
+        <div class="s-cols-3 lg-cols-8 main-menu-container lg-cross-center lg-main-end">
+          <nav class="main-menu" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation" id="main-menu">
+            <ul>
+              <li itemprop="url"><a href="/documentacion" target="" itemprop="name" title="Enlace de Documentación">Documentación</a></li>
+              <li itemprop="url"><a href="/casos-de-exito" target="" itemprop="name" title="Enlace de Casos de éxito">Casos de éxito</a></li>
+              <li itemprop="url"><a href="/changelog" target="" itemprop="name" title="Enlace de Changelog">Changelog</a></li>
+              <li itemprop="url"><a href="/creditos" target="" itemprop="name" title="Enlace de Créditos">Créditos</a></li>
+              <li itemprop="url"><a href="https://ed.team" target="&quot;_blank&quot;" itemprop="name" title="Enlace de Ir a EDteam">Ir a EDteam</a></li>
+            </ul>
+          </nav>
+          <div class="main-menu-toggle to-l" id="main-menu-toggle"></div>
+        </div>
+      </div>
+    </header>
+    <!-- Banner section-->
+    <!-- Main-->
+    <div class="l-block"></div>
+    <div class="ed-grid cols-l-4 main-section l-big-section">
+      <aside class="main-sidebar sidebar-first" itemscope="itemscope" itemtype="http://schema.org/WPSideBar" role="complementary">
+        <div class="vertical-menu-toggle to-l" id="vertical-menu-toggle" data-content="Filtros"></div>
+        <nav class="vertical-menu" itemscope itemtype="http://schema.org/WPSideBar" id="vertical-menu">
+          <ul>
+            <li itemprop="url"><a href="/documentacion" itemprop="name" title="Enlace de Comenzar con EDgrid">Comenzar con EDgrid</a></li>
+            <li itemprop="url"><a href="/documentacion/instalacion.html" itemprop="name" title="Enlace de Instalación">Instalación</a></li>
+            <li itemprop="url"><a href="/documentacion/estructura.html" itemprop="name" title="Enlace de Estructura de archivos">Estructura de archivos</a></li>
+            <li itemprop="url"><a href="/documentacion/css.html" itemprop="name" title="Enlace de Estructura CSS">Estructura CSS</a></li>
+            <li itemprop="url"><a href="/documentacion/sass.html" itemprop="name" title="Enlace de Estructura Sass">Estructura Sass</a></li>
+            <li itemprop="url"><a href="/documentacion/breakpoints.html" itemprop="name" title="Enlace de Breakpoints">Breakpoints</a></li>
+            <li itemprop="url"><a href="/documentacion/layout-flexbox.html" itemprop="name" title="Enlace de Layout con Flexbox">Layout con Flexbox</a></li>
+            <li itemprop="url"><a href="/documentacion/layout-css-grid.html" itemprop="name" title="Enlace de Layout con CSS Grid">Layout con CSS Grid</a></li>
+            <li itemprop="url"><a href="/documentacion/layout.html" itemprop="name" title="Enlace de Layout vertical">Layout vertical</a></li>
+            <li itemprop="url"><a href="/documentacion/personalizar.html" itemprop="name" title="Enlace de Personalizar EDgrid">Personalizar EDgrid</a></li>
+            <li itemprop="url"><a href="/documentacion/mediaqueries.html" itemprop="name" title="Enlace de Mediaqueries (Sass)">Mediaqueries (Sass)</a></li>
+            <li itemprop="url"><a href="/documentacion/base.html" itemprop="name" title="Enlace de Base">Base</a></li>
+            <li itemprop="url"><a href="/documentacion/modo-dev.html" itemprop="name" title="Enlace de Modo dev">Modo dev</a></li>
+            <li itemprop="url"><a href="/documentacion/grids.html" itemprop="name" title="Enlace de Grids (cuadrículas)">Grids (cuadrículas)</a></li>
+            <li itemprop="url"><a href="/documentacion/visibilidad.html" itemprop="name" title="Enlace de Visibilidad">Visibilidad</a></li>
+            <li itemprop="url"><a href="/documentacion/funciones.html" itemprop="name" title="Enlace de Funciones">Funciones</a></li>
+            <li itemprop="url"><a href="/documentacion/helpers.html" itemprop="name" title="Enlace de Helpers">Helpers</a></li>
+            <li itemprop="url"><a href="/documentacion/offset.html" itemprop="name" title="Enlace de Offset">Offset</a></li>
+            <li itemprop="url"><a href="/documentacion/videos.html" itemprop="name" title="Enlace de Videos responsive">Videos responsive</a></li>
+            <li itemprop="url"><a href="/documentacion/botones.html" itemprop="name" title="Enlace de Botones">Botones</a></li>
+            <li itemprop="url"><a href="/documentacion/menus.html" itemprop="name" title="Enlace de Menus">Menus</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <div class="span-l-3">
+        <main itemscope itemprop="mainContentOfPage" role="main"><h1>Comprender EDgrid CSS</h1>
+<p>En EDgrid puede decidir que código será compilado a CSS.</p>
+<p>Si usted desea puede trabajar solo con la versión CSS de EDgrid, y añadir clases a su marcado HTML para construir su layout según el <a href="/documentacion/flujo.html">flujo de trabajo recomendado</a>.</p>
+<p>El código CSS de EDgrid 2 se clasifica en 2 grupos:</p>
+<h2>cssCore</h2>
+<p>Cojunto de clases CSS recomendadas si va a trabajar con la versión CSS. Si va a trabajar con Sass puede saltarse está sección.</p>
+<ul>
+<li><a href="/documentacion/offset.html">offset</a><br>
+Clases para agregar un margen inicial a los elementos</li>
+<li><a href="/documentacion/flexbox.html">flexbox</a><br>
+Clases para alinear elementos en vertical y horizontal con flexbox.</li>
+<li><a href="/documentacion/flexbox">grid</a><br>
+Clases para crear cuadrículas (p.ej. para galerías de fotos)</li>
+<li><a href="/documentacion/modo-dev.html">devMode</a><br>
+Genera el modo dev para visualizar la construcción del layout</li>
+<li><a href="/documentacion/botones.html">botones</a><br>
+Clases para crear botones</li>
+<li><a href="/documentacion/menus.html">ed-menu</a><br>
+Clases para crear menu de navegacion</li>
+</ul>
+<h2>cssHelpers</h2>
+<p>Clases utilitarias de CSS que incluyen la funcionalidad base de EDgrid. Por eso, incluso en la <a href="/documentacion/sass.html">versión Sass</a> vienen activadas por defecto.</p>
+<ul>
+<li><strong>Breakpoints</strong><br>
+Define los tamaños de viewport en los que se cambia el layout</li>
+<li><strong>Layout (flexbox)</strong><br>
+Construye layouts con Flexbox</li>
+<li><strong>Layout (CSS Grid)</strong><br>
+Construye layouts con CSS Grid (beta)</li>
+<li><strong>Helpers para alineación con flexbox</strong><br>
+Alineación de elementos en horizontal y vertical respecto a su padre</li>
+<li><strong>Helpers</strong><br>
+Clases para alineación de elementos</li>
+<li><strong>Visibilidad</strong><br>
+Clases para definir en qué breakpoints será visible u oculto un elemento.</li>
+<li><strong>Video responsive</strong><br>
+Crea videos responsive 16:9</li>
+</ul>
+
+        </main>
+      </div>
+    </div>
+    <!-- Footer-->
+    <footer class="main-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+      <div class="ed-container main-footer--content">
+        <div class="ed-item l-50 to-center center">
+          <p class="smaller">EDgrid es una librería Sass/Css para crear diseños web responsive y mobile first.<a class="icon-slack space" href="https://join.slack.com/t/edlabs/shared_invite/enQtMjk1MjcxOTUzMzgxLTgyY2MwZjY3ODRhNGQyMWJkOWRkOGFlZjQ1YjJiYjAxOTMwNGIzMGViMjc5ODZmMmI3ZGFlNGNiMTEwNGIyNzc" target="_blank" title="Slack de EDgrid"></a><a class="icon-github space" href="https://github.com/escueladigital/EDgrid" target="_blank" title="EDgrid en EDgrid"></a><a class="icon-docs space" href="documentacion" target="_blank" title="Documentación de EDgrid"></a></p>
+          <p class="smaller">EDgrid es una marca de <a href="https://ed.team" target="_blank">EDteam</a>. Repositorio de este sitio web en  <a href="https://github.com/edgrid/edgrid-website" target="_blank">Github</a></p>
+        </div>
+        <div class="ed-item center">
+          <p class="smaller"><a href="https://ed.team/alvaro" target="_blank" title="Blog de Alvaro Felipe">Alvaro Felipe </a><span>2015 - 2018</span></p>
+        </div>
+      </div>
+    </footer>
+    <script src="/js/scripts.js?t=1542648441020"></script>
+  </body>
+</html>

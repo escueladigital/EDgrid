@@ -1,0 +1,26 @@
+extends ../../config/template
+include ../../includes/banner
+include ../../includes/cards
+append config
+  -title = "Casos de éxito"
+  -description = "Casos de éxito que se encuentran actualmente en producción y que utilizan la librería de EDgrid."
+  -ogUrl = "/casos-exito.html"
+
+  -img = "/assets/img/docs-banner.jpg"
+  -titleBanner = "Casos de éxito"
+  -descriptionBanner = "Proyectos que usan EDgrid en producción"
+  -clase = "third-color"
+  -boton = false
+  -botonClass= ""
+  -botonUrl=""
+  -botonText =""
+  -botones = false
+
+block banner
+  +banner(img, titleBanner, descriptionBanner, clase, boton, botonClass, botonUrl, botonText, botones)
+block main
+  main.main-section
+    .ed-grid.cols-l-3.rows-gap
+        -for (var i = 0; i < casos.length ; i++)
+          -var caso = casos[i]
+          +card(caso.img, caso.title, caso.subtitle, caso.description, caso.url, caso.user, caso.imageUser, caso.linkUser)

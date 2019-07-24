@@ -1,10 +1,10 @@
 {
   "name": "ed-grid",
-  "version": "1.3.0",
-  "description": "Framework de CSS puro para crear diseños web responsive y mobile first.",
+  "version": "2.8.1",
+  "description": "EDgrid (aka ed-grid) is a minimalist Sass/CSS library for building responsive web layouts.",
   "style": "ed-grid.scss",
   "main": "ed-grid.scss",
-  "author": "Alvaro Felipe <informes@escueladigital.pe>",
+  "author": "Alvaro Felipe <afelipech@gmail.com>",
   "contributors": [
     {
       "name": "Daniel Guillermo Romero Gelvez",
@@ -24,23 +24,38 @@
   "bugs": {
     "url": "https://github.com/escueladigital/ED-GRID/issues"
   },
+  "scripts": {
+    "start": "./node_modules/.bin/gulp"
+  },
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^6.4.1",
     "babel-cli": "^6.16.0",
+    "babel-core": "^6.26.0",
     "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-es2015": "^6.16.0",
-    "babel-preset-latest": "^6.16.0",
+    "babel-preset-env": "^1.6.0",
     "babel-register": "^6.18.0",
     "babelify": "^7.3.0",
     "browser-sync": "^2.16.0",
     "browserify": "^13.1.1",
     "cssnano": "^3.7.5",
+    "edteam-style-guides": "0.0.45",
     "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-cache-bust": "^1.4.0",
+    "gulp-data": "^1.3.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-minify": "^3.1.0",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.2.0",
-    "gulp-sass": "^2.3.2",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^1.2.3",
+    "gulp-sass": "^3.1.0",
+    "gulp-sitemap": "^5.1.0",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-watch": "^5.0.1",
+    "jstransformer-markdown-it": "^2.1.0",
+    "node-sass-tilde-importer": "^1.0.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   }

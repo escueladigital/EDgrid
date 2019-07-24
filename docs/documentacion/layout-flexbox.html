@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>EDgrid | Flujo de trabajo (CSS/Sass)</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta name="description" content="Sass o CSS Puede usar ed-grid con CSS (añadiendo el archivo css e insertando clases en html) o con Sass (mixins preconstruidos). Se recomienda Sass para aprovechar todo el potencial de ed-grid. A lo largo de esta documentación se indicará si nos referimos al trabajo con Sass o CSS.">
+    <!-- Estilos-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:700">
+    <link rel="stylesheet" href="/css/styles.css?180113">
+    <link rel="shortcut icon" href="/assets/img/edgrid-favicon.png">
+    <meta property="og:title" content="EDgrid | Flujo de trabajo (CSS/Sass)">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Sass o CSS Puede usar ed-grid con CSS (añadiendo el archivo css e insertando clases en html) o con Sass (mixins preconstruidos). Se recomienda Sass para aprovechar todo el potencial de ed-grid. A lo largo de esta documentación se indicará si nos referimos al trabajo con Sass o CSS.">
+    <meta property="og:url" content="/flujo.html">
+    <meta property="og:image" content="/assets/img/edgrid-poster.jpg">
+    <meta property="og:site_name" content="EDteam">
+    <meta property="og:locale" content="es_PE">
+    <meta property="og:locale:alternate" content="es_CO">
+    <meta property="og:locale:alternate" content="es_MX">
+    <meta property="og:locale:alternate" content="es_DO">
+    <meta property="og:locale:alternate" content="es_BO">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="EDgrid | Flujo de trabajo (CSS/Sass)">
+    <meta property="twitter:site" content="@EDteamLat">
+    <meta property="twitter:description" content="Sass o CSS Puede usar ed-grid con CSS (añadiendo el archivo css e insertando clases en html) o con Sass (mixins preconstruidos). Se recomienda Sass para aprovechar todo el potencial de ed-grid. A lo largo de esta documentación se indicará si nos referimos al trabajo con Sass o CSS.">
+    <meta name="theme-color" content="#007BDF">
+  </head>
+  <!-- Body-->
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <header class="main-header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="ed-grid s-grid-5 cols-lg-10">
+        <div class="s-cols-2 cross-center" itemscope itemtype="http://schema.org/Organization"><a href="/" itemprop="url"><img class="main-logo" alt="Logotipo de EDgrid" itemprop="logo" src="/assets/img/EDgrid-logo.svg"></a></div>
+        <div class="s-cols-3 lg-cols-8 main-menu-container s-cross-center s-main-end">
+          <nav class="main-menu" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation" id="main-menu">
+            <ul>
+              <li itemprop="url"><a href="/documentacion" target="" itemprop="name" title="Enlace de Documentación">Documentación</a></li>
+              <li itemprop="url"><a href="/casos-de-exito" target="" itemprop="name" title="Enlace de Casos de éxito">Casos de éxito</a></li>
+              <li itemprop="url"><a href="/changelog" target="" itemprop="name" title="Enlace de Changelog">Changelog</a></li>
+              <li itemprop="url"><a href="/creditos" target="" itemprop="name" title="Enlace de Créditos">Créditos</a></li>
+              <li itemprop="url"><a href="https://ed.team" target="&quot;_blank&quot;" itemprop="name" title="Enlace de Ir a EDteam">Ir a EDteam</a></li>
+            </ul>
+          </nav>
+          <div class="main-menu-toggle to-l" id="main-menu-toggle"></div>
+        </div>
+      </div>
+    </header>
+    <!-- Banner section-->
+    <!-- Main-->
+    <div class="l-block"></div>
+    <div class="ed-grid cols-l-4 main-section l-big-section">
+      <aside class="main-sidebar sidebar-first" itemscope="itemscope" itemtype="http://schema.org/WPSideBar" role="complementary">
+        <div class="vertical-menu-toggle to-l" id="vertical-menu-toggle" data-content="Filtros"></div>
+        <nav class="vertical-menu" itemscope itemtype="http://schema.org/WPSideBar" id="vertical-menu">
+          <ul>
+            <li itemprop="url"><a href="/documentacion" itemprop="name" title="Enlace de Comenzar con EDgrid">Comenzar con EDgrid</a></li>
+            <li itemprop="url"><a href="/documentacion/instalacion.html" itemprop="name" title="Enlace de Instalación">Instalación</a></li>
+            <li itemprop="url"><a href="/documentacion/estructura.html" itemprop="name" title="Enlace de Estructura de archivos">Estructura de archivos</a></li>
+            <li itemprop="url"><a href="/documentacion/personalizar.html" itemprop="name" title="Enlace de Personalizar EDgrid">Personalizar EDgrid</a></li>
+            <li itemprop="url"><a href="/documentacion/breakpoints.html" itemprop="name" title="Enlace de Breakpoints">Breakpoints</a></li>
+            <li itemprop="url"><a href="/documentacion/layout-flexbox.html" itemprop="name" title="Enlace de Columnas con Flexbox">Columnas con Flexbox</a></li>
+            <li itemprop="url"><a href="/documentacion/layout-css-grid.html" itemprop="name" title="Enlace de Filas y columnas con CSS Grid (beta)">Filas y columnas con CSS Grid (beta)</a></li>
+            <li itemprop="url"><a href="/documentacion/layout.html" itemprop="name" title="Enlace de Layout">Layout</a></li>
+            <li itemprop="url"><a href="/documentacion/distribucion.html" itemprop="name" title="Enlace de Distribucion">Distribucion</a></li>
+            <li itemprop="url"><a href="/documentacion/alineacion.html" itemprop="name" title="Enlace de Alineación">Alineación</a></li>
+            <li itemprop="url"><a href="/documentacion/visibilidad.html" itemprop="name" title="Enlace de Visibilidad">Visibilidad</a></li>
+            <li itemprop="url"><a href="/documentacion/mediaqueries.html" itemprop="name" title="Enlace de Mediaqueries">Mediaqueries</a></li>
+            <li itemprop="url"><a href="/documentacion/base.html" itemprop="name" title="Enlace de Estilos base">Estilos base</a></li>
+            <li itemprop="url"><a href="/documentacion/modo-dev.html" itemprop="name" title="Enlace de Modo dev">Modo dev</a></li>
+            <li itemprop="url"><a href="/documentacion/funciones.html" itemprop="name" title="Enlace de Funciones">Funciones</a></li>
+            <li itemprop="url"><a href="/documentacion/videos.html" itemprop="name" title="Enlace de Videos responsive">Videos responsive</a></li>
+            <li itemprop="url"><a href="/documentacion/menus.html" itemprop="name" title="Enlace de Menus">Menus</a></li>
+            <li itemprop="url"><a href="/documentacion/prototipado.html" itemprop="name" title="Enlace de Prototipado (beta)">Prototipado (beta)</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <div class="span-l-3">
+        <main itemscope itemprop="mainContentOfPage" role="main"><h1>Sistema de columnas con flexbox</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#ed-container-y-ed-item">ed-container y ed-item</a></li>
+<li><a href="#ancho-de-los-ed-container">Ancho de los ed-container</a></li>
+<li><a href="#ancho-de-los-ed-item">Ancho de los ed-item</a>
+<ul>
+<li><a href="#1-porcentajes">1. Porcentajes</a></li>
+<li><a href="#2-fracciones">2. Fracciones</a></li>
+</ul>
+</li>
+<li><a href="#anidar-contenedores-e-items">Anidar contenedores e items</a></li>
+<li><a href="#avanzado-crea-tus-propios-contenedores-e-items">Avanzado: crea tus propios contenedores e items</a></li>
+<li><a href="#avanzado-crear-contenedores-e-items-con-sass-sin-clases-html">Avanzado: crear contenedores e items con Sass (sin clases HTML)</a></li>
+</ul>
+<!-- /TOC -->
+<hr>
+<p>EDgrid es una librería para construir layouts. Puede construirlos con Flexbox (estable) o <a href="/documentacion/layout-css-grid.html">CSS Grid</a> (beta)</p>
+<p><a id="markdown-ed-container-y-ed-item" name="ed-container-y-ed-item"></a></p>
+<h2>ed-container y ed-item</h2>
+<p>Para construir layouts con Flexbox y EDgrid debe definir contenedores con la clase <code>ed-container</code> e items con la clase <code>ed-item</code>. Con las siguientes reglas:</p>
+<ol>
+<li>Un <code>ed-item</code> no puede ser huérfano. Siempre debe ser hijo de un <code>ed-container</code></li>
+<li>Un <code>ed-container</code> debe tener al menos un <code>ed-item</code> como hijo directo.</li>
+<li>Los <code>ed-container</code> y <code>ed-item</code> son contenedores para crear layout. No agregue contenido directamente en ellos.</li>
+</ol>
+<pre><code class="language-html">&lt;!-- Bien --&gt;
+&lt;div class=&quot;ed-container&quot;&gt;
+&lt;div class=&quot;ed-item&quot;&gt;
+&lt;article&gt;
+&lt;p&gt;
+En un lugar de la Mancha, de cuyo nombre no quiero acordarme,
+no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero,
+adarga antigua, rocín flaco y galgo corredor.
+&lt;/p&gt;
+&lt;/article&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Mal --&gt;
+&lt;div class=&quot;ed-container&quot;&gt;
+&lt;article class=&quot;ed-item&quot;&gt;
+En un lugar de la Mancha, de cuyo nombre no quiero acordarme,
+no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero,
+adarga antigua, rocín flaco y galgo corredor.
+&lt;/article&gt;
+&lt;/div&gt;
+</code></pre>
+<p><a id="markdown-ancho-de-los-ed-container" name="ancho-de-los-ed-container"></a></p>
+<h2>Ancho de los ed-container</h2>
+<p>Los <code>ed-container</code> tienen un ancho predeterminado de 100% y un ancho máximo de <code>1200px</code>. Así cuando la pantalla es mayor a esta medida, el <code>ed-container</code> queda fijo y se centra horizontalmente.</p>
+<p>Si desea un <code>ed-container</code> que mida siempre el 100% de la pantalla agregue la clase <code>full</code>.</p>
+<pre><code class="language-markup">&lt;div class=&quot;ed-container full&quot;&gt;
+&lt;div class=&quot;ed-item&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Si desea personalizar el ancho máximo del <code>ed-container</code> redefina la variable Sass <code>$max-width</code> antes de importar EDgrid.</p>
+<pre><code class="language-scss">$max-width: 1400px;
+@import &quot;~ed-grid/ed-grid&quot;;
+</code></pre>
+<p><a id="markdown-ancho-de-los-ed-item" name="ancho-de-los-ed-item"></a></p>
+<h2>Ancho de los ed-item</h2>
+<p>Cada <code>ed-item</code> tiene 100% del ancho de su padre a menos que se especifique lo contrario (a través de clases). Las clases para definir el ancho son de dos tipos: porcentajes y fracciones.</p>
+<p><a id="markdown-1-porcentajes" name="1-porcentajes"></a></p>
+<h3>1. Porcentajes</h3>
+<p>La nomenclatura de clase es <code>breakpoint-numero</code> Donde número es cualquier número múltiplo de 5 entre 0 y 100. Así que la clase <code>lg-75</code> significa que el elemento tendrá 75% del ancho de su padre a partir del breakpoint <code>lg</code>.</p>
+<pre><code class="language-html">&lt;div class=&quot;ed-container&quot;&gt;
+&lt;div class=&quot;ed-container&quot;&gt;
+  &lt;div class=&quot;ed-item s-30 lg-50&quot;&gt;1&lt;/div&gt;
+  &lt;div class=&quot;ed-item s-50 lg-25&quot;&gt;2&lt;/div&gt;
+  &lt;div class=&quot;ed-item s-20 lg-25&quot;&gt;3&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<div class="ed-grid-demo">
+<div class="ed-container">
+  <div class="ed-item s-30 lg-50">1</div>
+  <div class="ed-item s-50 lg-25">2</div>
+  <div class="ed-item s-20 lg-25">3</div>
+</div>
+</div>
+<ul>
+<li>Como puede ver, las separaciones entre columnas se crean con paddings laterales.</li>
+<li>Si no desea separaciones con paddings (que dan problemas en layouts complejos) use nuestra versión con <a href="/documentacion/layout-css-grid.html">CSS Grid</a></li>
+<li>Si la suma de los anchos da más de 100, habrá saltos de fila. Así puede crear layouts más complejos sin crear nuevos contenedores.</li>
+</ul>
+<p><a id="markdown-2-fracciones" name="2-fracciones"></a></p>
+<h3>2. Fracciones</h3>
+<p>Si quiere dividir el ancho entre 3 o 6 necesitará fracciones. La nomenclatura es <code>breakpoint-numerador-denominador</code>. Por ejemplo: <code>lg-1-3</code> significa un tercio de ancho (33.33%) a partir del breakpoint <code>lg</code> (1024px). Mientras que <code>xl-2-3</code> significa dos tercios a partir del breakpoint <code>xl</code> (1440px).</p>
+<pre><code class="language-html">&lt;!-- Layout de tres columnas a partir de 1024px de pantalla --&gt;
+&lt;div class=&quot;ed-container&quot;&gt;
+    &lt;div class=&quot;ed-item s-1-3&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;ed-item s-1-3&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;ed-item s-1-3&quot;&gt;3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<div class="ed-grid-demo">
+<div class="ed-container">
+<div class="ed-item s-1-3">1</div>
+<div class="ed-item s-1-3">2</div>
+<div class="ed-item s-1-3">3</div>
+</div>
+</div>
+<p><a id="markdown-anidar-contenedores-e-items" name="anidar-contenedores-e-items"></a></p>
+<h2>Anidar contenedores e items</h2>
+<p>Si necesita anidar elementos para crear layouts más complejos tenga en cuenta las siguientes reglas:</p>
+<ol>
+<li>No cree un <code>ed-container</code> como hijo de un <code>ed-item</code></li>
+<li>Para anidar, agregue la clase <code>ed-container</code> a un <code>ed-item</code> entonces ya podrá crear nuevos <code>ed-item</code> nietos.</li>
+</ol>
+<pre><code class="language-html">&lt;!-- Bien --&gt;
+&lt;div class=&quot;ed-container&quot;&gt;
+    &lt;div class=&quot;ed-item s-60&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;ed-item s-40 ed-container&quot;&gt;
+        &lt;div class=&quot;ed-item s-50&quot;&gt;2&lt;/div&gt;
+        &lt;div class=&quot;ed-item s-50&quot;&gt;3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Mal --&gt;
+&lt;div class=&quot;ed-container&quot;&gt;
+    &lt;div class=&quot;ed-item s-1-3&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;ed-item s-2-3&quot;&gt;
+        &lt;div class=&quot;ed-container&quot;&gt;
+            &lt;div class=&quot;ed-item s-50&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;ed-item s-50&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<div class="ed-grid-demo">
+<div class="ed-container">
+    <div class="ed-item s-60">1</div>
+    <div class="ed-item s-40 ed-container">
+        <div class="ed-item s-50">2</div>
+        <div class="ed-item s-50">3</div>
+    </div>
+</div>
+</div>
+<p><a id="markdown-avanzado-crea-tus-propios-contenedores-e-items" name="avanzado-crea-tus-propios-contenedores-e-items"></a></p>
+<h2>Avanzado: crea tus propios contenedores e items</h2>
+<p>Si no desea usar las clases <code>ed-container</code> y <code>ed-item</code> puede definir las suyas. Simplemente redefina las variables <code>$container</code> y <code>$item</code> antes de importar EDgrid.</p>
+<pre><code class="language-scss">$container: row;
+$item: column;
+@import &quot;~ed-grid/ed-grid&quot;;
+</code></pre>
+<p><a id="markdown-avanzado-crear-contenedores-e-items-con-sass-sin-clases-html" name="avanzado-crear-contenedores-e-items-con-sass-sin-clases-html"></a></p>
+<h2>Avanzado: crear contenedores e items con Sass (sin clases HTML)</h2>
+<p>Si no desea tocar el marcado HTML (o no tiene acceso a el por restricciones del proyecto) puede usar mixins de Sass para definir sus contenedores e items.</p>
+<ul>
+<li>Para los contenedores, use el mixin <code>ed-container</code>.</li>
+<li>Para los items, use el mixin <code>ed-item($s,$m,$lg,$xl)</code> Los parámetros definen el ancho en cada breakpoint:</li>
+<li>Puede omitirlos todos y el ancho será siempre 100%</li>
+<li>Un ancho declarado se herederá en los breakpoints superiores.</li>
+<li>Puede usar fracciones como parámetro. Por ejemplo: <code>1/3</code></li>
+</ul>
+<pre><code class="language-scss">.main-page {
+@include ed-container
+}
+
+.sidebar {
+@include ed-item(100,100,1/3)
+}
+
+.content {
+@include ed-item(100,100,2/3)
+}
+</code></pre>
+
+        </main>
+      </div>
+    </div>
+    <!-- Footer-->
+    <footer class="main-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+      <div class="ed-container main-footer--content">
+        <div class="ed-item l-50 s-to-center s-center">
+          <p class="smaller s-mb-1">EDgrid es una librería Sass/Css para crear diseños web responsive y mobile first.<a class="icon-slack space" href="https://join.slack.com/t/edlabs/shared_invite/enQtMjk1MjcxOTUzMzgxLTgyY2MwZjY3ODRhNGQyMWJkOWRkOGFlZjQ1YjJiYjAxOTMwNGIzMGViMjc5ODZmMmI3ZGFlNGNiMTEwNGIyNzc" target="_blank" title="Slack de EDgrid"></a><a class="icon-github space" href="https://github.com/escueladigital/EDgrid" target="_blank" title="EDgrid en EDgrid"></a><a class="icon-docs space" href="documentacion" target="_blank" title="Documentación de EDgrid"></a></p>
+          <p class="smaller s-mb-1">EDgrid es una marca de <a href="https://ed.team" target="_blank">EDteam</a>. Repositorio de este sitio web en  <a href="https://github.com/escueladigital/EDgrid" target="_blank">Github</a></p>
+        </div>
+        <div class="ed-item">
+          <p class="smaller s-center s-mb-0"><a href="https://ed.team/alvaro" target="_blank" title="Blog de Alvaro Felipe">Alvaro Felipe </a><span>2015 - 2019</span></p>
+        </div>
+      </div>
+    </footer>
+    <script src="/js/scripts.js"></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+extends ../../config/template
+append config
+  -title = "EDgrid | Sass"
+  -description = "Si va a trabajar con Sass, tenga en cuenta que como se explicó aquí, ed-grid genera dos grupos de código css: cssCore no recomendado si va a trabajar con Sass (desactivado por defecto para Sass) cssHelpers recomendado si va a trabajar con Sass (activado por defecto para Sass, puede desactivarlo si es un usuario avanzado) Para activar o desactivar estos componentes redefina las variables $cssCore y $cssHelpers antes de importar ed-grid."
+  -ogUrl= "/sass.html"
+  -docsMenu = true
+
+block main
+  main(itemscope itemprop="mainContentOfPage" role="main")
+    :markdown-it
+      # Comprender EDgrid Sass
+
+      Si va a trabajar con Sass, tenga en cuenta que [como se explicó aquí](/documentacion/css.html), EDgrid genera dos grupos de código css:
+
+      * `cssCore` Clases utilitarias no recomendadas si va a trabajar con Sass (desactivado por defecto para Sass)
+      * `cssHelpers` Clases utilitarias recomendadas si va a trabajar con Sass (activado por defecto para Sass, puede desactivarlo si desea)
+
+      Si es un usuario avanzado puede activar o desactivar estos componentes redefiniendo las variables `$cssCore` y `$cssHelpers` antes de importar EDgrid. Estas variables son booleans.
+
+      Por ejemplo, si desea construir todo su layout con Sass, sin usar clases en HTML, puede desactivar ambos:
+
+      ```scss
+      $cssCore: false;
+      $cssHelpers: false;
+      @import "path/ed-grid/ed-grid"
+      ```
+
+      Sin embargo, si usa la configuración recomendada, importe EDgrid sin preocuparse de estos valores.
+
+      ```scss
+      @import "~ed-grid/ed-grid";
+      ```
+

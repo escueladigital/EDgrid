@@ -1,0 +1,11 @@
+extends /src/pug/config/template
+append config
+  -title = "EDgrid | Base (CSS/Sass)"
+  -description = "Los estilos base normalizan los elementos HTML para Responsive Web Design."
+  -ogUrl = "/base.html"
+  -docsMenu = true
+
+block main
+  main(itemscope itemprop="mainContentOfPage" role="main")
+    include:markdown-it(html) /src/md/layout.md
+

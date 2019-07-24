@@ -1,0 +1,11 @@
+extends ../../config/template
+append config
+  -title = "EDgrid | Flexbox (CSS/Sass)"
+  -description = "El core de ed-grid está construido con flexbox, cero floats, display:table, inline-blocks u otros hacks extraños. Sin embargo, ed-grid ofrece mcuhas utilidades extra para aprovechar el poder de flexbox. Estas utilidades están dentro de los helpers de CSS ($cssHelpers : true) por lo que se recomienda activarlos aunque su flujo de trabajo sea con Sass."
+  -ogUrl = "/documentacion/flexbox.html"
+  -docsMenu = true
+
+block main
+  main(itemscope itemprop="mainContentOfPage" role="main")
+    include:markdown-it(html) ../../../md/docs/flexbox.md
+

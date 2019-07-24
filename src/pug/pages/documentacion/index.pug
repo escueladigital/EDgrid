@@ -1,0 +1,31 @@
+extends ../../config/template
+include ../../includes/banner
+append config
+  -title = "EDgrid | Documentación"
+  -description = "Puede usar EDgrid con CSS y Sass."
+  -ogUrl= "/documentacion"
+  -docsMenu = true
+
+  -img = "/assets/img/docs-banner.jpg"
+  -titleBanner = "Documentación"
+  -descriptionBanner = "EDgrid es muy fácil de aprender. En una hora ya lo estará usando en sus proyectos"
+  -clase = "dark-color"
+  -boton = false
+  -botonClass= ""
+  -botonUrl=""
+  -botonText =""
+  -botones = false
+
+block banner
+  +banner(img, titleBanner, descriptionBanner, clase, boton, botonClass, botonUrl, botonText, botones)
+block main
+  main(itemscope itemprop="mainContentOfPage" role="main")
+    :markdown-it
+      # Comenzar con EDgrid
+      EDgrid es una libreria CSS/Sass para construir layouts para web fácilmente.
+
+      EDgrid es un proyecto de [EDteam](https://ed.team) usado en todos los proyectos de la empresa. Es Open Source (GPL2) y puede usarla y modificarla libremente en todos sus proyectos.
+
+      Si encuentra algun error o tiene sugerencias de mejoras, [puede escribirlas en Github](https://github.com/escueladigital/EDgrid/issues).
+
+

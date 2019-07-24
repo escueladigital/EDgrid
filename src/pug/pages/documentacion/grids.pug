@@ -1,0 +1,10 @@
+extends ../../config/template
+append config
+  -title = "EDgrid | Grid (CSS/Sass)"
+  -description = "La principal diferencia de ed-grid 2 con su versión anterior es que podemos decidir qué componentes compilar a CSS. En la versión 1, todo el CSS era compilado generando código innecesario. Si usted desea puede trabajar solo con la versión CSS de ed-grid 2, y añadir clases al código HTML para construir su layout según el flujo de trabajo recomendado. El CSS de ed-grid 2 se clasifica en 2 grupos:"
+  -ogUrl= "/grid.html"
+  -docsMenu = true
+
+block main
+  main(itemscope itemprop="mainContentOfPage" role="main")
+    include:markdown-it(html) /src/md/grids.md

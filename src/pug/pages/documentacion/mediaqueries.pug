@@ -1,0 +1,10 @@
+extends /src/pug/config/template
+append config
+  -title = "EDgrid | Mediaqueries (Sass)"
+  -description = "Con ed-grid escribir media queries es tan sencillo como usar cualquiera de estos tres mixins from($bp) to($bp) fromTo($from,$to) Los tres mixins reciben como parámetros breakpoints válidos que pueden ser del core de ed-grid s,m,l,xl o números especificados en px, em o rem. from($bp) remplaza al antiguo desde($size) significa que los estilos se aplicarán desde ese breakpoint en adelante."
+  -ogUrl= "/mediaqueries.html"
+  -docsMenu = true
+
+block main
+  main(itemscope itemprop="mainContentOfPage" role="main")
+    include:markdown-it(html) /src/md/mediaqueries.md

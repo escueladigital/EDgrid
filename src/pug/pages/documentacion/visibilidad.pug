@@ -1,0 +1,10 @@
+extends ../../config/template
+append config
+  -title = "EDgrid | Visibilidad"
+  -description = "El componente visibilidad permite definir los breakpoints en los que un elemento se mostrará y los breakpoints en los que se ocultará. Uso con CSS (cssHelpers) Use las clases from-bp o to-bp donde bp es un breakpoint válido de ed-grid (s,m,l,xl) from-bp hará al elemento visible a partir del breakpoint especificado e invisible por debajo de él. to-bp hará al elemento visible por debajo del breakpoint especificado e invisible por encima de él."
+  -ogUrl= "/visibilidad.html"
+  -docsMenu = true
+
+block main
+  main(itemscope itemprop="mainContentOfPage" role="main")
+    include:markdown-it(html) /src/md/visibilidad.md
