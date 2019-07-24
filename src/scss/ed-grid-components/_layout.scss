@@ -102,69 +102,76 @@ ol ul {
   margin-bottom: 0;
 }
 
-// Crea paddings y margenes
-@each $size in $sizes {
-  @include from($size) {
-    // Crea cuatro niveles de separacion
-    @for $i from 0 through 5 {
-      // Unidad de separación actual
-      $unit : $l-unit * $i;
-      // Valida el cero para evitar devolver 0rem como unidad
-      @if $i == 0 {
-        $unit : 0;
-      }
-      // Valida el 5 para devolver nueva clase y unidad
-      @if $i == 5 {
-        $i : "05";
-        $unit: $l-unit * 0.5;
-      }
-
-      // Padding top
-      .#{$size}-pt-#{$i} {
-        padding-top : $unit;
-      }
-      // Padding left
-      .#{$size}-pl-#{$i} {
-        padding-left : $unit;
-      }
-      // Padding bottom
-      .#{$size}-pb-#{$i} {
-        padding-bottom : $unit;
-      }
-      // Padding right
-      .#{$size}-pr-#{$i} {
-        padding-right : $unit;
-      }
-      // Padding vertical
-      .#{$size}-py-#{$i} {
-        padding-top    : $unit;
-        padding-bottom : $unit;
-      }
-      // Padding horizontal
-      .#{$size}-px-#{$i} {
-        padding-left  : $unit;
-        padding-right : $unit;
-      }
-      // Padding total
-      .#{$size}-pxy-#{$i} {
-        padding : $unit;
-      }
-      // Margin right
-      .#{$size}-mr-#{$i} {
-        margin-right : $unit;
-      }
-      // Margin bottom
-      .#{$size}-mb-#{$i} {
-        margin-bottom : $unit;
-      }
-      // Margin bottom (negativo)
-      .#{$size}-mt-#{$i} {
-        margin-top : $unit * -1;
-      }
-      // Margin top (negativo)
-      .#{$size}-ml-#{$i} {
-        margin-left : $unit * -1;
-      }
+// Creación de márgenes y paddings
+@include sizes {
+  // Crea cinco niveles de separacion
+  @for $i from 0 through 5 {
+    // Unidad de separación actual
+    $unit : $l-unit * $i;
+    // Valida el cero para evitar devolver 0rem como unidad
+    @if $i == 0 {
+      $unit : 0;
     }
+    // Valida el 5 para devolver nueva clase y unidad
+    @if $i == 5 {
+      $i : "05";
+      $unit: $l-unit * 0.5;
+    }
+
+    // Padding top
+    &-pt-#{$i} {
+      padding-top : $unit;
+    }
+    // Padding left
+    &-pl-#{$i} {
+      padding-left : $unit;
+    }
+    // Padding bottom
+    &-pb-#{$i} {
+      padding-bottom : $unit;
+    }
+    // Padding right
+    &-pr-#{$i} {
+      padding-right : $unit;
+    }
+    // Padding vertical
+    &-py-#{$i} {
+      padding-top    : $unit;
+      padding-bottom : $unit;
+    }
+    // Padding horizontal
+    &-px-#{$i} {
+      padding-left  : $unit;
+      padding-right : $unit;
+    }
+    // Padding total
+    &-pxy-#{$i} {
+      padding : $unit;
+    }
+    // Margin right
+    &-mr-#{$i} {
+      margin-right : $unit;
+    }
+    // Margin bottom
+    &-mb-#{$i} {
+      margin-bottom : $unit;
+    }
+    // Margin bottom (negativo)
+    &-mt-#{$i} {
+      margin-top : $unit * -1;
+    }
+    // Margin top (negativo)
+    &-ml-#{$i} {
+      margin-left : $unit * -1;
+    }
+
+    // Elemento sticky
+    &-sticky-#{$i} {
+      position: sticky;
+      top: calc(var(--header-height) + #{$unit});
+    }
+  }
+  &-sticky-none {
+    position: static;
   }
 }

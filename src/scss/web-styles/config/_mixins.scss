@@ -1,0 +1,9 @@
+@mixin sizes {
+  @each $size in $sizes {
+    @include from($size) {
+      .#{$size} {
+        @content;
+      }
+    }
+  }
+}

@@ -24,6 +24,9 @@ $breakpoints : (
 
 $sizes: map-keys($breakpoints);
 
+// Importa archivos de configuración
+@import "web-styles/config/mixins";
+
 // Importar componentes
 // Core
 @import "ed-grid-components/functions";
