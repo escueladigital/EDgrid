@@ -1,62 +1,36 @@
 {
-  "name": "ed-grid",
-  "version": "2.9.0",
-  "description": "EDgrid (aka ed-grid) is a minimalist Sass/CSS library for building responsive web layouts.",
-  "style": "ed-grid.scss",
-  "main": "ed-grid.scss",
-  "author": "Alvaro Felipe <afelipech@gmail.com>",
-  "contributors": [
-    {
-      "name": "Daniel Guillermo Romero Gelvez",
-      "email": "danielromeroauk@gmail.com",
-      "url": "http://adsiar.com"
-    },
-    {
-      "name": "Carlos Eduardo Cuatin Guaitarilla",
-      "email": "cecg1996@gmail.com",
-      "url": "http://carloscuatin.com"
-    }
-  ],
+  "name": "edboilerplate",
+  "private": true,
+  "description": "Boilerplate usado en EDteam para sitios web estaticos",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "dependencies": {
+    "gatsby": "^2.8.6",
+    "gatsby-plugin-manifest": "^2.1.1",
+    "gatsby-plugin-offline": "^2.1.1",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-sass": "^2.0.11",
+    "node-sass": "^4.12.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/escueladigital/ED-GRID"
+    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
   },
   "bugs": {
-    "url": "https://github.com/escueladigital/ED-GRID/issues"
-  },
-  "scripts": {
-    "start": "./node_modules/.bin/gulp"
-  },
-  "license": "ISC",
-  "devDependencies": {
-    "autoprefixer": "^6.4.1",
-    "babel-cli": "^6.16.0",
-    "babel-core": "^6.26.0",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-env": "^1.6.0",
-    "babel-register": "^6.18.0",
-    "babelify": "^7.3.0",
-    "browser-sync": "^2.16.0",
-    "browserify": "^13.1.1",
-    "cssnano": "^3.7.5",
-    "edteam-style-guides": "0.0.45",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^8.0.0",
-    "gulp-cache-bust": "^1.4.0",
-    "gulp-data": "^1.3.1",
-    "gulp-imagemin": "^4.1.0",
-    "gulp-minify": "^3.1.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^6.2.0",
-    "gulp-pug": "^4.0.1",
-    "gulp-rename": "^1.2.3",
-    "gulp-sass": "^3.1.0",
-    "gulp-sitemap": "^5.1.0",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-watch": "^5.0.1",
-    "jstransformer-markdown-it": "^2.1.0",
-    "node-sass-tilde-importer": "^1.0.2",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
