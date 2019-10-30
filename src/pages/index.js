@@ -8,6 +8,9 @@ export default () => (
       <meta charSet="utf-8" />
       <title>EDBoilerplate</title>
     </Helmet>
-    <h1>EDBoilerplate</h1>
+    <header className="s-bg-grey s-center s-pxy-4">
+      <h1>EDgrid</h1>
+      <p className="s-mb-0 s-opacity-7">Creado con 💓 y 🦄 por <b>EDteam</b></p>
+    </header>
   </>
 )
