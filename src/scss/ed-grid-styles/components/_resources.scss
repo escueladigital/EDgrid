@@ -1,0 +1,19 @@
+.resources {
+  li {
+    padding-left : .5em;
+
+    &::before {
+      background: none;
+    }
+  }
+
+  img {
+    width: 1em;
+    height : 1em;
+    margin-right : .5em;
+  }
+
+  a {
+    color: var(--text-color);
+  }
+}

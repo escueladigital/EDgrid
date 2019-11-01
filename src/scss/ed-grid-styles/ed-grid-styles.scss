@@ -1,0 +1,71 @@
+/*
+This boilerplate is based in ITCSS and SMACSS
+*/
+// Config
+@import "config/variables";
+@import "config/functions";
+@import "theme/typography";
+// Mixins
+@import "config/mixins";
+// Libraries
+// Base and elements (generic)
+@import "base/base";
+// LAYOUT
+// Escribe solo los estilos de layout (division en regiones del viewport)
+@import "layout/layout";
+// Libraries
+@import "libraries/_prism";
+// MODULOS (SMACSS) O COMPONENTES (ITCSS)
+// Son los elementos de UI de tu interfaz, como botones, tablas, menus, etc.
+// Crea los archivos adicionales que necesites (uno por componente)
+@import "components/icons";
+@import "components/buttons";
+@import "components/main-menu";
+@import "components/vertical-menu";
+@import "components/logo";
+@import "components/lists";
+@import "components/code";
+@import "components/helpers";
+@import "components/tables";
+@import "components/forms";
+@import "components/cards";
+@import "components/post";
+@import "components/main-banner";
+@import "components/main-header";
+@import "components/main-footer";
+@import "components/topbar";
+@import "components/modal";
+@import "components/tabs";
+@import "components/payments";
+@import "components/video-class";
+@import "components/live";
+@import "components/temary";
+@import "components/chat";
+@import "components/notes";
+@import "components/resources";
+@import "components/course";
+@import "components/method-payment";
+@import "components/playlist";
+@import "components/pricing-table";
+@import "components/alt-banner";
+@import "components/landing-page";
+@import "components/faq";
+@import "components/foro/buttons-foro";
+@import "components/foro/comment-foro";
+@import "components/foro/sidebar-foro";
+@import "components/foro/top-user-foro";
+@import "components/foro/user-foro";
+@import "components/foro/publication";
+@import "components/foro/featured-publication";
+@import "components/scroll";
+@import "components/meatballs";
+@import "components/pagination";
+@import "components/editor";
+//@import "theme/dark-theme";
+// Theme (colors and fonts)
+@import "theme/colors";
+// Utilities (hacks)
+// Todos los hacks que hayas necesitado para solucionar conflictos
+// o resolver situaciones extremas. Se espera poder mejorarlos luego.
+@import "hacks/hacks";
+

@@ -1,0 +1,73 @@
+// Contenedor general
+.video-class {
+  background: var(--dark-color);
+
+  // Ajustarse al viewport
+  @media screen and (min-aspect-ratio: 8 / 5) {
+    height : calc(100vh - 3rem);
+  }
+
+  // Contenedor del video
+  &--container {
+    // Video fijo en moviles
+    position: fixed;
+    top: var(--header-height);
+    width: 100%;
+    z-index: $z-fixed;
+
+    @media screen and (min-width: 960px) {
+      position : static;
+    }
+
+    // Ajustarse al viewport
+    @media screen and (min-width: 1024px) and (min-aspect-ratio: 8 / 5) {
+      height : calc(100vh - 9rem);
+      padding : 1rem;
+    }
+  }
+
+  // Wrapper del video (para darle ratio 16/9)
+  &--element {
+    margin : auto;
+
+    iframe {
+      width : 100%;
+      height : 100%;
+    }
+  }
+
+  // Footer
+  &--footer {
+    background: var(--dark-color-alt);
+    color: #fff;
+    padding : 1rem 0;
+
+    @media screen and (min-aspect-ratio: 8 / 5) {
+      height : 6rem;
+      display : flex;
+      align-items: center;
+      padding : 0;
+    }
+  }
+
+  // Titulo de la clase
+  &--title {
+    @include t3;
+  }
+
+  // Título del curso
+  &--course {
+    color: var(--accent-color);
+    font-size : fontSize(small);
+    margin : -.5rem 0 0 0;
+    opacity : .75;
+  }
+
+  // Navegación de clases
+  &--next,
+  &--prev {
+    width: 2rem;
+    margin-left : 1rem;
+    cursor: pointer;
+  }
+}

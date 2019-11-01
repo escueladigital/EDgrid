@@ -1,0 +1,144 @@
+// Calcula ancho de cada columna
+@mixin grid-column-width($i) {
+  // La cantidad de gaps es igual a la cantidad de columnas menos 1
+  $n : #{$i - 1};
+  // Formula para calcular el ancho de cada columna
+  $column-width : calc((100% - var(--gap) * #{$n}) / #{$i});
+  // Define las columnas en el contenedor
+  grid-template-columns : repeat($i, $column-width);
+}
+
+.ed-grid {
+  display               : grid;
+  grid-template-columns : 100%;
+  grid-column-gap       : var(--gap);
+
+  @for $i from 0 through 4 {
+    &.gap-#{$i} {
+      --gap: #{$l-unit * $i};
+    }
+  }
+
+  // Evita que en tamaños moviles los items queden pegados a los lados
+  width                 : calc(100% - 2rem);
+  margin-left           : 1rem;
+  margin-right          : 1rem;
+  max-width             : var(--max-width);
+
+  // Por sobre el max width el container se centra
+  @include from($max-width) {
+    width        : 100%;
+    margin-left  : auto;
+    margin-right : auto;
+  }
+
+  // Agrega separación vertical entre filas
+  &.row-gap,
+  &.rows-gap {
+    grid-row-gap : var(--gap);
+  }
+
+  // Para containers hijos de otro container o con clase full
+  // se elimninan los márgenes y se ocupa todo_ el ancho disponible
+  .ed-grid,
+  &.full {
+    width        : 100%;
+    max-width    : 100%;
+    margin-right : 0;
+    margin-left  : 0;
+  }
+
+  // Fuerza a ed-grid a tomar tamaños y alineaciones con clases
+  // Es por conflicto con la declaracion anterior, toca revisar
+  @each $size in $sizes {
+    @include from($size) {
+      @for $i from 1 through 20 {
+        .ed-grid.#{$size}-#{$i*5},
+        .ed-grid .ed-grid.#{$size}-#{$i*5} {
+          width : $i * 5%;
+        }
+      }
+
+      .ed-grid.#{$size}-to-center,
+      .ed-grid .ed-grid.#{$size}-to-center {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .ed-grid.#{$size}-to-right,
+      .ed-grid .ed-grid.#{$size}-to-right {
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .ed-grid.#{$size}-to-left,
+      .ed-grid .ed-grid.#{$size}-to-left {
+        margin-left: 0;
+        margin-right: auto;
+      }
+    }
+  }
+
+  // Define columnas en containers e items por breakpoint
+  @each $size, $screen-size in $breakpoints {
+    // Estilos por breakpoint
+    @include from($size) {
+      // Recorre la cantidad de columnas
+      @for $i from 1 through $max-grid-columns {
+        // Columnas en el contenedor
+
+        // Una columna
+        @if $i == 1 {
+          &.cols-#{$size}-1,
+          &.#{$size}-grid-1 {
+            grid-template-columns : 100%;
+          }
+        }
+
+        // Más de una columna
+        @if $i > 1 {
+          &.cols-#{$size}-#{$i},
+          &.#{$size}-grid-#{$i} {
+            @include grid-column-width($i);
+          }
+        }
+        // Columnas en los items
+        > .span-#{$size}-#{$i},
+        > .#{$size}-cols-#{$i} {
+          grid-column-end : span $i;
+        }
+
+        // rows en los items
+        > .#{$size}-rows-#{$i} {
+          grid-row-end : span $i;
+        }
+
+        // Inicio de columna en items
+        > .#{$size}-x-#{$i} {
+          grid-column-start : $i;
+        }
+
+        // Inicio de fila en items
+        > .#{$size}-y-#{$i} {
+          grid-row-start : $i;
+        }
+      }
+    }
+  }
+
+// Hack para las alineaciones
+// Ahora un edgrid puede alinear todos sus hijos
+ &[class*="-main-"],
+ &[class*="-cross-"] {
+   display: grid;
+ }
+
+  
+  @include dev-container;
+      
+  > * {
+    @include dev-item;
+  }
+
+}
+

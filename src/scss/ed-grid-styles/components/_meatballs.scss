@@ -1,0 +1,100 @@
+// ----- Botón de tres puntos ----- //
+.meatballs-menu {
+  display  : inline-block;
+  position : relative;
+
+  &__button {
+    --button-color   : #{$textColor};
+    $size            : 0.25rem;
+    $spacing         : 1.5;
+    height           : 1rem;
+    width            : 1rem;
+    border           : none;
+    outline          : none;
+    background       : none;
+    cursor           : pointer;
+
+    .meatballs-menu--white & {
+      --button-color : #{$borderColor};
+    }
+
+    &::before {
+      @include radius;
+      content    : '';
+      display    : block;
+      width      : $size;
+      height     : $size;
+      background : var(--button-color);
+      box-shadow : 0 ($size * $spacing) var(--button-color), 0 (-$size * $spacing) var(--button-color);
+
+      .meatballs-menu--horizontal & {
+        box-shadow : ($size * $spacing) 0 var(--button-color), (-$size * $spacing) 0 var(--button-color);
+      }
+
+    }
+
+  } 
+
+  // Menú
+  &__nav {
+    @include widget;
+    @include round;
+    $position   : 35%;
+    display     : none;
+    position    : absolute;
+    top         : 0;
+    padding     : 0.75rem;
+    z-index     : var(--z-fixed);
+    white-space : nowrap;
+    right       : $position;
+
+    &.active {
+      display : block;
+    }
+
+    .meatballs-menu--right & {
+      left  : $position;
+      right : auto;
+    }
+
+  }
+
+  &__list {
+    @include clearMenu;
+    display               : grid;
+    grid-template-columns : 1fr;
+    grid-gap              : 0.5rem;
+    font-size             : fontSize(smaller);
+  }
+
+  &__link {
+    margin           : 0;
+    padding          : 0;
+    background       : none;
+    border           : none;
+    outline          : none;
+    color            : $textColor;
+    cursor           : pointer;
+    
+    &:hover {
+      text-decoration : none;
+    }
+
+  }
+
+  // Modificaciones si es un menú de tres puntos para el foro, para que la última opción (borrar) sea de color rojo
+  &--foro .meatballs-menu__link {
+    flex-wrap : nowrap;
+
+    .svg-stroke {
+      fill         : currentColor;
+      margin-right : 0.25rem;
+    }
+
+    &--delete {
+      color : $thirdColor;
+    }
+
+  }
+
+}

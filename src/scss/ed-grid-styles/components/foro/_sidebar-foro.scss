@@ -1,0 +1,29 @@
+// ----- Sidebar de foro ----- //
+// Sidebar del foro que muestra publicaciones destacadas, publicaciones relacionadas y categorías destacadas
+.foro-sidebar {
+  background-color : #fff;
+
+  &:not(:last-of-type) {
+    margin-bottom: 2rem;
+  }
+
+  // Cuando el sidebar muestra categorías destacadas en la página principal (.foro-sidebar--category) muestra una imagen por categoría
+  &--category .foro-sidebar__link {
+    display               : grid;
+    grid-template-columns : max-content 1fr;
+    color                 : $textColor;
+
+    img {
+      width        : 1rem;
+      height       : 1rem;
+      object-fit   : contain;
+    }
+
+  }
+
+  // Contenedor de los item que se mostrarán en el sidebar
+  &__list {
+    list-style: none;
+  }
+
+}

@@ -1,0 +1,80 @@
+@mixin cssOffset {
+  @each $size, $screen-size in $breakpoints{
+
+    @if $size == s {
+      @for $i from 1 through 20 {
+        .#{$size}-offset-#{$i*5}{
+          margin-left: unquote($i*5 + "%");
+        }
+      }
+      @each $fraction in $fractions{
+        @for $i from 1 through length($fractions){
+          .#{$size}-offset-#{$i}-#{$fraction} {
+            margin-left: (100% / $fraction) * $i;
+          }
+        }
+      }
+    }
+
+    @else {
+      @media all and (min-width: $screen-size){
+        //porcentajes
+        @for $i from 1 through 20 {
+          .#{$size}-offset-#{$i*5}{
+            margin-left: unquote($i*5 + "%");
+          }
+        }
+        //fracciones
+        @each $fraction in $fractions{
+          @for $i from 1 through $fraction {
+            .#{$size}-offset-#{$i}-#{$fraction} {
+              margin-left: (100% / $fraction) * $i;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@mixin offsetWidth($currentBp, $prevBp, $coreBp){
+  @if $currentBp != $prevBp{
+    @if $currentBp < 1 {
+      @include from($coreBp){
+        margin-left : $currentBp * 100%;
+      }
+    }
+    @else {
+      @include from($coreBp){
+        margin-left : $currentBp * 1%;
+      }
+    }
+  }
+}
+
+/// mixin para aplicarle un desplazamiento a un elemento.
+/// Description el unico parametro necesario es el primero, luego los demas parametros si no estan especificados toman la medida del anterior.
+/// @group   offset
+/// @author  Alvaro Felipe
+/// @param   {number} $s - desplazamiento para medidas menores a 640px.
+/// @param   {number} $m - desplazamiento para medidas mayores a 640px y menores o iguales a 1024px.
+/// @param   {number} $l - desplazamiento para medidas mayores a 1024px y menores o iguales a 1440px.
+/// @param   {number} $xl -desplazamiento para medidas mayores a 1440px en adelante.
+/// @example scss
+///   .sidebar {
+///     @include offset(2, 5, 7);
+///   }
+
+
+@mixin offset($s,$m:$s,$l:$m,$xl:$l){
+  @if $s < 1 {
+    margin-left : $s * 100%;
+  } @else {
+    margin-left : $s * 1%;
+  }
+
+  @include offsetWidth($m,$s,m);
+  @include offsetWidth($l,$m,l);
+  @include offsetWidth($xl,$l,xl);
+}

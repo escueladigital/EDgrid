@@ -1,0 +1,59 @@
+// ----- Publicaciones destacadas en el index ----- //
+// Contenedor principal de las publicaciones destacadas
+.featured-publication {
+  overflow-x     : scroll;
+
+  // Contenedor padre de las publicaciones destacadas
+  &__container {
+    display               : grid;
+    grid-template-columns : repeat(12, 1fr);
+    grid-gap              : 1rem;
+    width                 : 1200%;
+
+    @include from(m) {
+      width : 600%;
+    }
+    
+    @include from(l) {
+      width : 300%;
+    }
+
+  }
+
+  // Publicación destacada
+  &__item {
+    background-color : #fff;
+  }
+
+  // Contenido de la publicación destacada
+  &__content {
+    display : flex;
+  }
+
+  &__user-photo {
+    @include profile-photo;
+  }
+
+  &__title {
+    color : $textColor;
+  }
+
+  &__footer {
+    display : flex;
+
+    .vote {
+      margin : 0 1rem 0 0;
+    }
+
+  }
+
+  // Se cambian los estilos de .featured-publication__item cuando las publicaciones destacadas se muestran en un sidebar (.foro-sidebar__list) cuando el usuario está dentro de una publicación (.publication--main)
+  .foro-sidebar__list &__item {
+    padding       : 0 0 1rem 0;
+    border        : none;
+    border-radius : 0;
+    font-family   : $body-font;
+    font-weight   : normal;
+  }
+  
+}

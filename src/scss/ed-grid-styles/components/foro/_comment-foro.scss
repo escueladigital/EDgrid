@@ -1,0 +1,43 @@
+
+// ----- Comentario ----- //
+.comment {
+
+  // Comentario que se elegió como mejor respuesta
+  &--best-answer &__content::before {
+    content               : 'Mejor respuesta';
+    padding-left          : 1.25rem;
+    background-image      : url(https://ux.ed.team/img/cup.svg);
+    background-repeat     : no-repeat;
+    background-position-y : center;
+    background-size       : 1rem 1rem;
+    color                 : $accentColor;
+    font-weight           : bold;
+  }
+
+  &__footer {
+    display         : flex;
+    justify-content : space-between;
+    flex-wrap       : wrap;
+  }
+
+  // Información que tiene el footer de un comentario
+  &__information {
+    display : flex;
+
+    > * {
+      margin: 0 1rem 0 0;
+    }
+
+  }
+
+  &__report,
+  &__answer {
+    color: $color-text-light;
+  }
+
+  // Botón para seleccionar la mejor respuesta
+  &__best-answer {
+    color : $accentColor;
+  }
+
+}

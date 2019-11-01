@@ -1,0 +1,28 @@
+
+// ----- Usuario de foro ----- //
+.user-foro {
+  display       : flex;
+  margin-bottom : 0.5rem;
+
+  &__image {
+    @include profile-photo;
+    margin-right : 0.75rem;
+  }
+
+  // Contenedor de nombre y fecha de la publicación
+  &__info {
+    display        : flex;
+    flex-direction : column;
+    line-height    : initial;
+  }
+
+  &__name {
+    color       : $textColor;
+    font-weight : bold;
+  }
+
+  &__date {
+    color : $color-text-light;
+  }
+
+}

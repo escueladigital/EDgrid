@@ -1,0 +1,19 @@
+// CSS Variables
+:root {
+    // Prototype
+    --color                  : #007BDF;
+    --color-alt              : #006DC6;
+    --border-color           : #DFE0E0;
+    --light-bg               : #F0F0F0;
+    --border-radius          : #{$l-unit * 0.5}; // .25rem
+    // layout
+    --vertical-block-space   : #{$l-unit * 2};  // 1rem
+    --vertical-content-space : #{$l-unit * 2};  // 1rem
+    --gap                    : #{$l-unit * 2};  // 1rem
+    --max-width              : #{$max-width};
+
+    @include from(lg) {
+        --vertical-block-space : #{$l-unit * 4};
+        --gap                  : #{$l-unit * 4};  // 2rem
+    }
+}

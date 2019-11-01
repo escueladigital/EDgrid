@@ -1,0 +1,122 @@
+// returns grid-item width based on columns number and gutter
+// retorna el ancho del grid-item basado en el número de columnas y el gutter
+@function item-width($width,$gutter){
+  @return calc(#{$width} - #{$gutter});
+}
+
+// asigns grid-item width for each breakpoint
+@mixin columnWidth($currentBreakpoint, $previousBreakpoint, $edgridBreakpoint ,$gutter,$gridItem){
+  // check if current breakpoint is not equal to previous breakpoint
+  @if $currentBreakpoint != $previousBreakpoint {
+    @include from($edgridBreakpoint){
+      $width: 100% / $currentBreakpoint;
+      & > #{$gridItem}{
+        width : item-width($width,$gutter);
+      }
+    }
+  }
+}
+
+/*
+| Mixin para crear cuadriculas
+|
+| $gridItemSelector: nombre del selector CSS de cada item de la cuadricula
+| $listColumns:
+|              * lista de numeros de columnas en cada breakpoint (separados por espacios). Ej: 1 2 3 4
+|              * el numero de columnas del ultimo breakpoint se hereda a breakpoints superiores
+| $gutter: separación entre cada item de la cuadricula (opcional)
+|
+*/
+/// mixin para crear cuadriculas
+/// @group   grid
+/// @author  Alvaro Felipe
+/// @param   {element} $selector - nombre del selector css de cada item de la cuadricula.
+/// @param   {list} $listColumns - lista de numeros de columnas en cada breakpoint. Ej: (1,2,3,4), el numero de columnas del ultimo breakpoint se hereda a breakpoints superiores
+/// @param   {number} $gutter - el espaciado entre cada elemento de la cuadricula. Por defecto es de 1em.
+/// @example scss
+///   .gallery {
+///     @include grid(li, 5 );
+///   }
+
+@mixin grid($gridItemSelector,$listColumns,$gutter:1em){
+ // $width sirve para calcular el ancho de cada item
+  $width       : 100% / nth($listColumns,1);
+
+  // elimina el espaciado vertical de las imágenes
+  img {
+    display : block;
+  }
+
+  display      : flex;
+  flex-wrap    : wrap;
+  margin-left  : -($gutter / 2);
+  margin-right : -($gutter / 2);
+
+  // Evitar scroll horizontal
+  @at-root {
+    body {
+      overflow-x: hidden;
+    }
+  }
+
+  // por si el contenedor es un ul
+  @if $gridItemSelector == li {
+    margin     : 0;
+    padding    : 0;
+    list-style : none;
+
+    li {
+      margin-left : 0;
+      list-style  : none;
+    }
+  }
+
+  & > #{$gridItemSelector} {
+    width  : item-width($width,$gutter);
+    margin : $gutter / 2;
+  }
+
+  // calculate grid item width for each breakpoint
+  $indice: 1;
+  $longListColumns: length($listColumns);
+  @each $size, $_ in $breakpoints{
+    @if $indice > 1 and $indice <= $longListColumns{
+      @include columnWidth(nth($listColumns,$indice),nth($listColumns,$indice - 1),$size,$gutter,$gridItemSelector);
+    }
+    $indice: $indice + 1;
+  }
+
+  // Si soporta grid
+  @supports (grid-template-areas: 'header') {
+    $i: 1;
+    $longListColumns: length($listColumns);
+
+    display: grid;
+    grid-gap: $gutter;
+    margin-left : 0;
+    margin-right : 0;
+
+    // Restaurar el scroll horizontal (por si se necesitara)
+    @at-root {
+      body {
+        overflow-x: visible;
+      }
+    }
+
+    @each $size, $_ in $breakpoints{
+      @if $i <= $longListColumns {
+        @include from($size) {
+          grid-template-columns: repeat(nth($listColumns,$i),1fr);
+        }
+        $i: $i + 1;
+      }
+    }
+
+    // grid-item
+    > #{$gridItemSelector} {
+      width : 100%;
+      margin : 0;
+    }
+  }
+
+}

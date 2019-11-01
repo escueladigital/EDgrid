@@ -1,0 +1,106 @@
+/*
+  MAIN MENU
+  Este es el menú principal del sitio, aparece dentro de main header
+
+  Su estructura es
+    <nav class="main-menu" id="main-menu">
+      <ul>
+        <li><a href="#">Item de menu</a></li>
+        <li><a href="#">Item de menu</a></li>
+      </ul>
+    </nav>
+
+  En movil se activa con un botón de hamburguesa.
+  En el ejemplo es un div pero puede ser cualquier elemento
+  (debe estar fuera del nav)
+    <div id="main-menu-toggle" class="main-menu-toggle to-l"></div>
+
+  Entra por la derecha justo debajo de main-header
+
+*/
+
+.main-menu {
+  a:hover {
+    text-decoration : none;
+  }
+
+  .active {
+
+    @include from(l) {
+      font-weight : 400;
+      color: var(--third-color);
+
+      &::before {
+        display : none;
+      }
+    }
+  }
+}
+
+
+body {
+  position   : relative;
+  right      : 0;
+  transition : right .5s;
+
+  &.main-menu-visible {
+    @include to(l) {
+      right      : 80%;
+      overflow-y : hidden;
+    }
+  }
+}
+
+.main-menu-toggle {
+  @include navToggle(20px, var(--text-color));
+}
+
+
+@mixin main-menu {
+  font-size : fontSize(small);
+
+  @include to(l) {
+    position   : fixed;
+    top        : var(--header-height);
+    background : var(--dark-color);
+    width      : 80%;
+    right      : -80%;
+    padding    : 1em 1em 2em;
+    height     : calc(100vh - 64px);
+    transition : right .5s;
+    overflow-y : auto;
+    // Mostrar el menu
+    &.show {
+      right : 0;
+    }
+  }
+
+  ul {
+    @include clearMenu;
+    @include from(l) {
+      display : flex;
+    }
+  }
+
+  li {
+    color         : #FFF;
+    border-bottom : 1px solid rgba(#fff, .2);
+    padding       : 1em 0;
+    margin        : 0;
+
+    @include from(l) {
+      color       : var(--text-color);
+      padding     : 0;
+      margin-left : 2rem;
+    }
+  }
+
+  a {
+    color : inherit;
+  }
+}
+
+
+.main-menu {
+  @include main-menu;
+}

@@ -1,0 +1,33 @@
+@mixin clearMenu {
+  list-style    : none;
+  margin-top    : 0;
+  margin-bottom : 0;
+  padding-left  : 0;
+  margin-left   : 0;
+}
+
+@mixin widget {
+  box-shadow: 0 2px 16px -2px rgba(0,0,0,.15);
+  border : none;
+  background : #fff;
+}
+
+@mixin round {
+  border-radius : 0.25rem;
+}
+
+@mixin radius {
+  border-radius : 1.5rem;
+}
+
+@mixin circle {
+  border-radius : 50%;
+}
+
+@mixin profile-photo {
+  @include round;
+  flex       : none;
+  height     : 2rem;
+  width      : 2rem;
+  object-fit : cover;
+}

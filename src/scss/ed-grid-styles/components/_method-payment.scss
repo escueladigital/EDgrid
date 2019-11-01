@@ -1,0 +1,51 @@
+.method-payment {
+
+  &__container {
+    @include widget;
+    padding: 0 2rem;
+  }
+  
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 1rem;
+    padding: 2rem 0;
+  
+    &:not(:last-child) {
+      border-bottom: 1px solid $borderColor;
+    }
+
+    @include to("m") { 
+      grid-template-columns: 1fr;
+    }
+
+  }
+
+  &__column {
+    display: flex;
+    align-items: center;
+
+    @include to("m") {
+      justify-content: center;
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+
+    }
+
+  }
+
+  &__image {
+    height: 2rem;
+  }
+
+  &__span {
+    color: $thirdColor;
+  }
+  
+  p {
+    margin-bottom: 0;
+  }
+
+}

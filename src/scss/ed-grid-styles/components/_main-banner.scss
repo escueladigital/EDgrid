@@ -1,0 +1,31 @@
+.main-banner {
+  --color     : var(--first-color);
+  --color-alt : var(--accent-color);
+  --padding   : 2rem;
+  background  : var(--color);
+  color       : #FFF;
+
+  &.diagonal {
+    clip-path : polygon(0 0, 100% 0, 100% 100%, 0 94%);
+  }
+
+  // Separación del contenido
+  padding-top    : var(--padding);
+  padding-bottom : calc(var(--padding) * 1.25);
+
+  @include from(l) {
+    --padding : 4rem;
+  }
+
+  .button {
+    --color-button : var(--color-alt);
+  }
+}
+
+.main-banner__img {
+  opacity : .1;
+}
+
+.main-banner__data {
+  position : relative;
+}

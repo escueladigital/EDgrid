@@ -1,0 +1,57 @@
+body {
+  margin         : var(--header-height) 0 0 0;
+  display        : flex;
+  flex-direction : column;
+  min-height     : calc(100vh - var(--header-height));
+}
+
+// ----- Títulos del foro ----- //
+.foro-title {
+  position     : relative;
+  padding-left : 0.75rem;
+
+  @include from(l) {
+    padding-left : 1rem;
+  }
+
+  &::before {
+    content          : '';
+    position         : absolute;
+    left             : 0;
+    height           : 100%;
+    width            : 0.35rem;
+    border-radius    : 0.25rem;
+    background-color : $firstColor;
+
+    @include from(l) {
+      width : 0.5rem;
+    }
+
+  }
+
+}
+
+// ----- Layout de los comentarios y las respuestas dentro de una publicación ----- //
+.section-comments,
+.section-answer {
+  display               : grid;
+  grid-template-columns : 1fr;
+  grid-gap              : 2rem;
+}
+
+
+// ----- Layout de los comentarios dentro de una publicación del foro ----- //
+.section-comments {
+  grid-column   : span 2;
+  margin-bottom : 0;
+    
+  @include from(m) {
+    grid-column : 2;
+  }
+  
+}
+
+// ----- Layout de las respuestas dentro de un comentario del foro ----- //
+.section-answer {
+  padding: 2rem 0 0 2rem; 
+}

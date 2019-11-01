@@ -1,0 +1,52 @@
+@mixin icon($icon, $pseudo, $margin:0) {
+  &::#{$pseudo} {
+    font-family             : "edteam-styleguide" !important;
+    content                 : map-get($icons,$icon);
+    font-style              : normal !important;
+    font-weight             : normal !important;
+    font-variant            : normal !important;
+    text-transform          : none !important;
+    speak                   : none;
+    line-height             : 1;
+    -webkit-font-smoothing  : antialiased;
+    -moz-osx-font-smoothing : grayscale;
+    position : relative;
+    top : 1px;
+  }
+
+  @if $pseudo == after {
+    &::#{$pseudo} { margin-left : $margin }
+  } @else if $pseudo == before {
+    &::#{$pseudo} { margin-right : $margin }
+  }
+}
+
+$icons: (
+  check : "\62",
+  right : "\63",
+  left  : "\64",
+  down  : "\65",
+  up    : "\66",
+  square-line: "\67",
+  check-square: "\68",
+  tag: "\69",
+  date: "\6a",
+  cart: "\6b"
+);
+
+.svg-icon {
+  height : 1em;
+  width : 1em;
+  display : inline-block;
+  fill: currentcolor;
+
+  &.before {
+    margin-right : .3em;
+  }
+}
+
+// ----- SVG con stroke y sin fill ----- //
+.svg-stroke {
+  fill   : none;
+  stroke : currentColor;
+}

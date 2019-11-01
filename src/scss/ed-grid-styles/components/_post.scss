@@ -1,0 +1,38 @@
+.post-header {
+  position : relative;
+
+  img {
+    display : block;
+  }
+
+  &::before {
+    content: "";
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    background : rgba($darkColor,.8);
+  }
+
+  h1 {
+    position : absolute;
+    top : 50%;
+    text-align : center;
+    width : 90%;
+    left : 5%;
+    transform: translateY(-50%);
+    color: #fff;
+  }
+  margin-bottom : 2em;
+}
+
+.post .author {
+  display : table;
+  margin : -5em auto 2em;
+  position : relative;
+
+  img {
+    border : 4px solid #fff;
+  }
+}

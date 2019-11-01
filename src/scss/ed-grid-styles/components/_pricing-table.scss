@@ -1,0 +1,82 @@
+.pricing-table {
+  //--current-color: var(--first-color);
+  border : 1px solid var(--border-color);
+  border-radius : .25rem;
+  display : flex;
+  flex-direction : column;
+
+  &__header {
+    background    : var(--color);
+    color         : #FFF;
+    padding       : 1rem;
+    border-radius : .25rem .25rem 0 0;
+    margin        : -1px -1px -1px 0; // oculta los bordes del contededor extendiendo esta caja
+  }
+
+  &__title {
+    padding-left : 1.5rem;
+    background: img('plans/plan-2.svg') no-repeat center left;
+  }
+
+  &__price {
+    padding : 1rem;
+    //color: var(--current-color);
+  }
+
+  &__description {
+    border-top : 1px solid var(--border-color);
+    border-bottom : 1px solid var(--border-color);
+    padding : 1rem;
+    margin-bottom : 1.5rem;
+  }
+
+  &__features {
+    margin-bottom : 0;
+    list-style: none;
+    padding : 0 1rem;
+  }
+
+  &__feature {
+    margin-bottom : .75rem;
+    display : grid;
+    grid-template-columns: 1rem auto;
+    grid-gap: .5rem;
+    align-items: baseline;
+
+    svg {
+      //color: var(--current-color);
+      height : .8em;
+    }
+  }
+
+  &__footer {
+    padding: 1rem;
+    margin-top : auto;
+  }
+
+  [class*=button] {
+    --color: var(--current-color);
+    margin : 0;
+  }
+
+  // Colores e iconos
+  &.color-second {
+    .pricing-table__title {
+      background-image: img('plans/plan-1.svg');
+    }
+  }
+
+  &.color-accent {
+    .pricing-table__title {
+      background-image: img('plans/plan-3.svg');
+    }
+  }
+
+  &.color-dark {
+    .pricing-table__title {
+      background-image: img('plans/plan-4.svg');
+    }
+  }
+}
+
+

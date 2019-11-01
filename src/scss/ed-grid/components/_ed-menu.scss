@@ -1,0 +1,313 @@
+// estilo default del menu
+/// Aplica un estilo por defecto al menu.
+/// @group   menu
+/// @author  Alvaro Felipe
+@mixin menuStyleDefault {
+  background : #eee;
+  li:hover { background : rgba(#000, .1)  }
+  ul       { background : darken(#eee, 5) }
+  a        { color      : #666            }
+}
+
+// estilo nav para el menu
+// incluye el breakpoint que lo cambia a horizontal
+@mixin menuStyleNav($bp) {
+  $border    : 1px solid rgba(#000, .1);
+  background : #EEE;
+  border     : $border;
+
+  li:hover { background : rgba(#000, .1)  }
+  ul       { background : darken(#eee, 5) }
+  a        { color      : #666            }
+
+  li {
+    border-bottom : $border;
+
+    &:last-child {
+      border-right  : none;
+      border-bottom : none;
+    }
+  }
+
+  ul {
+    border : $border;
+
+    li {
+      border-bottom : $border;
+
+      &:last-child { border-bottom : none }
+    }
+  }
+
+  @include from($bp) {
+    > li {
+      border-right  : 1px solid rgba(#000, .1);
+      border-bottom : none;
+    }
+  }
+}
+
+/// estilo button para el menú
+/// @group   menu
+/// @author  Alvaro Felipe
+@mixin menuStyleButton {
+  li {
+    margin-bottom : .5em;
+    margin-right  : .5em;
+  }
+
+  a {
+    border        : 1px solid rgba(#000, .1);
+    background    : #EEE;
+    line-height   : 2.5em;
+    padding       : 0 1.5em;
+    border-radius : 4px;
+    color         : #666;
+
+    &:hover { background : rgba(#000, .1) }
+  }
+}
+
+/// mixin que construye el menú sin un tema, solo maqueta
+/// @group   menu
+/// @author  Alvaro Felipe
+/// @param   {number} $bp - Breakpoint a partir del cual el menu se volvera horizontal.
+/// @param   {number} $style - estilo a usar en el menu las opciones son: [default | nav | button], este argumento es opcional.
+/// @example [scss | sass] - Usage
+@mixin edMenu($bp,$style:null) {
+  width : 100%;
+
+  &, ul {
+    margin-top    : 0;
+    margin-bottom : 0;
+    padding-left  : 0;
+    list-style    : none;
+  }
+
+  li {
+    position   : relative;
+    list-style : none;
+    flex       : auto;
+
+    // Si es padre de un submenu
+    &.parent-submenu {
+      display   : flex;
+      flex-wrap : wrap;
+
+      a { flex : auto }
+    }
+  }
+
+  //submenus
+  ul {
+    display  : none;
+
+    @include to($bp) {
+      &.show-submenu {
+        display       : block;
+        width         : 100%;
+        order         : 3;
+        margin-left   : 1em;
+        margin-bottom : .5em;
+      }
+    }
+  }
+
+  a {
+    display     : block;
+    line-height : 3em;
+    padding     : 0 1em;
+
+    &:hover { text-decoration : none }
+  }
+
+  // cambio a horizontal
+  @include from($bp) {
+    display     : flex;
+    align-items : center;
+
+    a { text-align : center }
+
+    // Ocultar el botón de expandir en horizontal
+    .expand { display : none}
+
+    ul {
+      position    : absolute;
+      left        : 0;
+      top         : 100%;
+      min-width   : 100%;
+      white-space : nowrap;
+
+      a { text-align : left }
+
+      ul {
+        top  : 0;
+        left : 100%;
+      }
+    }
+
+    // mostrar submenu
+    li:hover > ul { display : block }
+  }
+
+  // expand submenu button
+  .expand-submenu {
+    @include hideFrom($bp);
+    $size      : 3em;
+    position   : relative;
+    right      : 0;
+    width      : $size;
+    height     : $size;
+    cursor     : pointer;
+    transition : all .3s;
+
+    &::after {
+      content       : "";
+      position      : absolute;
+      width         : 40%;
+      height        : 40%;
+      top           : 20%;
+      left          : 30%;
+      border-left   : ($size * 0.15) solid;
+      border-bottom : ($size * 0.15) solid;
+      border-radius : ($size * 0.08);
+      transform     : rotate(-45deg);
+      transition    : all .3s;
+    }
+
+    &.active {
+      transform : rotate(180deg);
+    }
+  }
+
+  // incluir el estilo del menu si se ha definido
+  @if $style == default { @include menuStyleDefault  }
+  @if $style == nav     { @include menuStyleNav($bp) }
+  @if $style == button  { @include menuStyleButton   }
+
+  // compilar los mixins en modo CSS
+  // Se comenta para corregirlo luego de eliminar cssCore
+  //@if $cssCore == true {
+  //  &.default    { @include menuStyleDefault  }
+  //  &.nav-bar    { @include menuStyleNav($bp) }
+  //  &.button-bar { @include menuStyleButton    }
+  //}
+}
+
+/// mixin Nav (para el contenedor del menú) 
+/// @group   menu
+/// @author  Alvaro Felipe
+/// @param   {string} $direction  - El eje desde donde aparecera el menu. Las opciones son [left | right | top | bottom]
+/// @param   {number} $bp  - breakpoint que indica hasta donde debe mostrarse en vertical.
+/// @example scss
+///   nav {
+///     @include edNav(left, m);
+///   }
+
+@mixin edNav($direction, $bp){
+  @include to($bp) {
+    $lrWidth   : 85%;
+    position   : fixed;
+    transition : all .3s;
+    height     : 100vh;
+    z-index    : 200;
+    overflow-y : auto;
+
+    @if $direction == left or $direction == right {
+      width : $lrWidth;
+    } @else {
+      width : 100%;
+    }
+
+    @if $direction == left {
+      left : $lrWidth * -1;
+
+      &.show-menu { left : 0 }
+    }
+
+    @if $direction == right {
+      right : $lrWidth * -1;
+
+      &.show-menu { right : 0 }
+    }
+
+    @if $direction == top {
+      width : 100%;
+      left : 0;
+      top : -100%;
+
+      &.show-menu { top : 0 }
+    }
+
+    @if $direction == bottom {
+      width : 100%;
+      left : 0;
+      bottom : -100%;
+
+      &.show-menu { bottom : 0 }
+    }
+  }
+}
+
+/// Toggle del menu
+/// @group   menu
+/// @author  Alvaro Felipe
+/// @param   {number} $size - especifica el tamaño del elemento toggle
+/// @param   {color} $color - especifica el color del toggle.
+/// @example scss
+///   .menu-toggle {
+///     @include navToggle(200px, $black);
+///   }
+@mixin navToggle($size, $color) {
+  $segmentHeight : ($size / 5);
+  position       : relative;
+  z-index        : 300;
+  width          : $size * 1.5;
+  height         : $size;
+  box-shadow     : 0 ($segmentHeight) $color inset;
+  cursor         : pointer;
+
+  &::after,
+  &::before {
+    content          : "";
+    position         : absolute;
+    width            : 100%;
+    height           : ($segmentHeight);
+    background-color : $color;
+    bottom           : 0;
+  }
+
+  &::after {
+    bottom : $segmentHeight * 2;
+  }
+}
+
+// Version CSS
+// Menus
+// se requiere la clase .ed-menu
+// y la clase para cambio a horizontal
+.ed-menu {
+  &.s-horizontal { @include edMenu(s) }
+  &.m-horizontal { @include edMenu(m) }
+  &.l-horizontal { @include edMenu(l) }
+  &.xl-horizontal { @include edMenu(xl) }
+}
+
+.ed-nav {
+  &.l-top { @include edNav(top, l)}
+  &.l-bottom { @include edNav(bottom, l)}
+  &.l-left { @include edNav(left, l)}
+  &.l-right { @include edNav(right, l)}
+  &.x-top { @include edNav(top, xl)}
+  &.xl-bottom { @include edNav(bottom, xl)}
+  &.xl-left { @include edNav(left, xl)}
+  &.xl-right { @include edNav(right, xl)}
+  &.m-top { @include edNav(top, m)}
+  &.m-bottom { @include edNav(bottom, m)}
+  &.m-left { @include edNav(left, m)}
+  &.m-right { @include edNav(right, m)}
+}
+
+.nav-toggle {
+  @include navToggle(20px, #333)
+}

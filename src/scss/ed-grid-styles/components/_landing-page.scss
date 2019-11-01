@@ -1,0 +1,78 @@
+.landing-section {
+  --current-color : var(--color-first);
+  --color         : var(--current-color);
+  --color-button  : var(--current-color);
+  margin-bottom   : 2rem;
+
+  @include from(l) {
+    margin-bottom : 8rem;
+  }
+
+  article {
+    position        : relative;
+    display         : flex;
+    flex-direction  : column;
+    justify-content : center;
+    align-items     : flex-start;
+
+    @include from(l) {
+      padding-right : 2rem;
+      &::before {
+        content       : "";
+        display       : block;
+        position      : absolute;
+        width         : .5rem;
+        border-radius : .25rem;
+        height        : 100%;
+        right         : 0;
+        background    : var(--color);
+      }
+    }
+  }
+
+  img {
+    border-radius : .25rem;
+    margin-bottom : 1rem;
+    @include from(l) {
+      margin-bottom : 0;
+      clip-path     : polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+    }
+  }
+
+  h2 {
+    color : var(--color);
+  }
+
+  [class*=button] {
+    margin-bottom : 0;
+  }
+
+  @include from(l) {
+    &:first-of-type {
+      padding-top : 4rem;
+    }
+  }
+
+  &:nth-of-type(even) {
+    --current-color : var(--color-third);
+    --color         : var(--current-color);
+    --color-button  : var(--current-color);
+
+    @include from(l) {
+
+      img {
+        clip-path : polygon(0 0, 90% 0, 100% 100%, 10% 100%);
+      }
+
+      article {
+        order         : -1;
+        padding-right : 0;
+        padding-left  : 2rem;
+
+        &::before {
+          left : 0;
+        }
+      }
+    }
+  }
+}

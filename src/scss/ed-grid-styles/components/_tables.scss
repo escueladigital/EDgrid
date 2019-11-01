@@ -1,0 +1,66 @@
+@mixin tableStyle($color) {
+  th { background   : $color }
+  tr {
+    border-bottom : 1px solid rgba($color, .3);
+    &:hover { background : rgba($color, .1) }
+  }
+
+  &.first-column {
+    td:first-child {
+      background : rgba($color,.75);
+      color: #fff;
+    }
+  }
+
+  &.center-content {
+    text-align: center;
+
+    th {
+      text-align: inherit;
+    }
+
+  }
+
+}
+
+table {
+  @include tableStyle($firstColor);
+  table-layout    : fixed;
+  border-collapse : collapse;
+  font-size       : fontSize(small);
+  background      : #FFF;
+  min-width       : 100%;
+
+  th {
+    font-family  : 'Open Sans', sans-serif;
+    text-align   : left;
+    color        : #FFF;
+    font-weight  : 700;
+    border-right : 1px solid rgba(#fff, .2);
+  }
+
+  td {
+    min-width     : 100px;
+    &:nth-child(even) {
+      background : rgba($borderColor, .2);
+    }
+  }
+
+  td, th {
+    padding : 1em 1.5em;
+  }
+}
+
+.table-container {
+  overflow-x : auto;
+  border     : 1px solid var(--border-color);
+  margin-bottom : 2em;
+  min-width      : 100%;
+  position : relative;
+  table-layout: fixed;
+}
+
+.table--secondary { @include tableStyle($secondColor) }
+.table--tertiary  { @include tableStyle($thirdColor)  }
+.table--accent    { @include tableStyle($accentColor) }
+.table--dark      { @include tableStyle($darkColor)   }

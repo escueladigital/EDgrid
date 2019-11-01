@@ -1,0 +1,45 @@
+.card__avatar {
+  width : 2rem;
+}
+
+.card:hover {
+  @extend .s-shadow-bottom;
+}
+
+
+.card__teachers {
+  .card__teacher {
+    position : relative;
+
+    &:hover span{
+      transform: scaleY(1);
+    }
+  }
+
+  // Crea tooltip cuando hay varios profesores
+  span {
+    @extend .s-py-05, .s-px-1, .s-border, .s-radius;
+    position : absolute;
+    top: calc(100% + .5rem);
+    left: 0;
+    background: #fff;
+    white-space: nowrap;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .2s;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      border: 1px solid var(--border-color);
+      width: .5rem;
+      height: .5rem;
+      background: #fff;
+      top: calc( -0.35rem + 1.5px); // Compensa los bordes
+      left: 0.65rem;
+      transform: rotate(45deg);
+      border-color: var(--border-color) transparent transparent var(--border-color);
+    }
+  }
+}

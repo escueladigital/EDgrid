@@ -1,0 +1,80 @@
+
+// ----- Estilos para el editor ----- //
+.form-editor {
+  background-color : #fff;
+
+  &__textarea {
+    height     : 200px; 
+    max-height : 200px;
+    outline    : none;
+  }
+
+  // // Barra de herramientas
+  &__toolbar {
+    
+    @include from(m) {
+      grid-template-columns : 1fr max-content;
+    }
+    
+  }
+
+  // Botones de la barra de herramientas
+  &__action {
+    display               : grid;
+    grid-template-columns : repeat(3, max-content);
+    grid-gap              : 1rem;
+  }
+
+  // Botón
+  &__button {
+    border     : none;
+    outline    : none;
+    color      : $textColor;
+    background : none;
+    cursor     : pointer;
+
+    &:hover {
+      color     : $accentColor;
+      transform : scale(1.2);
+    }
+
+  }
+  
+  &__icon {
+    fill   : currentColor;
+    height : 1rem;
+    width  : 1rem;
+  }
+
+  &__button-post {
+    margin-bottom: 0;
+  }
+
+  // Formulario para responder un comentario (cuando el editor está dentro de un .section-answer)
+  .section-answer & {
+
+    &:focus-within .form-editor {
+      
+      &__toolbar {
+        display : grid;
+      }
+      
+      &__textarea {
+        height     : 100px;
+        max-height : 100px;
+      }
+
+    }
+
+    &__textarea {
+      min-height : 1.35rem;
+      height     : 1.35rem;
+    }
+
+    &__toolbar {
+      display : none;
+    }
+
+  }
+
+}

@@ -1,0 +1,253 @@
+/*********************************************************************
+**********************************************************************
+***************************LEGACY CODE********************************
+**********************************************************************
+**********************************************************************/
+@mixin button {
+  display          : inline-block;
+  padding          : .5rem 1rem;
+  background-color : var(--color);
+  color            : #FFF;
+  cursor           : pointer;
+  text-decoration  : none;
+  line-height      : inherit;
+  border-radius    : .25rem;
+  transition       : transform .05s;
+  border           : 1px solid var(--color);
+  text-align       : center;
+  user-select      : none;
+
+  &:hover {
+    background-color : var(--color-alt);
+    text-decoration  : inherit;
+  }
+
+  &:active {
+    transform : scale(.99)
+  }
+}
+
+.button,
+[class*=button] {
+  @include button;
+}
+
+@mixin button-tiny {
+  padding   : .25rem .5rem;
+  font-size : var(--small-font-size);
+}
+
+@mixin button-micro {
+  padding: 0 .25rem;
+  font-size: var(--small-font-size);
+  line-height: var(--heading-line-height);
+  border-radius: 0;
+}
+
+
+
+.button--tiny{
+  @include button-tiny;
+}
+
+@mixin button-full {
+  margin-right : 0;
+  margin-left  : 0;
+  width        : 100%;
+}
+
+[class*=button].full {
+  @include button-full;
+}
+
+@mixin button-last {
+  margin-right  : 0;
+  margin-bottom : 0;
+}
+
+@mixin button-second {
+  --color-button     : var(--second-color);
+  --color-button-alt : var(--second-color-alt);
+}
+
+.button--secondary,
+.button--second {
+  @include button-second;
+}
+
+@mixin button-alert {
+  --color-button     : var(--third-color);
+  --color-button-alt : var(--third-color-alt);
+}
+
+.button--alert {
+  @include button-alert;
+}
+
+@mixin button-cta {
+  --color-button     : var(--accent-color);
+  --color-button-alt : var(--accent-color-alt)
+}
+
+.button--cta {
+  @include button-cta;
+}
+
+@mixin button-dark {
+  --color-button     : var(--dark-color);
+  --color-button-alt : var(--dark-color-alt);
+}
+
+.button--dark {
+  @include button-dark;
+}
+
+@mixin button-light {
+  --color-button     : #FFF;
+  --color-button-alt : var(--color-light);
+  color              : var(--color-text);
+}
+
+.button--light {
+  @include button-light;
+}
+
+@mixin button-ghost {
+  color      : var(--color-button);
+  background : none;
+  border     : 1px solid;
+
+  &:hover {
+    background   : var(--color-button);
+    color        : #FFF;
+    border-color : transparent;
+  }
+}
+
+[class*=button--ghost] {
+  @include button-ghost;
+}
+
+@mixin button-ghost-alert {
+  --color-button : var(--third-color);
+}
+
+.button--ghost-alert,
+.button--ghost--alert {
+  @include button-ghost-alert;
+}
+
+@mixin button-ghost-second {
+  --color-button : var(--second-color);
+}
+
+.button--ghost-secondary,
+.button--ghost--secondary,
+.button--ghost-second,
+.button--ghost--second,
+.buttton--ghost.second-color{
+  @include button-ghost-second;
+}
+
+@mixin button-cta {
+  --color-button : var(--accent-color);
+}
+
+.button--ghost-cta,
+.button--ghost--cta,
+.button-ghost.accent-color {
+  @include button-cta;
+}
+
+@mixin button-ghost-dark {
+  --color-button : var(--dark-color);
+}
+
+.button--ghost-dark,
+.button--ghost--dark,
+.button--ghost.dark-color {
+  @include button-ghost-dark;
+}
+
+@mixin button-ghost-light {
+  --color-button : #FFF;
+  &:hover {
+    color : var(--text-color);
+  }
+}
+
+.button--ghost-light,
+.button--ghost--light {
+  @include button-ghost-light;
+}
+
+@mixin button-cancel {
+  @include button-ghost;
+  --color-button : var(--text-color);
+}
+
+.button--cancel {
+  @include button-cancel;
+}
+
+/*********************************************************************
+**********************************************************************
+************************END LEGACY CODE*******************************
+**********************************************************************
+**********************************************************************/
+
+
+// Estructura funcional de botones
+// .button se trae desde EDgrid
+
+// Ghost
+.button.light-color {
+  color: var(--text-color);
+}
+
+.disabled,
+.disabled:hover {
+  --color: var(--light-color);
+  background: var(--color);
+  cursor: default;
+  color: #888;
+
+  &:active {
+    transform: none;
+  }
+}
+
+.ghost {
+  color: var(--color);
+  background: none;
+
+  &:hover {
+    background: var(--color);
+    color: #fff;
+  }
+
+  &.color-light,
+  &.light-color {
+    --color: var(--body-bg);
+    color: var(--color);
+
+    &:hover {
+      color: var(--color-text);
+    }
+  }
+}
+
+// Variaciones de tamaños:
+.tiny {
+  font-size: var(--small-font-size);
+  padding: .25rem .5rem;
+}
+
+.micro {
+  font-size: var(--small-font-size);
+  padding: 0 .25rem;
+}
+
+// Los botones se alinean con EDgrid
+// .button.bp-to-[left|center|right]
+

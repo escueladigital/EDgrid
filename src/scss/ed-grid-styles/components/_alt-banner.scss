@@ -1,0 +1,82 @@
+.alt-banner {
+  --image        : url();
+  --radius       : 1200px;
+  --size         : 100%;
+  padding-top    : 2rem;
+  padding-bottom : 2rem;
+  background     : linear-gradient(rgba($darkColor, .9), rgba($darkColor, .9)), var(--image) no-repeat center center / cover;
+
+  @include to(l) {
+    clip-path : polygon(0 0, 100% 0, 100% 100%, 0 95%);
+  }
+
+  @include from(l) {
+    background     : radial-gradient(circle var(--radius) at 100% 100%, transparent 50%, #F6F6F6 50%), var(--image) no-repeat center right / auto var(--size);
+    padding-bottom : 6rem;
+    padding-top    : 6rem;
+    border-bottom  : 1px solid var(--border-color);
+  }
+
+  @include from(1200px) {
+    --radius : 1300px;
+  }
+
+  @include from(xl) {
+    --radius : 1600px;
+    --size   : 120%;
+  }
+
+  .ed-grid {
+    position : relative; // para colocar el caption
+  }
+
+  h2 { // titulo del banner
+    @include to(l) {
+      //font-size : 1rem;
+      color     : var(--color-second)
+    }
+  }
+
+  &__data {
+    position   : relative;
+    color      : #FFF;
+    text-align : center;
+    font-size  : fontSize(small);
+
+    @include from(l) {
+      padding    : 1rem 1rem 1rem 2rem;
+      text-align : left;
+      color      : var(--text-color);
+
+      &::before {
+        position      : absolute;
+        border-radius : 4px;
+        content       : "";
+        width         : 8px;
+        height        : 100%;
+        top           : 0;
+        left          : 0;
+        background    : var(--color);
+      }
+    }
+  }
+
+  &__caption {
+    position   : absolute;
+    bottom     : -5rem;
+    right      : 0;
+    z-index    : var(--z-tooltip);
+    background : rgba($color-dark-alt, .9);
+    color      : #FFF;
+    padding    : .5rem;
+    font-size  : fontSize(smaller);
+
+    @include to(l) {
+      display : none;
+    }
+
+    span {
+      color : var(--color-second)
+    }
+  }
+}

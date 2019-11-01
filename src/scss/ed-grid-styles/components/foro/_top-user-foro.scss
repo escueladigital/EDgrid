@@ -1,0 +1,43 @@
+// ----- Usuarios destacados ----- //
+
+// Contenedor padre de los usuarios destacados
+.top-user {
+  --user-size           : 2.5rem;
+  grid-template-columns : repeat(10, var(--user-size));
+  grid-template-rows    : var(--user-size);
+  padding               : 0.25rem;
+  overflow-x            : auto;
+  
+  @include from(m) {
+    --user-size : 3rem;
+  }
+
+  // Estilos para cada contenedor de los usuarios
+  &__item {
+    position   : relative;
+    width      : 100%;
+    height     : 100%;
+    box-shadow : 0 0 0 2px $bodyBg, 0 0 0 4px $firstColor;
+
+    &:hover .top-user__score {
+      transform : scale(1);
+    }
+
+  }
+
+  // Puntaje del usuario
+  &__score {
+    @include radius;
+    position         : absolute;
+    height           : 100%;
+    width            : 100%;
+    background-color : rgba($firstColor, 0.5);
+    color            : #fff;
+    font-weight      : bold;
+    line-height      : initial;
+    transform        : scale(0);
+    transition       : 0.25s;
+    z-index          : $z-normal;
+  }
+
+}

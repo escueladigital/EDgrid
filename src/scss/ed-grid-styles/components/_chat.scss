@@ -1,0 +1,115 @@
+.chat {
+  display : flex;
+  flex-direction: column;
+  height : 100%;
+  color: var(--border-color);
+
+  @include to(l) {
+    padding : 0 1rem;
+    max-height : 500px;
+  }
+
+  &__send {
+    position : relative;
+    margin-bottom : 1rem;
+
+    &-message {
+      width: 100%;
+      display : block;
+      padding: .75em 2.5em .75em .75em;
+      line-height : 1.6;
+      border-radius : .25rem;
+      border : 1px solid var(--border-color);
+    }
+
+    &-submit {
+      width: 1.5em;
+      position : absolute;
+      right: .75em;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__info {
+    color: var(--text-color);
+    margin-top : -.5rem;
+    opacity: .5;
+    font-style: italic;
+    margin-bottom : 1rem;
+  }
+
+  &__messages {
+    padding-top: 1rem;
+  }
+
+  &__message {
+    display : flex;
+    border-bottom : 1px solid var(--border-color);
+    padding-bottom : .75rem;
+    margin-bottom : 1rem;
+    color: var(--text-color);
+    &-avatar {
+      width: 2rem;
+      height: 2rem;
+      margin-right : 1rem;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius : .25rem;
+      }
+    }
+
+    &-user,
+    &-date {
+      vertical-align : super;
+      margin-right : .5rem;
+      opacity : .8;
+    }
+
+    &-user {
+      font-weight : bold;
+    }
+
+    &-comment {
+      margin : -.4em 0 0;
+    }
+  }
+}
+
+// Chat en emisiones en vivo
+.video-live__chat {
+  .chat {
+    // Posicion en live
+    @include from(l) {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    &__send {
+      &-message {
+        background: var(--dark-color-alt);
+        color: var(--border-color);
+        border : 1px solid rgba($accentColor,.3);
+      }
+    }
+
+    &__messages {
+      background: var(--dark-color-alt);
+      padding : 1rem;
+      border-radius : .25rem;
+      overflow-y : auto;
+    }
+
+    &__message {
+      border-bottom : 1px solid rgba($thirdColor,.3);
+      color: inherit;
+    }
+
+    &-user,
+    &-date {
+      opacity : .5;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.form__item {
+  margin-bottom : 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+}
+
+[type="text"],
+[type="email"],
+[type="password"],
+[type="number"],
+[type="date"],
+[type="time"],
+[type="datetime-local"],
+[type="search"],
+[type="tel"],
+[type="url"],
+select,
+textarea {
+  display       : block;
+  border        : 1px solid var(--border-color);
+  background    : #fff;
+  width         : 100%;
+  line-height   : 1.6;
+  font-family   : $body-font; // Fuerza a tomar la fuente por defecto
+  font-size     : fontSize(small);
+  color         : var(--text-color);
+  border-radius : .25rem;
+  padding       : .5rem 1rem;
+
+  &::placeholder {
+    color : rgba($textColor, .75);
+  }
+
+  &:disabled {
+    background :var(--border-color);
+    cursor: default;
+  }
+}
+
+[type="search"] {
+  background : #fff img('icon-search.svg') center right 1rem / 1rem no-repeat !important;
+}
+
+select{
+  appearance: none;
+  background: #fff img('arrow.svg') center right 1rem/1rem no-repeat !important;
+}
+
+textarea {
+  min-height : 6em;
+  max-height : 6em;
+  min-width  : 100%;
+  max-width  : 100%;
+}
+
+label {
+  position: relative;
+  display       : block;
+  font-size     : fontSize(small);
+  margin-bottom : .2em;
+  + input::placeholder {
+    display : none;
+  }
+}
+
+[type="submit"] {
+  margin : 0 !important;
+}

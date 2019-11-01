@@ -1,0 +1,140 @@
+.edui-tabs {
+
+  &--class {
+    @include to(l) {
+      margin-left : -1rem;
+      margin-right : -1rem;
+      border : none;
+      margin-top : -2rem;
+    }
+  }
+
+  .tabs {
+    display : flex;
+    position : relative;
+    left : 1rem;
+    top : 1px;
+  }
+
+  .tab {
+    border : 1px solid var(--border-color);
+    padding : 1rem;
+    border-radius : .25rem .25rem 0 0;
+    margin-right : .5rem;
+    background : #fff;
+    cursor: pointer;
+    opacity : .5;
+
+    &.active {
+      border-bottom : 1px solid #fff;
+      opacity : 1;
+    }
+
+    img {
+      width : rem(36px);
+      display : block;
+    }
+
+    .tab {
+      border : none;
+      padding: 0;
+      border-radius : 0;
+      margin : 0;
+      opacity : 1;
+    }
+  }
+
+  .panels {
+
+  }
+
+  .panel {
+    @include widget;
+    display : none;
+    border-radius : .25rem;
+    padding : 2rem;
+
+    :last-child {
+      //margin-bottom : 0;
+    }
+
+    &.active {
+      display : block;
+    }
+  }
+
+  // tabs para clases
+  .tabs--class {
+    left : 0;
+    border-radius : .25rem .25rem 0 0;
+    overflow : hidden;
+
+    &::before {
+      content: "";
+      display : block;
+      width: 25%;
+      height : 4px;
+      background: var(--second-color);
+      position : absolute;
+      bottom : 0;
+      left : 0;
+      transition: transform .25s ease-in;
+    }
+
+    &[data-tab="2"]::before {
+      transform: translateX(100%);
+    }
+
+    &[data-tab="3"]::before {
+      transform: translateX(200%);
+    }
+
+    &[data-tab="4"]::before {
+      transform: translateX(300%);
+    }
+
+  }
+
+  .tab--class {
+    width: 25%;
+    text-align : center;
+    margin : 0;
+    border-radius : 0;
+    border : none;
+    background : var(--dark-color);
+    color: var(--border-color);
+    opacity : 1;
+    height : 3rem;
+    padding : .6rem 0 0;
+    display : flex;
+    justify-content: center;
+    line-height : 1.6;
+    box-shadow: 0 -4px rgba(#fff,.5) inset;
+
+    &.active {
+      color: var(--second-color);
+      border : none;
+      background : var(--dark-color-alt);
+    }
+  }
+
+  .panels--class {
+    height: calc(100vh - 10rem);
+    overflow: auto;
+    border: 1px solid var(--border-color);
+    background : #fff;
+    border-radius : 0 0 .25rem .25rem;
+    @include widget;
+  }
+
+  .panel--class {
+    padding: 2rem 1rem 1rem;
+    background : none;
+    border : none;
+    box-shadow: none;
+  }
+}
+
+
+
+

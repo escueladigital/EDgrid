@@ -1,0 +1,29 @@
+.main-header {
+  height        : var(--header-height);
+  border-bottom : 1px solid var(--border-color);
+  background    : #FFF;
+  position      : fixed;
+  top           : 0;
+  width         : 100%;
+  left          : 0;
+  z-index       : $z-fixed;
+
+  > .ed-grid {
+    height: 100%;
+  }
+}
+
+.main-header--dark {
+  background: var(--dark-color-alt);
+  border-bottom : none;
+
+  @include from(l) {
+    li {
+      border-bottom : none;
+    }
+  }
+
+  a {
+    color: rgba($borderColor,.5);
+  }
+}

@@ -1,0 +1,30 @@
+// Import settings and variables
+@import "config/ed-grid-settings.scss";
+
+// Import components
+// Core
+@import "components/functions";
+@import "components/base";
+@import "components/media-queries";
+@import "components/dev";
+@import "components/core-flexbox";
+@import "components/core-grid";
+@import "components/layout";
+@import "components/alignment";
+
+// Recommended Utilities
+@import "components/visibility";
+@import "components/prototype";
+@import "components/video";
+@import "components/ed-menu";
+
+// Not recomended (legacy)
+// Mixins
+@import "components/offset";
+@import "components/grid";
+
+// Generate css from offsets and grid mixins
+@import "components/legacy";
+
+// Import CSS variables for prototyping and layout
+@import "config/ed-grid-variables.scss";

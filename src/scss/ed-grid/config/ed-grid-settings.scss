@@ -1,0 +1,26 @@
+// Settings
+$prototype        : true !default;
+$dev              : false !default;
+$dev-hover        : false !default;
+$max-width        : 1200px !default;
+$l-unit           : .5rem !default;
+$gap              : $l-unit * 4 !default;  // 2rem
+$fractions        : 3 6 !default;
+$legacy           : false !default;
+$container        : ed-container !default;
+$item             : ed-item !default;
+$grid-container   : ed-grid !default;
+$grid-item        : -cols- !default;
+$max-grid-columns : 12 !default;
+
+// Breakpoints (names and screen size)
+$breakpoints : (
+  s  : 0,
+  m  : 640px,
+  l  : 1024px,
+  lg : 1024px,
+  xl : 1440px
+) !default;
+
+// List of breakpoints names:
+$sizes: map-keys($breakpoints);

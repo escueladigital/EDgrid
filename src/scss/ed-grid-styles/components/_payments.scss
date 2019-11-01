@@ -1,0 +1,15 @@
+.payment-method {
+  &__name {
+    padding-bottom : .5rem;
+    border-bottom : 1px solid var(--border-color);
+    margin-bottom : .5rem;
+  }
+
+  &__notes {
+    margin-top : -1.5rem;
+  }
+
+  &__account {
+    color: var(--third-color);
+  }
+}

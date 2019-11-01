@@ -1,0 +1,68 @@
+
+
+// Settings for EDgrid
+$dev        : false;
+$cssCore    : false;
+$cssHelpers : true;
+$max-width : 1200px;
+$gutter     : 1rem;
+
+//layout
+:root {
+  --header-height : 3rem;
+
+  @include from(l) {
+    --header-height : 4rem;
+  }
+}
+
+// z-ndex
+$z-back    : -10;
+$z-normal  : 1;
+$z-tooltip : 10;
+$z-fixed   : 100;
+$z-modal   : 1000;
+
+:root {
+  --z-back    : -10;
+  --z-normal  : 1;
+  --z-tooltip : 10;
+  --z-fixed   : 100;
+  --z-modal   : 1000;
+}
+
+// Images path
+$images-path: 'https://ux.ed.team/img';
+
+
+// Variables de color Sass
+// Colors
+$color-fisrt : #007BDF;
+$color-first-alt : #006DC6;
+$color-second : #00CBFF;
+$color-second-alt : #00BFF0;
+$color-third : #FF3C32;
+$color-third-alt : #FF2419;
+$color-accent : #FBA905;
+$color-accent-alt : #F1A000;
+$color-dark : #282D31;
+$color-dark-alt : #141618;
+$color-border : #DFE0E0;
+$color-light : #F6F6F6;
+$color-text : #53575A;
+$color-text-light : #BABDBF;
+$color-body-bg : #FAFDFF;
+
+$firstColor : $color-fisrt;
+$firstColorAlt : $color-first-alt;
+$secondColor : $color-second;
+$secondColorAlt : $color-second-alt;
+$thirdColor : $color-third;
+$thirdColorAlt : $color-third-alt;
+$accentColor : $color-accent;
+$accentColorAlt : $color-accent-alt;
+$darkColor : $color-dark;
+$darkColorAlt : $color-dark-alt;
+$borderColor : $color-border;
+$textColor : $color-text;
+$bodyBg : $color-body-bg;

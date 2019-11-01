@@ -1,0 +1,145 @@
+// ----- Estilos para de las publicaciones en la página de inicio ----- //
+.publication {
+  grid-template-columns : 1fr max-content;
+  
+  @include from(m) {
+    grid-template-columns : max-content 1fr;
+ }
+
+  &.publication--main {
+    padding : 0;
+  }
+
+  // Publicación que quedará fija
+  &--fixed {
+    @include widget;
+    padding       : 1rem;
+    border-radius : 0.25rem;
+  }
+
+  // Cuando se está dentro de una publicación
+  &--main {
+    border  : none;
+  }
+
+  // Selecciona al primer elemento que no sea una publicación fijada
+  &:first-of-type:not(&--fixed) {
+    padding-top : 0;
+  }
+
+  &__header {
+    @include to(m) {
+      grid-row : 1; 
+    }
+  }
+
+  // Contenedor de título y botón de tres puntos cuando se está dentro de una publicación
+  &__header-content {
+    display         : flex;
+    justify-content : space-between;
+  }
+
+  &__votes {
+    flex           : none;
+    flex-direction : column;
+  }
+
+  &__title {
+    display : inline-block;
+    color   : $textColor;
+
+    // Agrega ícono al título cuando una publicación es fija
+    .publication--fixed & {
+      display               : grid;
+      grid-template-columns : 1fr;
+      grid-gap              : 0.5rem;
+      justify-content       : space-between;
+      
+      @include from(m) {
+        grid-template-columns : 1fr max-content;
+      }
+
+      &::after {
+        content             : 'Publicación fijada';
+        padding-left        : 1rem;
+        background-image    : url(https://ux.ed.team/img/pin.svg);
+        background-repeat   : no-repeat;
+        background-size     : 1rem 1rem;
+        font-size           : fontSize(smaller);
+        font-family         : $body-font;
+        font-weight         : normal;
+      }
+ 
+    }
+
+  }
+
+  // Enlace a un fragmento cuando la publicación está relacionada con una clase
+  &__fragment {
+    grid-template-columns : max-content 1fr;
+    color                 : $secondColor;
+  }
+
+  &__footer {
+
+    @include from(m) {
+      grid-template-columns : max-content 1fr max-content;
+    }
+
+  }
+  
+  // tag individual
+  &__tag, 
+  &__report,
+  .tag-icon,
+  .answer {
+    color : $color-text-light;
+  }
+
+  &__answer {
+    color : $color-text;
+  }
+
+  // Se cambian los estilos de .publication__footer y .publication__content cuando se está dentro de una publicación (.publication--main)
+  .publication--main & {
+
+    &__footer {
+      padding-bottom : 1rem;
+      border-bottom  : 1px solid $borderColor;
+
+      @include from(l) {
+        padding-bottom : 2rem;
+      }
+
+    }
+
+    &__header {
+      
+      @include to(m) {
+        grid-column : span 2;
+      }
+
+    }
+
+    &__content {
+      margin-bottom : 2rem;
+    }
+
+    &__votes {
+
+      @include to(m) {
+        display        : flex;
+        flex-direction : row;
+        grid-column    : 1;
+  
+        a:first-child {
+          margin-right : 0.5rem;
+        }
+
+      }
+
+    }
+
+  }
+
+}

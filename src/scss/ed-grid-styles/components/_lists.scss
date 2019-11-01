@@ -1,0 +1,81 @@
+ul, ol {
+  padding-left : 2rem;
+  margin-left : 0;
+
+  li {
+    //padding-left : .2em;
+  }
+}
+
+.data-list,
+.feature-list {
+  @include clearMenu;
+  margin-bottom : 2em;
+
+  li {
+    border-bottom : 1px solid var(--border-color);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin : 0;
+  }
+}
+
+.data-list {
+  li {
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > :first-child {
+      margin-bottom : .5rem;
+      max-width: 75%;
+
+      @include from(l) {
+        margin-bottom : 0;
+      }
+    }
+  
+    @include to(l) {
+      //display : block;
+      
+      [class*="button"] {
+        font-size: fontSize(small);
+      }
+    }
+
+    li div:last-child p {
+      text-align : right;
+    }
+  }
+
+  h1,h2,h3,h4,h5,h6,p, [class*="button"] {
+    margin : 0;
+  }
+}
+
+.feature-list {
+  padding-left : 0;
+  li {
+    padding-left: 1.5rem;
+    list-style: none;
+    position : relative;
+
+    //@include icon(check,before);
+    &::before {
+      content: '';
+      width : 1rem;
+      height : 1rem;
+      display : block;
+      position : absolute;
+      top : 1.25em; // número mágico !no me juzgues!
+      left : 0;
+      color: var(--first-color);
+      background : img('icon-check.svg');
+    }
+  }
+
+  //&.secondary li::before { color: var(--second-color) }
+  //&.tertiary li::before  { color: var(--third-color)  }
+  //&.accent li::before    { color: var(--accent-color) }
+  //&.dark li::before      { color: var(--dark-color)   }
+}

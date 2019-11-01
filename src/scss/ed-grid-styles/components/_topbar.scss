@@ -1,0 +1,23 @@
+.topbar {
+  background : var(--color);
+  color: #fff;
+  padding: .5rem 0;
+
+  @include from(l) {
+    height : var(--header-height);
+  }
+
+  .ed-grid {
+    height      : 100%;
+    align-items : center;
+  }
+
+  form {
+    flex: auto;
+    @include showFrom(l);
+  }
+
+  input {
+    border : none;
+  }
+}

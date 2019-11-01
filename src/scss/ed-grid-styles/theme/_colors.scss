@@ -1,0 +1,124 @@
+// Variables de color CSS
+:root {
+  --first-color      : #007BDF;
+  --first-color-alt  : #006DC6;
+  --second-color     : #00CBFF;
+  --second-color-alt : #00BFF0;
+  --third-color      : #FF3C32;
+  --third-color-alt  : #FF2419;
+  --accent-color     : #FBA905;
+  --accent-color-alt : #F1A000;
+  --light-color      : #EAEAEA;
+  --dark-color       : #282D31;
+  --dark-color-alt   : #141618;
+  --border-color     : #DFE0E0;
+  --text-color       : #53575A;
+  --body-bg          : #F6F6F6;
+  /* Usar nombres de color que comiencen con --color
+     se conservan los anteriores nombres por compatibilidad
+  */
+  --color-first      : #007BDF;
+  --color-first-alt  : #006DC6;
+  --color-second     : #00CBFF;
+  --color-second-alt : #00BFF0;
+  --color-third      : #FF3C32;
+  --color-third-alt  : #FF2419;
+  --color-accent     : #FBA905;
+  --color-accent-alt : #F1A000;
+  --color-light      : #F0F0F0;
+  --color-dark       : #282D31;
+  --color-dark-alt   : #141618;
+  --color-border     : #DFE0E0;
+  --color-text       : #53575A;
+  --color-text-light : #BABDBF;
+  --color-body-bg    : #F6F6F6;
+}
+
+// aplicar color
+
+.color {
+  color: var(--color)
+}
+
+.background {
+  background-color: var(--color);
+}
+
+// Combinaciones de colores
+.first-color, .color-first {
+  --color     : var(--first-color);
+  --color-alt : var(--first-color-alt);
+}
+
+.second-color, .color-second {
+  --color            : var(--second-color);
+  --color-alt        : var(--second-color-alt);
+}
+
+.third-color, .color-third {
+  --color            : var(--third-color);
+  --color-alt        : var(--third-color-alt);
+}
+
+.accent-color, .color-accent {
+  --color            : var(--accent-color);
+  --color-alt        : var(--accent-color-alt);
+}
+
+.dark-color, .color-dark {
+  --color            : var(--dark-color);
+  --color-alt        : var(--dark-color-alt);
+}
+
+.white-color, .color-white {
+  --color : #FFF;
+}
+
+.text-color, .color-text {
+  --color: var(--text-color);
+  --color-alt: var(--dark-color);
+}
+
+.light-color, .color-light {
+  --color            : var(--light-color);
+  --color-alt        : var(--border-color);
+}
+
+.first-color-alt {
+  --color: var(--first-color-alt);
+}
+
+.second-color-alt {
+  --color: var(--second-color-alt);
+}
+
+.third-color-alt {
+  --color: var(--third-color-alt);
+}
+
+.accent-color-alt {
+  --color: var(--accent-color-alt);
+}
+
+.dark-color-alt {
+  --color: var(--dark-color-alt);
+}
+
+.border-color {
+  --color: var(--border-color);
+}
+
+.text-color {
+  --color: var(--text-color);
+}
+
+.body-bg {
+  --color: var(--body-bg);
+
+  &.color-card {
+    [class*=ratio] {
+      border: 1px solid var(--border-color);
+      border-bottom: none;
+    }
+  }
+}

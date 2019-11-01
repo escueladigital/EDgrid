@@ -1,0 +1,262 @@
+// == Estilos para que la cabecera de los cursos abarque toda la ventana == //
+.course-header {
+  position: relative;
+  margin-bottom: 2rem;
+  width: 100%;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: -10vw;
+    width: 120vw;
+    height: 120%;
+    filter: blur(10px);
+    background: linear-gradient(rgba($darkColor,.9), rgba($darkColor,.9)), url(https://ed.team/sites/default/files/styles/large/public/courses/images/css-animaciones-poster-1280.jpg) no-repeat center / cover;
+  }
+
+}
+
+// == Estilos para el contenido de la cabecera == //
+.course-data {
+  color: #fff;
+  position : relative;
+  padding : 2rem 0;
+
+  @include from(xl) {
+    padding : 4rem 0;
+  }
+
+  &__subtitle {
+    margin-top: -1rem;
+  }
+
+  &__description,
+  &__stars-info,
+  &__live-or-record span {
+    opacity: 0.8;
+  }
+
+  &__more-info {
+    display: flex;
+    flex-direction: column;
+    
+    @include from(400px) {
+      flex-direction: row;
+    }
+
+  }
+
+  &__calification {
+    display: flex;
+    margin-right: 2rem;
+  }
+
+  &__stars {
+    margin-right: 1rem;
+  }
+
+  &__live-or-record span {
+    margin-left: 0.25em;
+  }
+
+}
+
+// == Estilos para la información del curso == //
+.course-info {
+  @include round;
+  position : relative;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 6px rgba(#000, 0.1);
+
+  &__item:nth-child(2) {
+    @include to(m) {
+      margin: 1rem 0;
+    }
+  }
+
+  &__title {
+    border-bottom: 1px solid var(--border-color);
+    font-family: $heading-font;
+  }
+
+  &__list {
+    padding: 0;
+    margin-left: 0.5rem;
+    margin-bottom: 0;
+    list-style: none;
+  }
+
+  &__list-item {
+    position: relative;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0.20rem;
+      width: 1rem;
+      height: 1rem;
+      background: url("https://ed.team/themes/custom/escueladigital/img/active-check.svg") no-repeat 50% / contain;
+    }
+
+  }
+
+}
+
+// == Reordenar tarjeta y contenido del curso dependiendo si se ve en desktop o celular == //
+@include to(l) {
+
+  .course-main {
+
+    .span-l-1 {
+      order: 1;
+    }
+
+    .span-l-3 {
+      order: 2;
+    }
+
+  }
+
+  .card--sidebar {
+    margin-bottom: 2rem;
+  }
+
+}
+
+.course-main {
+  margin-bottom: 2rem;
+
+  @include from(l) {
+    margin-bottom : 4rem;
+  }
+}
+
+// == Estilos de temario == //
+
+.temary-accordion {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+
+  &:last-of-type {
+    @include from(l) {
+      margin-bottom : 0;
+    }
+  }
+  
+  &__main-title{
+    font-family: $heading-font;
+    outline: none;
+  }
+  
+  &__list {
+    padding: 1rem 1rem 0;
+    margin-bottom: 0;
+  }
+
+  &__item {
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-color);
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: 0.25rem;
+    padding-left: 1.5rem;
+    color: inherit;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0.2rem;
+      width: 12px;
+      height: 12px;
+      opacity: 0.5;
+      background: url("https://ed.team/themes/custom/escueladigital/img/padlock.svg") no-repeat 50% / contain;
+    }
+
+    &.free-class {
+      color: var(--accent-color);
+      
+      &::before {
+        opacity: 1;
+        background: url("https://ed.team/themes/custom/escueladigital/img/active-check.svg") no-repeat 50% / contain;
+      }
+
+    }
+
+  }
+
+}
+
+// == Estilos para el aside de los cursos == //
+//.card {
+//  $teacher-photo-size: 5rem;
+//
+//  &.card--sidebar {
+//    /*Sobreescribir la altura que tiene en la clase card*/
+//    height: auto;
+//    text-align: center;
+//    overflow: hidden;
+//  }
+//
+//  /*Estilo que se usarán en desktop para el sidebar*/
+//  // &.card--fixed {
+//  //   position: fixed;
+//  //   right: $gutter;
+//  // }
+//
+//  &__info {
+//    padding: 0 1rem 1rem;
+//  }
+//
+//  &__teacher-photo {
+//    width: $teacher-photo-size;
+//    height: $teacher-photo-size;
+//    border-radius: 50%;
+//    border: 4px solid #fff;
+//    transform: translate(0, -50%);
+//  }
+//
+//  &__title {
+//    //margin-top: (-$teacher-photo-size / 2);
+//    margin-bottom: 0.5rem;
+//  }
+//
+//  &__teacher-name.small {
+//    margin-top: -0.5rem;
+//    font-weight: normal;
+//
+//    &::before {
+//      content: "Profesor ";
+//    }
+//
+//  }
+//
+//  &__price.t2 {
+//    margin: 0.5rem 0;
+//  }
+//
+//  &__button:nth-of-type(2) {
+//    margin-top: 1rem;
+//  }
+//
+//  .smaller {
+//    margin-top: 0.25rem;
+//    font-style: italic;
+//  }
+//
+//}

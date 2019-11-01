@@ -1,0 +1,81 @@
+@mixin scroll {
+  --thumb-color       : #{darken($borderColor, 5)};
+  --thumb-color-hover : #{darken($borderColor, 15)};
+  --track-color       : #{lighten($borderColor, 5)};
+  --scroll-size       : 10px;
+  --scroll-radius     : calc(var(--scroll-size) / 2);
+  --display           : block;
+
+  &::-webkit-scrollbar {
+    display : var(--display);
+    width   : var(--scroll-size);
+    height  : var(--scroll-size);
+
+    &-thumb {
+      background    : var(--thumb-color );
+      border-radius : var(--scroll-radius);
+
+      &:hover,
+      &:active {
+        background : var(--thumb-color-hover);
+      }
+
+    }
+
+    &-track {
+      background    : var(--track-color);
+      border-radius : var(--scroll-radius);
+    }
+
+  }
+}
+
+.scroll {
+
+  &--dark {
+    --thumb-color       : #{lighten($darkColor, 10)};
+    --track-color       : #{lighten($darkColor, 20)};
+    --thumb-color-hover : #{lighten($darkColor, 5)};
+  }
+
+  &--dark-alt {
+    --thumb-color       : #{lighten($darkColorAlt, 10)};
+    --track-color       : #{lighten($darkColorAlt, 20)};
+    --thumb-color-hover : #{lighten($darkColorAlt, 5)};
+  }
+
+  &.no-background {
+    --track-color : transparent;
+  }
+
+  &.hidden {
+    --display : none;
+  }
+  
+  &.hover {
+    --display : none;
+
+    &:hover {
+      --display : block;
+    }
+
+  }
+
+  &.mobile {
+    --display : none;
+
+    @include from(l) {
+      --display : block;
+    }
+
+  }
+
+}
+
+[class*=scroll],
+.scroll,
+body {
+  @include from(lg) {
+    @include scroll;
+  }
+}

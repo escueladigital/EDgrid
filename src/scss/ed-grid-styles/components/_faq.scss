@@ -1,0 +1,22 @@
+summary {
+  cursor      : pointer;
+  outline     : none;
+  font-weight : bold;
+}
+
+summary + * {
+  margin-top : 1rem;
+}
+
+details {
+  margin-bottom : .5rem;
+  background    : #FFF;
+  padding       : .5rem 1rem;
+  border        : 1px solid #DFE0E0;
+  border-radius : .25rem;
+
+  @include from(l) {
+    margin-bottom : 1rem;
+    padding       : 1rem;
+  }
+}

@@ -1,0 +1,138 @@
+// placeholder para ed-container
+%ed-container {
+  display      : flex;
+  flex-wrap    : wrap;
+  max-width    : var(--max-width);
+  margin-left  : auto;
+  margin-right : auto;
+  width        : 100%;
+}
+
+// placeholder para ed-item
+%ed-item {
+  margin        : 0;
+  padding-left  : $gap / 2;
+  padding-right : $gap / 2;
+}
+
+// Hace que un elemento siempre mida el 100% del ancho disponible
+@mixin full {
+  max-width : 100%;
+}
+
+// mixin para crear un ed-container
+@mixin edContainer {
+  @extend %ed-container;
+
+  @include dev-container;
+}
+
+@mixin ed-container {
+  @extend %ed-container;
+
+  @include dev-container;
+
+  &.full {
+    @include full;
+  }
+
+}
+
+@mixin edItemWidth($currentBp, $prevBp, $coreBp){
+  // Si el tamaño actual es diferente al previo
+  // asignará el ancho en porcentaje
+  @if $currentBp != $prevBp{
+    @if $currentBp < 1 {
+      @include from($coreBp){
+        width : $currentBp * 100%;
+      }
+    }
+    @else {
+      @include from($coreBp){
+        width : $currentBp * 1%;
+      }
+    }
+  }
+}
+
+// mixin para crear un ed-item
+@mixin edItem($s:100,$m:$s,$l:$m,$xl:$l) {
+  @extend %ed-item;
+
+  @include dev-item;
+
+  // calcular el ancho para el primer breakpoint
+  // por defecto es 100% y se convertirá al porcentaje adecuado
+  // según el valor que se le pase
+  @if $s == 100 {
+    width : 100%;
+  } @else if $s < 1 {
+    width : $s * 100%;
+  } @else {
+    width : $s * 1%;
+  }
+
+  // widths for others breakpoints
+  // anchos para los demás breakpoints
+  @include edItemWidth($m, $s, m); //medium
+  @include edItemWidth($l, $m, l); //large
+  @include edItemWidth($xl, $l, xl); //xlarge
+}
+
+@mixin ed-item($s:100,$m:$s,$l:$m,$xl:$l) {
+  @extend %ed-item;
+
+  @include dev-item;
+
+  // calcular el ancho para el primer breakpoint
+  // por defecto es 100% y se convertirá al porcentaje adecuado
+  // según el valor que se le pase
+  @if $s == 100 {
+    width : 100%;
+  } @else if $s < 1 {
+    width : $s * 100%;
+  } @else {
+    width : $s * 1%;
+  }
+
+  // widths for others breakpoints
+  // anchos para los demás breakpoints
+  @include edItemWidth($m, $s, m); //medium
+  @include edItemWidth($l, $m, l); //large
+  @include edItemWidth($xl, $l, xl); //xlarge
+}
+
+// crear un ed-container
+.#{$container} { @include ed-container() }
+
+// crear un ed-item
+.#{$item} {
+  @include ed-item;
+
+  // un ed-item a la vez puede ser ed-container
+  // para evitar anidaciones innecesarias
+  &.#{$container}{
+    padding-left : 0;
+    padding-right : 0;
+  }
+}
+
+// Breakpoints
+@each $size in $sizes{
+  @include from($size) {
+    @for $i from 1 through 20 {
+      .#{$size}-#{$i*5},
+      .#{$item}.#{$size}-#{$i*5} {
+        width : $i * 5%;
+      }
+    }
+    @each $fraction in $fractions {
+      @for $i from 1 through $fraction {
+        .#{$size}-#{$i}-#{$fraction},
+        .#{$item}.#{$size}-#{$i}-#{$fraction} {
+          width : (100% / $fraction) * $i
+        }
+      }
+    }
+  }
+}

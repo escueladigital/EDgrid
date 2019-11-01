@@ -1,0 +1,29 @@
+body, .main-root {
+  background : var(--color-dark) !important;
+  color      : var(--color-border) !important;
+}
+
+.alt-banner {
+  @include from(l) {
+    background : radial-gradient(circle var(--radius) at 100% 100%, transparent 50%, var(--color-dark-alt) 50%), var(--image) no-repeat center right / auto var(--size);
+    border     : none;
+    &__data {
+      color : var(--color-border);
+    }
+  }
+}
+
+details, .main-footer, .main-header {
+  background   : var(--dark-color-alt);
+  border-color : var(--color-text);
+}
+
+.main-menu {
+  color : var(--color-border);
+  li {
+    border : none !important;
+  }
+  a {
+    color : var(--color-border) !important;
+  }
+}

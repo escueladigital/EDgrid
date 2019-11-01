@@ -1,0 +1,47 @@
+.class-temary {
+  padding-top : 2rem;
+  counter-reset: subjects;
+}
+
+.class-subject {
+  &__title {
+    counter-increment: subjects;
+    margin-bottom :  0;
+
+    &::before {
+      content: counter(subjects) ".";
+      display : inline-block;
+      margin-right : .25rem;
+    }
+  }
+}
+
+.class-fragment {
+  &__title {
+    position : relative;
+    a {
+      color: var(--text-color);
+      position : relative;
+      left : 1.5em;
+    }
+
+    img {
+      width : 1em;
+      height : 1em;
+      position : absolute;
+      top: .25em;
+    }
+  }
+
+  &__duration {
+
+  }
+
+  [class*="button"] {
+    margin-left : 1em;
+    font-size : 12px;
+    &:hover {
+      text-decoration : none;
+    }
+  }
+}

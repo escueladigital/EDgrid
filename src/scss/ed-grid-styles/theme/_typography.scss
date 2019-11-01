@@ -1,0 +1,205 @@
+// Convert pixels to rem
+@function rem($px) {
+  @return ($px / 16px) * 1rem;
+}
+
+// Font families
+$body-font    : Lato,        'sans-serif';
+$heading-font : 'Open Sans', 'sans-serif';
+
+// CSS variables for typography
+:root {
+  // Font families
+  --heading-font : 'Open Sans', sans-serif;
+  --body-font    : Lato,        sans-serif;
+
+  // Font sizes
+  --h1-font-size        : #{rem(24px)};
+  --h2-font-size        : #{rem(20px)};
+  --h3-font-size        : #{rem(16px)};
+  --normal-font-size    : #{rem(15px)};
+  --small-font-size     : #{rem(13px)};
+  --smaller-font-size   : #{rem(12px)};
+  --heading-line-height : 1.3;
+  --body-line-height    : 1.6;
+
+  // Font sizes from lg breakpoint (64em ~ 1024px)
+  @include from(lg) {
+    --h1-font-size      : #{rem(36px)};
+    --h2-font-size      : #{rem(28px)};
+    --h3-font-size      : #{rem(20px)};
+    --normal-font-size  : #{rem(16px)};
+    --small-font-size   : #{rem(14px)};
+    --smaller-font-size : #{rem(13px)};
+  }
+}
+
+// Font sizes
+$fontSizes : (
+  title1  : var(--h1-font-size),
+  title2  : var(--h2-font-size),
+  title3  : var(--h3-font-size),
+  normal  : var(--normal-font-size),
+  small   : var(--small-font-size),
+  smaller : var(--smaller-font-size)
+);
+
+// Get font size from map
+@function fontSize($size) {
+  @if map-has-key($fontSizes, $size) {
+    @return map-get($fontSizes, $size)
+  } @else {
+    @error '$size is not valid, valid values are title1, title2, title3, normal, small, smaller'
+  }
+};
+
+// Mixins for heading ed-grid-styles
+@mixin heading-font {
+  line-height    : var(--heading-line-height);
+  font-family    : var(--heading-font);
+  font-weight    : 600;
+}
+
+@mixin t1 {
+  @include heading-font;
+  font-size   : var(--h1-font-size);
+}
+
+@mixin t2 {
+  @include heading-font;
+  font-size   : var(--h2-font-size);
+}
+
+@mixin t3 {
+  @include heading-font;
+  font-size   : var(--h3-font-size);
+}
+
+@mixin t4 {
+  @include heading-font;
+  font-size   : var(--normal-font-size);
+}
+
+@mixin t5 {
+  @include heading-font;
+  font-size   : var(--small-font-size);
+}
+
+@mixin t6 {
+  @include heading-font;
+  font-size   : var(--smaller-font-size);
+}
+
+
+// Mixins for text content ed-grid-styles
+@mixin body-font {
+  font-family: var(--body-font);
+  font-weight: 400;
+  line-height: var(--body-line-height);
+}
+
+@mixin biggest {
+  @include body-font;
+  font-size: var(--h1-font-size);
+}
+
+@mixin bigger {
+  @include body-font;
+  font-size: var(--h2-font-size);
+}
+
+@mixin big {
+  @include body-font;
+  font-size: var(--h3-font-size);
+}
+
+@mixin normal {
+  @include body-font;
+  font-size: var(--normal-font-size);
+}
+
+@mixin small {
+  @include body-font;
+  font-size: var(--small-font-size);
+}
+
+@mixin smaller {
+  @include body-font;
+  font-size: var(--smaller-font-size);
+}
+
+// Assign heading ed-grid-styles
+h1, .t1 { @include t1 }
+h2, .t2 { @include t2 }
+h3, .t3 { @include t3 }
+h4, .t4 { @include t4 }
+h5, .t5 { @include t5 }
+h6, .t6 { @include t6 }
+
+// Assign text content ed-grid-styles
+.biggest { @include biggest }
+.bigger  { @include bigger  }
+.big     { @include big     }
+.normal  { @include normal  }
+.small   { @include small   }
+.smaller { @include smaller }
+
+
+// Default text ed-grid-styles
+body {
+  @include normal;
+  color : var(--text-color);
+}
+
+// classes for font-family
+.body-font { 
+  font-family : var(--body-font) 
+}
+.heading-font { 
+  font-family : var(--heading-font) 
+}
+
+
+// Blockquote
+blockquote {
+  @include big;
+  font-style     : italic;
+  letter-spacing : .01em;
+  margin-left    : 2rem;
+  position       : relative;
+  opacity        : .9;
+
+  @include from(l) {
+    margin-left : 4rem;
+  }
+
+  &::before {
+    content        : "\201C";
+    font-family    : Georgia, serif;
+    font-size      : 3em;
+    position       : absolute;
+    top            : .5em;
+    left           : -.6em;
+    line-height    : 0;
+    letter-spacing : -0.5em;
+  }
+}
+
+// Links
+// Menu links doesn't have underline
+a {
+  color : var(--second-color);
+
+  main & {
+    text-decoration : none;
+
+    &:hover {
+      text-decoration : underline;
+    }
+  }
+}
+
+::selection {
+  background : var(--second-color);
+  color      : #FFF
+}

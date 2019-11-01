@@ -1,0 +1,163 @@
+.vertical-menu {
+
+  @include to(l) {
+    max-height : 0;
+    transition: max-height .5s;
+    overflow : hidden;
+
+    &.show {
+      max-height : 1000px;
+      margin-bottom : 1em;
+    }
+
+    .active::before {
+      display : none;
+    }
+  }
+
+  ul {
+    @include clearMenu;
+  }
+
+  li {
+    padding : .4em 0;
+    border-bottom : none;
+    font-size : fontSize(small);
+    color: var(--text-color);
+  }
+
+  a {
+    color: inherit;
+    display : block;
+
+    &.active {
+      display : flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--third-color);
+
+      &::after {
+        content: '';
+        display : block;
+        width : 1rem;
+        height : 1rem;
+        background : img('icon-right.svg') center right / contain no-repeat;
+      }
+
+      &:hover {
+        text-decoration : none;
+      }
+    }
+  }
+
+  .active {
+    border-bottom: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    margin-right: -1px;
+    padding: .5em 0;
+    border-right: 1px solid var(--body-bg);
+
+    &::after {
+      background : img('icon-right.svg') 100% / contain no-repeat !important;
+      margin-right : 1rem;
+    }
+  }
+}
+
+// toggle
+.vertical-menu-toggle {
+  --size        : 3rem;
+  width         : var(--size);
+  height        : var(--size);
+  background    : var(--first-color);
+  border-radius : 50%;
+  //border        : 1px solid var(--body-bg);
+  position      : fixed;
+  bottom        : 1rem;
+  right         : 1rem;
+  z-index       : var(--z-fixed);
+  transition    : transform .3s;
+  box-shadow    : 2px 2px 12px rgba(#000, .3);
+
+  &::before,
+  &::after {
+    content       : "";
+    width         : calc(var(--size) * 0.6);
+    height        : calc(var(--size) * 0.1);
+    background    : #FFF;
+    position      : absolute;
+    left          : 50%;
+    top           : 50%;
+    transform     : translate(-50%, -50%);
+    border-radius : calc(var(--size) * 0.05);
+  }
+
+  &::after {
+    transform : translate(-50%, -50%) rotate(90deg);
+  }
+
+  &.active {
+    transform : rotate(-45deg);
+  }
+
+}
+
+// hack ritmo vertical
+.section-title {
+  margin-top : 0;
+}
+
+.main-banner {
+  position : relative !important;
+}
+
+// menu vertical en movil
+@include to(l) {
+  .vertical-menu {
+    &::before {
+      content       : 'Documentación';
+      display       : block;
+      font-size     : var(--h2-font-size);
+      margin-bottom : 1rem;
+    }
+
+    position      : fixed;
+    top           : 4rem;
+    background    : var(--dark-color);
+    width         : calc(100vw - 2rem);
+    border        : none;
+    padding       : 0 1rem;
+    height        : calc(100vh - 12rem);
+    overflow-y    : auto;
+    border-radius : .25rem;
+    box-shadow    : 0 5px 5px -2px rgba(#000, .3);
+    z-index       : var(--z-fixed);
+
+    li {
+      padding       : .75em 0;
+      border-bottom : 1px solid rgba($textColor, .2);
+
+      &:last-child {
+        border-bottom : none;
+      }
+    }
+    a {
+      color        : var(--border-color);
+      padding-left : .5rem;
+    }
+
+    .active {
+      border          : none;
+      justify-content : flex-start !important;
+
+      &::after {
+        order : -1;
+        width : .5rem;
+      }
+    }
+
+    &.show {
+      padding : .5rem 1rem;
+    }
+  }
+}
