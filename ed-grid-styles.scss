@@ -1,0 +1,9 @@
+/*
+This file is for import EDgrid styles from node-modules
+after install EDgrid, you can import with
+@import "~ed-grid/ed-grid-styles" and this point to this file.
+EDgrid styles adds theme styles to project. If your project already
+have theme o company styles, we recommend dont import this file by avoid conflicts.
+*/
+
+@import "src/scss/ed-grid-styles/ed-grid-styles";
