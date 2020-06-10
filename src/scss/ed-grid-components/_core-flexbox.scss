@@ -2,7 +2,7 @@
 %ed-container {
   display      : flex;
   flex-wrap    : wrap;
-  max-width    : $max-width;
+  max-width    : var(--max-width);
   margin-left  : auto;
   margin-right : auto;
   width        : 100%;
@@ -15,26 +15,27 @@
   padding-right : $gap / 2;
 }
 
+// Hace que un elemento siempre mida el 100% del ancho disponible
+@mixin full {
+  max-width : 100%;
+}
+
 // mixin para crear un ed-container
 @mixin edContainer {
   @extend %ed-container;
 
-  @if $dev == true {
-    @include devModeContainer();
-  }
+  @include dev-container;
 }
 
 @mixin ed-container {
   @extend %ed-container;
 
-  @if $dev == true {
-    @include devModeContainer();
-  }
-}
+  @include dev-container;
 
-// Hace que un elemento siempre mida el 100% del ancho disponible
-@mixin full {
-  max-width : 100%;
+  &.full {
+    @include full;
+  }
+
 }
 
 @mixin edItemWidth($currentBp, $prevBp, $coreBp){
@@ -58,9 +59,7 @@
 @mixin edItem($s:100,$m:$s,$l:$m,$xl:$l) {
   @extend %ed-item;
 
-  @if $dev == true {
-    @include devModeItem();
-  }
+  @include dev-item;
 
   // calcular el ancho para el primer breakpoint
   // por defecto es 100% y se convertirá al porcentaje adecuado
@@ -83,9 +82,7 @@
 @mixin ed-item($s:100,$m:$s,$l:$m,$xl:$l) {
   @extend %ed-item;
 
-  @if $dev == true {
-    @include devModeItem();
-  }
+  @include dev-item;
 
   // calcular el ancho para el primer breakpoint
   // por defecto es 100% y se convertirá al porcentaje adecuado

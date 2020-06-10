@@ -1,11 +1,11 @@
 // altura de los pseudoelementos que imprimiran clases
-$infoHeight : rem(20px);
-$infoFontSize : $infoHeight * 0.6;
+$info-height    : rem(20px);
+$info-font-size : $info-height * 0.6;
 
 %info {
   content     : attr(class);
   font-style  : italic;
-  font-size   : $infoFontSize;
+  font-size   : $info-font-size;
   font-weight : normal;
 
   z-index     : 1;
@@ -15,48 +15,58 @@ $infoFontSize : $infoHeight * 0.6;
   display     : table;
   width       : 100%;
   padding     : 0 em(5px);
-  height      : $infoHeight;
-  line-height : $infoHeight;
+  height      : $info-height;
+  line-height : $info-height;
 }
 
 // estilos para los containers en modo dev
-@mixin devModeContainer {
-  padding-top   : $infoHeight;
+@mixin dev-container-style {
+  $dev-color    : tomato;
+  padding-top   : $info-height;
   margin-bottom : 10px;
-  outline       : 1px solid tomato;
+  outline       : 1px solid $dev-color;
   position      : relative;
 
-  .#{$container} { margin-bottom : 0 }
+  .#{$container}, 
+  .#{$grid-container} { margin-bottom : 0 }
 
   &:before {
     @extend %info;
     top        : 0;
-    background : rgba(tomato, .3);
-    color      : tomato;
+    background : rgba($dev-color, .3);
+    color      : $dev-color;
   }
 }
 
+@mixin dev-container{
+  @if $dev == true {@include dev-container-style} 
+  @else if $dev-hover == true {&:hover {@include dev-container-style}}
+}
+
 // estilos para los items en modo dev
-@mixin devModeItem {
+@mixin dev-item-style {
+  $dev-color       : steelblue;
   position         : relative;
-  padding-bottom   : $infoHeight;
-  background-color : rgba(yellow, .3);
+  padding-bottom   : $info-height;
+  background-color : rgba($dev-color, 0.1);
+  outline          : 1px solid $dev-color;
   background-clip  : content-box;
 
   &:before {
     @extend %info;
-    background : rgba(steelblue, .8);
+    background : rgba($dev-color, .8);
     color      : #FFF;
     bottom     : 0;
   }
-
-  &:nth-child(even):before {
-    background : rgba(steelblue, .4);
-    color      : steelblue;
-  }
 }
 
-@mixin devMode {
+@mixin dev-item {
+  @if $dev == true {@include dev-item-style}
+  @else if $dev-hover == true {&:hover {@include dev-item-style}}
+}
+
+// Mixin para modo desarrollo
+@mixin dev-mode {
   margin   : 0 !important;
   position : relative;
   top      : 66px;
@@ -67,7 +77,7 @@ $infoFontSize : $infoHeight * 0.6;
     position    : fixed;
     background  : steelblue;
     color       : #FFF;
-    font-size   : $infoHeight * 0.7;
+    font-size   : $info-height * 0.7;
     text-align  : center;
     line-height : 36px;
     height      : 36px;
@@ -85,13 +95,13 @@ $infoFontSize : $infoHeight * 0.6;
 
 // Incluir el modo dev en body
 @if $dev == true {
-  body { @include devMode }
+  body { @include dev-mode }
 }
 
 // CSS
 body.dev,
 body.desarrollo {
-  @include devMode();
-  .ed-container { @include devModeContainer; }
-  .ed-item { @include devModeItem; }
+  @include dev-mode;
+  .ed-container { @include dev-container; }
+  .ed-item { @include dev-item }
 }

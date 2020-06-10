@@ -204,13 +204,13 @@ gulp.task('dev', ['styles-dev', 'pug-dev', 'scripts-dev', 'images-dev', 'html'],
     }
   })
 
-  watch('./src/scss/**/**', () => gulp.start('styles-dev'))
-  watch('./src/js/**/**', () => gulp.start('scripts-dev', server.reload))
-  watch('./src/pug/**/**', () => gulp.start('pug-dev', server.reload))
-  watch('./src/data/**/**', () => gulp.start('pug-dev', server.reload))
-  watch('./src/md/**/**', () => gulp.start('pug-dev', server.reload))
-  watch('./test.html', () => gulp.start('html', server.reload))
-  watch('./src/img/**/**', () => gulp.start('images-dev'))
+  gulp.watch('./src/scss/**/**', () => gulp.start('styles-dev'))
+  gulp.watch('./src/js/**/**', () => gulp.start('scripts-dev', server.reload))
+  gulp.watch('./src/pug/**/**', () => gulp.start('pug-dev', server.reload))
+  gulp.watch('./src/data/**/**', () => gulp.start('pug-dev', server.reload))
+  gulp.watch('./src/md/**/**', () => gulp.start('pug-dev', server.reload))
+  gulp.watch('./test.html', () => gulp.start('html', server.reload))
+  gulp.watch('./src/img/**/**', () => gulp.start('images-dev'))
 })
 
 // Compila versión CSS para producción

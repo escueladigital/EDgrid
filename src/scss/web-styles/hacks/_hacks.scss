@@ -3,3 +3,32 @@
     content : 'Documentación de EDgrid';
   }
 }
+
+.testimony-card {
+
+  .content {
+    flex-grow: 1;
+  }
+
+  .card__footer {
+    flex-wrap: nowrap;
+    margin-top: auto;
+
+    .button {
+      white-space: nowrap;
+    }
+
+  }
+
+}
+
+
+.user-avatar {
+  flex-wrap: nowrap;
+
+  .photo {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+}

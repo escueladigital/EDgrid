@@ -9,6 +9,7 @@
 - [Sombras](#sombras)
 - [Ratios](#ratios)
 - [Contenedores de imágenes](#contenedores-de-im%C3%A1genes)
+- Contenedor sticky (próximamente)
 
 <!-- /TOC -->
 

@@ -23,7 +23,7 @@
   width                 : calc(100% - 2rem);
   margin-left           : 1rem;
   margin-right          : 1rem;
-  max-width             : $max-width;
+  max-width             : var(--max-width);
 
   // Por sobre el max width el container se centra
   @include from($max-width) {
@@ -132,5 +132,13 @@
  &[class*="-cross-"] {
    display: grid;
  }
+
+  
+  @include dev-container;
+      
+  > * {
+    @include dev-item;
+  }
+
 }
 

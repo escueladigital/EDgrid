@@ -1,152 +1,185 @@
-@mixin ratio($h,$v) {
-  $width : 100%;
-  width          : $width;
-  height         : 0;
-  overflow       : hidden;
-  padding-bottom : $width * ($v/$h);
-  position       : relative;
+@mixin ratio($h, $v) {
+  $width: 100%;
+  width: $width;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: $width * ($v/$h);
+  position: relative;
 }
 
-$border-radius: (
-  tl: top-left,
+$border-radius: (tl: top-left,
   tr: top-right,
   bl: bottom-left,
-  br: bottom-right
+  br: bottom-right);
+
+$z-indexs: (
+  z-back: var(--z-back),
+  z-normal: var(--z-normal),
+  z-tooltip: var(--z-tooltip),
+  z-fixed: var(--z-fixed),
+  z-modal: var(--z-modal),
 );
 
-@if $prototype == true {
+@if $prototype==true {
   .button {
-    display         : inline-block;
-    padding         : .5em 1em;
-    color           : #FFF;
-    background      : var(--color);
-    cursor          : pointer;
-    text-decoration : none;
-    line-height     : inherit;
-    border-radius   : .25rem;
-    transition      : transform .05s;
-    border          : none;
+    display: inline-block;
+    padding: .5em 1em;
+    color: #FFF;
+    background: var(--color);
+    cursor: pointer;
+    text-decoration: none;
+    line-height: inherit;
+    border-radius: .25rem;
+    transition: transform .05s;
+    border: none;
 
     &:hover {
-      background : var(--color-alt);
+      background: var(--color-alt);
     }
   }
 
-  @each $size in $sizes {
+  @each $index, $value in $z-indexs {
+    .#{$index} {
+      z-index: $value;
+    }
+  }
+
+  @include sizes {
     $border: 1px solid var(--border-color);
 
     // Bordes
-    @include from($size) {
-      .#{$size}-border {
-        border :$border;
+    &-border {
+      border: $border;
+    }
+
+    &-border-none {
+      border: none;
+    }
+
+    &-radius {
+      border-radius: var(--border-radius);
+    }
+
+    // boder top, left, right, bottom
+    @each $direction in top right bottom left {
+      &-border-#{$direction} {
+        border-#{$direction}: $border;
       }
 
-      .#{$size}-border-none {
-        border :none;
+      &-border-none {
+        border-#{$direction}: none;
       }
+    }
 
-      .#{$size}-radius {
-        border-radius: var(--border-radius);
+    // Border radius
+    @each $corner in map-keys($border-radius) {
+      &-radius-#{$corner} {
+        border-#{map-get($border-radius,$corner)}-radius: var(--border-radius);
       }
+    }
 
-      .#{$size}-radius-none {
-        border-radius: none;
+    @include prototype("radius", "border-radius");
+
+    @each $corner in map-keys($border-radius) {
+      @include prototype("radius-#{$corner}", "border-#{map-get($border-radius,$corner)}-radius");
+    }
+
+    @each $corner in map-keys($border-radius) {
+      &-radius-#{$corner}-none {
+        border-#{map-get($border-radius,$corner)}-radius: 0;
       }
+    }
 
-      // boder top, left, right, bottom
-      @each $direction in top right bottom left {
-        .#{$size}-border-#{$direction} {
-          border-#{$direction}: $border;
-        }
+    &-radius-none {
+      border-radius: none;
+    }
 
-        .#{$size}-border-none {
-          border-#{$direction}: none;
-        }
-      }
+    // Backgrounds
+    &-bg-blue {
+      background-color: var(--color);
+    }
 
-      // Border radius
-      @each $corner in map-keys($border-radius) {
-        .#{$size}-radius-#{$corner} {
-          border-#{map-get($border-radius,$corner)}-radius: var(--border-radius);
-        }
+    &-bg-white {
+      background-color: #FFF;
+    }
 
-        .#{$size}-radius-#{$corner}-none {
-          border-#{map-get($border-radius,$corner)}-radius: 0;
-        }
-      }
+    &-bg-grey {
+      background-color: var(--light-bg);
+    }
 
-      // Background
-      .#{$size}-bg-blue {
-        background-color : var(--color);
-      }
+    &-bg-none {
+      background-color: transparent;
+    }
 
-      .#{$size}-bg-white {
-        background-color : #FFF;
-      }
-
-      .#{$size}-bg-grey {
-        background-color : var(--light-bg);
-      }
-
-      .#{$size}-none {
-        background-color : var(--light-bg);
-      }
-
-      // ratios
-      @each $x in 1 2 3 4 {
-        @each $y in 1 2 3 4 {
-          .#{$size}-ratio-#{$x}-#{$y} {
-            @include ratio($x,$y)
-          }
-        }
-      }
-
-      // 16,9
-
-      .#{$size}-ratio-16-9 {
-        @include ratio(16,9)
-      }
-
-      .#{$size}-ratio-9-16 {
-        @include ratio(9,16)
-      }
-
-      .#{$size}-ratio-21-9 {
-        @include ratio(21,9)
-      }
-
-      // Sombras
-      .#{$size}-shadow {
-        box-shadow : 0 0 1rem #CCC;
-      }
-
-      .#{$size}-shadow-bottom {
-        box-shadow : 0 0.5rem 1rem -0.5rem #CCC;
-      }
-
-      .#{$size}-shadow-top {
-        box-shadow : 0 -0.5rem 1rem -0.5rem #CCC;
-      }
-
-      .#{$size}-shadow-right {
-        box-shadow : 0.5rem 0 1rem -0.5rem #CCC;
-      }
-
-      .#{$size}-shadow-left {
-        box-shadow : -0.5rem 0 1rem -0.5rem #CCC;
-      }
-
-      .#{$size}-shadow-none {
-        box-shadow : none;
-      }
-
-      // Opacidad
-      @for $i from 1 through 10 {
-        .#{$size}-opacity-#{$i} {
-          opacity : $i * 0.1;
+    // ratios
+    @each $x in 1 2 3 4 {
+      @each $y in 1 2 3 4 {
+        &-ratio-#{$x}-#{$y} {
+          @include ratio($x, $y)
         }
       }
     }
+
+    // 16,9
+    &-ratio-16-9 {
+      @include ratio(16, 9)
+    }
+
+    // 9,16
+    &-ratio-9-16 {
+      @include ratio(9, 16)
+    }
+
+    // 21,9
+    &-ratio-21-9 {
+      @include ratio(21, 9)
+    }
+
+    // Sombras
+    &-shadow {
+      box-shadow: 0 0 1rem #CCC;
+    }
+
+    &-shadow-bottom {
+      box-shadow: 0 0.5rem 1rem -0.5rem #CCC;
+    }
+
+    &-shadow-top {
+      box-shadow: 0 -0.5rem 1rem -0.5rem #CCC;
+    }
+
+    &-shadow-right {
+      box-shadow: 0.5rem 0 1rem -0.5rem #CCC;
+    }
+
+    &-shadow-left {
+      box-shadow: -0.5rem 0 1rem -0.5rem #CCC;
+    }
+
+    &-shadow-none {
+      box-shadow: none;
+    }
+
+    // Clases con flexbox
+    &-fxn {
+      flex: none;
+    }
+
+    &-fxw {
+      flex-wrap: nowrap;
+    }
+
+    &-fxg {
+      flex-grow: 1;
+    }
+
+    // Opacidad
+    @for $i from 1 through 10 {
+      &-opacity-#{$i} {
+        opacity: $i * 0.1;
+      }
+    }
+ 
   }
 
   .circle,
@@ -155,18 +188,19 @@ $border-radius: (
   }
 
   .circle {
-    border-radius : 50%;
+    border-radius: 50%;
   }
 
   .img-container {
-    position : relative;
+    position: relative;
+
     img {
-      width      : 100%;
-      height     : 100%;
-      position   : absolute;
-      top        : 0;
-      left       : 0;
-      object-fit : cover;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
     }
   }
 }

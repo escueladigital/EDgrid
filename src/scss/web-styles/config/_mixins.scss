@@ -1,0 +1,31 @@
+@mixin sizes {
+  @each $size in $sizes {
+    @include from($size) {
+      .#{$size} {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin prototype($selector, $property) {
+  @for $i from 0 through 5 {
+    // Unidad de separación actual
+    $unit: $l-unit * $i;
+
+    // Valida el cero para evitar devolver 0rem como unidad
+    @if $i==0 {
+      $unit: 0;
+    }
+
+    @if $i==5 {
+      $i: "05";
+      $unit: $l-unit * 0.5;
+    }
+
+    &-#{$selector}-#{$i} {
+      #{$property}: $unit;
+    }
+
+  }
+}
