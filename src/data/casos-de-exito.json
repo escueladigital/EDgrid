@@ -11,6 +11,16 @@
       "linkUser": ""
     },
     {
+      "img": "/assets/img/aremisse.jpg",
+      "title": "Aremisse Lima",
+      "subtitle": "Transporte corporativo, turístico y personal",
+      "description": "Empresa peruana dedicada al transporte de personal, transporte ejecutivo o corporativo y transporte turístico.",
+      "url": "https://aremisse.com/",
+      "user": "Diter Terrones",
+      "imageUser": "/assets/img/diter-terrones.jpeg",
+      "linkUser": "https://www.facebook.com/diterterrones"
+    },
+    {
       "img": "/assets/img/map-chile-web.png",
       "title": "Map",
       "subtitle": "Agencia de selección y Outsourcing",
