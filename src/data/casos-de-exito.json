@@ -11,6 +11,16 @@
       "linkUser": ""
     },
     {
+      "img": "/assets/img/aremisse.jpg",
+      "title": "Aremisse Lima",
+      "subtitle": "Transporte corporativo, turístico y personal",
+      "description": "Empresa peruana dedicada al transporte de personal, transporte ejecutivo o corporativo y transporte turístico.",
+      "url": "https://aremisse.com/",
+      "user": "Diter Terrones",
+      "imageUser": "/assets/img/diter-terrones.jpeg",
+      "linkUser": "https://www.facebook.com/diterterrones"
+    },
+    {
       "img": "/assets/img/map-chile-web.png",
       "title": "Map",
       "subtitle": "Agencia de selección y Outsourcing",
@@ -36,8 +46,8 @@
       "subtitle": "Empresa de reta de autos",
       "description": "Alkila es una empresa Peruana dedicada al rubro de alquiler de vehículos.",
       "url": "http://alkilarentacar.com",
-      "user": "Edwing Romero Rodriguez",
-      "imageUser": "/images/alkila-user.png",
+      "user": "Edwing Romero",
+      "imageUser": "/assets/img/alkila-user.png",
       "linkUser": "https://www.linkedin.com/in/edwingromero/"
     },
       {
@@ -76,7 +86,7 @@
       "subtitle": "Portafolio",
       "description": "Esta web es el portfolio de Robert Huamán Cáceres, estudiante en Ingeniería informática y sistemas de la Universidad Nacional Micaela Bastidas de Apurímac - Perú",
       "url": "https://pepobj.github.io/dist/",
-      "user": "Robert BJ Huamán Cáceres",
+      "user": "Robert BJ Huamán",
       "imageUser": "/assets/img/robert-user.png",
       "linkUser": "https://www.linkedin.com/in/robert-bj-huaman/"
     },
@@ -86,7 +96,7 @@
       "subtitle": "Empresa",
       "description": "Empresa peruana dedicada a la exportación de indumentaria y accesorios para uso militar.",
       "url": "http://militaria.com.pe/",
-      "user": "Edwing Romero Rodríguez",
+      "user": "Edwing Romero",
       "imageUser": "/assets/img/alkila-user.png",
       "linkUser": "https://www.linkedin.com/in/robert-bj-huaman/"
     },
@@ -96,7 +106,7 @@
       "subtitle": "Portafolio",
       "description": "Hola, mi nombre es Jean David soy de Querétaro, México y soy desarrollador y diseñador web frontend.",
       "url": "https://www.jeanda.mx/",
-      "user": "Jean David Herrera Guerrero",
+      "user": "Jean David Herrera",
       "imageUser": "/assets/img/jeanda.jpg",
       "linkUser": "https://www.jeanda.mx/"
     }

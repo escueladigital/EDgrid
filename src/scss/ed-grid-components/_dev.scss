@@ -27,7 +27,7 @@ $info-font-size : $info-height * 0.6;
   outline       : 1px solid $dev-color;
   position      : relative;
 
-  .#{$container}, 
+  .#{$container},
   .#{$grid-container} { margin-bottom : 0 }
 
   &:before {
@@ -39,7 +39,7 @@ $info-font-size : $info-height * 0.6;
 }
 
 @mixin dev-container{
-  @if $dev == true {@include dev-container-style} 
+  @if $dev == true {@include dev-container-style}
   @else if $dev-hover == true {&:hover {@include dev-container-style}}
 }
 
@@ -94,7 +94,7 @@ $info-font-size : $info-height * 0.6;
 }
 
 // Incluir el modo dev en body
-@if $dev == true {
+@if $dev {
   body { @include dev-mode }
 }
 
