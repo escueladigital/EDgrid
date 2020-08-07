@@ -9,7 +9,9 @@ Añada la clase `ed-video` al contenedor de su video (que puede ser un `iframe` 
 
 ```html
 <div class="ed-video">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/twKLcUXAl1c" 
-  frameborder="0" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/cd549lZtPEU"></iframe>
 </div>
 ```
+<div class="ed-video">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/cd549lZtPEU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>

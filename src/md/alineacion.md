@@ -127,11 +127,11 @@ Igual si quiere alinearla a la derecha o izquierda. Y lo mismo para cualquier el
 Ahora bien, ¿qué sucede si quiero centrar directamente la imagen y no usar su contenedor? Use la clases `breakpoint-block-left`, `breakpoint-block-center` y `breakpoint-block-right` que agregan además un `display: block` al elemento inlne al que se apliquen y resuelven la alineación.
 
 ```html
-<img src="/img/tioalexys.jpg" class="s-block-center">
+<img class="s-block-center" src="/assets/img/EDgrid-isotipo.svg">
 ```
 
 <div class="ed-grid-demo s-pxy-1">
-    <img class="s-block-center" src="https://ed.team/sites/default/files/styles/perfil_en_views_200x200_/public/pictures/2018-11/tioalexys.jpg">
+    <img class="s-block-center" src="/assets/img/EDgrid-isotipo.svg">
 </div>
 
 Seguro pensará: si se necesita un `display: block` agréguenlo a los estilos en lugar de crear nuevas clases. El detalle es que el elemento podría tener `display:grid`, `display:flex`, `display: table` o `display: inline-block` y no se puede forzar un `display: block` porque destruiría su layout.

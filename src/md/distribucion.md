@@ -49,7 +49,7 @@ Usando la teoría de flexbox, consideramos `main` como eje horizontal y `cross` 
 ```
 
 <div class="ed-grid-demo s-pxy-1 s-cross-center">
-    <img src="https://ed.team/sites/default/files/styles/perfil_en_views_200x200_/public/pictures/2018-11/tioalexys.jpg" width="80" class="s-mr-2">
+    <img src="/assets/img/alexys.jpg" width="80" class="s-mr-2">
     <span>Alexys Lozada</span>
 </div>
 
