@@ -51,3 +51,4 @@ test/styles.css
 js/ed-grid.js.map
 js/babel/.tern-port
 public
+docs/
