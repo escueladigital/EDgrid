@@ -1,20 +1,15 @@
 {
   "name": "ed-grid",
-  "version": "2.8.1",
+  "version": "2.9.1",
   "description": "EDgrid (aka ed-grid) is a minimalist Sass/CSS library for building responsive web layouts.",
   "style": "ed-grid.scss",
   "main": "ed-grid.scss",
   "author": "Alvaro Felipe <afelipech@gmail.com>",
   "contributors": [
     {
-      "name": "Daniel Guillermo Romero Gelvez",
-      "email": "danielromeroauk@gmail.com",
-      "url": "http://adsiar.com"
-    },
-    {
-      "name": "Carlos Eduardo Cuatin Guaitarilla",
-      "email": "cecg1996@gmail.com",
-      "url": "http://carloscuatin.com"
+      "name": "Juan Alexis Mora Angulo",
+      "email": "juanalexismoraangulo@hotmail.com",
+      "url": "https://twitter.com/Jopzik"
     }
   ],
   "repository": {
@@ -39,7 +34,7 @@
     "browser-sync": "^2.16.0",
     "browserify": "^13.1.1",
     "cssnano": "^3.7.5",
-    "edteam-style-guides": "0.0.67",
+    "edteam-style-guides": "0.0.68",
     "gulp": "^3.9.1",
     "gulp-babel": "^8.0.0",
     "gulp-cache-bust": "^1.4.0",
