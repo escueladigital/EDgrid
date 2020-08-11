@@ -1,13 +1,13 @@
 {
   "name": "ed-grid",
-  "version": "2.9.1",
+  "version": "3.0.0",
   "description": "EDgrid (aka ed-grid) is a minimalist Sass/CSS library for building responsive web layouts.",
   "style": "ed-grid.scss",
   "main": "ed-grid.scss",
-  "author": "Alvaro Felipe <afelipech@gmail.com>",
+  "author": "Alvaro Felipe <alvaro@ed.team>",
   "contributors": [
     {
-      "name": "Juan Alexis Mora Angulo",
+      "name": "Alexis Mora Angulo",
       "email": "juanalexismoraangulo@hotmail.com",
       "url": "https://twitter.com/Jopzik"
     }
