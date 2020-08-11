@@ -1,6 +1,6 @@
-# Sistema de filas y columnas con CSS Grid (beta)
+# Sistema de filas y columnas con CSS Grid
 
-La versión 3 de EDgrid (aun en desarrollo) incluye la creación de layouts con CSS Grid, la que ofrece varias ventajas sobre los layouts con Flexbox. Ests sitio web y los demás proyectos de EDteam usan esta versión para probarla en producción y corregir errores. Si detecta alguno por favor repórtelo a [Github](https://github.com/escueladigital/EDgrid/issues)
+La versión 3 de EDgrid incluye la creación de layouts con CSS Grid, la que ofrece varias ventajas sobre los layouts con Flexbox.
 
 Esta versión se basa en las siguientes reglas:
 

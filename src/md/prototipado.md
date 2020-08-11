@@ -9,7 +9,6 @@
 - [Sombras](#sombras)
 - [Ratios](#ratios)
 - [Contenedores de imágenes](#contenedores-de-im%C3%A1genes)
-- Contenedor sticky (próximamente)
 
 <!-- /TOC -->
 
@@ -118,7 +117,7 @@ Puede usar las clases `breakpoint-bg-[grey|blue]` Para asignarle un fondo a un e
 <img class="s-shadow s-block-center" src="/img/tioalexys.jpg">
 ```
 
-<img class="s-shadow s-block-center l-block" src="https://ed.team/sites/default/files/styles/perfil_en_views_200x200_/public/pictures/2018-11/tioalexys.jpg">
+<img class="s-shadow s-block-center l-block" src="/assets/img/alexys.jpg">
 
 ```html
 <div class="s-shadow-bottom lg-50 lg-to-center s-border s-radius">
@@ -196,16 +195,16 @@ La imagen es la misma en todos los casos:
 
 <div class="ed-grid s-grid-2 m-grid-3 lg-grid-4 l-block s-cross-center">
     <div class="s-ratio-4-3 img-container">
-        <img src="https://cocha2018.ed.team/assets/img/banner-edcamp.jpg">
+        <img src="/assets/img/edcamp-mexico.png">
     </div>
     <div class="s-ratio-9-16 img-container">
-        <img src="https://cocha2018.ed.team/assets/img/banner-edcamp.jpg">
+        <img src="/assets/img/edcamp-mexico.png">
     </div>
     <div class="circle img-container">
-        <img src="https://cocha2018.ed.team/assets/img/banner-edcamp.jpg">
+        <img src="/assets/img/edcamp-mexico.png">
     </div>
     <div class="s-ratio-16-9 img-container">
-        <img src="https://cocha2018.ed.team/assets/img/banner-edcamp.jpg">
+        <img src="/assets/img/edcamp-mexico.png">
     </div>
 </div>
 
@@ -246,7 +245,7 @@ Ejemplo de tarjeta:
 <div class="lg-50 lg-to-center">
     <!--Contenedor de la imagen-->
     <div class="s-ratio-16-9 img-container s-radius-tl s-radius-tr">
-        <img src="https://ed.team/sites/default/files/styles/large/public/courses/images/sql.jpg?itok=ndgCTmxW">
+        <img src="/assets/img/poster-curso.png">
     </div>
     <!--Contenido-->
     <div class="s-border s-radius-br s-radius-bl s-shadow-bottom">
@@ -259,7 +258,7 @@ Ejemplo de tarjeta:
             <div class="s-10 s-mr-1">
             <!--Contenedor de la imagen-->
             <div class="circle ">
-                <img  src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2018-11/tioalexys.jpg?itok=7vDpJuSh">
+                <img  src="/assets/img/alexys.jpg">
             </div>
             <!--Profesor-->
             </div>

@@ -14,7 +14,7 @@
 
 --- 
 
-EDgrid es una librería para construir layouts. Puede construirlos con Flexbox (estable) o [CSS Grid](/documentacion/layout-css-grid.html) (beta)
+EDgrid es una librería para construir layouts. Puede construirlos con Flexbox o [CSS Grid](/documentacion/layout-css-grid.html). 
 
 <a id="markdown-ed-container-y-ed-item" name="ed-container-y-ed-item"></a>
 ## ed-container y ed-item

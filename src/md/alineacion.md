@@ -48,8 +48,6 @@ Ejemplo:
 
 <p class="s-bg-grey s-pxy-1 s-75 m-50 lg-40 s-to-left m-to-center l-to-right">EDgrid es una libreria construida con Sass (y con versión CSS) para Responsive Web Design (RWD). Es muy ligero, personalizable y te permite prototipar y crear layouts en muy poco tiempo sin conflictos con tu proyecto.</p>
 
-\* *Para que las alineaciones de bloque funcionen debe agregar clases de ancho.*
-
 <a id="markdown-ancho-de-los-bloques" name="ancho-de-los-bloques"></a>
 ## Ancho de los bloques
 
@@ -138,7 +136,7 @@ Ahora bien, ¿qué sucede si quiero centrar directamente la imagen y no usar su 
 ```
 
 <div class="ed-grid-demo s-pxy-1">
-    <img class="s-block-center" src="/assets/img/EDgrid-isotipo.svg">
+    <img class="s-block-center" src="/assets/img/logo/EDgrid-isotipo.svg">
 </div>
 
 Seguro pensará: si se necesita un `display: block` agréguenlo a los estilos en lugar de crear nuevas clases. El detalle es que el elemento podría tener `display:grid`, `display:flex`, `display: table` o `display: inline-block` y no se puede forzar un `display: block` porque destruiría su layout.
@@ -152,7 +150,7 @@ En el caso de las imágenes svg, estas son vectoriales y carecen de dichas propi
 
 Ejemplo:
 
-<img alt="Logotipo de EDgrid" src="/assets/img/EDgrid-logo.svg" class="l-block">
+<img alt="Logotipo de EDgrid" width="100%" src="/assets/img/logo/EDgrid-logo.svg" class="l-block">
 
 La podemos centrar con clases de ancho y de alineación de bloques
 
@@ -160,4 +158,4 @@ La podemos centrar con clases de ancho y de alineación de bloques
 <img alt="Logotipo de EDgrid" src="/assets/img/EDgrid-logo.svg" class="s-30 s-block-center">
 ```
 
-<img alt="Logotipo de EDgrid" src="/assets/img/EDgrid-logo.svg" class="s-30 s-block-center">
+<img alt="Logotipo de EDgrid" src="/assets/img/logo/EDgrid-logo.svg" class="s-30 s-block-center">
