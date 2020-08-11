@@ -1,5 +1,12 @@
 # Alineación
-<!-- TOC -->autoauto- [Alineación de contenido](#alineación-de-contenido)auto- [Alineación de bloques](#alineación-de-bloques)auto- [Ancho de los bloques](#ancho-de-los-bloques)auto- [Diferencia entre bloque  y contenido](#diferencia-entre-bloque--y-contenido)auto- [Alineación de imágenes y elementos inline](#alineación-de-imágenes-y-elementos-inline)auto  - [Sobre el ancho de las imágenes](#sobre-el-ancho-de-las-imágenes)autoauto<!-- /TOC -->
+<!-- TOC -->
+- [Alineación de contenido](#alineación-de-contenido)
+- [Alineación de bloques](#alineación-de-bloques)
+- [Ancho de los bloques](#ancho-de-los-bloques)
+- [Diferencia entre bloque  y contenido](#diferencia-entre-bloque--y-contenido)
+- [Alineación de imágenes y elementos inline](#alineación-de-imágenes-y-elementos-inline)
+- [Sobre el ancho de las imágenes](#sobre-el-ancho-de-las-imágenes)
+<!-- /TOC -->
 
 --- 
 
