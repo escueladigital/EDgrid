@@ -63,7 +63,7 @@ Tenga en cuenta que los márgenes de los elementos pueden influir en estas aline
 ```
 
 <div class="ed-grid-demo s-pxy-1 s-cross-center">
-    <img src="https://ed.team/sites/default/files/styles/perfil_en_views_200x200_/public/pictures/2018-11/tioalexys.jpg" width="80" class="s-mr-2">
+    <img src="/assets/img/alexys.jpg" width="80" class="s-mr-2">
     <p>Alexys Lozada</p>
 </div>
 
@@ -77,7 +77,7 @@ Lo resolvemos cambiando la etiqueta o anulando el margen.
 ```
 
 <div class="ed-grid-demo s-pxy-1 s-cross-center">
-    <img src="https://ed.team/sites/default/files/styles/perfil_en_views_200x200_/public/pictures/2018-11/tioalexys.jpg" width="80" class="s-mr-2">
+    <img src="/assets/img/alexys.jpg" width="80" class="s-mr-2">
     <p class="s-mb-0">Alexys Lozada</p>
 </div>
 

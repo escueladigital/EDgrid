@@ -126,7 +126,7 @@ Para centrar una imágen puede aplicarle la clase `breakpoint-center` a su conte
 </div>
 ```
 <div class="s-center ed-grid-demo s-pxy-1">
-    <img src="https://ed.team/sites/default/files/styles/perfil_en_views_200x200_/public/pictures/2018-11/tioalexys.jpg">
+    <img src="/assets/img/alexys.jpg">
 </div>
 
 Igual si quiere alinearla a la derecha o izquierda. Y lo mismo para cualquier elemento inline.
