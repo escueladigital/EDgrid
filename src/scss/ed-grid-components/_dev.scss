@@ -102,6 +102,25 @@ $info-font-size : $info-height * 0.6;
 body.dev,
 body.desarrollo {
   @include dev-mode;
-  .ed-container { @include dev-container; }
-  .ed-item { @include dev-item }
+
+  .ed-container, .ed-grid { @include dev-container-style; }
+
+  .ed-item, .ed-grid > * { @include dev-item-style; }
+
+  &-hover {
+
+    .ed-container, .ed-grid {
+      &:hover {
+        @include dev-container-style;
+      }
+    }
+
+    .ed-item, .ed-grid > * {
+      &:hover {
+        @include dev-item-style;
+      }
+    }
+
+  }
+
 }
