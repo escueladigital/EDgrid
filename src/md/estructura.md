@@ -45,7 +45,6 @@ Tenga presente que en el mismo repositorio se encuentra la librería **EDgrid** 
             * `_core-flexbox.scss` Sistema de columnas con flexbox
             * `_core-grid.scss` Sistema de filas y columnas con CSS Grid
             * `_dev.scss` Estilos para debuggin
-            * `_grid.scss` Estilos para crear cuadriculas (se recomienda usar core-grid)
             * `_layouts.scss` Estilos para separaciones verticales, margenes y paddings.
             * `_media-queries` Mixins para crear media queries
             * `_prototype.scss` Estilos para prototipado rápido
@@ -56,6 +55,7 @@ Tenga presente que en el mismo repositorio se encuentra la librería **EDgrid** 
             * `_mixins.scss` Mixins de apoyo en el desarrollo de componentes
         * `legacy/` Componentes y estilos para compatibilidad con versiones anteriores de EDgrid (no necesario en proyectos nuevos).
             * `_ed-menu` Estilos para crear menus de navegación
+            * `_grid.scss` Estilos para crear cuadriculas (se recomienda usar core-grid)
             * `_legacy.scss` Estilos varios de versiones antiguas
             * `_offset` Estilos legacy para offset de columnas (no necesario en proyectos nuevos).
     * `css/`

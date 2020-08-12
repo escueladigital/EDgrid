@@ -1,4 +1,4 @@
-# Prototipado (beta)
+# Prototipado
 
 <!-- TOC -->
 

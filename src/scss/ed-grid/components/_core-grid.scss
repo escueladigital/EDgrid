@@ -8,7 +8,7 @@
   grid-template-columns : repeat($i, $column-width);
 }
 
-.ed-grid {
+.#{$grid-container} {
   display               : grid;
   grid-template-columns : 100%;
   grid-column-gap       : var(--gap);
@@ -40,7 +40,7 @@
 
   // Para containers hijos de otro container o con clase full
   // se elimninan los márgenes y se ocupa todo_ el ancho disponible
-  .ed-grid,
+  .#{$grid-container},
   &.full {
     width        : 100%;
     max-width    : 100%;
@@ -53,26 +53,26 @@
   @each $size in $sizes {
     @include from($size) {
       @for $i from 1 through 20 {
-        .ed-grid.#{$size}-#{$i*5},
-        .ed-grid .ed-grid.#{$size}-#{$i*5} {
+        .#{$grid-container}.#{$size}-#{$i*5},
+        .#{$grid-container} .#{$grid-container}.#{$size}-#{$i*5} {
           width : $i * 5%;
         }
       }
 
-      .ed-grid.#{$size}-to-center,
-      .ed-grid .ed-grid.#{$size}-to-center {
+      .#{$grid-container}.#{$size}-to-center,
+      .#{$grid-container} .#{$grid-container}.#{$size}-to-center {
         margin-left: auto;
         margin-right: auto;
       }
 
-      .ed-grid.#{$size}-to-right,
-      .ed-grid .ed-grid.#{$size}-to-right {
+      .#{$grid-container}.#{$size}-to-right,
+      .#{$grid-container} .#{$grid-container}.#{$size}-to-right {
         margin-left: auto;
         margin-right: 0;
       }
 
-      .ed-grid.#{$size}-to-left,
-      .ed-grid .ed-grid.#{$size}-to-left {
+      .#{$grid-container}.#{$size}-to-left,
+      .#{$grid-container} .#{$grid-container}.#{$size}-to-left {
         margin-left: 0;
         margin-right: auto;
       }
@@ -133,9 +133,9 @@
    display: grid;
  }
 
-  
+
   @include dev-container;
-      
+
   > * {
     @include dev-item;
   }
