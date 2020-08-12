@@ -25,29 +25,29 @@ $breakpoints : (
 $sizes: map-keys($breakpoints);
 
 // Importa archivos de configuración
-@import "web-styles/config/mixins";
+@import 'ed-grid/helpers/mixins';
 
 // Importar componentes
 // Core
-@import "ed-grid-components/functions";
-@import "ed-grid-components/base";
-@import "ed-grid-components/media-queries";
-@import "ed-grid-components/dev";
-@import "ed-grid-components/core-flexbox";
-@import "ed-grid-components/core-grid";
-@import "ed-grid-components/layout";
-@import "ed-grid-components/alignment";
+@import 'ed-grid/helpers/functions';
+@import 'ed-grid/components/base';
+@import 'ed-grid/components/media-queries';
+@import 'ed-grid/components/dev';
+@import 'ed-grid/components/core-flexbox';
+@import 'ed-grid/components/core-grid';
+@import 'ed-grid/components/layout';
+@import 'ed-grid/components/alignment';
 // Recommended Utilities
-@import "ed-grid-components/visibility";
-@import "ed-grid-components/prototype";
-@import "ed-grid-components/video";
-@import "ed-grid-components/ed-menu";
+@import 'ed-grid/components/visibility';
+@import 'ed-grid/components/prototype';
+@import 'ed-grid/components/video';
+@import 'ed-grid/legacy/ed-menu';
 // Not recomended (legacy)
 // Mixins
-@import "ed-grid-components/offset";
-@import "ed-grid-components/grid";
+@import 'ed-grid/legacy/offset';
+@import 'ed-grid/components/grid';
 // Generate css from offsets and grid mixins
-@import "ed-grid-components/legacy";
+@import 'ed-grid/legacy/legacy';
 
 // CSS Variables
 :root {
@@ -68,3 +68,4 @@ $sizes: map-keys($breakpoints);
     --gap                  : #{$l-unit * 4};  // 2rem
   }
 }
+

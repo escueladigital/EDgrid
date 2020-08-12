@@ -1,35 +1,37 @@
-@mixin padding($numero:1){
+@mixin padding($numero:1) {
   padding-left  : $gap * $numero;
   padding-right : $gap * $numero;
 }
 
-@mixin noPaddingContainer(){
-  > .#{$item} { @include padding(0) }
+@mixin noPaddingContainer() {
+  > .#{$item} {
+    @include padding(0)
+  }
 }
 
 @mixin clearfix {
   &:before,
   &:after {
-    content : "";
+    content : '';
     width   : 100%;
     display : table;
     clear   : both;
   }
 }
 
-@mixin toRight($width:auto,$margin-left:1em){
+@mixin toRight($width:auto,$margin-left:1em) {
   float       : right;
   width       : $width;
   margin-left : $margin-left;
 }
 
-@mixin toLeft($width:auto,$margin-right:1em){
+@mixin toLeft($width:auto,$margin-right:1em) {
   float        : left;
   width        : $width;
   margin-right : $margin-right;
 }
 
-@mixin toCenter($width:auto){
+@mixin toCenter($width:auto) {
   display      : block;
   width        : $width;
   margin-left  : auto;
@@ -37,9 +39,11 @@
   text-align   : center;
 }
 
-@mixin circle { border-radius : 50% }
+@mixin circle {
+  border-radius : 50%
+}
 
-@mixin full(){
+@mixin full() {
   width     : 100%;
   max-width : 100%;
   clear     : both;
@@ -62,7 +66,9 @@
   flex-direction : column;
   min-height     : 100vh;
 
-  > footer { margin-top : auto }
+  > footer {
+    margin-top : auto
+  }
 }
 
 @if $legacy == true {
@@ -76,38 +82,70 @@
     }
   }
 
-  .to-left { @include toLeft() }
+  .to-left {
+    @include toLeft()
+  }
 
-  .to-right { @include toRight() }
+  .to-right {
+    @include toRight()
+  }
 
-  .full { @include full() }
+  .full {
+    @include full()
+  }
 
-  .circle { @include circle() }
+  .circle {
+    @include circle()
+  }
 
-  .clearfix { @include clearfix() }
+  .clearfix {
+    @include clearfix()
+  }
 
-  .no-padding.#{$container} { @include noPaddingContainer() }
+  .no-padding.#{$container} {
+    @include noPaddingContainer()
+  }
 
-  .no-padding.#{$item} { @include padding(0) }
+  .no-padding.#{$item} {
+    @include padding(0)
+  }
 
-  .padding { @include padding(1) }
+  .padding {
+    @include padding(1)
+  }
 
-  .padding-2 { @include padding(2) }
+  .padding-2 {
+    @include padding(2)
+  }
 
-  .padding-3 { @include padding(3) }
+  .padding-3 {
+    @include padding(3)
+  }
 
-  body.sticky-footer { @include cssStyckyFooter() }
+  body.sticky-footer {
+    @include cssStyckyFooter()
+  }
 
-  .center { text-align : center; }
+  .center {
+    text-align : center;
+  }
 
-  .left { text-align : left; }
+  .left {
+    text-align : left;
+  }
 
-  .right { text-align : right; }
+  .right {
+    text-align : right;
+  }
 
   // grid version CSS
-  .grid-container.grid-1234 { @include grid('.grid-item', 1 2 3 4) }
+  .grid-container.grid-1234 {
+    @include grid('.grid-item', 1 2 3 4)
+  }
 
-  .grid-container.grid-2345 { @include grid('.grid-item', 2 3 4 5) }
+  .grid-container.grid-2345 {
+    @include grid('.grid-item', 2 3 4 5)
+  }
 
   // Offset CSS
   @include cssOffset();
@@ -115,8 +153,8 @@
   // Alineaciones
 
   /* Clases para alineaciones con compatibilidad hacia atrás
- Sedesactivarán en el futuro
- */
+  Sedesactivarán en el futuro
+  */
 
   .main-justify,
   .main-distribute,
@@ -134,21 +172,37 @@
     flex-wrap : wrap;
   }
 
-  .main-justify {justify-content : space-between}
+  .main-justify {
+    justify-content : space-between
+  }
 
-  .main-distribute {justify-content : space-evenly}
+  .main-distribute {
+    justify-content : space-evenly
+  }
 
-  .main-center {justify-content : center}
+  .main-center {
+    justify-content : center
+  }
 
-  .main-start {justify-content : flex-start}
+  .main-start {
+    justify-content : flex-start
+  }
 
-  .main-end {justify-content : flex-end}
+  .main-end {
+    justify-content : flex-end
+  }
 
-  .flex-reverse {flex-direction : row-reverse}
+  .flex-reverse {
+    flex-direction : row-reverse
+  }
 
-  .flex-column {flex-direction : column}
+  .flex-column {
+    flex-direction : column
+  }
 
-  .flex-column-reverse {flex-direction : column-reverse}
+  .flex-column-reverse {
+    flex-direction : column-reverse
+  }
 
   .cross-start {
     align-items   : start;
@@ -184,3 +238,4 @@
   flex-wrap       : wrap;
   justify-content : center;
 }
+
