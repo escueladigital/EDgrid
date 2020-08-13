@@ -10,8 +10,7 @@ mixin sidebar-link(value, url)
 
 nav(itemscope itemtype="http://schema.org/WPSideBar").vertical-menu#vertical-menu
   ul
-    +sidebar-section('Primeros pasos')
-      +sidebar-link('Comenzar con EDgrid', '/documentacion')
+    +sidebar-section('Comenzar con EDgrid')
       +sidebar-link('Instalación', '/documentacion/instalacion.html')
       +sidebar-link('Personalización', '/documentacion/personalizar.html')
       +sidebar-link('Breakpoints', '/documentacion/breakpoints.html')
@@ -33,4 +32,7 @@ nav(itemscope itemtype="http://schema.org/WPSideBar").vertical-menu#vertical-men
     +sidebar-section('Helpers y prototipado')
       +sidebar-link('Funciones', '/documentacion/funciones.html')
       +sidebar-link('Prototipado de EDgrid', '/documentacion/prototipado.html')
-      +sidebar-link('Prototipado personalizado', '/documentacion/prototipado.html')
+      +sidebar-link('Prototipado avanzado', '/documentacion/prototipado.html')
+
+    +sidebar-section('Componentes')
+      +sidebar-link('Cards', '/documentacion/funciones.html')
