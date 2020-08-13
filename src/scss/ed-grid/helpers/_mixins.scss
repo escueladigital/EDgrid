@@ -1,4 +1,5 @@
-@mixin sizes {
+// Recorre cada uno de los breakpoints que hay en las variables por defecto
+@mixin breakpoints {
   @each $size in $sizes {
     @include from($size) {
       .#{$size} {
@@ -8,7 +9,10 @@
   }
 }
 
-@mixin prototype($selector, $property) {
+// Mixin para crear seletores utilizando las unidades de medidas creadas con $l-unit
+// 05:0.25rem, 1:0.5rem, 2:1rem, 3:1.5rem, 4:2rem
+@mixin l-unit($selector, $property) {
+
   @for $i from 0 through 5 {
     // Unidad de separación actual
     $unit: $l-unit * $i;
@@ -19,7 +23,7 @@
     }
 
     @if $i==5 {
-      $i: "05";
+      $i: '05';
       $unit: $l-unit * 0.5;
     }
 
@@ -28,4 +32,54 @@
     }
 
   }
+
+}
+
+@mixin prototype($names, $property, $value, $concat: '', $debug : false) {
+  /*
+  * $names - Lista de nombres que usaremos para nombrar nuestras clases.
+  *          Recorremos una lista por si queremos múltiples selectores con el mismo valor
+  *          Ejemplo: (red-color, color-red)
+  *          sería igual a .red-color { color : red; } .color-red { color : red; }
+  *
+  * $property, $value - Propiedad CSS con su respectivo valor
+  *
+  * $concact - En ocasiones necesitaremos concadenar para crear clases más específicas.
+  *            Por la forma en que funciona el mixin no podemos usar concadenar desde los names.
+  *            Para ver un ejemplo práctico vaya a la parte de los gaps en _core-grid.scss
+  *
+  * $debug - Ver cómo sería el resultado en la construcción de la clase y el CSS de salida.
+  *          Por defecto está desactivado
+  */
+  @each $name in $names {
+
+    // Recorremos cada breakpoint que tenemos almacenados en $sizes
+    @each $size in $sizes {
+      // Creamos nuestro selector con las variables
+      $selector : '#{$concat}.#{$size}-#{$name}';
+
+      @include from($size) {
+
+        // Modo debug para saber ver cómo se crearía el selector y el CSS resultante
+        @if $debug {
+          @debug ('
+          @media screen and min-width(#{map-get($breakpoints, $size)}) {
+            #{$selector} {
+              #{$property} : #{$value}
+            }
+          }
+        ');
+        }
+
+        // Salida de código
+        #{$selector} {
+          #{$property} : $value;
+        }
+
+      }
+
+    }
+
+  }
+
 }

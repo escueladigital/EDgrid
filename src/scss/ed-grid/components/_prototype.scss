@@ -44,7 +44,7 @@ $z-indexs: (
     }
   }
 
-  @include sizes {
+  @include breakpoints {
     $border: 1px solid var(--border-color);
 
     // Bordes
@@ -78,10 +78,10 @@ $z-indexs: (
       }
     }
 
-    @include prototype("radius", "border-radius");
+    @include l-unit("radius", "border-radius");
 
     @each $corner in map-keys($border-radius) {
-      @include prototype("radius-#{$corner}", "border-#{map-get($border-radius,$corner)}-radius");
+      @include l-unit("radius-#{$corner}", "border-#{map-get($border-radius,$corner)}-radius");
     }
 
     @each $corner in map-keys($border-radius) {
@@ -179,7 +179,7 @@ $z-indexs: (
         opacity: $i * 0.1;
       }
     }
- 
+
   }
 
   .circle,

@@ -103,7 +103,7 @@ ol ul {
 }
 
 // Creación de márgenes y paddings
-@include sizes {
+@include breakpoints {
   // Crea cinco niveles de separacion
   @for $i from 0 through 5 {
     // Unidad de separación actual

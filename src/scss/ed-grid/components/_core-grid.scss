@@ -17,6 +17,9 @@
     &.gap-#{$i} {
       --gap: #{$l-unit * $i};
     }
+
+    @include prototype(gap-#{$i}, --gap, #{$l-unit * $i}, &);
+
   }
 
   // Evita que en tamaños moviles los items queden pegados a los lados
