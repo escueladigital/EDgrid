@@ -1,0 +1,10 @@
+extends ../../config/template
+append config
+  -title = "EDgrid | Cards (Sass/CSS)"
+  -description = "Componente card creado con el prototipado de EDgrid."
+  -ogUrl = "/cards.html"
+  -docsMenu = true
+
+block main
+  main(itemscope itemprop="mainContentOfPage" role="main")
+    include:markdown-it(html) ../../../md/cards.md

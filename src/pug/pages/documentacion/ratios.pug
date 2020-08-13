@@ -1,0 +1,10 @@
+extends ../../config/template
+append config
+  -title = "EDgrid | Ratios (Sass/CSS)"
+  -description = "Con los ratios puede obtener elementos de un proporcion de ancho y alto definidos."
+  -ogUrl = "/ratios.html"
+  -docsMenu = true
+
+block main
+  main(itemscope itemprop="mainContentOfPage" role="main")
+    include:markdown-it(html) ../../../md/ratios.md
