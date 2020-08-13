@@ -11,7 +11,7 @@
 .#{$grid-container} {
   display               : grid;
   grid-template-columns : 100%;
-  grid-column-gap       : var(--gap);
+  column-gap            : var(--gap);
 
   @for $i from 0 through 4 {
     &.gap-#{$i} {
@@ -38,7 +38,7 @@
   // Agrega separación vertical entre filas
   &.row-gap,
   &.rows-gap {
-    grid-row-gap : var(--gap);
+    row-gap : var(--gap);
   }
 
   // Para containers hijos de otro container o con clase full
