@@ -35,22 +35,23 @@
 
 }
 
+/*
+* $names - Lista de nombres que usaremos para nombrar nuestras clases.
+*          Recorremos una lista por si queremos múltiples selectores con el mismo valor
+*          Ejemplo: (red-color, color-red)
+*          sería igual a .red-color { color : red; } .color-red { color : red; }
+*
+* $property, $value - Propiedad CSS con su respectivo valor
+*
+* $concact - En ocasiones necesitaremos concadenar para crear clases más específicas.
+*            Por la forma en que funciona el mixin no podemos usar concadenar desde los names.
+*            Para ver un ejemplo práctico vaya a la parte de los gaps en _core-grid.scss
+*
+* $debug - Ver cómo sería el resultado en la construcción de la clase y el CSS de salida.
+*          Por defecto está desactivado
+*/
 @mixin prototype($names, $property, $value, $concat: '', $debug : false) {
-  /*
-  * $names - Lista de nombres que usaremos para nombrar nuestras clases.
-  *          Recorremos una lista por si queremos múltiples selectores con el mismo valor
-  *          Ejemplo: (red-color, color-red)
-  *          sería igual a .red-color { color : red; } .color-red { color : red; }
-  *
-  * $property, $value - Propiedad CSS con su respectivo valor
-  *
-  * $concact - En ocasiones necesitaremos concadenar para crear clases más específicas.
-  *            Por la forma en que funciona el mixin no podemos usar concadenar desde los names.
-  *            Para ver un ejemplo práctico vaya a la parte de los gaps en _core-grid.scss
-  *
-  * $debug - Ver cómo sería el resultado en la construcción de la clase y el CSS de salida.
-  *          Por defecto está desactivado
-  */
+
   @each $name in $names {
 
     // Recorremos cada breakpoint que tenemos almacenados en $sizes

@@ -8,6 +8,12 @@
   grid-template-columns : repeat($i, $column-width);
 }
 
+// gap para los EDgri containers con brakpoints
+// Probando cómo funciona la opción de prototipado
+@for $i from 0 through 4 {
+  @include prototype(gap-#{$i}, --gap, #{$l-unit * $i}, '.ed-grid');
+}
+
 .#{$grid-container} {
   display               : grid;
   grid-template-columns : 100%;
@@ -17,9 +23,6 @@
     &.gap-#{$i} {
       --gap: #{$l-unit * $i};
     }
-
-    @include prototype(gap-#{$i}, --gap, #{$l-unit * $i}, &);
-
   }
 
   // Evita que en tamaños moviles los items queden pegados a los lados
