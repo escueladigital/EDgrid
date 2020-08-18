@@ -32,3 +32,16 @@
   }
 
 }
+
+.data-list .container.container {
+  width : 100%;
+  max-width : 100%;
+}
+
+
+.data-list li li {
+  list-style:  circle;
+  border-bottom : none;
+  padding-top : 0;
+  padding-bottom: 0.5rem;
+}
