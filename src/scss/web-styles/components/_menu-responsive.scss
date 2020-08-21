@@ -1,0 +1,85 @@
+// Este es el verdadero código, pero para la demostración no podemos usar posicionamiento fijo
+/*
+.ed-menu {
+  position : fixed;
+  top      : 0;
+  width    : 100%;
+  z-index  : 100;
+
+  .logo { height : 2rem }
+
+  .nav {
+    @include to(lg) {
+      position   : fixed;
+      left       : 0;
+      bottom     : 0;
+      background : black;
+    }
+  }
+
+  .menu { list-style : none }
+
+  .link {
+    color : grey;
+    &.active { color : cornflowerblue }
+    @include to(lg) { color : lightgrey }
+  }
+
+  .icon {
+    --size : 1.5rem;
+    width  : var(--size);
+    height : var(--size);
+    fill   : currentColor;
+  }
+
+}
+*/
+
+.menu-responsive {
+  min-height: 500px;
+  position: relative;
+
+  @include from(lg) {
+    min-height: 300px;
+  }
+
+}
+
+.ed-menu {
+  top      : var(--header-height);
+  width    : 100%;
+  z-index  : 10;
+
+  @include from(lg) {
+    position: sticky;
+  }
+
+  .logo { height : 2rem }
+
+  .nav {
+
+    @include to(lg) {
+      position   : absolute;
+      left     : 0;
+      bottom   : 0;
+      background : black
+    }
+
+  }
+
+  .menu { list-style : none }
+
+  .link {
+    color : lightgrey;
+    &.active { color : cornflowerblue }
+    @include from(lg) { color : grey }
+  }
+
+  .icon {
+    --size : 1.25rem;
+    width  : var(--size);
+    height : var(--size);
+    fill   : currentColor;
+  }
+
+}

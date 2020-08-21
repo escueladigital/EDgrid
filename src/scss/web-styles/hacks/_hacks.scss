@@ -1,6 +1,55 @@
-@include to(l) {
-  .vertical-menu::before {
-    content : 'Documentación de EDgrid';
+@include to(lg) {
+  .vertical-menu {
+    background : var(--blue-900);
+
+    &::before {
+      color : var(--grey-200);
+      content : 'Documentación de EDgrid';
+    }
+
+    .t5 {
+      color : var(--grey-300);
+    }
+
+    a {
+      color : var(--grey-500);
+
+      &.active {
+        color : var(--red-500);
+      }
+
+    }
+
+  }
+
+}
+
+.vertical-menu {
+
+  li {
+    padding : 0;
+  }
+
+  a, a.active {
+    padding: 0.35rem 0;
+  }
+
+  @include from(lg) {
+    a.active {
+      box-shadow: 0 1px inset var(--border-color), 0 -1px inset var(--border-color);
+    }
+
+    a.active {
+      border-top : none;
+      border-bottom : none;
+    }
+  }
+
+}
+
+.main-banner {
+  @include from(lg) {
+    padding-bottom: var(--padding);
   }
 }
 
@@ -31,4 +80,22 @@
     height: 1.75rem;
   }
 
+}
+
+.data-list .container.container {
+  width : 100%;
+  max-width : 100%;
+}
+
+
+.data-list li li {
+  list-style:  circle;
+  border-bottom : none;
+  padding-top : 0;
+  padding-bottom: 0.5rem;
+}
+
+
+.font-semibold {
+  font-weight: 600;
 }

@@ -1,0 +1,10 @@
+extends ../../config/template
+append config
+  -title = "EDgrid | Skeleton (Sass/CSS)"
+  -description = "Componente skeleton creado con el prototipado de EDgrid."
+  -ogUrl = "/skeleton.html"
+  -docsMenu = true
+
+block main
+  main(itemscope itemprop="mainContentOfPage" role="main")
+    include:markdown-it(html) ../../../md/skeleton.md

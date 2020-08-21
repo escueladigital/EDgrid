@@ -1,5 +1,12 @@
 # Alineación
-<!-- TOC -->autoauto- [Alineación de contenido](#alineación-de-contenido)auto- [Alineación de bloques](#alineación-de-bloques)auto- [Ancho de los bloques](#ancho-de-los-bloques)auto- [Diferencia entre bloque  y contenido](#diferencia-entre-bloque--y-contenido)auto- [Alineación de imágenes y elementos inline](#alineación-de-imágenes-y-elementos-inline)auto  - [Sobre el ancho de las imágenes](#sobre-el-ancho-de-las-imágenes)autoauto<!-- /TOC -->
+<!-- TOC -->
+- [Alineación de contenido](#alineación-de-contenido)
+- [Alineación de bloques](#alineación-de-bloques)
+- [Ancho de los bloques](#ancho-de-los-bloques)
+- [Diferencia entre bloque  y contenido](#diferencia-entre-bloque--y-contenido)
+- [Alineación de imágenes y elementos inline](#alineación-de-imágenes-y-elementos-inline)
+- [Sobre el ancho de las imágenes](#sobre-el-ancho-de-las-imágenes)
+<!-- /TOC -->
 
 --- 
 
@@ -40,8 +47,6 @@ Use las clases `breakpoint-to-left`, `breakpoint-to-center`, `breakpoint-to-righ
 Ejemplo: 
 
 <p class="s-bg-grey s-pxy-1 s-75 m-50 lg-40 s-to-left m-to-center l-to-right">EDgrid es una libreria construida con Sass (y con versión CSS) para Responsive Web Design (RWD). Es muy ligero, personalizable y te permite prototipar y crear layouts en muy poco tiempo sin conflictos con tu proyecto.</p>
-
-\* *Para que las alineaciones de bloque funcionen debe agregar clases de ancho.*
 
 <a id="markdown-ancho-de-los-bloques" name="ancho-de-los-bloques"></a>
 ## Ancho de los bloques
@@ -119,7 +124,7 @@ Para centrar una imágen puede aplicarle la clase `breakpoint-center` a su conte
 </div>
 ```
 <div class="s-center ed-grid-demo s-pxy-1">
-    <img src="https://ed.team/sites/default/files/styles/perfil_en_views_200x200_/public/pictures/2018-11/tioalexys.jpg">
+    <img src="/assets/img/alexys.jpg">
 </div>
 
 Igual si quiere alinearla a la derecha o izquierda. Y lo mismo para cualquier elemento inline.
@@ -127,11 +132,11 @@ Igual si quiere alinearla a la derecha o izquierda. Y lo mismo para cualquier el
 Ahora bien, ¿qué sucede si quiero centrar directamente la imagen y no usar su contenedor? Use la clases `breakpoint-block-left`, `breakpoint-block-center` y `breakpoint-block-right` que agregan además un `display: block` al elemento inlne al que se apliquen y resuelven la alineación.
 
 ```html
-<img src="/img/tioalexys.jpg" class="s-block-center">
+<img class="s-block-center" src="/assets/img/EDgrid-isotipo.svg">
 ```
 
 <div class="ed-grid-demo s-pxy-1">
-    <img class="s-block-center" src="https://ed.team/sites/default/files/styles/perfil_en_views_200x200_/public/pictures/2018-11/tioalexys.jpg">
+    <img class="s-block-center" src="/assets/img/logo/EDgrid-isotipo.svg">
 </div>
 
 Seguro pensará: si se necesita un `display: block` agréguenlo a los estilos en lugar de crear nuevas clases. El detalle es que el elemento podría tener `display:grid`, `display:flex`, `display: table` o `display: inline-block` y no se puede forzar un `display: block` porque destruiría su layout.
@@ -145,7 +150,7 @@ En el caso de las imágenes svg, estas son vectoriales y carecen de dichas propi
 
 Ejemplo:
 
-<img alt="Logotipo de EDgrid" src="/assets/img/EDgrid-logo.svg" class="l-block">
+<img alt="Logotipo de EDgrid" width="100%" src="/assets/img/logo/EDgrid-logo.svg" class="l-block">
 
 La podemos centrar con clases de ancho y de alineación de bloques
 
@@ -153,4 +158,4 @@ La podemos centrar con clases de ancho y de alineación de bloques
 <img alt="Logotipo de EDgrid" src="/assets/img/EDgrid-logo.svg" class="s-30 s-block-center">
 ```
 
-<img alt="Logotipo de EDgrid" src="/assets/img/EDgrid-logo.svg" class="s-30 s-block-center">
+<img alt="Logotipo de EDgrid" src="/assets/img/logo/EDgrid-logo.svg" class="s-30 s-block-center">

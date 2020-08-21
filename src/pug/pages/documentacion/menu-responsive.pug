@@ -1,0 +1,10 @@
+extends ../../config/template
+append config
+  -title = "EDgrid | Menú responsive (Sass/CSS)"
+  -description = "Componente menú responsive creado con EDgrid."
+  -ogUrl = "/menu-responsive.html"
+  -docsMenu = true
+
+block main
+  main(itemscope itemprop="mainContentOfPage" role="main")
+    include:markdown-it(html) ../../../md/menu-responsive.md

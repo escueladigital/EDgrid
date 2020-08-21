@@ -8,8 +8,8 @@ append config
 
   -img = "/assets/img/docs-banner.jpg"
   -titleBanner = "Casos de éxito"
-  -descriptionBanner = "Proyectos que usan EDgrid en producción"
-  -clase = "third-color"
+  -descriptionBanner = "¿Tienes un sitio en producción que use EDgrid?"
+  -clase = "grey-700"
   -boton = false
   -botonClass= ""
   -botonUrl=""
@@ -18,9 +18,15 @@ append config
 
 block banner
   +banner(img, titleBanner, descriptionBanner, clase, boton, botonClass, botonUrl, botonText, botones)
+    .s-pt-2
+      a(href="https://form.asana.com?hash=31f9f176c441c66d609b556604bcdedd200b3712c944519a869686a6fb11ca4c&id=1189924623721081" target="_blank").button.blue-500 ⚡ Envíanos tu caso
 block main
   main.main-section
-    .ed-grid.cols-l-3.rows-gap
+    .ed-grid.lg-grid-3.rows-gap.l-section
         -for (var i = 0; i < casos.length ; i++)
           -var caso = casos[i]
           +card(caso.img, caso.title, caso.subtitle, caso.description, caso.url, caso.user, caso.imageUser, caso.linkUser)
+    .ed-grid.s-center
+      h3 ¿Quieres que tu sitio sea parte de esta página?
+      div
+        a(href="https://form.asana.com?hash=31f9f176c441c66d609b556604bcdedd200b3712c944519a869686a6fb11ca4c&id=1189924623721081" target="_blank").button.blue-500 ⚡ Envíanos tu caso

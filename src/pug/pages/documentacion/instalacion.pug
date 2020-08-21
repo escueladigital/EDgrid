@@ -9,16 +9,18 @@ block main
   main(itemscope itemprop="mainContentOfPage" role="main")
     :markdown-it
 
-      # Instalación
+      # Comenzar con EDgrid
+      EDgrid es una libreria CSS/Sass para construir layouts para web fácilmente. En una hora ya lo estará usando en sus proyectos.
+
+      Creado por [EDteam](https://ed.team) y usado en todos los proyectos de la empresa. Es Open Source (GPL2) y puede usarla y modificarla libremente en todos sus proyectos.
+
+      Si encuentra algun error o tiene sugerencias de mejoras, [puede escribirlas en Github](https://github.com/escueladigital/EDgrid/issues).
+
+      ## Instalación
 
       Puede usar EDgrid con [Sass](https://ed.team/cursos/sass) (recomendado) y [CSS](https://ed.team/cursos/css).
 
-      ## Instalación de versión CSS
-      * Descargue la última versión de EDgrid desde [Github](https://github.com/escueladigital/EDgrid/archive/master.zip)
-      * Descomprima y busque la carpeta `src/css`. Dentro encontrará dos archivos: `ed-grid.css` y `ed-grid.min.css`. Incluya cualquiera de los dos a su proyecto y listo.
-      * La unica diferencia entre estos archivos es que la versión `ed-grid.min.css` es minificada y la versión `ed-grid.css` incluye saltos de línea, indentación y comentarios si quiere estudiar como se construyó la librería.
-
-      ## Instalación de versión Sass
+      ### Instalación de versión Sass
 
       Para instalar la versión Sass puede utilizar npm:
 
@@ -37,4 +39,13 @@ block main
       ```scss
       @import "~ed-grid/ed-grid"
       ```
+
+      ### Instalación de versión CSS
+      Descargue la última [versión CSS]() de EDgrid e impórtela en su proyecto como cualquier otra hoja de estilos. También puede usar del CDN para importaciones rápidas.
+
+      ```HTML
+      <link href="https://unpkg.com/ed-grid@3.0/src/css/styles.min.css" rel="stylesheet">
+      ```
+
+      \* *Al usar EDgrid en su versión CSS no podrá [personalizar la librería](/documentacion/personalizar.html), utilizar el [prototipado avanzado](/documentacion/prototipado-avanzado.html) y compilar sólo el código necesario, entre otras opciones que sólo se pueden hacer con la versión de Sass*
 

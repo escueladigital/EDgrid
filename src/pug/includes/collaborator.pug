@@ -1,0 +1,7 @@
+mixin collaborator(name, job, url, photo)
+  article.s-mb-0.s-column.s-cross-center.s-pxy-2
+    a(href=url target="_blank").s-70.s-to-center.s-mb-2
+      div.img-container.circle
+        img(src=photo)
+    p.t4.s-mb-1.s-center= name
+    p.color.blue-500.s-mb-0.smaller.font-semibold= job

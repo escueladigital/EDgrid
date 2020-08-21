@@ -27,14 +27,16 @@ $breakpoints : (
 
 $prototype        : true;         // Activa los estilos de prototipado
 $dev              : false;        // Activa los estilos para debuggin
+$dev-hover        : false;        // Estilos de debuggi sólo en hover
 $max-width        : 1200px;       // Ancho máximo de los contenedores ed-container y ed-grid
+$l-unit           : .5rem;        // Unidad básica de layout (para separaciones verticales, margin y padding)
 $gap              : $l-unit * 4;  // Separación entre columnas (2rem)
-$legacy           : false;        // Soporte para versiones antiguas
+$fractions        : 3 6;          // Fracciones para crear columnas (core flexbox)
 $container        : ed-container; // Clase para el contenedor (core flexbox)
 $item             : ed-item;      // Clase para los items (core flexbox)
+$grid-container   : ed-grid;      // Clase para el contenedor (core grid)
 $max-grid-columns : 12;           // Máximo número de columnas (core css grid)
-$l-unit           : .5rem;        // Unidad básica de layout (para separaciones verticales, margin y padding)
-$fractions        : 3 6;          // Fracciones para crear columnas (core flexbox)
+$legacy           : false;        // Soporte para versiones antiguas
 
 // CSS Variables
 :root {
@@ -48,6 +50,7 @@ $fractions        : 3 6;          // Fracciones para crear columnas (core flexbo
   --vertical-block-space   : #{$l-unit * 2};   // 1rem
   --vertical-content-space : #{$l-unit * 2};   // 1rem
   --gap                    : #{$l-unit * 2};   // 1rem
+  --max-width              : #{$max-width};
 
   @include from(lg) {
     --vertical-block-space : #{$l-unit * 4};

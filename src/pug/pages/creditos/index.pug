@@ -1,5 +1,6 @@
 extends ../../config/template
 include ../../includes/banner
+include ../../includes/collaborator
 append config
   -title = "EDgrid | Créditos"
   -description = "Créditos de quien realizo la librería, colaboro desarrollando el portal."
@@ -7,7 +8,7 @@ append config
 
   -img = "/assets/img/docs-banner.jpg"
   -titleBanner = "Créditos"
-  -descriptionBanner = "Colaboradores de EDgrid"
+  -descriptionBanner = "Gente que ha ayudado a construir la librería."
   -clase = "dark-color"
   -boton = false
   -botonClass= ""
@@ -17,63 +18,25 @@ append config
 
 block banner
   +banner(img, titleBanner, descriptionBanner, clase, boton, botonClass, botonUrl, botonText, botones)
+    p.s-opacity-8.s-mb-0 ¿Quieres ser uno de ellos?
+    .s-pt-2
+      a(href="https://github.com/escueladigital/EDgrid" target="_blank").button.blue-500 😼 Colabora en EDgrid
+
 block main
-  main.ed-grid.lg-grid-6
-    .lg-cols-4.lg-x-2
-      ul.data-list
-        li
-          p
-            span.strong Álvaro Felipe
-            br
-            span.small CEO de EDteam
-          a(href="https://github.com/escueladigital" itemprop="url" target="_blank").button--tertiary.small.icon-github.space.space Ver Github
-        li
-          p
-            span.strong Carlos Cuatin
-            br
-            span.small Frontend & Mobile Apps Developer
-          a(href="https://github.com/carloscuatin" itemprop="url" target="_blank").button--tertiary.small.icon-github.space.space Ver Github
-        li
-          p
-            span.strong Camilo Rodríguez
-            br
-            span.small Web developer
-          a(href="https://github.com/aeroxmotion" itemprop="url" target="_blank").button--tertiary.small.icon-github.space.space Ver Github
-        li
-          p
-            span.strong Daniel Romero
-            br
-            span.small EDteam
-          a(href="https://github.com/danielromeroauk" itemprop="url" target="_blank").button--tertiary.small.icon-github.space.space Ver Github
-        li
-          p
-            span.strong Franco Correa
-            br
-            span.small Web (Python – JS) & iOS Developer.
-          a(href="https://github.com/francocorreasosa" itemprop="url" target="_blank").button--tertiary.small.icon-github.space.space Ver Github
-        li
-          p
-            span.strong Ernesto Graterol
-          a(href="https://github.com/Revod" itemprop="url" target="_blank").button--tertiary.small.icon-github.space.space Ver Github
-        li
-          p
-            span.strong W-A-P
-          a(href="https://github.com/W-A-P" itemprop="url" target="_blank").button--tertiary.small.icon-github.space.space Ver Github
-        li
-          p
-            span.strong Jose Daniel Posso Garcia
-            br
-            span.small Programador
-          a(href="https://github.com/daniel7byte" itemprop="url" target="_blank").button--tertiary.small.icon-github.space.space Ver Github
-        li
-          p
-            span.strong Alex Andrei
-            br
-            span.small Frontend developer
-          a(href="https://github.com/AlexAndrei04" itemprop="url" target="_blank").button--tertiary.small.icon-github.space.space Ver Github
-        li
-          p
-            span.strong Johelyn Cordova
-            br
-            span.small Diseñadora web
-          a(href="https://github.com/AKUmajinn" itemprop="url" target="_blank").button--tertiary.small.icon-github.space.space Ver Github
+  .ed-grid
+    .s-to-center.s-65
+      main.ed-grid.m-grid-2.lg-grid-3.row-gap.l-section
+        +collaborator("Álvaro Felipe", "CEO de EDteam", "https://www.linkedin.com/in/alvarofelipe/", "/assets/img/people/alvaro-felipe.jpg")
+        +collaborator("Alexis Mora Angulo", "UX Designer", "https://twitter.com/Jopzik", "/assets/img/people/alexis-mora.jpg")
+        +collaborator("Carlos Cuatin", "Frontend Developer", "https://github.com/carloscuatin", "/assets/img/people/carlos-cuatin.jpg")
+        +collaborator("Camilo Rodríguez", "Web Developer", "https://github.com/aeroxmotion", "/assets/img/people/camilo-rodirguez.png")
+        +collaborator("Daniel Romero", "Backend Developer", "https://github.com/danielromeroauk", "/assets/img/people/daniel-romero.jpg")
+        +collaborator("Franco Correa", "Web Developer", "https://github.com/francocorreasosa", "/assets/img/people/franco-correa.jpg")
+        +collaborator("Ernesto Graterol", "UI Designer", "https://github.com/Revod", "/assets/img/people/ernesto-graterol.png")
+        +collaborator("Jose Daniel Posso Garcia", "Developer", "https://github.com/daniel7byte", "/assets/img/people/jose-daniel.png")
+        +collaborator("Alex Andrei", "Frontend Developer", "https://www.linkedin.com/in/alex-andrei/", "/assets/img/people/alex-andrei.jpg")
+        +collaborator("Johelyn Cordovao", "Web Designer", "https://github.com/AKUmajinn", "/assets/img/people/johelyn.jpg")
+  .ed-grid.s-center
+    h3 ¿Quieres ser parte de esta página?
+    div
+      a(href="https://github.com/escueladigital/EDgrid" target="_blank").button.blue-500 😼 Colabora en EDgrid

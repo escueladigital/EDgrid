@@ -75,22 +75,22 @@ $flex-alignments : (
   column-reverse: (
     flex-direction: column-reverse
   ),
-  justify: (
-    justify-content: space-between,
-  ),
-  distribute: (
-    justify-content: space-evenly
-  ),
   main-start: (
     justify-content: flex-start
   ),
   main-center: (
-    justify-content: center,
+    justify-content: center
   ),
   main-end: (
     justify-content: flex-end
   ),
-  baseline: (
+  main-justify: (
+    justify-content: space-between
+  ),
+  main-distribute: (
+    justify-content: space-evenly
+  ),
+  cross-baseline: (
     align-items: baseline,
     align-content: baseline
   ),

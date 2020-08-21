@@ -8,7 +8,7 @@ append config
   -img = "/assets/img/docs-banner.jpg"
   -titleBanner = "Changelog"
   -descriptionBanner = "Lanzamientos importantes de EDgrid"
-  -clase = "accent-color"
+  -clase = "grey-700"
   -boton = false
   -botonClass= ""
   -botonUrl=""
@@ -22,9 +22,26 @@ block main
   .ed-grid.lg-grid-6
     .lg-cols-4.lg-x-2
       ul.data-list
+        li.s-column.s-cross-start
+          .container.s-column
+            .s-main-justify
+              span.s-mb-1.strong Actual (v 3.0)
+              a(href="https://github.com/escueladigital/EDgrid/archive/master.zip" itemprop="url" target="_blank").button.small.icon-download.space Descargar versión
+            ul.small.s-pl-0
+              li - CSS Grid para crear layouts
+              li - Versión desarrollo para CSS grid
+              li - Modo dev en hover para CSS grid y flexbox
+              li - Correcciones en clases de alineación
+              li - Se eliminó el componente Menu (pasó a ser legacy)
+              li - Corrige error en los .ed-container con la clase .full
+              li - Prototipado y prototipado avanzado
+              li - Sección de componentes creados con EDgrid
+              li - CDN para a versión CSS
+              li - Modifica estructura de archivos del core principal
+              li - Mejoras en código en general
         li
           p
-            span.strong Actual (v 2.1.6)
+            span.strong v2.1.6 (Mayo 2017)
             br
             span.small Agrega CSS grid y resuelve varios bugs menores.
           a(href="https://github.com/escueladigital/EDgrid/archive/master.zip" itemprop="url" target="_blank").button.small.icon-download.space Descargar versión

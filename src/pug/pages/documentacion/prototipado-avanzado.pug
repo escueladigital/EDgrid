@@ -1,0 +1,10 @@
+extends ../../config/template
+append config
+  -title = "EDgrid | Prototipado avanzado (Sass/CSS)"
+  -description = "Cree su propio prototipado y vaya más allá de lo que ya tiene EDgrid."
+  -ogUrl = "/prototipado-avanzado.html"
+  -docsMenu = true
+
+block main
+  main(itemscope itemprop="mainContentOfPage" role="main")
+    include:markdown-it(html) ../../../md/prototipado-avanzado.md

@@ -16,6 +16,13 @@ Añada alguna de las tres clases para cambiar el estilo: `default` `nav-bar` `bu
 </ul>
 ```
 
+<ul class="ed-menu l-horizontal button-bar">
+  <li><a href="#">Item</a></li>
+  <li><a href="#">Item</a></li>
+  <li><a href="#">Item</a></li>
+  <li><a href="#">Item</a></li>
+</ul>
+
 ## Uso con Sass
 Si va a usar Sass, el marcado HTML debe ser el mismo.
 

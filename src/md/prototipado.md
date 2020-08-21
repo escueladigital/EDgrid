@@ -1,4 +1,4 @@
-# Prototipado (beta)
+# Prototipado
 
 <!-- TOC -->
 
@@ -7,15 +7,12 @@
 - [Esquinas redondeadas](#esquinas-redondeadas)
 - [Fondos](#fondos)
 - [Sombras](#sombras)
-- [Ratios](#ratios)
-- [Contenedores de imágenes](#contenedores-de-im%C3%A1genes)
-- Contenedor sticky (próximamente)
 
 <!-- /TOC -->
 
 --- 
 
-EDgrid le permite hacer prototipos rápidos con poco esfuerzo. 
+EDgrid le permite hacer prototipos rápidos con poco esfuerzo. La opción de prototipado viene activada por defecto en el proyecto, por lo que no necesita hacer ajustes extras para empezar a usarla.
 
 <a id="markdown-botones" name="botones"></a>
 ## Botones
@@ -118,7 +115,7 @@ Puede usar las clases `breakpoint-bg-[grey|blue]` Para asignarle un fondo a un e
 <img class="s-shadow s-block-center" src="/img/tioalexys.jpg">
 ```
 
-<img class="s-shadow s-block-center l-block" src="https://ed.team/sites/default/files/styles/perfil_en_views_200x200_/public/pictures/2018-11/tioalexys.jpg">
+<img class="s-shadow s-block-center l-block" src="/assets/img/alexys.jpg">
 
 ```html
 <div class="s-shadow-bottom lg-50 lg-to-center s-border s-radius">
@@ -137,135 +134,4 @@ Puede usar las clases `breakpoint-bg-[grey|blue]` Para asignarle un fondo a un e
 <div class="s-bg-grey s-pxy-2">
     <div class="button">Empezar con EDgrid</div>
 </div>
-</div>
-
-
-<a id="markdown-ratios" name="ratios"></a>
-## Ratios
-
-Con los ratios puede obtener elementos de un proporcion de ancho y alto definidos. Por ejemplo **3 x 1** (el triple de ancho que de alto). Tenga en cuenta que por limitaciones de css los elementos con ratio siempre tienen el 100% del ancho de su contenedor.
-
-Use las clases `breakpoint-ratio-x-y` donde `x` y `y` son numeros enteros del 1 al 4. `x` representa el ancho y `y` el alto.
-
-```html
-<div class="ed-grid lg-grid-3 lg-60 lg-to-center s-pxy-1 s-border s-radius s-shadow-bottom">
-    <div class="s-ratio-16-9 lg-ratio-2-3 s-bg-blue s-mb-2 lg-mb-0"></div>
-    <div class="lg-cols-2">
-        <h3>Bienvenido a a EDgrid</h3>
-        <p>EDgrid es una libreria construida con Sass (y con versión CSS) 
-            para Responsive Web Design (RWD). Es muy ligero, personalizable.</p>
-        <div class="button">Comenzar con EDgrid</div>
-    </div>
-</div>
-```
-
-<div class="ed-grid lg-grid-3 lg-60 lg-to-center s-pxy-1 s-border s-radius s-shadow-bottom l-block">
-    <div class="s-ratio-16-9 lg-ratio-2-3 s-bg-blue s-mb-2 lg-mb-0"></div>
-    <div class="lg-cols-2">
-        <h3>Bienvenido a a EDgrid</h3>
-        <p>EDgrid es una libreria construida con Sass (y con versión CSS) para Responsive Web Design (RWD). Es muy ligero, personalizable.</p>
-        <div class="button">Comenzar con EDgrid</div>
-    </div>
-</div>
-
-Además EDgrid incluye las clases `breakpoint-ratio-16-9`, `breakpoint-ratio-9-16` y `breakpoint-ratio-21-9` Ya que son proporciones comunes de elementos multimedia.
-
-<a id="markdown-contenedores-de-imágenes" name="contenedores-de-imágenes"></a>
-## Contenedores de imágenes
-
-Puede usar las clases de ratios para contener imagenes evitando que se desborden o se deformen. Solo agregue la clase `img-container`.
-
-```html
-<div class="ed-grid s-grid-2 m-grid-3 lg-grid-4 s-cross-center">
-    <div class="s-ratio-4-3 img-container">
-        <img src="https://cocha2018.ed.team/assets/img/banner-edcamp.jpg">
-    </div>
-    <div class="s-ratio-9-16 img-container">
-        <img src="https://cocha2018.ed.team/assets/img/banner-edcamp.jpg">
-    </div>
-    <div class="circle">
-        <img src="https://cocha2018.ed.team/assets/img/banner-edcamp.jpg">
-    </div>
-    <div class="s-ratio-16-9 img-container">
-        <img src="https://cocha2018.ed.team/assets/img/banner-edcamp.jpg">
-    </div>
-</div>
-```
-
-La imagen es la misma en todos los casos:
-
-<div class="ed-grid s-grid-2 m-grid-3 lg-grid-4 l-block s-cross-center">
-    <div class="s-ratio-4-3 img-container">
-        <img src="https://cocha2018.ed.team/assets/img/banner-edcamp.jpg">
-    </div>
-    <div class="s-ratio-9-16 img-container">
-        <img src="https://cocha2018.ed.team/assets/img/banner-edcamp.jpg">
-    </div>
-    <div class="circle img-container">
-        <img src="https://cocha2018.ed.team/assets/img/banner-edcamp.jpg">
-    </div>
-    <div class="s-ratio-16-9 img-container">
-        <img src="https://cocha2018.ed.team/assets/img/banner-edcamp.jpg">
-    </div>
-</div>
-
-* Puede usar la clase `circle` para obtener un círculo perfecto sin usar clases de ratio. Si va a usarlo para contener una imagen, agregué tambien la clase `img-container`.
-
-Ejemplo de tarjeta:
-
-```html
-<div class="lg-50 lg-to-center">
-    <!--Contenedor de la imagen-->
-    <div class="s-ratio-16-9 img-container s-radius-tl s-radius-tr">
-        <img src="/img/curso.jpg">
-    </div>
-    <!--Contenido-->
-    <div class="s-border s-radius-br s-radius-bl s-shadow-bottom">
-        <div class="s-pxy-2">
-            <h3>Curso Bases de Datos Desde Cero</h3>
-            <p class="s-mb-0">Diseña, estructura y administra bases de datos 
-                SQL y crea un sistema de facturación</p>
-        </div>
-        <footer class="s-cross-center s-bg-grey s-pxy-2">
-            <!--Define el ancho máximo de la imagen-->
-            <div class="s-10 s-mr-1">
-            <!--Contenedor de la imagen-->
-            <div class="circle img-container">
-                <img  src="/img/tioalexys.jpg">
-            </div>
-            <!--Profesor-->
-            </div>
-            <p class="s-mb-0">Prof. Alexys Lozada</p>
-            <!--Boton-->
-            <div class="button s-to-right">$40USD</div>
-        </footer>
-    </div>
-</div>
-```
-
-<div class="lg-50 lg-to-center">
-    <!--Contenedor de la imagen-->
-    <div class="s-ratio-16-9 img-container s-radius-tl s-radius-tr">
-        <img src="https://ed.team/sites/default/files/styles/large/public/courses/images/sql.jpg?itok=ndgCTmxW">
-    </div>
-    <!--Contenido-->
-    <div class="s-border s-radius-br s-radius-bl s-shadow-bottom">
-        <div class="s-pxy-2">
-            <h3>Curso Bases de Datos Desde Cero</h3>
-            <p class="s-mb-0">Diseña, estructura y administra bases de datos SQL y crea un sistema de facturación</p>
-        </div>
-        <footer class="s-cross-center s-bg-grey s-pxy-2">
-            <!--Define el ancho máximo de la imagen-->
-            <div class="s-10 s-mr-1">
-            <!--Contenedor de la imagen-->
-            <div class="circle ">
-                <img  src="https://ed.team/sites/default/files/styles/thumbnail/public/pictures/2018-11/tioalexys.jpg?itok=7vDpJuSh">
-            </div>
-            <!--Profesor-->
-            </div>
-            <p class="s-mb-0">Prof. Alexys Lozada</p>
-            <!--Boton-->
-            <div class="button s-to-right">$40USD</div>
-        </footer>
-    </div>
 </div>

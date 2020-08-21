@@ -14,7 +14,7 @@
 
 --- 
 
-EDgrid es una librería para construir layouts. Puede construirlos con Flexbox (estable) o [CSS Grid](/documentacion/layout-css-grid.html) (beta)
+EDgrid es una librería para construir layouts. Puede construirlos con Flexbox o [CSS Grid](/documentacion/layout-css-grid.html). 
 
 <a id="markdown-ed-container-y-ed-item" name="ed-container-y-ed-item"></a>
 ## ed-container y ed-item
@@ -29,24 +29,24 @@ Para construir layouts con Flexbox y EDgrid debe definir contenedores con la cla
 ```html
 <!-- Bien -->
 <div class="ed-container">
-<div class="ed-item">
-<article>
-<p>
-En un lugar de la Mancha, de cuyo nombre no quiero acordarme,
-no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero,
-adarga antigua, rocín flaco y galgo corredor.
-</p>
-</article>
-</div>
+    <div class="ed-item">
+        <article>
+            <p>
+                En un lugar de la Mancha, de cuyo nombre no quiero acordarme,
+                no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero,
+                adarga antigua, rocín flaco y galgo corredor.
+            </p>
+        </article>
+    </div>
 </div>
 
 <!-- Mal -->
 <div class="ed-container">
-<article class="ed-item">
-En un lugar de la Mancha, de cuyo nombre no quiero acordarme,
-no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero,
-adarga antigua, rocín flaco y galgo corredor.
-</article>
+    <article class="ed-item">
+        En un lugar de la Mancha, de cuyo nombre no quiero acordarme,
+        no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero,
+        adarga antigua, rocín flaco y galgo corredor.
+    </article>
 </div>
 ```
 
@@ -59,7 +59,7 @@ Si desea un `ed-container` que mida siempre el 100% de la pantalla agregue la cl
 
 ```markup
 <div class="ed-container full">
-<div class="ed-item"></div>
+    <div class="ed-item"></div>
 </div>
 ```
 
@@ -82,11 +82,11 @@ La nomenclatura de clase es `breakpoint-numero` Donde número es cualquier núme
 
 ```html
 <div class="ed-container">
-<div class="ed-container">
-  <div class="ed-item s-30 lg-50">1</div>
-  <div class="ed-item s-50 lg-25">2</div>
-  <div class="ed-item s-20 lg-25">3</div>
-</div>
+    <div class="ed-container">
+      <div class="ed-item s-30 lg-50">1</div>
+      <div class="ed-item s-50 lg-25">2</div>
+      <div class="ed-item s-20 lg-25">3</div>
+    </div>
 </div>
 ```
 

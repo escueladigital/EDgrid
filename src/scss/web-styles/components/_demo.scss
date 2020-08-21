@@ -41,3 +41,38 @@
     }
   }
 }
+
+.dev-demo,
+.dev-demo-hover {
+  position: static !important;
+  top : initial;
+  border : 0;
+  @include dev-mode;
+
+  .ed-item, .ed-grid > * {
+    color: black;
+  }
+
+}
+
+.dev-demo {
+  .ed-container, .ed-grid { @include dev-container-style; }
+
+  .ed-item, .ed-grid > * { @include dev-item-style;}
+
+  &-hover {
+
+    .ed-container, .ed-grid {
+      &:hover {
+        @include dev-container-style;
+      }
+    }
+
+    .ed-item, .ed-grid > * {
+      &:hover {
+        @include dev-item-style;
+      }
+    }
+
+  }
+}

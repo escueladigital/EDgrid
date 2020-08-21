@@ -1,0 +1,55 @@
+extends ../../config/template
+include ../../includes/main-banner
+append config
+  -title = "EDgrid | Banner"
+  -description = "Componente banner creado con el prototipado de EDgrid."
+  -ogUrl= "/banner.html"
+  -docsMenu = true
+
+block banner
+  section.main-banner.background.grey-800.l-section
+    .ed-grid.lg-grid-2.row-gap.s-gap-4
+      .s-column.s-main-center.lg-main-start.lg-cross-start.s-center.lg-left
+        h1.bigger-title
+          span.color.white-color Banner principal #[<br/>] #[span.color.blue-400 de dos columnas] #[<br/>] con EDgrid
+        p.white-color.s-opacity-8 Creado utilizando los componentes de columnas. Totalmente responsive.
+        .s-main-center
+          a.button.blue-500.s-mr-2 Botón 1
+          a.button.ghost.blue-400 Botón 2
+      div
+        .img-container.s-ratio-16-9
+          img.s-radius-1(src="/assets/img/og-image.jpg")
+
+block main
+  main(itemscope itemprop="mainContentOfPage" role="main")
+    :markdown-it
+      ## Banner de dos columnas
+      Al copiar el código del componente banner usted sólo conseguirá la estructura de éste para que coloque el contenido que desee.
+
+      Los estilos empleados en la demostración (como el color de fondo o estilos del texto) provienen de la [guía de estilos](https://ux.ed.team/) de EDteam.
+
+      ```html
+      <section class="l-section s-py-4">
+        <!-- Separación del contenido en columnas -->
+        <div class="ed-grid lg-grid-2 row-gap s-gap-4">
+          <!-- Contenido de la columna 1 -->
+          <div class="s-column s-main-center lg-main-start lg-cross-start s-center lg-left">
+            <h1>Banner principal de dos columnas con EDgrid</h1>
+            <p>Creado utilizando los componentes de columnas. Totalmente responsive.</p>
+            <!-- Botones -->
+            <div class="s-main-center">
+              <a class="button s-mr-2">Botón 1</a>
+              <a class="button">Botón 2</a>
+            </div>
+          </div>
+          <!-- Contenido de la columna 2 -->
+          <div>
+            <div class="img-container s-ratio-16-9">
+              <img class="s-radius-1" src="/assets/img/og-image.jpg">
+            </div>
+          </div>
+        </div>
+      </section>
+      ```
+
+

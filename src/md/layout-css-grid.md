@@ -1,13 +1,13 @@
-# Sistema de filas y columnas con CSS Grid (beta)
+# Sistema de filas y columnas con CSS Grid
 
-La versión 3 de EDgrid (aun en desarrollo) incluye la creación de layouts con CSS Grid, la que ofrece varias ventajas sobre los layouts con Flexbox. Ests sitio web y los demás proyectos de EDteam usan esta versión para probarla en producción y corregir errores. Si detecta alguno por favor repórtelo a [Github](https://github.com/escueladigital/EDgrid/issues)
+La versión 3 de EDgrid incluye la creación de layouts con CSS Grid, la que ofrece varias ventajas sobre los layouts con Flexbox.
 
 Esta versión se basa en las siguientes reglas:
 
 1. El contenedor define la cantidad de columnas en cada breakpoint
-2. Los items definen cuantas columnas de su contedor ocuparám
+2. Los items definen cuantas columnas de su contedor ocuparán
 3. Solo el contenedor tiene una clase definida `ed-grid`. Los items pueden ser cualquier elemento hijo directo de `ed-grid` (a diferencia de la versión con flexbox que exigía tener un `ed-item`).
-4. CSS Grid utiliza la propiedad `grid-gap` para definir la separación entre tracks, lo que resuelve el problema de los contenedores anidados y los paddings (propio de layouts con floats y flexbox).
+4. CSS Grid utiliza la propiedad `gap` para definir la separación entre tracks, lo que resuelve el problema de los contenedores anidados y los paddings (propio de layouts con floats y flexbox).
 
 ## Contenedor ed-grid
 
@@ -211,10 +211,12 @@ $gap: 1rem; // En tamaños de escritorio se multiplica por 2
 @import "~ed-grid/ed-grid";
 ```
 
-O puede cambiar la separación para un `ed-grid` especifico agregando las clases `gap-0` (sin separacion) `gap-1` (.5rem), `gap-2` (1rem), `gap-3` (1.5rem) o `gap-4` (2rem)
+O puede cambiar la separación para un `ed-grid` especifico usando la nomenclatura `breakpoint-gap-numero`. El número va de 0 a 4 con separaciones de `.5rem`.
+
+\* *Puede usar el numero `05` para crear separaciones de `.25rem`. Ejemplo: `s-gap-05`.*
 
 ```html
-<div class="ed-grid rows-gap gap-1 s-grid-2 m-grid-4 lg-grid-6">
+<div class="ed-grid rows-gap s-gap-05 m-gap-1 s-grid-2 m-grid-4 lg-grid-6">
   <div>1</div>
   <div>2</div>
   <div>3</div>
@@ -229,7 +231,7 @@ O puede cambiar la separación para un `ed-grid` especifico agregando las clases
 ```
 
 <div class="ed-grid-demo">
-<div class="ed-grid rows-gap gap-1 s-grid-2 m-grid-4 lg-grid-6">
+<div class="ed-grid rows-gap s-gap-05 m-gap-1 s-grid-2 m-grid-4 lg-grid-6">
   <div>1</div>
   <div>2</div>
   <div>3</div>
