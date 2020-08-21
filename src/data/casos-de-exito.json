@@ -11,6 +11,46 @@
       "linkUser": ""
     },
     {
+      "img": "/assets/img/la-canasta.jpg",
+      "title": "Las Canastas",
+      "subtitle": "Restaurant",
+      "description": "Restaurant de parrilldas y pollos ubicada en Perú con diversas sucursales al rededor de todo el país.",
+      "url": "https://lascanastas.com/",
+      "user": "Jose Álvarado",
+      "imageUser": "/assets/img/jose-alvarado.png",
+      "linkUser": "https://twitter.com/josealvaradoo"
+    },
+    {
+      "img": "/assets/img/caexco.jpg",
+      "title": "Caexco",
+      "subtitle": "Tienda en línea",
+      "description": "Empresa dedicada a la comercialización de equipo agrícola, repuestos y accesorios. ",
+      "url": "http://www.caexcobolivia.com/",
+      "user": "Beto Quiroga",
+      "imageUser": "/assets/img/beto-quiroga.jpg",
+      "linkUser": "https://www.facebook.com/diterterrones"
+    },
+    {
+      "img": "/assets/img/importmecardo.jpg",
+      "title": "Importmercado",
+      "subtitle": "Venta de maquinaría metalmecánica",
+      "description": "Empresa dedicada a la importación y comercialización de maquinaria metalmecánica y accesorios.",
+      "url": "http://importmercado.com/",
+      "user": "Beto Quiroga",
+      "imageUser": "/assets/img/beto-quiroga.jpg",
+      "linkUser": "https://www.facebook.com/diterterrones"
+    },
+    {
+      "img": "/assets/img/capilla-cocha.jpg",
+      "title": "Capilla de Cochabamba",
+      "subtitle": "Centro educativo cristiano bilingüe",
+      "description": "Unidad Educativa fundamentada en sólidos principios bíblicos con una alta calidad en la formación académica bilingüe.",
+      "url": "http://colegiocapillacbba.edu.bo/",
+      "user": "Beto Quiroga",
+      "imageUser": "/assets/img/beto-quiroga.jpg",
+      "linkUser": "https://www.facebook.com/diterterrones"
+    },
+    {
       "img": "/assets/img/aremisse.jpg",
       "title": "Aremisse Lima",
       "subtitle": "Transporte corporativo, turístico y personal",
