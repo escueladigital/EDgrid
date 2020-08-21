@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <title>EDgrid | Base (CSS/Sass)</title>
+    <title>EDgrid | Prototipado avanzado (Sass/CSS)</title>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <meta name="description" content="Los estilos base normalizan los elementos HTML para Responsive Web Design.">
+    <meta name="description" content="Cree su propio prototipado y vaya más allá de lo que ya tiene EDgrid.">
     <!-- Estilos-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:700">
     <link rel="stylesheet" href="/css/styles.css?180113">
     <link rel="shortcut icon" href="/assets/img/edgrid-favicon.png">
-    <meta property="og:title" content="EDgrid | Base (CSS/Sass)">
+    <meta property="og:title" content="EDgrid | Prototipado avanzado (Sass/CSS)">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="Los estilos base normalizan los elementos HTML para Responsive Web Design.">
-    <meta property="og:url" content="/documentacion/instalacion.html">
+    <meta property="og:description" content="Cree su propio prototipado y vaya más allá de lo que ya tiene EDgrid.">
+    <meta property="og:url" content="/prototipado-avanzado.html">
     <meta property="og:image" content="/assets/img/edgrid-poster.jpg">
     <meta property="og:site_name" content="EDteam">
     <meta property="og:locale" content="es_PE">
@@ -21,9 +21,9 @@
     <meta property="og:locale:alternate" content="es_DO">
     <meta property="og:locale:alternate" content="es_BO">
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="EDgrid | Base (CSS/Sass)">
+    <meta property="twitter:title" content="EDgrid | Prototipado avanzado (Sass/CSS)">
     <meta property="twitter:site" content="@EDteamLat">
-    <meta property="twitter:description" content="Los estilos base normalizan los elementos HTML para Responsive Web Design.">
+    <meta property="twitter:description" content="Cree su propio prototipado y vaya más allá de lo que ya tiene EDgrid.">
     <meta name="theme-color" content="#007BDF">
   </head>
   <!-- Body-->
@@ -93,27 +93,82 @@
         </nav>
       </aside>
       <div class="span-l-3">
-        <main itemscope itemprop="mainContentOfPage" role="main"><h1>Comenzar con EDgrid</h1>
-<p>EDgrid es una libreria CSS/Sass para construir layouts para web fácilmente. En una hora ya lo estará usando en sus proyectos.</p>
-<p>Creado por <a href="https://ed.team">EDteam</a> y usado en todos los proyectos de la empresa. Es Open Source (GPL2) y puede usarla y modificarla libremente en todos sus proyectos.</p>
-<p>Si encuentra algun error o tiene sugerencias de mejoras, <a href="https://github.com/escueladigital/EDgrid/issues">puede escribirlas en Github</a>.</p>
-<h2>Instalación</h2>
-<p>Puede usar EDgrid con <a href="https://ed.team/cursos/sass">Sass</a> (recomendado) y <a href="https://ed.team/cursos/css">CSS</a>.</p>
-<h3>Instalación de versión Sass</h3>
-<p>Para instalar la versión Sass puede utilizar npm:</p>
-<pre><code class="language-bash">npm install --save-dev ed-grid
+        <main itemscope itemprop="mainContentOfPage" role="main"><h1>Prototipado avanzado</h1>
+<p>Ya vio qué es EDgrid y todo lo que es capaz de hacer, pero tal vez no sea suficiente en ciertos casos. ¿Qué tal si quiere utilizar otras propiedades que no tiene la librería?
+¿O no quiere estar escribiendo CSS para cada componente y prefiere usar la numenclaruta de clases de EDgrid? Aquí es donde el prototipado avanzado entra en acción.</p>
+<p>Utiliza el core de EDgrid para convetir cualquier propiedad en las nomenclaturas de la librería <code>breakpoint-propiedad</code>. Cabe recalcar que esta función sólo está disponible para la versión de EDgrid Sass.</p>
+<h2>¿Cómo funciona?</h2>
+<p>Para esto haremos uso del mixin <code>prototype()</code>, el cual podrá utilizarlo en cualquier lugar de su proyecto siempre y cuando EDgrid se haya importado antes. La sintaxis es la siguiente:</p>
+<pre><code class="language-scss">@include prototype($names, $property, $value);
+/*
+* $names - Lista de nombres que usaremos para nombrar nuestras clases.
+*          Recorremos una lista por si queremos múltiples selectores con el mismo valor
+*
+* $property, $value - Propiedad CSS con su respectivo valor
+*/
 </code></pre>
-<p>También puede usar yarn:</p>
-<pre><code class="language-bash">yarn add ed-grid --dev
+<p>Ejemplo</p>
+<pre><code class="language-scss">@include prototype('cursor-pointer', cursor, pointer);
 </code></pre>
-<p>Posteriormente, impórtelo en su estructura de archivos Sass</p>
-<pre><code class="language-scss">@import &quot;~ed-grid/ed-grid&quot;
+<p>El resultado en CSS sería:</p>
+<pre><code class="language-css">.s-cursor-pointer {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 640px)
+  .m-cursor-pointer {
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .lg-cursor-pointer {
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .xl-cursor-pointer {
+    cursor: pointer;
+  }
+}
 </code></pre>
-<h3>Instalación de versión CSS</h3>
-<p>Descargue la última <a href="">versión CSS</a> de EDgrid e impórtela en su proyecto como cualquier otra hoja de estilos. También puede usar del CDN para importaciones rápidas.</p>
-<pre><code class="language-HTML">&lt;link href=&quot;https://unpkg.com/ed-grid@3.0.0/src/css/ed-grid.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+<p>Si queremos múltiples clases con el mismo valor debemos pasar <code>$names</code> como si fuera una lista.</p>
+<pre><code class="language-scss">@include prototype(('color-red', 'red-color'), cursor, pointer);
 </code></pre>
-<p>* <em>Al usar EDgrid en su versión CSS no podrá <a href="/documentacion/personalizar.html">personalizar la librería</a>, utilizar el <a href="/documentacion/prototipado-avanzado.html">prototipado avanzado</a> y compilar sólo el código necesario, entre otras opciones que sólo se pueden hacer con la versión de Sass</em></p>
+<pre><code class="language-html">&lt;!-- Ambas clases funcionan --&gt;
+&lt;p class=&quot;s-color-red&quot;&gt;Este es un párrafo de color rojo&lt;/p&gt;
+&lt;p class=&quot;s-red-color&quot;&gt;Y éste también lo está&lt;/p&gt;
+</code></pre>
+<h2>Especifidad</h2>
+<p>Si quiere crear selectores más avanzados como juntar una clase con la nomenclatura que está creando o usar selectores como <code>+</code>, <code>&gt;</code>, <code>~</code> entre muchos otros, no podrá hacerlo desde <code>$names</code>,
+si no que deberá pasar un cuarto parámetro. Un ejemplo de esto es el componente <code>breakpoint-gap-numero</code> de EDgrid, el cuál solo funciona si el contenedor tiene la clase <code>ed-grid</code>.</p>
+<pre><code class="language-scss">@include prototype($names, $property, $value, $concat);
+</code></pre>
+<p>Ejemplos</p>
+<pre><code class="language-scss">// El elemento también tiene la clase .background
+// .background.s-red
+@include prototype('red', color, red, '.background');
+
+// Algún elemento ancestro tiene la clase .background (nótese el espacio al final)
+// .background .s-red
+@include prototype('red', color, red, '.background ');
+
+// Hijos directos de un elemento con la clase background
+// .background &gt; .s-red
+@include prototype('red', color, red, '.background &gt; ');
+</code></pre>
+<h2>Debug</h2>
+<p>El modo debug le permite ver en la terminal el CSS resultado (selector, propiedad, valor y mediaquery). Para activarlo debemos pasar un quinto parámetro en <code>true</code>.</p>
+<pre><code class="language-scss">@include prototype($names, $property, $value, $concat, $debug);
+</code></pre>
+<p>Ejemplo</p>
+<pre><code class="language-scss">@include prototype('red', color, red, '.background &gt; ', true);
+
+// Introduzca un string vacío si no necesita el cuarto parámetro
+// Puede borrarlo una vez que desactive el debug
+@include prototype('red', color, red, '', true);
+</code></pre>
 
         </main>
       </div>

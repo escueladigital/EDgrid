@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <title>EDgrid | Base (CSS/Sass)</title>
+    <title>EDgrid | Banner</title>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <meta name="description" content="Los estilos base normalizan los elementos HTML para Responsive Web Design.">
+    <meta name="description" content="Componente banner creado con el prototipado de EDgrid.">
     <!-- Estilos-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:700">
     <link rel="stylesheet" href="/css/styles.css?180113">
     <link rel="shortcut icon" href="/assets/img/edgrid-favicon.png">
-    <meta property="og:title" content="EDgrid | Base (CSS/Sass)">
+    <meta property="og:title" content="EDgrid | Banner">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="Los estilos base normalizan los elementos HTML para Responsive Web Design.">
-    <meta property="og:url" content="/documentacion/instalacion.html">
+    <meta property="og:description" content="Componente banner creado con el prototipado de EDgrid.">
+    <meta property="og:url" content="/banner.html">
     <meta property="og:image" content="/assets/img/edgrid-poster.jpg">
     <meta property="og:site_name" content="EDteam">
     <meta property="og:locale" content="es_PE">
@@ -21,9 +21,9 @@
     <meta property="og:locale:alternate" content="es_DO">
     <meta property="og:locale:alternate" content="es_BO">
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="EDgrid | Base (CSS/Sass)">
+    <meta property="twitter:title" content="EDgrid | Banner">
     <meta property="twitter:site" content="@EDteamLat">
-    <meta property="twitter:description" content="Los estilos base normalizan los elementos HTML para Responsive Web Design.">
+    <meta property="twitter:description" content="Componente banner creado con el prototipado de EDgrid.">
     <meta name="theme-color" content="#007BDF">
   </head>
   <!-- Body-->
@@ -46,6 +46,18 @@
       </div>
     </header>
     <!-- Banner section-->
+    <section class="main-banner background grey-800 l-section">
+      <div class="ed-grid lg-grid-2 row-gap s-gap-4">
+        <div class="s-column s-main-center lg-main-start lg-cross-start s-center lg-left">
+          <h1 class="bigger-title"><span class="color white-color">Banner principal <br/> <span class="color blue-400">de dos columnas</span> <br/> con EDgrid</span></h1>
+          <p class="white-color s-opacity-8">Creado utilizando los componentes de columnas. Totalmente responsive.</p>
+          <div class="s-main-center"><a class="button blue-500 s-mr-2">Botón 1</a><a class="button ghost blue-400">Botón 2</a></div>
+        </div>
+        <div>
+          <div class="img-container s-ratio-16-9"><img class="s-radius-1" src="/assets/img/og-image.jpg"></div>
+        </div>
+      </div>
+    </section>
     <!-- Main-->
     <div class="l-block"></div>
     <div class="ed-grid cols-l-4 main-section l-big-section">
@@ -93,27 +105,31 @@
         </nav>
       </aside>
       <div class="span-l-3">
-        <main itemscope itemprop="mainContentOfPage" role="main"><h1>Comenzar con EDgrid</h1>
-<p>EDgrid es una libreria CSS/Sass para construir layouts para web fácilmente. En una hora ya lo estará usando en sus proyectos.</p>
-<p>Creado por <a href="https://ed.team">EDteam</a> y usado en todos los proyectos de la empresa. Es Open Source (GPL2) y puede usarla y modificarla libremente en todos sus proyectos.</p>
-<p>Si encuentra algun error o tiene sugerencias de mejoras, <a href="https://github.com/escueladigital/EDgrid/issues">puede escribirlas en Github</a>.</p>
-<h2>Instalación</h2>
-<p>Puede usar EDgrid con <a href="https://ed.team/cursos/sass">Sass</a> (recomendado) y <a href="https://ed.team/cursos/css">CSS</a>.</p>
-<h3>Instalación de versión Sass</h3>
-<p>Para instalar la versión Sass puede utilizar npm:</p>
-<pre><code class="language-bash">npm install --save-dev ed-grid
+        <main itemscope itemprop="mainContentOfPage" role="main"><h2>Banner de dos columnas</h2>
+<p>Al copiar el código del componente banner usted sólo conseguirá la estructura de éste para que coloque el contenido que desee.</p>
+<p>Los estilos empleados en la demostración (como el color de fondo o estilos del texto) provienen de la <a href="https://ux.ed.team/">guía de estilos</a> de EDteam.</p>
+<pre><code class="language-html">&lt;section class=&quot;l-section s-py-4&quot;&gt;
+  &lt;!-- Separación del contenido en columnas --&gt;
+  &lt;div class=&quot;ed-grid lg-grid-2 row-gap s-gap-4&quot;&gt;
+    &lt;!-- Contenido de la columna 1 --&gt;
+    &lt;div class=&quot;s-column s-main-center lg-main-start lg-cross-start s-center lg-left&quot;&gt;
+      &lt;h1&gt;Banner principal de dos columnas con EDgrid&lt;/h1&gt;
+      &lt;p&gt;Creado utilizando los componentes de columnas. Totalmente responsive.&lt;/p&gt;
+      &lt;!-- Botones --&gt;
+      &lt;div class=&quot;s-main-center&quot;&gt;
+        &lt;a class=&quot;button s-mr-2&quot;&gt;Botón 1&lt;/a&gt;
+        &lt;a class=&quot;button&quot;&gt;Botón 2&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- Contenido de la columna 2 --&gt;
+    &lt;div&gt;
+      &lt;div class=&quot;img-container s-ratio-16-9&quot;&gt;
+        &lt;img class=&quot;s-radius-1&quot; src=&quot;/assets/img/og-image.jpg&quot;&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
 </code></pre>
-<p>También puede usar yarn:</p>
-<pre><code class="language-bash">yarn add ed-grid --dev
-</code></pre>
-<p>Posteriormente, impórtelo en su estructura de archivos Sass</p>
-<pre><code class="language-scss">@import &quot;~ed-grid/ed-grid&quot;
-</code></pre>
-<h3>Instalación de versión CSS</h3>
-<p>Descargue la última <a href="">versión CSS</a> de EDgrid e impórtela en su proyecto como cualquier otra hoja de estilos. También puede usar del CDN para importaciones rápidas.</p>
-<pre><code class="language-HTML">&lt;link href=&quot;https://unpkg.com/ed-grid@3.0.0/src/css/ed-grid.min.css&quot; rel=&quot;stylesheet&quot;&gt;
-</code></pre>
-<p>* <em>Al usar EDgrid en su versión CSS no podrá <a href="/documentacion/personalizar.html">personalizar la librería</a>, utilizar el <a href="/documentacion/prototipado-avanzado.html">prototipado avanzado</a> y compilar sólo el código necesario, entre otras opciones que sólo se pueden hacer con la versión de Sass</em></p>
 
         </main>
       </div>

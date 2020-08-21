@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <title>EDgrid | Base (CSS/Sass)</title>
+    <title>EDgrid | Cards (Sass/CSS)</title>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <meta name="description" content="Los estilos base normalizan los elementos HTML para Responsive Web Design.">
+    <meta name="description" content="Componente card creado con el prototipado de EDgrid.">
     <!-- Estilos-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:700">
     <link rel="stylesheet" href="/css/styles.css?180113">
     <link rel="shortcut icon" href="/assets/img/edgrid-favicon.png">
-    <meta property="og:title" content="EDgrid | Base (CSS/Sass)">
+    <meta property="og:title" content="EDgrid | Cards (Sass/CSS)">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="Los estilos base normalizan los elementos HTML para Responsive Web Design.">
-    <meta property="og:url" content="/documentacion/instalacion.html">
+    <meta property="og:description" content="Componente card creado con el prototipado de EDgrid.">
+    <meta property="og:url" content="/cards.html">
     <meta property="og:image" content="/assets/img/edgrid-poster.jpg">
     <meta property="og:site_name" content="EDteam">
     <meta property="og:locale" content="es_PE">
@@ -21,9 +21,9 @@
     <meta property="og:locale:alternate" content="es_DO">
     <meta property="og:locale:alternate" content="es_BO">
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="EDgrid | Base (CSS/Sass)">
+    <meta property="twitter:title" content="EDgrid | Cards (Sass/CSS)">
     <meta property="twitter:site" content="@EDteamLat">
-    <meta property="twitter:description" content="Los estilos base normalizan los elementos HTML para Responsive Web Design.">
+    <meta property="twitter:description" content="Componente card creado con el prototipado de EDgrid.">
     <meta name="theme-color" content="#007BDF">
   </head>
   <!-- Body-->
@@ -93,27 +93,131 @@
         </nav>
       </aside>
       <div class="span-l-3">
-        <main itemscope itemprop="mainContentOfPage" role="main"><h1>Comenzar con EDgrid</h1>
-<p>EDgrid es una libreria CSS/Sass para construir layouts para web fácilmente. En una hora ya lo estará usando en sus proyectos.</p>
-<p>Creado por <a href="https://ed.team">EDteam</a> y usado en todos los proyectos de la empresa. Es Open Source (GPL2) y puede usarla y modificarla libremente en todos sus proyectos.</p>
-<p>Si encuentra algun error o tiene sugerencias de mejoras, <a href="https://github.com/escueladigital/EDgrid/issues">puede escribirlas en Github</a>.</p>
-<h2>Instalación</h2>
-<p>Puede usar EDgrid con <a href="https://ed.team/cursos/sass">Sass</a> (recomendado) y <a href="https://ed.team/cursos/css">CSS</a>.</p>
-<h3>Instalación de versión Sass</h3>
-<p>Para instalar la versión Sass puede utilizar npm:</p>
-<pre><code class="language-bash">npm install --save-dev ed-grid
+        <main itemscope itemprop="mainContentOfPage" role="main"><h1>Cards</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#card-basico">Card básico</a></li>
+<li><a href="#card-horizontal">Card horizontal</a></li>
+</ul>
+<!-- /TOC -->
+<hr>
+<p>Recuerde que EDgrid es una librería enfocada al RWD, por lo que no tiene componentes o estilos integrados por defecto, pero puede utilizar el prototipado y el prototipado avanzado para crear sus propios componentes.</p>
+<p><a id="markdown-card-basico" name="card-basico"></a></p>
+<h2>Card básico</h2>
+<p>Ejemplo de tarjeta creada con el prototipado integrado:</p>
+<div class="m-40 lg-to-center l-block">
+    <article class="s-shadow-bottom">
+        <!--Contenedor de la imagen-->
+        <div class="s-ratio-16-9 img-container s-radius-tl s-radius-tr">
+            <img src="/assets/img/poster-curso.png">
+        </div>
+        <!--Contenido-->
+        <div class="s-bg-white s-pxy-2">
+            <h3>Curso Bases de Datos Desde Cero</h3>
+            <p class="s-mb-0">Diseña, estructura y administra bases de datos SQL y crea un sistema de facturación</p>
+        </div>
+        <footer class="s-cross-center s-bg-grey s-pxy-2 s-radius-br s-radius-bl">
+            <!--Define el ancho máximo de la imagen-->
+            <div class="s-10 s-mr-1">
+            <!--Contenedor de la imagen-->
+            <div class="circle ">
+                <img  src="/assets/img/alexys.jpg">
+            </div>
+            <!--Profesor-->
+            </div>
+            <p class="s-mb-0">Prof. Alexys Lozada</p>
+            <!--Boton-->
+            <div class="button s-to-right">$40USD</div>
+        </footer>
+    </article>
+</div>
+<pre><code class="language-html">&lt;article class=&quot;s-shadow-bottom&quot;&gt;
+    &lt;!--Contenedor de la imagen--&gt;
+    &lt;div class=&quot;s-ratio-16-9 img-container s-radius-tl s-radius-tr&quot;&gt;
+        &lt;img src=&quot;/assets/img/poster-curso.png&quot;&gt;
+    &lt;/div&gt;
+    &lt;!--Contenido--&gt;
+    &lt;div class=&quot;s-bg-white s-pxy-2&quot;&gt;
+        &lt;h3&gt;Curso Bases de Datos Desde Cero&lt;/h3&gt;
+        &lt;p class=&quot;s-mb-0&quot;&gt;Diseña, estructura y administra bases de datos SQL y crea un sistema de facturación&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;footer class=&quot;s-cross-center s-bg-grey s-pxy-2 s-radius-br s-radius-bl&quot;&gt;
+        &lt;!--Define el ancho máximo de la imagen--&gt;
+        &lt;div class=&quot;s-10 s-mr-1&quot;&gt;
+        &lt;!--Contenedor de la imagen--&gt;
+        &lt;div class=&quot;circle &quot;&gt;
+            &lt;img  src=&quot;/assets/img/alexys.jpg&quot;&gt;
+        &lt;/div&gt;
+        &lt;!--Profesor--&gt;
+        &lt;/div&gt;
+        &lt;p class=&quot;s-mb-0&quot;&gt;Prof. Alexys Lozada&lt;/p&gt;
+        &lt;!--Boton--&gt;
+        &lt;div class=&quot;button s-to-right&quot;&gt;$40USD&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;
 </code></pre>
-<p>También puede usar yarn:</p>
-<pre><code class="language-bash">yarn add ed-grid --dev
+<p><a id="markdown-card-horizontal" name="card-horizontal"></a></p>
+<h2>Card horizontal</h2>
+<p>Este card se mostrará en formato horizontal en desktop y pasará a ser vertical en dispositivos móviles.</p>
+<div class="m-65 s-to-center l-block">
+    <article class="s-shadow-bottom">
+      <!-- Póster y contenido -->
+      <div class="ed-grid m-grid-5 s-gap-2 m-pxy-2 s-bg-white s-radius-tl s-radius-tr">
+        <!-- Contenedor de la imagen -->
+        <div class="m-cols-2 img-container s-ratio-16-9 s-radius-tl s-radius-tr m-radius">
+            <img src="/assets/img/poster-curso.png">
+        </div>
+        <!-- Contenido -->
+        <div class="s-pxy-2 m-pxy-0 m-cols-3">
+            <h3>Curso Bases de Datos Desde Cero</h3>
+            <p class="s-mb-0">Diseña, estructura y administra 
+                              bases de datos SQL y crea un sistema de facturación</p>
+        </div>
+      </div>
+      <footer class="s-bg-grey s-cross-center s-pxy-2 s-radius-br s-radius-bl">
+          <!-- Define el ancho máximo de la imagen -->
+          <div class="s-10 m-5 s-mr-1">
+              <!-- Contenedor de la imagen -->
+              <div class="circle ">
+                  <img  src="/assets/img/alexys.jpg">
+              </div>
+          </div>
+          <!-- Profesor -->
+          <p class="s-mb-0">Prof. Alexys Lozada</p>
+          <!-- Botón -->
+          <div class="button s-to-right">$40USD</div>
+      </footer>
+    </article>
+</div>
+<pre><code class="language-html">&lt;article class=&quot;s-shadow-bottom&quot;&gt;
+  &lt;!-- Póster y contenido --&gt;
+  &lt;div class=&quot;ed-grid m-grid-5 s-gap-2 m-pxy-2 s-bg-white s-radius-tl s-radius-tr&quot;&gt;
+    &lt;!-- Contenedor de la imagen --&gt;
+    &lt;div class=&quot;m-cols-2 img-container s-ratio-16-9 s-radius-tl s-radius-tr m-radius&quot;&gt;
+        &lt;img src=&quot;/assets/img/poster-curso.png&quot;&gt;
+    &lt;/div&gt;
+    &lt;!-- Contenido --&gt;
+    &lt;div class=&quot;s-pxy-2 m-pxy-0 m-cols-3&quot;&gt;
+        &lt;h3&gt;Curso Bases de Datos Desde Cero&lt;/h3&gt;
+        &lt;p class=&quot;s-mb-0&quot;&gt;Diseña, estructura y administra 
+                          bases de datos SQL y crea un sistema de facturación&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;footer class=&quot;s-bg-grey s-cross-center s-pxy-2 s-radius-br s-radius-bl&quot;&gt;
+      &lt;!-- Define el ancho máximo de la imagen --&gt;
+      &lt;div class=&quot;s-10 m-5 s-mr-1&quot;&gt;
+          &lt;!-- Contenedor de la imagen --&gt;
+          &lt;div class=&quot;circle &quot;&gt;
+              &lt;img  src=&quot;/assets/img/alexys.jpg&quot;&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- Profesor --&gt;
+      &lt;p class=&quot;s-mb-0&quot;&gt;Prof. Alexys Lozada&lt;/p&gt;
+      &lt;!-- Botón --&gt;
+      &lt;div class=&quot;button s-to-right&quot;&gt;$40USD&lt;/div&gt;
+  &lt;/footer&gt;
+&lt;/article&gt;
 </code></pre>
-<p>Posteriormente, impórtelo en su estructura de archivos Sass</p>
-<pre><code class="language-scss">@import &quot;~ed-grid/ed-grid&quot;
-</code></pre>
-<h3>Instalación de versión CSS</h3>
-<p>Descargue la última <a href="">versión CSS</a> de EDgrid e impórtela en su proyecto como cualquier otra hoja de estilos. También puede usar del CDN para importaciones rápidas.</p>
-<pre><code class="language-HTML">&lt;link href=&quot;https://unpkg.com/ed-grid@3.0.0/src/css/ed-grid.min.css&quot; rel=&quot;stylesheet&quot;&gt;
-</code></pre>
-<p>* <em>Al usar EDgrid en su versión CSS no podrá <a href="/documentacion/personalizar.html">personalizar la librería</a>, utilizar el <a href="/documentacion/prototipado-avanzado.html">prototipado avanzado</a> y compilar sólo el código necesario, entre otras opciones que sólo se pueden hacer con la versión de Sass</em></p>
 
         </main>
       </div>

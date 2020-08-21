@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>EDgrid | Menú responsive (Sass/CSS)</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta name="description" content="Componente menú responsive creado con EDgrid.">
+    <!-- Estilos-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:700">
+    <link rel="stylesheet" href="/css/styles.css?180113">
+    <link rel="shortcut icon" href="/assets/img/edgrid-favicon.png">
+    <meta property="og:title" content="EDgrid | Menú responsive (Sass/CSS)">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Componente menú responsive creado con EDgrid.">
+    <meta property="og:url" content="/menu-responsive.html">
+    <meta property="og:image" content="/assets/img/edgrid-poster.jpg">
+    <meta property="og:site_name" content="EDteam">
+    <meta property="og:locale" content="es_PE">
+    <meta property="og:locale:alternate" content="es_CO">
+    <meta property="og:locale:alternate" content="es_MX">
+    <meta property="og:locale:alternate" content="es_DO">
+    <meta property="og:locale:alternate" content="es_BO">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="EDgrid | Menú responsive (Sass/CSS)">
+    <meta property="twitter:site" content="@EDteamLat">
+    <meta property="twitter:description" content="Componente menú responsive creado con EDgrid.">
+    <meta name="theme-color" content="#007BDF">
+  </head>
+  <!-- Body-->
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <header class="main-header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="ed-grid s-grid-5 cols-lg-10">
+        <div class="s-cols-2 s-cross-center" itemscope itemtype="http://schema.org/Organization"><a href="/" itemprop="url"><img class="main-logo" alt="Logotipo de EDgrid" itemprop="logo" src="/assets/img/logo/EDgrid-logo.svg"></a></div>
+        <div class="s-cols-3 lg-cols-8 main-menu-container s-cross-center s-main-end">
+          <nav class="main-menu" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation" id="main-menu">
+            <ul>
+              <li itemprop="url"><a href="/documentacion/instalacion.html" target="" itemprop="name" title="Enlace de Documentación">Documentación</a></li>
+              <li itemprop="url"><a href="/casos-de-exito" target="" itemprop="name" title="Enlace de Casos de éxito">Casos de éxito</a></li>
+              <li itemprop="url"><a href="/changelog" target="" itemprop="name" title="Enlace de Changelog">Changelog</a></li>
+              <li itemprop="url"><a href="/creditos" target="" itemprop="name" title="Enlace de Créditos">Créditos</a></li>
+              <li itemprop="url"><a href="https://ed.team" target="&quot;_blank&quot;" itemprop="name" title="Enlace de Ir a EDteam">Ir a EDteam</a></li>
+            </ul>
+          </nav>
+          <div class="main-menu-toggle to-l" id="main-menu-toggle"></div>
+        </div>
+      </div>
+    </header>
+    <!-- Banner section-->
+    <!-- Main-->
+    <div class="l-block"></div>
+    <div class="ed-grid cols-l-4 main-section l-big-section">
+      <aside class="main-sidebar sidebar-first" itemscope="itemscope" itemtype="http://schema.org/WPSideBar" role="complementary">
+        <div class="vertical-menu-toggle to-l" id="vertical-menu-toggle" data-content="Filtros"></div>
+        <nav class="vertical-menu" itemscope itemtype="http://schema.org/WPSideBar" id="vertical-menu">
+          <ul>
+                    <section class="s-mb-2 m-mb-3">
+                      <p class="t5 s-mb-1">Comenzar con EDgrid</p>
+                              <li itemprop="url"><a href="/documentacion/instalacion.html" itemprop="name" title="Instalación">Instalación</a></li>
+                              <li itemprop="url"><a href="/documentacion/personalizar.html" itemprop="name" title="Personalización">Personalización</a></li>
+                              <li itemprop="url"><a href="/documentacion/breakpoints.html" itemprop="name" title="Breakpoints">Breakpoints</a></li>
+                    </section>
+                    <section class="s-mb-2 m-mb-3">
+                      <p class="t5 s-mb-1">Filas y columnas</p>
+                              <li itemprop="url"><a href="/documentacion/layout-flexbox.html" itemprop="name" title="Flexbox">Flexbox</a></li>
+                              <li itemprop="url"><a href="/documentacion/layout-css-grid.html" itemprop="name" title="CSS Grid">CSS Grid</a></li>
+                              <li itemprop="url"><a href="/documentacion/modo-dev.html" itemprop="name" title="Modo desarrollo">Modo desarrollo</a></li>
+                    </section>
+                    <section class="s-mb-2 m-mb-3">
+                      <p class="t5 s-mb-1">Layout</p>
+                              <li itemprop="url"><a href="/documentacion/base.html" itemprop="name" title="Estilos base">Estilos base</a></li>
+                              <li itemprop="url"><a href="/documentacion/layout.html" itemprop="name" title="Secciones y espaciado">Secciones y espaciado</a></li>
+                              <li itemprop="url"><a href="/documentacion/distribucion.html" itemprop="name" title="Distribución">Distribución</a></li>
+                              <li itemprop="url"><a href="/documentacion/alineacion.html" itemprop="name" title="Alineación">Alineación</a></li>
+                              <li itemprop="url"><a href="/documentacion/visibilidad.html" itemprop="name" title="Visibilidad">Visibilidad</a></li>
+                              <li itemprop="url"><a href="/documentacion/mediaqueries.html" itemprop="name" title="Mediaqueries">Mediaqueries</a></li>
+                              <li itemprop="url"><a href="/documentacion/videos.html" itemprop="name" title="Videos responsive">Videos responsive</a></li>
+                              <li itemprop="url"><a href="/documentacion/ratios.html" itemprop="name" title="Ratios e imágenes">Ratios e imágenes</a></li>
+                    </section>
+                    <section class="s-mb-2 m-mb-3">
+                      <p class="t5 s-mb-1">Helpers y prototipado</p>
+                              <li itemprop="url"><a href="/documentacion/funciones.html" itemprop="name" title="Funciones">Funciones</a></li>
+                              <li itemprop="url"><a href="/documentacion/prototipado.html" itemprop="name" title="Prototipado de EDgrid">Prototipado de EDgrid</a></li>
+                              <li itemprop="url"><a href="/documentacion/prototipado-avanzado.html" itemprop="name" title="Prototipado avanzado">Prototipado avanzado</a></li>
+                    </section>
+                    <section class="s-mb-2 m-mb-3">
+                      <p class="t5 s-mb-1">Componentes</p>
+                              <li itemprop="url"><a href="/documentacion/cards.html" itemprop="name" title="Cards">Cards</a></li>
+                              <li itemprop="url"><a href="/documentacion/banner.html" itemprop="name" title="Banner">Banner</a></li>
+                              <li itemprop="url"><a href="/documentacion/skeleton.html" itemprop="name" title="Skeleton">Skeleton</a></li>
+                              <li itemprop="url"><a href="/documentacion/menu-responsive.html" itemprop="name" title="Menú responsive">Menú responsive</a></li>
+                    </section>
+          </ul>
+        </nav>
+      </aside>
+      <div class="span-l-3">
+        <main itemscope itemprop="mainContentOfPage" role="main"><h1>Menú responsive</h1>
+<p>Un menú responsive es un buen ejemplo de cómo podemos integrar EDgrid con código ajeno a la librería.</p>
+<p>Toda la estructura y distribución se harán desde el marcado con la nomenclatura que ya conocemos y a la vez se usarán los mixins que otorga la librería para los estilos en Sass.</p>
+<div class="l-section"></div>
+<div class="to-s">
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="notes" viewbox="0 0 24 24">
+    <rect fill="none" height="24" width="24"></rect>
+    <path d="M19,3H4.99C3.89,3,3,3.9,3,5l0.01,14c0,1.1,0.89,2,1.99,2h10l6-6V5C21,3.9,20.1,3,19,3z M7,8h10v2H7V8z M12,14H7v-2h5V14z M14,19.5V14h5.5L14,19.5z"></path>
+  </symbol>
+  <symbol id="studies" viewbox="0 0 24 24">
+    <path d="M0 0h24v24H0z" fill="none"></path>
+    <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"></path>
+  </symbol>
+  <symbol id="courses" viewbox="0 0 24 24">
+    <path d="M0 0h24v24H0V0z" fill="none"></path>
+    <path d="M19 3H4.99c-1.11 0-1.98.89-1.98 2L3 19c0 1.1.88 2 1.99 2H19c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 12h-4c0 1.66-1.35 3-3 3s-3-1.34-3-3H4.99V5H19v10z"></path>
+  </symbol>
+  <symbol id="home" viewbox="0 0 24 24">
+    <path d="M0 0h24v24H0z" fill="none"></path>
+    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+  </symbol>
+</svg>
+</div>
+<div class="menu-responsive s-border l-block s-bg-white s-radius-1">
+    <header class="ed-menu s-bg-grey s-py-2 s-px-2 lg-px-4">
+      <div class="ed-grid lg-grid-5">
+        <div class="s-cross-center s-main-center lg-main-start">
+            <img class="logo" src="https://ed.team/static/images/logo.svg">
+        </div>
+        <nav class="nav lg-cols-4 s-cross-center ed-grid full">
+          <ul class="menu s-main-distribute lg-to-right s-mb-0 s-pl-0 s-py-1">
+            <li class="lg-mr-3"><a class="link s-column s-cross-center active" href="#">
+                <svg class="icon to-lg s-mb-0">
+                  <use href="#home"></use>
+                </svg><span>Inicio</span></a></li>
+            <li class="lg-mr-3"><a class="link s-column s-cross-center" href="#">
+                <svg class="icon to-lg s-mb-0">
+                  <use href="#studies"></use>
+                </svg><span>Estudios</span></a></li>
+            <li class="lg-mr-3"><a class="link s-column s-cross-center" href="#">
+                <svg class="icon to-lg s-mb-0">
+                  <use href="#courses"></use>
+                </svg><span>Cursos</span></a></li>
+            <li><a class="link s-column s-cross-center" href="#">
+                <svg class="icon to-lg s-mb-0">
+                  <use href="#notes"></use>
+                </svg><span>Notas</span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <p class="s-pxy-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales convallis dui quis elementum. Aliquam erat neque, suscipit vitae nisi posuere, eleifend luctus enim. 
+    <br/><br/>Praesent euismod rutrum dui, suscipit vulputate nisl tincidunt et. Aenean commodo ac ex id malesuada. Morbi luctus tempus venenatis. Integer non ante at diam cursus mattis sit amet a augue. 
+    <br/><br/>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis tempus justo sit amet velit porttitor pretium. Nam metus dolor, semper vitae dui ac, mattis varius nisi..</p>
+</div>
+<h3>HTML</h3>
+<pre><code class="language-html">&lt;header class=&quot;ed-header s-bg-grey s-py-2&quot;&gt;
+  &lt;div class=&quot;ed-grid lg-grid-5&quot;&gt;
+    &lt;!-- Logo  --&gt;
+    &lt;div class=&quot;s-cross-center s-main-center lg-main-start&quot;&gt;
+        &lt;img class=&quot;logo&quot; src=&quot;https://ed.team/static/images/logo.svg&quot;&gt;
+    &lt;/div&gt;
+    &lt;nav class=&quot;nav lg-cols-4 s-cross-center ed-grid full&quot;&gt;
+      &lt;!--  Menú de navegación    --&gt;
+      &lt;ul class=&quot;menu s-main-distribute lg-to-right s-mb-0 s-pl-0 s-py-1&quot;&gt;
+        &lt;!--   Item de menú. Contiene link e ícono     --&gt;
+        &lt;li class=&quot;lg-mr-3&quot;&gt;
+          &lt;a class=&quot;link s-column s-cross-center active&quot; href=&quot;#&quot;&gt;
+            &lt;!--  El ícono sólo se mostrará en la versión móvil  --&gt;
+            &lt;svg class=&quot;icon to-lg s-mb-0&quot;&gt;
+              &lt;use href=&quot;#home&quot;&gt;&lt;/use&gt;
+            &lt;/svg&gt;
+            &lt;span&gt;Inicio&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;lg-mr-3&quot;&gt;
+          &lt;a class=&quot;link s-column s-cross-center&quot; href=&quot;#&quot;&gt;
+            &lt;svg class=&quot;icon to-lg s-mb-0&quot;&gt;
+              &lt;use href=&quot;#studies&quot;&gt;&lt;/use&gt;
+            &lt;/svg&gt;
+            &lt;span&gt;Estudios&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;lg-mr-3&quot;&gt;
+          &lt;a class=&quot;link s-column s-cross-center&quot; href=&quot;#&quot;&gt;
+            &lt;svg class=&quot;icon to-lg s-mb-0&quot;&gt;
+              &lt;use href=&quot;#courses&quot;&gt;&lt;/use&gt;
+            &lt;/svg&gt;
+            &lt;span&gt;Cursos&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;a class=&quot;link s-column s-cross-center&quot; href=&quot;#&quot;&gt;
+            &lt;svg class=&quot;icon to-lg s-mb-0&quot;&gt;
+              &lt;use href=&quot;#notes&quot;&gt;&lt;/use&gt;
+            &lt;/svg&gt;
+            &lt;span&gt;Notas&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
+</code></pre>
+<h3>SCSS</h3>
+<p>La mayoría del siguiente código es para estética del menú.</p>
+<pre><code class="language-scss">// Posicionamiento del header
+.ed-header {
+  position : fixed;
+  top      : 0;
+  width    : 100%;
+  z-index  : 100;
+
+  .logo { height : 2rem }
+
+  // Posicionamiento del nav
+  // Utilizamos el mixin to() de EDgrid para que sólo se aplique en móvil
+  .nav {
+      @include to(lg) { 
+        position : fixed;
+        left     : 0;
+        bottom   : 0;
+        background : black;
+      }
+  }
+
+  .menu { list-style : none }
+ 
+   // Colores de links del menú
+  .link {
+    color : lightgrey;
+    &amp;.active { color : cornflowerblue }
+    @include from(lg) { color : grey }
+  }
+
+   // Estilos para los íconos
+  .icon {
+    --size : 1.5rem;
+    width  : var(--size);
+    height : var(--size);
+    fill   : currentColor;
+  }
+
+}
+</code></pre>
+<h3>SVG</h3>
+<p>Este componente utiliza íconos para su versión móvil. Puede crear un archivo SVG donde guarde todo el siguiente código o ponerlo al lado de la estructura del header en el HTML.</p>
+<pre><code class="language-svg">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+  &lt;symbol id=&quot;notes&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+    &lt;rect fill=&quot;none&quot; height=&quot;24&quot; width=&quot;24&quot;&gt;&lt;/rect&gt;
+    &lt;path d=&quot;M19,3H4.99C3.89,3,3,3.9,3,5l0.01,14c0,1.1,0.89,2,1.99,2h10l6-6V5C21,3.9,20.1,3,19,3z M7,8h10v2H7V8z M12,14H7v-2h5V14z M14,19.5V14h5.5L14,19.5z&quot;&gt;&lt;/path&gt;
+  &lt;/symbol&gt;
+  &lt;symbol id=&quot;studies&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+    &lt;path d=&quot;M0 0h24v24H0z&quot; fill=&quot;none&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z&quot;&gt;&lt;/path&gt;
+  &lt;/symbol&gt;
+  &lt;symbol id=&quot;courses&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+    &lt;path d=&quot;M0 0h24v24H0V0z&quot; fill=&quot;none&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M19 3H4.99c-1.11 0-1.98.89-1.98 2L3 19c0 1.1.88 2 1.99 2H19c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 12h-4c0 1.66-1.35 3-3 3s-3-1.34-3-3H4.99V5H19v10z&quot;&gt;&lt;/path&gt;
+  &lt;/symbol&gt;
+  &lt;symbol id=&quot;home&quot; viewBox=&quot;0 0 24 24&quot;&gt;
+    &lt;path d=&quot;M0 0h24v24H0z&quot; fill=&quot;none&quot;&gt;&lt;/path&gt;
+    &lt;path d=&quot;M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z&quot;&gt;&lt;/path&gt;
+  &lt;/symbol&gt;
+&lt;/svg&gt;
+</code></pre>
+
+        </main>
+      </div>
+    </div>
+    <!-- Footer-->
+    <footer class="main-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+      <div class="ed-container main-footer--content">
+        <div class="ed-item l-50 s-to-center s-center">
+          <p class="smaller s-mb-1">EDgrid es una librería Sass/Css para crear diseños web responsive y mobile first.<a class="icon-slack space" href="https://join.slack.com/t/edlabs/shared_invite/enQtMjk1MjcxOTUzMzgxLTgyY2MwZjY3ODRhNGQyMWJkOWRkOGFlZjQ1YjJiYjAxOTMwNGIzMGViMjc5ODZmMmI3ZGFlNGNiMTEwNGIyNzc" target="_blank" title="Slack de EDgrid"></a><a class="icon-github space" href="https://github.com/escueladigital/EDgrid" target="_blank" title="EDgrid en EDgrid"></a><a class="icon-docs space" href="documentacion" target="_blank" title="Documentación de EDgrid"></a></p>
+          <p class="smaller l-block">EDgrid es una marca de <a href="https://ed.team" target="_blank">EDteam</a>.</p>
+          <div class="s-cross-center s-main-center"><a class="s-mr-3" href="https://github.com/escueladigital/EDgrid" target="_blank"><img src="/assets/img/icons/github.svg" width="20" height="20"></a><a href="https://twitter.com/EDgridcss" target="_blank"><img src="/assets/img/icons/twitter.svg" width="20" height="20"></a></div>
+        </div>
+      </div>
+    </footer>
+    <script src="/js/scripts.js"></script>
+  </body>
+</html>
