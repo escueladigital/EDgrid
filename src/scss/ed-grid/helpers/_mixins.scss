@@ -56,25 +56,29 @@
 
     // Recorremos cada breakpoint que tenemos almacenados en $sizes
     @each $size in $sizes {
-      // Creamos nuestro selector con las variables
-      $selector : '#{$concat}.#{$size}-#{$name}';
 
-      @include from($size) {
+      @if $size != 'l' {
+        // Creamos nuestro selector con las variables
+        $selector : '#{$concat}.#{$size}-#{$name}';
 
-        // Modo debug para saber ver cómo se crearía el selector y el CSS resultante
-        @if $debug {
-          @debug ('
-          @media screen and min-width(#{map-get($breakpoints, $size)}) {
-            #{$selector} {
-              #{$property} : #{$value}
+        @include from($size) {
+
+          // Modo debug para saber ver cómo se crearía el selector y el CSS resultante
+          @if $debug {
+            @debug ('
+            @media screen and min-width(#{map-get($breakpoints, $size)}) {
+              #{$selector} {
+                #{$property} : #{$value}
+              }
             }
+            ');
           }
-        ');
-        }
 
-        // Salida de código
-        #{$selector} {
-          #{$property} : $value;
+          // Salida de código
+          #{$selector} {
+            #{$property} : $value;
+          }
+
         }
 
       }
