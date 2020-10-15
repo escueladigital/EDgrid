@@ -64,14 +64,9 @@
         @include from($size) {
 
           // Modo debug para saber ver cómo se crearía el selector y el CSS resultante
+          // Los \a represetan saltos de línea en el string
           @if $debug {
-            @debug ('
-            @media screen and min-width(#{map-get($breakpoints, $size)}) {
-              #{$selector} {
-                #{$property} : #{$value}
-              }
-            }
-            ');
+            @debug ('\a@media screen and min-width(#{map-get($breakpoints, $size)}) { \a  #{$selector} { \a    #{$property} : #{$value} \a  }\a}');
           }
 
           // Salida de código
