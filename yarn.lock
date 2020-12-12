@@ -2602,10 +2602,10 @@ ecc-jsbn@~0.1.1:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
 
-edteam-style-guides@0.0.67:
-  version "0.0.67"
-  resolved "https://registry.yarnpkg.com/edteam-style-guides/-/edteam-style-guides-0.0.67.tgz#177c9e13e1288ff22ead4c6150454c3f46ffa412"
-  integrity sha512-UkAH3VpBySNQIcDSz7OpuqAnYY4SJg7z/jvkmqd6mg5RHhfcFWWCiykXy/ZdmbApZc4+L17cr7cn0Hpss9IVgA==
+edteam-style-guides@0.0.68:
+  version "0.0.68"
+  resolved "https://registry.yarnpkg.com/edteam-style-guides/-/edteam-style-guides-0.0.68.tgz#09a6d2b9f1847d2c21c557b08c59dc88ada72439"
+  integrity sha512-NPJYTWABr878pkAMNZuysm92CCTpBIokODbp1GEyevLXJSPhV2iF9oojtC4//epyATgR+q8Wi2GE2Aso2LdXBA==
   dependencies:
     natives "^1.1.6"
 
@@ -4050,9 +4050,9 @@ inherits@2.0.1:
   integrity sha1-sX0I0ya0Qj5Wjv9xn5GwscvfafE=
 
 ini@^1.3.4, ini@~1.3.0:
-  version "1.3.5"
-  resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
-  integrity sha512-RZY5huIKCMRWDUqZlEi72f/lmXKMvuszcMBduliQ3nnWbx9X/ZBQO7DijMEYS9EhHBb2qacRUMtC7svLwe0lcw==
+  version "1.3.8"
+  resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.8.tgz#a29da425b48806f34767a4efce397269af28432c"
+  integrity sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==
 
 inline-source-map@~0.6.0:
   version "0.6.2"
