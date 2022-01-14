@@ -2602,10 +2602,10 @@ ecc-jsbn@~0.1.1:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
 
-edteam-style-guides@0.0.67:
-  version "0.0.67"
-  resolved "https://registry.yarnpkg.com/edteam-style-guides/-/edteam-style-guides-0.0.67.tgz#177c9e13e1288ff22ead4c6150454c3f46ffa412"
-  integrity sha512-UkAH3VpBySNQIcDSz7OpuqAnYY4SJg7z/jvkmqd6mg5RHhfcFWWCiykXy/ZdmbApZc4+L17cr7cn0Hpss9IVgA==
+edteam-style-guides@0.0.68:
+  version "0.0.68"
+  resolved "https://registry.yarnpkg.com/edteam-style-guides/-/edteam-style-guides-0.0.68.tgz#09a6d2b9f1847d2c21c557b08c59dc88ada72439"
+  integrity sha512-NPJYTWABr878pkAMNZuysm92CCTpBIokODbp1GEyevLXJSPhV2iF9oojtC4//epyATgR+q8Wi2GE2Aso2LdXBA==
   dependencies:
     natives "^1.1.6"
 
@@ -3104,11 +3104,9 @@ flatten@^1.0.2:
   integrity sha1-2uRqnXj74lKSJYzB54CkHZXAN4I=
 
 follow-redirects@^1.2.5:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.7.0.tgz#489ebc198dc0e7f64167bd23b03c4c19b5784c76"
-  integrity sha512-m/pZQy4Gj287eNy94nivy5wchN3Kp+Q5WgUPNy5lJSZ3sgkVKSYV/ZChMAQVIgx1SqfZ2zBZtPA2YlXIWxxJOQ==
-  dependencies:
-    debug "^3.2.6"
+  version "1.14.7"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.7.tgz#2004c02eb9436eee9a21446a6477debf17e81685"
+  integrity sha512-+hbxoLbFMbRKDwohX8GkTataGqO6Jb7jGwpAlwgy2bIz25XtRm7KEzJM76R1WiNT5SwZkX4Y75SwBolkpmE7iQ==
 
 for-in@^1.0.1, for-in@^1.0.2:
   version "1.0.2"
