@@ -1503,9 +1503,9 @@ cachebust@2.4.0:
     md5 "^2.0.0"
 
 cached-path-relative@^1.0.0:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/cached-path-relative/-/cached-path-relative-1.0.2.tgz#a13df4196d26776220cc3356eb147a52dba2c6db"
-  integrity sha512-5r2GqsoEb4qMTTN9J+WzXfjov+hjxT+j3u5K+kIVNIwAd99DLCJE9pBIMP1qVeybV6JiijL385Oz0DcYxfbOIg==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/cached-path-relative/-/cached-path-relative-1.1.0.tgz#865576dfef39c0d6a7defde794d078f5308e3ef3"
+  integrity sha512-WF0LihfemtesFcJgO7xfOoOcnWzY/QHR4qeDqV44jPU3HTI54+LnfXK3SA27AVVGCdZFgjjFFaqUA9Jx7dMJZA==
 
 callsite@1.0.0:
   version "1.0.0"
@@ -2602,10 +2602,10 @@ ecc-jsbn@~0.1.1:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
 
-edteam-style-guides@0.0.67:
-  version "0.0.67"
-  resolved "https://registry.yarnpkg.com/edteam-style-guides/-/edteam-style-guides-0.0.67.tgz#177c9e13e1288ff22ead4c6150454c3f46ffa412"
-  integrity sha512-UkAH3VpBySNQIcDSz7OpuqAnYY4SJg7z/jvkmqd6mg5RHhfcFWWCiykXy/ZdmbApZc4+L17cr7cn0Hpss9IVgA==
+edteam-style-guides@0.0.68:
+  version "0.0.68"
+  resolved "https://registry.yarnpkg.com/edteam-style-guides/-/edteam-style-guides-0.0.68.tgz#09a6d2b9f1847d2c21c557b08c59dc88ada72439"
+  integrity sha512-NPJYTWABr878pkAMNZuysm92CCTpBIokODbp1GEyevLXJSPhV2iF9oojtC4//epyATgR+q8Wi2GE2Aso2LdXBA==
   dependencies:
     natives "^1.1.6"
 
